@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2984: Web proxy: Active Directory authentication not working  - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2984.atom" rel="alternate" title="NethServer 6 - Bug #2984: Web proxy: Active Directory authentication not working " type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #2984</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="2899.html" title="#2899">« Previous</a> |
+      <a href="2981.html" title="#2981">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Web proxy: Active Directory authentication not working </h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-squid</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/209.html">v6.6</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/200.html">v6.5-final</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Windows client can't authenticate to proxy after join to a domain.</p>
+
+
+Steps to reproduce:
+	<ul>
+	<li>Join the proxy server to an existing Active Directory domain</li>
+		<li>Configure the proxy in authenticated mode</li>
+		<li>Login with a domain user  to a Windows machine joined to the same domain</li>
+		<li>Set the proxy address and port inside web browser </li>
+		<li>Try to open a non-https page</li>
+		<li>The web browser opens a popup requesting authentication</li>
+	</ul>
+
+
+Expected behavior:
+	<ul>
+	<li>Windows client should be able to surf the internet without password request</li>
+	</ul>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>squid.conf: fix authentication for AD users. Refs <a href="2984.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Web proxy: Active Directory authentication not working  (CLOSED)">#2984</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>authentication: add missing condition. Refs <a href="2984.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Web proxy: Active Directory authentication not working  (CLOSED)">#2984</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-13573" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="2984.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-13573-notes">The bug is confirmed and it's caused by the squid configuration: both basic and kerberos authentication methods are enabled, but they are are in wrong order.<br />Accordingly to Squid documentation (<a class="external" href="http://wiki.squid-cache.org/Features/Authentication">http://wiki.squid-cache.org/Features/Authentication</a>), the order should be:
+	<ol>
+	<li>negotiate</li>
+		<li>ntlm</li>
+		<li>digest</li>
+		<li>basic</li>
+	</ol>
+
+
+Modification needed:
+	<ul>
+	<li>remove basic authentication when Samba is in AD mode and add NTLM authentication for old clients (Windows XP)</li>
+		<li>add basic authentication only when in PDC mode or Samba is disabled</li>
+	</ul>
+
+
+	<p>Also Windows clients <strong>MUST</strong> configure the proxy using the FQDN and not with the IP address.</p>
+
+
+	<p><strong>Note</strong><br />When AD mode is enabled, Linux client can't authenticate to the proxy, you can create a bypass to workaround the problem.</p>
+
+
+	<p>Template custom which fixes the problem (<code>20acl_10_auth</code>):<br /><pre>
+{
+   use esmith::NetworksDB;
+   my $ndb = esmith::NetworksDB-&gt;open_ro();
+   my $green_mode = $squid{'GreenMode'} || "manual";
+   my $blue_mode = $squid{'BlueMode'} || "manual";
+   my $fqdn = "$SystemName.$DomainName";
+   if ($green_mode eq 'authenticated' || (defined($ndb-&gt;blue()) &#38;&#38; $blue_mode eq 'authenticated')) {
+       $OUT .= "# Authentication required\n\n";
+
+       # Samba 
+       if(defined $smb &#38;&#38; $smb{'status'} eq 'enabled' &#38;&#38; $smb{'ServerRole'} eq 'ADS') {
+       $OUT .= "\n# GSSAPI auth in ADS mode\n";
+           $OUT .= "auth_param negotiate program /usr/lib64/squid/negotiate_kerberos_auth\n";
+           $OUT .= "auth_param negotiate children 10\n";
+           $OUT .= "auth_param negotiate keep_alive on\n";
+
+           $OUT .= "\n# Additional NTLM auth for Windows XP clients in ADS mode\n";
+           $OUT .= "auth_param ntlm program /usr/bin/ntlm_auth --helper-protocol=squid-2.5-ntlmssp\n";
+           $OUT .= "auth_param ntlm children 30\n";
+       }
+       if(defined $smb &#38;&#38; $smb{'status'} eq 'enabled' &#38;&#38; $smb{'ServerRole'} eq 'PDC') {
+           $OUT .= "\n# NTLM auth in PDC mode\n";
+           $OUT .= "auth_param ntlm program /usr/bin/ntlm_auth --helper-protocol=squid-2.5-ntlmssp\n";
+           $OUT .= "auth_param ntlm children 30\n";
+
+           $OUT .= "\n# BASIC (LDAP) in PDC mode\n";
+           $OUT .= "auth_param basic program /usr/lib64/squid/basic_ldap_auth -b ou=People,dc=directory,dc=nh localhost\n";
+           $OUT .= "auth_param basic children 5\n";
+           $OUT .= "auth_param basic realm $fqdn\n";
+           $OUT .= "auth_param basic credentialsttl 1 hours\n";
+           $OUT .= "auth_param basic casesensitive on\n";
+       } 
+
+       # Use BASIC/LDAP auth if we have slapd and Samba is disabled
+       if ((!defined $smb || $smb{'status'} eq 'disabled') &#38;&#38; defined $slapd &#38;&#38; $slapd{'status'} eq 'enabled') {
+           $OUT .= "\n# BASIC (LDAP)\n";
+           $OUT .= "auth_param basic program /usr/lib64/squid/basic_ldap_auth -b ou=People,dc=directory,dc=nh localhost\n";
+           $OUT .= "auth_param basic children 5\n";
+           $OUT .= "auth_param basic realm $fqdn\n";
+           $OUT .= "auth_param basic credentialsttl 1 hours\n";
+           $OUT .= "auth_param basic casesensitive on\n";
+       } 
+
+       $OUT.="acl authenticated proxy_auth REQUIRED\n";
+   }
+}
+</pre></p>
+
+
+	<p>Debug option for Squid authentication:<br /><pre>
+debug_options ALL,1 29,5
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13574" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="2984.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Category</strong> set to <i>nethserver-squid</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13783" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="2984.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13784" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="2984.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13785" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="2984.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-13785-notes">Package in nethserver-testing:
+	<ul>
+	<li>nethserver-squid-1.3.0-1.0git740f4d20.ns6.noarch.rpm</li>
+	</ul>
+
+
+<strong>Test case</strong>
+	<ul>
+	<li>Check the bug is not reproducibile</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-13871" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="2984.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Nicola Rauso</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13888" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="2984.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Nicola Rauso</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-13888-notes"><p>Bug is still reproducibile.</p>
+
+
+	<p>Testing systems were configured as documented (Windows client joined to AD, NethServer as proxy web server with squid testing package), dns and reverse look up queries worked correctly and Windows client web proxy configuration was set as requested.<br />With this configuration the web browser opens continuously a popup requesting authentication and web pages are unreachable (even https ones).</p>
+
+
+	<p>In <code>"/var/log/squid/access.log"</code> system logs:<br /><pre>
+Wed Jan 28 15:09:22 2015.638      0 192.168.5.27 TCP_DENIED/407 3805 CONNECT clients4.google.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.638      0 192.168.5.27 TCP_DENIED/407 3825 CONNECT translate.googleapis.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.703     56 192.168.5.27 TCP_DENIED/407 3908 CONNECT clients4.google.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.704     55 192.168.5.27 TCP_DENIED/407 3928 CONNECT translate.googleapis.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.810      1 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.811      0 192.168.5.27 TCP_DENIED/407 3789 CONNECT ssl.gstatic.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.811      0 192.168.5.27 TCP_DENIED/407 3789 CONNECT ssl.gstatic.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.812      0 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.812      0 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.813      0 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.813      0 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.814      0 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.814      0 192.168.5.27 TCP_DENIED/407 3789 CONNECT www.gstatic.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.815      0 192.168.5.27 TCP_DENIED/407 3789 CONNECT www.gstatic.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.820      0 192.168.5.27 TCP_DENIED/407 3884 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.821      0 192.168.5.27 TCP_DENIED/407 3884 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.909      0 192.168.5.27 TCP_DENIED/407 3985 GET http://www.gstatic.com/chrome/profile_avatars/NothingToDownload - HIER_NONE/- text/html
+Wed Jan 28 15:09:22 2015.916      0 192.168.5.27 TCP_DENIED/407 4088 GET http://www.gstatic.com/chrome/profile_avatars/NothingToDownload - HIER_NONE/- text/html
+Wed Jan 28 15:09:23 2015.015      0 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:23 2015.017      0 192.168.5.27 TCP_DENIED/407 3884 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:23 2015.104      0 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:23 2015.113      0 192.168.5.27 TCP_DENIED/407 3884 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:26 2015.421      0 192.168.5.27 TCP_DENIED/407 3785 CONNECT www.google.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:26 2015.424      0 192.168.5.27 TCP_DENIED/407 3888 CONNECT www.google.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:31 2015.487      0 192.168.5.27 TCP_DENIED/407 3789 CONNECT ssl.gstatic.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:31 2015.491      1 192.168.5.27 TCP_DENIED/407 3892 CONNECT ssl.gstatic.com:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:33 2015.032      0 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:09:33 2015.038      1 192.168.5.27 TCP_DENIED/407 3884 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:10:21 2015.533      1 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:10:21 2015.535      0 192.168.5.27 TCP_DENIED/407 3884 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:10:21 2015.555      0 192.168.5.27 TCP_DENIED/407 3781 CONNECT www.google.it:443 - HIER_NONE/- text/html
+Wed Jan 28 15:10:21 2015.556      0 192.168.5.27 TCP_DENIED/407 3884 CONNECT www.google.it:443 - HIER_NONE/- text/html
+</pre></p>
+
+
+	<p>in <code>"/var/log/squid/cache.log"</code> (with debug enabled) system logs:<br /><pre>
+2015/01/28 15:09:22 kid1| Starting new negotiateauthenticator helpers...
+2015/01/28 15:09:22 kid1| helperOpenServers: Starting 1/10 'negotiate_kerberos_auth' processes
+2015/01/28 15:09:22 kid1| Starting new negotiateauthenticator helpers...
+2015/01/28 15:09:22 kid1| helperOpenServers: Starting 1/10 'negotiate_kerberos_auth' processes
+2015/01/28 15:09:22 kid1| ERROR: Negotiate Authentication validating user. Error returned 'BH received type 1 NTLM token'
+2015/01/28 15:09:22 kid1| ERROR: Negotiate Authentication validating user. Error returned 'BH received type 1 NTLM token'
+2015/01/28 15:09:22 kid1| ERROR: Negotiate Authentication validating user. Error returned 'BH received type 1 NTLM token'
+2015/01/28 15:09:22 kid1| ERROR: Negotiate Authentication validating user. Error returned 'BH received type 1 NTLM token'
+2015/01/28 15:09:22 kid1| ERROR: Negotiate Authentication validating user. Error returned 'BH received type 1 NTLM token'
+2015/01/28 15:09:23 kid1| ERROR: Negotiate Authentication validating user. Error returned 'BH received type 1 NTLM token'
+2015/01/28 15:09:23 kid1| ERROR: Negotiate Authentication validating user. Error returned 'BH received type 1 NTLM token'
+2015/01/28 15:09:26 kid1| ERROR: Negotiate Authentication validating user. Error returned 'BH received type 1 NTLM token'
+2015/01/28 15:09:31 kid1| ERROR: Negotiate Authentication validating user. Error returned 'BH received type 1 NTLM token'
+2015/01/28 15:09:33 kid1| ERROR: Negotiate Authentication validating user. Error returned 'BH received type 1 NTLM token'
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13889" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="2984.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> changed from <i>v6.5</i> to <i>v6.6-rc1</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14039" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="2984.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> changed from <i>v6.6-rc1</i> to <i>v6.6</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14415" class="journal has-details">
+    <div id="note-10">
+    <h4><a href="2984.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14416" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="2984.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14417" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="2984.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-14417-notes"><p>It's working on two other installations.<br />The behavior mostly depends on Windows AD and client configurations.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-14420" class="journal has-notes has-details">
+    <div id="note-13">
+    <h4><a href="2984.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-14420-notes">Released in nethserver-base:
+	<ul>
+	<li>nethserver-squid-1.3.1-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #3134: Cannot change POP3 connector  poll interval - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethserver controller-journals action-diff">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues selected">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Bug #3134</h2>
+
+<div class="text-diff">
+If you try to change @POP3 connector@ poll interval from @NethGUI@, db value changes: <br /><br /> &lt;pre&gt; 
+<br /> # config show fetchmail 
+<br />     fetchmail=service 
+<br />     authType=password 
+<br />     externalFreq=10 
+<br />     extraOptions=--fastuidl 1 --sslproto ssl23 
+<br />     status=enabled 
+<br /> &lt;/pre&gt; <br /><br /> in the system log &quot;@/va/log/messages@&quot; the operation ends with a &quot;@SUCCESS@&quot;: <br /><br /> &lt;pre&gt; 
+<br /> Apr 27 11:16:57 mynsrv /sbin/e-smith/db[3459]: /var/lib/nethserver/db/configuration: OLD fetchmail=service|authType|password|externalFreq|5|extraOptions|--fastuidl 1 --sslproto ssl23|status|enabled 
+<br /> Apr 27 11:16:57 mynsrv /sbin/e-smith/db[3459]: /var/lib/nethserver/db/configuration: NEW fetchmail=service|authType|password|externalFreq|10|extraOptions|--fastuidl 1 --sslproto ssl23|status|enabled 
+<br /> Apr 27 11:16:57 mynsrv esmith::event[3462]: Event: nethserver-fetchmail-save 
+<br /> Apr 27 11:16:57 mynsrv esmith::event[3462]: [INFO] service fetchmail restart 
+<br /> Apr 27 11:16:57 mynsrv esmith::event[3462]: Shutting down fetchmail: [    OK    ]#015 
+<br /> Apr 27 11:16:58 mynsrv esmith::event[3462]: Starting fetchmail: [    OK    ]#015 
+<br /> Apr 27 11:16:58 mynsrv esmith::event[3462]: [INFO] fetchmail restart 
+<br /> Apr 27 11:16:58 mynsrv esmith::event[3462]: Action: /etc/e-smith/events/actions/adjust-services SUCCESS [0.413491] 
+<br /> Apr 27 11:16:58 mynsrv esmith::event[3462]: Event: nethserver-fetchmail-save SUCCESS 
+<br /> &lt;/pre&gt; <br /><br /> but daemon doesn&#x27;t get the change: <br /><br /> &lt;pre&gt; 
+<br /> # ps ax | grep fetch 
+<br />  3504 ?          Ss       0:00 /usr/bin/fetchmail --auth password --syslog -f - -d 300 --pidfile /var/run/fetchmail/fetchmail.pid --fastuidl 1 --sslproto ssl23 
+<br /> &lt;/pre&gt; <br /><br /> The problem seems to be into *&quot;@nethserver-fetchmail-save@&quot;* event, triggered in case of configuration changes, that does not expand *&quot;@/etc/sysconfig/fetchmail@&quot;* template. <br /><br /> The workaround is to trigger *&quot;@nethserver-fetchmail-update@&quot;* <br /><br /> <span class="diff_in">Edit:  
+<br /> the UI does not update @POP3 Connector &gt; General &gt; Check accounts every@ dropdown menu on save. <br /><br /></span> installed packages: 
+<br /> * fetchmail-6.3.17-1.el6.x86_64 
+<br /> * nethserver-fetchmail-1.1.1-2.ns6.noarch 
+
+</div>
+
+<p>
+  <a href="../../issues/3134.html" onclick="if (document.referrer != &quot;&quot;) {history.back(); return false;}">Back</a>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

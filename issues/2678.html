@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #2678: Mail filter: remove clamav warning - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2678.atom" rel="alternate" title="NethServer 6 - Enhancement #2678: Mail filter: remove clamav warning" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #2678</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Mail filter: remove clamav warning</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-mail-filter</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/200.html">v6.5-final</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>On a fresh installed server with mail server and mail filter, the web interface will show a waning message like this:<br /><pre>
+Database is older than 5 days. Check logs for more details.${title}
+</pre></p>
+
+
+	<p>The warning is raised by clamav database which isn't up to date.</p>
+
+
+	<p>The warning can be safely removed, because clamav will update database in background.</p>
+  </div>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-538">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="1414" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="1414.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1414</a>: Clamav database expiration warning
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date">08/29/2012</td>
+  <td class="due_date">09/04/2012</td>
+  <td class="buttons"></td>
+  </tr>
+  <tr class="issue hascontextmenu" id="relation-540">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="2686" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="2686.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2686</a>: Antivirus dashboard widget
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2678/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="2678.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Filter UI module: improved antivirus update failure notice. Refs <a href="2678.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Mail filter: remove clamav warning (CLOSED)">#2678</a></p>
+
+
+	<p>Read freshclam-updates.log to get update state from freshclam.</p>
+
+
+	<p>An error notification is shown only if freshclam has run in the last<br />12 hours, its status is "error" and database files are older than 5<br />days.</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Web UI: remove antivirus warning. Refs <a href="2686.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Antivirus dashboard widget (CLOSED)">#2686</a> <a href="2678.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Mail filter: remove clamav warning (CLOSED)">#2678</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Dashboard: add update status widget. Refs <a href="2686.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Antivirus dashboard widget (CLOSED)">#2686</a> <a href="2678.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Mail filter: remove clamav warning (CLOSED)">#2678</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-10777" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="2678.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-10777-notes"><p>Wouldn't the warning message disappear automatically when clamav updates?<br />I'd leave the warning for cases where the update really fails for many days in a row.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-10778" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="2678.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-10778-notes"><blockquote>
+
+	<p>Wouldn't the warning message disappear automatically when clamav updates?</p>
+
+
+</blockquote>
+
+	<p>Yes, but the actual text is totally incomprehensible.</p>
+
+
+<blockquote>
+
+	<p>I'd leave the warning for cases where the update really fails for many days in a row.</p>
+
+
+</blockquote>
+
+	<p>I agree, but this is a configuration page. If we want to leave the alert it should be placed on the Dashboard page.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-10801" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="2678.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10803" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="2678.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10809" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="2678.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-10809-notes"><p><strong>Test case 1</strong></p>
+
+
+	<ul>
+	<li>Grab the freshclam mirrors from freshclam.conf:<pre>
+    # grep Mirror /etc/freshclam.conf 
+DatabaseMirror db.it.clamav.net
+DatabaseMirror db.local.clamav.net
+</pre></li>
+		<li>In DNS UI module, define any DatabaseMirror as server <strong>self</strong> alias, to fake freshclam update failures.</li>
+		<li>Run freshclam and verify it's state is <code>error</code>: <pre>
+    # cat /var/log/clamav/freshclam-updates.log 
+error 2014-03-04T11:52:50Z
+</pre></li>
+		<li>Now fake stale db signatures: <pre>
+    # touch -d @$((`date +%s` - (3600*24*7))) /var/lib/clamav/*
+</pre></li>
+		<li>Open Mail UI interface: you must see the error notification</li>
+	</ul>
+
+
+	<p><strong>Test case 2</strong></p>
+
+
+	<ul>
+	<li>Remove DNS aliases</li>
+		<li>Restore signatures access/modification timestamp in /var/lib/clamav/*</li>
+		<li>Run freshclam</li>
+		<li>Open Mail UI interface: you must <strong>not see</strong> the error notification</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-10810" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="2678.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-10810-notes"><p>In nethserver-testing:<br />nethserver-mail-filter-1.1.4-1.0gita8e4916a.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-10824" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="2678.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10827" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="2678.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-10827-notes"><p>Test cases verified, but notification still displays a bad label. <br />Notification must be moved to dashboard: close this bug after <a href="2686.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Antivirus dashboard widget (CLOSED)">#2686</a> is verified.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-10877" class="journal has-notes has-details">
+    <div id="note-9">
+    <h4><a href="2678.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-10877-notes"><p>In nethserver-updates:<br />nethserver-mail-filter-1.1.5-1.ns6.noarch.rpm<br />nethserver-antivirus-1.0.7-1.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

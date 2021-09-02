@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #3289: MultiWAN: remove static routes for checkip - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3289.atom" rel="alternate" title="NethServer 6 - Enhancement #3289: MultiWAN: remove static routes for checkip" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #3289</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="3287.html" title="#3287">« Previous</a> |
+      <a href="3307.html" title="#3307">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>MultiWAN: remove static routes for checkip</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">&lt;multiple packages&gt;</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/214.html">v6.7</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Actually the user is forced to choose one  "ping IP" (AKA check IP) for each provider.<br />While it works, this setup has a drawback: the ping IP can't be reached when a link goes down, so the system need to create a static route for each check IP.</p>
+
+
+The basic idea is to have a global check IP, simplifying the whole implementation. This choice will permit to:
+	<ul>
+	<li>delete the code that tries to auto-detect the right check IP</li>
+		<li>delete the static routes</li>
+	</ul>
+
+
+We need to:
+	<ul>
+	<li>do not use shorewall disable in the lsm down script</li>
+		<li>adjust only "balance" routing table on link status change</li>
+	</ul>
+
+
+	<p>Reference: <a class="external" href="http://community.nethserver.org/t/new-configuration-for-the-multi-wan-monitoring/1829">http://community.nethserver.org/t/new-configuration-for-the-multi-wan-monitoring/1829</a></p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>conf: use checkip prop from firewall key. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Interface configuration: remove provider static routes. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Remove provider static routes. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>wan-update event: re-add ip rule for provider. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>WebUI: move check ip inside common options. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>DB: remove old checkip, add new CheckIP prop. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Revert "lsm: avoid useless restarts" Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+
+
+	<p>This reverts commit b74e6cdc57f251b037f6e0506dc7d2fe623b8042.</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>conf: use new props, move event script to groups. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+
+
+New properties:
+	<ul>
+	<li>MaxPercentPacketLoss</li>
+		<li>MaxNumberPacketLoss</li>
+		<li>PingInterval</li>
+		<li>NotifyWan</li>
+	</ul>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>spec: requires lsm >= 0.190 for groups. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>lsm.conf: lower debug level. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>DB: add props for link status monitor. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>WAN update action: change logic for groups. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Web UI: add LSM options. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>lsm.conf: force group status. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>WAN notify: update mail text. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Web UI: improve inline help and labels. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Minor corrections to inline help. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>createlinks: add static-routes-save to nethserver-firewall-base-update. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>lsm.conf: fix missing new line. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>multiwan: latency measure with lsm. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>multiwan: remove latency measure with ping. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>multiwan: remove latency measure with ping. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-16425" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="3289.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Target version</strong> set to <i>v6.7</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16426" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3289.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16434" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="3289.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Subject</strong> changed from <i>MultiWAN: remove routes for checkip</i> to <i>MultiWAN: remove static routes for checkip</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16473" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="3289.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-16473-notes">Also implemented:
+	<ul>
+	<li>multiple check ip support (requires LSM 0.190)</li>
+		<li>notification mail on provider status change</li>
+		<li>configurable sensibility of LSM</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-16474" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="3289.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-16474-notes">Packages in nethserver-testing:
+	<ul>
+	<li>nethserver-base-2.9.2-1.2.gf6d0790.ns6.noarch.rpm</li>
+		<li>nethserver-lsm-1.0.2-1.6.g3388355.ns6.noarch.rpm</li>
+		<li>lsm-0.190-1.ns6.x86_64.rpm</li>
+		<li>nethserver-firewall-base-ui-2.8.0-1.16.g9f1aa9e.ns6.noarch.rpm</li>
+		<li>nethserver-firewall-base-2.8.0-1.16.g9f1aa9e.ns6.noarch.rpm</li>
+	</ul>
+
+
+	<p><strong>NOTE</strong>: some test cases require knowledge of advanced ip routing  commands</p>
+
+
+<strong>Test case 1</strong>
+	<ul>
+	<li>Upgrade an already configured machine with at least 2 providers</li>
+		<li>Check the checkip address is deleted from all configured providers (<code>db networks show</code>)</li>
+		<li>Check the multi wan configuration is still working</li>
+		<li>Check that all check IPs are still reachable</li>
+		<li>Inspect ip rules and ip routes</li>
+	</ul>
+
+
+<strong>Test case 2</strong>
+	<ul>
+	<li>After test case 1</li>
+		<li>Try to put a provider in down state by blocking the traffic on the router (or detaching the cable)</li>
+		<li>Check the hosts behind the firewall can still reach Internet</li>
+		<li>Re-enable traffic for the provider</li>
+		<li>Check the provider comes up and both links are used to access Internet</li>
+		<li>Inspect ip rules and ip routes</li>
+	</ul>
+
+
+<strong>Test case 3</strong>
+	<ul>
+	<li>Change LSM paramters</li>
+		<li>Check parameters are applied to LSM</li>
+		<li>To verify the state of LSM use:<code> pkill -SIGUSR1 lsm</code> and see <code>/var/log/messages</code></li>
+	</ul>
+
+
+<strong>Test case 4</strong>
+	<ul>
+	<li>Enable mail notification  and set From and To fields</li>
+		<li>Try to force a down/up state on a provider</li>
+		<li>Check the mail is sent</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-16482" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="3289.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Adam P</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16488" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="3289.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Adam P</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-16488-notes"><p><ins>System and Package Version installed</ins><br />ESXi 5.1 VM - Clean install of Nethserver 6.7 fully updated - 3 eth<br />Packages installed: Basic firewall, Bandwidth monitor, DNS and DHCP server, Intrusion Prevention System, VPN, Web filter, Web proxy, Web server</p>
+
+
+	<p><ins>Test Original Problem</ins><br />Setup WAN1 with check IP of 8.8.4.4 and WAN2 with check IP of 4.2.2.2. Simulated a wan failure and static routes existed. Check IPs were not reachable when an interface was down.</p>
+
+
+	<p><ins>Install Updated Package</ins><br />The following commands installed all mentioned updated packages:<br />yum --enablerepo=nethserver-testing update nethserver-base<br />yum --enablerepo=nethserver-testing update nethserver-lsm<br />yum --enablerepo=nethserver-testing update nethserver-firewall-base-ui<br />Packages:<br />nethserver-base-2.9.2-1.2.gf6d0790.ns6.noarch.rpm<br />nethserver-lsm-1.0.2-1.6.g3388355.ns6.noarch.rpm<br />lsm-0.190-1.ns6.x86_64.rpm<br />nethserver-firewall-base-ui-2.8.0-1.16.g9f1aa9e.ns6.noarch.rpm<br />nethserver-firewall-base-2.8.0-1.16.g9f1aa9e.ns6.noarch.rpm</p>
+
+
+	<p><ins>Test Results after update</ins><br /><strong>Test case 1</strong><br />*Upgrade an already configured machine with at least 2 providers<br />*Check the checkip address is deleted from all configured providers (<code>db networks show</code>)<br />-Confirmed. Check IPs and field were removed from each provider<br />*Check the multi wan configuration is still working<br />-Multi wan appears to still work. WAN connectivity to W7 and Ubuntu workstations fails over after simulated outage/failure. Static routes from old multi wan configuration are still static.<br />*Check that all check IPs are still reachable<br />-All check IPs are reachable when both WANs are up. when one goes down, even after failover, they're not reachable.<br />*Inspect ip rules and ip routes</p>
+
+
+	<p><strong>Test case 2</strong><br />*After test case 1<br />*Try to put a provider in down state by blocking the traffic on the router (or detaching the cable)<br />-disconnected virtual nic in vsphere.<br />*Check the hosts behind the firewall can still reach Internet<br />-hosts behind NS can reach internet after about 20 seconds<br />*Re-enable traffic for the provider<br />-reconnected virtual nic in vsphere<br />*Check the provider comes up and both links are used to access Internet<br />-both links are used and eventually all traffic fails over to the higher priority nic.<br />*Inspect ip rules and ip routes</p>
+
+
+	<p><strong>Test case 3</strong><br />*Change LSM paramters<br />-changed check ip <br />*Check parameters are applied to LSM<br />-check ip was changed. appeared to apply. <br />*To verify the state of LSM use:<code> pkill -SIGUSR1 lsm</code> and see <code>/var/log/messages</code></p>
+
+
+	<p><strong>Test case 4</strong><br />*Enable mail notification  and set From and To fields<br />-enabled email notification field and set from and to fields to email addresses in my domain<br />*Try to force a down/up state on a provider<br />-disconnected the virtual nic a couple times - no email and no logs in spam filter appliance. how does this send emails? would options for smtp settings be helpful?<br />*Check the mail is sent</p>
+
+
+	<p><ins>Verified or Reopen</ins><br />Reopen</p>
+
+
+	<p><ins>Note</ins><br />I also noticed that the default check ip of 8.8.8.8 is not accessible when the primary internet connection is taken offline. After reconnected all traffic fails back, communication with the check IP is possible again. I changed the check IP to 4.2.2.3 and still experienced the same behavior with 8.8.8.8 as well as with 4.2.2.3, but on WAN2. After futher testing, every IP I ping through one WAN becomes a static route through that wan connection; it's unreachable once the wan the static route went through is down. Tried 'ip ro flush cache' to no avail.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16520" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="3289.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16520-notes"><p>Adam P wrote:</p>
+
+
+<blockquote>
+
+	<p>Static routes from old multi wan configuration are still static.</p>
+
+
+</blockquote>
+
+	<p>Static routes should have disappeared.<br />Could you please try with<br /><pre>
+service network restart
+</pre><br />to see if those routes really disappear?</p>
+
+
+<pre>
+ip ro
+</pre>
+
+	<p>Some tests will fail if the static routes are still present. Please repeat all tests. Thank you.</p>
+
+
+<blockquote>
+
+	<p>how does this send emails? would options for smtp settings be helpful?</p>
+
+
+</blockquote>
+
+	<p>mail command is used, it should work out of the box.</p>
+
+
+A test could be:
+	<ol>
+	<li>set lsm debug (debug=10 in /etc/lsm/lsm.conf)</li>
+		<li>restart lsm (this is the actual command to restart lsm :-))</li>
+		<li>see verbose output in /var/log/messages (look for forkexec)</li>
+	</ol></div>
+    </div>
+  </div>
+  
+  <div id="change-16525" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="3289.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16525-notes"><p>I currently only have one check ip specified: 4.2.2.3</p>
+
+
+	<p>With eth2 disconnected, I ran 'service network restart'. It took down all internet access until I rebooted the NS. After reboot, internet was back up so I ran 'ip ro' and got the following results:</p>
+
+
+	<p>ip ro<br />8.8.4.4 via 192.168.99.1 dev eth0<br />4.2.2.2 via 192.168.4.1 dev eth2</p>
+
+
+	<p>Those are the static routes that were defined before I upgraded to the test rpm. It appears they were not cleared after upgrading for some reason.</p>
+
+
+	<p>As far as mail, does the mail command resolve MX records and send mail directly? That could be an issue with SPF and PTR records not matching. That may be why the email never made it through. My spam appliance may have refused the smtp session.</p>
+
+
+	<p>Edit: I started receiving emails but found that they're only sent from the eth2 IP. I assume there's a route problem there too.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16533" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="3289.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16533-notes"><p>Adam P wrote:</p>
+
+
+<blockquote>
+
+	<p>With eth2 disconnected, I ran 'service network restart'. It took down all internet access until I rebooted the NS.</p>
+
+
+</blockquote>
+
+	<p>I can't explain this behavior. If you could share (even privately) your full configuration and logs I may figure what happened.</p>
+
+
+<blockquote>
+
+	<p>Those are the static routes that were defined before I upgraded to the test rpm. It appears they were not cleared after upgrading for some reason.</p>
+
+
+</blockquote>
+
+	<p>Did those static routes go away after reboot? Do you find /etc/sysconfig/network-scripts/route-*?</p>
+
+
+<blockquote>
+
+	<p>As far as mail, does the mail command resolve MX records and send mail directly?</p>
+
+
+</blockquote>
+
+	<p>mail usus the local mail system, i.e. postfix.</p>
+
+
+<blockquote>
+
+	<p>Edit: I started receiving emails but found that they're only sent from the eth2 IP. I assume there's a route problem there too.</p>
+
+
+</blockquote>
+
+	<p>I think that postfix can choose every available ip.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16534" class="journal has-notes">
+    <div id="note-11">
+    <h4><a href="3289.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16534-notes"><p>Filippo Carletti wrote:</p>
+
+
+<blockquote>
+
+	<p>Did those static routes go away after reboot? Do you find /etc/sysconfig/network-scripts/route-*?</p>
+
+
+</blockquote>
+
+	<p>They did not. I have rebooted NS several times. I did find the route files. one named route-eth0 and one named route-eth2. Both contain one line (the routes stated above).</p>
+
+
+<blockquote>
+
+	<p>I think that postfix can choose every available ip.</p>
+
+
+</blockquote>
+
+	<p>It didn't seem to work that way. It was only using eth0. When eth0 goes down, I did not get alert emails. When eth2 goes down, I did receive alerts.</p>
+
+
+	<p>I'll setup remote access to this NS instance and PM it to you.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16535" class="journal has-notes">
+    <div id="note-12">
+    <h4><a href="3289.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16535-notes"><p>Adam P wrote:</p>
+
+
+<blockquote>
+
+	<p>Filippo Carletti wrote:</p>
+
+
+<blockquote>
+
+	<p>Did those static routes go away after reboot? Do you find /etc/sysconfig/network-scripts/route-*?</p>
+
+
+</blockquote>
+
+	<p>They did not. I have rebooted NS several times. I did find the route files. one named route-eth0 and one named route-eth2. Both contain one line (the routes stated above).</p>
+
+
+</blockquote>
+
+	<p>We need a signal-event interface-update to clean the old static routes.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16586" class="journal has-details">
+    <div id="note-13">
+    <h4><a href="3289.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16587" class="journal has-notes">
+    <div id="note-14">
+    <h4><a href="3289.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16587-notes"><p>Filippo Carletti wrote:</p>
+
+
+<blockquote>
+
+	<p>We need a signal-event interface-update to clean the old static routes.</p>
+
+
+</blockquote>
+
+	<p>We should need only to link the <code>static-routes-save</code> action inside the nethserver-firewall-base-update event.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16599" class="journal has-details">
+    <div id="note-15">
+    <h4><a href="3289.html#note-15" class="journal-link">#15</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16600" class="journal has-notes has-details">
+    <div id="note-16">
+    <h4><a href="3289.html#note-16" class="journal-link">#16</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-16600-notes">Packages in nethserver-testing:
+	<ul>
+	<li>nethserver-firewall-base-2.8.0-1.18.gfc25d0e.ns6.noarch.rpm</li>
+		<li>nethserver-firewall-base-ui-2.8.0-1.18.gfc25d0e.ns6.noarch.rpm</li>
+		<li>nethserver-base-2.9.2-1.2.gf6d0790.ns6.noarch.rpm</li>
+		<li><del>nethserver-lsm-1.0.2-1.6.g3388355.ns6.noarch.rpm</del></li>
+		<li>nethserver-lsm-1.0.2-1.7.ga618357.ns6.noarch.rpm</li>
+		<li>lsm-0.190-1.ns6.x86_64.rpm</li>
+	</ul>
+
+
+	<p>Repeat the test case.<br />Please pay attention that nethserver-base must be installed before nethserver-firewall-base to get rid of old static routes:<br /><pre>
+yum --enablerepo=nethserver-testing update nethserver-base nethserver-firewall-base-* nethserver-lsm lsm
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-16601" class="journal has-details">
+    <div id="note-17">
+    <h4><a href="3289.html#note-17" class="journal-link">#17</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Adam P</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16602" class="journal has-notes has-details">
+    <div id="note-18">
+    <h4><a href="3289.html#note-18" class="journal-link">#18</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Adam P</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-16602-notes"><p>Confirmed. Static routes are gone and MultiWAN functions as expected.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16622" class="journal has-notes has-details">
+    <div id="note-19">
+    <h4><a href="3289.html#note-19" class="journal-link">#19</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-16622-notes">Released in nethserver-updates:
+	<ul>
+	<li>nethserver-lsm-1.1.0-1.ns6.noarch.rpm</li>
+		<li>lsm-0.190-1.ns6.x86_64.rpm</li>
+		<li>nethserver-base-2.9.3-1.ns6.noarch.rpm</li>
+		<li>nethserver-firewall-base-ui-2.9.0-1.ns6.noarch.rpm</li>
+		<li>nethserver-firewall-base-2.9.0-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2108: SMTP temporary error on non-existing recipients - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2108.atom" rel="alternate" title="NethServer 6 - Bug #2108: SMTP temporary error on non-existing recipients" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #2108</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>SMTP temporary error on non-existing recipients</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">08/21/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">08/21/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-mail-common</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/157.html">v6.4-beta2</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/153.html">v6.4-beta1</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Postfix returns a SMTP temporary error code (450) for non-existing recipients. A permanent error (550) was expected.</p>
+
+
+<pre>
+RCPT To: &lt;nx@nethesis.it&gt;
+450 4.1.1 &lt;nx@nethesis.it&gt;: Recipient address rejected: unverified address: host nethservice.nethesis.it[/var/run/dovecot/lmtp] said: 550 5.1.1 &lt;nx@nethesis.it&gt; User doesn't exist: nx@nethesis.it (in reply to RCPT TO command)
+</pre>
+  </div>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-313">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="2093" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="2093.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2093</a>: amavisd-new 2.8.0 from EPEL
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date">08/19/2013</td>
+  <td class="due_date">08/20/2013</td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2108/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="2108.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>/etc/postfix/main.cf template: Permanent error for non-existing recipients (SMTP code 550). Refs <a href="2108.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="SMTP temporary error on non-existing recipients (CLOSED)">#2108</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-6951" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="2108.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6951-notes"><p>I was missing the following advice from <a href="http://www.postfix.org/ADDRESS_VERIFICATION_README.html" class="external">Postfix Address Verification Howto</a></p>
+
+
+<blockquote>
+
+	<p>The <code>unverified_recipient_reject_code</code> parameter (default 450) specifies the numerical Postfix SMTP server reply code when a recipient address is known to bounce. Change this setting into 550 when you trust Postfix's judgments.</p>
+
+
+</blockquote></div>
+    </div>
+  </div>
+  
+  <div id="change-6952" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="2108.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6952-notes"><p>Moreover I would add a less verbose error explanation, by defining a custom message in <a href="http://www.postfix.org/postconf.5.html#unverified_recipient_reject_reason" class="external">unverified_recipient_reject_reason</a> parameter.</p>
+
+
+	<p>In <code>postconf</code> man page they suggest the sharp <em>"Recipient address lookup failed"</em>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6972" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="2108.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Due date</strong> set to <i>08/21/2013</i></li>
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Start date</strong> set to <i>08/21/2013</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+       <li><strong>Estimated time</strong> set to <i>2.00</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6973" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="2108.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6974" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="2108.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-6974-notes"><p><strong>Test case</strong></p>
+
+
+	<p>Before update:<pre>
+    # ( for C in 'EHLO example.com' 'MAIL From: &lt;me@example.com&gt;' 'RCPT To: &lt;nx@vboxnet0.tld&gt;'; do sleep 3; echo $C;  done; sleep 5) | tee /dev/stderr | nc localhost 25
+220 davidep2.vboxnet0.tld ESMTP Postfix
+EHLO example.com
+250-davidep2.vboxnet0.tld
+250-PIPELINING
+250-SIZE 20000000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-XCLIENT NAME ADDR PROTO HELO REVERSE_NAME PORT LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250 DSN
+MAIL From: &lt;me@example.com&gt;
+250 2.1.0 Ok
+RCPT To: &lt;nx@vboxnet0.tld&gt;
+450 4.1.1 &lt;nx@vboxnet0.tld&gt;: Recipient address rejected: unverified address: host davidep2.vboxnet0.tld[/var/run/dovecot/lmtp] said: 550 5.1.1 &lt;nx@vboxnet0.tld&gt; User doesn't exist: nx@vboxnet0.tld (in reply to RCPT TO command)
+</pre></p>
+
+
+	<p>Update to nethserver-mail-common-1.3.0-4.0gitf6f5b2c6.ns6.noarch.rpm; the last response must be<pre>
+550 5.1.1 &lt;nx@vboxnet0.tld&gt;: Recipient address rejected: undeliverable address: host davidep2.vboxnet0.tld[/var/run/dovecot/lmtp] said: 550 5.1.1 &lt;nx@vboxnet0.tld&gt; User doesn't exist: nx@vboxnet0.tld (in reply to RCPT TO command)
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-6975" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="2108.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-6975-notes"><p>In nethserver-testing:<br />nethserver-mail-common-1.3.0-4.0gitf6f5b2c6.ns6.noarch.rpm</p>
+
+
+	<p><strong>QA NOTE</strong><br />verify <a href="2093.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="amavisd-new 2.8.0 from EPEL (CLOSED)">#2093</a> <strong>before</strong> this issue</p></div>
+    </div>
+  </div>
+  
+  <div id="change-7160" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="2108.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-7202" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="2108.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-7202-notes"><p>Tested with nethserver-mail-common-1.3.0-4.0gitf6f5b2c6.ns6.noarch .</p>
+
+
+	<p>Server correctly respond with error 550:<br /><pre>
+[root@test t]# ( for C in 'EHLO example.com' 'MAIL From: &lt;me@example.com&gt;' 'RCPT To: &lt;nx@test.loc&gt;'; do sleep 3; echo $C;  done; sleep 5) | tee /dev/stderr | nc localhost 25
+220 test.test.loc ESMTP Postfix
+EHLO example.com
+250-test.test.loc
+250-PIPELINING
+250-SIZE 20000000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-XCLIENT NAME ADDR PROTO HELO REVERSE_NAME PORT LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250 DSN
+MAIL From: &lt;me@example.com&gt;
+250 2.1.0 Ok
+RCPT To: &lt;nx@test.loc&gt;
+550 5.1.1 &lt;nx@test.loc&gt;: Recipient address rejected: undeliverable address: host test.test.loc[/var/run/dovecot/lmtp] said: 550 5.1.1 &lt;nx@test.loc&gt; User doesn't exist: nx@test.loc (in reply to RCPT TO command)
+</pre></p>
+
+
+	<p>Tested also with Thunderbird.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-7204" class="journal has-notes has-details">
+    <div id="note-9">
+    <h4><a href="2108.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-7204-notes"><p>Marking as <strong>VERIFIED</strong>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-7228" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="2108.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-7228-notes"><p>In nethserver-updates:<br />nethserver-mail-common-1.3.1-1.ns6.noarch.rpm<br />nethserver-mail-filter-1.1.2-1.ns6.src.rpm<br />nethserver-mail-server-1.4.6-1.ns6.noarch.rpm<br />nethserver-antivirus-1.0.5-1.ns6.noarch.rpm</p>
+
+
+	<p>Dependencies:<br />unzoo-4.4-7.el6.x86_64.rpm<br />altermime-0.3.10-3.el6.x86_64.rpm<br />amavisd-new-2.8.0-4.el6.noarch.rpm<br />clamav-db-0.97.8-1.el6.x86_64.rpm<br />clamav-0.97.8-1.el6.x86_64.rpm<br />clamd-0.97.8-1.el6.x86_64.rpm<br />lrzip-0.614-1.el6.x86_64.rpm<br />p7zip-plugins-9.20.1-2.el6.x86_64.rpm<br />perl-DBD-SQLite-1.27-3.el6.x86_64.rpm<br />perl-Razor-Agent-2.85-6.el6.x86_64.rpm</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #3287: PPPoE default route overrides multi WAN configuration - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3287.atom" rel="alternate" title="NethServer 6 - Bug #3287: PPPoE default route overrides multi WAN configuration" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #3287</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="3280.html" title="#3280">« Previous</a> |
+      <a href="3289.html" title="#3289">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>PPPoE default route overrides multi WAN configuration</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-firewall-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/214.html">v6.7</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/214.html">v6.7</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Given a server with two or more configured providers and a PPPoE red interface, when PPPoE is restarted the PPP daemon inserts a default gateway route.<br />The new default gateway breaks the multi WAN routing.</p>
+
+
+<strong>Steps to reproduce</strong>
+	<ul>
+	<li>Configure a red interface as PPPoE</li>
+		<li>Configure a second red interface</li>
+		<li>Configure two providers inside the multi WAN page</li>
+		<li>Restart the PPPoE process</li>
+	</ul>
+
+
+<strong>Actual behavior</strong>
+	<ul>
+	<li>A new default gateway is added to the route table</li>
+	</ul>
+
+
+<strong>Expected behavior</strong>
+	<ul>
+	<li>The route table should not be modified</li>
+	</ul>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>PPPoE: better handling of defroute option. Refs <a href="3287.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="PPPoE default route overrides multi WAN configuration (CLOSED)">#3287</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-16411" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="3287.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Target version</strong> set to <i>v6.7</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16412" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3287.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16413" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="3287.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Subject</strong> changed from <i>PPPoE default route override multi WAN configuration</i> to <i>PPPoE default route overrides multi WAN configuration</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16414" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="3287.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16415" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="3287.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-16415-notes">Packages in nethserver-testing:
+	<ul>
+	<li>nethserver-firewall-base-2.8.0-1.7.g7601056.ns6.noarch.rpm</li>
+		<li>nethserver-firewall-base-ui-2.8.0-1.7.g7601056.ns6.noarch.rpm</li>
+	</ul>
+
+
+<strong>Test case</strong>
+	<ul>
+	<li>Check the bug is not reproducible</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-16614" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="3287.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-16614-notes"><p>I used nethserver-firewall-base-2.8.0-1.16.g9f1aa9e.ns6.noarch which contains the fix.</p>
+
+
+	<p>When I had only a PPPoE connection:<br /><pre>
+[root@nscom ~]# grep DEFROUTE= /etc/sysconfig/network-scripts/ifcfg-ppp0 
+DEFROUTE='yes'
+</pre></p>
+
+
+	<p>When I added a second ethernet wan provider:<br /><pre>
+[root@nscom ~]# grep DEFROUTE= /etc/sysconfig/network-scripts/ifcfg-ppp0 
+DEFROUTE='no'
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-16624" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="3287.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-16624-notes">Released in nethserver-updates:
+	<ul>
+	<li>nethserver-firewall-base-ui-2.9.0-1.ns6.noarch.rpm</li>
+		<li>nethserver-firewall-base-2.9.0-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

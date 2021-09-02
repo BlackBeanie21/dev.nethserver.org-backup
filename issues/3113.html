@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #3113: Fax: cannot set up a physical modem - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3113.atom" rel="alternate" title="NethServer 6 - Bug #3113: Fax: cannot set up a physical modem" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #3113</h2>
+
+<div class="issue tracker-1 status-5 priority-5 priority-high3 closed details">
+    <div class="next-prev-links contextual">
+      <a href="3110.html" title="#3110">« Previous</a> |
+      <a href="2945.html" title="#2945">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Fax: cannot set up a physical modem</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">High</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-hylafax</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/209.html">v6.6</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/208.html">v6.6-final</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>A bug inside <code>nethserver-hylafax-modemsetup</code> action called by <code>nethserver-hylafax-save</code> event prevents setting up a physical modem.</p>
+
+
+	<p>At line <code>43</code> there's a wrong <em><strong>if</strong></em> statement:</p>
+
+
+<pre>if (!($FaxDevice =~ '/^ttyIAX/')) {
+    exit(0);
+}
+system("/usr/sbin/neth-addmodem &#38;&gt; /var/log/addmodem.log");</pre>
+
+	<p>the statement is always true so the script ends and <em><strong>neth-addmodem</strong></em> script is never executed.</p>
+
+
+Installed pakages:
+	<ul>
+	<li>nethserver-hylafax-1.1.0-1.ns6.noarch</li>
+		<li>hylafax-5.2.5-1.nh.x86_64</li>
+	</ul>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>nethserver-hylafax-modemsetup: fix wrong logic. Refs <a href="3113.html" class="issue tracker-1 status-5 priority-5 priority-high3 closed" title="Fax: cannot set up a physical modem (CLOSED)">#3113</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>nethserver-hylafax-modemsetup: fix syntax. Refs <a href="3113.html" class="issue tracker-1 status-5 priority-5 priority-high3 closed" title="Fax: cannot set up a physical modem (CLOSED)">#3113</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-14781" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="3113.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/14781%3Fdetail_id=24407.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14782" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3113.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Subject</strong> changed from <i>Fax: cannot set a physical modem</i> to <i>Fax: cannot set up a physical modem</i></li>
+       <li><strong>Description</strong> updated (<a href="../journals/diff/14782%3Fdetail_id=24409.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14783" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="3113.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/14783%3Fdetail_id=24410.html" title="View differences">diff</a>)</li>
+       <li><strong>Affected version</strong> set to <i>v6.6-final</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14784" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="3113.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Category</strong> set to <i>nethserver-hylafax</i></li>
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Target version</strong> set to <i>v6.6</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14785" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="3113.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14786" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="3113.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14787" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="3113.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-14787-notes">Package in nethserver-testing:
+	<ul>
+	<li>nethserver-hylafax-1.1.0-1.1.g51a6bfa.ns6.noarch.rpm</li>
+	</ul>
+
+
+<strong>Test case 1</strong>
+	<ul>
+	<li>Check the bug is not reproducible</li>
+	</ul>
+
+
+<strong>Test case 2</strong>
+	<ul>
+	<li>Install nethserver-iaxmodem</li>
+		<li>Check iaxmodem configuration correctly works</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-14792" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="3113.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-14792-notes"><p>The new script doesn't work.<br />Trying to modify modem setting, NethGui generates an error:</p>
+
+
+<pre>Task completed with errors
+# (exit status )</pre>
+
+	<p>in <code>/var/log/messages</code>:</p>
+
+
+<pre>Apr  9 18:18:37 nethserver esmith::event[19605]: Event: nethserver-hylafax-save FAILED
+Apr  9 18:18:37 nethserver httpd-admin: [ERROR] Nethgui\System\NethPlatform: process on queue `post-process` exited with code 1: /usr/libexec/nethserver/ptrack  -j -s '/var/run/ptrack/d8269356bbac8cc99d34dc97909bc611.sock' -d '/var/spool/ptrack/d78409665b348e88.dump'  -- /usr/bin/sudo -n /sbin/e-smith/signal-event 'nethserver-hylafax-save'</pre>
+
+	<p>I think that the problem is caused by an unwanted double parentheses at line <code>43</code>:</p>
+
+
+<pre> if ($FaxDevice =~ /^ttyIAX/)) {</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-14793" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="3113.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14794" class="journal has-details">
+    <div id="note-10">
+    <h4><a href="3113.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14795" class="journal has-notes has-details">
+    <div id="note-11">
+    <h4><a href="3113.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-14795-notes">Package in nethserver-testing:
+	<ul>
+	<li>nethserver-hylafax-1.1.0-1.2.g447e5a3.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-14796" class="journal has-details">
+    <div id="note-12">
+    <h4><a href="3113.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Nicola Rauso</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14797" class="journal has-notes has-details">
+    <div id="note-13">
+    <h4><a href="3113.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Nicola Rauso</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-14797-notes"><p><strong>Test case 1</strong><br />physical modem configuration works flawlessly</p>
+
+
+	<p><strong>Test case 2</strong><br />iaxmodem configuration works correctly too</p></div>
+    </div>
+  </div>
+  
+  <div id="change-14798" class="journal has-notes has-details">
+    <div id="note-14">
+    <h4><a href="3113.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-14798-notes">Released in nethserver-updates:
+	<ul>
+	<li>nethserver-hylafax-1.1.1-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

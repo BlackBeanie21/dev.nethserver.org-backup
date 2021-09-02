@@ -1,0 +1,63 @@
+commit 19792f3 (HEAD, master)
+Author: Davide Principi <davide.principi@nethesis.it>
+Date:   Thu Sep 26 10:53:51 2013 +0200
+
+    /etc/shorewall templates: renamed "vpn" zone to "ovpn". Refs #1956
+
+diff --git a/root/etc/e-smith/templates/etc/shorewall/interfaces/99openvpn b/root/etc/e-smith/templates/etc/shorewall/interfaces/99openvpn
+index ad726c4..933f6cb 100644
+--- a/root/etc/e-smith/templates/etc/shorewall/interfaces/99openvpn
++++ b/root/etc/e-smith/templates/etc/shorewall/interfaces/99openvpn
+@@ -1,7 +1,10 @@
++#
++# 99openvpn
++#
+ {
+     $mode = $openvpn{'Mode'} || 'routed';
+     if ($mode eq 'routed') {
+-        $OUT.="vpn         tun+\n";
++        $OUT .= "ovpn        tun0\n";
+     } elsif ($mode eq 'bridged') {
+         my $tap = $openvpn{'TapInterface'} || 'tap0';
+         $OUT .= "dev $tap\n";
+diff --git a/root/etc/e-smith/templates/etc/shorewall/policy/15openvpn b/root/etc/e-smith/templates/etc/shorewall/policy/15openvpn
+index f0cdbec..5262001 100644
+--- a/root/etc/e-smith/templates/etc/shorewall/policy/15openvpn
++++ b/root/etc/e-smith/templates/etc/shorewall/policy/15openvpn
+@@ -1,13 +1,13 @@
+ #
+ # 15openvpn
+ #
+-loc            vpn           ACCEPT
+-vpn            loc           ACCEPT
+-vpn            $FW           ACCEPT
+-$FW            vpn           ACCEPT
++loc            ovpn           ACCEPT
++ovpn           loc            ACCEPT
++ovpn           $FW            ACCEPT
++$FW            ovpn           ACCEPT
+ {
+     if($openvpn{'RouteToVPN'} eq 'enabled') {
+-        $OUT .= "vpn            net           ACCEPT";
++        $OUT .= "ovpn           net           ACCEPT";
+     } else {
+ 	$OUT = "# openvpn/RouteToVPN is disabled";
+     }
+diff --git a/root/etc/e-smith/templates/etc/shorewall/rules/21pingOpenvpn b/root/etc/e-smith/templates/etc/shorewall/rules/21pingOpenvpn
+deleted file mode 100644
+index 2122116..0000000
+--- a/root/etc/e-smith/templates/etc/shorewall/rules/21pingOpenvpn
++++ /dev/null
+@@ -1 +0,0 @@
+-Ping/ACCEPT     vpn             $FW
+diff --git a/root/etc/e-smith/templates/etc/shorewall/zones/99openvpn b/root/etc/e-smith/templates/etc/shorewall/zones/99openvpn
+index 2bd240f..922de4b 100644
+--- a/root/etc/e-smith/templates/etc/shorewall/zones/99openvpn
++++ b/root/etc/e-smith/templates/etc/shorewall/zones/99openvpn
+@@ -1 +1,5 @@
+-vpn     ipv4
++#
++# 99openvpn
++#
++ovpn     ipv4
++

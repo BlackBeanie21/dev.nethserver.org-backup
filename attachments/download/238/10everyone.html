@@ -1,0 +1,17 @@
+#
+# 10everyone custom template -- See #2464
+#
+{
+    use NethServer::MailServer();
+    use esmith::AccountsDB; 
+    my $accountsDb = esmith::AccountsDB->open_ro();
+    my $ms = NethServer::MailServer->new();
+
+    my @domains = $ms->getDeliveryDomains();
+    my @accounts = map { $_->prop("MailStatus") eq 'enabled' ? $_->key : () } $accountsDb->users();
+    
+    foreach (@domains) {
+       $OUT .= sprintf("everyone@%s\t%s\n", $_, join(', ', sort @accounts));
+    }
+}
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+exec >/var/lib/nethserver/backup/disk_usage
+
+df=`df -Ph /mnt/backup/ 2>/dev/null | tail -1`
+if [ -z "$df" ]; then exit 0; fi
+
+read fs size used avail percent mp <<<$df
+echo "Disk usage:"
+echo "Size: $size"
+echo "Used: $used"
+echo "Avail: $avail"
+echo "Use%: $percent"
+

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>upgrade-65b3.sh - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="../../stylesheets/scm.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-attachments action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>upgrade-65b3.sh</h2>
+
+<div class="attachments">
+<p>Final 6.5 beta3 upgrade script - 
+   <span class="author"><a href="../../users/9.html" class="user active">Davide Principi</a>, 02/05/2014 04:56 PM</span></p>
+<p><a href="../download/246/upgrade-65b3.sh">Download</a>   <span class="size">(1.13 KB)</span></p>
+
+</div>
+&nbsp;
+<div class="autoscroll">
+<table class="filecontent syntaxhl">
+<tbody>
+  <tr id="L1">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L1">1</a>
+    </th>
+    <td class="line-code">
+      <pre>#!/bin/bash
+</pre>
+    </td>
+  </tr>
+  <tr id="L2">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L2">2</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L3">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L3">3</a>
+    </th>
+    <td class="line-code">
+      <pre>set -e
+</pre>
+    </td>
+  </tr>
+  <tr id="L4">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L4">4</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L5">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L5">5</a>
+    </th>
+    <td class="line-code">
+      <pre># Stop httpd-admin (if still running as admin) then remove the admin
+</pre>
+    </td>
+  </tr>
+  <tr id="L6">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L6">6</a>
+    </th>
+    <td class="line-code">
+      <pre># account, if it&#x27;s present in passwd:
+</pre>
+    </td>
+  </tr>
+  <tr id="L7">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L7">7</a>
+    </th>
+    <td class="line-code">
+      <pre>{ 
+</pre>
+    </td>
+  </tr>
+  <tr id="L8">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L8">8</a>
+    </th>
+    <td class="line-code">
+      <pre>    service httpd-admin stop
+</pre>
+    </td>
+  </tr>
+  <tr id="L9">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L9">9</a>
+    </th>
+    <td class="line-code">
+      <pre>    killall httpd-admin
+</pre>
+    </td>
+  </tr>
+  <tr id="L10">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L10">10</a>
+    </th>
+    <td class="line-code">
+      <pre>    stop httpd-admin
+</pre>
+    </td>
+  </tr>
+  <tr id="L11">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L11">11</a>
+    </th>
+    <td class="line-code">
+      <pre>    sleep 5
+</pre>
+    </td>
+  </tr>
+  <tr id="L12">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L12">12</a>
+    </th>
+    <td class="line-code">
+      <pre>} || :
+</pre>
+    </td>
+  </tr>
+  <tr id="L13">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L13">13</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L14">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L14">14</a>
+    </th>
+    <td class="line-code">
+      <pre>grep -q admin /etc/passwd &amp;&amp; userdel admin
+</pre>
+    </td>
+  </tr>
+  <tr id="L15">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L15">15</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L16">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L16">16</a>
+    </th>
+    <td class="line-code">
+      <pre># Fix DB permissions:
+</pre>
+    </td>
+  </tr>
+  <tr id="L17">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L17">17</a>
+    </th>
+    <td class="line-code">
+      <pre>chown -v root:adm /var/lib/nethserver/db/*
+</pre>
+    </td>
+  </tr>
+  <tr id="L18">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L18">18</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L19">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L19">19</a>
+    </th>
+    <td class="line-code">
+      <pre># Move admin key in configuration DB to root:
+</pre>
+    </td>
+  </tr>
+  <tr id="L20">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L20">20</a>
+    </th>
+    <td class="line-code">
+      <pre>sed -i &#x27;s/^admin=/root=/&#x27; /var/lib/nethserver/db/configuration
+</pre>
+    </td>
+  </tr>
+  <tr id="L21">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L21">21</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L22">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L22">22</a>
+    </th>
+    <td class="line-code">
+      <pre># Clean up /etc/aliases:
+</pre>
+    </td>
+  </tr>
+  <tr id="L23">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L23">23</a>
+    </th>
+    <td class="line-code">
+      <pre>sed -r -i &#x27;/^(# NethServer|root:|admin:)/ d&#x27; /etc/aliases
+</pre>
+    </td>
+  </tr>
+  <tr id="L24">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L24">24</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L25">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L25">25</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L26">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L26">26</a>
+    </th>
+    <td class="line-code">
+      <pre># Run the upgrade
+</pre>
+    </td>
+  </tr>
+  <tr id="L27">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L27">27</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L28">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L28">28</a>
+    </th>
+    <td class="line-code">
+      <pre>yum clean all
+</pre>
+    </td>
+  </tr>
+  <tr id="L29">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L29">29</a>
+    </th>
+    <td class="line-code">
+      <pre>yum update -y
+</pre>
+    </td>
+  </tr>
+  <tr id="L30">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L30">30</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L31">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L31">31</a>
+    </th>
+    <td class="line-code">
+      <pre>set +e -x
+</pre>
+    </td>
+  </tr>
+  <tr id="L32">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L32">32</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L33">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L33">33</a>
+    </th>
+    <td class="line-code">
+      <pre># Refresh group members
+</pre>
+    </td>
+  </tr>
+  <tr id="L34">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L34">34</a>
+    </th>
+    <td class="line-code">
+      <pre>if rpm -q nethserver-directory &amp;&gt;/dev/null; then
+</pre>
+    </td>
+  </tr>
+  <tr id="L35">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L35">35</a>
+    </th>
+    <td class="line-code">
+      <pre>    /etc/e-smith/events/actions/group-modify-unix ev
+</pre>
+    </td>
+  </tr>
+  <tr id="L36">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L36">36</a>
+    </th>
+    <td class="line-code">
+      <pre>    local_users=(`grep -F &#x27;=user|&#x27; /var/lib/nethserver/db/accounts | cut -d = -f 1`)
+</pre>
+    </td>
+  </tr>
+  <tr id="L37">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L37">37</a>
+    </th>
+    <td class="line-code">
+      <pre>    lgroupmod -M &quot;`echo ${local_users[*]} | tr &#x27; &#x27; &#x27;,&#x27;`&quot; locals
+</pre>
+    </td>
+  </tr>
+  <tr id="L38">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L38">38</a>
+    </th>
+    <td class="line-code">
+      <pre>fi
+</pre>
+    </td>
+  </tr>
+  <tr id="L39">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L39">39</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L40">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L40">40</a>
+    </th>
+    <td class="line-code">
+      <pre>if rpm -q nethserver-ibays &amp;&gt;/dev/null; then
+</pre>
+    </td>
+  </tr>
+  <tr id="L41">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L41">41</a>
+    </th>
+    <td class="line-code">
+      <pre>    luserdel shared
+</pre>
+    </td>
+  </tr>
+  <tr id="L42">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L42">42</a>
+    </th>
+    <td class="line-code">
+      <pre>    for IBAY in `grep -F &#x27;|OwningGroup|shared&#x27; /var/lib/nethserver/db/accounts  | cut -d = -f 1`; do
+</pre>
+    </td>
+  </tr>
+  <tr id="L43">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L43">43</a>
+    </th>
+    <td class="line-code">
+      <pre>	/sbin/e-smith/db accounts setprop $IBAY OwningGroup locals
+</pre>
+    </td>
+  </tr>
+  <tr id="L44">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L44">44</a>
+    </th>
+    <td class="line-code">
+      <pre>	chgrp -Rv locals /var/lib/nethserver/ibay/$IBAY 
+</pre>
+    </td>
+  </tr>
+  <tr id="L45">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L45">45</a>
+    </th>
+    <td class="line-code">
+      <pre>    done
+</pre>
+    </td>
+  </tr>
+  <tr id="L46">
+    <th class="line-num">
+      <a href="upgrade-65b3.sh.html#L46">46</a>
+    </th>
+    <td class="line-code">
+      <pre>fi
+</pre>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

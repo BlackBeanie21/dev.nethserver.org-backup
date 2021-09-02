@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #3317: L2TP not working with multiwan - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3317.atom" rel="alternate" title="NethServer 6 - Bug #3317: L2TP not working with multiwan" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #3317</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="3326.html" title="#3326">« Previous</a> |
+      <a href="3315.html" title="#3315">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/c96c358beddd941e6188349f3c98ccd3?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>L2TP not working with multiwan</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-ipsec</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/214.html">v6.7</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/214.html">v6.7</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <ins>Steps to reproduce</ins>
+	<ul>
+	<li>Set up an l2tp vpn with the multiwan feature enabled (backup or balance, as you want)</li>
+		<li>try to connect with a device (I have tested it with android )</li>
+	</ul>
+
+
+<ins>Expected behavior</ins>
+	<ul>
+	<li>The vpn l2tp works flawlessy establishing a connection beetween client and server.</li>
+	</ul>
+
+
+	<p><ins>Actual behavior</ins></p>
+
+
+	<ul>
+	<li>The vpn doesn't work, the log shows: (IP_CLIENT and IP_SERVER instead of original IPs)</li>
+	</ul>
+
+
+<pre>
+Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring unknown Vendor ID payload [01528bbbc00696121849ab9a1c5b2a5100000001]
+Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring Vendor ID payload [MS NT5 ISAKMPOAKLEY 00000009]
+Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: received Vendor ID payload [RFC 3947] method set to=109 
+Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: received Vendor ID payload [draft-ietf-ipsec-nat-t-ike-02_n] meth=106, but already using method 109
+Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring Vendor ID payload [FRAGMENTATION]
+Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring Vendor ID payload [MS-Negotiation Discovery Capable]
+Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring Vendor ID payload [Vid-Initial-Contact]
+Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring Vendor ID payload [IKE CGA version 1]
+Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: initial Main Mode message received on IP_SERVER:500 but no connection has been authorized with policy=
+PSK
+
+</pre>
+
+	<p><ins>Work around/fix</ins><br />Because when we have the MultiWAN active we have no default gateway (no default route for packets) we need to force the vpn to use a specific interface.<br />It's sufficient to declare the ip address of the red interface used by the vpn, I tried to change the field left=%defaultroute in /etc/ipsec.conf</p>
+
+
+<pre>
+[root@localhost ~]# diff -u /etc/e-smith/templates/etc/ipsec.conf/20l2tp /etc/e-smith/templates-custom/etc/ipsec.conf/20l2tp
+--- /etc/e-smith/templates/etc/ipsec.conf/20l2tp    2015-08-27 17:59:24.000000000 +0200
++++ /etc/e-smith/templates-custom/etc/ipsec.conf/20l2tp    2015-11-13 14:19:51.810157214 +0100
+@@ -13,7 +13,7 @@
+  'auto' =&gt; 'add',
+  'pfs' =&gt; 'no',
+
+-    'left' =&gt; '%defaultroute',
++    'left' =&gt; 'IP_ADDRESS',
+         'leftprotoport' =&gt; '17/%any',
+
+</pre>
+
+	<p>and now everything works flawlessy (see logs):</p>
+
+
+<pre>
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[1] IP_CLIENT #1: responding to Main Mode from unknown peer IP_CLIENT
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[1] IP_CLIENT #1: transition from state STATE_MAIN_R0 to state STATE_MAIN_R1
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[1] IP_CLIENT #1: STATE_MAIN_R1: sent MR1, expecting MI2
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[1] IP_CLIENT #1: NAT-Traversal: Result using RFC 3947 (NAT-Traversal): peer is NATed
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[1] IP_CLIENT #1: transition from state STATE_MAIN_R1 to state STATE_MAIN_R2
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[1] IP_CLIENT #1: STATE_MAIN_R2: sent MR2, expecting MI3
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[1] IP_CLIENT #1: Main mode peer ID is ID_IPV4_ADDR: '192.168.5.18'
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[1] IP_CLIENT #1: switched from "~L2TP" to "~L2TP" 
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #1: deleting connection "~L2TP" instance with peer IP_CLIENT {isakmp=#0/ipsec=#0}
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #1: transition from state STATE_MAIN_R2 to state STATE_MAIN_R3
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #1: new NAT mapping for #1, was IP_CLIENT:500, now IP_CLIENT:4500
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #1: STATE_MAIN_R3: sent MR3, ISAKMP SA established {auth=OAKLEY_PRESHARED_KEY cipher=aes_256 prf=oakley_sha group=m
+odp1024}
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #1: Dead Peer Detection (RFC 3706): enabled
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #1: ignoring informational payload, type IPSEC_INITIAL_CONTACT msgid=00000000
+Nov 13 11:51:18 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #1: received and ignored informational message
+Nov 13 11:51:19 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #1: the peer proposed: IP_SERVER/32:17/0 -&gt; 192.168.5.18/32:17/0
+Nov 13 11:51:19 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #2: responding to Quick Mode proposal {msgid:6e9f6ef4}
+Nov 13 11:51:19 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #2:     us: IP_SERVER&lt;IP_SERVER&gt;[@localhost.localdomain,+S=C]:17/%any
+Nov 13 11:51:19 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #2:   them: IP_CLIENT[192.168.5.18,+S=C]:17/0
+Nov 13 11:51:19 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #2: transition from state STATE_QUICK_R0 to state STATE_QUICK_R1
+Nov 13 11:51:19 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #2: STATE_QUICK_R1: sent QR1, inbound IPsec SA installed, expecting QI2
+Nov 13 11:51:19 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #2: Dead Peer Detection (RFC 3706): enabled
+Nov 13 11:51:19 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #2: transition from state STATE_QUICK_R1 to state STATE_QUICK_R2
+Nov 13 11:51:19 localhost pluto[30745]: "~L2TP"[2] IP_CLIENT #2: STATE_QUICK_R2: IPsec SA established transport mode {ESP=&gt;0x0bdaf63a &lt;0x695b15d6 xfrm=AES_256-HMAC_SHA1 NATOA=none NATD=IP_CLIENT:4500 DPD=enabled}
+
+</pre>
+
+	<p>I would like to configure this parameter in the web interface.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>l2tp: multiwan support. Refs <a href="3317.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="L2TP not working with multiwan (CLOSED)">#3317</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-16656" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="3317.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/16656%3Fdetail_id=28003.html" title="View differences">diff</a>)</li>
+       <li><strong>Affected version</strong> set to <i>v6.7</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16658" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3317.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Category</strong> set to <i>nethserver-ipsec</i></li>
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Target version</strong> set to <i>v6.7</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16776" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="3317.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16776-notes"><p>I'd prefer being able to establish the vpn on every wan.<br />Suppose you have a dns entry pointing to both your public ip, you could have a single l2tp connection working even if a link is down.</p>
+
+
+	<p>As an option, we could have an optinos box to select the list where the vpn could be established:</p>
+
+
+	<ul>
+	<li>red1</li>
+		<li>red2</li>
+		<li>red3</li>
+	</ul>
+
+
+	<p>But I can't see any drawback enabling every red by default.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16777" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="3317.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16777-notes"><p>Filippo Carletti wrote:</p>
+
+
+<blockquote>
+
+	<p>I'd prefer being able to establish the vpn on every wan.</p>
+
+
+</blockquote>
+
+	<p>This is a template-custom ready for test:<br /><pre>
+{
+    #
+    # 20l2tp
+    #
+    use esmith::NetworksDB;
+    my $ndb = esmith::NetworksDB-&gt;open_ro();
+
+    my $status = $ipsec{'ServerStatus'} || 'disabled';
+    if ($status eq 'disabled') {
+        return '';
+    }
+
+    # L2TP connections
+    foreach ($ndb-&gt;red()) {
+        $conn-&gt;{'~L2TP'.$_-&gt;key} = {
+            'auto' =&gt; 'add',
+            'pfs' =&gt; 'no',
+
+            'left' =&gt; '%'.$_-&gt;key,
+            'leftprotoport' =&gt; '17/%any',
+
+            'right' =&gt; '%any',
+            'rightprotoport' =&gt; '17/%any',
+
+            'ikelifetime' =&gt; '8h',
+            'keylife' =&gt; '1h',
+
+            'dpddelay' =&gt; '30',
+            'dpdtimeout' =&gt; '120',
+            'dpdaction' =&gt; 'clear',
+
+        'type' =&gt; 'transport',
+        };
+    }
+
+    '';
+}
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-16786" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="3317.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    <div class="wiki" id="journal-16786-notes"><p>Proposed template correctly works on the field.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16787" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="3317.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16788" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="3317.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-16788-notes">In nethserver-testing:
+	<ul>
+	<li>nethserver-ipsec-1.1.2-1.7.gf7e13bf.ns6.noarch.rpm</li>
+	</ul>
+
+
+<strong>Test case</strong>
+	<ul>
+	<li>Configure a firewall with multiwan and enable l2tp</li>
+		<li>Connect with a client, the vpn should work without any further configuration</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-16803" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="3317.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Davide Marini</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16804" class="journal has-notes has-details">
+    <div id="note-9">
+    <h4><a href="3317.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/c96c358beddd941e6188349f3c98ccd3?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-16804-notes"><p>New package installaed: everything worked as expected:</p>
+
+
+	<p>ipsec.log:</p>
+
+
+<pre>
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[1] IP_CLIENT #1: responding to Main Mode from unknown peer IP_CLIENT
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[1] IP_CLIENT #1: transition from state STATE_MAIN_R0 to state STATE_MAIN_R1
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[1] IP_CLIENT #1: STATE_MAIN_R1: sent MR1, expecting MI2
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[1] IP_CLIENT #1: NAT-Traversal: Result using RFC 3947 (NAT-Traversal): peer is NATed
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[1] IP_CLIENT #1: transition from state STATE_MAIN_R1 to state STATE_MAIN_R2
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[1] IP_CLIENT #1: STATE_MAIN_R2: sent MR2, expecting MI3
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[1] IP_CLIENT #1: Main mode peer ID is ID_IPV4_ADDR: '192.168.5.18'
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[1] IP_CLIENT #1: switched from "~L2TPppp0" to "~L2TPppp0" 
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #1: deleting connection "~L2TPppp0" instance with peer IP_CLIENT {isakmp=#0/ipsec=#0}
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #1: transition from state STATE_MAIN_R2 to state STATE_MAIN_R3
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #1: new NAT mapping for #1, was IP_CLIENT:500, now IP_CLIENT:4500
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #1: STATE_MAIN_R3: sent MR3, ISAKMP SA established {auth=OAKLEY_PRESHARED_KEY cipher=aes_256 prf=oakley_sha group=modp1024}
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #1: Dead Peer Detection (RFC 3706): enabled
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #1: ignoring informational payload, type IPSEC_INITIAL_CONTACT msgid=00000000
+Nov 30 10:40:35 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #1: received and ignored informational message
+Nov 30 10:40:36 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #1: the peer proposed: IP_SERVER/32:17/0 -&gt; 192.168.5.18/32:17/0
+Nov 30 10:40:36 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #2: responding to Quick Mode proposal {msgid:9ad4f3fa}
+Nov 30 10:40:36 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #2:     us: IP_SERVER&lt;%ppp0&gt;[@localhost.localdomain,+S=C]:17/%any
+Nov 30 10:40:36 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #2:   them: IP_CLIENT[192.168.5.18,+S=C]:17/0
+Nov 30 10:40:36 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #2: transition from state STATE_QUICK_R0 to state STATE_QUICK_R1
+Nov 30 10:40:36 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #2: STATE_QUICK_R1: sent QR1, inbound IPsec SA installed, expecting QI2
+Nov 30 10:40:36 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #2: Dead Peer Detection (RFC 3706): enabled
+Nov 30 10:40:36 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #2: transition from state STATE_QUICK_R1 to state STATE_QUICK_R2
+Nov 30 10:40:36 localhost pluto[18308]: "~L2TPppp0"[2] IP_CLIENT #2: STATE_QUICK_R2: IPsec SA established transport mode {ESP=&gt;0x08b4e8c1 &lt;0x7f2c7c6b xfrm=AES_256-HMAC_SHA1 NATOA=none NATD=IP_CLIENT:4500 DPD=enabled}
+
+</pre>
+
+	<p>now the log also shows the interface used for the connection (L2TPppp0)</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16813" class="journal has-details">
+    <div id="note-10">
+    <h4><a href="3317.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Marini</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16814" class="journal has-notes has-details">
+    <div id="note-11">
+    <h4><a href="3317.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-16814-notes">Released in nethserver-updates:
+	<ul>
+	<li>nethserver-ipsec-1.1.3-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

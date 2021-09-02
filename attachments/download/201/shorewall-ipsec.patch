@@ -1,0 +1,62 @@
+diff -Naur /etc/shorewall/interfaces /etc/shorewall.ori/interfaces
+--- /etc/shorewall/interfaces	2013-08-09 09:58:06.343919726 +0000
++++ /etc/shorewall.ori/interfaces	2013-08-09 09:57:12.506730576 +0000
+@@ -25,3 +25,4 @@
+ loc	eth0	tcpflags,nosmurfs
+ 
+ vpn        tun0
++l2tp    ppp+
+diff -Naur /etc/shorewall/policy /etc/shorewall.ori/policy
+--- /etc/shorewall/policy	2013-08-09 09:58:06.257917809 +0000
++++ /etc/shorewall.ori/policy	2013-08-09 09:57:12.455730427 +0000
+@@ -22,6 +22,12 @@
+ #				LEVEL	BURST		MASK
+ loc            vpn           ACCEPT
+ vpn            loc           ACCEPT
++ipsec          loc           ACCEPT
++loc            ipsec          ACCEPT
++loc             l2tp            ACCEPT # Allows local machines to connect to road warriors
++l2tp            loc             ACCEPT # Allows road warriors to connect to local machines
++l2tp            net             ACCEPT # Allows road warriors to connect to the Internet
++ipsec		net		ACCEPT
+ # Policies for traffic originating from the local LAN (loc)
+ #
+ # If you want to force clients to access the Internet via a proxy server
+@@ -36,12 +42,14 @@
+ # $FW to net policy to ACCEPT and remove the 'info' LOG LEVEL.
+ $FW		net		ACCEPT		info
+ $FW		loc		ACCEPT
++$FW		ipsec		ACCEPT
+ #
+ # Policies for traffic originating from the Internet zone (net)
+ #
+ net		$FW		DROP		info
+ net		loc		DROP		info
+ net		all		DROP		info
++
+ # THE FOLLOWING POLICY MUST BE LAST
+ all		all		REJECT		info
+ #LAST LINE -- ADD YOUR ENTRIES ABOVE THIS LINE -- DO NOT REMOVE
+diff -Naur /etc/shorewall/rules /etc/shorewall.ori/rules
+--- /etc/shorewall/rules	2013-08-09 09:58:06.403921064 +0000
++++ /etc/shorewall.ori/rules	2013-08-09 09:57:12.511730591 +0000
+@@ -34,6 +34,10 @@
+ #  (assumes that the loc-> net policy is ACCEPT).
+ #
+ Ping/ACCEPT     loc             $FW
++Ping/ACCEPT     ipsec           $FW
++Ping/ACCEPT     l2tp            $FW
++Ping/ACCEPT     $FW		ipsec
++Ping/ACCEPT     $FW		l2tp
+ 
+ #
+ #       Accept DNS connections from the firewall to the Internet
+diff -Naur /etc/shorewall/zones /etc/shorewall.ori/zones
+--- /etc/shorewall/zones	2013-08-09 09:58:06.432921711 +0000
++++ /etc/shorewall.ori/zones	2013-08-09 09:57:12.513730597 +0000
+@@ -24,3 +24,5 @@
+ loc	ipv4
+ net	ipv4
+ vpn     ipv4
++ipsec   ipsec
++l2tp    ipv4

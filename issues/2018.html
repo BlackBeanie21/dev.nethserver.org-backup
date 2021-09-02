@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #2018: Remove escaped #012 (LF) in system logs - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2018.atom" rel="alternate" title="NethServer 6 - Enhancement #2018: Remove escaped #012 (LF) in system logs" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #2018</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Remove escaped #012 (LF) in system logs</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">06/17/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">06/17/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-lib</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/157.html">v6.4-beta2</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Messages from <code>e-smith::event</code> in /var/log/messages have linefeed LF characters escaped: <pre>
+Jun 11 14:39:40 nethservice esmith::event[16134]: expanding /etc/postfix/vmailbox#012
+Jun 11 14:39:40 nethservice esmith::event[16134]: expanding /etc/postfix/internal_access#012
+Jun 11 14:39:40 nethservice esmith::event[16134]: expanding /etc/postfix/virtual#012
+Jun 11 14:39:42 nethservice esmith::event[16134]: adjusting service postfix (reload)#012
+Jun 11 14:39:42 nethservice esmith::event[16134]: Reloading postfix: [  OK  ]#015#012
+Jun 11 16:18:17 nethservice esmith::event[32745]: expanding /etc/postfix/vmailbox#012
+Jun 11 16:18:17 nethservice esmith::event[32745]: expanding /etc/postfix/internal_access#012
+Jun 11 16:18:17 nethservice esmith::event[32745]: expanding /etc/postfix/virtual#012
+Jun 11 16:18:17 nethservice esmith::event[32745]: expanding /etc/postfix/aliases#012
+Jun 11 16:18:20 nethservice esmith::event[32745]: Updated comment of group NETHESIS\faxmaster to Hylafax+ admins group#012
+Jun 11 16:18:20 nethservice esmith::event[32745]: adjusting service postfix (reload)#012
+Jun 11 16:18:21 nethservice esmith::event[32745]: Reloading postfix: [  OK  ]#015#012
+</pre></p>
+
+
+	<p>We'd love not having them...</p>
+
+
+	<p>Currently this issue has been solved by SME Server in rsyslogd configuration:<br /><a class="external" href="http://bugs.contribs.org/show_bug.cgi?id=7662">http://bugs.contribs.org/show_bug.cgi?id=7662</a></p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>esmith::Logger (PRINT): trim ending newline before sending data to syslog(). Refs <a href="2018.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Remove escaped #012 (LF) in system logs (CLOSED)">#2018</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-6212" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="2018.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6212-notes"><p>Not an elegant solution, but it shouldn't have big side effects.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6241" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="2018.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-6241-notes"><p>We can also trim whitespace in <code>esmith::Logger</code> module</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6242" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="2018.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6243" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="2018.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Due date</strong> set to <i>06/17/2013</i></li>
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Start date</strong> set to <i>06/17/2013</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
+       <li><strong>Estimated time</strong> set to <i>1.00</i></li>
+    </ul>
+    <div class="wiki" id="journal-6243-notes"><p><strong>Test case</strong></p>
+
+
+	<p>After an event has been signalled, log entries don't have '#012' escaped newlines:<pre>
+   # grep esmith::event /var/log/messages
+Jun 17 14:28:06 davidep2 esmith::event[10184]: Processing event: nethserver-samba-update 
+Jun 17 14:28:06 davidep2 esmith::event[10184]: Running event handler: /etc/e-smith/events/nethserver-samba-update/S00initialize-default-databases
+Jun 17 14:28:06 davidep2 esmith::event[10184]: Migrating existing database domains
+Jun 17 14:28:06 davidep2 esmith::event[10184]: Migrating existing database accounts
+Jun 17 14:28:06 davidep2 esmith::event[10184]: Migrating existing database networks
+Jun 17 14:28:06 davidep2 esmith::event[10184]: Migrating existing database configuration
+Jun 17 14:28:07 davidep2 esmith::event[10184]: S00initialize-default-databases=action|Event|nethserver-samba-update|Action|S00initialize-default-databases|Start|1371479286 129209|End|1371479287 360589|Elapsed|1.23138
+Jun 17 14:28:07 davidep2 esmith::event[10184]: Running event handler: /etc/e-smith/events/actions/generic_template_expand
+Jun 17 14:28:07 davidep2 esmith::event[10184]: expanding /etc/sudoers
+Jun 17 14:28:07 davidep2 esmith::event[10184]: expanding /etc/hosts
+Jun 17 14:28:07 davidep2 esmith::event[10184]: expanding /etc/nsswitch.conf
+Jun 17 14:28:08 davidep2 esmith::event[10184]: expanding /etc/krb5.conf
+...
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-6244" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="2018.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>80</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6245" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="2018.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6245-notes"><p>In <code>nethserver-testing</code><br />nethserver-lib-1.1.2-1.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6254" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="2018.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6254-notes"><blockquote>
+
+	<p>Currently this issue has been solved by SME Server in rsyslogd configuration:<br /><a class="external" href="http://bugs.contribs.org/show_bug.cgi?id=7662">http://bugs.contribs.org/show_bug.cgi?id=7662</a></p>
+
+
+</blockquote>
+
+	<p>Would you mind suggesting your fix to sme bugtracker?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6255" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="2018.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6255-notes"><p>Filippo Carletti wrote:</p>
+
+
+<blockquote>
+
+	<p>Would you mind suggesting your fix to sme bugtracker?</p>
+
+
+</blockquote>
+
+	<p>Of course! See <a class="external" href="http://bugs.contribs.org/show_bug.cgi?id=7662#c9">http://bugs.contribs.org/show_bug.cgi?id=7662#c9</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-6596" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="2018.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6597" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="2018.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>80</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-6597-notes"><p>After package update, extract from /var/log/messages:<br /><pre>
+Jul 23 15:54:02 localhost esmith::event[16744]: Processing event: firewall-adjust 
+Jul 23 15:54:02 localhost esmith::event[16744]: Running event handler: /etc/e-smith/events/firewall-adjust/S20firewall-adjust
+Jul 23 15:54:03 localhost esmith::event[16745]: Processing event: lokkit-save firewall-adjust
+Jul 23 15:54:03 localhost esmith::event[16745]: Running event handler: /etc/e-smith/events/actions/generic_template_expand
+Jul 23 15:54:03 localhost esmith::event[16745]: expanding /etc/sysconfig/system-config-firewall
+</pre></p>
+
+
+	<p>No escaped LF found.</p>
+
+
+	<p>Marking as <strong>VERIFIED</strong>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6822" class="journal has-notes has-details">
+    <div id="note-11">
+    <h4><a href="2018.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+diff --git a/root/etc/e-smith/events/actions/nethserver-mail-migrate-mailboxes b/root/etc/e-smith/events/actions/nethserver-mail-migrate-mailboxes
+index f240664..b76ae15 100755
+--- a/root/etc/e-smith/events/actions/nethserver-mail-migrate-mailboxes
++++ b/root/etc/e-smith/events/actions/nethserver-mail-migrate-mailboxes
+@@ -26,6 +26,7 @@ use NethServer::Migrate 'migrateDir';
+ use User::pwent;
+ use esmith::AccountsDB;
+ use File::Path;
++use File::Temp;
+ 
+ my $event = shift;
+ my $sourceDir = shift;
+@@ -33,6 +34,17 @@ my $errors = 0;
+ 
+ my $accountsDb = esmith::AccountsDB->open() or die("Could not open destination account db\n");
+ 
++
++#
++# Migrate admin's mailbox
++#
++if( ! migrateAdminMailbox($sourceDir)) {
++    $errors ++;
++}
++
++#
++# Migrate user mailboxes
++#
+ foreach my $accountRecord ($accountsDb->users()) {
+ 
+     my $userName = $accountRecord->key;
+@@ -81,3 +93,53 @@ if($errors > 0) {
+ # action ends:
+ exit(0);
+ 
++
++#
++#
++#
++sub migrateAdminMailbox($)
++{
++    my $srcMaildir = $_[0] . '/home/e-smith/Maildir';
++
++    # "By default the directory is deleted when the object goes out of scope":
++    my $tmpMaildir = File::Temp->newdir('/var/tmp/migrateAdminMailbox.XXXXXXXXX');
++
++    if( ! -d $srcMaildir) {
++	warn "[WARNING] admin's mailbox not found: skipped\n";
++	return 1; #  SUCCESS
++    }
++
++    if( ! migrateDir($srcMaildir, $tmpMaildir)) {
++	return 0;
++    }
++
++    system(qw(chown -R vmail.vmail), $tmpMaildir);
++    if($? != 0) {
++	warn "[ERROR] failed to change ownership of temporary maildir\n";
++	return 0;
++    }
++
++    system(qw(/usr/bin/doveadm import -u admin), 'maildir:' . $tmpMaildir, 'import-' . time(), 'ALL');
++    if($? != 0) {
++	warn "[ERROR] error while importing admin Maildir: $!\n";
++	return 0;
++    }
++
++    if( ! open(PH, '-|', '/usr/bin/doveadm mailbox list -u admin')) {
++	warn "[ERROR] could not list admin's mailbox\n";
++	return 0;
++    }
++
++    while( ! eof(PH)) {
++	my $mailboxName = <PH>;
++	chomp($mailboxName);
++	system(qw(/usr/bin/doveadm mailbox subscribe -u admin), $mailboxName);
++	if($? != 0) {
++	    warn "[WARNING] could not subscribe mailbox $mailboxName\n";
++	}
++    }
++
++    close(PH);
++    
++    return 1; # SUCCESS
++}

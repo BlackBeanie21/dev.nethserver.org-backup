@@ -1,0 +1,33 @@
+From 0bfeadc3459da2e4f272bb18d37ea8192183ba41 Mon Sep 17 00:00:00 2001
+From: Davide Principi <davide.principi@nethesis.it>
+Date: Fri, 26 Sep 2014 14:52:23 +0200
+Subject: [PATCH] user-create-unix: set memberUid attribute in primary group.
+ Refs #2808
+
+This makes an user always member of its primary group.
+
+Fixes addressbook and calendar sharing between users, in SOGo.
+---
+ root/etc/e-smith/events/actions/user-create-unix |  5 ++
+ scripts/ldapacl.pl                               | 81 ++++++++++++++++++++++++
+ 2 files changed, 86 insertions(+)
+ create mode 100755 scripts/ldapacl.pl
+
+diff --git a/root/etc/e-smith/events/actions/user-create-unix b/root/etc/e-smith/events/actions/user-create-unix
+index b159b51..99b60e1 100755
+--- a/root/etc/e-smith/events/actions/user-create-unix
++++ b/root/etc/e-smith/events/actions/user-create-unix
+@@ -108,6 +108,11 @@ if(system('/usr/sbin/lusermod', '-L', $userName) != 0) {
+ 
+ $acct->set_prop('__state', 'new');
+ 
++if( ! $directory->addGroupMembers($userName, $userName)) {
++    warn "[ERROR] failed to set $userName as member of its primary group\n";
++    $errors ++;
++}
++
+ if( ! $directory->addGroupMembers('locals', $userName)) {
+     warn "[ERROR] failed to add member to \"locals\" group\n";
+     $errors ++;
+1.9.3
+

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #3377: Email queue management: limit total email - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3377.atom" rel="alternate" title="NethServer 6 - Enhancement #3377: Email queue management: limit total email" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #3377</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="3386.html" title="#3386">« Previous</a> |
+      <a href="3383.html" title="#3383">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Email queue management: limit total email</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-mail-common</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/214.html">v6.7</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>When the number of email in postfix queue is above "some thousands", the queue management page reports a php memory allocation failure.<br />I propose to limit the maximum number of email handled per request to 1000.<br />If the total number is higher, remaining email can be handled after dealing with the first 1000.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Email queue management: limit total email. Refs <a href="3377.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Email queue management: limit total email (CLOSED)">#3377</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Email queue management: limit total email. Refs <a href="3377.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Email queue management: limit total email (CLOSED)">#3377</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-17193" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="3377.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Assignee</strong> set to <i>Filippo Carletti</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-17193-notes"><p>I'd change /usr/share/nethesis//NethServer/Module/Mail/Queue.php</p>
+
+
+<pre>
+-        $process = $this-&gt;getPlatform()-&gt;exec('/usr/bin/sudo /usr/sbin/postqueue -p | /usr/libexec/nethserver/mailq2json');
++        $process = $this-&gt;getPlatform()-&gt;exec('/usr/bin/sudo /usr/sbin/postqueue -p | head -n 4000 | /usr/libexec/nethserver/mailq2json');
+</pre>
+
+	<p>Every mail needs 4 lines, -n 4000 means 1000 emails.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-17265" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3377.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-17268" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="3377.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Filippo Carletti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-17272" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="3377.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-17272-notes"><p>In testing:<br />nethserver-mail-common-1.5.4-1.1.gfeb508d.ns6.noarch.rpm</p>
+
+
+	<p>Test case.<br />1. fill the queue<br /><pre>
+service postfix stop
+for i in $(seq 1 5000); do mail -stest filippo@example.org &lt;/root/anaconda-ks.cfg ; done
+</pre><br />2. access the queue management interface: php error<br />3. update and access queue management again</p>
+
+
+	<p>Note: during update postfix will be restarted and will try to deliver email<br />Remember to empty queue after test.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-17318" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="3377.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-17319" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="3377.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-17319-notes"><p>Before update, the GUI displays this error:<br /><pre>
+[1] Allowed memory size of 33554432 bytes exhausted (tried to allocate 101 bytes)
+
+See the system log for details.
+</pre></p>
+
+
+	<p>After the the update, the web interface displays about 1.3 K mails.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-17337" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="3377.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-17337-notes">Released in:
+	<ul>
+	<li>6.7/nethserver-updates: nethserver-mail-common-1.5.5-1.ns6.noarch.rpm</li>
+		<li>7.2/nethserver-base: nethserver-mail-common-1.5.5-1.28.gcd30ce8.ns7.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #2290: Non-spam messages in SpamFolder are retained indefinitely - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2290.atom" rel="alternate" title="NethServer 6 - Enhancement #2290: Non-spam messages in SpamFolder are retained indefinitely" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #2290</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Non-spam messages in SpamFolder are retained indefinitely</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">10/24/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">10/25/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-mail-server</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/183.html">v6.5-beta3</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>/etc/cron.daily/nethserver-mail-spam-expunge cronjob deletes messages older than <code>SpamRetentionTime</code> <strong>and</strong> marked as spam from the INBOX or the <code>junkmail</code> folder.</p>
+
+
+	<p>This rule does not match messages moved manually to <code>SpamFolder</code> to train the Bayes filter.</p>
+
+
+	<p>Expected behaviour is to expunge any message in <code>SpamFolder</code> older than <code>SpamRetentionTime</code>, assuming everything in <code>SpamFolder</code> is spam.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Expunge SPAM messages older than the retention time period. Refs <a href="2290.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Non-spam messages in SpamFolder are retained indefinitely (CLOSED)">#2290</a></p>
+
+
+	<p>If SpamFolder is not defined, only old messages with X-Spam-Flag: YES<br />header are expunged from the INBOX folder.  Otherwise any message<br />older than the retention time period is expunged from the given<br />SpamFolder.</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>squidclamav.conf template: redirect output to c-icap. Refs <a href="2290.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Non-spam messages in SpamFolder are retained indefinitely (CLOSED)">#2290</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-8135" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="2290.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-8136" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="2290.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Due date</strong> set to <i>10/25/2013</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>Start date</strong> set to <i>10/24/2013</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-8137" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="2290.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-8149" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="2290.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-8149-notes"><p><strong>Test environment</strong></p>
+
+
+	<ul>
+	<li>System date must be present (>=2013-10-25)</li>
+		<li>Install @nethserver-mail group</li>
+		<li>Create a test user account <code>user01</code>, first name <code>First</code>, last name <code>User</code></li>
+		<li>Create a test mail domain <code>vboxnet0.tld</code></li>
+		<li>Extract amavis mail sample spam mail messages:<pre>
+    # cd /root
+    # perl -pe 's/./chr(ord($&#38;)^255)/sge' &lt;/usr/share/doc/amavisd-new-2.8.0/test-messages/sample.tar.gz.compl | zcat | tar xvf -
+</pre></li>
+	</ul>
+
+
+	<p><strong>Test case 1</strong></p>
+
+
+	<ul>
+	<li>Inject samples into <code>user01</code> mailbox. Note that this command bypasses amavis checks and executes spamassassin as a pipe filter:<pre>
+    # for F in sample-*.txt; do cat $F  | spamassassin | sendmail -i user01 ; done
+</pre></li>
+		<li>Check that two INBOX messages have <code>[SPAM]</code> substring in subject field:<pre>
+    # doveadm search -u user01 mailbox INBOX subject [SPAM] | wc -l
+2
+</pre></li>
+		<li>Execute the cronjob manually:<pre>
+    # /etc/cron.daily/nethserver-mail-spam-expunge
+</pre></li>
+		<li>Count again. Must be 0:<pre>
+    # doveadm search -u user01 mailbox INBOX subject [SPAM] | wc -l
+0
+</pre></li>
+	</ul>
+
+
+<strong>Test case 2</strong>
+	<ul>
+	<li>In Mail UI module, Mailbox tab, enable <em>Move to "junkmail" folder</em> checkbox, then <code>save</code>.</li>
+		<li>Inject samples into <code>user01</code> mailbox:<pre>
+    # for F in sample-*.txt; do cat $F  | spamassassin | sendmail -i user01 ; done
+</pre></li>
+		<li>Check that two messages in <code>junkmail</code> folder have <code>[SPAM]</code> substring in subject field:<pre>
+    # doveadm search -u user01 mailbox junkmail subject [SPAM] | wc -l
+2
+</pre></li>
+		<li>Move all messages containing "amavisd" in subject into junkmail. There should be two messages with present date, and one very old message of such type:<pre>
+    # doveadm move -u user01 junkmail SUBJECT amavisd MAILBOX INBOX
+    # doveadm fetch -u user01 "date.sent" mailbox junkmail not deleted
+date.sent: 2003-07-23 21:30:00 (+0200)
+date.sent: 2003-07-23 21:30:00 (+0200)
+date.sent: 2004-04-14 18:36:33 (+0200)
+date.sent: 2013-10-25 15:23:36 (+0000)
+date.sent: 2013-10-25 15:23:40 (+0000)
+</pre></li>
+		<li>Execute the cronjob manually:<pre>
+    # /etc/cron.daily/nethserver-mail-spam-expunge
+</pre></li>
+		<li>Count again. Old messages must have been expunged:<pre>
+    # doveadm fetch -u user01 "date.sent" mailbox junkmail not deleted
+date.sent: 2013-10-25 15:23:36 (+0000)
+date.sent: 2013-10-25 15:23:40 (+0000)
+</pre></li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-8150" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="2290.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-8150-notes"><p>In nethserver-testing:<br />nethserver-mail-server-1.4.6-1.0git2f00e389.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-8999" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="2290.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-9000" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="2290.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-9000-notes"><p>Test case 1:<br /><pre>
+[root@test ~]#  doveadm search -u user1 mailbox INBOX subject [SPAM] | wc -l
+2
+[root@test ~]# /etc/cron.daily/nethserver-mail-spam-expunge
+[root@test ~]#  doveadm search -u user1 mailbox INBOX subject [SPAM] | wc -l
+0
+</pre></p>
+
+
+	<p>Test case 2:<br /><pre>
+[root@test ~]# doveadm fetch -u user1 "date.sent" mailbox junkmail not deleted
+date.sent: 2013-12-10 14:43:04 (+0000)
+date.sent: 2013-12-10 14:43:06 (+0000)
+</pre><br />[root@test ~]# doveadm search -u user1 mailbox junkmail subject [SPAM] | wc -l<br />0<br /></pre></p>
+
+
+	<p>Marking as <strong>VERIFIED</strong>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-9421" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="2290.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-9421-notes"><p>In nethserver-updates:<br />nethserver-samba-1.4.0-1.ns6.noarch.rpm<br />nethserver-directory-1.3.0-1.ns6.noarch.rpm<br />nethserver-dnsmasq-1.1.0-1.ns6.noarch.rpm<br />nethserver-shorewall-1.0.3-1.ns6.noarch.rpm<br />nethserver-mail-server-1.5.0-1.ns6.noarch.rpm<br />nethserver-mail-filter-1.1.4-1.ns6.noarch.rpm<br />nethserver-nethgui-1.3.0-1.ns6.noarch.rpm<br />nethserver-base-1.5.0-1.ns6.noarch.rpm<br />nethserver-lib-1.4.0-1.ns6.noarch.rpm<br />nethserver-httpd-admin-1.1.0-1.ns6.noarch.rpm<br />nethserver-yum-1.2.0-1.ns6.noarch.rpm<br />nethserver-ntopng-1.1.0-1.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

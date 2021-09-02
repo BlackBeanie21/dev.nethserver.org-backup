@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2780: Login to Samba fails after migration - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethserver controller-journals action-diff">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues selected">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Bug #2780</h2>
+
+<div class="text-diff">
+After <span class="diff_in">&quot;migration</span> <span class="diff_out">migration</span> from NethService/SME <span class="diff_in">Server&quot;:http://docs.nethserver.org/en/latest/migration.html</span> <span class="diff_out">Server (http://docs.nethserver.org/en/latest/migration.html)</span> you cannot access samba shares with <span class="diff_in">migrated users:&lt;pre&gt; 
+<br />    </span> <span class="diff_out">imported users: <br /><br /></span> # smbclient //localhost/miaibay -U nico 
+<br /> Enter nico&#x27;s password: 
+<br /> session setup failed: NT_STATUS_LOGON_FAILURE <span class="diff_in">
+<br /> &lt;/pre&gt;</span> <br /><br /> Examining imported users properties, they all have no flag over &quot;Shared Folders (Samba)&quot; option &quot;Services&quot; tab. 
+<br /> Even flagging the option the problem <span class="diff_in">remains:&lt;pre&gt; 
+<br />   </span> <span class="diff_out">remains: <br /><br /></span> # smbclient //localhost/miaibay -U nico 
+<br /> Enter nico&#x27;s password: 
+<br /> session setup failed: NT_STATUS_LOGON_FAILURE <span class="diff_in">
+<br /> &lt;/pre&gt; 
+<br /></span> <span class="diff_out"><br /><br /></span> Confirming user&#x27;s password through &quot;change password&quot; option <span class="diff_in">works around</span> <span class="diff_out">solves</span> the problem.
+</div>
+
+<p>
+  <a href="../../issues/2780.html" onclick="if (document.referrer != &quot;&quot;) {history.back(); return false;}">Back</a>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

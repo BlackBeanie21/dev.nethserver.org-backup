@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #1504: Undefined database references - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethserver controller-journals action-diff">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues selected">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Bug #1504</h2>
+
+<div class="text-diff">
+Possible undefined host DB: 
+<br /> &lt;pre&gt; <span class="diff_in">
+<br /> Oct 18 14:44:57 davidep4 esmith::event[6644]:</span> <span class="diff_out">
+<br /> </span> ERROR in <span class="diff_in">/etc/e- 
+<br />  smith/templates//etc/ethers/40dnsmasq-reservations:</span> <span class="diff_out">/etc/e-smith/templates//etc/ethers/40dnsmasq-reservations:</span> Program <span class="diff_in"> 
+<br /> </span> fragment delivered error &lt;&lt;Can&#x27;t call method &quot;hosts&quot; on an <span class="diff_in"> 
+<br /> </span> undefined value at <span class="diff_in">/etc/e-smith/templates//etc/ethers/40dnsma 
+<br />  sq-reservations</span> <span class="diff_out">/etc/e-smith/templates//etc/ethers/40dnsmasq-reservations</span> line 9.&gt;&gt; at template line 2#012 
+<br /> Oct 18 14:44:57 davidep4 esmith::event[6644]: ERROR: Template <span class="diff_in"> 
+<br /> </span> processing failed for //etc/ethers: 1 fragment generated <span class="diff_in">err 
+<br />  ors#012</span> <span class="diff_out">errors#012</span> 
+<br /> &lt;/pre&gt; <br /><br /> Reference to unexisting value (see #1081) 
+<br /> &lt;pre&gt; 
+<br /> Oct 18 14:44:57 davidep4 esmith::event[6644]: WARNING in <span class="diff_in">/etc/e- 
+<br />  smith/templates//etc/dnsmasq.conf/10base:</span> <span class="diff_out">/etc/e-smith/templates//etc/dnsmasq.conf/10base:</span> Use of uninitialized <span class="diff_in">
+<br />  </span> value $esmith::__TEMPLATE__::3::InternalInterface{&quot;Name&quot;} in <span class="diff_in"> 
+<br /> </span> concatenation (.) or string at <span class="diff_in">/etc/e-smith/templates//etc/dns 
+<br />  masq.conf/10base</span> <span class="diff_out">/etc/e-smith/templates//etc/dnsmasq.conf/10base</span> line 7.#012 
+<br /> &lt;/pre&gt;
+</div>
+
+<p>
+  <a href="../../issues/1504.html" onclick="if (document.referrer != &quot;&quot;) {history.back(); return false;}">Back</a>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

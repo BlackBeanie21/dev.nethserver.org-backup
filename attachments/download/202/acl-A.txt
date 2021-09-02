@@ -1,0 +1,64 @@
+aclbug=ibay
+    AclRead=
+    AclWrite=
+    Description=
+    GroupAccess=r
+    HttpAccess=private
+    HttpAliasType=default
+    HttpPasswordStatus=disabled
+    HttpStatus=enabled
+    HttpVirtualHost=__ANY__
+    OtherAccess=
+    OwningGroup=shared
+    SmbGuestAccessType=none
+    SmbRecycleBinStatus=disabled
+    SmbStatus=enabled
+
+# file: aclbug/
+# owner: root
+# group: shared
+# flags: -s-
+user::rwx
+user:apache:r-x
+group::r-x
+mask::r-x
+other::---
+default:user::rwx
+default:user:apache:r-x
+default:group::r-x
+default:mask::r-x
+default:other::---
+
+# file: aclbug/config.txt
+# owner: root
+# group: shared
+user::rw-
+user:apache:r-x	#effective:r--
+group::r-x	#effective:r--
+mask::r--
+other::---
+
+# file: aclbug/subdir1/
+# owner: root
+# group: shared
+# flags: -s-
+user::rwx
+user:apache:r-x
+group::r-x
+mask::r-x
+other::---
+default:user::rwx
+default:user:apache:r-x
+default:group::r-x
+default:mask::r-x
+default:other::---
+
+# file: aclbug/subdir1/test.dat
+# owner: root
+# group: shared
+user::rw-
+user:apache:r-x	#effective:r--
+group::r-x	#effective:r--
+mask::r--
+other::---
+

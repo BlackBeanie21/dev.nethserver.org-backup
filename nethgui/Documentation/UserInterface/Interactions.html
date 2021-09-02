@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>Interactions</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="interactions">
+<h1 class="title">Interactions</h1>
+<h2 class="subtitle" id="nethgui-user-interface-design">Nethgui User Interface Design</h2>
+
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="Interactions.html#apply-changes-save" id="id2">1&nbsp;&nbsp;&nbsp;Apply changes (Save)</a></li>
+<li><a class="reference internal" href="Interactions.html#notifications" id="id3">2&nbsp;&nbsp;&nbsp;Notifications</a><ul class="auto-toc">
+<li><a class="reference internal" href="Interactions.html#validation-errors" id="id4">2.1&nbsp;&nbsp;&nbsp;Validation errors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="Interactions.html#choose-and-fill" id="id5">3&nbsp;&nbsp;&nbsp;Choose and fill</a></li>
+<li><a class="reference internal" href="Interactions.html#table-crud" id="id6">4&nbsp;&nbsp;&nbsp;Table CRUD</a><ul class="auto-toc">
+<li><a class="reference internal" href="Interactions.html#read" id="id7">4.1&nbsp;&nbsp;&nbsp;Read</a></li>
+<li><a class="reference internal" href="Interactions.html#create" id="id8">4.2&nbsp;&nbsp;&nbsp;Create</a></li>
+<li><a class="reference internal" href="Interactions.html#update" id="id9">4.3&nbsp;&nbsp;&nbsp;Update</a></li>
+<li><a class="reference internal" href="Interactions.html#delete" id="id10">4.4&nbsp;&nbsp;&nbsp;Delete</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="Interactions.html#wizard" id="id11">5&nbsp;&nbsp;&nbsp;Wizard</a></li>
+<li><a class="reference internal" href="Interactions.html#tabs" id="id12">6&nbsp;&nbsp;&nbsp;Tabs</a></li>
+</ul>
+</div>
+<div class="section" id="apply-changes-save">
+<h1><a class="toc-backref" href="Interactions.html#id2">1&nbsp;&nbsp;&nbsp;Apply changes (Save)</a></h1>
+<p>The User wants to modify a form and save the changes.</p>
+<ol class="arabic simple">
+<li>The <em>Save</em> button is disabled</li>
+<li>User changes some values on the form displayed.</li>
+<li>The <em>Save</em> button becomes enabled.</li>
+<li>User clicks on the <em>Save</em> button at the bottom of the form.</li>
+<li>A <em>feedback message</em> appears on the top of the page to confirm
+everything is fine (or that some error has occurred).<ol class="loweralpha">
+<li>If everything is fine, <em>Save</em> button becomes disabled.</li>
+<li>Else the error message explains the problem and <em>Save</em> keeps enabled state.</li>
+</ol>
+</li>
+</ol>
+<p>After the last step:</p>
+<pre class="literal-block">
++----------------------------------------+
+|                                       X|
+| Congratulations! - feedback message    |
+|                                        |
++----------------------------------------+
+
+( ) Unselected
+(o) Selected
+   .----------------------------------.
+   |                                  |
+   |       Insert text [Hello_____]   |
+   | Another insertion [World!____]   |
+   |                                  |
+   |  [x] Option 1                    |
+   |  [x] Option 2                    |
+   |  [ ] Option 3                    |
+   +----------------------------------+
+
+                                  | Save |
+</pre>
+</div>
+<div class="section" id="notifications">
+<h1><a class="toc-backref" href="Interactions.html#id3">2&nbsp;&nbsp;&nbsp;Notifications</a></h1>
+<p>The User has performed some kind of <em>system change
+operation</em>. Depending on the operation outcome, there can be three
+types of messages:</p>
+<ol class="arabic simple">
+<li><strong>Success</strong> message, if the change was successful and
+accomplished the wished effect.</li>
+<li><strong>Warning</strong> message, if the change was successful, but brought the
+system in an unexpected state that must be embossed.</li>
+<li><strong>Error</strong> message, if the change was unsuccessful.</li>
+</ol>
+<p>Messages can be displayed in two ways: (1) embedded frame, (2) modal dialog.</p>
+<p>The <strong>embedded frame</strong> is displayed on the top of the screen. The User can
+close it by clicking on the &quot;X&quot; button, or ignore it:</p>
+<pre class="literal-block">
++----------------------------------------+
+|                                     [X]|
+| Warning: the specified ntp host is     |
+|          unreachable!                  |
+|                                        |
++----------------------------------------+
+</pre>
+<p>The <strong>modal dialog box</strong> is ovelayed on the screen and represents a
+mandatory decision point.</p>
+<ul class="simple">
+<li>Each decision closes the dialog and possibly causes a further action
+to occur.</li>
+<li>The last button has the same effect of a click on the dialog
+dismission button <tt class="docutils literal">[X]</tt>.</li>
+</ul>
+<pre class="literal-block">
++----------------------------------------+
+| Warning                             [X]|
+|                                        |
+| The specified ntp host is unreachable! |
+|                                        |
+|             [ Disable NTP ] [ Ignore ] |
++----------------------------------------+
+</pre>
+<div class="section" id="validation-errors">
+<h2><a class="toc-backref" href="Interactions.html#id4">2.1&nbsp;&nbsp;&nbsp;Validation errors</a></h2>
+<p>Validation errors are a special case of <a class="reference internal" href="Interactions.html#notifications">Notifications</a>.</p>
+<ol class="arabic simple">
+<li>The User submitted some invalid input data.</li>
+<li>An embedded frame message appears, reporting the problems as a
+list. For each invalid input field:</li>
+</ol>
+<blockquote>
+<ol class="arabic simple">
+<li>The label is displayed. A click on the label give focus to the
+input field.</li>
+<li>A text explaining why the problem occurred follows.</li>
+</ol>
+</blockquote>
+<ol class="arabic simple" start="3">
+<li>The invalid input fields are embossed in a different color/style.</li>
+</ol>
+<p>For instance:</p>
+<pre class="literal-block">
++-------------------------------------------------+
+|                                              [X]|
+|    Email: invalid email address                 |
+| Username: only lowercase letters are allowed    |
+|                                                 |
++-------------------------------------------------+
+
+  First Name:  [John______________]
+
+   Last Name:  [Doe_______________]
+
+       Email: *[johndo&#64;com________]*
+
+    Username: *[JohnDoe___________]*
+</pre>
+</div>
+</div>
+<div class="section" id="choose-and-fill">
+<h1><a class="toc-backref" href="Interactions.html#id5">3&nbsp;&nbsp;&nbsp;Choose and fill</a></h1>
+<ol class="arabic simple">
+<li>A set of exclusive choices represented by radio buttons or a checkbox is displayed.</li>
+<li>The User chooses, by clicking on the control or its textual label.</li>
+<li>A fieldset appears.</li>
+</ol>
+<p>Initial state (radio buttons):</p>
+<pre class="literal-block">
+(o) Unselected
+( ) Selected
+</pre>
+<p>Since the User has clicked on &quot;Selected&quot; a fieldset appears (radio buttons):</p>
+<pre class="literal-block">
+( ) Unselected
+(o) Selected
+   .--------------------
+   |
+   |       Insert text [__________]
+   | Another insertion [__________]
+   |
+   |  [ ] Option 1
+   |  [ ] Option 2
+   |  [ ] Option 3
+   |
+</pre>
+<p>Initial state (checkbox):</p>
+<pre class="literal-block">
+[ ] Activate feature
+</pre>
+<p>Checkbox is checked:</p>
+<pre class="literal-block">
+[x] Activate feature
+   .--------------------
+   |
+   |       Insert text [__________]
+   | Another insertion [__________]
+   .
+   .
+   .
+</pre>
+</div>
+<div class="section" id="table-crud">
+<h1><a class="toc-backref" href="Interactions.html#id6">4&nbsp;&nbsp;&nbsp;Table CRUD</a></h1>
+<p>Sample table:</p>
+<pre class="literal-block">
++--------------+----------------+---------------+-----------------------+
+| User name  v | First Name     | Last Name     | Actions               |
++--------------+----------------+---------------+-----------------------+
+| johns        | John           | Smith         | [ Modify ] [ Delete ] |
++--------------+----------------+---------------+-----------------------+
+| scott        | Scott          | Tiger         | [ Modify ] [ Delete ] |
++--------------+----------------+---------------+-----------------------+
+
+                                                      [ Create new User ]
+</pre>
+<div class="section" id="read">
+<h2><a class="toc-backref" href="Interactions.html#id7">4.1&nbsp;&nbsp;&nbsp;Read</a></h2>
+<p>Data is displayed in tabular form. Each row of the table ends with two
+buttons:</p>
+<ol class="arabic simple">
+<li>Modify</li>
+<li>Delete</li>
+</ol>
+<p>The first row of the table contains the column headers. A click on the
+header <em>may</em> change the order of the rows - this depends on the table
+desired behaviour.</p>
+</div>
+<div class="section" id="create">
+<h2><a class="toc-backref" href="Interactions.html#id8">4.2&nbsp;&nbsp;&nbsp;Create</a></h2>
+<p>The User wants to create a new table element.</p>
+<ol class="arabic simple">
+<li>The User clicks on the <em>Create new...</em> button.</li>
+<li>A form appears with necessary fields <a class="footnote-reference" href="Interactions.html#form-appears" id="id1">[1]</a>.</li>
+<li>The User compiles the form and confirms (i.e. clicks a <em>Create</em>
+button).</li>
+<li>If input is validated, a successful feedback is displayed on the
+top of the screen.</li>
+<li>The original table is refreshed. Depending on sorting and
+pagination, the created row can be immediatly visible or not.<ol class="loweralpha">
+<li>If the record is visible its temporarly highlighted.</li>
+<li>If the record is not visibile, the feedback message offers a
+shortcut to its position.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="update">
+<h2><a class="toc-backref" href="Interactions.html#id9">4.3&nbsp;&nbsp;&nbsp;Update</a></h2>
+<p>The User wants to change an existing table element.</p>
+<ol class="arabic simple">
+<li>The User clicks on the <em>Modify</em> button of the element row.</li>
+<li><a class="reference internal" href="Interactions.html#create">Create</a> scenario applies, only form fields are pre-compiled with
+actual record values.</li>
+</ol>
+</div>
+<div class="section" id="delete">
+<h2><a class="toc-backref" href="Interactions.html#id10">4.4&nbsp;&nbsp;&nbsp;Delete</a></h2>
+<p>The User wants to delete a table element</p>
+<ol class="arabic simple">
+<li>The User clicks on the <em>Delete</em> button of the element row.</li>
+<li>A modal dialog asks for confirmation.</li>
+<li>The User confirm deletion.</li>
+<li>Successful feedback is displayed.</li>
+<li>The deleted row folds up.</li>
+<li>The original table is refreshed, coherently with its current
+sorting and pagination state.</li>
+</ol>
+<table class="docutils footnote" frame="void" id="form-appears" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="Interactions.html#id1">[1]</a></td><td>(1) A modal dialog box containing form fields
+appears, overlaying the screen or (2) The table is hidden and
+the form fields appear in its place.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="wizard">
+<h1><a class="toc-backref" href="Interactions.html#id11">5&nbsp;&nbsp;&nbsp;Wizard</a></h1>
+<p>A wizard guides the User through a stepped procedure. Every step is a
+form. For each step:</p>
+<ol class="arabic">
+<li><p class="first">The User fills the form.</p>
+</li>
+<li><p class="first">The Users clicks on the <em>Next</em> button .</p>
+</li>
+<li><p class="first">The form is validated.</p>
+<p>a) In case of validation error the standard validation error
+procedure and visual feedback applies. See <a class="reference internal" href="Interactions.html#validation-errors">Validation errors</a>.</p>
+</li>
+<li><p class="first">The next step form is displayed</p>
+</li>
+</ol>
+<p>On the last step the <em>Save</em> button is displayed instead of <em>Next</em>.</p>
+<p>Notes:</p>
+<ul class="simple">
+<li>At every step except the first a <em>Previous</em> button allows the User
+to switch back to previous step.</li>
+<li>Field values are remembered while the User moves forward and backward.</li>
+<li>Moreover the next step may be dependent on values inserted on the
+previous one <em>(branches)</em>.</li>
+</ul>
+<p>Wizard at intermediate step:</p>
+<pre class="literal-block">
+1.  Account type
+2. *Personal informations*
+3.  Password settings
+4.  Confirmation
+
+First Name [___________________]
+ Last Name [___________________]
+   Country [___________|v]
+
+                        [ Previous ] [   Next   ]
+</pre>
+<p>A brief summary of all the wizard steps is displayed on the top of
+each form, emphasizing the current step.</p>
+</div>
+<div class="section" id="tabs">
+<h1><a class="toc-backref" href="Interactions.html#id12">6&nbsp;&nbsp;&nbsp;Tabs</a></h1>
+<p>The User faces a complex configuration.  Tabs allows grouping of
+strictly related form controls into distinct (and loosely related)
+tab-pages:</p>
+<pre class="literal-block">
+ .-----------. .-----------.
+ |   Tab 1   | |   Tab 2   |
+-+           +-+-----------+-----------...
+
+// form controls omitted
+
+                                 [ Save ]
+------------------------------------------
+</pre>
+<ol class="arabic simple">
+<li>&quot;Tab 1&quot; (see figure) is currently selected.</li>
+<li>The User changes some values in &quot;Tab 1&quot; form.</li>
+<li>The User switches to &quot;Tab 2&quot; by clicking on its label.</li>
+<li>The User changes some values in &quot;Tab 2&quot; form.</li>
+<li>The User click on &quot;Save&quot; button of &quot;Tab 2&quot; form.<ol class="loweralpha">
+<li>Validation occurs on &quot;Tab 2&quot; only.</li>
+<li>Only &quot;Tab 2&quot; form controls are saved.</li>
+</ol>
+</li>
+</ol>
+<ol class="arabic simple" start="8">
+<li>The User switches back to &quot;Tab 1&quot; again: previously changed values
+in &quot;Tab 1&quot; are <strong>still unsaved</strong>.</li>
+</ol>
+<p>Thus each page keeps an indipendent validation and saving state.</p>
+</div>
+</div>
+</body>
+</html>

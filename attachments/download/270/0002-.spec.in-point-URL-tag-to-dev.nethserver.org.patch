@@ -1,0 +1,25 @@
+From 7f3fc1c3a01754167b4786016348f6030a739a2f Mon Sep 17 00:00:00 2001
+From: Davide Principi <davide.principi@nethesis.it>
+Date: Mon, 18 Aug 2014 12:52:33 +0200
+Subject: [PATCH 2/2] *.spec.in: point URL tag to dev.nethserver.org
+
+---
+ nethserver-phpmyadmin.spec.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/nethserver-phpmyadmin.spec.in b/nethserver-phpmyadmin.spec.in
+index 1ea0c9a..d0057de 100644
+--- a/nethserver-phpmyadmin.spec.in
++++ b/nethserver-phpmyadmin.spec.in
+@@ -4,7 +4,7 @@ Version: @@VERSION@@
+ Release: @@RELEASE@@
+ License: GPL
+ Source: %{name}-%{version}.tar.gz
+-URL: http://www.phpmyadmin.net/ 
++URL: http://dev.nethserver.o/projects/nethforge/wiki/%{name}
+ BuildArch: noarch
+ 
+ Requires: mod_authnz_external
+-- 
+1.9.3
+

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #3135: Postfix: in-memory address verification database - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3135.atom" rel="alternate" title="NethServer 6 - Enhancement #3135: Postfix: in-memory address verification database" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #3135</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="3040.html" title="#3040">« Previous</a> |
+      <a href="2940.html" title="#2940">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Postfix: in-memory address verification database</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-mail-common</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/209.html">v6.6</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>The address verification database is now stored on disk, in <code>/var/lib/postfix/verify.db</code>.</p>
+
+
+	<p>It can be reset on <code>postfix reload</code>, preventing any possible disalignment with actual accounts, by storing it in memory.</p>
+
+
+	<p>See <a class="external" href="http://www.postfix.org/postconf.5.html#address_verify_map">http://www.postfix.org/postconf.5.html#address_verify_map</a></p>
+  </div>
+</div>
+<div class="attachments">
+<p><a href="../attachments/download/329/main.cf.html" class="icon icon-attachment">main.cf</a>  
+  <span class="size">(5.02 KB)</span>
+    <span class="author">Vasco Castelo Branco, 06/22/2015 12:46 PM</span>
+  </p>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-718">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="1356" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="1356.html" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #1356</a>: Address verification on Relay hosts
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date">07/27/2012</td>
+  <td class="due_date">07/27/2012</td>
+  <td class="buttons"></td>
+  </tr>
+  <tr class="issue hascontextmenu" id="relation-766">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="3347" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="3347.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #3347</a>: Disable Postfix address_verify_negative_cache 
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/3135/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="3135.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Use in-memory DB for address verification. Refs <a href="3135.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Postfix: in-memory address verification database (CLOSED)">#3135</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-15060" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="3135.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="1356.html" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #1356</a>: Address verification on Relay hosts</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15590" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3135.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15593" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="3135.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-15593-notes"><p><strong>Test case</strong></p>
+
+
+	<ul>
+	<li>Take note of <code>verify.db</code> modification date:<pre>
+    # stat /var/lib/postfix/verify.db 
+  File: `/var/lib/postfix/verify.db'
+  Size: 90112         Blocks: 176        IO Block: 4096   regular file
+Device: fd01h/64769d    Inode: 9176011     Links: 1
+Access: (0644/-rw-r--r--)  Uid: (   89/ postfix)   Gid: (   89/ postfix)
+Access: 2015-06-11 14:39:15.557129531 +0200
+Modify: 2015-06-11 14:39:15.557129531 +0200
+Change: 2015-06-11 14:39:15.557129531 +0200
+</pre></li>
+		<li>upgrade to modified version</li>
+		<li>send an email <em>from an external SMTP client on port 25</em> to a locally delivered mailbox</li>
+		<li>In <code>/var/log/maillog</code> appears a line containing <code>cache internal</code>, like this:<pre>
+Jun 11 13:01:18 vm3 postfix/verify[11042]: cache internal:verify full cleanup: retained=0 dropped=0 entries
+</pre></li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-15594" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="3135.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-15594-notes"><p>In nethserver-testing:<br />nethserver-mail-common-1.4.5-1.1.g047ba6a.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15629" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="3135.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ee549982798e3db27940dc43b391c43a?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Vasco Castelo Branco</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15666" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="3135.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ee549982798e3db27940dc43b391c43a?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-15666-notes"><p>Can not verify.</p>
+
+
+	<p>verify.db does not exist in /var/lib/postfix</p>
+
+
+	<p>My Test<br />Clean Install and full update<br />Installation of File server, email and SMTP connector</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15671" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="3135.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-15671-notes"><p>Vasco Castelo Branco wrote:</p>
+
+
+<blockquote>
+
+	<p>verify.db does not exist in /var/lib/postfix</p>
+
+
+</blockquote>
+
+	<p>What does <code>`rpm -qi nethserver-mail-common`</code> says?</p>
+
+
+<blockquote>
+
+	<p>Clean Install and full update</p>
+
+
+</blockquote>
+
+	<p>Did you update with <code>nethserver-testing</code> repo enabled?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15693" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="3135.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ee549982798e3db27940dc43b391c43a?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-15693-notes"><p>rpm -qi nethserver-mail-common</p>
+
+
+	<p>Name        : nethserver-mail-common       Relocations: (not relocatable)<br />Version     : 1.4.5                             Vendor: NethServer<br />Release     : 1.10.geacb265.ns6             Build Date: Tue 16 Jun 2015 01:47:36 PM WEST<br />Install Date: Thu 18 Jun 2015 04:28:55 PM WEST      Build Host: davidep1.nethesis.it<br />Group       : Unspecified                   Source RPM: nethserver-mail-common-1.4.5-1.10.geacb265.ns6.src.rpm<br />Size        : 113963                           License: GPL<br />Signature   : DSA/SHA1, Tue 16 Jun 2015 01:47:40 PM WEST, Key ID e23a79e1f25b5f70<br />URL         : <a class="external" href="http://dev.nethserver.o/projects/nethserver/wiki/nethserver-mail-common">http://dev.nethserver.o/projects/nethserver/wiki/nethserver-mail-common</a><br />Summary     : Common configuration for mail packages<br />Description :<br />Common configuration for mail packages, based on Postfix.</p>
+
+
+	<p>Install<br />yum --enablerepo=nethserver-testing install nethserver-mail-common</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15707" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="3135.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-15707-notes"><p>Davide Principi wrote:</p>
+
+
+<blockquote>
+
+	<p>Vasco Castelo Branco wrote:</p>
+
+
+<blockquote>
+
+	<p>verify.db does not exist in /var/lib/postfix</p>
+
+
+</blockquote></blockquote>
+
+	<p>Maybe the <code>verify.db</code> file does not exist in a pristine installation and is created the first time a message is delivered.</p>
+
+
+	<p><del>So you should check an "existing" mail server. To replicate a such one config this could be a procedure:</del></p>
+
+
+	<ul>
+	<li><del>install nethserver-mail-server from nethserver-updates repo</del></li>
+		<li><del>send a mail to a local account</del></li>
+		<li><del>check verify.db existence</del></li>
+		<li><del>start test case</del></li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-15720" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="3135.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ee549982798e3db27940dc43b391c43a?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-15720-notes"><p>Install and update NethServer (main repo)<br />Install File server and email<br />Configure email and domain<br />Configure user1 and user2<br />Send a mail from user1 to user2 sucefully<br />Reply from user2 to user1 sucefully</p>
+
+
+	<p>Veryfy.db does not exist</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15721" class="journal has-notes">
+    <div id="note-11">
+    <h4><a href="3135.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ee549982798e3db27940dc43b391c43a?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-15721-notes"><p>Is not present at my main server also</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15722" class="journal has-notes">
+    <div id="note-12">
+    <h4><a href="3135.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-15722-notes"><p>Vasco Castelo Branco wrote:</p>
+
+
+<blockquote>
+
+	<p>Is not present at my main server also</p>
+
+
+</blockquote>
+
+	<p>Could you attach <code>/etc/postfix/main.cf</code>?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15736" class="journal has-notes has-details">
+    <div id="note-13">
+    <h4><a href="3135.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ee549982798e3db27940dc43b391c43a?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>File</strong> <a href="../attachments/download/329/main.cf.html">main.cf</a> added</li>
+    </ul>
+    <div class="wiki" id="journal-15736-notes"><p>/etc/postfix/main.cf</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15737" class="journal has-notes has-details">
+    <div id="note-14">
+    <h4><a href="3135.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> changed from <i>Vasco Castelo Branco</i> to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    <div class="wiki" id="journal-15737-notes"><p>I don't see anything strange in <a href="../attachments/download/329/main.cf.html" class="attachment">main.cf</a>. Before investigating further Vasco's setup, I'd ask Giacomo to test this issue on his side, too.</p>
+
+
+	<p>I've done some tests on real mail servers (!) and seemed all ok, so I'm pretty sure I'm missing something in my test case instructions that replicates the expected environment.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15755" class="journal has-notes">
+    <div id="note-15">
+    <h4><a href="3135.html#note-15" class="journal-link">#15</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-15755-notes"><p>This is the new procedure to trigger mail address verification (and subsequent <code>verify.db</code> creation).</p>
+
+
+	<p>[So you should check an "existing" mail server. To replicate a such one config this could be a procedure]</p>
+
+
+	<ul>
+	<li>clean NethServer 6.6 installation</li>
+		<li><code>yum install @nethserver-mail</code></li>
+		<li>create an <em>Email address</em> for <code>admin</code></li>
+		<li>connect to port 25 <b>from a different host</b> and send a mail. This is a sample <code>nc</code> SMTP session:<pre>
+     $ nc -C 192.168.122.179 25
+220 vm5.vnet1.tld ESMTP Postfix
+ehlo gmail.com
+250-vm5.vnet1.tld
+250-PIPELINING
+250-SIZE 20000000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250 DSN
+mail from: &lt;me@gmail.com&gt;
+250 2.1.0 Ok
+rcpt to: &lt;admin@vnet1.tld&gt;
+250 2.1.5 Ok
+data
+354 End data with &lt;CR&gt;&lt;LF&gt;.&lt;CR&gt;&lt;LF&gt;
+.
+250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 6DB4D2968
+quit
+</pre></li>
+		<li>check <code>verify.db</code> existence</li>
+		<li>start test case</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-15757" class="journal has-details">
+    <div id="note-16">
+    <h4><a href="3135.html#note-16" class="journal-link">#16</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15763" class="journal has-notes has-details">
+    <div id="note-17">
+    <h4><a href="3135.html#note-17" class="journal-link">#17</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-15763-notes"><p>In nethserver-updates:<br />nethserver-mail-common-1.5.0-1.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16931" class="journal has-details">
+    <div id="note-18">
+    <h4><a href="3135.html#note-18" class="journal-link">#18</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="3347.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #3347</a>: Disable Postfix address_verify_negative_cache </i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

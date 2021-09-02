@@ -1,0 +1,78 @@
+From 37b325b2782c034308e0688750d829f16c0780d4 Mon Sep 17 00:00:00 2001
+From: Davide Principi <davide.principi@nethesis.it>
+Date: Mon, 29 Sep 2014 12:37:09 +0200
+Subject: [PATCH] esmith::db: safely decode DB data to UTF-8 strings. Refs
+ #2786
+
+JSON functions require properly decoded UTF-8 strings to work correctly.
+---
+ lib/perl/esmith/db.pm | 16 +++++++---------
+ root/sbin/e-smith/db  |  4 ++--
+ 2 files changed, 9 insertions(+), 11 deletions(-)
+
+diff --git a/lib/perl/esmith/db.pm b/lib/perl/esmith/db.pm
+index 4b75a75..9319957 100644
+--- a/lib/perl/esmith/db.pm
++++ b/lib/perl/esmith/db.pm
+@@ -8,7 +8,7 @@ package esmith::db;
+ 
+ use esmith::config;
+ use strict;
+-
++use Encode qw(encode decode);
+ 
+ =head1 NAME
+ 
+@@ -439,23 +439,21 @@ sub db_prepare_json {
+     }
+     
+     foreach (@list) {
+-	my %tmp = ('name' => $_);
+-        my $type = db_get_type($hash, $_);
++	my %tmp = ('name' => decode('UTF-8', $_, Encode::FB_DEFAULT));
++        my $type = db_get_type($hash, $_); 
+ 
+ 	# Skip empty types:
+         if ( ! defined $type) {
+ 	    next;
+         } 
+ 	
+-	$tmp{'type'} =  $type;
++	$tmp{'type'} = decode('UTF-8', $type, Encode::FB_DEFAULT);
+ 
+         my %properties = db_get_prop($hash, $_);
+-        
+-	# Add properties if present:
+-	if( keys %properties)  {
+-	    $tmp{'props'} = \%properties;
++	while(my($pk, $pv) = each %properties) {
++	    $tmp{'props'}->{decode('UTF-8', $pk, Encode::FB_DEFAULT)} = decode('UTF-8', $pv, Encode::FB_DEFAULT);
+ 	}
+-
++        
+         push(@ret, \%tmp);
+     }
+ 
+diff --git a/root/sbin/e-smith/db b/root/sbin/e-smith/db
+index 31fcc1d..805c11a 100755
+--- a/root/sbin/e-smith/db
++++ b/root/sbin/e-smith/db
+@@ -193,13 +193,13 @@ sub DB_print
+ sub DB_dump_json
+ {
+     my $key = shift;
+-    print to_json($db->prepare_json($key), {utf8 => 0, pretty => 0, allow_nonref => 1});
++    print to_json($db->prepare_json($key), {utf8 => 1, pretty => 0, allow_nonref => 1});
+ }
+ 
+ sub DB_dump_json_pretty
+ {
+     my $key = shift;
+-    print to_json($db->prepare_json($key), {utf8 => 0, pretty => 1, allow_nonref => 1}) . "\n";
++    print to_json($db->prepare_json($key), {utf8 => 1, pretty => 1, allow_nonref => 1}) . "\n";
+ }
+ 
+ sub DB_keys
+-- 
+1.9.3
+

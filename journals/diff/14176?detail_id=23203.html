@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #3056: Protect built-int zones in Firewall.pm library - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethserver controller-journals action-diff">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues selected">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Enhancement #3056</h2>
+
+<div class="text-diff">
+The Firewall.pm library can map firewall objects to the corresponding zone. 
+<br /> For example, given a green interface with IP 192.168.1.2 and an host object &quot;test&quot; with ip address 192.168.1.55: 
+<br /> &lt;pre&gt; 
+<br /> use NethServer::Firewall; 
+<br /> my $fw = new NethServer::Firewall(); 
+<br /> my $src_addr = $fw-&gt;getAddress(&quot;test&quot;); 
+<br /> my $z = $fw-&gt;getZone($src_addr); 
+<br /> print &quot;$src_addr ** $fw&quot;; 
+<br /> &lt;/pre&gt; <br /><br /> Below code will print: 
+<br /> &lt;pre&gt; 
+<br /> 192.168.1.55 ** loc:192.168.1.55 
+<br /> &lt;/pre&gt; <br /><br /> The library can also handle built-in zone names. For example, executing this code: 
+<br /> &lt;pre&gt; 
+<br /> use NethServer::Firewall; 
+<br /> my $fw = new NethServer::Firewall(); 
+<br /> my $src_addr = <span class="diff_in">$fw-&gt;getAddress(&quot;role;green&quot;);</span> <span class="diff_out">$fw-&amp;gt;getAddress(&amp;quot;green&amp;quot;);</span> 
+<br /> my $z = $fw-&gt;getZone($src_addr); 
+<br /> print &quot;$src_addr ** $z&quot;; 
+<br /> &lt;/pre&gt; <br /><br /> the output will be: 
+<br /> &lt;pre&gt; 
+<br /> loc ** loc 
+<br /> &lt;/pre&gt; 
+<br /> where _loc_ is the Shorewall mapping for _green_ zone. <br /><br /> But, if there is a resolvable host name called *loc* for example with IP 1.2.3.4, the library will fail and will print: 
+<br /> &lt;pre&gt; 
+<br /> loc ** net:loc 
+<br /> &lt;/pre&gt; <br /><br /> The problem is caused by perl    NetAddr::IP library. 
+<br /> To avoid this behavior all built-in zone names must be protected inside the Firewall.pm library.
+</div>
+
+<p>
+  <a href="../../issues/3056.html" onclick="if (document.referrer != &quot;&quot;) {history.back(); return false;}">Back</a>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

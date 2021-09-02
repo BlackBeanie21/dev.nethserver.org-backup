@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>Nethgui framework</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="nethgui-framework">
+<h1 class="title">Nethgui framework</h1>
+<h2 class="subtitle" id="programmer-guide">Programmer guide</h2>
+
+<p>This guide is addressed to the Programmer (You) who wants to build a
+web user interface for the administration of a GNU/Linux system.</p>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This document refers to an early framework version. It is
+outdated and needs reworking.</p>
+</div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="ProgrammerGuide.html#overview" id="id8">1&nbsp;&nbsp;&nbsp;Overview</a></li>
+<li><a class="reference internal" href="ProgrammerGuide.html#the-host-configuration-database" id="id9">2&nbsp;&nbsp;&nbsp;The Host Configuration Database</a></li>
+<li><a class="reference internal" href="ProgrammerGuide.html#modules" id="id10">3&nbsp;&nbsp;&nbsp;Modules</a><ul class="auto-toc">
+<li><a class="reference internal" href="ProgrammerGuide.html#module-dissection" id="id11">3.1&nbsp;&nbsp;&nbsp;Module dissection</a><ul class="auto-toc">
+<li><a class="reference internal" href="ProgrammerGuide.html#parameters" id="id12">3.1.1&nbsp;&nbsp;&nbsp;Parameters</a></li>
+<li><a class="reference internal" href="ProgrammerGuide.html#validators" id="id13">3.1.2&nbsp;&nbsp;&nbsp;Validators</a></li>
+<li><a class="reference internal" href="ProgrammerGuide.html#adapters" id="id14">3.1.3&nbsp;&nbsp;&nbsp;Adapters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="ProgrammerGuide.html#module-composition" id="id15">3.2&nbsp;&nbsp;&nbsp;Module composition</a><ul class="auto-toc">
+<li><a class="reference internal" href="ProgrammerGuide.html#list-composition" id="id16">3.2.1&nbsp;&nbsp;&nbsp;List composition</a></li>
+<li><a class="reference internal" href="ProgrammerGuide.html#controller-composition" id="id17">3.2.2&nbsp;&nbsp;&nbsp;Controller composition</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="ProgrammerGuide.html#view-layer" id="id18">4&nbsp;&nbsp;&nbsp;View layer</a><ul class="auto-toc">
+<li><a class="reference internal" href="ProgrammerGuide.html#template" id="id19">4.1&nbsp;&nbsp;&nbsp;Template</a></li>
+<li><a class="reference internal" href="ProgrammerGuide.html#renderer" id="id20">4.2&nbsp;&nbsp;&nbsp;Renderer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="ProgrammerGuide.html#implementing-a-simple-module" id="id21">5&nbsp;&nbsp;&nbsp;Implementing a simple Module</a></li>
+<li><a class="reference internal" href="ProgrammerGuide.html#module-testing" id="id22">6&nbsp;&nbsp;&nbsp;Module Testing</a></li>
+<li><a class="reference internal" href="ProgrammerGuide.html#localization" id="id23">7&nbsp;&nbsp;&nbsp;Localization</a></li>
+<li><a class="reference internal" href="ProgrammerGuide.html#the-table-controller" id="id24">8&nbsp;&nbsp;&nbsp;The Table Controller</a></li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h1><a class="toc-backref" href="ProgrammerGuide.html#id8">1&nbsp;&nbsp;&nbsp;Overview</a></h1>
+<p>The Nethgui framework helps with the building of a graphical user
+interface for the administration of a GNU/Linux system.</p>
+<p>Through that interface the user can change the system configuration --
+which is stored in the so-called <em>Host Configuration Database</em> -- and
+invoke the <em>events</em> that apply the configuration to the running
+operating system.</p>
+<p>On the other side, the interface is constituted of common graphical
+controls such as, buttons, checkboxes, radio buttons, text input
+fields and so on, that drive the configuration values.</p>
+<p>As the Programmer you have to concentrate your work on what the
+interface does more than how it looks. Indeed the framework is
+centered on the concept of Module: in an hypothetical
+<em>Model-View-Controller</em> architecture the Module plays the role of the
+<em>Controller</em>, the Host Configuration Database represent the <em>Model</em>
+and the View-Template-Renderer triad constitutes the <em>View</em> component.</p>
+</div>
+<div class="section" id="the-host-configuration-database">
+<h1><a class="toc-backref" href="ProgrammerGuide.html#id9">2&nbsp;&nbsp;&nbsp;The Host Configuration Database</a></h1>
+<p>The Host Configuration Database is the component providing the storage
+of the operating system configuration and the methods to apply it to
+the running system.  Out of the boundaries of the Nethgui framework,
+this is implemented by the SME Server Configuration Database described
+by the SME Server Developers Manual <a class="citation-reference" href="ProgrammerGuide.html#smedev" id="id1">[SMEDEV]</a>.</p>
+<p>Normally you should not need to access directly to the Host
+Configuration Database: most of the value manipulation operations
+occur transparently through Adapters object. Also the events that
+apply the modified configuration to the operating system are signaled
+by the framework at the right moment and you should only declare what
+event you need to be signaled.</p>
+<p>However if you really need to gain a direct access to the Host
+Configuration Database have a glance to the <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Nethgui_Core_HostConfigurationInterface.html">host configuration
+interface</a> operations.</p>
+<p>What we have to note down here is the <strong>logical organization</strong> of the
+values into the database.  More precisely, to talk in terms of the SME
+Server vocabulary, we have multiple <cite>databases</cite> where to store our
+data.  A database is structured as a two level hash: a <cite>key</cite> can
+point to a simple value or an hash itself.  In the latter case we use
+the term <cite>prop</cite> to indicate the second level hash key.</p>
+<p>To sum up a simple value can be identified</p>
+<ul class="simple">
+<li>by its <cite>database</cite> and  <cite>key</cite> names,</li>
+<li>or by its <cite>database</cite>, <cite>key</cite> and <cite>prop</cite> names.</li>
+</ul>
+<p>Moreover, in the second case a <cite>type</cite> identifier is assigned to the
+key containing the hash. Consider the following example:</p>
+<pre class="literal-block">
+Database1: { ... }
+
+Database2: {
+
+   KeyX: &quot;This is a simple string value&quot;
+
+   KeyY &lt;CityCoords&gt;: {
+      Lat: 12.913
+      Long: 43.910
+      City: &quot;Pesaro&quot;
+   }
+
+}
+</pre>
+<p>This example show two databases: <cite>Database1</cite> and
+<cite>Database2</cite>. Database2 is composed of two keys: <cite>KeyX</cite> holding a
+simple string value and <cite>KeyY</cite> which is an hash itself.  The <cite>type</cite> of
+KeyY is <cite>CityCoords</cite> and holds three <cite>props</cite>: <cite>Lat</cite>, <cite>Long</cite> and
+<cite>City</cite>.</p>
+<table class="docutils citation" frame="void" id="smedev" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="ProgrammerGuide.html#id1">[SMEDEV]</a></td><td><a class="reference external" href="http://wiki.contribs.org/SME_Server:Documentation:Developers_Manual">SME Server Developers Manual</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="modules">
+<h1><a class="toc-backref" href="ProgrammerGuide.html#id10">3&nbsp;&nbsp;&nbsp;Modules</a></h1>
+<p>Modules in Nethgui constitute the functional part of your interface,
+where the <em>business rules</em> reside.  You achieve the wished behaviour</p>
+<ul class="simple">
+<li>by mapping input data to proper values into Host Configuration
+Database (see <a class="reference internal" href="ProgrammerGuide.html#parameters">Parameters</a> and <a class="reference internal" href="ProgrammerGuide.html#adapters">Adapters</a>), or by processing input data
+in some other way;</li>
+<li>through the composition mechanism, breaking down the functionalities and
+delegating them to sub-Modules (see <a class="reference internal" href="ProgrammerGuide.html#module-composition">Module Composition</a>);</li>
+</ul>
+<p>The framework is provided with a <a class="reference external" href="http://nethgui.nethesis.it/docs/Tests/Tool/ModuleTestCase.html">basic testing class</a> to easily plan
+and verify the Module behaviour.</p>
+<p>A Module is associated to its View, which represents the user
+interface abstraction.  Such abstraction is translated into HTML code
+by providing a <a class="reference internal" href="ProgrammerGuide.html#template">Template</a> script or callback method (see <a class="reference internal" href="ProgrammerGuide.html#view-layer">View layer</a>
+for details).  A Module receives also an <a class="reference internal" href="ProgrammerGuide.html#the-host-configuration-database">host configuration database</a>
+object, to store and retrieve values and trigger events.</p>
+<div class="section" id="module-dissection">
+<h2><a class="toc-backref" href="ProgrammerGuide.html#id11">3.1&nbsp;&nbsp;&nbsp;Module dissection</a></h2>
+<p>A Module must implement a set of well-known operations defined by
+<a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Nethgui_Core_ModuleInterface.html">Nethgui_Core_ModuleInterface</a> and
+<a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Nethgui_Core_RequestHandlerInterface.html">Nethgui_Core_RequestHandlerInterface</a>.  Every module extending
+<a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Standard.html">Nethgui_Core_Module_Standard</a> class inherits the implementations of
+those operations for free.  From now on, if not otherwise stated, we
+will refer to this class as the &quot;basic class&quot; or &quot;basic
+implementation&quot;.</p>
+<p>The framework calls those methods for you at some point during
+execution time respecting three phases.  The basic class performs some
+common tasks during each phase.</p>
+<dl class="docutils">
+<dt>Initialization phase</dt>
+<dd>When <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Standard.html#initialize">initialize</a> is called, the Module is ready to use the
+database object (see <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Standard.html#getHostConfiguration">getHostConfiguration</a>).  You can declare here
+what are the <a class="reference internal" href="ProgrammerGuide.html#parameters">Parameters</a> of the Module, and how they are connected
+to the database through <a class="reference internal" href="ProgrammerGuide.html#adapters">Adapters</a> (see <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Standard.html#declareParameter">declareParameter</a>).</dd>
+<dt>Request handling phase</dt>
+<dd><ol class="first last arabic simple">
+<li><a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Nethgui_Core_ModuleInterface.html">bind</a> receives the values from the user interface and store
+their values in the internal state of the Module.</li>
+<li><a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Nethgui_Core_ModuleInterface.html">validate</a> checks if the module internal state is correct
+and signals if any error condition occurs.</li>
+<li><a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Nethgui_Core_ModuleInterface.html">process</a> persists necessary changes to the database.</li>
+</ol>
+</dd>
+<dt>Rendering phase</dt>
+<dd><a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Standard.html#prepareView">prepareView</a> transfers the module internal state and
+necessary database values to the view state.  Later on, the view is
+transformed into XHTML by Templates, possibly through the
+help of Renderer and Widget objects.</dd>
+</dl>
+<div class="section" id="parameters">
+<h3><a class="toc-backref" href="ProgrammerGuide.html#id12">3.1.1&nbsp;&nbsp;&nbsp;Parameters</a></h3>
+<p>The basic implementation holds the module state into a collection of
+Parameters which are exchanged between the Host Configuration
+Database, the Module, and the View layer.</p>
+<p>You can receive a value coming from the View into a module Parameter
+simply by declaring it into the <tt class="docutils literal">initialize()</tt> method:</p>
+<pre class="literal-block">
+$this-&gt;declareParameter('myParameter');
+</pre>
+<p>Indeed, the actual value coming from the View is stored into the
+parameter during by the basic <tt class="docutils literal">bind()</tt> implementation.</p>
+<p>Once a parameter is declared, you can also assign a value to it. For
+instance, in <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Nethgui_Core_ModuleInterface.html">process</a> you can type:</p>
+<pre class="literal-block">
+$this-&gt;parameters['myParameter'] = 'myValue';
+</pre>
+<p>Later on, the string <tt class="docutils literal">'myValue'</tt> will be transferred back to the
+View layer.  If the User changes the value through the user interface
+and sends it back again, you will get the changed value.</p>
+<p>In the <a class="reference internal" href="ProgrammerGuide.html#view-layer">View layer</a> section you will see how to render a UI control
+that changes the parameter value.  In our example a text input field
+would fit well.</p>
+</div>
+<div class="section" id="validators">
+<h3><a class="toc-backref" href="ProgrammerGuide.html#id13">3.1.2&nbsp;&nbsp;&nbsp;Validators</a></h3>
+<p>When a parameter is declared, you can ask the basic class to verify
+that the actual value respects a given validation rule.</p>
+<p>The second argument to the <tt class="docutils literal">declareParameter()</tt> method indicates
+this rule. It can be of different data types.</p>
+<dl class="docutils">
+<dt><em>Integer</em></dt>
+<dd>Represents a pre-defined validation rule.  The basic class defines
+a set of integer constants.  See <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Standard.html">Nethgui_Core_Module_Standard</a>
+documentation for a complete list.</dd>
+<dt><em>String</em></dt>
+<dd>Represents a PERL-compatible regular expression.  See PHP
+<a class="reference external" href="http://www.php.net/manual/en/pcre.pattern.php">Perl-Compatible Regular Expression</a> syntax for details.</dd>
+<dt><em>Nethgui_Core_Validator</em> object</dt>
+<dd>Passing an object of <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Nethgui_Core_Validator.html">Nethgui_Core_Validator</a> class is the most
+flexible choice: you can specify arguments to validation rules
+and also combine them as <em>OR</em> expressions.</dd>
+</dl>
+<p>For instance, to declare a <tt class="docutils literal">myIpAddress</tt> parameter that must match a
+string representing a valid IPV4 address, you may type alternatively:</p>
+<pre class="literal-block">
+// 2nd argument is of type integer. Using a predefined constant.
+$this-&gt;declareParameter('myIpAddress1', self::VALID_IPV4_ADDRESS);
+
+// 2nd argument is of type string, indicating a regular expression based validator.
+// This is not as good as the integer constant in case 1: no integer range checks
+$this-&gt;declareParameter('myIpAddress2', '/(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/');
+
+// 2nd argument is of type Validator. The integer constant of case 1 is
+// a shortcut that does exactly the same.
+$this-&gt;declareParameter('myIpAddress3', $this-&gt;getValidator()-&gt;ipv4());
+</pre>
+</div>
+<div class="section" id="adapters">
+<h3><a class="toc-backref" href="ProgrammerGuide.html#id14">3.1.3&nbsp;&nbsp;&nbsp;Adapters</a></h3>
+<p>You have seen in the <a class="reference internal" href="ProgrammerGuide.html#parameters">Parameters</a> section how to declare a Parameter
+that holds a value.  The value was tranferred to and from the View
+layer.  In this section we will see how to store and retrieve the
+parameter value in the Host Configuration Database through Adapters.</p>
+<p>All the magic that instantiates an Adapter for a Parameter is done in
+the third argument to the <tt class="docutils literal">declareParameter()</tt> method.  It can be of
+the following types:</p>
+<dl class="docutils">
+<dt><em>Array</em></dt>
+<dd>You can use an array to map the parameter value to one or more
+database values.  See the examples below to see how to do that.
+This is a shortcut form that leaves the creation and
+initialization of the underlying Adapter object to the basic class.</dd>
+<dt><em>Nethgui_Core_AdapterInterface</em> implementing object</dt>
+<dd>You can also build and initialize the Adapter object by yourself or
+obtain it by some other way.  See the <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Nethgui_Core_HostConfigurationInterface.html">host configuration interface</a>
+for some hints.</dd>
+</dl>
+<p>Most of the times you should need the Array argument to get an
+identity or a mapping adapter.  We will see the two forms in the examples
+below.</p>
+<p><strong>Identity adapter</strong>.  Store the domain name in database
+<cite>configuration</cite>, key <cite>DomainName</cite>:</p>
+<pre class="literal-block">
+$this-&gt;declareParameter(
+  'domain',                             // parameter name
+  self::VALID_DOMAIN_NAME,              // validator
+  array('configuration, 'DomainName')   // identity adapter arguments
+);
+</pre>
+<p>An Identity adapter maps a database value into a parameter.</p>
+<p><strong>Map adapter</strong>.  Control an FTP service status (enabled/disabled)
+through a single <cite>status</cite> parameter and two database values:</p>
+<ol class="arabic simple">
+<li><em>database</em>: <tt class="docutils literal">configuration</tt>, <em>key</em>: <tt class="docutils literal">ftp</tt>, <em>prop</em>: <tt class="docutils literal">status</tt>,</li>
+<li><em>database</em>: <tt class="docutils literal">configuration</tt>, <em>key</em>: <tt class="docutils literal">ftp</tt>, <em>prop</em>: <tt class="docutils literal">access</tt>.</li>
+</ol>
+<pre class="literal-block">
+$this-&gt;declareParameter(
+  'status',                                   // parameter name
+  self:VALID_SERVICE_STATUS,                  // validator
+  array(
+    array('configuration', 'ftp', 'status'),
+    array('configuration', 'ftp', 'access')
+  )                                           // mapping adapter arguments
+);
+</pre>
+<p>When declaring an adapter the basic implementation searches for two
+<em>converter methods</em>.  The method names must be prefixed with <tt class="docutils literal">read</tt> or
+<tt class="docutils literal">write</tt>, with the full parameter name with the first letter in upper
+case following.  So, in our example we must declare two methods for
+the <tt class="docutils literal">status</tt> parameter in the module class, <tt class="docutils literal">readStatus()</tt> and <tt class="docutils literal">writeStatus()</tt>:</p>
+<pre class="literal-block">
+/**
+ * The reader method expects two arguments, in the same order
+ * used during the parameter declaration. The return value
+ * is assigned to the parameter.
+ **/
+public function readStatus($status, $access)
+{
+   .
+   .
+   .
+
+   return $value;
+}
+
+/**
+ * The writer method is the dual of the reader: it expects the actual
+ * parameter value as its unique argument and must return an array
+ * of database values, in the same order used during the parameter
+ * declaration
+ **/
+public function writeStatus($value)
+{
+   .
+   .
+   .
+   return array($status, $access);
+}
+</pre>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">The converter methods are optional for the Identity adapter,
+but <strong>mandatory</strong> for the Mapping adapter.</p>
+</div>
+<p>The Nethgui framework defines also a Table and an Array adapter that
+provide a PHP array interface to the database values.  Those are
+closely related to the CRUD scenario implementation thus are discussed
+in <a class="reference internal" href="ProgrammerGuide.html#the-table-controller">The Table Controller</a> section.</p>
+</div>
+</div>
+<div class="section" id="module-composition">
+<h2><a class="toc-backref" href="ProgrammerGuide.html#id15">3.2&nbsp;&nbsp;&nbsp;Module composition</a></h2>
+<p>A module can be composed of other modules. In this case the first
+plays the <em>parent</em> role while the seconds play the <em>children</em> role.</p>
+<p>The Nethgui framework has two concrete types of composition: the List
+and the Controller.  The concept of <em>Composite</em> module is outlined in
+the <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Composite.html">Composite abstract class</a>.</p>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">In a composite module, the parent module is fully
+responsible of its children: creation, initialization and
+all the operations defined by the framework must be
+propagated from the parent to its children.  Core module
+classes perform most of this work automatically, but you
+must do it by hand in your own classes.  Keep it in mind.</p>
+</div>
+<div class="section" id="list-composition">
+<h3><a class="toc-backref" href="ProgrammerGuide.html#id16">3.2.1&nbsp;&nbsp;&nbsp;List composition</a></h3>
+<p>In the List composition implementation the parent module forwards the
+messages it receives to <strong>all</strong> its children.</p>
+<p>Refer to the docblocks of <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_List.html">Nethgui_Core_Module_List</a> for the details
+of each operation implementation.</p>
+<p>The helper method <tt class="docutils literal">loadChildren()</tt> instantiates a list of classes
+adding each one as a child of the parent module.</p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">The List composition also implements two important
+<em>user interface interactions</em>: the <strong>tabs</strong> and the <strong>form</strong>.
+See the List class constructor docblock for details.</p>
+</div>
+</div>
+<div class="section" id="controller-composition">
+<h3><a class="toc-backref" href="ProgrammerGuide.html#id17">3.2.2&nbsp;&nbsp;&nbsp;Controller composition</a></h3>
+<p>In the Controller composition implementation the parent module (the
+controller) forwards the messages it receives to the <strong>current</strong> child
+(the action).</p>
+<p>The current action is identified into the <tt class="docutils literal">request</tt> object passed to
+the parent as the argument to the <tt class="docutils literal">bind()</tt> operation.</p>
+<p>To find the current action identifier these rules apply:</p>
+<ol class="arabic simple">
+<li>Read the first request <em>argument</em> (this corresponds to the first
+URL path segment after the module identifier);</li>
+<li>If the first argument is missing and the request has been submitted
+by the User, consider the builtin <tt class="docutils literal">__action</tt> request parameter;</li>
+<li>Otherwise the current action is undefined and the controller does
+nothing.</li>
+</ol>
+<p>A more concrete Controller composition is discussed in <a class="reference internal" href="ProgrammerGuide.html#the-table-controller">The Table
+Controller</a> section.</p>
+</div>
+</div>
+</div>
+<div class="section" id="view-layer">
+<h1><a class="toc-backref" href="ProgrammerGuide.html#id18">4&nbsp;&nbsp;&nbsp;View layer</a></h1>
+<p>The View layer displays the module parameters data on the User's
+screen according to a set of customizable Templates and pre-defined
+user interactions. As stated before, you do not have to care about the
+interface &quot;look and feeling&quot;: the Nethgui framework provides a set of
+ready-to-use controls that you employ to build the user interface.</p>
+<p>The rendering phase, as stated in <a class="reference internal" href="ProgrammerGuide.html#module-dissection">Module dissection</a>, is
+accomplished in two steps.</p>
+<ol class="arabic simple">
+<li>transferring data into the view objects;</li>
+<li>serialize the view objects into an XHTML or JSON string.</li>
+</ol>
+<p><strong>Step 1</strong>. After the <tt class="docutils literal">process()</tt> operation a Module receives a
+View object as first argument to <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Standard.html#prepareView">prepareView</a> method:</p>
+<pre class="literal-block">
+public function prepareView(Nethgui_Core_ViewInterface $view, $mode)
+{
+    parent::prepareView($view, $mode);
+}
+</pre>
+<p>Basic implementation automatically transfers all the module Parameters
+into the view object.</p>
+<div class="tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">A View object resembles a PHP array, where you can store
+data using keys and values; indeed a View implements
+<a class="reference external" href="http://php.net/manual/en/class.arrayaccess.php">ArrayAccess</a> and <a class="reference external" href="http://php.net/manual/en/class.iteratoraggregate.php">IteratorAggregate</a> interfaces.</p>
+</div>
+<p>The <tt class="docutils literal">mode</tt> parameter tells if we are performing a full view refresh
+or a partial update.  The first case corresponds to the generation of
+the XHTML document, that requires, for instance, all the possible
+OPTIONs elements of a SELECT tag.  The second case is typically
+associated to the generation of a JSON response, where only the actual
+parameters value must be transferred to the client: in the case of the
+SELECT tag we can transfer a <tt class="docutils literal">value</tt>-holding attribute only.</p>
+<p><strong>Step 2</strong>. The view object is transformed into a string, calling a
+<a class="reference internal" href="ProgrammerGuide.html#template">Template</a> script or callback method.  In both situations you
+can call any method defined by the abstract Renderer class to generate
+the right XHTML code for each control.</p>
+<div class="section" id="template">
+<h2><a class="toc-backref" href="ProgrammerGuide.html#id19">4.1&nbsp;&nbsp;&nbsp;Template</a></h2>
+<p><strong>A Template script</strong> is a common PHP script.  Any string printed from
+it, or any unescaped HTML fragment will take part in the module string
+output.</p>
+<p>A Template script has a <tt class="docutils literal">.php</tt> file name extension, while the file
+name is expected to be a slightly modified version of the associated
+module class name, where the <tt class="docutils literal">_Module_</tt> substring is replaced with
+<tt class="docutils literal">_Template_</tt>. Thus, if the module class is <tt class="docutils literal">User_Module_Example</tt>,
+defined in <tt class="docutils literal">User/Module/Example.php</tt> the associated template script
+would be guessed into <tt class="docutils literal">User/Template/Example.php</tt>.</p>
+<div class="tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can explicitly declare the template associated with a
+View object calling the <tt class="docutils literal">setTemplate()</tt> method. See the
+example below.</p>
+</div>
+<pre class="literal-block">
+class User_Module_MyModule extends Nethgui_Core_Module_Standard
+{
+
+  .
+  .
+  .
+
+  public function prepareView(Nethgui_Core_ViewInterface $view, $mode)
+  {
+      parent::prepareView($view, $mode);
+
+      // Use User/Template/MyAlternativeTemplate.php
+      // instead of defalt User/Template/MyModule.php
+      $view-&gt;setTemplate(&quot;User_Template_MyAlternativeTemplate&quot;);
+  }
+
+  .
+  .
+  .
+</pre>
+<p>A Template script receives a local variable: <tt class="docutils literal">$view</tt>. It is bound to
+a Renderer object, and you can use it to retrieve the View state and
+generate the control output. Supposing we have a <cite>DomainName</cite>
+parameter in the view state, in
+<tt class="docutils literal">User/Template/MyAlternativeTemplate.php</tt> we can write:</p>
+<pre class="literal-block">
+&lt;p&gt;Domain: &lt;?php echo $view['DomainName'] ?&gt;&lt;/p&gt;
+</pre>
+<p><strong>A Template callback method</strong> is a PHP callable function that returns
+a string, representing the Template output. We can call the
+<tt class="docutils literal">setTemplate()</tt> method with a PHP callable as argument, instead of a
+string, as we have seen in the Template script case. In this way, the
+callable function is invoked instead of the script:</p>
+<pre class="literal-block">
+class User_Module_MyModule extends Nethgui_Core_Module_Standard
+{
+
+  .
+  .
+  .
+
+  public function prepareView(Nethgui_Core_ViewInterface $view, $mode)
+  {
+      parent::prepareView($view, $mode);
+
+      // Use User/Template/MyAlternativeTemplate.php
+      // instead of defalt User/Template/MyModule.php
+      $view-&gt;setTemplate(array($this, &quot;renderMyModule&quot;));
+  }
+
+  // The callback function must be declared &quot;public&quot;.
+  public function renderMyModule(Nethgui_Renderer_Abstract $view)
+  {
+     return &quot;&lt;p&gt;Domain: &quot; . $view['DomainName'] . &quot;&lt;/p&gt;&quot;;
+  }
+
+  .
+  .
+  .
+</pre>
+</div>
+<div class="section" id="renderer">
+<h2><a class="toc-backref" href="ProgrammerGuide.html#id20">4.2&nbsp;&nbsp;&nbsp;Renderer</a></h2>
+<p>You may have noticed in the <a class="reference internal" href="ProgrammerGuide.html#template">Template</a> section that a Template, both
+script and callback method, receives a variable: <tt class="docutils literal">$view</tt>.</p>
+<p>That variable holds a <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Renderer/Nethgui_Renderer_Abstract.html">Nethgui_Renderer_Abstract</a> object, a
+&quot;decorated&quot; View object that forbids any change to the view state and
+provides a set of helper methods to draw the user interface.</p>
+<p>For instance to put an input field bound to a <tt class="docutils literal">ipAddress</tt> view
+value you can write:</p>
+<pre class="literal-block">
+/* PHP Template script */
+echo $view-&gt;textInput('ipAddress');
+</pre>
+<p>This produces the following XHTML code:</p>
+<pre class="literal-block">
+&lt;!-- XHTML code --&gt;
+&lt;div class=&quot;labeled-control label-above&quot;&gt;
+     &lt;label for=&quot;MyModule_ipAddress&quot;&gt;Indirizzo di rete&lt;/label&gt;
+     &lt;input type=&quot;text&quot;
+            id=&quot;MyModule_ipAddress&quot;
+            name=&quot;MyModule[ipAddress]&quot;
+            class=&quot;TextInput MyModule_ipAddress&quot;
+            value=&quot;&quot; /&gt;
+&lt;/div&gt;
+</pre>
+<p>Method exist to draw any control or controls container as described in
+<a class="citation-reference" href="ProgrammerGuide.html#ui-controls" id="id4">[UI-CONTROLS]</a> and <a class="citation-reference" href="ProgrammerGuide.html#ui-interactions" id="id5">[UI-INTERACTIONS]</a>.</p>
+<p>The <tt class="docutils literal">textInput()</tt>, as other Renderer methods, returns an object
+implementing <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Renderer/Nethgui_Renderer_WidgetInterface.html">Nethgui_Renderer_WidgetInterface</a> (a <em>Widget</em>). Widgets
+can be nested in a hierarchical way through the <tt class="docutils literal">insert()</tt>
+method. Of course <tt class="docutils literal">insert()</tt> makes sense only on <em>container</em>
+widgets.</p>
+<pre class="literal-block">
+/* PHP Template script */
+echo $view-&gt;panel()
+     -&gt;insert($view-&gt;textInput('ipAddress'))
+     -&gt;insert($view-&gt;textInput('ipMask'));
+</pre>
+<p>The previous fragment generates a <em>panel</em> (an XHTML DIV tag)
+containing two input fields.  Note that <tt class="docutils literal">insert()</tt> as other methods
+of the <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Renderer/Nethgui_Renderer_WidgetInterface.html">Nethgui_Renderer_WidgetInterface</a> return the same object,
+allowing <a class="reference external" href="http://en.wikipedia.org/wiki/Method_chaining">method chaining</a>.</p>
+<table class="docutils citation" frame="void" id="ui-controls" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="ProgrammerGuide.html#id4">[UI-CONTROLS]</a></td><td><a class="reference external" href="../UserInterface/BasicUiControls.html">Basic UI Controls</a> <em>Nethgui User Interface Design</em></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="ui-interactions" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="ProgrammerGuide.html#id5">[UI-INTERACTIONS]</a></td><td><a class="reference external" href="../UserInterface/Interactions.html">Interactions</a> <em>Nethgui User Interface Design</em></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="implementing-a-simple-module">
+<h1><a class="toc-backref" href="ProgrammerGuide.html#id21">5&nbsp;&nbsp;&nbsp;Implementing a simple Module</a></h1>
+<p>In this section we will write a simple Module that controls the
+enabled/disabled state of an hypothetical <em>OnOffService</em> in project
+<em>GearUi</em>.</p>
+<p>The state of the service is defined in the Host Configuration
+Database, by the value of <tt class="docutils literal">status</tt> property in key <tt class="docutils literal">onoff</tt> of
+<tt class="docutils literal">myconf</tt> database. So we initialize the required prop to
+<tt class="docutils literal">disabled</tt> with the following shell command:</p>
+<pre class="literal-block">
+# /sbin/e-smith/db myconf set onoff service status disabled
+</pre>
+<p>To implement a Module you should extend
+<a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Standard.html">Nethgui_Core_Module_Standard</a> class. So we create a new PHP file
+under <tt class="docutils literal">GearUi/Module/</tt> subdirectory: <tt class="docutils literal">OnOffService.php</tt>.</p>
+<p>In <tt class="docutils literal">OnOffService.php</tt> we write:</p>
+<pre class="literal-block">
+&lt;?php
+
+class GearUi_Module_OnOffService extends Nethgui_Core_Module_Standard
+{
+
+   public function initialize()
+   {
+       parent::initialize();     // basic class implementation call
+
+       // Declare serviceStatus parameter and link it to
+       // status prop in onff key of myconf database.
+       $this-&gt;declareParameter(
+           'serviceStatus',                     // parameter name
+           '/^(enabled|disabled)$/',            // regexp validation
+           array('myconf', 'onoff', 'status')   // parameter - prop binding
+       );
+   }
+
+} // End of class.
+
+// PHP closing tag omitted.
+</pre>
+<p>Things to note down here are:</p>
+<ul class="simple">
+<li>No PHP <tt class="docutils literal">require</tt> commands are needed to load
+<tt class="docutils literal">Nethgui_Core_Module_Standard</tt>, as the file path is given
+implicitly in the class name, substituting underscores <tt class="docutils literal">_</tt> with
+slashes <tt class="docutils literal">/</tt>.</li>
+<li>We re-implement <tt class="docutils literal">initialize()</tt> method to declare a Module
+parameter so we <em>must</em> call parent's <a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Standard.html#initialize">initialize</a>.</li>
+</ul>
+<p>In <tt class="docutils literal">initialize()</tt> body we declare a parameter, calling
+<a class="reference external" href="http://dev.nethserver.org/nethgui/Documentation/Api/Core/Module/Nethgui_Core_Module_Standard.html#declareParameter">declareParameter</a>:</p>
+<ul class="simple">
+<li>the parameter name is <tt class="docutils literal">serviceStatus</tt>;</li>
+<li>the parameter value must match <tt class="docutils literal"><span class="pre">/^(enabled|disabled)$/</span></tt> <a class="reference external" href="http://php.net/manual/en/function.preg-match.php">regular
+expression</a> to be considered valid;</li>
+<li>the parameter value, if valid, is written to prop <tt class="docutils literal">status</tt> of key
+<tt class="docutils literal">onoff</tt> in <tt class="docutils literal">myconf</tt> database.</li>
+</ul>
+<p>The OnOffModule class is now fully functional, as the basic class
+implementation provides transferring the parameter to/from database
+value, if it is correctly validated.</p>
+<p>Moreover the basic class transfers the parameter value to the <a class="reference internal" href="ProgrammerGuide.html#view-layer">View
+layer</a>, so that we can put it in HTML format through a Template.</p>
+<p>Of course, we have to write the Template first, so we create another
+PHP file, this time under <tt class="docutils literal">GearUi/Template/</tt> directory,
+<tt class="docutils literal">OnOffService.php</tt>:</p>
+<pre class="literal-block">
+&lt;!-- GearUi/Template/OnOffService.php contents --&gt;&lt;?php
+echo $view
+       -&gt;insert($view-&gt;checkBox('serviceStatus', 'enabled'))
+       -&gt;insert(checkBox('serviceStatus', 'disabled'))
+;
+?&gt;
+</pre>
+</div>
+<div class="section" id="module-testing">
+<h1><a class="toc-backref" href="ProgrammerGuide.html#id22">6&nbsp;&nbsp;&nbsp;Module Testing</a></h1>
+<p>In the <a class="reference internal" href="ProgrammerGuide.html#implementing-a-simple-module">previous section example</a> we
+must test OnOffService in three scenarios:</p>
+<ol class="arabic simple">
+<li>The User turns the service ON.</li>
+<li>The User turns the service OFF.</li>
+<li>The User takes no action.</li>
+</ol>
+<p>We can check if OnOffService module is correct by writing a
+<a class="reference external" href="http://www.phpunit.de/manual/3.5/en/index.html">PHPUnit</a> test case. Nethgui comes with a basic class to be extended to
+build module tests upon it: <a class="reference external" href="http://nethgui.nethesis.it/docs/Tests/Tool/ModuleTestCase.html">Test_Tool_ModuleTestCase</a>.</p>
+<p>As we are testing a module of the hypothetical <em>GearUi</em> project , we
+put our test case class under <tt class="docutils literal">Tests/Unit/GearUi/Module/</tt> directory;
+the class file name must be ending with <tt class="docutils literal">Test.php</tt>.</p>
+<p>In <tt class="docutils literal">OnOffServiceTest.php</tt> we write:</p>
+<pre class="literal-block">
+&lt;?php
+
+class GearUi_Module_OnOffServiceTest extends ModuleTestCase
+{
+    protected function setUp()
+    {
+        $this-&gt;object = new GearUi_Module_OnOffService();
+    }
+
+    public function testTurnOn()
+    {
+        $env = new Test_Tool_ModuleTestEnvironment();
+
+        // 1. Set the input parameter value:
+        $env-&gt;setRequest(array('serviceStatus'=&gt;'enabled'));
+
+        // 2. Expect &quot;serviceStatus&quot; has value &quot;enabled&quot; in view state:
+        $env-&gt;setView(array('serviceStatus', 'enabled'));
+
+        // 3. Create a mock object to simulate the real database object
+        $myConfDb0 = new Test_Tool_MockState();
+
+        // 3.1 Return &quot;disabled&quot; on getProp('onoff', 'status'):
+        $myConfDb0-&gt;set(Test_Tool_DB::getProp('onoff', 'status'), 'disabled');
+
+        // 3.2 Enter a new state on setProp():
+        $myConfDb1 = $myConfDb0-&gt;transition(Test_Tool_DB::setProp('onoff', 'status', 'enabled'), TRUE);
+
+        // 3.3 Mark state as &quot;final&quot;:
+        $myConfDb1-&gt;setFinal();
+
+        // 3.4 Set the initial state of `myconf` database:
+        $env-&gt;setDatabase('myconf', $myConfDb0);
+
+        $this-&gt;runModuleTest($this-&gt;object, $env);
+    }
+
+    public function testTurnOff()
+    {
+        $this-&gt;markTestIncomplete();
+    }
+
+    public function testNoAction()
+    {
+        $this-&gt;markTestIncomplete();
+    }
+
+} // end of class
+</pre>
+<p>Consider the body of <tt class="docutils literal">testTurnOn()</tt> method.  To run the test
+procedure we have to create and set up a <a class="reference external" href="../Api.html">test environment object</a>.</p>
+<ul class="simple">
+<li>setRequest() defines the request object contents that will be passed to the module bind() method.</li>
+<li>setView() defines the expected view parameters value after the module prepareView() method.</li>
+<li>setDatabase() defines the states of a specific database: each read
+and write operation must be properly defined. See
+<a class="reference external" href="../Api.html">Test_Tool_MockState</a> for details.</li>
+</ul>
+</div>
+<div class="section" id="localization">
+<h1><a class="toc-backref" href="ProgrammerGuide.html#id23">7&nbsp;&nbsp;&nbsp;Localization</a></h1>
+<p>TODO;</p>
+</div>
+<div class="section" id="the-table-controller">
+<h1><a class="toc-backref" href="ProgrammerGuide.html#id24">8&nbsp;&nbsp;&nbsp;The Table Controller</a></h1>
+<p>TODO; Implement a CRUD scenario with TableController.</p>
+</div>
+</div>
+</body>
+</html>

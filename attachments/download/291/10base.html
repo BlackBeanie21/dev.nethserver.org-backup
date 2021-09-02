@@ -1,0 +1,56 @@
+{
+    #
+    # 10base
+    #
+
+    use esmith::db;
+    use NethServer::MailServer;
+
+    $OUT = '';
+
+    my %fetchmails;
+    tie %fetchmails, 'esmith::config', "/var/lib/nethserver/db/fetchmail";
+
+    my (undef, undef, $uid, $gid, undef, undef, undef, $dir, undef)
+        = getpwnam("alias");
+
+    my $mailServer = NethServer::MailServer->new();
+
+    # Create assignments for each fetchmail.
+
+    foreach (db_get(\%fetchmails))
+    {
+        my $active = db_get_prop(\%fetchmails, $_, "active") || 'YES';
+        my $nokeep = db_get_prop(\%fetchmails, $_, "nokeep") || 'YES';
+        my $ssl = db_get_prop(\%fetchmails, $_, "ssl") || 'NO';
+        my $popserver = db_get_prop(\%fetchmails, $_, "popserver") || next;
+        my $username = db_get_prop(\%fetchmails, $_, "username");
+        my $password = db_get_prop(\%fetchmails, $_, "password");
+        my $account = db_get_prop(\%fetchmails, $_, "account");
+        my $proto = db_get_prop(\%fetchmails, $_, "proto") || 'pop3';
+
+        my $address = '';
+        # if $account is a mail address, just use it
+        if ($account =~ m/@/) {
+            $address = $account;
+        } else {
+	    my @addressList = $mailServer->getAccountMailAddresses($account);
+
+	    if( ! scalar @addressList ) {
+	        warn "[WARNING] no mail address defined for $account!\n";
+	        next;
+	    }
+            $address = $addressList[0];
+        }
+      
+        $KEEP='';
+        $SSL=''; if ($ssl eq 'YES') { $SSL='ssl';}
+        if ($nokeep eq 'NO') {
+                $KEEP="keep";}
+        if ($active eq 'YES') {
+                $OUT.="poll $popserver proto $proto:\n user \"$username\"";
+                $OUT.=" with pass \"$password\" is \"$address\" here";
+                $OUT.=" smtphost 127.0.0.100 $KEEP $SSL\n";
+        }
+    }
+}

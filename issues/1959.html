@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Feature #1959: Proxy: add web antivirus filter - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/1959.atom" rel="alternate" title="NethServer 6 - Feature #1959: Proxy: add web antivirus filter" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #1959</h2>
+
+<div class="issue tracker-2 status-5 priority-4 priority-default closed child details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><p><a href="1774.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent">Feature #1774</a>: Web content filter</p><div><h3>Proxy: add web antivirus filter</h3></div></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-squidclamav</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/157.html">v6.4-beta2</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Implement content filter using an antivirus.</p>
+
+
+	<p>Best candidate is SquidClamav using icap protocol.<br />Packages (for Fedora) available here: <a class="external" href="http://oliverseeburger.de/repo/fedora_17/x86_64/extras_seeburger/packages/">http://oliverseeburger.de/repo/fedora_17/x86_64/extras_seeburger/packages/</a></p>
+  </div>
+</div>
+<div class="attachments">
+<p><a href="../attachments/download/195/QA1959-rpms.txt" class="icon icon-attachment">QA1959-rpms.txt</a>    <a href="../attachments/195/QA1959-rpms.txt.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a>
+   - Installed RPMs
+  <span class="size">(886 Bytes)</span>
+    <span class="author">Davide Principi, 07/24/2013 02:42 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>First import. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>First import. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>First import. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>spec: move cgi to /var/www/cgi-bin directory. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>First import. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Update templates and createlinks. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>squidclamav.conf template: update redirect path. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>c-icap-conf and db defaults: change DebugLevel default to 0. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>web ui: add ui to enable/disable antivirus. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Add support for downloaded blacklists. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>spec: requires nethserver-httpd. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>createlinks, templates: added /etc/sysconfig/c-icap template to avoid zombie processes. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>c-icap.conf templates.metadata: change permission and owner. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>squid.conf templates.metadata: change permission and owner. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>db defaults: set default status to disabled. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>spec: add nethserver-squid dependency, fix typo in nethserver-httpd requires. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>web ui: move antivirus proxy configuration to nethserver-squidclamav package. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>web ui: move antivirus proxy configuration from nethserver-antivirus package. Refs <a href="1959.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Proxy: add web antivirus filter (CLOSED)">#1959</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-6092" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="1959.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> set to <i>v6.4-beta2</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6131" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="1959.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>30</i></li>
+       <li><strong>NEEDINFO</strong> set to <i>No</i></li>
+    </ul>
+    <div class="wiki" id="journal-6131-notes"><p>Implemented using c-icap and squidclamav.</p>
+
+
+Packages:
+	<ul>
+	<li>c-icap: icap server</li>
+		<li>squidclamav: library for c-icap</li>
+		<li><a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-c-icap" class="wiki-page new">nethserver-c-icap</a>: configuration for c-icap</li>
+		<li><a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-squidclamav" class="wiki-page new">nethserver-squidclamav</a>: configuration for squidclamav</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-6262" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="1959.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-6262-notes"><p>All stack implemented.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6263" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="1959.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>80</i></li>
+    </ul>
+    <div class="wiki" id="journal-6263-notes">Released rpms in testing:
+	<ul>
+	<li>squidclamav-6.10-1</li>
+		<li>nethserver-squidclamav-1.0.0</li>
+		<li>nethserver-c-icap-1.0.0</li>
+		<li>c-icap-0.2.5</li>
+	</ul>
+
+
+	<p>To test the antivirus filter.<br />1) Install the software: yum --enablerepo=nethserver-testing install nethserver-squidclamav <br />2) Enable squid from web interface<br />3) Open one eicar test file from <a class="external" href="http://www.eicar.org/85-0-Download.html">http://www.eicar.org/85-0-Download.html</a> and verify the download is blocked</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6480" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="1959.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+    </ul>
+    <div class="wiki" id="journal-6480-notes"><p>ON_QA: Assignee reset</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6552" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="1959.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6627" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="1959.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>File</strong> <a href="../attachments/download/195/QA1959-rpms.txt">QA1959-rpms.txt</a><a href="../attachments/195/QA1959-rpms.txt.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a> added</li>
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>ON_DEV</i></li>
+       <li><strong>% Done</strong> changed from <i>80</i> to <i>30</i></li>
+    </ul>
+    <div class="wiki" id="journal-6627-notes"><p>Verification <strong>FAILED</strong></p>
+
+
+	<a name="Summary"></a>
+<h3 >Summary<a href="1959.html#Summary" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>the c-icap daemon does not start after installation</p>
+
+
+	<a name="Description"></a>
+<h3 >Description<a href="1959.html#Description" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li>After installation I've enabled Squid (Manual) from UI => Save</li>
+		<li>c-icap daemon didn't start</li>
+	</ul>
+
+
+	<p>The EICAR data was not blocked:<pre>
+curl -L -x davidep2.vboxnet0.tld:3128 http://www.eicar.org/download/eicar.com
+X5O!P%[...]AR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
+</pre></p>
+
+
+To workaround the problem in "Proxy web" module / Antivirus
+	<ul>
+	<li>Set "disabled" => Save</li>
+		<li>Set "enabled" again => Save</li>
+	</ul>
+
+
+	<p>c-icap starts and the EICAR test is blocked.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6634" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="1959.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6642" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="1959.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6642-notes"><p>Davide Principi wrote:</p>
+
+
+<blockquote>
+
+To workaround the problem in "Proxy web" module / Antivirus
+	<ul>
+	<li>Set "disabled" => Save</li>
+		<li>Set "enabled" again => Save</li>
+	</ul>
+
+
+</blockquote>
+
+	<p>when starting c-icap daemon from httpd-admin a zombie <code>adjust-services</code> process prevents <code>signal-event</code> to complete.  This resembles Dovecot's case <a href="1232.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="adjust-services zombie process on dovecot restarts (CLOSED)">#1232</a>..</p>
+
+
+	<p>To fix c-icap startup I suggest closing output descriptors in <code>/etc/sysconfig/c-icap</code>:<pre>
+OPTIONS="&#38;&gt;/dev/null " 
+</pre></p>
+
+
+<blockquote>
+
+	<p>c-icap starts and the EICAR test is blocked.</p>
+
+
+</blockquote>
+
+	<p>I confess I started it from a Bash shell..</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6648" class="journal has-notes">
+    <div id="note-11">
+    <h4><a href="1959.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6648-notes"><p><code>rpm -V</code> noticed that /etc/squid/squid.conf and /etc/c-icap/c-icap.conf have permissions and owner modified after they've been expanded from template.</p>
+
+
+	<p>Original settings from RPMs<pre>
+  # ll /etc/c-icap/c-icap.conf
+-rw-r-----. 1 root c-icap 19280 May 30 13:56 /etc/c-icap/c-icap.conf
+
+  # ll /etc/squid/squid.conf
+-rw-r-----. 1 root squid 2315 May 21 12:55 /etc/squid/squid.conf
+</pre></p>
+
+
+	<p>After template expansions owner is root and permissions are 0644.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6675" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="1959.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-6675-notes">Need rebuild of:
+	<ul>
+	<li>nethserver-squidclamav</li>
+		<li>nethserver-c-icap</li>
+		<li>nethserver-squid</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-6718" class="journal has-notes">
+    <div id="note-13">
+    <h4><a href="1959.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6718-notes">New package in nethserver-testing repoitory:
+	<ul>
+	<li>nethserver-c-icap-1.0.1-1</li>
+		<li>nethserver-squid-1.0.3-1</li>
+		<li>nethserver-squidclamav-1.0.1</li>
+	</ul>
+
+
+Changes for c-icap:
+	<ul>
+	<li>Change permissions and owner of c-icap.conf</li>
+		<li>Avoid zombie processes (added /etc/sysoconfig/c-icap template)</li>
+	</ul>
+
+
+Changes for squidclamav:
+	<ul>
+	<li>set default status to disabled</li>
+		<li>add nethserver-httpd dependency</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-6719" class="journal has-details">
+    <div id="note-14">
+    <h4><a href="1959.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6742" class="journal has-notes">
+    <div id="note-15">
+    <h4><a href="1959.html#note-15" class="journal-link">#15</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6742-notes"><p>yum --enablerepo=nethserver-testing install nethserver-squidclamav</p>
+
+
+<pre>
+--&gt; Finished Dependency Resolution
+Error: Package: nethserver-squidclamav-1.0.1-1.ns6.noarch (nethserver-testing)
+           Requires: nethsever-httpd
+</pre>
+
+	<p>I'm installing nethsever-httpd<br /><pre>
+Installed:
+  nethserver-httpd.noarch 0:2.2.0-1.ns6
+</pre></p>
+
+
+	<p>Bu i have the same dependecies error</p>
+
+
+	<p>I try to install nethserver-httpd in testing<br />nethserver-httpd-2.2.1</p>
+
+
+	<p>Same error</p>
+
+
+	<p>I try with repoquery</p>
+
+
+<pre>
+[root@muflone ~]# repoquery --enablerepo=nethserver-testing  --requires --recursive --resolve nethserver-squidclamav
+nethserver-squidclamav-0:1.0.1-1.ns6.noarch
+nethserver-antivirus-0:1.0.1-1.ns6.noarch
+bash-0:4.1.2-14.el6.x86_64
+squidclamav-0:6.10-1.ns6.x86_64
+nethserver-c-icap-0:1.0.0-1.ns6.noarch
+
+[root@muflone ~]# repoquery --enablerepo=nethserver-testing --alldeps --requires --recursive nethserver-squidclamav
+/bin/sh
+nethserver-antivirus
+nethserver-c-icap
+nethsever-httpd
+squidclamav
+
+</pre><br />What am i missing? :-\</div>
+    </div>
+  </div>
+  
+  <div id="change-6743" class="journal has-notes">
+    <div id="note-16">
+    <h4><a href="1959.html#note-16" class="journal-link">#16</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6743-notes"><blockquote>
+
+	<p>I'm installing nethsever-httpd</p>
+
+
+</blockquote>
+
+	<p>It's a typo: nethsever instead of nethserver.<br />You should install with nodeps or wait for an updated  squidcalamav package.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6745" class="journal has-notes has-details">
+    <div id="note-17">
+    <h4><a href="1959.html#note-17" class="journal-link">#17</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>ON_DEV</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>30</i></li>
+    </ul>
+    <div class="wiki" id="journal-6745-notes"><p>Thank you Filippo, eagle eye ;-)</p>
+
+
+<pre>
+wget http://pulp.nethesis.it/nethserver/6.4/testing/x86_64/nethserver-squidclamav-1.0.1-1.ns6.noarch.rpm
+
+# rpm -Uvh --nodeps http://pulp.nethesis.it/nethserver/6.4/testing/x86_64/nethserver-squidclamav-1.0.1-1.ns6.noarch.rpm
+Retrieving http://pulp.nethesis.it/nethserver/6.4/testing/x86_64/nethserver-squidclamav-1.0.1-1.ns6.noarch.rpm
+Preparing...                ########################################### [100%]
+   1:nethserver-squidclamav ########################################### [100%]
+</pre>
+
+Ok, but now there's no deps for nethserver-squid. I have squid but not squid panel. I have installed manually
+	<ol>
+	<li>yum --enablerepo=nethserver-testing install nethserver-squid</li>
+	</ol>
+
+
+<strong>Then</strong>
+	<ul>
+	<li>typo on deps "nethsever-httpd" </li>
+		<li>nodeps for nethserver-squid, only for squid</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-6746" class="journal has-notes">
+    <div id="note-18">
+    <h4><a href="1959.html#note-18" class="journal-link">#18</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-6746-notes"><p>I can't test eicar download because another nethserver block it for my test server.<br /> <a class="external" href="http://nethsecurityng.nethesis.it/cgi-bin/squidclamav/clwarn.cgi">http://nethsecurityng.nethesis.it/cgi-bin/squidclamav/clwarn.cgi</a>?<br />Can i verify this part indirectly? :-D</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6755" class="journal has-details">
+    <div id="note-19">
+    <h4><a href="1959.html#note-19" class="journal-link">#19</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6756" class="journal has-notes has-details">
+    <div id="note-20">
+    <h4><a href="1959.html#note-20" class="journal-link">#20</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-6756-notes">New package in nethserver-testing repo:
+	<ul>
+	<li>nethserver-squidclamav-1.0.2-1</li>
+	</ul>
+
+
+	<p>To test behind a firewall, disable the antivirus on the firewall or use another gateway.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6762" class="journal has-details">
+    <div id="note-21">
+    <h4><a href="1959.html#note-21" class="journal-link">#21</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6765" class="journal has-notes has-details">
+    <div id="note-22">
+    <h4><a href="1959.html#note-22" class="journal-link">#22</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-6765-notes"><p><strong>VERIFIED</strong></p>
+
+
+	<ul>
+	<li>Installed as dependencies<pre>
+  nethserver-antivirus.noarch 0:1.0.3-1.ns6        nethserver-c-icap.noarch 0:1.0.1-1.ns6    
+  nethserver-firewall-base.noarch 0:1.0.3-1.ns6    nethserver-httpd.noarch 0:2.2.1-1.ns6     
+  nethserver-shorewall.noarch 0:1.0.0-1.ns6        nethserver-squid.noarch 0:1.0.3-1.ns6 
+</pre></li>
+		<li>After yum transaction <code>squid</code> and <code>c-icap</code> daemons are disabled and stopped</li>
+		<li>Started squid => OK</li>
+		<li>EICAR test => OK<pre>
+$ curl -v -L -x davidep2.vboxnet0.tld:3128 http://www.eicar.org/download/eicar.com
+* About to connect() to proxy davidep2.vboxnet0.tld port 3128 (#0)
+*   Trying 192.168.8.2...
+* Connected to davidep2.vboxnet0.tld (192.168.8.2) port 3128 (#0)
+&gt; GET http://www.eicar.org/download/eicar.com HTTP/1.1
+&gt; User-Agent: curl/7.29.0
+&gt; Host: www.eicar.org
+&gt; Accept: */*
+&gt; Proxy-Connection: Keep-Alive
+&gt; 
+&lt; HTTP/1.1 200 OK
+&lt; Date: Mon, 29 Jul 2013 10:20:42 GMT
+&lt; Server: Apache
+&lt; Content-Disposition: attachment; filename="eicar.com" 
+&lt; Cache-Control: private
+&lt; Content-Length: 68
+&lt; Content-Type: application/octet-stream
+&lt; X-Cache: MISS from davidep2.vboxnet0.tld
+&lt; X-Cache-Lookup: MISS from davidep2.vboxnet0.tld:3128
+&lt; Via: 1.1 davidep2.vboxnet0.tld (squid/3.3.5)
+&lt; Connection: keep-alive
+&lt; 
+* Connection #0 to host davidep2.vboxnet0.tld left intact
+X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
+</pre></li>
+		<li>Started c-icap => OK</li>
+		<li>EICAR test => OK<pre>
+   $ curl -v -L -x davidep2.vboxnet0.tld:3128 http://www.eicar.org/download/eicar.com
+* About to connect() to proxy davidep2.vboxnet0.tld port 3128 (#0)
+*   Trying 192.168.8.2...
+* Connected to davidep2.vboxnet0.tld (192.168.8.2) port 3128 (#0)
+&gt; GET http://www.eicar.org/download/eicar.com HTTP/1.1
+&gt; User-Agent: curl/7.29.0
+&gt; Host: www.eicar.org
+&gt; Accept: */*
+&gt; Proxy-Connection: Keep-Alive
+&gt; 
+&lt; HTTP/1.1 301 Moved Permanently
+&lt; Date: Mon, 29 Jul 2013 10:24:07 GMT
+&lt; Location: http://davidep2.vboxnet0.tld/cgi-bin/squidclamav/clwarn.cgi?url=http://www.eicar.org/download/eicar.com&#38;source=192.168.8.1&#38;user=-&#38;virus=stream: Eicar-Test-Signature FOUND
+&lt; Server: C-ICAP
+&lt; Content-Type: text/html
+&lt; Content-Language: en
+&lt; X-Cache: MISS from davidep2.vboxnet0.tld
+&lt; X-Cache-Lookup: MISS from davidep2.vboxnet0.tld:3128
+&lt; Transfer-Encoding: chunked
+&lt; Via: ICAP/1.0 davidep2.vboxnet0.tld (C-ICAP/0.2.5 SquidClamav/Antivirus service ), 1.1 davidep2.vboxnet0.tld (squid/3.3.5)
+&lt; HTTP/1.1 200 OK
+&lt; Date: Mon, 29 Jul 2013 10:24:07 GMT
+&lt; Server: Apache/2.2.15 (CentOS) DAV/2 mod_ssl/2.2.15 OpenSSL/1.0.0-fips
+&lt; Content-Type: text/html; charset=ISO-8859-1
+&lt; X-Cache: MISS from davidep2.vboxnet0.tld
+&lt; X-Cache-Lookup: MISS from davidep2.vboxnet0.tld:3128
+&lt; Transfer-Encoding: chunked
+&lt; Via: 1.1 davidep2.vboxnet0.tld (squid/3.3.5)
+&lt; Connection: keep-alive
+&lt; 
+&lt;!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+[...]
+    The requested URL http://www.eicar.org/download/eicar.com contains a virus&lt;br&gt;
+    Virus name: Eicar-Test-Signature
+[...]
+* Connection #1 to host davidep2.vboxnet0.tld left intact
+</pre></li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-6780" class="journal has-notes has-details">
+    <div id="note-23">
+    <h4><a href="1959.html#note-23" class="journal-link">#23</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-6780-notes"><p>Moved web proxy antivirus configuration from nethserver-antivirus to nethserver-squidclamav package.</p>
+
+
+Please do a quick test with:
+	<ul>
+	<li>nethserver-antivirus-1.0.4-1</li>
+		<li>nethserver-squidclamav-1.0.3-1</li>
+	</ul>
+
+
+	<p>Just check the web UI is working correctly.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6784" class="journal has-details">
+    <div id="note-24">
+    <h4><a href="1959.html#note-24" class="journal-link">#24</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6788" class="journal has-details">
+    <div id="note-25">
+    <h4><a href="1959.html#note-25" class="journal-link">#25</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6804" class="journal has-notes has-details">
+    <div id="note-26">
+    <h4><a href="1959.html#note-26" class="journal-link">#26</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

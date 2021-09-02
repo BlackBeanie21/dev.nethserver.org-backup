@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2814: Relay denied to SMTP clients both in local networks and submission_whitelist - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2814.atom" rel="alternate" title="NethServer 6 - Bug #2814: Relay denied to SMTP clients both in local networks and submission_whitelist" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #2814</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Relay denied to SMTP clients both in local networks and submission_whitelist</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-mail-server</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/200.html">v6.5-final</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <ul>
+	<li>Add a subnet <code>S</code> in "Local networks" page</li>
+		<li>Add client <code>C</code> in <code>S</code> to <code>submission_whitelist</code></li>
+		<li><code>C</code> cannot relay messages on port 25</li>
+	</ul>
+
+
+	<p>Packages:<pre>
+postfix-2.10.3-1.el6.x86_64
+nethserver-mail-common-1.3.3-1.ns6.noarch
+nethserver-mail-server-1.7.0-1.ns6.noarch
+</pre></p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>main.cf: smtpd_relay_restrictions set to empty value. Refs <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>main.cf: enforce submission_whitelist on client, helo and sender restrictions. Refs <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>postfix/main.cf: adapted legacy policy to submission_whitelist changes in mail-common. Refs <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>main.cf: new postfix/AccessPolicies prop. Refs <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a></p>
+
+
+	<p>The AccessPolicies prop is a comma separated list of policy<br />identifiers. An access policy is expected to change the access<br />restrictions enforced by smtpd and/or submission processes.</p>
+
+
+	<p>An access policy implementation is a function added to the<br />%access_policies global hash in main.cf template.</p>
+
+
+	<p>Functions are invoked by 10access_policy fragment. See<br />01access_policy_smtpauth for instance.</p>
+
+
+	<p>Moreover this change:</p>
+
+
+	<p>- Obsoletes postfix/SubmissionPolicyType prop applying a migration<br />  fragment.</p>
+
+
+	<p>- Imported policies from nethserver-mail-server into<br />  01access_policy_*.</p>
+
+
+	<p>- Activates smtpauth policy on migration-import event</p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>postfix/main.cf: obsoleted submission policy in mail-common. Refs <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>mynetworks template: grant access from trusted networks if explicitly requested. Refs <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Template "submission_whitelist" obsoleted by "access" table. Refs <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a></p>
+
+
+	<p>The old submission_whitelist template-custom fragments are still<br />included into access, to retain backward compatibility.</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Changed mynetworks table format to cidr: Refs <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>network-create, delete events: force reload to read mynetworks table. Refs <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>amavisd.conf: read /etc/postfix/mynetworks.cidr. Refs <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a></p>
+
+
+	<p>Fixes trusted networks definition for amavisd.</p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Merge branch 'b2750'</p>
+
+
+	<p>Refs <a href="2843.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid excessive postfix reload  (CLOSED)">#2843</a> <a href="2841.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Dovecot: separate log files for IMAP (CLOSED)">#2841</a> <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a> <a href="2804.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Smarthost configuration ignored during migration (CLOSED)">#2804</a> <a href="2784.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Differentiate Postfix syslog_name parameters (CLOSED)">#2784</a> <a href="2768.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Relax Postix restrictions for whitelisted senders (CLOSED)">#2768</a> <a href="2767.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Customizable SMTP HELO value (CLOSED)">#2767</a> <a href="2750.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Mail spying / always Bcc (CLOSED)">#2750</a> <a href="2723.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Customizable mail quota increments (CLOSED)">#2723</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Merge branch 'b2750'</p>
+
+
+	<p>Refs <a href="2843.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid excessive postfix reload  (CLOSED)">#2843</a> <a href="2841.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Dovecot: separate log files for IMAP (CLOSED)">#2841</a> <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a> <a href="2804.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Smarthost configuration ignored during migration (CLOSED)">#2804</a> <a href="2784.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Differentiate Postfix syslog_name parameters (CLOSED)">#2784</a> <a href="2768.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Relax Postix restrictions for whitelisted senders (CLOSED)">#2768</a> <a href="2767.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Customizable SMTP HELO value (CLOSED)">#2767</a> <a href="2750.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Mail spying / always Bcc (CLOSED)">#2750</a> <a href="2723.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Customizable mail quota increments (CLOSED)">#2723</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Merge branch 'b2750'</p>
+
+
+	<p>Refs <a href="2843.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid excessive postfix reload  (CLOSED)">#2843</a> <a href="2841.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Dovecot: separate log files for IMAP (CLOSED)">#2841</a> <a href="2814.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Relay denied to SMTP clients both in local networks and submission_whitelist (CLOSED)">#2814</a> <a href="2804.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Smarthost configuration ignored during migration (CLOSED)">#2804</a> <a href="2784.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Differentiate Postfix syslog_name parameters (CLOSED)">#2784</a> <a href="2768.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Relax Postix restrictions for whitelisted senders (CLOSED)">#2768</a> <a href="2767.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Customizable SMTP HELO value (CLOSED)">#2767</a> <a href="2750.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Mail spying / always Bcc (CLOSED)">#2750</a> <a href="2723.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Customizable mail quota increments (CLOSED)">#2723</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-11691" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="2814.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-11691-notes"><p>Since postfix-2.10 <a href="http://www.postfix.org/postconf.5.html#smtpd_relay_restrictions" class="external">smtpd_relay_restrictions</a> changed behaviour.</p>
+
+
+<blockquote>
+
+	<p>With Postfix versions before 2.10, the rules for relay permission and spam blocking were combined under smtpd_recipient_restrictions, resulting in error-prone configuration. As of Postfix 2.10, relay permission rules are preferably implemented with smtpd_relay_restrictions, so that a permissive spam blocking policy under smtpd_recipient_restrictions will no longer result in a permissive mail relay policy.</p>
+
+
+</blockquote>
+
+	<p>Our config has <code>smtpd_relay_restrictions</code> at default value from Postfix, and probably does not fit.<pre>
+smtpd_relay_restrictions = permit_mynetworks, permit_sasl_authenticated, 
+  defer_unauth_destination
+
+smtpd_recipient_restrictions = check_client_access hash:/etc/postfix/submission_whitelist, 
+  reject_non_fqdn_recipient, check_recipient_access hash:/etc/postfix/internal_access, 
+  permit_sasl_authenticated, reject_unauth_destination, reject_unverified_recipient
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-11692" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="2814.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-11692-notes"><p>Moreover <code>nethserver-mail-server</code> actions/templates are not bound to <code>network-*</code> events!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11987" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="2814.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11999" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="2814.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    <div class="wiki" id="journal-11999-notes"><p>In branch b2750</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12011" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="2814.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/12011%3Fdetail_id=19271.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12019" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="2814.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-12019-notes"><p><strong>Packager note</strong></p>
+
+
+	<p>The <code>submission_whitelist</code> template is now obsoleted by <code>access</code>. Changed <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-mail-common" class="wiki-page new">nethserver-mail-common</a>, and <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-mail-server" class="wiki-page new">nethserver-mail-server</a> wiki pages accordingly.</p>
+
+
+	<p>Install <code>nethserver-mail-dev</code> package to execute test cases.</p>
+
+
+	<p><strong>Test case 1 - access by template-custom</strong></p>
+
+
+	<ul>
+	<li>Upgrade to modified version</li>
+		<li>Check mail relay is denied to foreign domain <code>outside.tld</code>:<pre>
+ smtptest --ehlo vboxnet1.tld --from primo.utente@vboxnet1.tld --to davide@outside.tld --addr 192.168.88.2 --port 25
+</pre></li>
+		<li>Add client IP to access table:<pre>
+mkdir -p /etc/e-smith/templates-custom/etc/postfix/access
+echo "192.168.88.2 OK" &gt;&gt; /etc/e-smith/templates-custom/etc/postfix/access/20testcase
+</pre></li>
+		<li>Check mail relay is now allowed (repeat previous command).</li>
+	</ul>
+
+
+	<p><strong>Test case 2 - access by trusted network</strong></p>
+
+
+	<ul>
+	<li>Upgrade to modified version</li>
+		<li>Check mail relay is denied to foreign domain <code>outside.tld</code>:<pre>
+ smtptest --ehlo vboxnet1.tld --from primo.utente@vboxnet1.tld --to davide@outside.tld --addr 192.168.99.2 --port 25
+</pre></li>
+		<li>Enable <code>trustednetworks</code> access policy:<pre>
+config setprop postfix AccessPolicies trustednetworks
+signal-event nethserver-mail-common-save
+</pre></li>
+		<li>From server-manager, add 192.168.99.0/24 to "Trusted networks" </li>
+		<li>Check mail relay is now allowed (repeat previous command).</li>
+	</ul>
+
+
+	<p>Reset <del><code>AccessPolicy</code></del> <code>AccessPolicies</code> to empty string and repeat <code>signal-event</code> to cleanup.</p>
+
+
+	<p><strong>Test case 3</strong></p>
+
+
+	<p>Repeat case 1 and 2 changing port <code>--port 587</code> in <code>smtptest</code> command.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12035" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="2814.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-12035-notes"><p>In nethserver-testing:<br />nethserver-mail-common-1.3.3-1.19git5aeec2c.ns6.noarch.rpm<br />nethserver-mail-server-1.7.0-1.9git836d38e.ns6.noarch.rpm<br />nethserver-mail-filter-1.1.6-5.0git2ea5d3e8.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12357" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="2814.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12381" class="journal has-notes has-details">
+    <div id="note-9">
+    <h4><a href="2814.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-12381-notes"><strong>Test case 1</strong>
+	<ul>
+	<li>Without access template, relay is denied</li>
+		<li>After template modification, relay is allowed:<br /><pre>
+mkdir -p /etc/e-smith/templates-custom/etc/postfix/access
+echo "192.168.1.22 OK" &gt;&gt; /etc/e-smith/templates-custom/etc/postfix/access/20clients
+signal-event nethserver-mail-common-save
+signal-event nethserver-mail-server-save
+</pre></li>
+	</ul>
+
+
+<strong>Test case 2</strong>
+	<ul>
+	<li>Without policy, relay is denied</li>
+		<li>After setting the policy, relay is allowed<br /><pre>
+config setprop postfix AccessPolicies trustednetworks
+signal-event nethserver-mail-server-save
+</pre></li>
+	</ul>
+
+
+<strong>Test case 3</strong>
+	<ul>
+	<li>Same as test case 1 and 2</li>
+	</ul>
+
+
+Also tested:
+	<ul>
+	<li>whitelist with old template (<code>/etc/postfix/submission_whitelist</code>)</li>
+		<li>access policy <code>smtpauth</code>:<br /><pre>
+config setprop postfix AccessPolicies smtpauth
+signal-event nethserver-mail-server-save
+</pre></li>
+	</ul>
+
+
+	<p><strong>NOTE</strong><br />Please add documentation to Administrator and Developer manual before release.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12547" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="2814.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-12547-notes">Released in nethserver-updates:
+	<ul>
+	<li>nethserver-mail-server-1.8.0-1.ns6.noarch.rpm</li>
+		<li>nethserver-mail-common-1.4.0-1.ns6.noarch.rpm</li>
+		<li>nethserver-mail-filter-1.2.0-1.ns6.noarch.rpm</li>
+	</ul>
+
+
+New documentation:
+	<ul>
+	<li><a class="external" href="http://docs.nethserver.o/projects/nethserver-devel/en/latest/mail_server.html">http://docs.nethserver.o/projects/nethserver-devel/en/latest/mail_server.html</a></li>
+		<li><a class="external" href="http://docs.nethserver.o/projects/nethserver-devel/en/latest/mail_common.html">http://docs.nethserver.o/projects/nethserver-devel/en/latest/mail_common.html</a></li>
+		<li><a class="external" href="http://docs.nethserver.o/projects/nethserver-devel/en/latest/mail_filter.html">http://docs.nethserver.o/projects/nethserver-devel/en/latest/mail_filter.html</a></li>
+		<li><a class="external" href="http://docs.nethserver.org/en/latest/mail.html">http://docs.nethserver.org/en/latest/mail.html</a></li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

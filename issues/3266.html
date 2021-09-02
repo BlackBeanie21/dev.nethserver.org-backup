@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #3266: WPAD improvements - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3266.atom" rel="alternate" title="NethServer 6 - Enhancement #3266: WPAD improvements" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #3266</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="3323.html" title="#3323">« Previous</a> |
+      <a href="3324.html" title="#3324">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>WPAD improvements</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-squid</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/214.html">v6.7</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>WPAD implementation should be updated with the following  improvements:</p>
+
+
+	<ul>
+	<li>WPAD must be accessible from all networks using the IP address of the gateway to avoid problems with name resolution</li>
+		<li>as an exception to previous point, if the server is joined to an AD, all clients must use the host name, since Kerberos authentication doesn't work with the IP</li>
+		<li>if Squid is configured in transparent mode, the WPAD should return DIRECT access to avoid problems with dumb clients. Be aware that the proxy can be in transparent mode for green network and manual for the blue one (or viceversa)</li>
+	</ul>
+
+
+	<p>Thanks to Adam for the idea: <a class="external" href="http://community.nethserver.org/t/wpad-dhcp-dns-etc/1627">http://community.nethserver.org/t/wpad-dhcp-dns-etc/1627</a></p>
+
+
+	<p>PAC functions are documented here:<br /><a class="external" href="http://findproxyforurl.com/pac-functions/">http://findproxyforurl.com/pac-functions/</a></p>
+  </div>
+</div>
+<div class="attachments">
+<p><a href="../attachments/download/333/pactest.py" class="icon icon-attachment">pactest.py</a>    <a href="../attachments/333/pactest.py.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a>
+   - Test cases
+  <span class="size">(1.75 KB)</span>
+    <span class="author">Davide Principi, 12/01/2015 09:44 AM</span>
+  </p>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-764">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="3330" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="3330.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #3330</a>: Error when proxy is set to &quot;authenticated&quot;
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/3266/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="3266.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>WPAD fixes. Refs <a href="3266.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="WPAD improvements (CLOSED)">#3266</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>WPAD fixes. Refs <a href="3266.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="WPAD improvements (CLOSED)">#3266</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>New WPAD implementation. Refs <a href="3266.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="WPAD improvements (CLOSED)">#3266</a></p>
+
+
+	<p>Also support source and destination bypasses.</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>WPAD: fix bad JS syntax. Refs <a href="3266.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="WPAD improvements (CLOSED)">#3266</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>WPAD: signal squid-save event on bypass edit. Refs <a href="3266.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="WPAD improvements (CLOSED)">#3266</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Revert "WPAD: signal squid-save event on bypass edit. Refs <a href="3266.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="WPAD improvements (CLOSED)">#3266</a>"</p>
+
+
+	<p>This reverts commit 4065c4e7820c2a6ea429ab350ba571429d8901ff.</p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>createlinks: expand wpad when necessary. Refs <a href="3266.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="WPAD improvements (CLOSED)">#3266</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>WPAD: resolve hosts when needed. Refs <a href="3266.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="WPAD improvements (CLOSED)">#3266</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>WPAD: limit WPAD access to trusted networks. Refs <a href="3266.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="WPAD improvements (CLOSED)">#3266</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>WPAD: fix httpd allow directive. Refs <a href="3266.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="WPAD improvements (CLOSED)">#3266</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-16262" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="3266.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/c96c358beddd941e6188349f3c98ccd3?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16262-notes"><p>I suggest an improvement for this scenario:</p>
+
+
+	<ul>
+	<li>Nethserver member of AD domain</li>
+		<li>DC located in the green</li>
+	</ul>
+
+
+	<ul>
+	<li>Proxy web authenticated in the green zone</li>
+		<li>Proxy web manual/transparent in the blue zone</li>
+	</ul>
+
+
+	<p>GREEN network :  clients are using DC as DNS, the DC can resolve the hostname written in the wpad.dat, everything will work fine</p>
+
+
+	<p>BLUE network: clients in this zone can't resolve the hostname (this zone usually is completely separated from the green one)<br />In this case it could better to write in the wpad.dat file the ip address and not the hostname for the blue clients</p>
+
+
+	<p>to semplify the concept in pseudocode... for EVERY zone:</p>
+
+
+<pre>
+if (authenticated &#38;&#38; AD_joined) {
+    $HOSTNAME}
+else{
+    $IP_ADDRESS
+}
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-16381" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3266.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Target version</strong> set to <i>v6.7</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16400" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="3266.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16501" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="3266.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16802" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="3266.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16805" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="3266.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16805-notes"><p>Current implementation is wrong since it uses the <code>host</code> variable to check client ip source address, but it should use the <code>myUpAddress()</code> function.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16806" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="3266.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-16806-notes"><p>New implementation also supports source and destination bypass.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16809" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="3266.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-16809-notes">In nethserver-testing:
+	<ul>
+	<li><del>nethserver-squid-1.3.10-1.7.g55bf32c.ns6.noarch.rpm</del></li>
+		<li>nethserver-squid-1.3.10-1.11.g557da40.ns6.noarch.rpm</li>
+	</ul>
+
+
+	<p><strong>NOTE</strong>: you can use this tool to test the WPAD implementation: <a class="external" href="https://github.com/pacparser/pacparser">https://github.com/pacparser/pacparser</a></p>
+
+
+<strong>Test case 0</strong>
+	<ul>
+	<li>Disable the proxy</li>
+		<li>Check the WPAD returns "DIRECT"</li>
+	</ul>
+
+
+<strong>Test case 1</strong>
+	<ul>
+	<li>Configure the proxy in manual mode</li>
+		<li>Check the wpad returns the proxy ip address for each green and blue network</li>
+		<li>Repeat the same configuring the proxy in authenticated mode</li>
+		<li>Enable the AD join  (fake config: <code>config set smb service status enabled ServerRole ADS</code>)</li>
+		<li>Repeat previous tests and check the proxy is returned with host name "proxy.&lt;domain&gt;:3128"</li>
+	</ul>
+
+
+<strong>Test case 2</strong>
+	<ul>
+	<li>Set the proxy mode to transparent or transparent_ssl on green networks</li>
+		<li>Check the WPAD return "DIRECT" for green</li>
+		<li>Repeat the test for blue networks</li>
+	</ul>
+
+
+<strong>Test case 3</strong>
+	<ul>
+	<li>Configure 3 destination bypasses using host, host group and cidr</li>
+		<li>Verify the listed sites will be reached without proxy</li>
+	</ul>
+
+
+<strong>Test case 4</strong>
+	<ul>
+	<li>Configure 4 source bypasses using host, host group, ip range and cidr</li>
+		<li>Verify the listed hosts will not use the proxy</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-16811" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="3266.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16827" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="3266.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>File</strong> <a href="../attachments/download/333/pactest.py">pactest.py</a><a href="../attachments/333/pactest.py.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a> added</li>
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-16827-notes"><p><ins>System and  Package Version installed</ins><br />NethServer 6.7, upgraded to nethserver-squid-1.3.10-1.11.g557da40.ns6.noarch<br />Installed paclibrary</p>
+
+
+	<p><ins>Test Original Problem</ins><br />Enhancement</p>
+
+
+	<p><ins>Install Updated Package</ins><br /><pre>
+yum --enablerepo=nethserver-testing update nethserver-squid-1.3.10-1.11.g557da40.ns6.noarch
+</pre></p>
+
+
+	<p><ins>Test Results after update</ins></p>
+
+
+	<ul>
+	<li>green is 192.168.122.0/24</li>
+		<li>blue is 192.168.150.0/24</li>
+	</ul>
+
+
+	<p><strong>Test case 1</strong></p>
+
+
+	<ul>
+	<li>proxy disabled, OK
+	<table>
+		<tr>
+			<td> green1.1                 </td>
+			<td> 192.168.122.12  </td>
+			<td> <a class="external" href="http://192.168.122.100">http://192.168.122.100</a>           </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green1.2                 </td>
+			<td> 192.168.122.11  </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green1.3 (bypass)        </td>
+			<td> 192.168.122.1   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green2.1                 </td>
+			<td> 192.168.123.13  </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>        </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> blue1                    </td>
+			<td> 192.168.150.7   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+	</table></li>
+	</ul>
+
+
+	<p><strong>Test case 2</strong></p>
+
+
+	<ul>
+	<li>manual green,blue <strong>OK</strong>
+	<table>
+		<tr>
+			<td> green1.1                 </td>
+			<td> 192.168.122.12  </td>
+			<td> <a class="external" href="http://192.168.122.100">http://192.168.122.100</a>           </td>
+			<td> PROXY 192.168.122.114:3128 </td>
+		</tr>
+		<tr>
+			<td> green1.2                 </td>
+			<td> 192.168.122.11  </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> PROXY 192.168.122.114:3128 </td>
+		</tr>
+		<tr>
+			<td> green1.3 (bypass)        </td>
+			<td> 192.168.122.1   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green2.1                 </td>
+			<td> 192.168.123.13  </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>        </td>
+			<td> PROXY 192.168.123.0:3128 </td>
+		</tr>
+		<tr>
+			<td> blue1                    </td>
+			<td> 192.168.150.7   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> PROXY 192.168.150.1:3128 </td>
+		</tr>
+	</table></li>
+	</ul>
+
+
+	<ul>
+	<li>authenticated green,blue <strong>OK</strong>
+	<table>
+		<tr>
+			<td> green1.1                 </td>
+			<td> 192.168.122.12  </td>
+			<td> <a class="external" href="http://192.168.122.100">http://192.168.122.100</a>           </td>
+			<td> PROXY 192.168.122.114:3128 </td>
+		</tr>
+		<tr>
+			<td> green1.2                 </td>
+			<td> 192.168.122.11  </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> PROXY 192.168.122.114:3128 </td>
+		</tr>
+		<tr>
+			<td> green1.3 (bypass)        </td>
+			<td> 192.168.122.1   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green2.1                 </td>
+			<td> 192.168.123.13  </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>        </td>
+			<td> PROXY 192.168.123.0:3128 </td>
+		</tr>
+		<tr>
+			<td> blue1                    </td>
+			<td> 192.168.150.7   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> PROXY 192.168.150.1:3128 </td>
+		</tr>
+	</table>
+
+	<ul>
+	<li><strong>NOTE</strong> I had to install <code>nethserver-samba</code> (however,  <code>nethserver-directory</code> was probably enough) to get <em>authenticated</em> mode working. The following error appeared in <code>/var/log/messages</code><pre>
+Dec  1 12:19:44 vm2 esmith::event[16051]: 2015/12/01 12:19:44| Processing Configuration File: /etc/squid/squid.conf (depth 0)
+Dec  1 12:19:44 vm2 esmith::event[16051]: 2015/12/01 12:19:44| Processing: acl no_cache dstdomain "/etc/squid/acls/no_cache.acl" 
+Dec  1 12:19:44 vm2 esmith::event[16051]: 2015/12/01 12:19:44| Warning: empty ACL: acl no_cache dstdomain "/etc/squid/acls/no_cache.acl" 
+Dec  1 12:19:44 vm2 esmith::event[16051]: 2015/12/01 12:19:44| Processing: no_cache deny no_cache
+...
+Dec  1 12:19:44 vm2 esmith::event[16051]: 2015/12/01 12:19:44| Processing: acl authenticated proxy_auth REQUIRED
+Dec  1 12:19:44 vm2 esmith::event[16051]: 2015/12/01 12:19:44| Can't use proxy auth because no authentication schemes are fully configured.
+Dec  1 12:19:44 vm2 esmith::event[16051]: FATAL: ERROR: Invalid ACL: acl authenticated proxy_auth REQUIRED
+</pre></li>
+		<li>In my config I added one host under "Hosts without proxy" </li>
+		<li>After I installed <code>nethserver-samba</code> the problem was fixed</li>
+	</ul>
+</li>
+		<li>with <code>smb</code> in <code>ADS</code> mode, <strong>OK</strong>
+	<table>
+		<tr>
+			<td> green1.1                 </td>
+			<td> 192.168.122.12  </td>
+			<td> <a class="external" href="http://192.168.122.100">http://192.168.122.100</a>           </td>
+			<td> PROXY proxy.dpnet.nethesis.it:3128 </td>
+		</tr>
+		<tr>
+			<td> green1.2                 </td>
+			<td> 192.168.122.11  </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> PROXY proxy.dpnet.nethesis.it:3128 </td>
+		</tr>
+		<tr>
+			<td> green1.3 (bypass)        </td>
+			<td> 192.168.122.1   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green2.1                 </td>
+			<td> 192.168.123.13  </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>        </td>
+			<td> PROXY proxy.dpnet.nethesis.it:3128 </td>
+		</tr>
+		<tr>
+			<td> blue1                    </td>
+			<td> 192.168.150.7   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> PROXY proxy.dpnet.nethesis.it:3128 </td>
+		</tr>
+	</table></li>
+	</ul>
+
+
+	<p><strong>Test case 2</strong></p>
+
+
+	<ul>
+	<li>green transparent <strong>OK</strong>
+	<table>
+		<tr>
+			<td> green1.1                 </td>
+			<td> 192.168.122.12  </td>
+			<td> <a class="external" href="http://192.168.122.100">http://192.168.122.100</a>           </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green1.2                 </td>
+			<td> 192.168.122.11  </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green1.3 (bypass)        </td>
+			<td> 192.168.122.1   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green2.1                 </td>
+			<td> 192.168.123.13  </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>        </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> blue1                    </td>
+			<td> 192.168.150.7   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> PROXY proxy.dpnet.nethesis.it:3128 </td>
+		</tr>
+	</table></li>
+	</ul>
+
+
+	<ul>
+	<li>blue transparent(_ssl), green transparent(_ssl) <strong>OK</strong>
+	<table>
+		<tr>
+			<td> green1.1                 </td>
+			<td> 192.168.122.12  </td>
+			<td> <a class="external" href="http://192.168.122.100">http://192.168.122.100</a>           </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green1.2                 </td>
+			<td> 192.168.122.11  </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green1.3 (bypass)        </td>
+			<td> 192.168.122.1   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green2.1                 </td>
+			<td> 192.168.123.13  </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>        </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> blue1                    </td>
+			<td> 192.168.150.7   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+	</table></li>
+	</ul>
+
+
+	<ul>
+	<li>blue transparent, green manual <strong>OK</strong>
+	<table>
+		<tr>
+			<td> green1.1                 </td>
+			<td> 192.168.122.12  </td>
+			<td> <a class="external" href="http://192.168.122.100">http://192.168.122.100</a>           </td>
+			<td> PROXY proxy.dpnet.nethesis.it:3128 </td>
+		</tr>
+		<tr>
+			<td> green1.2                 </td>
+			<td> 192.168.122.11  </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> PROXY proxy.dpnet.nethesis.it:3128 </td>
+		</tr>
+		<tr>
+			<td> green1.3 (bypass)        </td>
+			<td> 192.168.122.1   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> green2.1                 </td>
+			<td> 192.168.123.13  </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>        </td>
+			<td> PROXY proxy.dpnet.nethesis.it:3128 </td>
+		</tr>
+		<tr>
+			<td> blue1                    </td>
+			<td> 192.168.150.7   </td>
+			<td> <a class="external" href="http://www.centos.org">http://www.centos.org</a>            </td>
+			<td> DIRECT </td>
+		</tr>
+	</table></li>
+	</ul>
+
+
+	<p><strong>Test case 3</strong></p>
+
+
+	<p>Destination bypasses</p>
+
+
+	<table>
+		<tr>
+			<td> src bypass iprange from green      </td>
+			<td> 192.168.122.91     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass iprange from blue       </td>
+			<td> 192.168.150.91     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass host from green         </td>
+			<td> 192.168.122.10     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass host from blue          </td>
+			<td> 192.168.150.20     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass host-group from green   </td>
+			<td> 192.168.122.3      </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass host-group from blue    </td>
+			<td> 192.168.150.33     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass cidr from green         </td>
+			<td> 192.168.122.249    </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass cidr from blue          </td>
+			<td> 192.168.150.249    </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+	</table>
+
+
+
+
+	<p><strong>Test case 4</strong></p>
+
+
+	<table>
+		<tr>
+			<td> src bypass iprange from green      </td>
+			<td> 192.168.122.91     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass iprange from blue       </td>
+			<td> 192.168.150.91     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass host from green         </td>
+			<td> 192.168.122.10     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass host from blue          </td>
+			<td> 192.168.150.20     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass host-group from green   </td>
+			<td> 192.168.122.3      </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass host-group from blue    </td>
+			<td> 192.168.150.33     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass cidr from green         </td>
+			<td> 192.168.122.249    </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+		<tr>
+			<td> src bypass cidr from blue          </td>
+			<td> 192.168.150.249    </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> DIRECT </td>
+		</tr>
+	</table>
+
+
+
+
+	<p>Disabled all rules</p>
+
+
+	<table>
+		<tr>
+			<td> src bypass iprange from green      </td>
+			<td> 192.168.122.91     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> PROXY 192.168.122.114:3128 </td>
+		</tr>
+		<tr>
+			<td> src bypass iprange from blue       </td>
+			<td> 192.168.150.91     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> PROXY 192.168.150.1:3128 </td>
+		</tr>
+		<tr>
+			<td> src bypass host from green         </td>
+			<td> 192.168.122.10     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> PROXY 192.168.122.114:3128 </td>
+		</tr>
+		<tr>
+			<td> src bypass host from blue          </td>
+			<td> 192.168.150.20     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> PROXY 192.168.150.1:3128 </td>
+		</tr>
+		<tr>
+			<td> src bypass host-group from green   </td>
+			<td> 192.168.122.3      </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> PROXY 192.168.122.114:3128 </td>
+		</tr>
+		<tr>
+			<td> src bypass host-group from blue    </td>
+			<td> 192.168.150.33     </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> PROXY 192.168.150.1:3128 </td>
+		</tr>
+		<tr>
+			<td> src bypass cidr from green         </td>
+			<td> 192.168.122.249    </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> PROXY 192.168.122.114:3128 </td>
+		</tr>
+		<tr>
+			<td> src bypass cidr from blue          </td>
+			<td> 192.168.150.249    </td>
+			<td> <a class="external" href="http://www.nethserver.org">http://www.nethserver.org</a>          </td>
+			<td> PROXY 192.168.150.1:3128 </td>
+		</tr>
+	</table>
+
+
+
+
+	<p><ins>Verified Or Reopen</ins><br /><strong>VERIFIED</strong></p>
+
+
+	<p><ins>Note</ins><br />see <a href="../attachments/download/333/pactest.py" class="attachment">pactest.py</a></p>
+
+
+	<p>see also <a class="external" href="3330.html">http://dev.nethserver.org/issues/3330</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-16828" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="3266.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="3330.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #3330</a>: Error when proxy is set to &quot;authenticated&quot;</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16830" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="3266.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-16830-notes">Released in nethserver-updates:
+	<ul>
+	<li>nethserver-squid-1.3.11-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

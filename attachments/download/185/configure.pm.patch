@@ -1,0 +1,10 @@
+--- /usr/share/perl5/vendor_perl/esmith/console/configure.pm.orig	2013-05-02 10:28:31.361201551 +0000
++++ /usr/share/perl5/vendor_perl/esmith/console/configure.pm	2013-05-02 10:36:51.345207411 +0000
+@@ -51,6 +51,7 @@
+ 
+     if (scalar @adapters == 1)
+     {
++	$ifName = @{[split(/\s+/, $adapters[0])]}[1];
+ 	# Internal, and there's only one, force role to green
+         $idb->set_prop($ifName, "role", "green");
+         $db->set_value('UnsavedChanges', 'yes');

@@ -1,0 +1,50 @@
+From 6443e0a94121419e66c621046c0bc302dcf64cc5 Mon Sep 17 00:00:00 2001
+From: Davide Principi <davide.principi@nethesis.it>
+Date: Fri, 26 Sep 2014 10:23:46 +0200
+Subject: [PATCH] sogo-config template: sogoUserSources elements order matters.
+ Refs #2808
+
+SOGo scans SOGoUserSources in reverse order, searching a matching LDAP
+node. By querying the ou=Groups at first, we ensure the posixGroup is
+properly found.
+
+Ensure memberUid attribute is set also for user primary group nodes,
+otherwise share-by-user does not work!
+---
+ root/etc/e-smith/templates/sogo-config/15group_source_ldap | 4 +++-
+ root/etc/e-smith/templates/sogo-config/20user_source_ldap  | 4 +++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/root/etc/e-smith/templates/sogo-config/15group_source_ldap b/root/etc/e-smith/templates/sogo-config/15group_source_ldap
+index 979f364..549666a 100644
+--- a/root/etc/e-smith/templates/sogo-config/15group_source_ldap
++++ b/root/etc/e-smith/templates/sogo-config/15group_source_ldap
+@@ -3,7 +3,9 @@
+     # 15group_source_ldap
+     #
+ 
+-    push @sogoUserSources, 
++    # WARNING: the order of the elements in @sogoUserSources is
++    # fundamental for sharing calendars and addressbooks. Refs #2808
++    unshift @sogoUserSources,
+         qq(
+         id = groups;
+         type = ldap;
+diff --git a/root/etc/e-smith/templates/sogo-config/20user_source_ldap b/root/etc/e-smith/templates/sogo-config/20user_source_ldap
+index 5e99128..0164498 100644
+--- a/root/etc/e-smith/templates/sogo-config/20user_source_ldap
++++ b/root/etc/e-smith/templates/sogo-config/20user_source_ldap
+@@ -3,7 +3,9 @@
+     # 20user_source_ldap
+     #
+ 
+-    push @sogoUserSources, 
++    # WARNING: the order of the elements in @sogoUserSources is
++    # fundamental for sharing calendars and addressbooks. Refs #2808
++    unshift @sogoUserSources,
+         qq(
+ 	    id = users;
+ 	    type = ldap;
+-- 
+1.9.3
+

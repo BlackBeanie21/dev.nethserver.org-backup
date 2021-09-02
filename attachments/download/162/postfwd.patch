@@ -1,0 +1,19 @@
+diff --git a/root/etc/e-smith/templates/etc/postfix/main.cf/35postfwd b/root/etc/e-smith/templates/etc/postfix/main.cf/35postfwd
+new file mode 100644
+index 0000000..182d083
+--- /dev/null
++++ b/root/etc/e-smith/templates/etc/postfix/main.cf/35postfwd
+@@ -0,0 +1,13 @@
++{
++    #
++    # 35postfwd
++    #
++    if($postfwd{status} eq 'enabled') {
++	@smtpd_recipient_restrictions = map {
++	    $_ eq 'reject_unauth_destination' ?
++		($_, 'check_policy_server inet:127.0.0.1:10040') :
++		$_
++	} @smtpd_recipient_restrictions; 
++    }
++    '';
++}

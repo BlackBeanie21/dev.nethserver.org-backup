@@ -1,0 +1,224 @@
+# ================= DO NOT MODIFY THIS FILE =================
+# 
+# Manual changes will be lost when this file is regenerated.
+#
+# Please read the developer's guide, which is available
+# at https://dev.nethesis./projects/nethserver/wiki/NethServer
+# original work from http://www.contribs.org/development/
+#
+# Copyright &copy; 2013 Nethesis S.r.l. 
+# http://www.nethesis.it - support@nethesis.it
+# 
+
+
+#
+# 10postfix_package -- The following parameter settings are shipped with
+# the postfix package (updated 20140827 - postfix-2.10.3-1.el6.x86_64). Execute
+#
+#    cat /etc/postfix/main.cf | grep -v '^#' | sed -r '/^( |\t|$)/ d' | sort
+#
+
+alias_database = hash:/etc/aliases
+alias_maps = hash:/etc/aliases
+command_directory = /usr/sbin
+daemon_directory = /usr/libexec/postfix
+data_directory = /var/lib/postfix
+debug_peer_level = 2
+html_directory = no
+mail_owner = postfix
+mailq_path = /usr/bin/mailq.postfix
+manpage_directory = /usr/share/man
+newaliases_path = /usr/bin/newaliases.postfix
+queue_directory = /var/spool/postfix
+readme_directory = /usr/share/doc/postfix-2.10.3/README_FILES
+sample_directory = /usr/share/doc/postfix-2.10.3/samples
+sendmail_path = /usr/sbin/sendmail.postfix
+setgid_group = postdrop
+unknown_local_recipient_reject_code = 550
+inet_protocols = ipv4
+
+
+#
+# 10recipient_delimiter -- The separator between user names and address extensions (user+foo)
+#
+recipient_delimiter = +
+
+#
+# 20postfix_tweaks
+#
+
+#
+# Refs #2108 -- Permanent error for non-existing recipients
+#
+unverified_recipient_reject_code = 550
+
+#
+# Refs #2824 -- Silence postfix resource problems notifications
+#
+notify_classes = 
+smtpd_proxy_timeout = 240s
+
+
+#
+# 20transport_maps -- Enable the /etc/postfix/transport table
+#
+transport_maps = hash:/etc/postfix/transport
+
+
+#
+# 20virtual_domains -- Virtual domains are enabled
+# 
+virtual_alias_maps = hash:/etc/postfix/virtual
+
+# Override system default /etc/aliases DB with our template:
+alias_maps = hash:/etc/postfix/aliases, hash:/etc/aliases
+
+# Message delivery transport that the local(8) 
+# delivery agent should use for mailbox delivery:
+mailbox_transport = lmtp:unix:/var/run/dovecot/lmtp
+
+# The default mail delivery transport and next-hop destination 
+# for final delivery to domains listed with $virtual_mailbox_domains:
+virtual_transport = lmtp:unix:/var/run/dovecot/lmtp
+
+
+#
+# 30message_size -- Max message size
+#
+message_size_limit = 20000000
+
+mailbox_size_limit = 0
+
+#
+# 30queue_lifetime -- Max queue lifetime 
+#
+maximal_queue_lifetime = 4
+bounce_queue_lifetime = 4
+
+
+
+#
+# 30smtpauth -- SMTP AUTH through Dovecot socket
+#
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/smtpauth
+# smtpd_sasl_auth_enable =  ..specified in master.cf
+broken_sasl_auth_clients = yes
+
+smtpd_sasl_tls_security_options = $smtpd_sasl_security_options
+smtpd_tls_auth_only = yes
+smtpd_sasl_authenticated_header = yes
+
+# Use default dovecot cert+key files:
+smtpd_tls_cert_file = /etc/pki/dovecot/certs/dovecot.pem
+smtpd_tls_key_file = /etc/pki/dovecot/private/dovecot.pem
+
+# With this, the Postfix SMTP server announces STARTTLS support to
+# remote SMTP clients, but does not require that clients use TLS
+# encryption:
+smtpd_tls_security_level = may
+
+
+#
+# 31spfpolicy -- Sender Policy Framework (SPF) is disabled
+# 
+# spfpolicy_time_limit = 3600
+
+
+#
+# 40always_bcc -- Refs #2750 
+# 
+# Status is disabled
+#
+# always_bcc = 
+
+
+#
+# 40helo -- Customizable SMTP HELO value #2767
+#
+# smtp_helo_name = 
+
+
+#
+# 40recipient_bcc -- Hidden copy (Bcc) to any domain recipient
+#
+recipient_bcc_maps = hash:/etc/postfix/recipient_bcc
+
+
+#
+# 40relay -- Relay domains configuration is disabled
+#
+#
+# 40smarthost -- Smarthost configuration is disabled
+#
+
+
+
+
+#
+# 40verify_database
+#
+address_verify_map = hash:$data_directory/verify
+address_verify_negative_cache = yes
+address_verify_negative_expire_time = 30m
+
+
+#
+# 50mynetworks
+#
+# mynetworks = 
+mynetworks_style = host
+
+
+#
+# 60smtpd_restrictions -- see 00template_vars fragment for default array settings..
+#
+
+smtpd_client_restrictions = check_client_access hash:/etc/postfix/access,
+ reject_unauth_pipelining
+
+smtpd_helo_restrictions = check_client_access hash:/etc/postfix/access,
+ reject_invalid_helo_hostname,
+ reject_non_fqdn_helo_hostname
+
+smtpd_sender_restrictions = check_client_access hash:/etc/postfix/access,
+ check_sender_access hash:/etc/postfix/sender_access,
+ reject_non_fqdn_sender,
+ reject_unknown_sender_domain
+
+smtpd_recipient_restrictions = check_client_access hash:/etc/postfix/access,
+ permit_mynetworks,
+ reject_unauth_destination,
+ reject_non_fqdn_recipient,
+ check_recipient_access hash:/etc/postfix/internal_access,
+ reject_unverified_recipient
+
+smtpd_relay_restrictions = 
+
+
+#
+# 60submission_restrictions 
+# 
+
+submission_client_policy = 
+ check_client_access hash:/etc/postfix/access,
+ permit_sasl_authenticated,
+ permit_mynetworks,
+ reject
+
+submission_recipient_policy = 
+ check_client_access hash:/etc/postfix/access,
+ permit_sasl_authenticated,
+ permit_mynetworks,
+ reject_unauth_destination
+
+
+#
+# 60virtual_mailbox_domains -- All local virtual destinations:
+# 
+
+virtual_mailbox_domains = emcontacto.com
+  home
+virtual_mailbox_maps = hash:/etc/postfix/vmailbox
+
+

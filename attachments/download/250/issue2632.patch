@@ -1,0 +1,26 @@
+commit 81bace3b9aafd2795f7e93d17c6b9f543a1df3f4
+Author: Alessio Fattorini <alessio.fattorini@nethesis.it>
+Date:   Tue Feb 11 15:02:21 2014 +0000
+
+    Fixed TimeZone with unknown format. Refs #2632
+
+diff --git a/sogo-integrator-17.0.3-sogo-demo.xpi.patch b/sogo-integrator-17.0.3-sogo-demo.xpi.patch
+index 4c635b7..c39f734 100644
+--- a/sogo-integrator-17.0.3-sogo-demo.xpi.patch
++++ b/sogo-integrator-17.0.3-sogo-demo.xpi.patch
+@@ -19,5 +19,4 @@ sogo-integrator-17.0.3.xpi
+  pref("calendar.caldav.sched.enabled", true);
+ -pref("calendar.timezone.local", "/mozilla.org/20070129_1/America/Montreal");
+ -pref("sogo-integrator.autocomplete.server.urlid", "public");
+-+pref("calendar.timezone.local", "/mozilla.org/20070129_1/{$TimeZone || 'UTC'}");
+ +pref("sogo-integrator.autocomplete.server.urlid", "users");
+diff --git a/sogo-integrator-24.0.3-sogo-demo.xpi.patch b/sogo-integrator-24.0.3-sogo-demo.xpi.patch
+index eaa4fec..1006b12 100644
+--- a/sogo-integrator-24.0.3-sogo-demo.xpi.patch
++++ b/sogo-integrator-24.0.3-sogo-demo.xpi.patch
+@@ -19,5 +19,4 @@ diff -x '*~' -u -r a/defaults/preferences/site.js b/defaults/preferences/site.js
+  pref("calendar.caldav.sched.enabled", true);
+ -pref("calendar.timezone.local", "/mozilla.org/20070129_1/America/Montreal");
+ -pref("sogo-integrator.autocomplete.server.urlid", "public");
+-+pref("calendar.timezone.local", "/mozilla.org/20070129_1/{$TimeZone || 'UTC'}");
+ +pref("sogo-integrator.autocomplete.server.urlid", "users");

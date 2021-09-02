@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>UPDATES - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='favicon.ico%3F1457596383' />
+<link href="stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+<script src="javascripts/datepicker.js%3F1403512056" type="text/javascript"></script><script type="text/javascript">
+//<![CDATA[
+var datepickerOptions={dateFormat: 'yy-mm-dd', firstDay: 1, showOn: 'button', buttonImageOnly: true, buttonImage: '/images/calendar.png?1403512056', showButtonPanel: true, showWeek: true, showOtherMonths: true, selectOtherMonths: true, changeMonth: true, changeYear: true, beforeShow: beforeShowDatePicker};
+//]]>
+</script><script src="javascripts/select_list_move.js%3F1403512056" type="text/javascript"></script>
+    <link href="http://dev.nethserver.org/issues.atom?query_id=54" rel="alternate" title="Issues" type="application/atom+xml" />
+    <link href="http://dev.nethserver.org/issues/changes.atom?query_id=54" rel="alternate" title="Details of all changes" type="application/atom+xml" />
+<script src="javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver controller-issues action-index">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer.org</h1>
+
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+</div>
+
+<h2>UPDATES</h2>
+
+<form accept-charset="UTF-8" action="issues.html" id="query_form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <div id="query_form_with_buttons" class="hide-when-print">
+    <input id="set_filter" name="set_filter" type="hidden" value="1" />
+    <div id="query_form_content">
+    <fieldset id="filters" class="collapsible collapsed">
+      <legend onclick="toggleFieldset(this);">Filters</legend>
+      <div style="display: none;">
+        <script type="text/javascript">
+//<![CDATA[
+
+var operatorLabels = {"=":"is","!":"is not","o":"open","c":"closed","!*":"none","*":"any",">=":">=","<=":"<=","><":"between","<t+":"in less than",">t+":"in more than","><t+":"in the next","t+":"in","t":"today","ld":"yesterday","w":"this week","lw":"last week","l2w":"last 2 weeks","m":"this month","lm":"last month","y":"this year",">t-":"less than days ago","<t-":"more than days ago","><t-":"in the past","t-":"days ago","~":"contains","!~":"doesn't contain","=p":"any issues in project","=!p":"any issues not in project","!p":"no issues in project"};
+var operatorByType = {"list":["=","!"],"list_status":["o","=","!","c","*"],"list_optional":["=","!","!*","*"],"list_subprojects":["*","!*","="],"date":["=",">=","<=","><","<t+",">t+","><t+","t+","t","ld","w","lw","l2w","m","lm","y",">t-","<t-","><t-","t-","!*","*"],"date_past":["=",">=","<=","><",">t-","<t-","><t-","t-","t","ld","w","lw","l2w","m","lm","y","!*","*"],"string":["=","~","!","!~","!*","*"],"text":["~","!~","!*","*"],"integer":["=",">=","<=","><","!*","*"],"float":["=",">=","<=","><","!*","*"],"relation":["=","=p","=!p","!p","!*","*"]};
+var availableFilters = {"status_id":{"type":"list_status","name":"Status","values":[["NEW","1"],["TRIAGED","11"],["ON_DEV","2"],["MODIFIED","3"],["ON_QA","9"],["VERIFIED","12"],["CLOSED","5"]]},"project_id":{"type":"list","name":"Project","values":[["NethServer 6","3"],["-- NethForge","7"],["-- Nethgui","6"]]},"tracker_id":{"type":"list","name":"Tracker","values":[["Feature","2"],["Enhancement","6"],["Bug","1"],["Task","4"]]},"priority_id":{"type":"list","name":"Priority","values":[["Low","3"],["Normal","4"],["High","5"],["Urgent","6"],["Immediate","7"]]},"author_id":{"type":"list","name":"Author","values":[["Adam P","384"],["Alessandro Polidori","12"],["Alessio Fattorini","10"],["Andre Andre","495"],["Andrea Columpsi","377"],["Andrea Marchionni","15"],["Arpit Dubey","386"],["Artem Fedai","365"],["Benoit Fredet","378"],["Boris DE ANDRADE","361"],["chris burnat","28"],["Chris Carr","466"],["christian giulioni","446"],["Cristian Mammoli","177"],["Cristian Manoni","13"],["daniele degano","387"],["Danilo Carminati","342"],["Dante Aguirre","55"],["Davide Marini","11"],["Davide Principi","9"],["dom theo","44"],["Dusty Pulver","27"],["dz0 0te","326"],["Edgar Zeng","307"],["Edoardo Spadoni","279"],["Emiliano Vavassori","324"],["Filippo Carletti","8"],["Francesco Simoncelli","31"],["Franco Carinato","330"],["Gaetano Parrello","56"],["Giacomo Sanchietti","5"],["Giovanni Bezicheri","4"],["Giuseppe Balestriere","54"],["Giuseppe Corazzin","265"],["Graham Wilson","53"],["Harri Hokkanen","469"],["Harry Quackenboss","310"],["husher mayer","247"],["Jacob Oliver","390"],["Jit Kian Chong","381"],["Jonathan Dumont","374"],["Jose \"Martin\"  Abeleira AKA Marto","358"],["k c","312"],["Koffi KOKORA","496"],["Kristian Malvander","359"],["Luca Gasparini","296"],["Luca Palmieri","37"],["Luca Sabia","246"],["Lutchy Horace","144"],["Marco Castellani","30"],["Marco Forciniti","109"],["Marco Malagoli","328"],["MARCO ONGARO","248"],["Mark Sharma","175"],["Massimo Palazzetti","16"],["Mats Karlsson","36"],["Matteo Contoli","368"],["Matteo Mengoni","201"],["Matteo Petrini","34"],["Nicola Rauso","24"],["Peter Walter","33"],["pier bernabei","35"],["Pierre Bourdin","303"],["Riccardo Corsanici","25"],["Roberto Menti","26"],["Roberto Sitzia","176"],["Stefano Fancello","14"],["Stefano Zamboni","192"],["stephane de Labrusse","179"],["Syed Kashif Ejaz Bukhari","503"],["Vasco Castelo Branco","325"]]},"assigned_to_id":{"type":"list_optional","name":"Assignee","values":[["Adam P","384"],["Alessandro Polidori","12"],["Alessio Fattorini","10"],["Andre Andre","495"],["Andrea Columpsi","377"],["Andrea Marchionni","15"],["Arpit Dubey","386"],["Artem Fedai","365"],["Benoit Fredet","378"],["Boris DE ANDRADE","361"],["chris burnat","28"],["Chris Carr","466"],["christian giulioni","446"],["Cristian Mammoli","177"],["Cristian Manoni","13"],["daniele degano","387"],["Danilo Carminati","342"],["Dante Aguirre","55"],["Davide Marini","11"],["Davide Principi","9"],["dom theo","44"],["Dusty Pulver","27"],["dz0 0te","326"],["Edgar Zeng","307"],["Edoardo Spadoni","279"],["Emiliano Vavassori","324"],["Filippo Carletti","8"],["Francesco Simoncelli","31"],["Franco Carinato","330"],["Gaetano Parrello","56"],["Giacomo Sanchietti","5"],["Giovanni Bezicheri","4"],["Giuseppe Balestriere","54"],["Giuseppe Corazzin","265"],["Graham Wilson","53"],["Harri Hokkanen","469"],["Harry Quackenboss","310"],["husher mayer","247"],["Jacob Oliver","390"],["Jit Kian Chong","381"],["Jonathan Dumont","374"],["Jose \"Martin\"  Abeleira AKA Marto","358"],["k c","312"],["Koffi KOKORA","496"],["Kristian Malvander","359"],["Luca Gasparini","296"],["Luca Palmieri","37"],["Luca Sabia","246"],["Lutchy Horace","144"],["Marco Castellani","30"],["Marco Forciniti","109"],["Marco Malagoli","328"],["MARCO ONGARO","248"],["Mark Sharma","175"],["Massimo Palazzetti","16"],["Mats Karlsson","36"],["Matteo Contoli","368"],["Matteo Mengoni","201"],["Matteo Petrini","34"],["Nicola Rauso","24"],["Peter Walter","33"],["pier bernabei","35"],["Pierre Bourdin","303"],["Riccardo Corsanici","25"],["Roberto Menti","26"],["Roberto Sitzia","176"],["Stefano Fancello","14"],["Stefano Zamboni","192"],["stephane de Labrusse","179"],["Syed Kashif Ejaz Bukhari","503"],["Vasco Castelo Branco","325"]]},"member_of_group":{"type":"list_optional","name":"Assignee's group","values":[["Nethesis","17"],["Community","29"],["Nethesis Support","47"],["Nethesis Development","48"]]},"assigned_to_role":{"type":"list_optional","name":"Assignee's role","values":[["Triager","5"],["Developer","4"],["Packager","6"],["QA","7"],["Manager","3"]]},"subject":{"type":"text","name":"Subject"},"created_on":{"type":"date_past","name":"Created"},"updated_on":{"type":"date_past","name":"Updated"},"closed_on":{"type":"date_past","name":"Closed"},"start_date":{"type":"date","name":"Start date"},"due_date":{"type":"date","name":"Due date"},"estimated_hours":{"type":"float","name":"Estimated time"},"done_ratio":{"type":"integer","name":"% Done"},"cf_15":{"type":"list_optional","name":"Security class","values":["low","moderate","important","critical"]},"cf_1":{"type":"list_optional","name":"Affected version","values":[]},"cf_13":{"type":"list_optional","name":"Resolution","values":["CANTFIX","CURRENTRELEASE","DUPLICATE","INSUFFICIENT_DATA","NEXTRELEASE","NOTABUG","REJECTED","UPSTREAM","WONTFIX","WORKSFORME"]},"cf_14":{"type":"list_optional","name":"NEEDINFO","values":[["Yes","1"],["No","0"]]},"relates":{"type":"relation","name":"Related to"},"duplicates":{"type":"relation","name":"Duplicates"},"duplicated":{"type":"relation","name":"Duplicated by"},"blocks":{"type":"relation","name":"Blocks"},"blocked":{"type":"relation","name":"Blocked by"},"precedes":{"type":"relation","name":"Precedes"},"follows":{"type":"relation","name":"Follows"},"copied_to":{"type":"relation","name":"Copied to"},"copied_from":{"type":"relation","name":"Copied from"}};
+var labelDayPlural = "days";
+var allProjects = [["NethServer 6","3"],["-- NethForge","7"],["-- Nethgui","6"]];
+$(document).ready(function(){
+  initFilters();
+  addFilter("cf_13", "!*", [""]);
+  addFilter("tracker_id", "!", ["4"]);
+  addFilter("status_id", "c", [""]);
+});
+
+//]]>
+</script>
+<table style="width:100%">
+<tr>
+<td>
+<table id="filters-table">
+</table>
+</td>
+<td class="add-filter">
+<label for="add_filter_select">Add filter</label>
+<select id="add_filter_select"><option value="">&nbsp;</option>
+<option value="status_id">Status</option>
+<option value="project_id">Project</option>
+<option value="tracker_id">Tracker</option>
+<option value="priority_id">Priority</option>
+<option value="author_id">Author</option>
+<option value="assigned_to_id">Assignee</option>
+<option value="member_of_group">Assignee&#x27;s group</option>
+<option value="assigned_to_role">Assignee&#x27;s role</option>
+<option value="subject">Subject</option>
+<option value="created_on">Created</option>
+<option value="updated_on">Updated</option>
+<option value="closed_on">Closed</option>
+<option value="start_date">Start date</option>
+<option value="due_date">Due date</option>
+<option value="estimated_hours">Estimated time</option>
+<option value="done_ratio">% Done</option>
+<option value="cf_15">Security class</option>
+<option value="cf_1">Affected version</option>
+<option value="cf_13">Resolution</option>
+<option value="cf_14">NEEDINFO</option>
+<option value="relates">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+</td>
+</tr>
+</table>
+<input id="f_" name="f[]" type="hidden" value="" />
+
+      </div>
+    </fieldset>
+    <fieldset class="collapsible collapsed">
+      <legend onclick="toggleFieldset(this);">Options</legend>
+      <div style="display: none;">
+        <table>
+          <tr>
+            <td>Columns</td>
+            <td><table class="query-columns">
+  <tr>
+    <td style="padding-left:0">
+      <label for="available_columns">Available Columns</label>
+      <br />
+      <select id="available_columns" multiple="multiple" name="available_columns[]" ondblclick="moveOptions(this.form.available_columns, this.form.selected_columns);" size="10" style="width:150px"><option value="project">Project</option>
+<option value="parent">Parent task</option>
+<option value="status">Status</option>
+<option value="priority">Priority</option>
+<option value="author">Author</option>
+<option value="assigned_to">Assignee</option>
+<option value="updated_on">Updated</option>
+<option value="fixed_version">Target version</option>
+<option value="start_date">Start date</option>
+<option value="due_date">Due date</option>
+<option value="estimated_hours">Estimated time</option>
+<option value="done_ratio">% Done</option>
+<option value="created_on">Created</option>
+<option value="relations">Related issues</option>
+<option value="cf_1">Affected version</option>
+<option value="cf_13">Resolution</option>
+<option value="cf_14">NEEDINFO</option>
+<option value="cf_15">Security class</option></select>
+    </td>
+    <td class="buttons">
+      <input type="button" value="&#8594;"
+       onclick="moveOptions(this.form.available_columns, this.form.selected_columns);" /><br />
+      <input type="button" value="&#8592;"
+       onclick="moveOptions(this.form.selected_columns, this.form.available_columns);" />
+    </td>
+    <td>
+      <label for="selected_columns">Selected Columns</label>
+      <br />
+      <select id="selected_columns" multiple="multiple" name="c[]" ondblclick="moveOptions(this.form.selected_columns, this.form.available_columns);" size="10" style="width:150px"><option value="tracker">Tracker</option>
+<option value="category">Category</option>
+<option value="subject">Subject</option>
+<option value="closed_on">Closed</option></select>
+    </td>
+    <td class="buttons">
+      <input type="button" value="&#8648;" onclick="moveOptionTop(this.form.selected_columns);" /><br />
+      <input type="button" value="&#8593;" onclick="moveOptionUp(this.form.selected_columns);" /><br />
+      <input type="button" value="&#8595;" onclick="moveOptionDown(this.form.selected_columns);" /><br />
+      <input type="button" value="&#8650;" onclick="moveOptionBottom(this.form.selected_columns);" />
+    </td>
+  </tr>
+</table>
+
+</td>
+          </tr>
+          <tr>
+            <td><label for='group_by'>Group results by</label></td>
+            <td><select id="group_by" name="group_by"><option value="" selected="selected">&nbsp;</option>
+<option value="project">Project</option>
+<option value="tracker">Tracker</option>
+<option value="status">Status</option>
+<option value="priority">Priority</option>
+<option value="author">Author</option>
+<option value="assigned_to">Assignee</option>
+<option value="category">Category</option>
+<option value="fixed_version">Target version</option>
+<option value="done_ratio">% Done</option>
+<option value="cf_1">Affected version</option>
+<option value="cf_13">Resolution</option>
+<option value="cf_14">NEEDINFO</option>
+<option value="cf_15">Security class</option></select></td>
+          </tr>
+          <tr>
+            <td>Show</td>
+            <td><label class="inline"><input name="c[]" type="checkbox" value="description" /> Description</label></td>
+          </tr>
+        </table>
+      </div>
+    </fieldset>
+    </div>
+    <p class="buttons">
+    <a class="icon icon-checked" href="issues%3Fpage=4&amp;query_id=54.html#" onclick="submit_query_form(&quot;query_form&quot;); return false;">Apply</a>
+    <a href="issues%3Fset_filter=1.html" class="icon icon-reload">Clear</a>
+    </p>
+  </div>
+</form>
+
+<form accept-charset="UTF-8" action="issues.html" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div><input name="back_url" type="hidden" value="/issues?page=4&amp;query_id=54" />
+<div class="autoscroll">
+<table class="list issues">
+  <thead>
+    <tr>
+      <th class="checkbox hide-when-print">
+        <a href="issues.html" onclick="toggleIssuesSelection(this); return false;" title="Check all/Uncheck all"><img alt="Toggle_check" src="images/toggle_check.png%3F1403512056" /></a>
+      </th>
+        <th title="Sort by &quot;#&quot;"><a href="http://dev.nethserver.org/issues?page=4&amp;query_id=54&amp;sort=id%3Adesc%2Cclosed_on%3Adesc">#</a></th>
+        <th title="Sort by &quot;Tracker&quot;"><a href="http://dev.nethserver.org/issues?page=4&amp;query_id=54&amp;sort=tracker%2Cclosed_on%3Adesc">Tracker</a></th>
+        <th title="Sort by &quot;Category&quot;"><a href="http://dev.nethserver.org/issues?page=4&amp;query_id=54&amp;sort=category%2Cclosed_on%3Adesc">Category</a></th>
+        <th title="Sort by &quot;Subject&quot;"><a href="http://dev.nethserver.org/issues?page=4&amp;query_id=54&amp;sort=subject%2Cclosed_on%3Adesc">Subject</a></th>
+        <th title="Sort by &quot;Closed&quot;"><a href="http://dev.nethserver.org/issues?page=4&amp;query_id=54&amp;sort=closed_on" class="sort desc">Closed</a></th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr id="issue-2729" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2729" /></td>
+    <td class="id"><a href="issues/2729.html">2729</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2729.html">Use DNS A record to locate AD controllers</a></td><td class="closed_on">06/12/2014 07:15 PM</td>
+  </tr>
+  <tr id="issue-2730" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2730" /></td>
+    <td class="id"><a href="issues/2730.html">2730</a></td><td class="tracker">Bug</td><td class="category">nethserver-sogo</td><td class="subject"><a href="issues/2730.html">SOGo: shared folders not working for AD accounts</a></td><td class="closed_on">06/12/2014 07:14 PM</td>
+  </tr>
+  <tr id="issue-2751" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2751" /></td>
+    <td class="id"><a href="issues/2751.html">2751</a></td><td class="tracker">Feature</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2751.html">AD group mail delivery type switch</a></td><td class="closed_on">06/12/2014 07:14 PM</td>
+  </tr>
+  <tr id="issue-2759" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2759" /></td>
+    <td class="id"><a href="issues/2759.html">2759</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-sogo</td><td class="subject"><a href="issues/2759.html">Preserve request host name in SOGo</a></td><td class="closed_on">06/12/2014 07:14 PM</td>
+  </tr>
+  <tr id="issue-2724" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2724" /></td>
+    <td class="id"><a href="issues/2724.html">2724</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-common</td><td class="subject"><a href="issues/2724.html">Disclaimer creation fails</a></td><td class="closed_on">06/06/2014 03:44 PM</td>
+  </tr>
+  <tr id="issue-2713" class="hascontextmenu even issue tracker-1 status-5 priority-3 priority-lowest closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2713" /></td>
+    <td class="id"><a href="issues/2713.html">2713</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2713.html">Mail: Incorrect value RelayPort_label</a></td><td class="closed_on">06/06/2014 03:44 PM</td>
+  </tr>
+  <tr id="issue-2756" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2756" /></td>
+    <td class="id"><a href="issues/2756.html">2756</a></td><td class="tracker">Bug</td><td class="category">nethserver-squidguard</td><td class="subject"><a href="issues/2756.html">Web filter: &quot;Permission denied&quot; error on web interface</a></td><td class="closed_on">06/06/2014 03:11 PM</td>
+  </tr>
+  <tr id="issue-2758" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2758" /></td>
+    <td class="id"><a href="issues/2758.html">2758</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-httpd</td><td class="subject"><a href="issues/2758.html">Preserve IP host name in HTTP requests</a></td><td class="closed_on">06/06/2014 03:08 PM</td>
+  </tr>
+  <tr id="issue-2742" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2742" /></td>
+    <td class="id"><a href="issues/2742.html">2742</a></td><td class="tracker">Bug</td><td class="category">nethserver-hylafax</td><td class="subject"><a href="issues/2742.html">Hylafax: no automatic fax printing</a></td><td class="closed_on">06/06/2014 03:02 PM</td>
+  </tr>
+  <tr id="issue-2746" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2746" /></td>
+    <td class="id"><a href="issues/2746.html">2746</a></td><td class="tracker">Bug</td><td class="category">nethserver-hylafax</td><td class="subject"><a href="issues/2746.html">hylafax: notify fails if tsi has spaces</a></td><td class="closed_on">06/06/2014 03:01 PM</td>
+  </tr>
+  <tr id="issue-2699" class="hascontextmenu odd issue tracker-6 status-5 priority-5 priority-high3 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2699" /></td>
+    <td class="id"><a href="issues/2699.html">2699</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-backup-config</td><td class="subject"><a href="issues/2699.html">Backup config: minimize creation of new backup</a></td><td class="closed_on">06/06/2014 12:38 PM</td>
+  </tr>
+  <tr id="issue-2755" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2755" /></td>
+    <td class="id"><a href="issues/2755.html">2755</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-lib</td><td class="subject"><a href="issues/2755.html">signal-event and db: avoid failure when no syslog available</a></td><td class="closed_on">06/06/2014 12:31 PM</td>
+  </tr>
+  <tr id="issue-2707" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2707" /></td>
+    <td class="id"><a href="issues/2707.html">2707</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-roundcubemail</td><td class="subject"><a href="issues/2707.html">Roundcube: add dashboard widget</a></td><td class="closed_on">06/06/2014 12:04 PM</td>
+  </tr>
+  <tr id="issue-2709" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2709" /></td>
+    <td class="id"><a href="issues/2709.html">2709</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-faxweb2</td><td class="subject"><a href="issues/2709.html">Faxweb: add dashboard widget</a></td><td class="closed_on">05/05/2014 11:47 AM</td>
+  </tr>
+  <tr id="issue-2721" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2721" /></td>
+    <td class="id"><a href="issues/2721.html">2721</a></td><td class="tracker">Bug</td><td class="category">nethserver-faxweb2</td><td class="subject"><a href="issues/2721.html">Faxweb: no fax preview</a></td><td class="closed_on">05/05/2014 11:46 AM</td>
+  </tr>
+  <tr id="issue-2703" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2703" /></td>
+    <td class="id"><a href="issues/2703.html">2703</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2703.html">POP3s port is closed</a></td><td class="closed_on">04/17/2014 09:51 AM</td>
+  </tr>
+  <tr id="issue-2701" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2701" /></td>
+    <td class="id"><a href="issues/2701.html">2701</a></td><td class="tracker">Bug</td><td class="category">nethserver-httpd-admin</td><td class="subject"><a href="issues/2701.html">Visualization problems with accented letters</a></td><td class="closed_on">04/17/2014 09:37 AM</td>
+  </tr>
+  <tr id="issue-2720" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2720" /></td>
+    <td class="id"><a href="issues/2720.html">2720</a></td><td class="tracker">Bug</td><td class="category">nethserver-hylafax</td><td class="subject"><a href="issues/2720.html">Fax server: physical modem is not probed</a></td><td class="closed_on">04/17/2014 09:26 AM</td>
+  </tr>
+  <tr id="issue-2700" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2700" /></td>
+    <td class="id"><a href="issues/2700.html">2700</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-devtools</td><td class="subject"><a href="issues/2700.html">Support Sphinx RST text roles</a></td><td class="closed_on">03/24/2014 06:08 PM</td>
+  </tr>
+  <tr id="issue-2694" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2694" /></td>
+    <td class="id"><a href="issues/2694.html">2694</a></td><td class="tracker">Feature</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2694.html">YUM categories in PackageManager</a></td><td class="closed_on">03/24/2014 10:33 AM</td>
+  </tr>
+  <tr id="issue-2692" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2692" /></td>
+    <td class="id"><a href="issues/2692.html">2692</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2692.html">Remove absolute URLs from PackageManager</a></td><td class="closed_on">03/24/2014 10:33 AM</td>
+  </tr>
+  <tr id="issue-2696" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2696" /></td>
+    <td class="id"><a href="issues/2696.html">2696</a></td><td class="tracker">Bug</td><td class="category">nethserver-lib</td><td class="subject"><a href="issues/2696.html">Bad file descriptor handling in _silent_system function</a></td><td class="closed_on">03/24/2014 10:32 AM</td>
+  </tr>
+  <tr id="issue-2689" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2689" /></td>
+    <td class="id"><a href="issues/2689.html">2689</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-filter</td><td class="subject"><a href="issues/2689.html">Let amavisd PASS unchecked content</a></td><td class="closed_on">03/19/2014 05:03 PM</td>
+  </tr>
+  <tr id="issue-1092" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1092" /></td>
+    <td class="id"><a href="issues/1092.html">1092</a></td><td class="tracker">Feature</td><td class="category"></td><td class="subject"><a href="issues/1092.html">Session database</a></td><td class="closed_on">03/10/2014 05:42 PM</td>
+  </tr>
+  <tr id="issue-2684" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2684" /></td>
+    <td class="id"><a href="issues/2684.html">2684</a></td><td class="tracker">Bug</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2684.html">User can&#x27;t set his own UserProfile fields</a></td><td class="closed_on">03/10/2014 11:05 AM</td>
+  </tr>
+  <tr id="issue-2675" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2675" /></td>
+    <td class="id"><a href="issues/2675.html">2675</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2675.html">Backup Notification to System administrator fails by default</a></td><td class="closed_on">03/10/2014 11:05 AM</td>
+  </tr>
+  <tr id="issue-2680" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2680" /></td>
+    <td class="id"><a href="issues/2680.html">2680</a></td><td class="tracker">Bug</td><td class="category">nethserver-directory</td><td class="subject"><a href="issues/2680.html">Backup config: can&#x27;t restore LDAP dump</a></td><td class="closed_on">03/10/2014 10:58 AM</td>
+  </tr>
+  <tr id="issue-2676" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2676" /></td>
+    <td class="id"><a href="issues/2676.html">2676</a></td><td class="tracker">Bug</td><td class="category">nethserver-nethgui</td><td class="subject"><a href="issues/2676.html">Nethgui: unwanted translation warnings</a></td><td class="closed_on">03/10/2014 10:56 AM</td>
+  </tr>
+  <tr id="issue-2686" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2686" /></td>
+    <td class="id"><a href="issues/2686.html">2686</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-antivirus</td><td class="subject"><a href="issues/2686.html">Antivirus dashboard widget</a></td><td class="closed_on">03/10/2014 10:50 AM</td>
+  </tr>
+  <tr id="issue-2681" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2681" /></td>
+    <td class="id"><a href="issues/2681.html">2681</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-filter</td><td class="subject"><a href="issues/2681.html">Wrong default thresholds for antispam</a></td><td class="closed_on">03/10/2014 10:50 AM</td>
+  </tr>
+  <tr id="issue-2678" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2678" /></td>
+    <td class="id"><a href="issues/2678.html">2678</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-filter</td><td class="subject"><a href="issues/2678.html">Mail filter: remove clamav warning</a></td><td class="closed_on">03/10/2014 10:50 AM</td>
+  </tr>
+  <tr id="issue-2677" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2677" /></td>
+    <td class="id"><a href="issues/2677.html">2677</a></td><td class="tracker">Bug</td><td class="category">nethserver-fetchmail</td><td class="subject"><a href="issues/2677.html">Warning after fetchmail installation</a></td><td class="closed_on">03/10/2014 10:44 AM</td>
+  </tr>
+  <tr id="issue-2670" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2670" /></td>
+    <td class="id"><a href="issues/2670.html">2670</a></td><td class="tracker">Bug</td><td class="category">nethserver-owncloud</td><td class="subject"><a href="issues/2670.html">Can&#x27;t find ownCloud LDAP secret password</a></td><td class="closed_on">03/10/2014 10:40 AM</td>
+  </tr>
+  <tr id="issue-2679" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2679" /></td>
+    <td class="id"><a href="issues/2679.html">2679</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2679.html">Error on pseudonym creation</a></td><td class="closed_on">02/28/2014 05:39 PM</td>
+  </tr>
+  <tr id="issue-2668" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2668" /></td>
+    <td class="id"><a href="issues/2668.html">2668</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2668.html">Base: web ui for hostname change</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2667" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2667" /></td>
+    <td class="id"><a href="issues/2667.html">2667</a></td><td class="tracker">Bug</td><td class="category">nethserver-backup-data</td><td class="subject"><a href="issues/2667.html">Backup data: can&#x27;t install package if backup is in progress</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2665" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2665" /></td>
+    <td class="id"><a href="issues/2665.html">2665</a></td><td class="tracker">Bug</td><td class="category">nethserver-backup-data</td><td class="subject"><a href="issues/2665.html">Backup data: can&#x27;t restore backup from old chians</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2664" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2664" /></td>
+    <td class="id"><a href="issues/2664.html">2664</a></td><td class="tracker">Bug</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2664.html">Rebranding fails when new kernel is installed</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2663" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2663" /></td>
+    <td class="id"><a href="issues/2663.html">2663</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-nethgui</td><td class="subject"><a href="issues/2663.html">Web interface: menu items sorted by name</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2660" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2660" /></td>
+    <td class="id"><a href="issues/2660.html">2660</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-devtools</td><td class="subject"><a href="issues/2660.html">Installer improvements</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2656" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2656" /></td>
+    <td class="id"><a href="issues/2656.html">2656</a></td><td class="tracker">Enhancement</td><td class="category"></td><td class="subject"><a href="issues/2656.html">Revamp web UI style</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2653" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2653" /></td>
+    <td class="id"><a href="issues/2653.html">2653</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-backup-config</td><td class="subject"><a href="issues/2653.html">Samba: backup secrets.tdb in config backup</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2652" class="hascontextmenu odd issue tracker-6 status-5 priority-3 priority-lowest closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2652" /></td>
+    <td class="id"><a href="issues/2652.html">2652</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-lib</td><td class="subject"><a href="issues/2652.html">Clear event log format</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2649" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2649" /></td>
+    <td class="id"><a href="issues/2649.html">2649</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-httpd</td><td class="subject"><a href="issues/2649.html">httpd FollowSymLinks and DirectoryIndex directives</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2648" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2648" /></td>
+    <td class="id"><a href="issues/2648.html">2648</a></td><td class="tracker">Bug</td><td class="category"></td><td class="subject"><a href="issues/2648.html">Skip deleted accounts in dashboard</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2647" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2647" /></td>
+    <td class="id"><a href="issues/2647.html">2647</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-backup-data</td><td class="subject"><a href="issues/2647.html">Send backup notification to root</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2646" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2646" /></td>
+    <td class="id"><a href="issues/2646.html">2646</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2646.html">Skip migration of builtin mail aliases</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2644" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2644" /></td>
+    <td class="id"><a href="issues/2644.html">2644</a></td><td class="tracker">Feature</td><td class="category">nethserver-firewall-base</td><td class="subject"><a href="issues/2644.html">Allow to specify a port range in firewall rules</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2643" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2643" /></td>
+    <td class="id"><a href="issues/2643.html">2643</a></td><td class="tracker">Bug</td><td class="category"></td><td class="subject"><a href="issues/2643.html">restore-data-duplicity action fails with whitespaces</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2640" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2640" /></td>
+    <td class="id"><a href="issues/2640.html">2640</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-nethgui</td><td class="subject"><a href="issues/2640.html">Help templates in RST format</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2638" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2638" /></td>
+    <td class="id"><a href="issues/2638.html">2638</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-nethgui</td><td class="subject"><a href="issues/2638.html">Translator fallback language</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2637" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2637" /></td>
+    <td class="id"><a href="issues/2637.html">2637</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-httpd</td><td class="subject"><a href="issues/2637.html">&quot;Missing read permssion&quot;  warning from httpd.conf template</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2632" class="hascontextmenu odd issue tracker-1 status-5 priority-5 priority-high3 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2632" /></td>
+    <td class="id"><a href="issues/2632.html">2632</a></td><td class="tracker">Bug</td><td class="category">sogo-frontends</td><td class="subject"><a href="issues/2632.html">TimeZone with unknown format blocks Mozilla Lightning</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2631" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2631" /></td>
+    <td class="id"><a href="issues/2631.html">2631</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-httpd</td><td class="subject"><a href="issues/2631.html">Simplify Shared Folder/Web access UI module</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2630" class="hascontextmenu odd issue tracker-1 status-5 priority-3 priority-lowest closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2630" /></td>
+    <td class="id"><a href="issues/2630.html">2630</a></td><td class="tracker">Bug</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2630.html">Default module for non-admin users</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2628" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2628" /></td>
+    <td class="id"><a href="issues/2628.html">2628</a></td><td class="tracker">Bug</td><td class="category"></td><td class="subject"><a href="issues/2628.html">Dashboard: infinite loop on XHR failure</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2626" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2626" /></td>
+    <td class="id"><a href="issues/2626.html">2626</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2626.html">Implement hostname-modify event for samba </a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2541" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2541" /></td>
+    <td class="id"><a href="issues/2541.html">2541</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-firewall-base</td><td class="subject"><a href="issues/2541.html">Rotate firewall.log</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2511" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2511" /></td>
+    <td class="id"><a href="issues/2511.html">2511</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-roundcubemail</td><td class="subject"><a href="issues/2511.html">Roundcube webmail</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-1753" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1753" /></td>
+    <td class="id"><a href="issues/1753.html">1753</a></td><td class="tracker">Feature</td><td class="category">nethserver-nethgui</td><td class="subject"><a href="issues/1753.html">Emphasized visual style for mandatory text input fields</a></td><td class="closed_on">02/26/2014 03:30 PM</td>
+  </tr>
+  <tr id="issue-2650" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2650" /></td>
+    <td class="id"><a href="issues/2650.html">2650</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2650.html">Customizable X509 email field</a></td><td class="closed_on">02/12/2014 04:58 PM</td>
+  </tr>
+  <tr id="issue-2460" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2460" /></td>
+    <td class="id"><a href="issues/2460.html">2460</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-httpd-admin</td><td class="subject"><a href="issues/2460.html">Give wings to server-manager</a></td><td class="closed_on">02/07/2014 06:26 PM</td>
+  </tr>
+  <tr id="issue-2645" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2645" /></td>
+    <td class="id"><a href="issues/2645.html">2645</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2645.html">Start messagebus service</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2642" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2642" /></td>
+    <td class="id"><a href="issues/2642.html">2642</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-hosts</td><td class="subject"><a href="issues/2642.html">Show text labels in DNS &amp; DHCP</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2636" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2636" /></td>
+    <td class="id"><a href="issues/2636.html">2636</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-release</td><td class="subject"><a href="issues/2636.html">Release: add script to simplify installation from CentOS</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2629" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2629" /></td>
+    <td class="id"><a href="issues/2629.html">2629</a></td><td class="tracker">Bug</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2629.html">No feedback from Shutdown UI module</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2634" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2634" /></td>
+    <td class="id"><a href="issues/2634.html">2634</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-common</td><td class="subject"><a href="issues/2634.html">Mail server: can&#x27;t send mail bigger than 50MB</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2627" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2627" /></td>
+    <td class="id"><a href="issues/2627.html">2627</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-devtools</td><td class="subject"><a href="issues/2627.html">RST format for help files</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2624" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2624" /></td>
+    <td class="id"><a href="issues/2624.html">2624</a></td><td class="tracker">Bug</td><td class="category">nethserver-openvpn</td><td class="subject"><a href="issues/2624.html">OpenVPN Downloaded client configuration contains a bad directive</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2586" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2586" /></td>
+    <td class="id"><a href="issues/2586.html">2586</a></td><td class="tracker">Bug</td><td class="category">nethserver-hylafax</td><td class="subject"><a href="issues/2586.html">HylaFAX usage reports not sent</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2582" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2582" /></td>
+    <td class="id"><a href="issues/2582.html">2582</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2582.html">Base: remove bootstrap-console</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2573" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2573" /></td>
+    <td class="id"><a href="issues/2573.html">2573</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-ibays</td><td class="subject"><a href="issues/2573.html">Ibay contents inherit default owner</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2548" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2548" /></td>
+    <td class="id"><a href="issues/2548.html">2548</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-httpd-admin</td><td class="subject"><a href="issues/2548.html">Default remote access from public networks</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2551" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2551" /></td>
+    <td class="id"><a href="issues/2551.html">2551</a></td><td class="tracker">Feature</td><td class="category">nethserver-httpd-admin</td><td class="subject"><a href="issues/2551.html">Move httpd-admin web server logs</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2546" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2546" /></td>
+    <td class="id"><a href="issues/2546.html">2546</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-yum</td><td class="subject"><a href="issues/2546.html">Free package names for nethserver_events yum plugin</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2536" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2536" /></td>
+    <td class="id"><a href="issues/2536.html">2536</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-httpd-admin</td><td class="subject"><a href="issues/2536.html">Restore httpd-admin symlink</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2525" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2525" /></td>
+    <td class="id"><a href="issues/2525.html">2525</a></td><td class="tracker">Bug</td><td class="category">nethserver-openvpn</td><td class="subject"><a href="issues/2525.html">OpenVPN name resolution</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2535" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2535" /></td>
+    <td class="id"><a href="issues/2535.html">2535</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-sogo-thunderbird</td><td class="subject"><a href="issues/2535.html">Thunderbird 24 support</a></td><td class="closed_on">02/07/2014 06:23 PM</td>
+  </tr>
+  <tr id="issue-2505" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2505" /></td>
+    <td class="id"><a href="issues/2505.html">2505</a></td><td class="tracker">Bug</td><td class="category">nethserver-ntp</td><td class="subject"><a href="issues/2505.html">ntpd config db entry is missing UDPPort default property</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2507" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2507" /></td>
+    <td class="id"><a href="issues/2507.html">2507</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-cgp</td><td class="subject"><a href="issues/2507.html">Offer CGP to view collectd graphs</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2504" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2504" /></td>
+    <td class="id"><a href="issues/2504.html">2504</a></td><td class="tracker">Bug</td><td class="category">nethserver-antivirus</td><td class="subject"><a href="issues/2504.html">freshclam should be run at least every hour</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2499" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2499" /></td>
+    <td class="id"><a href="issues/2499.html">2499</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2499.html">Override mail system /etc/aliases</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2490" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2490" /></td>
+    <td class="id"><a href="issues/2490.html">2490</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2490.html">Dashboard: show raid status</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2492" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2492" /></td>
+    <td class="id"><a href="issues/2492.html">2492</a></td><td class="tracker">Feature</td><td class="category">nethserver-directory</td><td class="subject"><a href="issues/2492.html">Move admin user in LDAP DB</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2464" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2464" /></td>
+    <td class="id"><a href="issues/2464.html">2464</a></td><td class="tracker">Feature</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2464.html">everyone@ mail alias</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2461" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2461" /></td>
+    <td class="id"><a href="issues/2461.html">2461</a></td><td class="tracker">Feature</td><td class="category">nethserver-release</td><td class="subject"><a href="issues/2461.html">Rebase yum repositories from CentOS 6.5</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2457" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2457" /></td>
+    <td class="id"><a href="issues/2457.html">2457</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-sogo</td><td class="subject"><a href="issues/2457.html">Upgrade SOGo to release 2.1.1b</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2433" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2433" /></td>
+    <td class="id"><a href="issues/2433.html">2433</a></td><td class="tracker">Feature</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2433.html">Dashboard mail quota usage report</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2422" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2422" /></td>
+    <td class="id"><a href="issues/2422.html">2422</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2422.html">Apply submission whitelist to smtpd port 25</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2294" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2294" /></td>
+    <td class="id"><a href="issues/2294.html">2294</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-ipsec</td><td class="subject"><a href="issues/2294.html">IPSec: honor VPNClientAccess property</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2300" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2300" /></td>
+    <td class="id"><a href="issues/2300.html">2300</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-openvpn</td><td class="subject"><a href="issues/2300.html">Dashboard:  OpenVPN status widget</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2291" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2291" /></td>
+    <td class="id"><a href="issues/2291.html">2291</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-nut</td><td class="subject"><a href="issues/2291.html">NUT: add option to enable mail notification</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2289" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2289" /></td>
+    <td class="id"><a href="issues/2289.html">2289</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-squidclamav</td><td class="subject"><a href="issues/2289.html">squidclamav: enable logging to /var/log/c-icap/server.log</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2288" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2288" /></td>
+    <td class="id"><a href="issues/2288.html">2288</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-c-icap</td><td class="subject"><a href="issues/2288.html">c-icap: disable access log</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2147" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2147" /></td>
+    <td class="id"><a href="issues/2147.html">2147</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-openssh</td><td class="subject"><a href="issues/2147.html">SSH: connection keep alive</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2118" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2118" /></td>
+    <td class="id"><a href="issues/2118.html">2118</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-backup-data</td><td class="subject"><a href="issues/2118.html">Backup: force backup of configuration before starting backup-data</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2016" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2016" /></td>
+    <td class="id"><a href="issues/2016.html">2016</a></td><td class="tracker">Bug</td><td class="category">nethserver-nethgui</td><td class="subject"><a href="issues/2016.html">Menu search box misses chars if user types too slow</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-1671" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1671" /></td>
+    <td class="id"><a href="issues/1671.html">1671</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/1671.html">Dashboard: new widgets</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-1757" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1757" /></td>
+    <td class="id"><a href="issues/1757.html">1757</a></td><td class="tracker">Feature</td><td class="category">nethserver-devbox</td><td class="subject"><a href="issues/1757.html">ISO: interactive installer</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-1625" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1625" /></td>
+    <td class="id"><a href="issues/1625.html">1625</a></td><td class="tracker">Feature</td><td class="category">nethserver-cups</td><td class="subject"><a href="issues/1625.html">Printer list status</a></td><td class="closed_on">02/07/2014 06:22 PM</td>
+  </tr>
+  <tr id="issue-2571" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2571" /></td>
+    <td class="id"><a href="issues/2571.html">2571</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-firewall-base</td><td class="subject"><a href="issues/2571.html">Firewall ping response</a></td><td class="closed_on">01/15/2014 04:57 PM</td>
+  </tr>
+  <tr id="issue-2350" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2350" /></td>
+    <td class="id"><a href="issues/2350.html">2350</a></td><td class="tracker">Bug</td><td class="category">nethserver-mysql</td><td class="subject"><a href="issues/2350.html">Service mysql.init does not support chkconfig</a></td><td class="closed_on">12/18/2013 03:16 PM</td>
+  </tr>
+  <tr id="issue-2407" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2407" /></td>
+    <td class="id"><a href="issues/2407.html">2407</a></td><td class="tracker">Bug</td><td class="category">nethserver-samba</td><td class="subject"><a href="issues/2407.html">Kerberos keytab file is missing for new services</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2351" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2351" /></td>
+    <td class="id"><a href="issues/2351.html">2351</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-filter</td><td class="subject"><a href="issues/2351.html">Stale ClamAV DB warning</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2343" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2343" /></td>
+    <td class="id"><a href="issues/2343.html">2343</a></td><td class="tracker">Feature</td><td class="category">nethserver-mail-filter</td><td class="subject"><a href="issues/2343.html">Add SPF option to Postfix</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2338" class="hascontextmenu even issue tracker-1 status-5 priority-3 priority-lowest closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2338" /></td>
+    <td class="id"><a href="issues/2338.html">2338</a></td><td class="tracker">Bug</td><td class="category">nethserver-shorewall</td><td class="subject"><a href="issues/2338.html">Shorewall not configured, fails to start</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2330" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2330" /></td>
+    <td class="id"><a href="issues/2330.html">2330</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-httpd-admin</td><td class="subject"><a href="issues/2330.html">server-manager redirect on port 980</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2293" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2293" /></td>
+    <td class="id"><a href="issues/2293.html">2293</a></td><td class="tracker">Feature</td><td class="category">nethserver-nethgui</td><td class="subject"><a href="issues/2293.html">Implement Composer PSR-0 autoloader</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2290" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2290" /></td>
+    <td class="id"><a href="issues/2290.html">2290</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2290.html">Non-spam messages in SpamFolder are retained indefinitely</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2250" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2250" /></td>
+    <td class="id"><a href="issues/2250.html">2250</a></td><td class="tracker">Bug</td><td class="category">nethserver-directory</td><td class="subject"><a href="issues/2250.html">Password expiration warnings are sent to locked users</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2214" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2214" /></td>
+    <td class="id"><a href="issues/2214.html">2214</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2214.html">Group Shared Folder always shown</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2167" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2167" /></td>
+    <td class="id"><a href="issues/2167.html">2167</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-httpd-admin</td><td class="subject"><a href="issues/2167.html">Remove external JS libraries from source repositories</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2153" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2153" /></td>
+    <td class="id"><a href="issues/2153.html">2153</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2153.html">Mail-server: avoid warning if Samba is not installed</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2151" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2151" /></td>
+    <td class="id"><a href="issues/2151.html">2151</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2151.html">group-create event fails on nethserver-mail-group-acl-adjust action</a></td><td class="closed_on">12/18/2013 12:07 PM</td>
+  </tr>
+  <tr id="issue-2102" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2102" /></td>
+    <td class="id"><a href="issues/2102.html">2102</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2102.html">Always deliver mail to local admin user</a></td><td class="closed_on">12/18/2013 12:06 PM</td>
+  </tr>
+  <tr id="issue-2087" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2087" /></td>
+    <td class="id"><a href="issues/2087.html">2087</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2087.html">Allow dot in user and group names</a></td><td class="closed_on">12/18/2013 12:06 PM</td>
+  </tr>
+  <tr id="issue-2063" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2063" /></td>
+    <td class="id"><a href="issues/2063.html">2063</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-directory</td><td class="subject"><a href="issues/2063.html">Directory: backup service accounts passwords </a></td><td class="closed_on">12/18/2013 12:06 PM</td>
+  </tr>
+  <tr id="issue-2029" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2029" /></td>
+    <td class="id"><a href="issues/2029.html">2029</a></td><td class="tracker">Feature</td><td class="category">nethserver-lib</td><td class="subject"><a href="issues/2029.html">Process tracking and notifications</a></td><td class="closed_on">12/18/2013 12:06 PM</td>
+  </tr>
+  <tr id="issue-2014" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2014" /></td>
+    <td class="id"><a href="issues/2014.html">2014</a></td><td class="tracker">Feature</td><td class="category">nethserver-lib</td><td class="subject"><a href="issues/2014.html">Service supervision with Upstart</a></td><td class="closed_on">12/18/2013 12:06 PM</td>
+  </tr>
+  <tr id="issue-1987" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1987" /></td>
+    <td class="id"><a href="issues/1987.html">1987</a></td><td class="tracker">Feature</td><td class="category">nethserver-squid</td><td class="subject"><a href="issues/1987.html">Squid GSSAPI/GSS-Negotiate (Kerberos) authentication</a></td><td class="closed_on">12/18/2013 12:06 PM</td>
+  </tr>
+  <tr id="issue-1949" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1949" /></td>
+    <td class="id"><a href="issues/1949.html">1949</a></td><td class="tracker">Feature</td><td class="category">nethserver-dnsmasq</td><td class="subject"><a href="issues/1949.html">Fill DHCP reservation form from lease cache</a></td><td class="closed_on">12/18/2013 12:06 PM</td>
+  </tr>
+  <tr id="issue-1048" class="hascontextmenu even issue tracker-2 status-5 priority-3 priority-lowest closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1048" /></td>
+    <td class="id"><a href="issues/1048.html">1048</a></td><td class="tracker">Feature</td><td class="category">nethserver-dnsmasq</td><td class="subject"><a href="issues/1048.html">Display current lease status</a></td><td class="closed_on">12/18/2013 12:06 PM</td>
+  </tr>
+  <tr id="issue-2342" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2342" /></td>
+    <td class="id"><a href="issues/2342.html">2342</a></td><td class="tracker">Bug</td><td class="category">nethserver-owncloud</td><td class="subject"><a href="issues/2342.html">/owncloud path not found</a></td><td class="closed_on">12/16/2013 03:34 PM</td>
+  </tr>
+  <tr id="issue-2371" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2371" /></td>
+    <td class="id"><a href="issues/2371.html">2371</a></td><td class="tracker">Bug</td><td class="category">nethserver-sogo</td><td class="subject"><a href="issues/2371.html">SOGo redirect to internal DNS name</a></td><td class="closed_on">12/16/2013 02:56 PM</td>
+  </tr>
+  <tr id="issue-2221" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2221" /></td>
+    <td class="id"><a href="issues/2221.html">2221</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-sogo</td><td class="subject"><a href="issues/2221.html">SOGo: support iOS7 carddav client</a></td><td class="closed_on">12/16/2013 02:56 PM</td>
+  </tr>
+  <tr id="issue-2074" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2074" /></td>
+    <td class="id"><a href="issues/2074.html">2074</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-sogo</td><td class="subject"><a href="issues/2074.html">Sogo: remove apache &quot;already loaded&quot; warnings</a></td><td class="closed_on">12/16/2013 02:56 PM</td>
+  </tr>
+  <tr id="issue-2037" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2037" /></td>
+    <td class="id"><a href="issues/2037.html">2037</a></td><td class="tracker">Feature</td><td class="category">nethserver-owncloud</td><td class="subject"><a href="issues/2037.html">ownCloud</a></td><td class="closed_on">11/11/2013 10:11 AM</td>
+  </tr>
+  <tr id="issue-1958" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1958" /></td>
+    <td class="id"><a href="issues/1958.html">1958</a></td><td class="tracker">Feature</td><td class="category">nethserver-openvpn</td><td class="subject"><a href="issues/1958.html">VPN: add support for OpenVPN net2net</a></td><td class="closed_on">10/23/2013 09:49 AM</td>
+  </tr>
+  <tr id="issue-1956" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1956" /></td>
+    <td class="id"><a href="issues/1956.html">1956</a></td><td class="tracker">Feature</td><td class="category">nethserver-openvpn</td><td class="subject"><a href="issues/1956.html">VPN: support for OpenVPN roadwarrior</a></td><td class="closed_on">10/23/2013 09:49 AM</td>
+  </tr>
+  <tr id="issue-1763" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1763" /></td>
+    <td class="id"><a href="issues/1763.html">1763</a></td><td class="tracker">Feature</td><td class="category">nethserver-vpn</td><td class="subject"><a href="issues/1763.html">VPN</a></td><td class="closed_on">10/23/2013 09:48 AM</td>
+  </tr>
+  <tr id="issue-2107" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2107" /></td>
+    <td class="id"><a href="issues/2107.html">2107</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-shorewall</td><td class="subject"><a href="issues/2107.html">Shorewall: move Shorewall logs outside messages</a></td><td class="closed_on">10/22/2013 07:00 PM</td>
+  </tr>
+  <tr id="issue-1957" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1957" /></td>
+    <td class="id"><a href="issues/1957.html">1957</a></td><td class="tracker">Feature</td><td class="category">nethserver-ipsec</td><td class="subject"><a href="issues/1957.html">VPN: support IPsec/L2TP</a></td><td class="closed_on">10/22/2013 04:10 PM</td>
+  </tr>
+  <tr id="issue-2252" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2252" /></td>
+    <td class="id"><a href="issues/2252.html">2252</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2252.html">Ignore spam training when moving a message to Trash</a></td><td class="closed_on">10/17/2013 12:41 PM</td>
+  </tr>
+  <tr id="issue-2209" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2209" /></td>
+    <td class="id"><a href="issues/2209.html">2209</a></td><td class="tracker">Bug</td><td class="category">nethserver-hylafax</td><td class="subject"><a href="issues/2209.html">Hylafax: clients can&#x27;t connect to hfaxd</a></td><td class="closed_on">10/17/2013 12:26 PM</td>
+  </tr>
+  <tr id="issue-2277" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2277" /></td>
+    <td class="id"><a href="issues/2277.html">2277</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2277.html">Base: add AdminIsNotRoot to keep admin and root password in sync</a></td><td class="closed_on">10/17/2013 09:44 AM</td>
+  </tr>
+  <tr id="issue-2205" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2205" /></td>
+    <td class="id"><a href="issues/2205.html">2205</a></td><td class="tracker">Bug</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2205.html">/etc/sysconfig/system-config-firewall not expanded by lokkit-save event</a></td><td class="closed_on">10/17/2013 09:38 AM</td>
+  </tr>
+  <tr id="issue-2053" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2053" /></td>
+    <td class="id"><a href="issues/2053.html">2053</a></td><td class="tracker">Feature</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2053.html">Implement configurable log rotation and retention policies</a></td><td class="closed_on">10/17/2013 09:38 AM</td>
+  </tr>
+  <tr id="issue-2213" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2213" /></td>
+    <td class="id"><a href="issues/2213.html">2213</a></td><td class="tracker">Bug</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2213.html">/etc/resolv.conf overwritten by dhclient</a></td><td class="closed_on">10/17/2013 09:38 AM</td>
+  </tr>
+  <tr id="issue-2248" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2248" /></td>
+    <td class="id"><a href="issues/2248.html">2248</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2248.html">Store root server certificate in NSS database</a></td><td class="closed_on">10/17/2013 09:37 AM</td>
+  </tr>
+  <tr id="issue-2073" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2073" /></td>
+    <td class="id"><a href="issues/2073.html">2073</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-nethgui</td><td class="subject"><a href="issues/2073.html">TableController: support empty rows (keys only)</a></td><td class="closed_on">10/17/2013 09:18 AM</td>
+  </tr>
+  <tr id="issue-2113" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2113" /></td>
+    <td class="id"><a href="issues/2113.html">2113</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-nethgui</td><td class="subject"><a href="issues/2113.html">Add language code to URLs</a></td><td class="closed_on">10/17/2013 09:16 AM</td>
+  </tr>
+  <tr id="issue-2072" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2072" /></td>
+    <td class="id"><a href="issues/2072.html">2072</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-squid</td><td class="subject"><a href="issues/2072.html">Squid: add bypass rules for trasparent proxy</a></td><td class="closed_on">10/17/2013 08:55 AM</td>
+  </tr>
+  <tr id="issue-2111" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2111" /></td>
+    <td class="id"><a href="issues/2111.html">2111</a></td><td class="tracker">Bug</td><td class="category">nethserver-squid</td><td class="subject"><a href="issues/2111.html">Proxy: web traffic is blocked when Squid is disabled and configured in transparent mode</a></td><td class="closed_on">10/17/2013 08:55 AM</td>
+  </tr>
+  <tr id="issue-2139" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2139" /></td>
+    <td class="id"><a href="issues/2139.html">2139</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-nut</td><td class="subject"><a href="issues/2139.html">NUT: upsd daemon should listen on 0.0.0.0</a></td><td class="closed_on">10/17/2013 08:54 AM</td>
+  </tr>
+  <tr id="issue-2138" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2138" /></td>
+    <td class="id"><a href="issues/2138.html">2138</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-openssh</td><td class="subject"><a href="issues/2138.html">SSH: ssh daemon should listen on 0.0.0.0</a></td><td class="closed_on">10/17/2013 08:53 AM</td>
+  </tr>
+  <tr id="issue-2156" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2156" /></td>
+    <td class="id"><a href="issues/2156.html">2156</a></td><td class="tracker">Bug</td><td class="category">nethserver-ibays</td><td class="subject"><a href="issues/2156.html">&quot;Allow write permission to owning group&quot; not applied</a></td><td class="closed_on">10/17/2013 08:52 AM</td>
+  </tr>
+  <tr id="issue-2183" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2183" /></td>
+    <td class="id"><a href="issues/2183.html">2183</a></td><td class="tracker">Bug</td><td class="category">nethserver-fetchmail</td><td class="subject"><a href="issues/2183.html">Fetchmail: allow email address as username for login </a></td><td class="closed_on">10/17/2013 08:51 AM</td>
+  </tr>
+  <tr id="issue-2144" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2144" /></td>
+    <td class="id"><a href="issues/2144.html">2144</a></td><td class="tracker">Bug</td><td class="category">nethserver-ardad</td><td class="subject"><a href="issues/2144.html">Ardad: ardad fails when no backup is configured</a></td><td class="closed_on">10/17/2013 08:50 AM</td>
+  </tr>
+  <tr id="issue-2143" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2143" /></td>
+    <td class="id"><a href="issues/2143.html">2143</a></td><td class="tracker">Bug</td><td class="category">nethserver-backup-data</td><td class="subject"><a href="issues/2143.html">Backup data: exclude e-smith db directory</a></td><td class="closed_on">10/17/2013 08:50 AM</td>
+  </tr>
+  <tr id="issue-2040" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2040" /></td>
+    <td class="id"><a href="issues/2040.html">2040</a></td><td class="tracker">Bug</td><td class="category">nethserver-backup-data</td><td class="subject"><a href="issues/2040.html">Backup: web ui doesn&#x27;t report real db data after submitting a change</a></td><td class="closed_on">10/17/2013 08:49 AM</td>
+  </tr>
+  <tr id="issue-2287" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2287" /></td>
+    <td class="id"><a href="issues/2287.html">2287</a></td><td class="tracker">Bug</td><td class="category">nethserver-squidguard</td><td class="subject"><a href="issues/2287.html">Squidguard: whitelist not working correctly</a></td><td class="closed_on">10/17/2013 08:47 AM</td>
+  </tr>
+  <tr id="issue-2109" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2109" /></td>
+    <td class="id"><a href="issues/2109.html">2109</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-antivirus</td><td class="subject"><a href="issues/2109.html">Antivirus: disable syslog messages</a></td><td class="closed_on">09/02/2013 11:20 AM</td>
+  </tr>
+  <tr id="issue-2108" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2108" /></td>
+    <td class="id"><a href="issues/2108.html">2108</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-common</td><td class="subject"><a href="issues/2108.html">SMTP temporary error on non-existing recipients</a></td><td class="closed_on">09/02/2013 11:20 AM</td>
+  </tr>
+  <tr id="issue-2093" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2093" /></td>
+    <td class="id"><a href="issues/2093.html">2093</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-filter</td><td class="subject"><a href="issues/2093.html">amavisd-new 2.8.0 from EPEL</a></td><td class="closed_on">09/02/2013 11:20 AM</td>
+  </tr>
+  <tr id="issue-2082" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2082" /></td>
+    <td class="id"><a href="issues/2082.html">2082</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2082.html">Group (User) UI module: opening a group for update fails</a></td><td class="closed_on">09/02/2013 11:20 AM</td>
+  </tr>
+  <tr id="issue-2062" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2062" /></td>
+    <td class="id"><a href="issues/2062.html">2062</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-antivirus</td><td class="subject"><a href="issues/2062.html">Upgrade ClamAV to 0.97.8 </a></td><td class="closed_on">09/02/2013 11:20 AM</td>
+  </tr>
+  <tr id="issue-2112" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2112" /></td>
+    <td class="id"><a href="issues/2112.html">2112</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-firewall-base</td><td class="subject"><a href="issues/2112.html">Traffic shaping: refactor templates to correctly handle traffic priorities</a></td><td class="closed_on">08/28/2013 04:53 PM</td>
+  </tr>
+  <tr id="issue-2103" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2103" /></td>
+    <td class="id"><a href="issues/2103.html">2103</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2103.html">Base: validate configuration from NetworkAdapter UI module</a></td><td class="closed_on">08/28/2013 04:53 PM</td>
+  </tr>
+  <tr id="issue-2110" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2110" /></td>
+    <td class="id"><a href="issues/2110.html">2110</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-httpd-admin</td><td class="subject"><a href="issues/2110.html">Import nethserver-manager code from nethserver-base</a></td><td class="closed_on">08/28/2013 04:53 PM</td>
+  </tr>
+  <tr id="issue-2094" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2094" /></td>
+    <td class="id"><a href="issues/2094.html">2094</a></td><td class="tracker">Bug</td><td class="category">nethserver-httpd-admin</td><td class="subject"><a href="issues/2094.html">RemoteAccess/HttpdAdmin UI module does not expand httpd-admin configuration</a></td><td class="closed_on">08/28/2013 04:53 PM</td>
+  </tr>
+  <tr id="issue-2075" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2075" /></td>
+    <td class="id"><a href="issues/2075.html">2075</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2075.html">Update NetworksDB on udev events</a></td><td class="closed_on">08/28/2013 04:53 PM</td>
+  </tr>
+  <tr id="issue-2068" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2068" /></td>
+    <td class="id"><a href="issues/2068.html">2068</a></td><td class="tracker">Bug</td><td class="category">nethserver-httpd-admin</td><td class="subject"><a href="issues/2068.html">Single and double quotes characters escaped</a></td><td class="closed_on">08/28/2013 04:53 PM</td>
+  </tr>
+  <tr id="issue-2090" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed child ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2090" /></td>
+    <td class="id"><a href="issues/2090.html">2090</a></td><td class="tracker">Feature</td><td class="category">nethserver-redis</td><td class="subject"><a href="issues/2090.html">Redis server</a></td><td class="closed_on">08/28/2013 11:16 AM</td>
+  </tr>
+  <tr id="issue-1126" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed parent ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1126" /></td>
+    <td class="id"><a href="issues/1126.html">1126</a></td><td class="tracker">Feature</td><td class="category">nethserver-ntopng</td><td class="subject"><a href="issues/1126.html">Bandwidth Monitor (NTOP)</a></td><td class="closed_on">08/28/2013 11:16 AM</td>
+  </tr>
+  <tr id="issue-2043" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2043" /></td>
+    <td class="id"><a href="issues/2043.html">2043</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-backup-data</td><td class="subject"><a href="issues/2043.html">Backup: implement and document full restore</a></td><td class="closed_on">08/28/2013 11:10 AM</td>
+  </tr>
+  <tr id="issue-2022" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2022" /></td>
+    <td class="id"><a href="issues/2022.html">2022</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-backup-data</td><td class="subject"><a href="issues/2022.html">Backup data: do not check for already mounted dir</a></td><td class="closed_on">08/28/2013 11:10 AM</td>
+  </tr>
+  <tr id="issue-2092" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2092" /></td>
+    <td class="id"><a href="issues/2092.html">2092</a></td><td class="tracker">Bug</td><td class="category">nethserver-lib</td><td class="subject"><a href="issues/2092.html">Could not start smb/slapd</a></td><td class="closed_on">07/31/2013 01:55 PM</td>
+  </tr>
+  <tr id="issue-2079" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2079" /></td>
+    <td class="id"><a href="issues/2079.html">2079</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-base</td><td class="subject"><a href="issues/2079.html">Base: bootstrap-console type default is &quot;configuration&quot;</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2078" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2078" /></td>
+    <td class="id"><a href="issues/2078.html">2078</a></td><td class="tracker">Feature</td><td class="category">nethserver-lib</td><td class="subject"><a href="issues/2078.html">Lib: synchronize service status prop and running state</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2071" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2071" /></td>
+    <td class="id"><a href="issues/2071.html">2071</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2071.html">Dovecot is not accessibile from red interface when server is in gateway mode</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2069" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2069" /></td>
+    <td class="id"><a href="issues/2069.html">2069</a></td><td class="tracker">Bug</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2069.html">Postfix is not accessibile from red interface when server is in gateway mode</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2067" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2067" /></td>
+    <td class="id"><a href="issues/2067.html">2067</a></td><td class="tracker">Feature</td><td class="category">nethserver-lib</td><td class="subject"><a href="issues/2067.html">Lib: synchronize service status prop and chkconfig</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2065" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2065" /></td>
+    <td class="id"><a href="issues/2065.html">2065</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-samba-audit</td><td class="subject"><a href="issues/2065.html">Samba-audit: FHS 2.3 compliance</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2057" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2057" /></td>
+    <td class="id"><a href="issues/2057.html">2057</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-firewall-base</td><td class="subject"><a href="issues/2057.html">Firewall: enhance DHCP configuration on red interfaces</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2052" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2052" /></td>
+    <td class="id"><a href="issues/2052.html">2052</a></td><td class="tracker">Bug</td><td class="category">nethserver-dnsmasq</td><td class="subject"><a href="issues/2052.html">DNS change not applied</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2058" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2058" /></td>
+    <td class="id"><a href="issues/2058.html">2058</a></td><td class="tracker">Feature</td><td class="category">nethserver-nethgui</td><td class="subject"><a href="issues/2058.html">ObjectsCollection UI widget</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2042" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2042" /></td>
+    <td class="id"><a href="issues/2042.html">2042</a></td><td class="tracker">Feature</td><td class="category">nethserver-mail-common</td><td class="subject"><a href="issues/2042.html">Mail-common: email queue management</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2041" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2041" /></td>
+    <td class="id"><a href="issues/2041.html">2041</a></td><td class="tracker">Bug</td><td class="category">nethserver-samba</td><td class="subject"><a href="issues/2041.html">Yum transaction aborted while installing nethserver-file-server group</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2039" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2039" /></td>
+    <td class="id"><a href="issues/2039.html">2039</a></td><td class="tracker">Bug</td><td class="category">nethserver-samba</td><td class="subject"><a href="issues/2039.html">Samba: file permissions not inherited when POSIX ACL is present</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2035" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2035" /></td>
+    <td class="id"><a href="issues/2035.html">2035</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-antivirus</td><td class="subject"><a href="issues/2035.html">Antivirus: do not save freshclam status on SME db</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2024" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2024" /></td>
+    <td class="id"><a href="issues/2024.html">2024</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-backup-data</td><td class="subject"><a href="issues/2024.html">Backup data: implement retention policy</a></td><td class="closed_on">07/30/2013 06:48 PM</td>
+  </tr>
+  <tr id="issue-2023" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2023" /></td>
+    <td class="id"><a href="issues/2023.html">2023</a></td><td class="tracker">Bug</td><td class="category">nethserver-backup-data</td><td class="subject"><a href="issues/2023.html">Backup config: duplicate notification</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-2021" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2021" /></td>
+    <td class="id"><a href="issues/2021.html">2021</a></td><td class="tracker">Feature</td><td class="category">nethserver-devbox</td><td class="subject"><a href="issues/2021.html">Devbox: package changelog hints from redmine</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-2018" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2018" /></td>
+    <td class="id"><a href="issues/2018.html">2018</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-lib</td><td class="subject"><a href="issues/2018.html">Remove escaped #012 (LF) in system logs</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-2003" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2003" /></td>
+    <td class="id"><a href="issues/2003.html">2003</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/2003.html">Mail-server: enable Listescape plugin</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-2002" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2002" /></td>
+    <td class="id"><a href="issues/2002.html">2002</a></td><td class="tracker">Bug</td><td class="category">nethserver-sogo</td><td class="subject"><a href="issues/2002.html">Sogo mysql password unescaped: connection fails</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-2000" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="2000" /></td>
+    <td class="id"><a href="issues/2000.html">2000</a></td><td class="tracker">Feature</td><td class="category">nethserver-sogo</td><td class="subject"><a href="issues/2000.html">SOGo: Active Directory integration</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1997" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1997" /></td>
+    <td class="id"><a href="issues/1997.html">1997</a></td><td class="tracker">Bug</td><td class="category">nethserver-samba</td><td class="subject"><a href="issues/1997.html">Samba share connection error NT_STATUS_ACCESS_DENIED </a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1983" class="hascontextmenu odd issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1983" /></td>
+    <td class="id"><a href="issues/1983.html">1983</a></td><td class="tracker">Bug</td><td class="category">nethserver-hosts</td><td class="subject"><a href="issues/1983.html">DNS configure module triggers non-existing event</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1981" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1981" /></td>
+    <td class="id"><a href="issues/1981.html">1981</a></td><td class="tracker">Bug</td><td class="category">nethserver-directory</td><td class="subject"><a href="issues/1981.html">nethserver-directory: libnss test FAILED</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1968" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1968" /></td>
+    <td class="id"><a href="issues/1968.html">1968</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-common</td><td class="subject"><a href="issues/1968.html">Mail-common: timeout after END-OF-MESSAGE from localhost</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1963" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1963" /></td>
+    <td class="id"><a href="issues/1963.html">1963</a></td><td class="tracker">Feature</td><td class="category">nethserver-samba-audit</td><td class="subject"><a href="issues/1963.html">SambaAudit: add samba audit support</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1962" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1962" /></td>
+    <td class="id"><a href="issues/1962.html">1962</a></td><td class="tracker">Feature</td><td class="category">nethserver-lightsquid</td><td class="subject"><a href="issues/1962.html">Proxy: add statistics about visited sites</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1923" class="hascontextmenu even issue tracker-1 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1923" /></td>
+    <td class="id"><a href="issues/1923.html">1923</a></td><td class="tracker">Bug</td><td class="category">nethserver-dnsmasq</td><td class="subject"><a href="issues/1923.html">DNSMasq: dhcp-reservation validator is case-sensitive</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1917" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1917" /></td>
+    <td class="id"><a href="issues/1917.html">1917</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-dnsmasq</td><td class="subject"><a href="issues/1917.html">Use dhcp-host dnsmasq option for fixed leases</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1909" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1909" /></td>
+    <td class="id"><a href="issues/1909.html">1909</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-filter</td><td class="subject"><a href="issues/1909.html">Adjust bayes scores</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1908" class="hascontextmenu odd issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1908" /></td>
+    <td class="id"><a href="issues/1908.html">1908</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-mail-common</td><td class="subject"><a href="issues/1908.html">Mail-common: spawn more amavisd workers</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1907" class="hascontextmenu even issue tracker-6 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1907" /></td>
+    <td class="id"><a href="issues/1907.html">1907</a></td><td class="tracker">Enhancement</td><td class="category">nethserver-antivirus</td><td class="subject"><a href="issues/1907.html">Antivirus: remove freshclam mirror checks</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1879" class="hascontextmenu odd issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1879" /></td>
+    <td class="id"><a href="issues/1879.html">1879</a></td><td class="tracker">Feature</td><td class="category">nethserver-mail-server</td><td class="subject"><a href="issues/1879.html">Mail-server: automatic subscription of group shared folders</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  <tr id="issue-1775" class="hascontextmenu even issue tracker-2 status-5 priority-4 priority-default closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="1775" /></td>
+    <td class="id"><a href="issues/1775.html">1775</a></td><td class="tracker">Feature</td><td class="category">nethserver-squid</td><td class="subject"><a href="issues/1775.html">SSL proxy</a></td><td class="closed_on">07/30/2013 06:47 PM</td>
+  </tr>
+  </tbody>
+</table>
+</div>
+</form>
+<p class="pagination"><a href="issues%3Fpage=3&amp;query_id=54.html" class="previous">« Previous</a> <a href="issues%3Fpage=1&amp;query_id=54.html" class="page">1</a> <a href="issues%3Fpage=2&amp;query_id=54.html" class="page">2</a> <a href="issues%3Fpage=3&amp;query_id=54.html" class="page">3</a> <span class="current page">4</span> <a href="issues%3Fpage=5&amp;query_id=54.html" class="page">5</a> <a href="http://dev.nethserver.org/issues?page=6&amp;query_id=54" class="page">6</a> <a href="issues%3Fpage=5&amp;query_id=54.html" class="next">Next »</a> <span class="items">(601-800/1157)</span> <span class="per-page">Per page: <a href="issues%3Fper_page=25&amp;query_id=54.html">25</a>, <a href="issues%3Fper_page=50&amp;query_id=54.html">50</a>, <a href="issues%3Fper_page=100&amp;query_id=54.html">100</a>, <span>200</span></span></p>
+
+
+<div id="csv-export-options" style="display:none;">
+  <h3 class="title">CSV export options</h3>  
+  <form accept-charset="UTF-8" action="http://dev.nethserver.org/issues.csv?query_id=54" id="csv-export-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <p>
+    <label><input checked="checked" id="columns_" name="columns" type="radio" value="" /> Selected Columns</label><br />
+    <label><input id="columns_all" name="columns" type="radio" value="all" /> All Columns</label>
+  </p>
+  <p>
+    <label><input id="description" name="description" type="checkbox" value="1" /> Description</label>
+  </p>
+  <p class="icon icon-warning">
+    Issues export limit: 500
+  </p>
+  <p class="buttons">
+    <input onclick="hideModal(this);" type="submit" value="Export" />
+    <input onclick="hideModal(this);" type="button" value="Cancel" />
+  </p>
+</form></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

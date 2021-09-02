@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>migrateAdmin.patch - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="../../stylesheets/scm.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-attachments action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>migrateAdmin.patch</h2>
+
+<div class="attachments">
+<p>
+   <span class="author"><a href="../../users/9.html" class="user active">Davide Principi</a>, 02/27/2013 04:40 PM</span></p>
+<p><a href="../download/175/migrateAdmin.patch">Download</a>   <span class="size">(2.13 KB)</span></p>
+</div>
+<form accept-charset="UTF-8" action="migrateAdmin.patch.html" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <p>
+    View differences:
+    <label><input checked="checked" id="type_inline" name="type" onchange="this.form.submit()" type="radio" value="inline" /> inline</label>
+    <label><input id="type_sbs" name="type" onchange="this.form.submit()" type="radio" value="sbs" /> side by side</label>
+  </p>
+</form>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      root/etc/e-smith/events/actions/nethserver-mail-migrate-mailboxes
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">26</th>
+  <th class="line-num">26</th>
+  <td class="line-code ">
+    <pre>use User::pwent;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">27</th>
+  <th class="line-num">27</th>
+  <td class="line-code ">
+    <pre>use esmith::AccountsDB;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">28</th>
+  <th class="line-num">28</th>
+  <td class="line-code ">
+    <pre>use File::Path;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">29</th>
+  <td class="line-code diff_in">
+    <pre>use File::Temp;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">29</th>
+  <th class="line-num">30</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">30</th>
+  <th class="line-num">31</th>
+  <td class="line-code ">
+    <pre>my $event = shift;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">31</th>
+  <th class="line-num">32</th>
+  <td class="line-code ">
+    <pre>my $sourceDir = shift;</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">33</th>
+  <th class="line-num">34</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">34</th>
+  <th class="line-num">35</th>
+  <td class="line-code ">
+    <pre>my $accountsDb = esmith::AccountsDB-&gt;open() or die(&quot;Could not open destination account db\n&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">35</th>
+  <th class="line-num">36</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">37</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">38</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">39</th>
+  <td class="line-code diff_in">
+    <pre># Migrate admin&#39;s mailbox</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">40</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">41</th>
+  <td class="line-code diff_in">
+    <pre>if( ! migrateAdminMailbox($sourceDir)) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">42</th>
+  <td class="line-code diff_in">
+    <pre>    $errors ++;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">43</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">44</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">45</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">46</th>
+  <td class="line-code diff_in">
+    <pre># Migrate user mailboxes</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">47</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">36</th>
+  <th class="line-num">48</th>
+  <td class="line-code ">
+    <pre>foreach my $accountRecord ($accountsDb-&gt;users()) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">37</th>
+  <th class="line-num">49</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">38</th>
+  <th class="line-num">50</th>
+  <td class="line-code ">
+    <pre>    my $userName = $accountRecord-&gt;key;</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">81</th>
+  <th class="line-num">93</th>
+  <td class="line-code ">
+    <pre># action ends:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">82</th>
+  <th class="line-num">94</th>
+  <td class="line-code ">
+    <pre>exit(0);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">83</th>
+  <th class="line-num">95</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">96</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">97</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">98</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">99</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">100</th>
+  <td class="line-code diff_in">
+    <pre>sub migrateAdminMailbox($)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">101</th>
+  <td class="line-code diff_in">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">102</th>
+  <td class="line-code diff_in">
+    <pre>    my $srcMaildir = $_[0] . &#39;/home/e-smith/Maildir&#39;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">103</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">104</th>
+  <td class="line-code diff_in">
+    <pre>    # &quot;By default the directory is deleted when the object goes out of scope&quot;:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">105</th>
+  <td class="line-code diff_in">
+    <pre>    my $tmpMaildir = File::Temp-&gt;newdir(&#39;/var/tmp/migrateAdminMailbox.XXXXXXXXX&#39;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">106</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">107</th>
+  <td class="line-code diff_in">
+    <pre>    if( ! -d $srcMaildir) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">108</th>
+  <td class="line-code diff_in">
+    <pre>	warn &quot;[WARNING] admin&#39;s mailbox not found: skipped\n&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">109</th>
+  <td class="line-code diff_in">
+    <pre>	return 1; #  SUCCESS</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">110</th>
+  <td class="line-code diff_in">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">111</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">112</th>
+  <td class="line-code diff_in">
+    <pre>    if( ! migrateDir($srcMaildir, $tmpMaildir)) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">113</th>
+  <td class="line-code diff_in">
+    <pre>	return 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">114</th>
+  <td class="line-code diff_in">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">115</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">116</th>
+  <td class="line-code diff_in">
+    <pre>    system(qw(chown -R vmail.vmail), $tmpMaildir);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">117</th>
+  <td class="line-code diff_in">
+    <pre>    if($? != 0) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">118</th>
+  <td class="line-code diff_in">
+    <pre>	warn &quot;[ERROR] failed to change ownership of temporary maildir\n&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">119</th>
+  <td class="line-code diff_in">
+    <pre>	return 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">120</th>
+  <td class="line-code diff_in">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">121</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">122</th>
+  <td class="line-code diff_in">
+    <pre>    system(qw(/usr/bin/doveadm import -u admin), &#39;maildir:&#39; . $tmpMaildir, &#39;import-&#39; . time(), &#39;ALL&#39;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">123</th>
+  <td class="line-code diff_in">
+    <pre>    if($? != 0) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">124</th>
+  <td class="line-code diff_in">
+    <pre>	warn &quot;[ERROR] error while importing admin Maildir: $!\n&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">125</th>
+  <td class="line-code diff_in">
+    <pre>	return 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">126</th>
+  <td class="line-code diff_in">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">127</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">128</th>
+  <td class="line-code diff_in">
+    <pre>    if( ! open(PH, &#39;-|&#39;, &#39;/usr/bin/doveadm mailbox list -u admin&#39;)) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">129</th>
+  <td class="line-code diff_in">
+    <pre>	warn &quot;[ERROR] could not list admin&#39;s mailbox\n&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">130</th>
+  <td class="line-code diff_in">
+    <pre>	return 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">131</th>
+  <td class="line-code diff_in">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">132</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">133</th>
+  <td class="line-code diff_in">
+    <pre>    while( ! eof(PH)) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">134</th>
+  <td class="line-code diff_in">
+    <pre>	my $mailboxName = &lt;PH&gt;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">135</th>
+  <td class="line-code diff_in">
+    <pre>	chomp($mailboxName);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">136</th>
+  <td class="line-code diff_in">
+    <pre>	system(qw(/usr/bin/doveadm mailbox subscribe -u admin), $mailboxName);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">137</th>
+  <td class="line-code diff_in">
+    <pre>	if($? != 0) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">138</th>
+  <td class="line-code diff_in">
+    <pre>	    warn &quot;[WARNING] could not subscribe mailbox $mailboxName\n&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">139</th>
+  <td class="line-code diff_in">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">140</th>
+  <td class="line-code diff_in">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">141</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">142</th>
+  <td class="line-code diff_in">
+    <pre>    close(PH);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">143</th>
+  <td class="line-code diff_in">
+    <pre>    </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">144</th>
+  <td class="line-code diff_in">
+    <pre>    return 1; # SUCCESS</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">145</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

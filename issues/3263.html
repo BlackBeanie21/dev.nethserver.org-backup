@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Feature #3263: VLAN-Tagged PPPoE - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3263.atom" rel="alternate" title="NethServer 6 - Feature #3263: VLAN-Tagged PPPoE" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #3263</h2>
+
+<div class="issue tracker-2 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>VLAN-Tagged PPPoE</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/113.html">~FUTURE</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13">REJECTED</td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">Yes</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Allow creating a PPPoE connection on both Ethernet and VLAN interface types.</p>
+
+
+	<p>Thanks @jitkian for the input and initial testing:<br /><a class="external" href="http://community.nethserver.org/t/vlan-tagged-pppoe/1620">http://community.nethserver.org/t/vlan-tagged-pppoe/1620</a></p>
+
+
+<pre>
+# db networks show
+eth0=ethernet
+    bootproto=none
+    device=eth0
+    gateway=192.168.122.1
+    hwaddr=52:54:00:F5:C0:99
+    ipaddr=192.168.122.94
+    netmask=255.255.255.0
+    onboot=yes
+    role=green
+eth1=ethernet
+    hwaddr=52:54:00:af:4d:35
+    role=
+eth1.500=vlan
+    role=pppoe
+eth2=ethernet
+    hwaddr=52:54:00:25:75:79
+    role=
+ppp0=xdsl
+    AuthType=auto
+    Password=test
+    name=PPPoE
+    provider=xDSL provider
+    role=red
+    user=test
+</pre>
+
+<blockquote>
+
+	<p>To configure the VLAN the commands should be:</p>
+
+
+</blockquote>
+
+<pre>
+# db networks set eth1.500 vlan role pppoe
+# db networks settype ppp0 xdsl 
+# db networks setprop ppp0 role red user test Password test
+# signal-event interface-update
+</pre>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-16251" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="3263.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Category</strong> set to <i>nethserver-base</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16252" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3263.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/16252%3Fdetail_id=27226.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16276" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="3263.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> changed from <i>v6.6</i> to <i>v6.7</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16384" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="3263.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16445" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="3263.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>NEEDINFO</strong> changed from <i>No</i> to <i>Yes</i></li>
+    </ul>
+    <div class="wiki" id="journal-16445-notes"><p>To add this from interface, we need to: <br />· create a new role for vlans: pppoe or allow user to create a vlan interface with empty role. Both those roles differs from our guidelines <br />· modify pppoe interface to consider "pppoe" roled interfaces as free <br />· modify pppoe interface to list not only ethernet type interface, but also vlan</p>
+
+
+	<p>We can choose between: create a new pppoe role, allow empty role for vlan interfaces, hack interface to use as pppoe device also vlan interfaces with a different role or leave all as now and add documentation for creating a vlan pppoe using command line interface</p></div>
+    </div>
+  </div>
+  
+  <div id="change-17053" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="3263.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> changed from <i>v6.7</i> to <i>~FUTURE</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-17630" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="3263.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>100</i></li>
+       <li><strong>Resolution</strong> set to <i>REJECTED</i></li>
+    </ul>
+    <div class="wiki" id="journal-17630-notes"><p>This feature will not be implemented in NS 6. If needed, please reopen it for NS 7.</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

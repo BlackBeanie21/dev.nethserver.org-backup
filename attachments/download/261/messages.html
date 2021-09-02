@@ -1,0 +1,57 @@
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: Event: user-modify fpluto
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: expanding /etc/postfix/aliases
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: expanding /etc/postfix/vmailbox
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: expanding /etc/postfix/internal_access
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: expanding /etc/postfix/virtual
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/actions/generic_template_expand SUCCESS [0.305711]
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S15user-modify-unix SUCCESS [0.081333]
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: Use of uninitialized value in numeric gt (>) at /usr/share/perl5/Authen/SASL/Perl.pm line 130.
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]:  LDAP_INVALID_SYNTAX ou: value #0 invalid per syntax at /etc/e-smith/events/user-modify/S25nethserver-directory-user-modify line 73
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: Failed to set contact info on entry `uid=fpluto,ou=People,dc=directory,dc=nh`: ou: value #0 invalid per syntax at /etc/e-smith/events/user-modify/S25nethserver-directory-user-modify line 75.
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S25nethserver-directory-user-modify FAILED: 1 [0.157574]
+Jul  1 08:54:00 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S30nethserver-mail-account-update SUCCESS [0.176508]
+Jul  1 08:54:01 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S30nethserver-mail-postmap-update SUCCESS [0.621452]
+Jul  1 08:54:01 nethserv S30nethserver-samba-migrate-sam[31261]: Updated flag disabled for BOXY\fpluto to yes
+Jul  1 08:54:02 nethserv S30nethserver-samba-migrate-sam[31261]: Updated fullname for BOXY\fpluto to Flavio Pluto
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: Updated comment for BOXY\fpluto to Flavio Pluto
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S30nethserver-samba-user-modify SUCCESS [1.753277]
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S40nethserver-directory-password-policy SUCCESS [0.085377]
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S85user-group-modify SUCCESS [0.099815]
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: [INFO] service memcached reload
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: Interruzione di memcached: [  OK  ]#015
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: Avvio di memcached: [  OK  ]#015
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: [INFO] service postfix reload
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: Ricarica di postfix in corso: [  OK  ]#015
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/actions/adjust-services SUCCESS [0.330533]
+Jul  1 08:54:03 nethserv S30nethserver-samba-migrate-sam[31261]: Event: user-modify FAILED
+Jul  1 08:54:03 nethserv esmith::event[19830]: [ERROR] user-modify fpluto event failed
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: Event: user-modify qualita
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: expanding /etc/postfix/aliases
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: expanding /etc/postfix/vmailbox
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: expanding /etc/postfix/internal_access
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: expanding /etc/postfix/virtual
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/actions/generic_template_expand SUCCESS [0.304315]
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S15user-modify-unix SUCCESS [0.087457]
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: Use of uninitialized value in numeric gt (>) at /usr/share/perl5/Authen/SASL/Perl.pm line 130.
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]:  LDAP_INVALID_SYNTAX ou: value #0 invalid per syntax at /etc/e-smith/events/user-modify/S25nethserver-directory-user-modify line 73
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: Failed to set contact info on entry `uid=qualita,ou=People,dc=directory,dc=nh`: ou: value #0 invalid per syntax at /etc/e-smith/events/user-modify/S25nethserver-directory-user-modify line 75.
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: User qualita could not be modified: error modifying LDAP directory entry: Invalid syntax.
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: [ERROR] Failed to modify user `qualita` name fields! at /etc/e-smith/events/user-modify/S25nethserver-directory-user-modify line 96.
+Jul  1 08:54:31 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S25nethserver-directory-user-modify FAILED: 1 [0.153719]
+Jul  1 08:54:32 nethserv S30nethserver-samba-migrate-sam[31261]:  LDAP_INVALID_SYNTAX mail: value #2 invalid per syntax at /usr/share/perl5/vendor_perl/Net/LDAP/Entry.pm line 268
+Jul  1 08:54:32 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S30nethserver-mail-account-update SUCCESS [0.148618]
+Jul  1 08:54:32 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S30nethserver-mail-postmap-update SUCCESS [0.594391]
+Jul  1 08:54:33 nethserv S30nethserver-samba-migrate-sam[31261]: Updated flag disabled for BOXY\qualita to no
+Jul  1 08:54:34 nethserv S30nethserver-samba-migrate-sam[31261]: Updated fullname for BOXY\qualita to Ufficio Qualità
+Jul  1 08:54:34 nethserv S30nethserver-samba-migrate-sam[31261]: Updated comment for BOXY\qualita to Ufficio Qualità
+Jul  1 08:54:34 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S30nethserver-samba-user-modify SUCCESS [2.072297]
+Jul  1 08:54:34 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S40nethserver-directory-password-policy SUCCESS [0.0815]
+Jul  1 08:54:34 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/user-modify/S85user-group-modify SUCCESS [0.099249]
+Jul  1 08:54:34 nethserv S30nethserver-samba-migrate-sam[31261]: [INFO] service memcached reload
+Jul  1 08:54:35 nethserv S30nethserver-samba-migrate-sam[31261]: Interruzione di memcached: [  OK  ]#015
+Jul  1 08:54:35 nethserv S30nethserver-samba-migrate-sam[31261]: Avvio di memcached: [  OK  ]#015
+Jul  1 08:54:35 nethserv S30nethserver-samba-migrate-sam[31261]: [INFO] service postfix reload
+Jul  1 08:54:35 nethserv S30nethserver-samba-migrate-sam[31261]: Ricarica di postfix in corso: [  OK  ]#015
+Jul  1 08:54:35 nethserv S30nethserver-samba-migrate-sam[31261]: Action: /etc/e-smith/events/actions/adjust-services SUCCESS [0.339233]
+Jul  1 08:54:35 nethserv S30nethserver-samba-migrate-sam[31261]: Event: user-modify FAILED
+Jul  1 08:54:35 nethserv esmith::event[19830]: [ERROR] user-modify qualita event failed

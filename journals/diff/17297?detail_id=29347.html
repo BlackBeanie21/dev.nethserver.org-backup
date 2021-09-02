@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #3372: WebTop: upgrade to upstream release 0405 and upgrade to upstream release z-push 2.2.8 - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethserver controller-journals action-diff">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues selected">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Enhancement #3372</h2>
+
+<div class="text-diff">
+Summary changelog for 0405: <br /><br /> sonicle-webtop-groupware: 
+<br /> - [mail][fix] All search in addressbook does not lookup in all directories 
+<br /> - [mail][fix] Again problems on contacts lookup for group * 
+<br /> - [mail] bugfix: attachments do not show if message is inside a folder with quotes in its name 
+<br /> - [mail] bugfix: deleting from opened mail, using its own button, did not move to trash 
+<br /> - [mail] bugfix: opending draft for edit containing recipients, without touching anything, would always prompt &quot;are you sure&quot; on close 
+<br /> - [mail] feature: manual seen state user option in the advanced tab, will not automatically set seen viewed messages 
+<br /> - [mail] use double quotes around tag names instead of single quotes, to better support mails with styles with single quotes 
+<br /> - [mail] advanced search now features searching &quot;anywhere&quot; 
+<br /> - [mail] Erroneusly sends new mail notifications on folder with &quot;Search new messages&quot; disabled 
+<br /> - [mail] Special folders don&#x27;t show unread messages numbers 
+<br /> - [calendar][fix] Typo in day name 
+<br /> - [calendar][fix] Reminder email only work when user logs in 
+<br /> - [calendar] Fix scheduler issue with event in specific timezone 
+<br /> - [calendar] Fix DTSTART and DTEND bad format in ics 
+<br /> - [contacts][fix] Typo in grid contextmenu 
+<br /> - [contacts][fix] List clone function sets an empty category 
+<br /> - [contacts] Added 10 custom fields to contact (db+form) 
+<br /> - [contacts] Added new domain setting (customfields.label@X) in order to override default label 
+<br /> - [contacts] Implemented excel and csv import wizard 
+<br /> - [contacts] Added excel and csv libraries 
+<br /> - [contacts][fix] Contact saved as a copy is not shown 
+<br /> - [contacts] Fix category context menu not shown in read-only group 
+<br /> - [contacts] Set * as default letter in contacts grid 
+<br /> - [contacts] Added parameter (addressbook.letter) to override default letter in contacts list 
+<br /> - [tasks] Fix typo in context menu and category tab 
+<br /> - [tasks] Forgotten connection close 
+<br /> - [tasks] fixed task reminder 
+<br /> - [tasks] fixed context menu drm 
+<br /> - [vfs] hide hidden files starting with a dot prefix 
+<br /> - [vfs] hide hidden folders starting with a dot prefix 
+<br /> - [vfs-pub] moved folder toolbar over grid, more visibile 
+<br /> - [vfs-pub] added tooltips to buttons 
+<br /> - [vfs-pub] added button to download-zip of all files 
+<br /> - [fix] Import wizard fieldset items width in FF using fonts at 125% 
+<br /> [mail] <span class="diff_out">bugfix: unchecked parent folders should show bold if children checked folders have any unseen messages 
+<br /> [mail] bugfix: unseen messages moved on an unchecked folder should not change unseen number to destination 
+<br /> [mail] bugfix: subfolders of sent do not save &amp;quot;from&amp;quot; column visibility 
+<br /> [mail] bugfix: not sending notifications for new messages under shared folders 
+<br /> [mail] bugfix: the html text in workflow mail containing special charcater (e.g. italian accented) is not encoded correctly 
+<br /> [mail]</span> feature: <span class="diff_out">show bcc recipients in view if present 
+<br /> [mail] Implement scheduled mail on NethServer through Dovecot special login user*vmail and unique password. If setting &amp;quot;nethtop.vmail.secret&amp;quot; is present, use Dovecot method with this password. 
+<br /> [mail] Bug: Forwarding an email with eml as attachment does not include the original eml text (e.g. Italian PEC) 
+<br /> [mail] Bug: import ics from a normal ics attachment on click, even if not attached as an ical request (e.g. Nethesis room invitation) 
+<br /> [mail] Bug: ics file with non standard content type &amp;quot;text/icalendar&amp;quot; does not show the &amp;quot;text/calendar&amp;quot; icon (e.g. Nethesis room invitation) 
+<br /> [mail] Bug: ics file missing request fields are not imported (e.g. Nethesis room invitation) 
+<br /> [calendar] Fix ical daily recurrence import bug 
+<br /> [contacts] Parent customers are now shown in company combo 
+<br /> [tasks] bugfix: encode special characters in workflow mails 
+<br /> [mail] feature:</span> automatically regenerate user sieve script at session startup, based on version of script <span class="diff_in">
+<br /> </span> <span class="diff_out">
+<br /></span> [mail] bugfix: text/html parts with unsupported encoding are detected and parsed without charset specification <span class="diff_in">
+<br /> </span> <span class="diff_out">
+<br /></span> [mail] stripped any scripting from mail html content before visualization [e.g. vtiger mails] <span class="diff_in">
+<br /> </span> <span class="diff_out">
+<br /></span> [sieve] feature: automatically generate sieve script with antispam rule based on amavis header, skip older rules based on subject 
+<br /> [sieve] added version string in initial comments of script generation, so to be able to later check current script version 
+<br /> [mail] bugfix: unchecked parent folders should show bold if children checked folders have any unseen messages 
+<br /> [mail] bugfix: unseen messages moved on an unchecked folder should not change unseen number to destination 
+<br /> [mail] bugfix: subfolders of sent do not save &quot;from&quot; column visibility <span class="diff_in">
+<br /> </span> <span class="diff_out">
+<br /></span> [mail] bugfix: not sending notifications for new messages under shared folders 
+<br /> [mail] bugfix: the html text in workflow mail containing special charcater (e.g. italian accented) is not encoded correctly <span class="diff_in">
+<br /> </span> <span class="diff_out">
+<br /></span> [mail] feature: show bcc recipients in view if present <span class="diff_in">
+<br /> </span> <span class="diff_out">
+<br /></span> [mail] Implement scheduled mail on NethServer through Dovecot special login user*vmail and unique password. If setting &quot;nethtop.vmail.secret&quot; is present, use Dovecot method with this password. 
+<br /> [mail] Bug: Forwarding an email with eml as attachment does not include the original eml text (e.g. Italian PEC) <span class="diff_in">
+<br /> </span> <span class="diff_out">
+<br /></span> [mail] Bug: import ics from a normal ics attachment on click, even if not attached as an ical request (e.g. Nethesis room invitation) <span class="diff_in">
+<br /> </span> <span class="diff_out">
+<br /></span> [mail] Bug: ics file with non standard content type &quot;text/icalendar&quot; does not show the &quot;text/calendar&quot; icon (e.g. Nethesis room invitation) 
+<br /> [mail] Bug: ics file missing request fields are not imported (e.g. Nethesis room invitation) 
+<br /> [calendar] Fix ical daily recurrence import bug 
+<br /> [contacts] Parent customers are now shown in company combo 
+<br /> [tasks] bugfix: encode special characters in workflow mails 
+<br /> [mail] bugfix: missing attachments when trying a send again after receiving a transport error on send (e.g. missing recipients) 
+<br /> [mail] bugfix: internal exception while downloading all attachments as a zip file, but some files have exact same name, causing unusable or partial zip file <br /><br /> sonicle-webtop-services: 
+<br /> - Added general service to monitor devices sync status and sen alert in case of problems 
+<br /> - Changed tolerance unit measure (to days) int sync devices feature 
+<br /> - [fix] Feedback window height in FF 
+<br /> - [fix] Added check on system setting (main.profiledata.editable) when saving Personal info 
+<br /> - ldap AD admin context uri corrected against new AD authentication mech 
+<br /> - Added auth logging (login, authentication, logout) 
+<br /> - Added internetDomain info in admin usercombo 
+<br /> - Add httpSession to auth_logs table 
+<br /> - HTMLEditor now features a &quot;Preformatted&quot; font  
+<br /> - Bugfix: while adding recipients on recipients grid (e.g. new email), selecting from the auto suggestion with the return key, does not automatically start edit on next empty recipient. 
+<br /> [core] Bugfix: while adding recipients on recipients grid (e.g. new email), selecting from the auto suggestion with the return key, does not automatically start edit on next empty recipient. <br /><br /> sonicle-webtop-webtopadmin: 
+<br /> - users list of ldapAD fixed with login column=sAMAccountName 
+<br /> - enabled multiple grid selection of users 
+<br /> - remove action possible on multple users 
+<br /> - added enabled / disabled action, also for &quot;unmanaged domains&quot;, allows for remove / default-create of selected users from webtop users list 
+<br /> - enable button available also for managed domains <br /><br /> sonicle-security: 
+<br /> - support for AD with custom single or multiple ou , through uri params (winserver:389/ou=mygroup) 
+<br /> - correctly authenticate through filter = &quot;(&amp;(sAMAccountName=%n)(objectClass=user)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))&quot; then get access to cn for intialization of username <br /><br /> sonicle-webtop-addons: 
+<br /> - New option to disable dialog of client during send to webtop 
+<br /> - [assistant] new option to reset assistant as default 
+<br /> - [assistant] parameter do delete message in drafts 
+<br /> - new setting main.addons.url allows enabling of addons downalod from external urls, without distributing the addons jar file - if setting is present and not empty takes precedence over the jar in any case. <br /><br /> sonicle-commons: 
+<br /> - New classes using Apache POI package for streaming import of xlsx and xls (low memory footprint during import) <br /><br /> Upgrade to upstream release z-push 2.2.8 with backend revision 0017 
+<br /> Changes: 
+<br /> [new] Adding management of ldap domains Windows <br /><br /> *NOTE:* 
+<br /> To implement this feature: _[mail] Implement scheduled mail on NethServer through Dovecot special login user*vmail and unique password._ 
+<br /> to do this insert in the database: <br /><br /> _insert into settings values (&#x27;nethtop.vmail.secret&#x27;,&#x27;password&#x27;,true);_ 
+
+</div>
+
+<p>
+  <a href="../../issues/3372.html" onclick="if (document.referrer != &quot;&quot;) {history.back(); return false;}">Back</a>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

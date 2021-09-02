@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2928: slapd Upstart status is out of control if BDB is corrupted - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2928.atom" rel="alternate" title="NethServer 6 - Bug #2928: slapd Upstart status is out of control if BDB is corrupted" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #2928</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="2888.html" title="#2888">« Previous</a> |
+      <a href="2917.html" title="#2917">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>slapd Upstart status is out of control if BDB is corrupted</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-directory</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/200.html">v6.5-final</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>A temporary power loss left a BDB log file corrupted.  The <code>db_recover</code> command fixes it, but a problem on restarting <code>slapd</code> persists.</p>
+
+
+I tried to reproduce the same condition manually:
+	<ul>
+	<li><strong>warning</strong> make a backup of your BDB files</li>
+		<li><pre>
+  cd /var/lib/ldap
+  mkdir backup
+  cp __db.00* log.* backup/
+  for F in __db.* log.*; do dd if=/dev/urandom of=$F count=10; done
+  ldapsearch -Y EXTERNAL uid=admin
+</pre></li>
+		<li>BOOM</li>
+		<li>In /var/log/messages: <pre>
+Oct 24 17:04:28 localhost kernel: slapd[15093] general protection ip:7f9f94c525c8 sp:7f9f90f7c310 error:0 in libdb-4.7.so[7f9f94c29000+16f000]
+ldap_result: Can't contact LDAP server (-1)
+[root@davidep2 ldap]# Oct 24 17:04:28 localhost init: slapd main process (15087) killed by SEGV signal
+Oct 24 17:04:28 localhost init: slapd main process ended, respawning
+Oct 24 17:04:28 localhost nslcd[15099]: caught signal SIGTERM (15), shutting down
+Oct 24 17:04:28 localhost nslcd[15099]: version 0.7.5 bailing out
+Oct 24 17:04:28 localhost init: nslcd main process (15099) terminated with status 1
+Oct 24 17:04:29 localhost init: slapd main process (15116) terminated with status 1
+Oct 24 17:04:29 localhost init: slapd main process ended, respawning
+</pre></li>
+		<li>On root's console:<pre>[root@davidep2 ldap]# ps axf
+[...]
+15117 ?        Ss     0:00 /bin/sh -e /dev/fd/10
+15122 ?        S      0:00  \_ sleep 3
+[root@davidep2 ldap]# ldapsearch -Y EXTERNAL uid=admin
+ldap_sasl_interactive_bind_s: Can't contact LDAP server (-1)
+[root@davidep2 ldap]# status slapd
+slapd respawn/post-start, (post-start) process 15117
+</pre></li>
+	</ul>
+
+
+  </div>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-635">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="2785" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="2785.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2785</a>: Drop TCP wrappers hosts.allow hosts.deny templates
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2928/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="2928.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>hosts.allow/deny templates: removed slapd fragment. Refs <a href="2928.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="slapd Upstart status is out of control if BDB is corrupted (CLOSED)">#2928</a> <a href="2785.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Drop TCP wrappers hosts.allow hosts.deny templates (CLOSED)">#2785</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>slapd: send "stat" log messages to syslog, in /var/log/messages. Refs <a href="2928.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="slapd Upstart status is out of control if BDB is corrupted (CLOSED)">#2928</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>slapd.conf Upstart script: avoid infinite loop on post-start. Refs <a href="2928.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="slapd Upstart status is out of control if BDB is corrupted (CLOSED)">#2928</a></p>
+
+
+	<p>- Kill dangling post-start scripts on pre-stop stanza.<br />- Stop respawing after 4 attempts in a minute.</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>fix_accounts script. Refs <a href="2928.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="slapd Upstart status is out of control if BDB is corrupted (CLOSED)">#2928</a></p>
+
+
+	<p>This helper script completes the creation of user and group accounts,<br />wherever the Accounts DB entry is not present in system databases (see<br />getent).</p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>fix_accounts helper script. Refs <a href="2928.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="slapd Upstart status is out of control if BDB is corrupted (CLOSED)">#2928</a></p>
+
+
+	<p>This helper script completes the creation of user and group accounts,<br />wherever the Accounts DB entry is not present in system databases (see<br />getent).</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Merge branch 'b2928'. Refs <a href="2928.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="slapd Upstart status is out of control if BDB is corrupted (CLOSED)">#2928</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Reverted original slapd/LogLevel value. Refs <a href="2928.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="slapd Upstart status is out of control if BDB is corrupted (CLOSED)">#2928</a></p>
+
+
+	<p>Default LogLevel=0</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Simplified slapd LogLevel semantics. Refs <a href="2928.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="slapd Upstart status is out of control if BDB is corrupted (CLOSED)">#2928</a></p>
+
+
+	<p>- removed rsyslog configuration template<br />- LogLevel prop value is passed as-is to slapd daemon<br />- LogLevel default is 0<br />- rsyslogd is restarted at the end of update event<br />- log messages are directed to /var/log/slapd<br />- added logrotate configuration</p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-12801" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="2928.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="2785.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2785</a>: Drop TCP wrappers hosts.allow hosts.deny templates</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12804" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="2928.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12816" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="2928.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/12816%3Fdetail_id=20713.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12821" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="2928.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-12821-notes"><p>In branch b2928 (see revision history for details).</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12822" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="2928.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Subject</strong> changed from <i>Upstart status slapd corrupted BDB </i> to <i>slapd Upstart status is out of control if BDB is corrupted</i></li>
+       <li><strong>Description</strong> updated (<a href="../journals/diff/12822%3Fdetail_id=20727.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12867" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="2928.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-12867-notes"><p>Added also <code>fix_accounts</code> helper script in <code>doc</code> directory (see git changelog for details)</p>
+
+
+	<p>In nethserver-testing:<br />nethserver-directory-2.0.3-1.7gita7606cd.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12878" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="2928.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12879" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="2928.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-12879-notes"><p><strong>VERIFIED</strong></p>
+
+
+	<p>After breaking the db, the server will fail to start:<br /><pre>
+[root@localhost ldap]# start slapd
+start: Job failed to start
+[root@localhost ldap]# 
+</pre></p>
+
+
+	<p>If the db is good the server can be correctly started/restarted/stopped.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12907" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="2928.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>70</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12908" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="2928.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-12908-notes">Back to triaged just to change this:
+	<ul>
+	<li>remove patch for syslog</li>
+		<li>default LogLevel to 0 is good</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-12921" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="2928.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12922" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="2928.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-12922-notes"><p>See commit message for details</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12923" class="journal has-notes has-details">
+    <div id="note-13">
+    <h4><a href="2928.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-12923-notes"><p>In nethserver-testing:<br />nethserver-directory-2.0.3-1.10git4d83597.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12924" class="journal has-details">
+    <div id="note-14">
+    <h4><a href="2928.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12925" class="journal has-notes has-details">
+    <div id="note-15">
+    <h4><a href="2928.html#note-15" class="journal-link">#15</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-12925-notes"><p><strong>VERIFIED</strong></p>
+
+
+	<p>Default configuration doesn't log anything, after setting LogLevel to 256, all logs are inside <code>/var/log/slapd</code>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12969" class="journal has-notes has-details">
+    <div id="note-16">
+    <h4><a href="2928.html#note-16" class="journal-link">#16</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-12969-notes">Released in nethserver-updates:
+	<ul>
+	<li>nethserver-directory-2.0.4-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

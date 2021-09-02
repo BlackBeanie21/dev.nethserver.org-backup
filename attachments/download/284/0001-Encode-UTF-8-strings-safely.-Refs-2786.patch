@@ -1,0 +1,34 @@
+From 6a7baf54fe8e97b0a5023a7251d19c3b5a8cab0f Mon Sep 17 00:00:00 2001
+From: Davide Principi <davide.principi@nethesis.it>
+Date: Mon, 22 Sep 2014 17:57:17 +0200
+Subject: [PATCH] Encode UTF-8 strings safely. Refs #2786
+
+Assumes esmith::db layer returns strings marked as UTF-8.
+---
+ root/usr/libexec/nethserver/smwingsd | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/root/usr/libexec/nethserver/smwingsd b/root/usr/libexec/nethserver/smwingsd
+index 21aff5e..e80f5df 100755
+--- a/root/usr/libexec/nethserver/smwingsd
++++ b/root/usr/libexec/nethserver/smwingsd
+@@ -26,6 +26,7 @@ use strict;
+ use JSON;
+ use esmith::db;
+ use base 'Net::Server::Multiplex';
++use Encode qw(encode decode);
+ 
+ umask 0117;
+ __PACKAGE__->new()->run();
+@@ -91,7 +92,7 @@ sub write_response {
+     my $self = shift;
+     my $msg_type = shift;
+     my $response = shift;
+-    my $payload = JSON->new->allow_nonref->latin1->encode($response);
++    my $payload = encode('UTF-8', JSON->new->allow_nonref->encode($response), Encode::FB_DEFAULT);
+     $self->log(4, ">> $payload");
+     print pack("CN", $msg_type, length($payload)) . $payload;
+ }
+-- 
+1.9.3
+

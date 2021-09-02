@@ -1,0 +1,45 @@
+From 4f497399b699806681c8585ce7a7f44443ae509f Mon Sep 17 00:00:00 2001
+From: Davide Principi <davide.principi@nethesis.it>
+Date: Tue, 19 Aug 2014 15:37:18 +0200
+Subject: [PATCH 1/3] smb.conf: always use nss idmap backend for local user
+ database. Refs #2815
+
+When acting as PDC use the workgroup name instead of machine name.
+---
+ root/etc/e-smith/templates/etc/samba/smb.conf/10global | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+diff --git a/root/etc/e-smith/templates/etc/samba/smb.conf/10global b/root/etc/e-smith/templates/etc/samba/smb.conf/10global
+index 9d4d2a8..05174ee 100644
+--- a/root/etc/e-smith/templates/etc/samba/smb.conf/10global
++++ b/root/etc/e-smith/templates/etc/samba/smb.conf/10global
+@@ -15,12 +15,11 @@ hosts allow = { join(' ', @hostsAllow) }
+ deadtime = { int($smb{DeadTime}) }
+ 
+ workgroup = { 
++   $defaultWorkgroup = 'WORKGROUP';
+    if($smb{ServerRole} =~ /^(PDC|ADS)$/) {
+-       my $defaultDomain = uc((split('\.', $DomainName))[0]);
+-       $workgroup = $smb{Workgroup} || $defaultDomain;
+-   } else {
+-       $workgroup = 'WORKGROUP';
++       $defaultWorkgroup = uc((split('\.', $DomainName))[0]);
+    }
++   $workgroup = $smb{Workgroup} || $defaultWorkgroup;
+    return $workgroup;
+ }
+ netbios aliases = { join(' ', @netbiosAliasList) }
+@@ -56,8 +55,8 @@ idmap config * : ldap_url = ldap://127.0.0.1
+ idmap config * : ldap_base_dn = ou=Idmap,{$LdapInternalDomainSuffix}
+ idmap config * : ldap_user_dn = cn=samba,{$LdapInternalDomainSuffix}
+ idmap config * : range = 50000-99999
+-{ $smb{ServerRole} eq 'ADS' ? '# ' : '' }idmap config {$workgroup} : range = 0 - 9999
+-{ $smb{ServerRole} eq 'ADS' ? '# ' : '' }idmap config {$workgroup} : backend = nss
++idmap config { $smb{ServerRole} eq 'PDC' ? $workgroup : uc($SystemName) } : range = 0 - 9999
++idmap config { $smb{ServerRole} eq 'PDC' ? $workgroup : uc($SystemName) } : backend = nss
+ obey pam restrictions = yes
+ 
+ ; Invoked only if a passwd entry is missing:
+-- 
+1.9.3
+

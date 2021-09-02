@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>Basic UI Controls</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="basic-ui-controls">
+<h1 class="title">Basic UI Controls</h1>
+<h2 class="subtitle" id="nethgui-user-interface-design">Nethgui User Interface Design</h2>
+
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="BasicUiControls.html#controls" id="id1">1&nbsp;&nbsp;&nbsp;Controls</a></li>
+<li><a class="reference internal" href="BasicUiControls.html#containers" id="id2">2&nbsp;&nbsp;&nbsp;Containers</a></li>
+</ul>
+</div>
+<p>The idea is taken from <a class="reference external" href="http://alexking.org/dev/ASCII_UI_controls.txt">alexking.org</a></p>
+<div class="section" id="controls">
+<h1><a class="toc-backref" href="BasicUiControls.html#id1">1&nbsp;&nbsp;&nbsp;Controls</a></h1>
+<p>Text label:</p>
+<pre class="literal-block">
+This is a paragraph.
+
+This is another paragraph.  Your name is &quot;E. Smith&quot;.
+</pre>
+<p>Text input (normal/focused):</p>
+<pre class="literal-block">
+[__________________]
+
+[I_________________]
+</pre>
+<p>Text area <a class="reference external" href="http://dev.nethesis.it/issues/556">NG556</a>:</p>
+<pre class="literal-block">
+|____________________|
+|____________________|
+|____________________|
+|____________________|
+|____________________|
+</pre>
+<p>Radio button:</p>
+<pre class="literal-block">
+(o) Selected
+( ) Unselected
+</pre>
+<p>Checkboxes:</p>
+<pre class="literal-block">
+[x] Selected
+[ ] Unselected
+</pre>
+<p>Dropdown menu <a class="reference external" href="http://dev.nethesis.it/issues/348">NG348</a>:</p>
+<pre class="literal-block">
+[__________|v]
+</pre>
+<p>Buttons (enabled &amp; disabled):</p>
+<pre class="literal-block">
+[ Cancel ]  | Apply |
+</pre>
+<p>Button list <a class="reference external" href="http://dev.nethesis.it/issues/476">NG476</a>:</p>
+<pre class="literal-block">
+[ Button 1 ]  [ Button 2 ]  [ Button 3 ]
+</pre>
+<p>Button drop-down panel (normal) <a class="reference external" href="http://dev.nethesis.it/issues/528">NG528</a>:</p>
+<pre class="literal-block">
+[ Button v ]
+</pre>
+<p>Button drop-down panel (clicked) <a class="reference external" href="http://dev.nethesis.it/issues/528">NG528</a>:</p>
+<pre class="literal-block">
+[ Button v ]
++--------------------+
+|                    |
+| // panel contents  |
+|                    |
++--------------------+
+</pre>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">Panel contents can be buttons, links or any other widget.</p>
+</div>
+<p>Button set <a class="reference external" href="http://dev.nethesis.it/issues/528">NG528</a>:</p>
+<pre class="literal-block">
+[ Button 1 | Button 2 | Button 3 ]
+</pre>
+<p>Button set with upper limit (set to 1) <a class="reference external" href="http://dev.nethesis.it/issues/528">NG528</a>:</p>
+<pre class="literal-block">
+[ Main Action | v ]
+</pre>
+<p>Button set with upper limit (<tt class="docutils literal">v</tt> is clicked) <a class="reference external" href="http://dev.nethesis.it/issues/528">NG528</a>:</p>
+<pre class="literal-block">
+[ Main Action | v ]
++--------------------+
+| Action 2           |
+| Action 3           |
+| Action 4           |
++--------------------+
+</pre>
+<p>Basic Selector (multiple):</p>
+<pre class="literal-block">
+[x] Label1
+[ ] Label2
+[x] Label3
+[x] Label4
+[ ] Label5
+</pre>
+<p>Basic Selector (single):</p>
+<pre class="literal-block">
+( ) Label1
+( ) Label2
+(o) Label3
+</pre>
+<p>Progress bar <a class="reference external" href="http://dev.nethesis.it/issues/554">NG554</a>:</p>
+<pre class="literal-block">
+[ ########## 50% __________ ]
+</pre>
+<p>Slider <a class="reference external" href="http://dev.nethesis.it/issues/1242">NG1242</a>:</p>
+<pre class="literal-block">
+[ ----O-------------------- ] Value label
+</pre>
+</div>
+<div class="section" id="containers">
+<h1><a class="toc-backref" href="BasicUiControls.html#id2">2&nbsp;&nbsp;&nbsp;Containers</a></h1>
+<p>Tabs:</p>
+<pre class="literal-block">
+ .-----------. .-----------.
+ |   Tab 1   | |   Tab 2   |
+-+           +-+-----------+-----------...
+</pre>
+<p>Dialog:</p>
+<pre class="literal-block">
++----------------------------------+
+| Title                          X |
++----------------------------------+
+|                                  |
+| Are you sure?                    |
+|                                  |
+|                  [ Yes ] [ No  ] |
++----------------------------------+
+</pre>
+<p>Fieldset with/without label:</p>
+<pre class="literal-block">
+.Fieldset label ------------
+|
+| ( ) Disabled
+| (o) Enabled
+|
+
+.--------------------------
+|
+| ( ) Disabled
+| (o) Enabled
+|
+</pre>
+</div>
+</div>
+</body>
+</html>

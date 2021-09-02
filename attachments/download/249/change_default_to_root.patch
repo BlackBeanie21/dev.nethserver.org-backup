@@ -1,0 +1,47 @@
+diff --git a/root/etc/e-smith/db/configuration/defaults/backup-data/notifyTo b/root/etc/e-smith/db/configuration/defaults/backup-data/notifyTo
+index db9fa85..8da2d11 100644
+--- a/root/etc/e-smith/db/configuration/defaults/backup-data/notifyTo
++++ b/root/etc/e-smith/db/configuration/defaults/backup-data/notifyTo
+@@ -1 +1 @@
+-admin@localhost
++root@localhost
+diff --git a/root/usr/share/nethesis/NethServer/Module/BackupData.php b/root/usr/share/nethesis/NethServer/Module/BackupData.php
+index a344abb..d3983ca 100644
+--- a/root/usr/share/nethesis/NethServer/Module/BackupData.php
++++ b/root/usr/share/nethesis/NethServer/Module/BackupData.php
+@@ -24,7 +24,7 @@ use Nethgui\System\PlatformInterface as Validate;
+ 
+ 
+ /**
+- * Configure Hylafax and modem
++ * Configure data backup
+  *
+  * @author Giacomo Sanchietti <giacomo.sanchietti@nethesis.it>
+  * @since 1.0
+@@ -138,7 +138,7 @@ class BackupData extends \Nethgui\Controller\AbstractController
+         if ($this->parameters["notifyToType"] === 'custom') {
+              $this->parameters["notifyTo"] = $value;
+         } else {
+-             $this->parameters["notifyTo"] = "admin@localhost";
++             $this->parameters["notifyTo"] = "root@localhost";
+         }
+         return true;
+     }
+@@ -147,7 +147,7 @@ class BackupData extends \Nethgui\Controller\AbstractController
+     public function readNotifyToType()
+     {
+         $current = $this->getPlatform()->getDatabase('configuration')->getProp('backup-data','notifyTo');
+-        if($current == "admin@localhost") {
++        if($current == "") {
+             return "admin";
+         } else {
+             return "custom";
+@@ -157,7 +157,7 @@ class BackupData extends \Nethgui\Controller\AbstractController
+     public function writeNotifyToType($value)
+     {
+         if ($this->parameters["notifyToType"] === 'admin') {
+-             $this->parameters["notifyTo"] = 'admin@localhost';
++             $this->parameters["notifyTo"] = '';
+              return 'admin';
+         } else {
+              return "";

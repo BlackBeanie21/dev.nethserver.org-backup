@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2965: Permission denied when creating VPN users - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2965.atom" rel="alternate" title="NethServer 6 - Bug #2965: Permission denied when creating VPN users" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #2965</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="2966.html" title="#2966">« Previous</a> |
+      <a href="2949.html" title="#2949">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/c96c358beddd941e6188349f3c98ccd3?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Permission denied when creating VPN users</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-lib</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/201.html">v6.5</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Installed the VPN package. Loading the VPN configuration page gives this error below the content on all VPN tab pages:<pre>
+[2] file(/var/lib/nethserver/certs/certindex): failed to open stream: Permission denied See the system log for details.
+</pre></p>
+
+
+	<p><code>/var/log/messages</code> offers this:<pre>
+Nov 25 20:29:50 neth httpd-admin: [ERROR] Can't access certificate index file: /var/lib/nethserver/certs/certindex
+Nov 25 20:29:50 neth httpd-admin: [2] file(/var/lib/nethserver/certs/certindex): failed to open stream: Permission denied - File /usr/share/nethesis/NethServer/Module/VPN/Accounts.php, line 105
+</pre></p>
+
+
+	<p>It appears the ipsec service is started, but when I try to add a user, I again get the unable to open stream error:<pre>
+[2] file(/var/lib/nethserver/certs/certindex): failed to open stream: Permission denied
+
+See the system log for details.
+</pre></p>
+  </div>
+</div>
+<div class="attachments">
+<p><a href="../attachments/download/299/bug2965_nethserver-lib.patch" class="icon icon-attachment">bug2965_nethserver-lib.patch</a>    <a href="../attachments/299/bug2965_nethserver-lib.patch.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a>
+  
+  <span class="size">(352 Bytes)</span>
+    <span class="author">Davide Principi, 11/27/2014 08:12 AM</span>
+  </p>
+<p><a href="../attachments/download/300/bug2965_nethserver-vpn.patch" class="icon icon-attachment">bug2965_nethserver-vpn.patch</a>    <a href="../attachments/300/bug2965_nethserver-vpn.patch.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a>
+  
+  <span class="size">(559 Bytes)</span>
+    <span class="author">Davide Principi, 11/27/2014 08:12 AM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Fix certindex file permissions. Refs <a href="2965.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Permission denied when creating VPN users (CLOSED)">#2965</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Keep umask value unaltered. Refs <a href="2965.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Permission denied when creating VPN users (CLOSED)">#2965</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Refactored, using a symbolic dir name. Refs <a href="2965.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Permission denied when creating VPN users (CLOSED)">#2965</a></p>
+
+
+	<p>Added license header.</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Accounts UI module: wrap PHP file() call. Refs <a href="2965.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Permission denied when creating VPN users (CLOSED)">#2965</a></p>
+
+
+	<p>Failures will be reported to the log file only.</p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Merge branch 'b2965'. Refs <a href="2965.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Permission denied when creating VPN users (CLOSED)">#2965</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-13292" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="2965.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-13292-notes"><p>Temporary workaround:<br /><pre>
+chmod o+r /var/lib/nethserver/certs/certindex
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13293" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="2965.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Subject</strong> changed from <i>Impossible to create vpn users, permission problems</i> to <i>Permission denied when creating VPN users</i></li>
+       <li><strong>Category</strong> set to <i>nethserver-lib</i></li>
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Target version</strong> set to <i>v6.5</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+       <li><strong>Affected version</strong> set to <i>v6.5</i></li>
+    </ul>
+    <div class="wiki" id="journal-13293-notes"><p>I cannot reproduce the bug if <code>nethserver-vpn</code> is installed from the command line, proving that wrong permissions on <code>/var/lib/nethserver/certs/certindex</code> originate elsewhere.</p>
+
+
+	<p>In <code>nethserver-lib-2.1.2-1.ns6.noarch</code>, for instance the new <code>umask</code> settings of <code>ptrack</code> are probably not compatible.</p>
+
+
+	<p>I propose to fix the <code>umask</code> in <code>nethserver-lib</code> and apply the proposed workaround automatically.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-13294" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="2965.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>File</strong> <a href="../attachments/download/299/bug2965_nethserver-lib.patch">bug2965_nethserver-lib.patch</a><a href="../attachments/299/bug2965_nethserver-lib.patch.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a> added</li>
+       <li><strong>File</strong> <a href="../attachments/download/300/bug2965_nethserver-vpn.patch">bug2965_nethserver-vpn.patch</a><a href="../attachments/300/bug2965_nethserver-vpn.patch.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a> added</li>
+    </ul>
+    <div class="wiki" id="journal-13294-notes"><p>Proposed patches for <code>nethserver-lib</code> and <code>nethserver-vpn</code></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13295" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="2965.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13296" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="2965.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/13296%3Fdetail_id=21596.html" title="View differences">diff</a>)</li>
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-13296-notes"><p><strong>MODIFIED</strong></p>
+
+
+	<p>The bug affects <code>nethserver-lib</code> package. The <code>ptrack</code> command must not alter the calling process <code>umask</code> value.</p>
+
+
+	<p>The modification of <code>nethsever-vpn</code> fixes existing permission problems for the affected installation, while <code>nethserver-lib</code> has the real bugfix.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-13297" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="2965.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-13297-notes"><p>In nethserver-testing<br />nethserver-lib-2.1.2-1.0git04ab7be3.ns6.noarch.rpm<br /><del>nethserver-vpn-1.1.2-3.0gitd9066df4.ns6.noarch.rpm</del><br />nethserver-vpn-1.1.2-4.0gitbc784340.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-13298" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="2965.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-13298-notes"><p>Affected system:<br /><pre>
+# ls -l /var/lib/nethserver/certs/certindex
+-rw-r-----. 1 root root 0 Nov 27 17:41 /var/lib/nethserver/certs/certindex
+# yum --enablerepo=nethserver-testing update nethserver-vpn
+# ls -l /var/lib/nethserver/certs/certindex
+-rw-r--r--. 1 root root 0 Nov 27 17:41 /var/lib/nethserver/certs/certindex
+</pre></p>
+
+
+	<p>New system:<br /><pre>
+# yum --enablerepo=nethserver-testing update nethserver-lib
+</pre><br />Install vpn from package manager:<br /><pre>
+# ls -l /var/lib/nethserver/certs/certindex
+-rw-r--r--. 1 root root 0 Nov 27 17:41 /var/lib/nethserver/certs/certindex
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13299" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="2965.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-13299-notes"><p>In nethserver-updates:<br />nethserver-lib-2.1.3-1.ns6.noarch.rpm<br />nethserver-vpn-1.1.3-1.ns6.noarch.rpm</p>
+
+
+Acknowledgements 
+	<ul>
+	<li>Davide Marini</li>
+		<li>Jeff Folk</li>
+		<li>Filippo Carletti</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

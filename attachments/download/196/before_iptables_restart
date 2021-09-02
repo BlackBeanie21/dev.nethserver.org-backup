@@ -1,0 +1,147 @@
+Chain INPUT (policy DROP)
+target     prot opt source               destination         
+loc2fw     all  --  0.0.0.0/0            0.0.0.0/0           
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           
+Reject     all  --  0.0.0.0/0            0.0.0.0/0           
+LOG        all  --  0.0.0.0/0            0.0.0.0/0           LOG flags 0 level 6 prefix `Shorewall:INPUT:REJECT:' 
+reject     all  --  0.0.0.0/0            0.0.0.0/0           [goto] 
+
+Chain FORWARD (policy DROP)
+target     prot opt source               destination         
+Reject     all  --  0.0.0.0/0            0.0.0.0/0           
+LOG        all  --  0.0.0.0/0            0.0.0.0/0           LOG flags 0 level 6 prefix `Shorewall:FORWARD:REJECT:' 
+reject     all  --  0.0.0.0/0            0.0.0.0/0           [goto] 
+
+Chain OUTPUT (policy DROP)
+target     prot opt source               destination         
+fw2loc     all  --  0.0.0.0/0            0.0.0.0/0           
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           
+Reject     all  --  0.0.0.0/0            0.0.0.0/0           
+LOG        all  --  0.0.0.0/0            0.0.0.0/0           LOG flags 0 level 6 prefix `Shorewall:OUTPUT:REJECT:' 
+reject     all  --  0.0.0.0/0            0.0.0.0/0           [goto] 
+
+Chain Broadcast (2 references)
+target     prot opt source               destination         
+DROP       all  --  0.0.0.0/0            0.0.0.0/0           ADDRTYPE match dst-type BROADCAST 
+DROP       all  --  0.0.0.0/0            0.0.0.0/0           ADDRTYPE match dst-type MULTICAST 
+DROP       all  --  0.0.0.0/0            0.0.0.0/0           ADDRTYPE match dst-type ANYCAST 
+DROP       all  --  0.0.0.0/0            224.0.0.0/4         
+
+Chain Drop (0 references)
+target     prot opt source               destination         
+           all  --  0.0.0.0/0            0.0.0.0/0           
+reject     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:113 /* Auth */ 
+Broadcast  all  --  0.0.0.0/0            0.0.0.0/0           
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           icmp type 3 code 4 /* Needed ICMP types */ 
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           icmp type 11 /* Needed ICMP types */ 
+Invalid    all  --  0.0.0.0/0            0.0.0.0/0           
+DROP       udp  --  0.0.0.0/0            0.0.0.0/0           multiport dports 135,445 /* SMB */ 
+DROP       udp  --  0.0.0.0/0            0.0.0.0/0           udp dpts:137:139 /* SMB */ 
+DROP       udp  --  0.0.0.0/0            0.0.0.0/0           udp spt:137 dpts:1024:65535 /* SMB */ 
+DROP       tcp  --  0.0.0.0/0            0.0.0.0/0           multiport dports 135,139,445 /* SMB */ 
+DROP       udp  --  0.0.0.0/0            0.0.0.0/0           udp dpt:1900 /* UPnP */ 
+NotSyn     tcp  --  0.0.0.0/0            0.0.0.0/0           
+DROP       udp  --  0.0.0.0/0            0.0.0.0/0           udp spt:53 /* Late DNS Replies */ 
+
+Chain Invalid (2 references)
+target     prot opt source               destination         
+DROP       all  --  0.0.0.0/0            0.0.0.0/0           ctstate INVALID 
+
+Chain NotSyn (2 references)
+target     prot opt source               destination         
+DROP       tcp  --  0.0.0.0/0            0.0.0.0/0           tcp flags:!0x17/0x02 
+
+Chain Reject (4 references)
+target     prot opt source               destination         
+           all  --  0.0.0.0/0            0.0.0.0/0           
+reject     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:113 /* Auth */ 
+Broadcast  all  --  0.0.0.0/0            0.0.0.0/0           
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           icmp type 3 code 4 /* Needed ICMP types */ 
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           icmp type 11 /* Needed ICMP types */ 
+Invalid    all  --  0.0.0.0/0            0.0.0.0/0           
+reject     udp  --  0.0.0.0/0            0.0.0.0/0           multiport dports 135,445 /* SMB */ 
+reject     udp  --  0.0.0.0/0            0.0.0.0/0           udp dpts:137:139 /* SMB */ 
+reject     udp  --  0.0.0.0/0            0.0.0.0/0           udp spt:137 dpts:1024:65535 /* SMB */ 
+reject     tcp  --  0.0.0.0/0            0.0.0.0/0           multiport dports 135,139,445 /* SMB */ 
+DROP       udp  --  0.0.0.0/0            0.0.0.0/0           udp dpt:1900 /* UPnP */ 
+NotSyn     tcp  --  0.0.0.0/0            0.0.0.0/0           
+DROP       udp  --  0.0.0.0/0            0.0.0.0/0           udp spt:53 /* Late DNS Replies */ 
+
+Chain dynamic (1 references)
+target     prot opt source               destination         
+
+Chain fw2loc (1 references)
+target     prot opt source               destination         
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           ctstate RELATED,ESTABLISHED 
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           
+
+Chain loc2fw (1 references)
+target     prot opt source               destination         
+dynamic    all  --  0.0.0.0/0            0.0.0.0/0           ctstate INVALID,NEW 
+smurfs     all  --  0.0.0.0/0            0.0.0.0/0           ctstate INVALID,NEW 
+tcpflags   tcp  --  0.0.0.0/0            0.0.0.0/0           
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           ctstate RELATED,ESTABLISHED 
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           icmp type 8 /* Ping */ 
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:110 /* dovecot */ 
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:143 /* dovecot */ 
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:4190 /* dovecot */ 
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:993 /* dovecot */ 
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:980 /* httpd-admin */ 
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:25 /* postfix */ 
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:465 /* postfix */ 
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:587 /* postfix */ 
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:389 /* slapd */ 
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:22 /* sshd */ 
+Reject     all  --  0.0.0.0/0            0.0.0.0/0           
+LOG        all  --  0.0.0.0/0            0.0.0.0/0           LOG flags 0 level 6 prefix `Shorewall:loc2fw:REJECT:' 
+reject     all  --  0.0.0.0/0            0.0.0.0/0           [goto] 
+
+Chain logdrop (0 references)
+target     prot opt source               destination         
+DROP       all  --  0.0.0.0/0            0.0.0.0/0           
+
+Chain logflags (5 references)
+target     prot opt source               destination         
+LOG        all  --  0.0.0.0/0            0.0.0.0/0           LOG flags 4 level 6 prefix `Shorewall:logflags:DROP:' 
+DROP       all  --  0.0.0.0/0            0.0.0.0/0           
+
+Chain logreject (0 references)
+target     prot opt source               destination         
+reject     all  --  0.0.0.0/0            0.0.0.0/0           
+
+Chain reject (11 references)
+target     prot opt source               destination         
+DROP       all  --  0.0.0.0/0            0.0.0.0/0           ADDRTYPE match src-type BROADCAST 
+DROP       all  --  224.0.0.0/4          0.0.0.0/0           
+DROP       2    --  0.0.0.0/0            0.0.0.0/0           
+REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0           reject-with tcp-reset 
+REJECT     udp  --  0.0.0.0/0            0.0.0.0/0           reject-with icmp-port-unreachable 
+REJECT     icmp --  0.0.0.0/0            0.0.0.0/0           reject-with icmp-host-unreachable 
+REJECT     all  --  0.0.0.0/0            0.0.0.0/0           reject-with icmp-host-prohibited 
+
+Chain sfilter (0 references)
+target     prot opt source               destination         
+LOG        all  --  0.0.0.0/0            0.0.0.0/0           LOG flags 0 level 6 prefix `Shorewall:sfilter:DROP:' 
+DROP       all  --  0.0.0.0/0            0.0.0.0/0           
+
+Chain shorewall (0 references)
+target     prot opt source               destination         
+
+Chain smurflog (2 references)
+target     prot opt source               destination         
+LOG        all  --  0.0.0.0/0            0.0.0.0/0           LOG flags 0 level 6 prefix `Shorewall:smurfs:DROP:' 
+DROP       all  --  0.0.0.0/0            0.0.0.0/0           
+
+Chain smurfs (1 references)
+target     prot opt source               destination         
+RETURN     all  --  0.0.0.0              0.0.0.0/0           
+smurflog   all  --  0.0.0.0/0            0.0.0.0/0           [goto] ADDRTYPE match src-type BROADCAST 
+smurflog   all  --  224.0.0.0/4          0.0.0.0/0           [goto] 
+
+Chain tcpflags (1 references)
+target     prot opt source               destination         
+logflags   tcp  --  0.0.0.0/0            0.0.0.0/0           [goto] tcp flags:0x3F/0x29 
+logflags   tcp  --  0.0.0.0/0            0.0.0.0/0           [goto] tcp flags:0x3F/0x00 
+logflags   tcp  --  0.0.0.0/0            0.0.0.0/0           [goto] tcp flags:0x06/0x06 
+logflags   tcp  --  0.0.0.0/0            0.0.0.0/0           [goto] tcp flags:0x03/0x03 
+logflags   tcp  --  0.0.0.0/0            0.0.0.0/0           [goto] tcp spt:0 flags:0x17/0x02 

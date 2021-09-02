@@ -1,0 +1,12 @@
+diff --git a/root/usr/libexec/nethserver/ptrack b/root/usr/libexec/nethserver/ptrack
+index 7dcbfde..4c6c79d 100755
+--- a/root/usr/libexec/nethserver/ptrack
++++ b/root/usr/libexec/nethserver/ptrack
+@@ -48,7 +48,6 @@ def daemonize():
+             os.wait()
+             sys.exit(0)
+ 
+-        os.umask(0027)
+         os.setsid()
+         os.chdir('/')
+ 

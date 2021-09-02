@@ -1,0 +1,20 @@
+Library				Git Revision
+--------------------------------------------
+sonicle-webtop-groupware:	#9a784f24
+sonicle-commons:		#4075dd8e
+
+CHANGES
+=======
+
+sonicle-webtop-groupware:
+[mail] feature: when a foreign sieve script is already active, do not generate automatically webtop script at startup.
+[calendar] feature: implemented custom fields panel in event form
+[calendar] feature: changed print in case of custom fields
+[contacts] feature: relaxed vcard email property import, not testing for internet type only
+
+sonicle-commons:
+[lib] feature: additional null checks in escapeSQL
+[lib] feature: new toIntegerBeanList function in RSUtils
+
+sonicle-webtop-addons:
+[jar] removed from war.

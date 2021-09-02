@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>0002-nethserver-samba.spec-converted-to-plain-.spec-file..patch - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="../../stylesheets/scm.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-attachments action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>0002-nethserver-samba.spec-converted-to-plain-.spec-file..patch</h2>
+
+<div class="attachments">
+<p>
+   <span class="author"><a href="../../users/9.html" class="user active">Davide Principi</a>, 08/28/2014 11:01 AM</span></p>
+<p><a href="../download/273/0002-nethserver-samba.spec-converted-to-plain-.spec-file..patch">Download</a>   <span class="size">(11.4 KB)</span></p>
+</div>
+<form accept-charset="UTF-8" action="0002-nethserver-samba.spec-converted-to-plain-.spec-file..patch.html" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <p>
+    View differences:
+    <label><input checked="checked" id="type_inline" name="type" onchange="this.form.submit()" type="radio" value="inline" /> inline</label>
+    <label><input id="type_sbs" name="type" onchange="this.form.submit()" type="radio" value="sbs" /> side by side</label>
+  </p>
+</form>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      nethserver-samba.spec
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1</th>
+  <td class="line-code diff_in">
+    <pre>Summary: Nethserver specific Samba configuration files and templates</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">2</th>
+  <td class="line-code diff_in">
+    <pre>Name: nethserver-samba</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">3</th>
+  <td class="line-code diff_in">
+    <pre>Version: 1.4.5</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">4</th>
+  <td class="line-code diff_in">
+    <pre>Release: 1%{?dist}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">5</th>
+  <td class="line-code diff_in">
+    <pre>License: GPL</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">6</th>
+  <td class="line-code diff_in">
+    <pre>Source: %{name}-%{version}.tar.gz</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">7</th>
+  <td class="line-code diff_in">
+    <pre>BuildArch: noarch</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">8</th>
+  <td class="line-code diff_in">
+    <pre>BuildRequires: nethserver-devtools</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">9</th>
+  <td class="line-code diff_in">
+    <pre>URL: %{url_prefix}/%{name} </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">10</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">11</th>
+  <td class="line-code diff_in">
+    <pre>Requires: nethserver-directory &gt;= 1.1.1-5</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">12</th>
+  <td class="line-code diff_in">
+    <pre>Requires: samba &gt;= 3.4.3</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">13</th>
+  <td class="line-code diff_in">
+    <pre>Requires: samba-client &gt;= 3.4.3</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">14</th>
+  <td class="line-code diff_in">
+    <pre>Requires: samba-common &gt;= 3.4.3</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre>Requires: samba-winbind</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">16</th>
+  <td class="line-code diff_in">
+    <pre>Requires: tdb-tools</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">17</th>
+  <td class="line-code diff_in">
+    <pre>Requires: cyrus-sasl-gssapi</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">18</th>
+  <td class="line-code diff_in">
+    <pre>Requires: krb5-workstation</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">19</th>
+  <td class="line-code diff_in">
+    <pre>Requires: perl-Authen-Krb5</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">20</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">21</th>
+  <td class="line-code diff_in">
+    <pre>%description</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">22</th>
+  <td class="line-code diff_in">
+    <pre>* Samba PDC, Workstation, ADS roles</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">23</th>
+  <td class="line-code diff_in">
+    <pre>* Integrate smb shares with ibays (shared folders)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">24</th>
+  <td class="line-code diff_in">
+    <pre>* CUPS support</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">25</th>
+  <td class="line-code diff_in">
+    <pre>* WINS support</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">26</th>
+  <td class="line-code diff_in">
+    <pre>* Active Directory GSSAPI authentication</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">27</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">28</th>
+  <td class="line-code diff_in">
+    <pre>%prep</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">29</th>
+  <td class="line-code diff_in">
+    <pre>%setup</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">30</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">31</th>
+  <td class="line-code diff_in">
+    <pre>%build</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">32</th>
+  <td class="line-code diff_in">
+    <pre>%{makedocs}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">33</th>
+  <td class="line-code diff_in">
+    <pre>perl createlinks</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">34</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">35</th>
+  <td class="line-code diff_in">
+    <pre>%install</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">36</th>
+  <td class="line-code diff_in">
+    <pre>rm -rf $RPM_BUILD_ROOT</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">37</th>
+  <td class="line-code diff_in">
+    <pre>(cd root   ; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">38</th>
+  <td class="line-code diff_in">
+    <pre>%{genfilelist} $RPM_BUILD_ROOT \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">39</th>
+  <td class="line-code diff_in">
+    <pre>    &gt; %{name}-%{version}-filelist</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">40</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">41</th>
+  <td class="line-code diff_in">
+    <pre>%files -f %{name}-%{version}-filelist</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">42</th>
+  <td class="line-code diff_in">
+    <pre>%doc COPYING</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">43</th>
+  <td class="line-code diff_in">
+    <pre>%defattr(-,root,root)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">44</th>
+  <td class="line-code diff_in">
+    <pre>%config(noreplace) /var/lib/nethserver/netlogon/netlogon.bat</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">45</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">46</th>
+  <td class="line-code diff_in">
+    <pre>%changelog</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">47</th>
+  <td class="line-code diff_in">
+    <pre>* Thu Jul 03 2014 Giacomo Sanchietti &lt;giacomo.sanchietti@nethesis.it&gt; - 1.4.5-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">48</th>
+  <td class="line-code diff_in">
+    <pre>- Fix: Login to Samba fails after migration - Bug #2780</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">49</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">50</th>
+  <td class="line-code diff_in">
+    <pre>* Thu Jun 19 2014 Giacomo Sanchietti &lt;giacomo.sanchietti@nethesis.it&gt; - 1.4.4-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">51</th>
+  <td class="line-code diff_in">
+    <pre>- Fix bug #2733 - Domain Administrators rights not enforced by workstations.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">52</th>
+  <td class="line-code diff_in">
+    <pre>- Decrease default Samba log verbosity #2747</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">53</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">54</th>
+  <td class="line-code diff_in">
+    <pre>* Thu Jun 12 2014 Giacomo Sanchietti &lt;giacomo.sanchietti@nethesis.it&gt; - 1.4.3-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">55</th>
+  <td class="line-code diff_in">
+    <pre>- Configurable AD accounts LDAP subtree - Enhancement #2727</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">56</th>
+  <td class="line-code diff_in">
+    <pre>- Keep changes to netlogon.bat - Enhancement #2725</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">57</th>
+  <td class="line-code diff_in">
+    <pre>- Backup config: minimize creation of new backup - Enhancement #2699</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">58</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">59</th>
+  <td class="line-code diff_in">
+    <pre>* Wed Feb 26 2014 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.4.2-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">60</th>
+  <td class="line-code diff_in">
+    <pre>- Revamp web UI style - Enhancement #2656 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">61</th>
+  <td class="line-code diff_in">
+    <pre>- Samba: backup secrets.tdb in config backup - Enhancement #2653 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">62</th>
+  <td class="line-code diff_in">
+    <pre>- Implement hostname-modify event for samba  - Enhancement #2626 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">63</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">64</th>
+  <td class="line-code diff_in">
+    <pre>* Wed Feb 05 2014 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.4.1-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">65</th>
+  <td class="line-code diff_in">
+    <pre>- RST format for help files - Enhancement #2627 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>- Move admin user in LDAP DB - Feature #2492 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">67</th>
+  <td class="line-code diff_in">
+    <pre>- Update all inline help documentation - Task #1780 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">68</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">69</th>
+  <td class="line-code diff_in">
+    <pre>* Wed Dec 18 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.4.0-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">70</th>
+  <td class="line-code diff_in">
+    <pre>- Kerberos keytab file is missing for new services - Bug #2407 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">71</th>
+  <td class="line-code diff_in">
+    <pre>- Directory: backup service accounts passwords  - Enhancement #2063 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">72</th>
+  <td class="line-code diff_in">
+    <pre>- Service supervision with Upstart - Feature #2014 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">73</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">74</th>
+  <td class="line-code diff_in">
+    <pre>* Tue Jul 16 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.6-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">75</th>
+  <td class="line-code diff_in">
+    <pre>- Yum transaction aborted while installing nethserver-file-server group - Bug #2041 [Nethgui]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">76</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">77</th>
+  <td class="line-code diff_in">
+    <pre>* Thu Jul 04 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.5-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">78</th>
+  <td class="line-code diff_in">
+    <pre>- Fixed &quot;value is not boolean!&quot; warning - Bug #2039 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">79</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">80</th>
+  <td class="line-code diff_in">
+    <pre>* Mon Jul 01 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.4-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">81</th>
+  <td class="line-code diff_in">
+    <pre>- File permissions not inherited when POSIX ACL is present - Bug #2039 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">82</th>
+  <td class="line-code diff_in">
+    <pre>- Share connection error NT_STATUS_ACCESS_DENIED  - Bug #1997 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">83</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">84</th>
+  <td class="line-code diff_in">
+    <pre>* Mon Jun 17 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.3-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">85</th>
+  <td class="line-code diff_in">
+    <pre>- Added a 5% of tolerance to deadline time, to avoid ticket expiration during renewal - Feature #1746 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">86</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">87</th>
+  <td class="line-code diff_in">
+    <pre>* Mon Jun 10 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.2-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">88</th>
+  <td class="line-code diff_in">
+    <pre>- Disable idmap nss backend if ServerRole is ADS #1997</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">89</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">90</th>
+  <td class="line-code diff_in">
+    <pre>* Mon Jun 10 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.1-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">91</th>
+  <td class="line-code diff_in">
+    <pre>- Fix samba share connection error NT_STATUS_ACCESS_DENIED #1997</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">92</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">93</th>
+  <td class="line-code diff_in">
+    <pre>* Wed May 29 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.0-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">94</th>
+  <td class="line-code diff_in">
+    <pre>- Active Directory member role. Refs #1746</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">95</th>
+  <td class="line-code diff_in">
+    <pre>- *.spec.in: Require cyrus-sasl-gssapi, krb5-workstation, perl-Authen-Krb5</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">96</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">97</th>
+  <td class="line-code diff_in">
+    <pre>* Tue May  7 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.2.1-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">98</th>
+  <td class="line-code diff_in">
+    <pre>- nethserver-samba-group-sync action: check if samba idmap backend is functional before going on, and don&#39;t fail if a unix group does not exist #1870</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">99</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">100</th>
+  <td class="line-code diff_in">
+    <pre>* Tue Apr 30 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.2.0-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">101</th>
+  <td class="line-code diff_in">
+    <pre>- Store machine accounts under ou=Computers branch #1890 </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">102</th>
+  <td class="line-code diff_in">
+    <pre>- Implant migrated SID as &quot;localsid&quot; #1895</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">103</th>
+  <td class="line-code diff_in">
+    <pre>- Shared folder guest access #1882</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">104</th>
+  <td class="line-code diff_in">
+    <pre>- winregistry-patches served by httpd-admin #1799</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">105</th>
+  <td class="line-code diff_in">
+    <pre>- SharedFolder UI plugin: hide profile widget #1881</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">106</th>
+  <td class="line-code diff_in">
+    <pre>- Full automatic package install/upgrade/uninstall support #1870 #1872 #1874</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">107</th>
+  <td class="line-code diff_in">
+    <pre>- Update group description when changed from UI #1861</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">108</th>
+  <td class="line-code diff_in">
+    <pre>- Migration ibay profile #1855</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">109</th>
+  <td class="line-code diff_in">
+    <pre>- Fixed idmap LDAP backend configuration: pre-defined groups were not available after migration #1829</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">110</th>
+  <td class="line-code diff_in">
+    <pre>- Partial implementation of Active Directory domain join #1746</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">111</th>
+  <td class="line-code diff_in">
+    <pre>- Removed shadow copy checkbox from UI #1750</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">112</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">113</th>
+  <td class="line-code diff_in">
+    <pre>* Tue Mar 19 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.1.0-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">114</th>
+  <td class="line-code diff_in">
+    <pre>- smb.conf template: implement ibay profiles. Refs #1724</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">115</th>
+  <td class="line-code diff_in">
+    <pre>- /etc/fstab template: enable acl &amp; xattrs attributes. #1658</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">116</th>
+  <td class="line-code diff_in">
+    <pre>- smb WinsServerStatus WinsServerIP props to configure wins support. #7</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">117</th>
+  <td class="line-code diff_in">
+    <pre>- smb.conf template refactor. #7</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">118</th>
+  <td class="line-code diff_in">
+    <pre>- CUPS integration. #1626</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">119</th>
+  <td class="line-code diff_in">
+    <pre>- Migration support. #1657 #1667</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">120</th>
+  <td class="line-code diff_in">
+    <pre>- Protect samba password ldap field. #1650</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">121</th>
+  <td class="line-code diff_in">
+    <pre>- *.spec.in: Removed nethserver-devtools specific version requirement; Fixed Released tag expansion Refs; use url_prefix macro in URL tag; set minimum version requirements. #1653 #1654</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">122</th>
+  <td class="line-code diff_in">
+    <pre> </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">123</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">124</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      nethserver-samba.spec.in
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">1</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Summary: Nethserver specific Samba configuration files and templates</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">2</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Name: nethserver-samba</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">3</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Version: @@VERSION@@</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">4</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Release: @@RELEASE@@</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">5</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>License: GPL</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">6</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Source: %{name}-%{version}.tar.gz</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">7</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>BuildArch: noarch</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">8</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>BuildRequires: nethserver-devtools</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">9</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>URL: %{url_prefix}/%{name} </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">10</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">11</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Requires: nethserver-directory &gt;= 1.1.1-5</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">12</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Requires: samba &gt;= 3.4.3</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">13</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Requires: samba-client &gt;= 3.4.3</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">14</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Requires: samba-common &gt;= 3.4.3</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">15</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Requires: samba-winbind</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">16</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Requires: tdb-tools</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">17</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Requires: cyrus-sasl-gssapi</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">18</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Requires: krb5-workstation</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">19</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Requires: perl-Authen-Krb5</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">20</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">21</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%description</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">22</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Samba PDC, Workstation, ADS roles</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">23</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Integrate smb shares with ibays (shared folders)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">24</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* CUPS support</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">25</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* WINS support</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">26</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Active Directory GSSAPI authentication</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">27</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">28</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%prep</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">29</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%setup</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">30</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">31</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%build</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">32</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%{makedocs}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">33</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>perl createlinks</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">34</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">35</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%install</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">36</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>rm -rf $RPM_BUILD_ROOT</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">37</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>(cd root   ; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">38</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%{genfilelist} $RPM_BUILD_ROOT \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">39</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>    &gt; %{name}-%{version}-filelist</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">40</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">41</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%files -f %{name}-%{version}-filelist</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">42</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%doc COPYING</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">43</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%defattr(-,root,root)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">44</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%config(noreplace) /var/lib/nethserver/netlogon/netlogon.bat</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">45</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">46</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>%changelog</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">47</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Thu Jul 03 2014 Giacomo Sanchietti &lt;giacomo.sanchietti@nethesis.it&gt; - 1.4.5-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">48</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Fix: Login to Samba fails after migration - Bug #2780</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">49</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">50</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Thu Jun 19 2014 Giacomo Sanchietti &lt;giacomo.sanchietti@nethesis.it&gt; - 1.4.4-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">51</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Fix bug #2733 - Domain Administrators rights not enforced by workstations.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">52</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Decrease default Samba log verbosity #2747</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">53</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">54</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Thu Jun 12 2014 Giacomo Sanchietti &lt;giacomo.sanchietti@nethesis.it&gt; - 1.4.3-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">55</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Configurable AD accounts LDAP subtree - Enhancement #2727</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">56</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Keep changes to netlogon.bat - Enhancement #2725</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">57</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Backup config: minimize creation of new backup - Enhancement #2699</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">58</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">59</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Wed Feb 26 2014 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.4.2-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">60</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Revamp web UI style - Enhancement #2656 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">61</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Samba: backup secrets.tdb in config backup - Enhancement #2653 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">62</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Implement hostname-modify event for samba  - Enhancement #2626 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">63</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Wed Feb 05 2014 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.4.1-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- RST format for help files - Enhancement #2627 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Move admin user in LDAP DB - Feature #2492 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Update all inline help documentation - Task #1780 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Wed Dec 18 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.4.0-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">70</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Kerberos keytab file is missing for new services - Bug #2407 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">71</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Directory: backup service accounts passwords  - Enhancement #2063 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">72</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Service supervision with Upstart - Feature #2014 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">73</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">74</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Tue Jul 16 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.6-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">75</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Yum transaction aborted while installing nethserver-file-server group - Bug #2041 [Nethgui]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">76</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">77</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Thu Jul 04 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.5-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">78</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Fixed &quot;value is not boolean!&quot; warning - Bug #2039 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">79</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">80</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Mon Jul 01 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.4-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">81</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- File permissions not inherited when POSIX ACL is present - Bug #2039 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">82</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Share connection error NT_STATUS_ACCESS_DENIED  - Bug #1997 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">83</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">84</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Mon Jun 17 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.3-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">85</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Added a 5% of tolerance to deadline time, to avoid ticket expiration during renewal - Feature #1746 [NethServer]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">86</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">87</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Mon Jun 10 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.2-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">88</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Disable idmap nss backend if ServerRole is ADS #1997</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">89</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">90</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Mon Jun 10 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.1-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">91</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Fix samba share connection error NT_STATUS_ACCESS_DENIED #1997</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">92</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">93</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Wed May 29 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.3.0-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">94</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Active Directory member role. Refs #1746</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">95</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- *.spec.in: Require cyrus-sasl-gssapi, krb5-workstation, perl-Authen-Krb5</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">96</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">97</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Tue May  7 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.2.1-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">98</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- nethserver-samba-group-sync action: check if samba idmap backend is functional before going on, and don&#39;t fail if a unix group does not exist #1870</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">99</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">100</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Tue Apr 30 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.2.0-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">101</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Store machine accounts under ou=Computers branch #1890 </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">102</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Implant migrated SID as &quot;localsid&quot; #1895</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">103</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Shared folder guest access #1882</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">104</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- winregistry-patches served by httpd-admin #1799</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">105</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- SharedFolder UI plugin: hide profile widget #1881</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">106</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Full automatic package install/upgrade/uninstall support #1870 #1872 #1874</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">107</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Update group description when changed from UI #1861</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">108</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Migration ibay profile #1855</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">109</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Fixed idmap LDAP backend configuration: pre-defined groups were not available after migration #1829</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">110</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Partial implementation of Active Directory domain join #1746</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">111</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Removed shadow copy checkbox from UI #1750</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">112</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">113</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>* Tue Mar 19 2013 Davide Principi &lt;davide.principi@nethesis.it&gt; - 1.1.0-1.ns6</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">114</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- smb.conf template: implement ibay profiles. Refs #1724</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">115</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- /etc/fstab template: enable acl &amp; xattrs attributes. #1658</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">116</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- smb WinsServerStatus WinsServerIP props to configure wins support. #7</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">117</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- smb.conf template refactor. #7</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">118</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- CUPS integration. #1626</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">119</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Migration support. #1657 #1667</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">120</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- Protect samba password ldap field. #1650</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">121</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- *.spec.in: Removed nethserver-devtools specific version requirement; Fixed Released tag expansion Refs; use url_prefix macro in URL tag; set minimum version requirements. #1653 #1654</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">122</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">123</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">124</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">125</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- </pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

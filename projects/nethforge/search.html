@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Search - NethForge - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethforge controller-search action-index">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1><a href="../nethserver/search.html" class="root">NethServer 6</a> » NethForge</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="../nethforge.html" class="overview">Overview</a></li>
+
+<li><a href="/issues.html">Issues</a></li>
+<li><a href="wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Search</h2>
+
+<div class="box">
+<form accept-charset="UTF-8" action="search.html" id="search-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<label class="hidden-for-sighted" for="search-input">Searchfield</label>
+<p><input id="search-input" name="q" size="60" type="text" value="" />
+<label class="hidden-for-sighted" for="scope">Search scope</label><select id="scope" name="scope"><option value="all">All Projects</option>
+<option value="" selected="selected">NethForge</option></select>
+<input name="all_words" type="hidden" value="" />
+<label><input checked="checked" id="all_words" name="all_words" type="checkbox" value="1" /> All words</label>
+<input name="titles_only" type="hidden" value="" />
+<label><input id="titles_only" name="titles_only" type="checkbox" value="1" /> Search titles only</label>
+</p>
+
+<p id="search-types">
+<label><input checked="checked" id="issues" name="issues" type="checkbox" value="1" /> <a href="search.html#">Issues</a></label>
+<label><input checked="checked" id="changesets" name="changesets" type="checkbox" value="1" /> <a href="search.html#">Changesets</a></label>
+<label><input checked="checked" id="wiki_pages" name="wiki_pages" type="checkbox" value="1" /> <a href="search.html#">Wiki pages</a></label>
+</p>
+
+<p><input name="commit" type="submit" value="Submit" /></p>
+</form></div>
+
+
+<p class="pagination">
+</p>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+$("#search-types a").click(function(e){
+  e.preventDefault();
+  $("#search-types input[type=checkbox]").attr('checked', false);
+  $(this).siblings("input[type=checkbox]").attr('checked', true);
+  if ($("#search-input").val() != "") {
+    $("#search-form").submit();
+  }
+});
+
+//]]>
+</script>
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

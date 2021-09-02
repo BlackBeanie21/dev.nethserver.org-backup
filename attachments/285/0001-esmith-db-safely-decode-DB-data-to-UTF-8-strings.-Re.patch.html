@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>0001-esmith-db-safely-decode-DB-data-to-UTF-8-strings.-Re.patch - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="../../stylesheets/scm.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-attachments action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>0001-esmith-db-safely-decode-DB-data-to-UTF-8-strings.-Re.patch</h2>
+
+<div class="attachments">
+<p>nethserver-lib patch - 
+   <span class="author"><a href="../../users/9.html" class="user active">Davide Principi</a>, 09/29/2014 06:39 AM</span></p>
+<p><a href="../download/285/0001-esmith-db-safely-decode-DB-data-to-UTF-8-strings.-Re.patch">Download</a>   <span class="size">(2.13 KB)</span></p>
+</div>
+<form accept-charset="UTF-8" action="0001-esmith-db-safely-decode-DB-data-to-UTF-8-strings.-Re.patch.html" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <p>
+    View differences:
+    <label><input checked="checked" id="type_inline" name="type" onchange="this.form.submit()" type="radio" value="inline" /> inline</label>
+    <label><input id="type_sbs" name="type" onchange="this.form.submit()" type="radio" value="sbs" /> side by side</label>
+  </p>
+</form>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      lib/perl/esmith/db.pm
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">8</th>
+  <th class="line-num">8</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">9</th>
+  <th class="line-num">9</th>
+  <td class="line-code ">
+    <pre>use esmith::config;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">10</th>
+  <th class="line-num">10</th>
+  <td class="line-code ">
+    <pre>use strict;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">11</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">11</th>
+  <td class="line-code diff_in">
+    <pre>use Encode qw(encode decode);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">12</th>
+  <th class="line-num">12</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">13</th>
+  <th class="line-num">13</th>
+  <td class="line-code ">
+    <pre>=head1 NAME</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">14</th>
+  <th class="line-num">14</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">439</th>
+  <th class="line-num">439</th>
+  <td class="line-code ">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">440</th>
+  <th class="line-num">440</th>
+  <td class="line-code ">
+    <pre>    </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">441</th>
+  <th class="line-num">441</th>
+  <td class="line-code ">
+    <pre>    foreach (@list) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">442</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>	my %tmp = (&#39;name&#39; =&gt; <span>$_</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">443</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        my $type = db_get_type($hash, $_);<span></span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">442</th>
+  <td class="line-code diff_in">
+    <pre>	my %tmp = (&#39;name&#39; =&gt; <span>decode(&#39;UTF-8&#39;, $_, Encode::FB_DEFAULT)</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">443</th>
+  <td class="line-code diff_in">
+    <pre>        my $type = db_get_type($hash, $_);<span> </span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">444</th>
+  <th class="line-num">444</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">445</th>
+  <th class="line-num">445</th>
+  <td class="line-code ">
+    <pre>	# Skip empty types:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">446</th>
+  <th class="line-num">446</th>
+  <td class="line-code ">
+    <pre>        if ( ! defined $type) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">447</th>
+  <th class="line-num">447</th>
+  <td class="line-code ">
+    <pre>	    next;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">448</th>
+  <th class="line-num">448</th>
+  <td class="line-code ">
+    <pre>        } </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">449</th>
+  <th class="line-num">449</th>
+  <td class="line-code ">
+    <pre>	</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">450</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>	$tmp{&#39;type&#39;} = <span> $type</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">450</th>
+  <td class="line-code diff_in">
+    <pre>	$tmp{&#39;type&#39;} = <span>decode(&#39;UTF-8&#39;, $type, Encode::FB_DEFAULT)</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">451</th>
+  <th class="line-num">451</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">452</th>
+  <th class="line-num">452</th>
+  <td class="line-code ">
+    <pre>        my %properties = db_get_prop($hash, $_);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">453</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">454</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>	# Add properties if present:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">455</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>	if( keys %properties)  {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">456</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>	    $tmp{&#39;props&#39;} = \%properties;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">453</th>
+  <td class="line-code diff_in">
+    <pre>	while(my($pk, $pv) = each %properties) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">454</th>
+  <td class="line-code diff_in">
+    <pre>	    $tmp{&#39;props&#39;}-&gt;{decode(&#39;UTF-8&#39;, $pk, Encode::FB_DEFAULT)} = decode(&#39;UTF-8&#39;, $pv, Encode::FB_DEFAULT);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">457</th>
+  <th class="line-num">455</th>
+  <td class="line-code ">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">458</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">456</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">459</th>
+  <th class="line-num">457</th>
+  <td class="line-code ">
+    <pre>        push(@ret, \%tmp);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">460</th>
+  <th class="line-num">458</th>
+  <td class="line-code ">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">461</th>
+  <th class="line-num">459</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      root/sbin/e-smith/db
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">193</th>
+  <th class="line-num">193</th>
+  <td class="line-code ">
+    <pre>sub DB_dump_json</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">194</th>
+  <th class="line-num">194</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">195</th>
+  <th class="line-num">195</th>
+  <td class="line-code ">
+    <pre>    my $key = shift;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">196</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>    print to_json($db-&gt;prepare_json($key), {utf8 =&gt; <span>0</span>, pretty =&gt; 0, allow_nonref =&gt; 1});</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">196</th>
+  <td class="line-code diff_in">
+    <pre>    print to_json($db-&gt;prepare_json($key), {utf8 =&gt; <span>1</span>, pretty =&gt; 0, allow_nonref =&gt; 1});</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">197</th>
+  <th class="line-num">197</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">198</th>
+  <th class="line-num">198</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">199</th>
+  <th class="line-num">199</th>
+  <td class="line-code ">
+    <pre>sub DB_dump_json_pretty</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">200</th>
+  <th class="line-num">200</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">201</th>
+  <th class="line-num">201</th>
+  <td class="line-code ">
+    <pre>    my $key = shift;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">202</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>    print to_json($db-&gt;prepare_json($key), {utf8 =&gt; <span>0</span>, pretty =&gt; 1, allow_nonref =&gt; 1}) . &quot;\n&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">202</th>
+  <td class="line-code diff_in">
+    <pre>    print to_json($db-&gt;prepare_json($key), {utf8 =&gt; <span>1</span>, pretty =&gt; 1, allow_nonref =&gt; 1}) . &quot;\n&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">203</th>
+  <th class="line-num">203</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">204</th>
+  <th class="line-num">204</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">205</th>
+  <th class="line-num">205</th>
+  <td class="line-code ">
+    <pre>sub DB_keys</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">206</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- </pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

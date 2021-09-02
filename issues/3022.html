@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #3022: OwnCloud trusted domains - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3022.atom" rel="alternate" title="NethServer 6 - Enhancement #3022: OwnCloud trusted domains" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #3022</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="3191.html" title="#3191">« Previous</a> |
+      <a href="3021.html" title="#3021">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>OwnCloud trusted domains</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-owncloud</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/209.html">v6.6</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>If you try to access <code>OwnCloud</code> from web page or through the pc client using a DNS name that is not included among OwnCloud trusted domains (see <code>/var/www/html/owncloud/config/config.php</code>) you receive an error (see attachment).</p>
+
+
+	<p><code>Owncloud</code> configuration should permit to add new trusted domains.</p>
+
+
+	<p>From <code>"config.php"</code>:</p>
+
+
+<pre>...
+trusted_domains' =&gt;
+  array (
+    0 =&gt; '192.168.1.1',
+    1 =&gt; 'myowncloud.test.lan',
+  ),
+...</pre>
+
+	<p>As workaround you can manually add other domains with the syntax:</p>
+
+
+<pre>...
+trusted_domains' =&gt;
+  array (
+    0 =&gt; '192.168.1.1',
+    1 =&gt; 'myowncloud.test.lan',
+    2 =&gt; 'other.example.org',
+ ),
+...</pre>
+
+	<p>but <strong>all changes will be lost</strong> the first time the <code>"nethserver-owncloud-update"</code> event is triggered.</p>
+
+
+<strong>Installed packages:</strong>
+	<ul>
+	<li>nethserver-owncloud-1.1.2-1.ns6.noarch</li>
+		<li>owncloud-3rdparty-7.0.4-13.1.noarch</li>
+		<li>owncloud-7.0.4-13.1.noarch</li>
+	</ul>
+  </div>
+</div>
+<div class="attachments">
+<p><a href="../attachments/download/306/ownCloud.png" class="icon icon-attachment">ownCloud.png</a>   - OwnCloud trusted domains error
+  <span class="size">(54.6 KB)</span>
+    <span class="author">Nicola Rauso, 02/04/2015 06:36 AM</span>
+  </p>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-675">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="3021" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="3021.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #3021</a>: OwnCloud update event dirties configuration file
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+  <tr class="issue hascontextmenu" id="relation-728">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="3191" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="3191.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #3191</a>: Update ownCloud to 7.0.6 version
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+  <tr class="issue hascontextmenu" id="relation-737">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="3206" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="3206.html" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #3206</a>: Add documentation section about how to add custom trusted...
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/3022/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="3022.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Add custom trusted domains. Refs <a href="3022.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="OwnCloud trusted domains (CLOSED)">#3022</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Update oc to v7.0.6 &#38; add customer trusted domains. Refs <a href="3191.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Update ownCloud to 7.0.6 version (CLOSED)">#3191</a> <a href="3022.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="OwnCloud trusted domains (CLOSED)">#3022</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Update oc to v7.0.6 &#38; add custom trusted domains. Refs <a href="3191.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Update ownCloud to 7.0.6 version (CLOSED)">#3191</a> <a href="3022.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="OwnCloud trusted domains (CLOSED)">#3022</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-13928" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="3022.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="3021.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #3021</a>: OwnCloud update event dirties configuration file</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13930" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3022.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d48e99853c863b497623d4e5eeb214d2?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/13930%3Fdetail_id=22739.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14844" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="3022.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> set to <i>~FUTURE</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15314" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="3022.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Category</strong> set to <i>nethserver-owncloud</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15524" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="3022.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Target version</strong> changed from <i>~FUTURE</i> to <i>v6.6</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-15524-notes"><p>Add a new <code>TrustedDomain</code> prop.<br />The prop can contain a list of  IPs or hostnames separated by commas.</p>
+
+
+	<p>The list must be added to <code>trusted_domains</code> option inside ownCloud configuration file.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15528" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="3022.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="3191.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #3191</a>: Update ownCloud to 7.0.6 version</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15570" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="3022.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Alessandro Polidori</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15576" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="3022.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-15576-notes"><p>I've created new db key and prop:<br /><pre>
+[root@alenethserver ~]# config show owncloud
+owncloud=configuration
+    TrustedDomains=
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-15577" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="3022.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Alessandro Polidori</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15598" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="3022.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-15598-notes"><p>Repo: <code>nethserver-testing</code></p>
+
+
+	<p>Packages:<br /><pre>
+nethserver-owncloud-1.1.3-1.2git5f2a121.ns6.noarch.rpm
+owncloud-3rdparty-7.0.6-2.2.noarch.rpm
+owncloud-7.0.6-2.2.noarch.rpm
+</pre></p>
+
+
+	<p><strong>Test</strong></p>
+
+
+	<ol>
+	<li>Do a clean installation</li>
+		<li>cat /var/www/html/owncloud/config/config.php</li>
+		<li>config setprop owncloud TrustedDomains pippo,paperino.pluto.it</li>
+		<li>signal-event nethserver-owncloud-update</li>
+		<li>cat /var/www/html/owncloud/config/config.php</li>
+		<li>verify that trusted domains contains also "pippo" and "paperino.pluto.it" </li>
+		<li>config setprop owncloud TrustedDomains "" </li>
+		<li>signal-event nethserver-owncloud-update</li>
+		<li>cat /var/www/html/owncloud/config/config.php</li>
+		<li>verify that trusted domains does not contain neither "pippo" nor "paperino.pluto.it" anymore</li>
+	</ol>
+
+
+	<ol>
+	<li>Verify the previous also with update instead of clean installation</li>
+	</ol></div>
+    </div>
+  </div>
+  
+  <div id="change-15746" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="3022.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/09c747149687cec1a30d745d3c97df41?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Edoardo Spadoni</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15747" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="3022.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/09c747149687cec1a30d745d3c97df41?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-15747-notes"><p>Test case with clean or updated installation is working.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-15750" class="journal has-details">
+    <div id="note-13">
+    <h4><a href="3022.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/09c747149687cec1a30d745d3c97df41?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Edoardo Spadoni</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15780" class="journal has-details">
+    <div id="note-14">
+    <h4><a href="3022.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="3206.html" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #3206</a>: Add documentation section about how to add custom trusted domain</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-15810" class="journal has-notes has-details">
+    <div id="note-15">
+    <h4><a href="3022.html#note-15" class="journal-link">#15</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-15810-notes">Released in nethserver-updates:
+	<ul>
+	<li>owncloud-3rdparty-7.0.6-2.2.noarch.rpm</li>
+		<li>owncloud-7.0.6-2.2.noarch.rpm</li>
+		<li>nethserver-owncloud-1.1.4-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

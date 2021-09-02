@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Feature #2837: Reconfigure networking on NIC replacement - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2837.atom" rel="alternate" title="NethServer 6 - Feature #2837: Reconfigure networking on NIC replacement" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #2837</h2>
+
+<div class="issue tracker-2 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Reconfigure networking on NIC replacement</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Configure a new NIC by copying the parameters of an old one, if it does not exist any more.</p>
+
+
+This may happen
+	<ul>
+	<li>In a VM, if the MAC address was changed</li>
+		<li>If a NIC was replaced by a new one</li>
+		<li>If the root disk is physically moved to a new hardware</li>
+		<li>...</li>
+	</ul>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Network config: handle interface replacement. Refs <a href="2837.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Reconfigure networking on NIC replacement (CLOSED)">#2837</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Merged into master. Refs <a href="2837.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Reconfigure networking on NIC replacement (CLOSED)">#2837</a></p>
+
+
+	<p>Reconfigure networking on NIC replacement</p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>rc.local template: ignore "plymouth quit" exit code. Refs <a href="2837.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Reconfigure networking on NIC replacement (CLOSED)">#2837</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>network-reset: show prompt line and compact message. Refs <a href="2837.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Reconfigure networking on NIC replacement (CLOSED)">#2837</a></p>
+
+
+	<p>The 25 lines console limit could be exceeded with multiple interfaces.</p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-11838" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="2837.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> set to <i>v6.5</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11839" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="2837.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/11839%3Fdetail_id=18946.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12137" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="2837.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Category</strong> set to <i>nethserver-base</i></li>
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-12137-notes"><p>After the boot, all configured but not existing interfaces should be removed.<br />The new interfaces should be automatic reconfigured, otherwise the user should be able to assign the new interfaces with a simple command.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12149" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="2837.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-12149-notes"><p>Giacomo Sanchietti wrote:</p>
+
+
+<blockquote>
+
+	<p>After the boot, all configured but not existing interfaces should be removed.</p>
+
+
+</blockquote>
+
+	<p>By now this does not happen. Please consider also an USB Ethernet card that can be plugged/unplugged: its db settings are to be preserved?</p>
+
+
+	<p>Moreover, udev registers its name and Mac address to keep it consistent when it comes back.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12177" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="2837.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12178" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="2837.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+    </ul>
+    <div class="wiki" id="journal-12178-notes"><p>Simple script to replace only one network interface:<br /><pre>
+#!/usr/bin/perl -w
+
+use esmith::NetworksDB;
+use esmith::event;
+my $ndb = esmith::NetworksDB-&gt;open();
+
+my @removed;
+my @free;
+
+foreach ($ndb-&gt;ethernets()) {
+    if ( ! -e "/sys/class/net/".$_-&gt;key) {
+        push(@removed, $_-&gt;key);
+    } else {
+        my $role = $_-&gt;{'role'} || '';
+        push (@free, $_-&gt;key) if ($role eq '');
+    }
+}
+
+if (scalar(@removed) == 1 &#38;&#38; scalar(@free) == 1) {
+    my $old = $ndb-&gt;get($removed[0]);
+    my $new = $ndb-&gt;get($free[0]);
+    $old-&gt;delete_prop('hwaddr');
+    $new-&gt;merge_props($old-&gt;props);
+    $new-&gt;set_prop('device',$new-&gt;key);
+    $old-&gt;delete();
+}
+
+exit 1 if(event_signal('interface-update') == 0);
+exit 0;
+</pre></p>
+
+
+	<p>Just execute it after <code>/usr/libexec/nethserver/update-networks-db</code>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12204" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="2837.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-12204-notes">Proposed behavior:
+	<ul>
+	<li>at boot, all non existing (no MAC address found in /sys) interfaces are reset to empty role</li>
+		<li>if no green device is found:
+	<ul>
+	<li>if there is only one new interface, apply old green configuration to the new interface</li>
+		<li>if there are at least 2 network interfaces, propose a simple menu with all free interfaces. The chosen one will be the new green</li>
+	</ul></li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-12209" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="2837.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12223" class="journal has-notes has-details">
+    <div id="note-9">
+    <h4><a href="2837.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-12223-notes"><p>Implemented on branch b2837.</p>
+
+
+	<p>Also added a timeout: the script will exit if the user doesn't select anything within 120 seconds.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12225" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="2837.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-12225-notes">Package in nethserver-testing:
+	<ul>
+	<li><del>nethserver-base-2.3.0-3.0git220ced17.ns6.noarch.rpm</del><br />  <del>nethserver-base-2.3.0-10.0git8f3b0d95.ns6.noarch.rpm</del><br />  nethserver-base-2.3.0-12.0gitd5169f39.ns6.noarch.rpm</li>
+	</ul>
+
+
+<strong>Test case 1</strong>
+	<ul>
+	<li>Install on a clean machine</li>
+		<li>After reboot the networks db it's unmodified</li>
+	</ul>
+
+
+<strong>Test case 2</strong>
+	<ul>
+	<li>Configure a machine with one interface</li>
+		<li>Change the mac address of the interface</li>
+		<li>After reboot the green configuration must be migrated to the new interface</li>
+	</ul>
+
+
+<strong>Test case 3</strong>
+	<ul>
+	<li>Configure a machine with 2 or more interfaces</li>
+		<li>Change the mac address of the green interface</li>
+		<li>After reboot a menu is shown to set the new green interface</li>
+	</ul>
+
+
+<strong>Test case 3</strong>
+	<ul>
+	<li>Configure a machine with 2 interfaces: GREEN + RED</li>
+		<li>Change the mac address of the red interface</li>
+		<li>After reboot  the system must be accessible from green interface, red interface must be reconfigured from web interface</li>
+	</ul>
+
+
+<strong>Test case 4</strong>
+	<ul>
+	<li>Just mess up with network interfaces</li>
+		<li>Report any strange behavior</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-12373" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="2837.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12393" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="2837.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-12393-notes"><p><strong>Test case 1</strong> OK</p>
+
+
+	<p><strong>Test case 2</strong> OK</p>
+
+
+	<p><strong>Test case 3</strong> OK</p>
+
+
+	<p><strong>Test case 4</strong> OK</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12466" class="journal has-notes has-details">
+    <div id="note-13">
+    <h4><a href="2837.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-12466-notes"><p>In nethserver-updates:<br />nethserver-base-2.4.0-1.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2023: Backup config: duplicate notification - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2023.atom" rel="alternate" title="NethServer 6 - Bug #2023: Backup config: duplicate notification" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #2023</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Backup config: duplicate notification</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-backup-data</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/157.html">v6.4-beta2</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/153.html">v6.4-beta1</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>When the backup fails, the system will send two notification mails: one to root@localhost and one to admin@localhost.</p>
+
+
+	<p>Avoid notification to root@localhost and group all information on a single mail.<br />If possible, also add backup status in mail subject.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>backup-data-duplicity, backup-data: avoid duplicated notifications. Refs <a href="2023.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Backup config: duplicate notification (CLOSED)">#2023</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Backup.pm: avoid duplicated notifications. Refs <a href="2023.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Backup config: duplicate notification (CLOSED)">#2023</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Backup.pm: remove perl warning. Refs <a href="2023.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Backup config: duplicate notification (CLOSED)">#2023</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>backup-data: add more information on notification. Refs <a href="2023.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Backup config: duplicate notification (CLOSED)">#2023</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>BackupData.pm: remove notify_to default value. Refs <a href="2023.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Backup config: duplicate notification (CLOSED)">#2023</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Backup.pm: send notification only when notify_to has a value. Refs <a href="2023.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Backup config: duplicate notification (CLOSED)">#2023</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>spec: spec: Release 1.0.2 Refs <a href="2024.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Backup data: implement retention policy (CLOSED)">#2024</a> <a href="2023.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Backup config: duplicate notification (CLOSED)">#2023</a> <a href="2022.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Backup data: do not check for already mounted dir (CLOSED)">#2022</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>spec: update to 1.0.2. Refs <a href="2023.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Backup config: duplicate notification (CLOSED)">#2023</a> <a href="2024.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Backup data: implement retention policy (CLOSED)">#2024</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-6223" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="2023.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-6223-notes"><p>Bug confirmed.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6225" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="2023.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6231" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="2023.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-6231-notes"><p>Implementation tested on dev machine.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6233" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="2023.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>80</i></li>
+    </ul>
+	<ul>
+	<li>nethserver-backup-data-1.0.2</li>
+		<li>nethserver-backup-config-1.0.2</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-6293" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="2023.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>ON_DEV</i></li>
+       <li><strong>% Done</strong> changed from <i>80</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6294" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="2023.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-6294-notes"><p>Added last-log extract into notification.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-6295" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="2023.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>80</i></li>
+    </ul>
+    <div class="wiki" id="journal-6295-notes"><p>Package in nethserver-testing repo: nethserver-backup-data-1.0.3</p>
+
+
+To test:
+	<ul>
+	<li>yum --enablerepo=nethserver-testing update nethserver-backup-data</li>
+		<li>Enable notification and execute backup-data</li>
+		<li>Check last-backup.log is reported inside notification</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-6314" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="2023.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> changed from <i>Giacomo Sanchietti</i> to <i>Alessio Fattorini</i></li>
+       <li><strong>% Done</strong> changed from <i>80</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-6314-notes"><p>[root@muflone ~]# rpm -q  nethserver-backup-data<br />nethserver-backup-data-1.0.1-1.ns6.noarch</p>
+
+
+	<p>Two notifications on "mutt -f /var/spool/mail/admin" <br /><pre>
+   1     Jul 01 Backup          (  10) Backup report
+   2 N   Jul 01 Backup          (  10) Backup report
+</pre></p>
+
+
+	<p>Update package</p>
+
+
+<pre>
+# rpm -q  nethserver-backup-data
+nethserver-backup-data-1.0.2-1.ns6.noarch
+</pre>
+
+	<p>Backup executed</p>
+
+
+	<p>Only one mail, sended to admin@<br /><pre>
+
+   1     Jul 01 Backup          (  10) Backup report
+   2     Jul 01 Backup          (  10) Backup report
+   3     Jul 01 Backup          (  13) Backup report: ERROR
+</pre></p>
+
+
+	<p>last-backup.log reported correctly inside notification</p>
+
+
+<pre>
+
+Date: Mon,  1 Jul 2013 10:02:02 +0000 (GMT)
+From: Backup &lt;admin@muflone.nethesis.it&gt;
+To: admin@localhost.nethesis.it
+Subject: Backup report: ERROR
+
+===== Report for data backup =====
+
+Backup started at 2013-07-01 10:02:01
+Pre backup scripts status: ERROR
+
+Extract from log file /var/log/backup-data.log:
+
+2013-07-01 10:02:01 - START - Backup data started
+2013-07-01 10:02:02 - ERROR - Error while mounting alessio.nethesis.it:public : mount error: could not
++resolve address for alessio.nethesis.it: Unknown error
+2013-07-01 10:02:02 - ERROR - Event pre-backup-data failed - 1
+
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-6506" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="2023.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Alessio Fattorini</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-6824" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="2023.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    </div>
+  </div>
+  
+  <div id="change-7873" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="2023.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Affected version</strong> changed from <i>v6.4-beta2</i> to <i>v6.4-beta1</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

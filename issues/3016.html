@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #3016: Wrong timezone in php.ini cause PHP localtime() function to report time different from date shell command - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3016.atom" rel="alternate" title="NethServer 6 - Bug #3016: Wrong timezone in php.ini cause PHP localtime() function to report time different from date shell command" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #3016</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Wrong timezone in php.ini cause PHP localtime() function to report time different from date shell command</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-php</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/207.html">v6.6-rc1</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13">REJECTED</td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/200.html">v6.5-final</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>php.ini template has default timezone to "UTC" <br /><pre>
+ # cat /etc/e-smith/templates/etc/php.ini/10base
+...
+date.timezone = "{ $php{DateTimezone} || 'UTC' }" 
+</pre><br />by default DateTimezone in php key is also "UTC" <br /><pre>
+# cat /etc/e-smith/db/configuration/defaults/php/DateTimezone 
+UTC
+</pre><br /><pre>
+# config show php
+php=configuration
+...
+    DateTimezone=UTC
+</pre><br />But NethServer configuration database already has this information in db key TimeZone<br /><pre>
+# config show TimeZone
+TimeZone=Europe/Rome
+</pre></p>
+
+
+	<p>I think that the default value of this variable should be the system timezone and not "UTC". <br />Is there any reason it was setted to UTC?</p>
+
+
+	<p>references:<br /><a class="external" href="http://php.net/manual/en/datetime.configuration.php">http://php.net/manual/en/datetime.configuration.php</a><br /><a class="external" href="http://php.net/manual/en/function.date-default-timezone-get.php">http://php.net/manual/en/function.date-default-timezone-get.php</a><br /><a class="external" href="http://php.net/manual/en/function.localtime.php">http://php.net/manual/en/function.localtime.php</a></p>
+  </div>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-685">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="3068" /></td>
+  <td class="subject">
+    Copied to
+    
+    NethServer 6 - 
+    <a href="3068.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #3068</a>: Set PHP default timezone from system timezone
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/3016/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="3016.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Default php timezone is now empty. If php timezone isn't defined by user, php.ini template try to use system timezone after checking if it is recognized by php interpreter. If it's not, default is set to UTC. Refs <a href="3016.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Wrong timezone in php.ini cause PHP localtime() function to report time different from date shell... (CLOSED)">#3016</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Added PHP date.timezone note for 6.6 release. Refs <a href="3016.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Wrong timezone in php.ini cause PHP localtime() function to report time different from date shell... (CLOSED)">#3016</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>docs: Added php/DateTimezone deprecation statement. Refs <a href="3016.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Wrong timezone in php.ini cause PHP localtime() function to report time different from date shell... (CLOSED)">#3016</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Reverted commit 0bb222c. Refs <a href="3016.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Wrong timezone in php.ini cause PHP localtime() function to report time different from date shell... (CLOSED)">#3016</a></p>
+
+
+	<p>The PHP timezone setting is delegated to Server Manager, during first<br />configurazion wizard in nethserver-ntp package.</p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Reverted changes for PHP date.timezone settings. Refs <a href="3016.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Wrong timezone in php.ini cause PHP localtime() function to report time different from date shell... (CLOSED)">#3016</a> <a href="3068.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Set PHP default timezone from system timezone (CLOSED)">#3068</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Merge pull request #53 from DavidePrincipi/master</p>
+
+
+	<p>Added PHP date.timezone note for 6.6 release. Refs <a href="3016.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Wrong timezone in php.ini cause PHP localtime() function to report time different from date shell... (CLOSED)">#3016</a> <a href="3068.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Set PHP default timezone from system timezone (CLOSED)">#3068</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-13909" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="3016.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-13909-notes"><p>Workaround:<br /><pre>
+ # config setprop php DateTimezone $(config get TimeZone)
+ # expand-template /etc/php.ini
+</pre><br />Reload <code>httpd</code></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13918" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3016.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Subject</strong> changed from <i>wrong timezone in php.in cause php lcoaltime() function to report time different from date shell command</i> to <i>Wrong timezone in php.ini cause PHP localtime() function to report time different from date shell command</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13919" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="3016.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-13919-notes"><p>Stefano Fancello wrote:</p>
+
+
+<blockquote>
+
+	<p>I think that the default value of this variable should be the system timezone and not "UTC". <br />Is there any reason it was setted to UTC?</p>
+
+
+</blockquote>
+
+	<p>Web apps should provide a way to customize it according to their business rules.</p>
+
+
+	<p>Having said that,  in NethServer context, the <code>TimeZone</code> key could be a good default, provided its value is a valid value for <code>date.timezone</code>, too!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-13923" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="3016.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13924" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="3016.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Stefano Fancello</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13925" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="3016.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-13925-notes"><p><strong>Test case:</strong><br />check that php.ini is correct when TimeZone and php DateTimezone are changed and php.ini is expanded:</p>
+
+
+	<p><strong>1</strong><br /><pre>
+ # config set TimeZone Europe/Rome
+ # config setprop php DateTimezone "" 
+ # expand-template /etc/php.ini &#38;&#38; grep date.timezone /etc/php.ini
+date.timezone = "Europe/Rome" 
+</pre></p>
+
+
+	<p><strong>2</strong><br /><pre>
+ # config set TimeZone Europe/Rome
+ # config setprop php DateTimezone Australia/Lindeman
+ # expand-template /etc/php.ini &#38;&#38; grep date.timezone /etc/php.ini
+date.timezone = "Australia/Lindeman" 
+</pre></p>
+
+
+	<p><strong>3</strong><br /><pre>
+ # config set TimeZone foo/bar
+ # config setprop php DateTimezone "" 
+ # expand-template /etc/php.ini &#38;&#38; grep date.timezone /etc/php.ini
+date.timezone = "UTC" 
+</pre></p>
+
+
+	<p><strong>4</strong><br /><pre>
+ # config set TimeZone foo/bar
+ # config setprop php DateTimezone Australia/Lindeman
+ # expand-template /etc/php.ini &#38;&#38; grep date.timezone /etc/php.ini
+date.timezone = "Australia/Lindeman" 
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13926" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="3016.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    </div>
+  </div>
+  
+  <div id="change-13927" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="3016.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Stefano Fancello</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13931" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="3016.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-13931-notes"><p><strong>NOTE</strong><br />This solution doesn't fix previously installed nethserver-php, because php DateTimezone was defaulted to 'UTC' , and it remains 'UTC' unless it's not manually changed to something else. <br />workaround with new package is:<br /><pre>
+ # config setprop php DateTimezone "" 
+ # expand-template /etc/php.ini
+and restart httpd
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13945" class="journal has-details">
+    <div id="note-10">
+    <h4><a href="3016.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13952" class="journal has-notes has-details">
+    <div id="note-11">
+    <h4><a href="3016.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+       <li><strong>Affected version</strong> set to <i>v6.5-final</i></li>
+    </ul>
+    <div class="wiki" id="journal-13952-notes"><p><strong>VERIFIED</strong></p>
+
+
+	<p>Why not remove this prop in the future? The default system <code>TimeZone</code> should be a good default. From the application point of view, it can be simply ignored.</p>
+
+
+	<p>I've modified the 6.6 Release notes</p>
+
+
+	<p><a class="external" href="https://github.com/nethesis/nethserver-docs/pull/53">https://github.com/nethesis/nethserver-docs/pull/53</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13959" class="journal has-details">
+    <div id="note-12">
+    <h4><a href="3016.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> changed from <i>v6.5</i> to <i>v6.6-rc1</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14273" class="journal has-notes has-details">
+    <div id="note-13">
+    <h4><a href="3016.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+       <li><strong>Resolution</strong> set to <i>REJECTED</i></li>
+    </ul>
+    <div class="wiki" id="journal-14273-notes"><p><strong>REJECTED</strong></p>
+
+
+	<p>The solution to this bug has been rejected: the default PHP timezone setting is now delegated to the Server Manager, in nethserver-ntp.</p>
+
+
+	<p>In nethserver-testing 6.6<br />nethserver-php-1.1.1-1.4.g3676a01.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-14274" class="journal has-details">
+    <div id="note-14">
+    <h4><a href="3016.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Copied to</strong> <i><a href="3068.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #3068</a>: Set PHP default timezone from system timezone</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

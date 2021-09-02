@@ -1,0 +1,73 @@
+diff --git a/Nethgui/Js/jquery.nethgui.selector.js b/Nethgui/Js/jquery.nethgui.selector.js
+index b7f317f..dabee6c 100644
+--- a/Nethgui/Js/jquery.nethgui.selector.js
++++ b/Nethgui/Js/jquery.nethgui.selector.js
+@@ -17,7 +17,8 @@
+             this._mode = (this.element.prop('tagName').toUpperCase() == 'SELECT') ? 'dropdown' : 'list';
+             this._selection = [];
+             this._multiple = this.element.hasClass('multiple');
+-            this._meta = this.element.children('input[type="hidden"]').first();           
++            this._meta = this.element.children('input[type="hidden"]').first();
++            this.element.on('nethguitooltip.' + this.namespace, $.proxy(this._createTooltip, this));
+         },
+         _setOption: function( key, value ) {
+             SUPER.prototype._setOption.apply( this, arguments );
+@@ -152,6 +153,19 @@
+                 }
+ 
+             });
++        },
++        _createTooltip: function(e, options) {
++            if( ! this.element.Tooltip) {
++                $.debug('Tooltip type was not found. Maybe jquery.nethgui.tooltip.js is missing?');
++            }
++
++            // Move tooltip on the right edge for right-labeled input controls:
++            if( ! options.target && this.element.get(0).tagName.toLowerCase() === 'select'
++                && this.element.parent().hasClass('label-right')) {
++                options.target = this.element.siblings('label[for=' + this.element.attr('id') + ']').first();
++            }
++
++            this.element.Tooltip(options);
+         }
+     });
+ }( jQuery ));
+diff --git a/Nethgui/System/Validator.php b/Nethgui/System/Validator.php
+index b56f9dc..c9239d8 100644
+--- a/Nethgui/System/Validator.php
++++ b/Nethgui/System/Validator.php
+@@ -92,7 +92,9 @@ class Validator implements \Nethgui\System\MandatoryValidatorInterface
+             $set = $args;
+         }
+ 
+-        if (count($set) > 5) {
++        if(count($set) === 0) {
++            $setToShow = FALSE;
++        } elseif (count($set) > 5) {
+             $setToShow = array_slice($set, 0, 3);
+             $setToShow[] = '... ';
+             $setToShow = array_merge($setToShow, array_slice($set, -2, 2));
+@@ -100,7 +102,7 @@ class Validator implements \Nethgui\System\MandatoryValidatorInterface
+             $setToShow = $set;
+         }
+ 
+-        $messageTemplate = array('valid_memberOf', array(implode(', ', $setToShow)));
++        $messageTemplate = is_array($setToShow) ? array('valid_memberOf', array(implode(', ', $setToShow))) : array('valid_emptySet', array());
+ 
+         return $this->addToChain(__FUNCTION__, $messageTemplate, $set);
+     }
+diff --git a/Nethgui/Widget/Xhtml/Selector.php b/Nethgui/Widget/Xhtml/Selector.php
+index a7d908e..cf226af 100644
+--- a/Nethgui/Widget/Xhtml/Selector.php
++++ b/Nethgui/Widget/Xhtml/Selector.php
+@@ -77,8 +77,8 @@ class Selector extends \Nethgui\Widget\XhtmlWidget
+         } else {
+             $tagContent = $this->optGroups($value, $choices);
+         }
+-        $content = $this->labeledControlTag($label, 'select', $name, $flags, '', $attributes, $tagContent);
+-        return $content;
++        $hiddenInput = $this->controlTag('input', $name, 0, '', array('value' => '', 'type' => 'hidden', 'id' => FALSE));
++        return $hiddenInput . $this->labeledControlTag($label, 'select', $name, $flags, '', $attributes, $tagContent);
+     }
+ 
+     private function renderWidgetList($value, $choices, $attributes)

@@ -1,0 +1,54 @@
+==============================================================================================
+==============================================================================================
+Installing:
+ nethserver-phpmyadmin       noarch  3.5.8.2-1.0git2ab8dfbe.ns6     nethforge-testing    15 k
+Installing for dependencies:
+ libXpm                      x86_64  3.5.10-2.el6                   centos-base          51 k
+ libjpeg-turbo               x86_64  1.2.1-3.el6_5                  centos-updates      174 k
+ libmcrypt                   x86_64  2.5.8-9.el6                    nethserver-base      95 k
+ libtool-ltdl                x86_64  2.2.6-15.5.el6                 centos-base          44 k
+ mod_authnz_external         x86_64  3.2.6-1.el6                    nethforge-testing    24 k
+ mysql                       x86_64  5.1.73-3.el6_5                 centos-updates      894 k
+ mysql-server                x86_64  5.1.73-3.el6_5                 centos-updates      8.6 M
+ nethserver-directory        noarch  2.0.3-1.ns6                    nethserver-updates  100 k
+ nethserver-httpd            noarch  2.3.1-1.ns6                    nethserver-updates   51 k
+ nethserver-mysql            noarch  1.0.5-1.ns6                    nethserver-base      27 k
+ nscd                        x86_64  2.12-1.132.el6_5.2             centos-updates      219 k
+ nss-pam-ldapd               x86_64  0.7.5-18.2.el6_4               centos-base         152 k
+ openldap-clients            x86_64  2.4.23-34.el6_5.1              centos-updates      165 k
+ openldap-servers            x86_64  2.4.23-34.el6_5.1              centos-updates      2.0 M
+ pam_ldap                    x86_64  185-11.el6                     centos-base          88 k
+ perl-Authen-SASL            noarch  2.13-2.el6                     centos-base          51 k
+ perl-Convert-ASN1           noarch  0.22-1.el6.rfx                 nethserver-base      44 k
+ perl-Convert-BinHex         noarch  1.119-10.1.el6                 centos-base          43 k
+ perl-DBD-MySQL              x86_64  4.013-3.el6                    centos-base         134 k
+ perl-DBI                    x86_64  1.609-4.el6                    centos-base         705 k
+ perl-Digest-HMAC            noarch  1.01-22.el6                    centos-base          22 k
+ perl-Digest-SHA1            x86_64  2.12-2.el6                     centos-base          49 k
+ perl-Expect                 noarch  1.21-3.el6                     nethserver-base      73 k
+ perl-GSSAPI                 x86_64  0.26-6.el6                     centos-base          64 k
+ perl-IO-Socket-SSL          noarch  1.44-1.el6.rfx                 nethserver-base      56 k
+ perl-IO-Tty                 x86_64  1.08-4.el6                     centos-base          40 k
+ perl-IO-stringy             noarch  2.110-10.1.el6                 centos-base          68 k
+ perl-LDAP                   noarch  1:0.40-2.nh                    nethserver-base     354 k
+ perl-MIME-tools             noarch  5.427-4.el6                    centos-base         247 k
+ perl-MailTools              noarch  2.04-4.el6                     centos-base         101 k
+ perl-Net-SSLeay             x86_64  1.36-1.el6.rfx                 nethserver-base     299 k
+ perl-Text-Iconv             x86_64  1.7-6.el6                      centos-base          22 k
+ perl-XML-Filter-BufferText  noarch  1.01-8.el6                     centos-base         9.6 k
+ perl-XML-LibXML             x86_64  1:1.70-5.el6                   centos-base         364 k
+ perl-XML-NamespaceSupport   noarch  1.11-1.el6.rfx                 nethserver-base      16 k
+ perl-XML-SAX                noarch  0.96-7.el6                     centos-base          78 k
+ perl-XML-SAX-Writer         noarch  0.50-8.el6                     centos-base          24 k
+ php-gd                      x86_64  5.3.3-27.el6_5                 centos-updates      107 k
+ php-mbstring                x86_64  5.3.3-27.el6_5                 centos-updates      455 k
+ php-mcrypt                  x86_64  5.3.3-3.el6                    nethserver-base      18 k
+ php-mysql                   x86_64  5.3.3-27.el6_5                 centos-updates       81 k
+ php-pdo                     x86_64  5.3.3-27.el6_5                 centos-updates       75 k
+ php-php-gettext             noarch  1.0.11-3.el6                   nethforge-testing    20 k
+ phpMyAdmin                  noarch  3.5.8.2-1.el6                  nethforge-testing   4.3 M
+ portreserve                 x86_64  0.0.4-9.el6                    centos-base          23 k
+ pwauth                      x86_64  2.3.10-5.el6                   nethforge-testing    15 k
+
+Transaction Summary
+==============================================================================================

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2797: Install fails if root password contains # or $ characters - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2797.atom" rel="alternate" title="NethServer 6 - Bug #2797: Install fails if root password contains # or $ characters" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #2797</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="2796.html" title="#2796">« Previous</a> |
+      <a href="2788.html" title="#2788">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Install fails if root password contains # or $ characters</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-installer</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/205.html">v6.6-beta1</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/200.html">v6.5-final</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>When installing with interactive installer, if the user types a password containing # or $ characters the installation fails with the error:<br /><pre>
+The following error was found while parsing the kickstart configuration file:
+
+The folloing problem occurred on line 1 of the kickstart file:
+
+A single argument is expected for rootpw command
+</pre></p>
+
+
+	<p>Both # and $ characters must be protected with a backslash.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Installer: accept password with special chars. Refs <a href="2797.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Install fails if root password contains # or $ characters (CLOSED)">#2797</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Interactive installer: remove password and encryption pages. Refs <a href="2797.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Install fails if root password contains # or $ characters (CLOSED)">#2797</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>interactive installer: re-add support for fs encryption. Refs <a href="2797.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Install fails if root password contains # or $ characters (CLOSED)">#2797</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-11665" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="2797.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Target version</strong> set to <i>~FUTURE</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-11665-notes"><p>This should be fix on next ISO release.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12697" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="2797.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> changed from <i>~FUTURE</i> to <i>v6.6-beta1</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12950" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="2797.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12956" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="2797.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12958" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="2797.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13368" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="2797.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-13368-notes"><strong>Test case</strong>
+	<ul>
+		<li>Check the bug is not reproducible</li>
+	</ul>
+
+
+	<p><strong>Note</strong>: latest NON public build of ISO can be found here: <a class="external" href="http://git.nethesis.it/install/nethserver/iso/NethServer-6.6beta1-x86_64.iso">http://git.nethesis.it/install/nethserver/iso/NethServer-6.6beta1-x86_64.iso</a><br />If someone want to try it, feel free to ask.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-13554" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="2797.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-13554-notes"><p>I typed: qwerty#$<br />[note: # is on the 3 key in the us keyb]</p>
+
+
+	<p>Install fails with:<br /><pre>
+Traceback (most recent call last):
+  File "/usr/bin/anaconda", line 833, in &lt;module&gt;
+    ksdata = kickstart.parseKickstart(anaconda, opts.ksfile)
+  File "/usr/lib/anaconda/kickstart.py", line 1483, in parseKickstart
+    ksparser.readKickstart(file)
+  File "/usr/lib/python2.6/site-packages/pykickstart/parser.py", line 787, in readKickstart
+    self._stateMachine (lambda: fh.readline())
+  File "/usr/lib/python2.6/site-packages/pykickstart/parser.py", line 629, in _stateMachine
+    self.readKickstart (args[1], reset=False)
+  File "/usr/lib/python2.6/site-packages/pykickstart/parser.py", line 787, in readKickstart
+    self._stateMachine (lambda: fh.readline())
+  File "/usr/lib/python2.6/site-packages/pykickstart/parser.py", line 615, in _stateMachine
+    args = shlex.split(self._line)
+  File "/usr/lib64/python2.6/shlex.py", line 279, in split
+    return list(lex)
+  File "/usr/lib64/python2.6/shlex.py", line 269, in next
+    token = self.get_token()
+  File "/usr/lib64/python2.6/shlex.py", line 96, in get_token
+    raw = self.read_token()
+  File "/usr/lib64/python2.6/shlex.py", line 172, in read_token
+    raise ValueError, "No closing quotation" 
+ValueError: No closing quotation
+install exited abnormally [1/1] 
+The system will be rebooted when you press Ctrl-C or Ctrl-Alt-Delete.
+
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13677" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="2797.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13681" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="2797.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-13681-notes">With the new first configuration wizard, following sections will be removed from interactive installer:
+	<ul>
+	<li>root password</li>
+		<li>filesystem encryption</li>
+	</ul>
+
+
+	<p>Filesystem encryption will be available with the <code>fspassword</code> kernel option, just like the unattend installation.<br />But the following characters are NOT supported: <code>$</code>, <code>#</code></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13710" class="journal has-notes has-details">
+    <div id="note-11">
+    <h4><a href="2797.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-13710-notes"><p>Filesystem encryption is now available in interactive and unattended install by adding the <code>fspassword</code> to kernel parameters.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-13716" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="2797.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-13716-notes"><strong>Test case</strong>
+	<ul>
+	<li>Boot a machine with the new ISO</li>
+		<li>Select "NethServer interactive installer" </li>
+		<li>Press TAB, and add to the command line the following option:<br /><pre>
+fspassword=1234
+</pre></li>
+		<li>At the end of the installation the system should asks for a password, type "1234" and check the system starts correctly</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-13801" class="journal has-notes has-details">
+    <div id="note-13">
+    <h4><a href="2797.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-13801-notes"><p>root password no longer requested, it is shown on the last dialog together with the "disk will be formatted" warning.<br />fspassword worked as expected.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-13834" class="journal has-notes has-details">
+    <div id="note-14">
+    <h4><a href="2797.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-13834-notes"><p>In nethserver-6.6-Beta1-x86_64 ISO</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

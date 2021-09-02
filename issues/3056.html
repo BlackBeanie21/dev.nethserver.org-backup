@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #3056: Protect built-int zones in Firewall.pm library - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3056.atom" rel="alternate" title="NethServer 6 - Enhancement #3056: Protect built-int zones in Firewall.pm library" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #3056</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="3044.html" title="#3044">« Previous</a> |
+      <a href="3043.html" title="#3043">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Protect built-int zones in Firewall.pm library</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-firewall-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/209.html">v6.6</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>The Firewall.pm library can map firewall objects to the corresponding zone.<br />For example, given a green interface with IP 192.168.1.2 and an host object "test" with ip address 192.168.1.55:<br /><pre>
+use NethServer::Firewall;
+my $fw = new NethServer::Firewall();
+my $src_addr = $fw-&gt;getAddress("test");
+my $z = $fw-&gt;getZone($src_addr);
+print "$src_addr ** $fw";
+</pre></p>
+
+
+	<p>Below code will print:<br /><pre>
+192.168.1.55 ** loc:192.168.1.55
+</pre></p>
+
+
+	<p>The library can also handle built-in zone names. For example, executing this code:<br /><pre>
+use NethServer::Firewall;
+my $fw = new NethServer::Firewall();
+my $src_addr = $fw-&gt;getAddress("role;green");
+my $z = $fw-&gt;getZone($src_addr);
+print "$src_addr ** $z";
+</pre></p>
+
+
+	<p>the output will be:<br /><pre>
+loc ** loc
+</pre><br />where <em>loc</em> is the Shorewall mapping for <em>green</em> zone.</p>
+
+
+	<p>But, if there is a resolvable host name called <strong>loc</strong> for example with IP 1.2.3.4, the library will fail and will print:<br /><pre>
+loc ** net:loc
+</pre></p>
+
+
+	<p>The problem is caused by perl  NetAddr::IP library.<br />To avoid this behavior all built-in zone names must be protected inside the Firewall.pm library.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Firewall.pm: protect built-in zones. Refs <a href="3056.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Protect built-int zones in Firewall.pm library (CLOSED)">#3056</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-14169" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="3056.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-14169-notes"><p>Tested fix:</p>
+
+
+<pre>
+--- /usr/share/perl5/vendor_perl/NethServer/Firewall.pm.ori    2015-02-20 16:50:58.171513245 +0100
++++ /usr/share/perl5/vendor_perl/NethServer/Firewall.pm    2015-02-20 17:54:05.250276154 +0100
+@@ -246,6 +246,11 @@
+     # sanitize the list:
+     $value = join(",", grep { $_ ne '' } split(/,/, $value));
+
++    # protect built-in zone from name resolution Refs #3056
++    if ($value =~ /loc|net|blue|orang|ivpn|lvpn|ovpn/) {
++        return $value;
++    }
++
+     # host group or not: always pick the first element:
+     my $needle = NetAddr::IP-&gt;new((split(/,/, $value))[0]);
+     return $value unless defined($needle); # skip garbage
+
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-14170" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="3056.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Subject</strong> changed from <i>Protect built-int zoned in Firewall.pm library</i> to <i>Protect built-int zones in Firewall.pm library</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14171" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="3056.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>Target version</strong> set to <i>v6.6</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14172" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="3056.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14173" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="3056.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14176" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="3056.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/14176%3Fdetail_id=23203.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-14178" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="3056.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-14178-notes"><strong>Test case</strong>
+	<ul>
+	<li>Add a fake host in <code>/etc/hosts</code>:<br /><pre>
+ echo "1.2.3.4 loc" &gt;&gt; /etc/hosts
+</pre></li>
+		<li>Create <code>test.pl</code> script with following content:<br /><pre>
+use NethServer::Firewall;
+my $fw = new NethServer::Firewall();
+my $src_addr = $fw-&gt;getAddress("role;green");
+my $z = $fw-&gt;getZone($src_addr);
+print "*$src_addr* *$z*";
+</pre></li>
+		<li>Execute the script , result must be:<br /><pre>
+*loc* *loc*
+</pre></li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-14179" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="3056.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-14179-notes">Package in nethserver-testing:
+	<ul>
+	<li>nethserver-firewall-base-2.2.3-1.9.ge940576.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-14281" class="journal has-notes has-details">
+    <div id="note-9">
+    <h4><a href="3056.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-14281-notes"><p>Prior to upgrade I had a broken rule:<br />ACCEPT:none    net:loc    net:1.2.3.4    all<br />and shorewall complained.<br />Test program output was:<br /><strong>loc</strong> <strong>net:loc</strong></p>
+
+
+	<p>Update:<br />Updated:<br />  nethserver-firewall-base.noarch 0:2.2.3-1.9.ge940576.ns6</p>
+
+
+	<p>Test output:<br /><strong>loc</strong> <strong>loc</strong></p>
+
+
+	<p>The firewall rule has been changed to:<br />ACCEPT:none    loc    net:1.2.3.4    all</p></div>
+    </div>
+  </div>
+  
+  <div id="change-14375" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="3056.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-14375-notes">Released in nethserver-base:
+	<ul>
+	<li>nethserver-firewall-base-2.3.0-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

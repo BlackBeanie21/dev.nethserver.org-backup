@@ -1,0 +1,56 @@
+diff --git a/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleAccessControlStatus b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleAccessControlStatus
+new file mode 100644
+index 0000000..7a68b11
+--- /dev/null
++++ b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleAccessControlStatus
+@@ -0,0 +1 @@
++disabled
+diff --git a/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleCheckSpfStatus b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleCheckSpfStatus
+new file mode 100644
+index 0000000..86981e6
+--- /dev/null
++++ b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleCheckSpfStatus
+@@ -0,0 +1 @@
++enabled
+diff --git a/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleGreylistingStatus b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleGreylistingStatus
+new file mode 100644
+index 0000000..86981e6
+--- /dev/null
++++ b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleGreylistingStatus
+@@ -0,0 +1 @@
++enabled
+diff --git a/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleQuotasStatus b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleQuotasStatus
+new file mode 100644
+index 0000000..86981e6
+--- /dev/null
++++ b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/ModuleQuotasStatus
+@@ -0,0 +1 @@
++enabled
+diff --git a/root/etc/e-smith/db/configuration/defaults/cbpolicyd/Runlevels b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/Runlevels
+new file mode 100644
+index 0000000..0adb4e9
+--- /dev/null
++++ b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/Runlevels
+@@ -0,0 +1 @@
++2,3,4,5
+diff --git a/root/etc/e-smith/db/configuration/defaults/cbpolicyd/managedBy b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/managedBy
+new file mode 100644
+index 0000000..3b98254
+--- /dev/null
++++ b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/managedBy
+@@ -0,0 +1 @@
++nethserver-mail-filter
+diff --git a/root/etc/e-smith/db/configuration/defaults/cbpolicyd/status b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/status
+new file mode 100644
+index 0000000..86981e6
+--- /dev/null
++++ b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/status
+@@ -0,0 +1 @@
++enabled
+diff --git a/root/etc/e-smith/db/configuration/defaults/cbpolicyd/type b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/type
+new file mode 100644
+index 0000000..24e1098
+--- /dev/null
++++ b/root/etc/e-smith/db/configuration/defaults/cbpolicyd/type
+@@ -0,0 +1 @@
++service

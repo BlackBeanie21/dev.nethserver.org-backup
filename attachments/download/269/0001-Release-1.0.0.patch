@@ -1,0 +1,26 @@
+From 7d580b63cf6136f09abf5f9df45a15cfb0e826c0 Mon Sep 17 00:00:00 2001
+From: Davide Principi <davide.principi@nethesis.it>
+Date: Mon, 18 Aug 2014 12:03:16 +0200
+Subject: [PATCH] Release 1.0.0
+
+---
+ nethserver-phpmyadmin.spec.in | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/nethserver-phpmyadmin.spec.in b/nethserver-phpmyadmin.spec.in
+index bfebd35..1ea0c9a 100644
+--- a/nethserver-phpmyadmin.spec.in
++++ b/nethserver-phpmyadmin.spec.in
+@@ -43,6 +43,9 @@ perl createlinks
+ rm -rf $RPM_BUILD_ROOT
+ 
+ %changelog
++* Mon Aug 18 2014 Davide Principi <davide.principi@nethesis.it> - 1.0.0-1.ns6
++- First nethforge release. Refs #2754
++
+ * Sun May 25 2014 stephane de labrusse <stephdl@de-labrusse.fr> 3.5.8.2
+ - first release to nethserver
+ 
+-- 
+1.9.3
+

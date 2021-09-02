@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2888: Action nethserver-mail-group-change-subscriptions fails - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethserver controller-journals action-diff">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues selected">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Bug #2888</h2>
+
+<div class="text-diff">
+During migration the @nethserver-mail-migrate-domains@ action sometimes fails. In @/var/log/messages@&lt;pre&gt; 
+<br /> Sep 25 16:34:30 mynsrv S30nethserver-mail-migrate-domains[43591]: Event: group-modify alias_backup 
+<br /> Sep 25 16:34:30 mynsrv S30nethserver-mail-migrate-domains[43591]: expanding /etc/postfix/aliases 
+<br /> Sep 25 16:34:30 mynsrv S30nethserver-mail-migrate-domains[43591]: expanding /etc/postfix/vmailbox 
+<br /> Sep 25 16:34:30 mynsrv S30nethserver-mail-migrate-domains[43591]: expanding /etc/postfix/virtual 
+<br /> Sep 25 16:34:30 mynsrv S30nethserver-mail-migrate-domains[43591]: expanding /etc/postfix/internal_access 
+<br /> Sep 25 16:34:30 mynsrv S30nethserver-mail-migrate-domains[43591]: expanding /var/www/html/faxweb/conf.inc.php 
+<br /> Sep 25 16:34:30 mynsrv S30nethserver-mail-migrate-domains[43591]: Action: /etc/e-smith/events/actions/generic_template_expand SUCCESS [0.125303] 
+<br /> Sep 25 16:34:31 mynsrv S30nethserver-mail-migrate-domains[43591]: doveadm(m.rossi): Fatal: User doesn&#x27;t exist 
+<br /> Sep 25 16:34:31 mynsrv S30nethserver-mail-migrate-domains[43591]: doveadm(l.verdi): Fatal: User doesn&#x27;t exist 
+<br /> Sep 25 16:34:31 mynsrv S30nethserver-mail-migrate-domains[43591]: Action: /etc/e-smith/events/group-modify/S14nethserver-mail-group-change-subscriptions FAILED: 1 [0.138114] 
+<br /> Sep 25 16:34:31 mynsrv S30nethserver-mail-migrate-domains[43591]: Use of uninitialized value in numeric gt (&gt;) at /usr/share/perl5/Authen/SASL/Perl.pm line 130. 
+<br /> Sep 25 16:34:31 mynsrv S30nethserver-mail-migrate-domains[43591]: Action: /etc/e-smith/events/group-modify/S15group-modify-unix SUCCESS [0.14146] 
+<br /> Sep 25 16:34:31 mynsrv S30nethserver-mail-migrate-domains[43591]: Action: /etc/e-smith/events/group-modify/S30nethserver-mail-account-update SUCCESS [0.075497] 
+<br /> Sep 25 16:34:31 mynsrv S30nethserver-mail-migrate-domains[43591]: Action: /etc/e-smith/events/group-modify/S30nethserver-mail-postmap-update SUCCESS [0.466323] 
+<br /> Sep 25 16:34:32 mynsrv S30nethserver-mail-migrate-domains[43591]: Updated comment of group mynsrv\alias_backup to Gruppo alias backup 
+<br /> Sep 25 16:34:32 mynsrv S30nethserver-mail-migrate-domains[43591]: Action: /etc/e-smith/events/group-modify/S30nethserver-samba-group-sync SUCCESS [0.626583] 
+<br /> Sep 25 16:34:32 mynsrv S30nethserver-mail-migrate-domains[43591]: [INFO] service postfix reload 
+<br /> Sep 25 16:34:32 mynsrv S30nethserver-mail-migrate-domains[43591]: Ricarica di postfix in corso: [    OK    ]#015 
+<br /> Sep 25 16:34:32 mynsrv S30nethserver-mail-migrate-domains[43591]: [INFO] postfix reload 
+<br /> Sep 25 16:34:32 mynsrv S30nethserver-mail-migrate-domains[43591]: Action: /etc/e-smith/events/actions/adjust-services SUCCESS [0.168124] 
+<br /> Sep 25 16:34:32 mynsrv S30nethserver-mail-migrate-domains[43591]: Action: /etc/e-smith/events/group-modify/S95nethserver-mail-group-acl-adjust SUCCESS [0.126134] 
+<br /> Sep 25 16:34:32 mynsrv S30nethserver-mail-migrate-domains[43591]: Action: /etc/e-smith/events/group-modify/S95nethserver-samba-smbd-adjust SUCCESS [0.070017] 
+<br /> Sep 25 16:34:32 mynsrv S30nethserver-mail-migrate-domains[43591]: Event: group-modify FAILED 
+<br /> &lt;/pre&gt; <br /><br /> <span class="diff_in">Email</span> <span class="diff_out">Perhaps email</span> accounts of users @m.rossi@ and @l.verdi@ are not stilll configured when @group-modify@ is run because nethserver-mail-migrate-domains scans all @accounts@ db in alphabetical order. <br /><br /> <span class="diff_in">*Steps to reproduce* <br /><br /> Execute migration-import event, where the origin Accounts DB contains a group @group1@ with members @adam@ and @zan@. <br /><br /> Note the alphabetical ordering: adam, group1, zan. @doveadm@ should raise the error on @adam@. <br /><br /></span>
+</div>
+
+<p>
+  <a href="../../issues/2888.html" onclick="if (document.referrer != &quot;&quot;) {history.back(); return false;}">Back</a>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

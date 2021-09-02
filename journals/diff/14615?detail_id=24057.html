@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #3095: Dovecot worker segmentation fault - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethserver controller-journals action-diff">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues selected">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Bug #3095</h2>
+
+<div class="text-diff">
+ 
+<br /> *Steps to reproduce* 
+<br /> * Install nethserver-mail-server and nethserver-mail-filter 
+<br /> * Enable dovecot-deleted-to-trash plugin 
+<br /> * Run an IMAP session <br /><br /> The IMAP session dies during FETCH command:&lt;pre&gt; 
+<br />     # nc localhost 143 
+<br /> * OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE STARTTLS AUTH=PLAIN AUTH=LOGIN] Dovecot ready. 
+<br /> a login admin ****** 
+<br /> a OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS SPECIAL-USE ACL RIGHTS=texk] Logged in 
+<br /> b select inbox 
+<br /> * FLAGS (\Answered \Flagged \Deleted \Seen \Draft) 
+<br /> * OK [PERMANENTFLAGS (\Answered \Flagged \Deleted \Seen \Draft \*)] Flags permitted. 
+<br /> * 3 EXISTS 
+<br /> * 0 RECENT 
+<br /> * OK [UNSEEN 1] First unseen. 
+<br /> * OK [UIDVALIDITY 1427729562] UIDs valid 
+<br /> * OK [UIDNEXT 4] Predicted next UID 
+<br /> * OK [NOMODSEQ] No permanent modsequences 
+<br /> b OK [READ-WRITE] Select completed. 
+<br /> c fetch 1 all 
+<br /> [connection closed] 
+<br /> &lt;/pre&gt; <br /><br /> In @/var/log/imap@&lt;pre&gt; 
+<br /> Mar 30 15:37:09 vm3 dovecot: imap-login: Login: user=&lt;admin&gt;, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3942, secured, session=&lt;eeZPQYMSkgB/AAAB&gt; 
+<br /> Mar 30 15:37:16 vm3 dovecot: imap(admin): Fatal: master: service(imap): child 3942 killed with signal 11 (core dumps disabled) 
+<br /> &lt;/pre&gt; <span class="diff_in"><br /><br /> *Installed packages* <br /><br /> &lt;pre&gt; 
+<br />    # rpm -qa | grep ^dovecot 
+<br /> dovecot-2.1.16-1.el6.x86_64 
+<br /> dovecot-deleted-to-trash-0.6-1.ns6.x86_64 
+<br /> dovecot-pigeonhole-2.1.16-1.el6.x86_64 
+<br /> dovecot-antispam-0.0.49-1.ns6.x86_64 
+<br />    # rpm -qa | grep ^nethserver-mail 
+<br /> nethserver-mail-server-1.8.6-1.2.g70ba93e.ns6.noarch 
+<br /> nethserver-mail-common-1.4.2-1.ns6.noarch 
+<br /> &lt;/pre&gt; <br /><br /></span> <span class="diff_out"><br /><br /></span>
+</div>
+
+<p>
+  <a href="../../issues/3095.html" onclick="if (document.referrer != &quot;&quot;) {history.back(); return false;}">Back</a>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

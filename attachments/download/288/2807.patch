@@ -1,0 +1,94 @@
+diff --git a/root/usr/share/nethesis/NethServer/Template/NetworkAdapter/Edit.php b/root/usr/share/nethesis/NethServer/Template/NetworkAdapter/Edit.php
+index a4db30f..4a7e6b7 100644
+--- a/root/usr/share/nethesis/NethServer/Template/NetworkAdapter/Edit.php
++++ b/root/usr/share/nethesis/NethServer/Template/NetworkAdapter/Edit.php
+@@ -36,21 +36,39 @@ $view->includeCSS("
+ 
+ $roleId = $view->getClientEventTarget('role');
+ $bootprotoId = $view->getClientEventTarget('bootproto');
++$gatewayId = $view->getClientEventTarget('gateway');
+ $view->includeJavascript("
+ (function ( $ ) {
++    function toggleGateway() {
++       if ($('.${roleId}').val().indexOf('blue') !== -1 || $('.${roleId}').val().indexOf('orange') !== -1) {
++              // if blue or orange, hide gateway
++              $('.${gatewayId}').hide();
++              $('.${gatewayId}').parent().hide();
++          } else {
++              $('.${gatewayId}').show();
++              $('.${gatewayId}').parent().show();
++          }
++    }
++
+     function toggleDHCP() {
+        if ($('.${roleId}').val().indexOf('red') !== -1) {
+            $('.${bootprotoId}[value=dhcp]').prop('disabled', false);
++           $('.${bootprotoId}[value=dhcp]').show();
++           $('.${bootprotoId}').parent().show();
+        } else {
+             // role is not red
+-           $('.${bootprotoId}[value=static]').trigger('click');
++           $('.${bootprotoId}[value=none]').trigger('click');
+            $('.${bootprotoId}[value=dhcp]').prop('disabled', true);
++           $('.${bootprotoId}').parent().hide();
+        }
+     }
+     $(document).ready(function() {
+        toggleDHCP();
++       toggleGateway();
+        $('.${roleId}').change(toggleDHCP);
++       $('.${roleId}').change(toggleGateway);
+        $('.${roleId}').on('nethguiupdateview', toggleDHCP);
++       $('.${roleId}').on('nethguiupdateview', toggleGateway);
+     });
+ } ( jQuery ));
+ ");
+diff --git a/root/usr/share/nethesis/NethServer/Template/NetworkAdapter/SetIpAddress.php b/root/usr/share/nethesis/NethServer/Template/NetworkAdapter/SetIpAddress.php
+index 4c72d3b..2423608 100644
+--- a/root/usr/share/nethesis/NethServer/Template/NetworkAdapter/SetIpAddress.php
++++ b/root/usr/share/nethesis/NethServer/Template/NetworkAdapter/SetIpAddress.php
+@@ -19,24 +19,42 @@ echo $view->hidden('role');
+ 
+ $roleId = $view->getClientEventTarget('role');
+ $bootprotoId = $view->getClientEventTarget('bootproto');
++$gatewayId = $view->getClientEventTarget('gateway');
+ $view->includeJavascript("
+ (function ( $ ) {
++    function toggleGateway() {
++       if ($('.${roleId}').val().indexOf('blue') !== -1 || $('.${roleId}').val().indexOf('orange') !== -1) {
++              // if blue or orange, hide gateway
++              $('.${gatewayId}').hide();
++              $('.${gatewayId}').parent().hide();
++          } else {
++              $('.${gatewayId}').show();
++              $('.${gatewayId}').parent().show();
++          }
++    }
++
+     function toggleDHCP(e, value) {
+        if(value === undefined) {
+             value = $('.${roleId}').val();
+        }
+        if (value === 'red') {
+            $('.${bootprotoId}[value=dhcp]').prop('disabled',false);
++           $('.${bootprotoId}').parent().show();
+        } else {
+            // role is not red
+            $('.${bootprotoId}[value=static]').trigger('click');
+            $('.${bootprotoId}[value=dhcp]').prop('disabled',true);
++           $('.${bootprotoId}').parent().hide();
+        }
+     }
+     $(document).ready(function() {
+        toggleDHCP();
++       toggleGateway();
++       $('.${roleId}').change(toggleDHCP);
++       $('.${roleId}').change(toggleGateway);
+        $('.${roleId}').on('nethguiupdateview', toggleDHCP);
++       $('.${roleId}').on('nethguiupdateview', toggleGateway);
+     });
+ 
+ } ( jQuery ));
+-");
+\ No newline at end of file
++");

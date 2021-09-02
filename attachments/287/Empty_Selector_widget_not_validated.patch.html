@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Empty_Selector_widget_not_validated.patch - Nethgui - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="../../stylesheets/scm.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethgui controller-attachments action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1><a href="..//projects/nethserver/attachments.html" class="root">NethServer 6</a> » Nethgui</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethgui.html" class="overview">Overview</a></li>
+
+<li><a href="/issues.html">Issues</a></li>
+<li><a href="..//projects/nethgui/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Empty_Selector_widget_not_validated.patch</h2>
+
+<div class="attachments">
+<p>
+   <span class="author"><a href="../../users/9.html" class="user active">Davide Principi</a>, 10/01/2014 09:01 AM</span></p>
+<p><a href="../download/287/Empty_Selector_widget_not_validated.patch">Download</a>   <span class="size">(3.34 KB)</span></p>
+</div>
+<form accept-charset="UTF-8" action="Empty_Selector_widget_not_validated.patch.html" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <p>
+    View differences:
+    <label><input checked="checked" id="type_inline" name="type" onchange="this.form.submit()" type="radio" value="inline" /> inline</label>
+    <label><input id="type_sbs" name="type" onchange="this.form.submit()" type="radio" value="sbs" /> side by side</label>
+  </p>
+</form>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      Nethgui/Js/jquery.nethgui.selector.js
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">17</th>
+  <th class="line-num">17</th>
+  <td class="line-code ">
+    <pre>            this._mode = (this.element.prop(&#39;tagName&#39;).toUpperCase() == &#39;SELECT&#39;) ? &#39;dropdown&#39; : &#39;list&#39;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">18</th>
+  <th class="line-num">18</th>
+  <td class="line-code ">
+    <pre>            this._selection = [];</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">19</th>
+  <th class="line-num">19</th>
+  <td class="line-code ">
+    <pre>            this._multiple = this.element.hasClass(&#39;multiple&#39;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">20</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>            this._meta = this.element.children(&#39;input[type=&quot;hidden&quot;]&#39;).first();           </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">20</th>
+  <td class="line-code diff_in">
+    <pre>            this._meta = this.element.children(&#39;input[type=&quot;hidden&quot;]&#39;).first();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">21</th>
+  <td class="line-code diff_in">
+    <pre>            this.element.on(&#39;nethguitooltip.&#39; + this.namespace, $.proxy(this._createTooltip, this));</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">21</th>
+  <th class="line-num">22</th>
+  <td class="line-code ">
+    <pre>        },</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">22</th>
+  <th class="line-num">23</th>
+  <td class="line-code ">
+    <pre>        _setOption: function( key, value ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">23</th>
+  <th class="line-num">24</th>
+  <td class="line-code ">
+    <pre>            SUPER.prototype._setOption.apply( this, arguments );</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">152</th>
+  <th class="line-num">153</th>
+  <td class="line-code ">
+    <pre>                }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">153</th>
+  <th class="line-num">154</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">154</th>
+  <th class="line-num">155</th>
+  <td class="line-code ">
+    <pre>            });</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">156</th>
+  <td class="line-code diff_in">
+    <pre>        },</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">157</th>
+  <td class="line-code diff_in">
+    <pre>        _createTooltip: function(e, options) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">158</th>
+  <td class="line-code diff_in">
+    <pre>            if( ! this.element.Tooltip) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">159</th>
+  <td class="line-code diff_in">
+    <pre>                $.debug(&#39;Tooltip type was not found. Maybe jquery.nethgui.tooltip.js is missing?&#39;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">160</th>
+  <td class="line-code diff_in">
+    <pre>            }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">161</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">162</th>
+  <td class="line-code diff_in">
+    <pre>            // Move tooltip on the right edge for right-labeled input controls:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">163</th>
+  <td class="line-code diff_in">
+    <pre>            if( ! options.target &amp;&amp; this.element.get(0).tagName.toLowerCase() === &#39;select&#39;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">164</th>
+  <td class="line-code diff_in">
+    <pre>                &amp;&amp; this.element.parent().hasClass(&#39;label-right&#39;)) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">165</th>
+  <td class="line-code diff_in">
+    <pre>                options.target = this.element.siblings(&#39;label[for=&#39; + this.element.attr(&#39;id&#39;) + &#39;]&#39;).first();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">166</th>
+  <td class="line-code diff_in">
+    <pre>            }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">167</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">168</th>
+  <td class="line-code diff_in">
+    <pre>            this.element.Tooltip(options);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">155</th>
+  <th class="line-num">169</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">156</th>
+  <th class="line-num">170</th>
+  <td class="line-code ">
+    <pre>    });</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">157</th>
+  <th class="line-num">171</th>
+  <td class="line-code ">
+    <pre>}( jQuery ));</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      Nethgui/System/Validator.php
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">92</th>
+  <th class="line-num">92</th>
+  <td class="line-code ">
+    <pre>            $set = $args;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">93</th>
+  <th class="line-num">93</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">94</th>
+  <th class="line-num">94</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">95</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        if (count($set) &gt; 5) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">95</th>
+  <td class="line-code diff_in">
+    <pre>        if(count($set) === 0) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">96</th>
+  <td class="line-code diff_in">
+    <pre>            $setToShow = FALSE;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">97</th>
+  <td class="line-code diff_in">
+    <pre>        } elseif (count($set) &gt; 5) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">96</th>
+  <th class="line-num">98</th>
+  <td class="line-code ">
+    <pre>            $setToShow = array_slice($set, 0, 3);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">97</th>
+  <th class="line-num">99</th>
+  <td class="line-code ">
+    <pre>            $setToShow[] = &#39;... &#39;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">98</th>
+  <th class="line-num">100</th>
+  <td class="line-code ">
+    <pre>            $setToShow = array_merge($setToShow, array_slice($set, -2, 2));</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">100</th>
+  <th class="line-num">102</th>
+  <td class="line-code ">
+    <pre>            $setToShow = $set;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">101</th>
+  <th class="line-num">103</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">102</th>
+  <th class="line-num">104</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">103</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        $messageTemplate = <span>array(&#39;valid_memberOf&#39;, array(implode(&#39;, &#39;, $setToShow)</span>));</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">105</th>
+  <td class="line-code diff_in">
+    <pre>        $messageTemplate = <span>is_array($setToShow) ? array(&#39;valid_memberOf&#39;, array(implode(&#39;, &#39;, $setToShow))) : array(&#39;valid_emptySet&#39;, array(</span>));</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">104</th>
+  <th class="line-num">106</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">105</th>
+  <th class="line-num">107</th>
+  <td class="line-code ">
+    <pre>        return $this-&gt;addToChain(__FUNCTION__, $messageTemplate, $set);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">106</th>
+  <th class="line-num">108</th>
+  <td class="line-code ">
+    <pre>    }</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      Nethgui/Widget/Xhtml/Selector.php
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">77</th>
+  <th class="line-num">77</th>
+  <td class="line-code ">
+    <pre>        } else {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">78</th>
+  <th class="line-num">78</th>
+  <td class="line-code ">
+    <pre>            $tagContent = $this-&gt;optGroups($value, $choices);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">79</th>
+  <th class="line-num">79</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">80</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        $<span>content = $this-&gt;labeledControlTag($label, &#39;select&#39;, $name, $flags, &#39;&#39;, $attributes, $tagContent</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">81</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        return $<span>content</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">80</th>
+  <td class="line-code diff_in">
+    <pre>        $<span>hiddenInput = $this-&gt;controlTag(&#39;input&#39;, $name, 0, &#39;&#39;, array(&#39;value&#39; =&gt; &#39;&#39;, &#39;type&#39; =&gt; &#39;hidden&#39;, &#39;id&#39; =&gt; FALSE)</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">81</th>
+  <td class="line-code diff_in">
+    <pre>        return $<span>hiddenInput . $this-&gt;labeledControlTag($label, &#39;select&#39;, $name, $flags, &#39;&#39;, $attributes, $tagContent)</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">82</th>
+  <th class="line-num">82</th>
+  <td class="line-code ">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">83</th>
+  <th class="line-num">83</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">84</th>
+  <th class="line-num">84</th>
+  <td class="line-code ">
+    <pre>    private function renderWidgetList($value, $choices, $attributes)</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

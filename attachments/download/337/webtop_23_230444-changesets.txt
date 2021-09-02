@@ -1,0 +1,53 @@
+Library				Git Revision
+--------------------------------------------
+sonicle-webtop-services:	#f8d1b8c0
+sonicle-webtop-groupware:	#ddeccaa9
+sonicle-webtop-webtopadmin:	#bbd55404
+sonicle-commons:		#da9cf206
+sonicle-commons-web:		#6515cdc6
+
+CHANGES
+=======
+
+sonicle-webtop-groupware:
+[calendar] nuove API, hooks di integrazione eventi
+[calendar] nuovo pannello in evento con dati custom associati, attivabile tramite implementazione API di altro servizio, che ne può controllare il numero il tipo ed il contenuto
+[calendar] l'evento ora contiene il dato dell'utente originario che l'ha creato
+[calendar] sync readonly, se attiva, z-push non scrive nessuna modifica che arriva dai device verso webtop
+[calendar] nuova vista "appuntamento" con setting per abilitarla
+[calendar] bugfix edit inline di eventi readonly ora viene bloccato
+[calendar] nuova icona lock eventi readonly
+[calendar] eventi read only possono essere aperti in sola lettura, meno quelli privati
+[calendar] gestione causali / attività attribuibili anche per gruppo utenti
+[calendar] miglioramento layout di stampa eventi
+[mail] bugfix mail schedulate non funzionanti per utenti con mail user name a stringa vuota
+[mail] bugifx campo di ricerca richiedeva un doppio enter dopo la digitazione
+[mail] feature campo suggerimento destinatario vuoto o space non deve eseguire inutile lookup di tutto
+[mail] feature ricerca avanzata, ricerca in cestino e spam opzionale
+[mail] nuovo setting per disabilitare le mail schedulate (mail.scheduled-emails.disabled=true/false)
+[mail] la radice delle cartelle condivise viene aperta automaticamente all'entrata
+[mail] integrazione promemoria calendario da email - nuovo tasto "promemoria all'invio" in composizione email, e "crea promemoria" in menu contestuale email
+[mail] bugfix cartelle con accento non apre allegati
+[mail] bugfix suggerimento destinatari non appare in alcuni casi (risposte con dei cc precompilati)
+[mail] bugfix lista messaggi in casi anomali di email errate con mittente contenente apici
+[tasks] elementi read only possono essere aperti in sola lettura, meno quelli private
+[contacts] elementi read only possono essere aperti in sola lettura, meno quelli private
+[contacts] bugfix errori importazione files xls/xlsx (vedi bugfix parser in commons)
+
+sonicle-webtop-services:
+[services] lo stato di maintenance può essere forzatamente disabilitato da setting (main.maintenance = true/false)
+[services] bugfix cambio password amin falliva in alcuni casi
+[services] in alcuni casi la toolbar in basso a sinistra in modalità outlook partiva con dimensione inferiore al numero dei bottoni, nascondendone uno
+[services] salva uri originale come da location sul browser invece che dal referer della request, per ovviare a problemi di generazione dei link lato server che in alcuni casi di proxy/rewrite venivano generate male, causando bugs quali la non visualizzazioni degli allgati inline.
+
+sonicle-webtop-webtopadmin:
+[admin] implementazioni advanced security solo per domini ldap gestiti da webtop (nostre installazioni), in cui viene forzata la password con criteri di sicurezza standard.
+
+sonicle-commons:
+[lib] implementazioni interne utili a supportare le modifiche ai servizi
+[lib] bugfix IndexOutOfBound nel parser xls in alcuni casi di importazione
+[lib] bugfix nel parsing di celle xlsx in alcuni casi di importazione
+
+sonicle-commons-web:
+[lib] implementazioni interne utili a supportare le modifiche ai servizi
+

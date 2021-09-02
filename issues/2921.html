@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2921: Protection against POODLE SSLv3 Vulnerability - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2921.atom" rel="alternate" title="NethServer 6 - Bug #2921: Protection against POODLE SSLv3 Vulnerability" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #2921</h2>
+
+<div class="issue tracker-1 status-5 priority-5 priority-high3 closed details">
+    <div class="next-prev-links contextual">
+      <a href="2906.html" title="#2906">« Previous</a> |
+      <a href="2920.html" title="#2920">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Protection against POODLE SSLv3 Vulnerability</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">High</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">&lt;multiple packages&gt;</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/201.html">v6.5</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>POODLE SSLv3 vulnerability has to be fixed on the following services:</p>
+
+
+	<ul>
+	<li><del>ldap</del></li>
+		<li><del>imap/pop</del></li>
+		<li><del>smtp</del></li>
+		<li><del>ejabber</del></li>
+		<li>httpd</li>
+		<li>httpd-admin</li>
+		<li><del>mysql</del></li>
+		<li><del>openvpn</del></li>
+		<li><del>ipsec</del></li>
+		<li>...</li>
+	</ul>
+
+
+All background informations are available from:
+	<ul>
+	<li><a href="http://wiki.centos.org/Security/POODLE" class="external">POODLE on CentOS</a></li>
+		<li><a href="http://lists.centos.org/pipermail/centos-announce/2014-October/020697.html" class="external">CESA-2014:1652</a></li>
+		<li><a href="https://rhn.redhat.com/errata/RHSA-2014-1652.html" class="external">RHSA-2014-1662</a></li>
+	</ul>
+
+
+	<p><strong>Edit</strong><br />The vulnerability affects SSLv3-only hosts, or TLS hosts supporting protocol downgrade to SSLv3.</p>
+
+
+	<p>On the server side protocol downgrade is disabled since <code>openssl-1.0.1e-30.el6_5.2.x86_64</code> release. Server restart is recommended.</p>
+  </div>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-747">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="3246" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="3246.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #3246</a>: Upgrade SSL/TLS defaults on 6.7
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2921/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="2921.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>httpd-admin configuration: fix POODLE vulnerability. Refs <a href="2921.html" class="issue tracker-1 status-5 priority-5 priority-high3 closed" title="Protection against POODLE SSLv3 Vulnerability (CLOSED)">#2921</a></p>
+
+
+	<p>Enable only TLS v1 ciphers.</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>ssl.conf: fix POODLE vulnerability. Refs <a href="2921.html" class="issue tracker-1 status-5 priority-5 priority-high3 closed" title="Protection against POODLE SSLv3 Vulnerability (CLOSED)">#2921</a></p>
+
+
+	<p>Disable SSLv3 protocol</p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>ssl.conf: removed httpd/SSLv2 prop expansion. Refs <a href="2921.html" class="issue tracker-1 status-5 priority-5 priority-high3 closed" title="Protection against POODLE SSLv3 Vulnerability (CLOSED)">#2921</a></p>
+
+
+	<ul>
+	<li>Removed httpd/SSLv2 prop from template and migration action</li>
+	</ul>
+
+
+	<ul>
+	<li>Retained httpd/SSLCipherSuite prop: if set to empty string, Apache<br />  defaults are applied.</li>
+	</ul>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Configuration DB: remove obsolete httpd/SSLv2 prop. Refs <a href="2921.html" class="issue tracker-1 status-5 priority-5 priority-high3 closed" title="Protection against POODLE SSLv3 Vulnerability (CLOSED)">#2921</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-12710" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="2921.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-12710-notes">Add to the list:
+	<ul>
+	<li>vsftpd : <a class="external" href="https://access.redhat.com/solutions/1234773">https://access.redhat.com/solutions/1234773</a></li>
+	</ul>
+
+
+	<p>See also <a class="external" href="https://access.redhat.com/solutions/1234843">https://access.redhat.com/solutions/1234843</a> for OpenLDAP and cups.But I'd rather not apply the stunell solution.<br />Regarding OpenLDAP, if clients are using TLS the  problems does not exists (see: <a class="external" href="http://web.archiveorange.com/archive/v/rG8zFlv6OIly0DLZ7cT5">http://web.archiveorange.com/archive/v/rG8zFlv6OIly0DLZ7cT5</a>).<br />CUPS should not be really a problem because no sensitive information is travelling between SSL clients and server.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12711" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="2921.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/12711%3Fdetail_id=20540.html" title="View differences">diff</a>)</li>
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    <div class="wiki" id="journal-12711-notes"><p>Upgrading of clients is recommended. SSLv3 must not be used any more.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12712" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="2921.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-12712-notes"><p><strong>Test case</strong></p>
+
+
+	<p>Execute the test as described here</p>
+
+
+	<p><a class="external" href="https://access.redhat.com/articles/1232123">https://access.redhat.com/articles/1232123</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-12713" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="2921.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-12713-notes"><p>In nethserver-testing:<br />nethserver-httpd-admin-1.3.2-1.1git6f5c747.ns6.noarch.rpm<br />nethserver-httpd-2.3.2-1.0git599d3b0f.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12716" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="2921.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12717" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="2921.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-12717-notes"><p><strong>VERIFIED</strong></p>
+
+
+	<p><strong>BUT</strong> on migrated machines, the property <code>SSLv2</code> is set to enabled, so SSLv2 and SSLv3 are still both enabled after the updated.<br />I propose to get rid of SSLv2 option (even from defaults and migration).</p>
+
+
+	<p>Before update (same results on port 980 and 443):<br /><pre>
+[giacomo@giacomo rpms]$ openssl s_client -connect 192.168.5.246:443 -ssl3
+CONNECTED(00000003)
+depth=0 C = --, ST = SomeState, L = Hometown, O = Example Org, OU = Main, CN = localhost.localdomain, emailAddress = admin@localhost.localdomain
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 C = --, ST = SomeState, L = Hometown, O = Example Org, OU = Main, CN = localhost.localdomain, emailAddress = admin@localhost.localdomain
+verify return:1
+---
+Certificate chain
+ 0 s:/C=--/ST=SomeState/L=Hometown/O=Example Org/OU=Main/CN=localhost.localdomain/emailAddress=admin@localhost.localdomain
+   i:/C=--/ST=SomeState/L=Hometown/O=Example Org/OU=Main/CN=localhost.localdomain/emailAddress=admin@localhost.localdomain
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIDFTCCAn6gAwIBAgIEU04zgjANBgkqhkiG9w0BAQUFADCBpTELMAkGA1UEBhMC
+LS0xEjAQBgNVBAgMCVNvbWVTdGF0ZTERMA8GA1UEBwwISG9tZXRvd24xFDASBgNV
+BAoMC0V4YW1wbGUgT3JnMQ0wCwYDVQQLDARNYWluMR4wHAYDVQQDDBVsb2NhbGhv
+c3QubG9jYWxkb21haW4xKjAoBgkqhkiG9w0BCQEWG2FkbWluQGxvY2FsaG9zdC5s
+b2NhbGRvbWFpbjAeFw0xNDA0MTYwNzM4NDJaFw0yNDA0MTMwNzM4NDJaMIGlMQsw
+CQYDVQQGEwItLTESMBAGA1UECAwJU29tZVN0YXRlMREwDwYDVQQHDAhIb21ldG93
+bjEUMBIGA1UECgwLRXhhbXBsZSBPcmcxDTALBgNVBAsMBE1haW4xHjAcBgNVBAMM
+FWxvY2FsaG9zdC5sb2NhbGRvbWFpbjEqMCgGCSqGSIb3DQEJARYbYWRtaW5AbG9j
+YWxob3N0LmxvY2FsZG9tYWluMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC1
+AtZsOtTzk4JPu3jCcPISAHgfEkZio04DXkLPJJlEzUREGjcECtSlOMwKB8yZYZDu
+9ZnCzeSQF/bk2UwbD88BM0ofG+xeojUCAPZLRu9zndTDm5zyyn53dmhshmSOQnK0
++qMBX2zXTjZxXnCwfRYD+s1pQL8o/98OsUeeIxQKawIDAQABo1AwTjAdBgNVHQ4E
+FgQURLKkOr3ayUuqKoDpMPPYr52N/fwwHwYDVR0jBBgwFoAURLKkOr3ayUuqKoDp
+MPPYr52N/fwwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQAEEw8JhcGI
+0wtRm8HYrLb24O2htixwOA13GiOlnJSKEseE5H8orQnGgyJaM+berAG2l9TUi6I8
+AvPmD3+Spl8Y3fmmUUzc5LF0Je5/TR9hNfOEMAxUuqfu1vDWsX8wVu1KMtJ1bQvS
+3b/85KO1GvAHpP6ZRZWXcOwYePk7/n3HAw==
+-----END CERTIFICATE-----
+subject=/C=--/ST=SomeState/L=Hometown/O=Example Org/OU=Main/CN=localhost.localdomain/emailAddress=admin@localhost.localdomain
+issuer=/C=--/ST=SomeState/L=Hometown/O=Example Org/OU=Main/CN=localhost.localdomain/emailAddress=admin@localhost.localdomain
+---
+No client certificate CA names sent
+---
+SSL handshake has read 1380 bytes and written 338 bytes
+---
+New, TLSv1/SSLv3, Cipher is DHE-RSA-AES256-SHA
+Server public key is 1024 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+SSL-Session:
+    Protocol  : SSLv3
+    Cipher    : DHE-RSA-AES256-SHA
+    Session-ID: 3C712467F73B8D684553D9D12E84EFD498A1BFBF225ECB7D887AAF66C4B56884
+    Session-ID-ctx: 
+    Master-Key: 207309B25AC231DCE66FD8D9C1647E750A2D3A0DAAC039BE0F1E7D948577CE8C36F43FF4440620864D82C95DDC121622
+    Key-Arg   : None
+    Krb5 Principal: None
+    PSK identity: None
+    PSK identity hint: None
+    Start Time: 1413819513
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self signed certificate)
+---
+</pre></p>
+
+
+	<p>After updates:<br /><pre>
+[giacomo@giacomo rpms]$ openssl s_client -connect 192.168.5.246:443 -ssl3
+CONNECTED(00000003)
+139773201012608:error:14094410:SSL routines:SSL3_READ_BYTES:sslv3 alert handshake failure:s3_pkt.c:1257:SSL alert number 40
+139773201012608:error:1409E0E5:SSL routines:SSL3_WRITE_BYTES:ssl handshake failure:s3_pkt.c:596:
+---
+no peer certificate available
+---
+No client certificate CA names sent
+---
+SSL handshake has read 7 bytes and written 0 bytes
+---
+New, (NONE), Cipher is (NONE)
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+SSL-Session:
+    Protocol  : SSLv3
+    Cipher    : 0000
+    Session-ID: 
+    Session-ID-ctx: 
+    Master-Key: 
+    Key-Arg   : None
+    Krb5 Principal: None
+    PSK identity: None
+    PSK identity hint: None
+    Start Time: 1413819531
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+---
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-12720" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="2921.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>70</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12721" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="2921.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12722" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="2921.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-12722-notes">New implementation:
+	<ul>
+	<li>get rid of SSLv2 property: delete it from defaults and migration</li>
+		<li>create a static template fragment for SSLProtocols</li>
+		<li>disable both SSLv2 and SSLv3 protocols</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-12724" class="journal has-details">
+    <div id="note-10">
+    <h4><a href="2921.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12725" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="2921.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12726" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="2921.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-12726-notes"><p>In nethserver-testing:<br /><del>nethserver-httpd-2.3.2-2.0gitaca8d70d.ns6.noarch.rpm</del><br />nethserver-httpd-2.3.2-3.0git998e1b04.ns6.noarch.rpm</p>
+
+
+	<p><strong>NOTE for Packager / Release</strong></p>
+
+
+	<p>SSL connections from IE6 browser on Windows XP are not supported!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-12728" class="journal has-details">
+    <div id="note-13">
+    <h4><a href="2921.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-12729" class="journal has-notes has-details">
+    <div id="note-14">
+    <h4><a href="2921.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-12729-notes"><p>VERIFIED with new implementation:<br /><pre>
+[root@mail ~]# grep SSLProtocol /etc/httpd/conf.d/ssl.conf 
+SSLProtocol All -SSLv2 -SSLv3
+
+[root@mail ~]# config getprop httpd SSLv2
+[root@mail ~]# 
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-12743" class="journal has-notes has-details">
+    <div id="note-15">
+    <h4><a href="2921.html#note-15" class="journal-link">#15</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-12743-notes"><p>In nethserver-updates:<br />nethserver-httpd-admin-1.3.3-1.ns6.noarch.rpm<br />nethserver-httpd-2.3.3-1.ns6.noarch.rpm</p>
+
+
+	<p>See also, <a href="https://groups.google.com/d/msg/nethserver/hPrcyjCiy4s/5k_3U5xaH_8J" class="external">ML announce</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-16112" class="journal has-details">
+    <div id="note-16">
+    <h4><a href="2921.html#note-16" class="journal-link">#16</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="3246.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #3246</a>: Upgrade SSL/TLS defaults on 6.7</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

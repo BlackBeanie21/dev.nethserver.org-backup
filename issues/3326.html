@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #3326: ipsec tunnels firewall to firewall - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3326.atom" rel="alternate" title="NethServer 6 - Enhancement #3326: ipsec tunnels firewall to firewall" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #3326</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="3325.html" title="#3325">« Previous</a> |
+      <a href="3317.html" title="#3317">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>ipsec tunnels firewall to firewall</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-ipsec</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/214.html">v6.7</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>ipsec tunnels connect local and remote lan, but not local and remote firewalls, i.e. system in both lan can talk, but trying to ping the remote firewall will fail.<br />Usually, the workaround is to create another tunnel between the firewalls.<br />A better option is to use the leftsourceip field in ipsec.conf.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>IPSec tunnels: automatically set leftsourceip. Refs <a href="3326.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="ipsec tunnels firewall to firewall (CLOSED)">#3326</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>db: migrate %left from ip to ethernet name. Refs <a href="3326.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="ipsec tunnels firewall to firewall (CLOSED)">#3326</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Web UI: use interfaces for %left field. Refs <a href="3326.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="ipsec tunnels firewall to firewall (CLOSED)">#3326</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Web UI: allow %any value for %right field. Refs <a href="3326.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="ipsec tunnels firewall to firewall (CLOSED)">#3326</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Updated translation label and online help. Refs <a href="3326.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="ipsec tunnels firewall to firewall (CLOSED)">#3326</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>IpsecTunnels UI: generate default identifier if field is empty. Refs <a href="3326.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="ipsec tunnels firewall to firewall (CLOSED)">#3326</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>IPsec tunnels %any. Refs <a href="3326.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="ipsec tunnels firewall to firewall (CLOSED)">#3326</a></p>
+
+
+	<p>Support for %any in Remote IP field [italiano]</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Merge pull request <a href="89.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="User notifications and flash messages (CLOSED)">#89</a> from NethServer/ipsec-support-any</p>
+
+
+	<p>IPsec tunnels %any. Refs <a href="3326.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="ipsec tunnels firewall to firewall (CLOSED)">#3326</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-16759" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="3326.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16760" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="3326.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16760-notes"><p>leftsourceip should be set to the firewall ip address contained in the first local subnet.<br />No other option is needed.<br />Pseudo code:<br />for each $myips<br />  if $myip is in $leftsubnet then $leftsourceip=$myip</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16775" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="3326.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Category</strong> set to <i>nethserver-ipsec</i></li>
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16778" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="3326.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16779" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="3326.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16779-notes"><p>We can improve the web interface by allowing the user  to choose any type of network interface for the "Local IP" field.<br />The list should also include red interfaces configured with DHCP.</p>
+
+
+	<p>Also allow the <code>%any</code> value for <code>%right</code> field to enable creation of tunnels with hosts behind NAT.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16782" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="3326.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-16782-notes">In nethserver-testing:
+	<ul>
+	<li>nethserver-ipsec-1.1.2-1.6.geb3e0f6.ns6.noarch.rpm</li>
+	</ul>
+
+
+<strong>Test case 1</strong>
+	<ul>
+	<li>Create a tunnel between two firewalls</li>
+		<li>Check each firewall can ping each other</li>
+	</ul>
+
+
+<strong>Test case 2</strong>
+	<ul>
+	<li>Create a tunnel before then upgrade the package</li>
+		<li>Check the tunnel is still working</li>
+	</ul>
+
+
+<strong>Test case 3</strong>
+	<ul>
+	<li>Try to create a tunnel with a firewall behind NAT</li>
+		<li>Set <code>%any</code> as "Remote IP" </li>
+		<li>Make sure the field allows only IP or <code>%any</code> value</li>
+		<li>If the value is <code>%any</code> the web interface must enforce to set a valid "Remote identifier" and "Local identifier", both must start with <code>@</code> character</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-16790" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="3326.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16795" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="3326.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/a201dd3970a9d5c2e86c7724ccdcdca0?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> changed from <i>Davide Principi</i> to <i>Giovanni Bezicheri</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16798" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="3326.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/a201dd3970a9d5c2e86c7724ccdcdca0?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Giovanni Bezicheri</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16800" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="3326.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-16800-notes"><p><ins>System and  Package Version installed</ins><br />Package Installed: nethserver-ipsec-1.1.2-1.ns6.noarch</p>
+
+
+	<p><ins>Test Original Problem</ins><br />A  tunnel endpoint cannot ping the private IP of the other side</p>
+
+
+	<p><ins>Install Updated Package</ins><br /><pre>
+yum --enablerepo=nethserver-testing update nethserver-ipsec-1.1.2-1.6.geb3e0f6.ns6.noarch
+</pre></p>
+
+
+<ins>Test Results after update</ins>
+	<ul>
+	<li>After updating to the modified version an endpoint can ping the private IP address of the other endpoint (test case 1)</li>
+		<li>Other hosts in private (green) networks are reachable (test case 2)</li>
+		<li>The <code>%any</code> value as <code>Remote IP</code> requires the <code>@</code> form, thought <strong>the validator message is not translated correctly</strong>:<pre>
+Remote identifier
+id_notempty
+</pre></li>
+		<li>The connection successfully started from the host behind NAT, where the remote IP was given explicitly (test case 3)</li>
+		<li>If the <code>Local identifier</code> field is empty, the <code>nethserver-ipsec-ids</code> action assign <code>%ethX</code> automatically, which is a non-IP and non-@prefix value</li>
+	</ul>
+
+
+	<p><ins>Verified Or Reopen</ins><br />REOPEN, fix <code>nethserver-ipsec-ids</code> action, by moving the <code>set_prop()</code> call in the UI code.<br />Actions should not change the DB!</p>
+
+
+	<p><ins>Notes</ins><br />(Test case 3) on the endpoint where <code>%any</code> was specified the following log line appeared, as expected<pre>
+Nov 27 17:05:02 firewall pluto[29185]: "nh-ran_ipsec-tunnel/1x1": cannot initiate connection without knowing peer IP address (kind=CK_TEMPLATE)
+</pre></p>
+
+
+	<ul>
+	<li>Update the administrator manual </li>
+		<li>Fixed the validator label</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-16801" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="3326.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16807" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="3326.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-16807-notes"><p><strong>Test case 4</strong></p>
+
+
+	<p>If local or remote identifier field is empty, check the value displayed by the field watermark is assigned when the record is saved.</p>
+
+
+Accepted must be
+	<ul>
+	<li>IP address</li>
+		<li>hostname with <code>@</code> prefix</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-16808" class="journal has-notes has-details">
+    <div id="note-13">
+    <h4><a href="3326.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-16808-notes"><p>In nethserver-testing<br />nethserver-ipsec-1.1.2-1.9.ge9548d0.ns6.noarch.rpm</p>
+
+
+	<p>Admin's manual PR:<br /><a class="external" href="https://github.com/NethServer/nethserver-docs/pull/88">https://github.com/NethServer/nethserver-docs/pull/88</a><br /><a class="external" href="https://github.com/NethServer/nethserver-docs/pull/89">https://github.com/NethServer/nethserver-docs/pull/89</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-16810" class="journal has-details">
+    <div id="note-14">
+    <h4><a href="3326.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16812" class="journal has-notes has-details">
+    <div id="note-15">
+    <h4><a href="3326.html#note-15" class="journal-link">#15</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-16812-notes"><p>Test case 4 verified.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16815" class="journal has-notes has-details">
+    <div id="note-16">
+    <h4><a href="3326.html#note-16" class="journal-link">#16</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-16815-notes">Released in nethserver-updates:
+	<ul>
+	<li>nethserver-ipsec-1.1.3-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

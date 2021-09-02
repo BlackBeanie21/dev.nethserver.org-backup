@@ -1,0 +1,180 @@
+diff --git a/root/usr/share/nethesis/nethserver-devbox/mock/nethserver-iso-x86_64.cfg b/root/usr/share/nethesis/nethserver-devbox/mock/nethserver-iso-x86_64.cfg
+index 801739d..7235c5a 100644
+--- a/root/usr/share/nethesis/nethserver-devbox/mock/nethserver-iso-x86_64.cfg
++++ b/root/usr/share/nethesis/nethserver-devbox/mock/nethserver-iso-x86_64.cfg
+@@ -2,28 +2,72 @@
+ # ISO build mock configuration 
+ #
+ 
+-sys.path.append(config_path)
+-
+-import mockyumconf
+-
+-o = mockyumconf.Params(config_path, config_opts, options)
+-
+ config_opts['target_arch'] = 'x86_64'
+ config_opts['root'] = 'nethserver-iso-x86_64'
+ 
+-config_opts['chroot_setup_cmd'] = o.get_chroot_setup_cmd((
++config_opts['chroot_setup_cmd'] = (
+     'install', 
+     '@centos-minimal', 
+     'yum-plugin-downloadonly', 
+     '--disablerepo=*',
+     '--enablerepo=centos-base*',
+     '--enablerepo=nethserver-base,nethserver-updates'
+-))
++)
+ 
+ config_opts['plugin_conf']['ccache_enable'] = False
+ 
+ # Substitute $releasever and $basearch:
+-config_opts['yum.conf'] = o.get_yum_config()
++config_opts['yum.conf'] = string.Template("""
++[main]
++cachedir=/var/cache/yum
++debuglevel=1
++logfile=/var/log/yum.log
++reposdir=/dev/null
++retries=20
++obsoletes=1
++gpgcheck=0
++assumeyes=1
++metadata_expire=never
++mirrorlist_expire=never
++plugins=1
++ui_repoid_vars=1
++
++[centos-base]
++name=CentOS base
++baseurl=http://pulp.nethserver.org/centos/$releasever/os/$basearch/
++gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
++enabled=1
++enablegroups=0
++
++[centos-updates]
++name=CentOS updates
++baseurl=http://pulp.nethserver.org/centos/$releasever/updates/$basearch/
++gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
++enabled=1
++enablegroups=0
++
++[nethserver-base]
++name=NethServer base 
++baseurl=http://pulp.nethserver.org/nethserver/$releasever/base/$basearch/
++gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
++enabled=1
++enablegroups=1
++
++[nethserver-updates]
++name=NethServer updates
++baseurl=http://pulp.nethserver.org/nethserver/$releasever/updates/$basearch/
++gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
++enabled=1
++enablegroups=0
++
++[nethserver-testing]
++name=NethServer testing
++baseurl=http://pulp.nethserver.org/nethserver/$releasever/testing/$basearch/
++gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
++enabled=0
++enablegroups=0
++
++""").substitute(releasever="6.5", basearch="x86_64")
+ 
+ 
+ 
+diff --git a/root/usr/share/nethesis/nethserver-devbox/mock/nethserver-rpm-x86_64.cfg b/root/usr/share/nethesis/nethserver-devbox/mock/nethserver-rpm-x86_64.cfg
+index 5d125ba..56da84f 100644
+--- a/root/usr/share/nethesis/nethserver-devbox/mock/nethserver-rpm-x86_64.cfg
++++ b/root/usr/share/nethesis/nethserver-devbox/mock/nethserver-rpm-x86_64.cfg
+@@ -2,22 +2,64 @@
+ # RPM build mock configuration 
+ #
+ 
+-sys.path.append(config_path)
+-
+-import mockyumconf
+-
+-o = mockyumconf.Params(config_path, config_opts, options)
++import string
+ 
+ config_opts['target_arch'] = 'x86_64'
++config_opts['legal_host_arches'] = ('x86_64',)
+ config_opts['root'] = 'nethserver-rpm-x86_64'
+-
+-config_opts['chroot_setup_cmd'] = o.get_chroot_setup_cmd((
+-				'install', 
+-                                '@buildsys-build'
+-				))
+-
++config_opts['chroot_setup_cmd'] = ('install', '@buildsys-build')
+ config_opts['plugin_conf']['ccache_enable'] = False
+ 
+ # Substitute $releasever and $basearch:
+-config_opts['yum.conf'] = o.get_yum_config()
++config_opts['yum.conf'] = string.Template("""
++[main]
++cachedir=/var/cache/yum
++debuglevel=1
++logfile=/var/log/yum.log
++reposdir=/dev/null
++retries=20
++obsoletes=1
++gpgcheck=0
++assumeyes=1
++metadata_expire=never
++mirrorlist_expire=never
++plugins=1
++ui_repoid_vars=1
++
++[centos-base]
++name=CentOS base
++baseurl=http://$host/centos/$releasever/os/$basearch/
++gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
++enabled=1
++enablegroups=0
++
++[centos-updates]
++name=CentOS updates
++baseurl=http://$host/centos/$releasever/updates/$basearch/
++gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
++enabled=1
++enablegroups=0
++
++[nethserver-base]
++name=NethServer base 
++baseurl=http://$host/nethserver/$releasever/base/$basearch/
++gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
++enabled=1
++enablegroups=1
++
++[nethserver-updates]
++name=NethServer updates
++baseurl=http://$host/nethserver/$releasever/updates/$basearch/
++gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
++enabled=1
++enablegroups=0
++
++[nethserver-testing]
++name=NethServer testing
++baseurl=http://$host/nethserver/$releasever/testing/$basearch/
++gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
++enabled=0
++enablegroups=0
++
++""").substitute(host="pulp.nethserver.org", releasever="6.5", basearch="x86_64")
+ 
+diff --git a/root/usr/share/nethesis/nethserver-devbox/mock/site-defaults.cfg b/root/usr/share/nethesis/nethserver-devbox/mock/site-defaults.cfg
+index a3a5c28..6a937b5 100644
+--- a/root/usr/share/nethesis/nethserver-devbox/mock/site-defaults.cfg
++++ b/root/usr/share/nethesis/nethserver-devbox/mock/site-defaults.cfg
+@@ -70,7 +70,7 @@ config_opts['cleanup_on_failure'] = 0
+ # config_opts['plugin_conf']['bind_mount_enable'] = True
+ # config_opts['plugin_conf']['bind_mount_opts']['dirs'].append(('/host/path', '/bind/mount/path/in/chroot/' ))
+ #
+-# config_opts['plugin_conf']['tmpfs_enable'] = False
++config_opts['plugin_conf']['tmpfs_enable'] = True
+ # config_opts['plugin_conf']['tmpfs_opts'] = {'required_ram_mb': 1024}
+ 
+ #############################################################################

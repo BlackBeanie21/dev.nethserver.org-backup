@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Sogo-frontends - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../../favicon.ico%3F1457596383' />
+<link href="../../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethserver controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="../../nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../nethserver/issues.html" class="issues">Issues</a></li>
+<li><a href="../../nethserver/wiki.html" class="wiki selected">Wiki</a></li>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="Nethserver-sogo-thunderbird.html">Nethserver-sogo-thunderbird</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Sogo-Frontends"></a>
+<h1 >Sogo Frontends<a href="Sogo-frontends.html#Sogo-Frontends" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><code>sogo-frontends</code> package contains SOGo Integrator XPI addons for Thunderbird and metadata necessary to direct <a href="Nethserver-sogo-thunderbird.html" class="wiki-page">nethserver-sogo-thunderbird</a> output.</p>
+
+
+	<p><strong>Note</strong><br />After upgrading to <code>sogo-frontends-1.1.1-1</code> run the following command:<pre>
+    # signal-event nethserver-sogo-thunderbird-update
+</pre></p>
+
+
+	<a name="The-MANIFEST-metadata-file-format"></a>
+<h2 >The MANIFEST metadata file format<a href="Sogo-frontends.html#The-MANIFEST-metadata-file-format" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><a href="Nethserver-sogo-thunderbird.html" class="wiki-page">nethserver-sogo-thunderbird</a> expects that some files named <code>MANIFEST-&lt;something&gt;.tsv</code> are installed in <code>/usr/share/nethesis/sogo-frontends/</code> directory.  A MANIFEST file must be in Tab Separated Value (TSV) format: fields are separated by a single TAB <code>"\t"</code> character.  The following fields must be defined on each line of the file:</p>
+
+
+	<ul>
+	<li><code>file</code> The XPI file name in <code>/usr/share/nethesis/sogo-frontends/</code></li>
+		<li><code>plugin</code> Plugin identifier</li>
+		<li><code>version</code> Plugin version </li>
+		<li><code>platform</code> Plugin platform (for binaries). Valid values are
+	<ul>
+	<li><code>*</code> anything, the plugin is platform-indipendent</li>
+		<li><code>WINNT_x86-msvc</code> Win</li>
+		<li><code>Darwin_x86-gcc</code> Mac</li>
+		<li><code>Linux_x86-gcc3</code> Linux 32bit</li>
+		<li><code>Linux_x86_64-gcc3</code> Linux 64bit</li>
+	</ul>
+	</li>
+		<li><code>appmatch</code> A perl regular expression to match the client version (User-Agent HTTP header)</li>
+		<li><code>appminver</code> Lower client version supported</li>
+		<li><code>appmaxver</code> Higher client version supported</li>
+	</ul>
+
+
+This is an example table for <em>TB10 ESR</em>:
+	<table>
+		<tr>
+			<th>file</th>
+			<th>plugin</th>
+			<th>version</th>
+			<th>platform</th>
+			<th>appmatch</th>
+			<th>appminver</th>
+			<th>appmaxver</th>
+		</tr>
+		<tr>
+			<td>lightning-1.2.3_win32.xpi</td>
+			<td>{e2fda1a4-762b-4020-b5ad-a41df1933103}</td>
+			<td>1.2.3</td>
+			<td>WINNT_x86-msvc</td>
+			<td>Thunderbird/10\.0</td>
+			<td>10.0</td>
+			<td>10.0.*</td>
+		</tr>
+		<tr>
+			<td>lightning-1.2.3_mac.xpi</td>
+			<td>{e2fda1a4-762b-4020-b5ad-a41df1933103}</td>
+			<td>1.2.3</td>
+			<td>Darwin_x86-gcc3</td>
+			<td>Thunderbird/10\.0</td>
+			<td>10.0</td>
+			<td>10.0.*</td>
+		</tr>
+		<tr>
+			<td>lightning-1.2.3_linux-i686.xpi</td>
+			<td>{e2fda1a4-762b-4020-b5ad-a41df1933103}</td>
+			<td>1.2.3</td>
+			<td>Linux_x86-gcc3</td>
+			<td>Thunderbird/10\.0</td>
+			<td>10.0</td>
+			<td>10.0.*</td>
+		</tr>
+		<tr>
+			<td>sogo-connector-10.0.3.xpi</td>
+			<td>sogo-connector&#64;inverse.ca</td>
+			<td>10.0.3</td>
+			<td>*</td>
+			<td>Thunderbird/10\.0</td>
+			<td>10.0</td>
+			<td>10.0.*</td>
+		</tr>
+		<tr>
+			<td>sogo-integrator-10.0.3-sogo-demo.xpi</td>
+			<td>sogo-integrator&#64;inverse.ca</td>
+			<td>10.0.3</td>
+			<td>*</td>
+			<td>Thunderbird/10\.0</td>
+			<td>10.0</td>
+			<td>10.0.*</td>
+		</tr>
+	</table>
+
+
+
+
+	<p>A line beginning with an hash <code>#</code> character is ignored.</p>
+
+
+	<a name="Packing-new-addons"></a>
+<h2 >Packing new addons<a href="Sogo-frontends.html#Packing-new-addons" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>To add a new version of SOGO Integrator and its dependencies to <code>sogo-frontends</code> package follow these steps:</p>
+
+
+	<a name="1-XPI-checksums"></a>
+<h3 >1. XPI checksums<a href="Sogo-frontends.html#1-XPI-checksums" class="wiki-anchor">&para;</a></h3>
+
+
+	<ol>
+	<li>Prepare the package build environment (see <a href="http://dev.nethserver.o/projects/nethserver/wiki/Building_RPMs?parent=Sogo-frontends" class="wiki-page new">Building RPMs</a>)</li>
+		<li>clone <code>sogo-frontends</code> repo and move into it<pre>
+    $ git clone git://code.nethesis.it/sogo-frontends.git
+    $ cd sogo-frontends/
+</pre></li>
+		<li>Publish XPI files in one of the web URLs listed in Makefile. Type the follwing command to see the current list: <pre>
+    $ grep ^XPIMIRRORS Makefile
+</pre> Output:<pre>
+XPIMIRRORS += $(shell echo http://`hostname`/nethserver/sogo-frontends)
+XPIMIRRORS += $(shell echo http://`hostname`/sogo-thunderbird/frontends)
+XPIMIRRORS += http://dev.nethserver.org/nethserver/sogo-frontends
+XPIMIRRORS += http://www.sogo.nu/files/downloads/extensions
+</pre> Note that the first two choices are URLs pointing to your machine. </li>
+		<li>Copy new XPI files inside <code>sogo-frontends/</code> directory and add their <em>sha1</em> checksums to <code>SHA1SUM</code> file:<pre>
+    $ sha1sum *.xpi &gt;&gt; SHA1SUM
+</pre></li>
+		<li>Test XPI checksums:<pre>
+    $ make clean download check
+</pre></li>
+	</ol>
+
+
+	<a name="2-Edit-MANIFEST"></a>
+<h3 >2. Edit MANIFEST<a href="Sogo-frontends.html#2-Edit-MANIFEST" class="wiki-anchor">&para;</a></h3>
+
+
+	<ol>
+	<li>Edit <code>MANIFEST-sogo-frontends.tsv</code>, respecting the <a href="Sogo-frontends.html#The-MANIFEST-metadata-file-format" class="wiki-page">MANIFEST metadata file format</a>.</li>
+	</ol>
+
+
+	<a name="3-Prepare-the-patch-templates"></a>
+<h3 >3. Prepare the patch templates<a href="Sogo-frontends.html#3-Prepare-the-patch-templates" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>According to <a href="http://www.sogo.nu/english/downloads/documentation.html" class="external">SOGo Thunderbird Configuration Guide</a> some files must be changed in SOGo Integrator plugin to deploy it in your environment.  XPI files can be exploded by <code>unzip</code> command.  To change those files automatically, <a href="Nethserver-sogo-thunderbird.html" class="wiki-page">nethserver-sogo-thunderbird</a> expects  a patch file for each XPI file.</p>
+
+
+	<p>Before applying the patch, <code>nethserver-sogo-thunderbird</code> processes it as a common e-smith template, so you can create a "dynamic" patch that reads values from ConfigDB as usual.  You can use also a specific variable in your template: <code class="perl syntaxhl"><span class="CodeRay">$updateURL</span></code>.</p>
+
+
+	<p><strong>Remember to escape curly braces, '<code>{</code>' and '<code>}</code>' characters!</strong></p>
+
+
+	<p>To create the patch:</p>
+
+
+	<ol>
+	<li>Unzip SOGo Integrator XPI into two directories <code>a/</code> and <code>b/</code>. <pre>
+   $ unzip sogo-integrator-&lt;version&gt;.xpi -d a
+   $ unzip sogo-integrator-&lt;version&gt;.xpi -d b
+</pre></li>
+		<li>Edit files under <code>b/</code> directory: <pre>
+   $ vi b/chrome/content/extensions.rdf
+   $ vi b/defaults/preferences/site.js
+</pre></li>
+		<li>Create the patch file:<pre>
+   $ diff -x '*~' -u -r a b &gt; sogo-integrator-&lt;version&gt;.xpi.patch
+</pre></li>
+	</ol>
+
+
+
+
+	<a name="4-Commit-changes"></a>
+<h3 >4. Commit changes<a href="Sogo-frontends.html#4-Commit-changes" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Commit changes to <code>SHA1SUM</code>, <code>.patch</code> and <code>MANIFEST-sogo-frontends.tsv</code>. Then re-build <code>sogo-frontends</code> package (see <a href="http://dev.nethserver.o/projects/nethserver/wiki/Building_rpms?parent=Sogo-frontends" class="wiki-page new">Building rpms</a>).</p>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

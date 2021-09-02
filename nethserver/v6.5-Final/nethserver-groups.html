@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:dyn="http://exslt.org/dynamic"><head><title>NethServer package groups</title><style type="text/css">
+	   body { background: #eee; margin: 0 }
+	   .document { font-family: sans-serif; max-width: 64em; background: white; padding: 2em 2em 2em 3em; border-right: 1px solid #ccc }
+	   h1, h2 { color: #1D247C; letter-spacing: 2px; font-weight: normal; position: relative; left: -1em }
+	   h2 { margin: 2em 0 0.2em 0; border-bottom: 1px solid #1d247c }
+	   .group-description { margin-top: .3em }
+	   .toc .packagelist {padding: 0}
+	   .toc a {text-decoration: none}
+	   .toc li, .packagelist li { list-style: none; display: block }
+	   .optional { font-style: italic }
+	   .optional:after { content: " (optional)" }
+           .footer { text-align: right; }
+
+	</style></head><body><div class="document"><h1>NethServer YUM package groups</h1><ul class="toc"><li><a href="nethserver-groups.html#nethserver-backup">Backup</a><small> (nethserver-backup)</small></li><li><a href="nethserver-groups.html#nethserver-bandwidth-monitor">Bandwidth monitor</a><small> (nethserver-bandwidth-monitor)</small></li><li><a href="nethserver-groups.html#nethserver-firewall-base">Basic firewall</a><small> (nethserver-firewall-base)</small></li><li><a href="nethserver-groups.html#buildsys-build">Build system</a><small> (buildsys-build)</small></li><li><a href="nethserver-groups.html#centos-minimal">CentOS-minimal</a><small> (centos-minimal)</small></li><li><a href="nethserver-groups.html#nethserver-dns-dhcp">DNS and DHCP server</a><small> (nethserver-dns-dhcp)</small></li><li><a href="nethserver-groups.html#nethserver-mail">Email</a><small> (nethserver-mail)</small></li><li><a href="nethserver-groups.html#nethserver-fax-server">Fax server</a><small> (nethserver-fax-server)</small></li><li><a href="nethserver-groups.html#nethserver-file-server">File server</a><small> (nethserver-file-server)</small></li><li><a href="nethserver-groups.html#nethserver-groupware">Groupware</a><small> (nethserver-groupware)</small></li><li><a href="nethserver-groups.html#nethserver-iso">ISO</a><small> (nethserver-iso)</small></li><li><a href="nethserver-groups.html#nethserver-messaging">Instant messaging</a><small> (nethserver-messaging)</small></li><li><a href="nethserver-groups.html#nethserver-mysql">MySQL server</a><small> (nethserver-mysql)</small></li><li><a href="nethserver-groups.html#nethserver-printers">Print server</a><small> (nethserver-printers)</small></li><li><a href="nethserver-groups.html#nethserver-statistics">Statistics</a><small> (nethserver-statistics)</small></li><li><a href="nethserver-groups.html#nethserver-nut">UPS support</a><small> (nethserver-nut)</small></li><li><a href="nethserver-groups.html#nethserver-vpn">VPN</a><small> (nethserver-vpn)</small></li><li><a href="nethserver-groups.html#nethserver-web-filter">Web filter</a><small> (nethserver-web-filter)</small></li><li><a href="nethserver-groups.html#nethserver-web-proxy">Web proxy</a><small> (nethserver-web-proxy)</small></li><li><a href="nethserver-groups.html#nethserver-web">Web server</a><small> (nethserver-web)</small></li><li><a href="nethserver-groups.html#nethserver-faxweb2">Web-based fax client</a><small> (nethserver-faxweb2)</small></li><li><a href="nethserver-groups.html#nethserver-owncloud">ownCloud</a><small> (nethserver-owncloud)</small></li></ul><h2>Categories composition</h2><ul class="toc"><li><h3>Base system</h3><ul class="grouplist">
+      <li>centos-minimal</li>
+      <li>buildsys-build</li>
+      <li>nethserver-iso</li>
+      <li>nethserver-backup</li>
+      <li>nethserver-nut</li>
+      <li>nethserver-ntp</li>
+      <li>nethserver-wireless-tools</li>
+      <li>nethserver-statistics</li>
+      <li>nethserver-dns-dhcp</li>
+      <li>nethserver-mail</li>
+      <li>nethserver-groupware</li>
+      <li>nethserver-messaging</li>
+      <li>nethserver-file-server</li>
+      <li>nethserver-fax-server</li>
+      <li>nethserver-web</li>
+      <li>nethserver-faxweb2</li>
+      <li>nethserver-printers</li>
+      <li>nethserver-mysql</li>
+      <li>nethserver-owncloud</li>
+    </ul></li><li><h3>Firewall</h3><ul class="grouplist">
+      <li>nethserver-firewall-base</li>
+      <li>nethserver-web-proxy</li>
+      <li>nethserver-web-filter</li>
+      <li>nethserver-vpn</li>
+      <li>nethserver-bandwidth-monitor</li>
+    </ul></li></ul>
+
+
+
+ 
+  
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+  
+
+
+
+<h2 id="nethserver-backup">Backup</h2><p class="group-description">Backup of configuration and data<br/><tt>nethserver-backup</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-backup-config">nethserver-backup-config</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-backup-data">nethserver-backup-data</a></li>
+    </ul><h2 id="nethserver-bandwidth-monitor">Bandwidth monitor</h2><p class="group-description">Configure and manage Ntopng<br/><tt>nethserver-bandwidth-monitor</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-ntopng">nethserver-ntopng</a></li>
+    </ul><h2 id="nethserver-firewall-base">Basic firewall</h2><p class="group-description">Configure network adapters and basic firewall<br/><tt>nethserver-firewall-base</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-firewall-base">nethserver-firewall-base</a></li>
+    </ul><h2 id="buildsys-build">Build system</h2><p class="group-description">Tools for building RPMs<br/><tt>buildsys-build</tt></p><p><em>hidden group</em></p><ul class="packagelist">
+      <li class="package default">bash</li>
+      <li class="package default">bzip2</li>
+      <li class="package default">coreutils</li>
+      <li class="package default">cpio</li>
+      <li class="package default">diffutils</li>
+      <li class="package default">findutils</li>
+      <li class="package default">gawk</li>
+      <li class="package default">gcc</li>
+      <li class="package default">gcc-c++</li>
+      <li class="package default">grep</li>
+      <li class="package default">gzip</li>
+      <li class="package default">info</li>
+      <li class="package default">make</li>
+      <li class="package default">patch</li>
+      <li class="package default">perl</li>
+      <li class="package default">python</li>
+      <li class="package default">redhat-release</li>
+      <li class="package default">redhat-release-server</li>
+      <li class="package default">redhat-rpm-config</li>
+      <li class="package default">rpm-build</li>
+      <li class="package default">sed</li>
+      <li class="package default">shadow-utils</li>
+      <li class="package default">tar</li>
+      <li class="package default">unzip</li>
+      <li class="package default">util-linux-ng</li>
+      <li class="package default">which</li>
+      <li class="package default">xz</li>
+    </ul><h2 id="centos-minimal">CentOS-minimal</h2><p class="group-description">CentOS minimal package set<br/><tt>centos-minimal</tt></p><p><em>hidden group</em></p><ul class="packagelist">
+      <li class="package mandatory">acl</li>
+      <li class="package mandatory">attr</li>
+      <li class="package mandatory">audit-libs</li>
+      <li class="package mandatory">audit</li>
+      <li class="package mandatory">authconfig</li>
+      <li class="package mandatory">b43-openfwwf</li>
+      <li class="package mandatory">basesystem</li>
+      <li class="package mandatory">bash</li>
+      <li class="package mandatory">binutils</li>
+      <li class="package mandatory">bridge-utils</li>
+      <li class="package mandatory">bzip2-libs</li>
+      <li class="package mandatory">bzip2</li>
+      <li class="package mandatory">ca-certificates</li>
+      <li class="package mandatory">centos-release</li>
+      <li class="package mandatory">checkpolicy</li>
+      <li class="package mandatory">chkconfig</li>
+      <li class="package mandatory">coreutils-libs</li>
+      <li class="package mandatory">coreutils</li>
+      <li class="package mandatory">cpio</li>
+      <li class="package mandatory">cracklib-dicts</li>
+      <li class="package mandatory">cracklib</li>
+      <li class="package mandatory">cronie-anacron</li>
+      <li class="package mandatory">cronie</li>
+      <li class="package mandatory">crontabs</li>
+      <li class="package mandatory">cryptsetup-luks-libs</li>
+      <li class="package mandatory">cryptsetup-luks</li>
+      <li class="package mandatory">curl</li>
+      <li class="package mandatory">cyrus-sasl-lib</li>
+      <li class="package mandatory">cyrus-sasl</li>
+      <li class="package mandatory">dash</li>
+      <li class="package mandatory">db4</li>
+      <li class="package mandatory">db4-utils</li>
+      <li class="package mandatory">dbus-glib</li>
+      <li class="package mandatory">dbus-libs</li>
+      <li class="package mandatory">device-mapper-event-libs</li>
+      <li class="package mandatory">device-mapper-event</li>
+      <li class="package mandatory">device-mapper-libs</li>
+      <li class="package mandatory">device-mapper-multipath-libs</li>
+      <li class="package mandatory">device-mapper-multipath</li>
+      <li class="package mandatory">device-mapper</li>
+      <li class="package mandatory">device-mapper-persistent-data</li>
+      <li class="package mandatory">dhclient</li>
+      <li class="package mandatory">dhcp-common</li>
+      <li class="package mandatory">diffutils</li>
+      <li class="package mandatory">dracut-kernel</li>
+      <li class="package mandatory">dracut</li>
+      <li class="package mandatory">e2fsprogs-libs</li>
+      <li class="package mandatory">e2fsprogs</li>
+      <li class="package mandatory">efibootmgr</li>
+      <li class="package mandatory">elfutils-libelf</li>
+      <li class="package mandatory">ethtool</li>
+      <li class="package mandatory">expat</li>
+      <li class="package mandatory">file-libs</li>
+      <li class="package mandatory">file</li>
+      <li class="package mandatory">filesystem</li>
+      <li class="package mandatory">findutils</li>
+      <li class="package mandatory">fipscheck-lib</li>
+      <li class="package mandatory">fipscheck</li>
+      <li class="package mandatory">fuse</li>
+      <li class="package mandatory">gamin</li>
+      <li class="package mandatory">gawk</li>
+      <li class="package mandatory">gdbm</li>
+      <li class="package mandatory">glib2</li>
+      <li class="package mandatory">glibc-common</li>
+      <li class="package mandatory">glibc</li>
+      <li class="package mandatory">gmp</li>
+      <li class="package mandatory">gnupg2</li>
+      <li class="package mandatory">gpgme</li>
+      <li class="package mandatory">grep</li>
+      <li class="package mandatory">groff</li>
+      <li class="package mandatory">grubby</li>
+      <li class="package mandatory">grub</li>
+      <li class="package mandatory">gzip</li>
+      <li class="package mandatory">hwdata</li>
+      <li class="package mandatory">info</li>
+      <li class="package mandatory">initscripts</li>
+      <li class="package mandatory">iproute</li>
+      <li class="package mandatory">iptables-ipv6</li>
+      <li class="package mandatory">iptables</li>
+      <li class="package mandatory">iputils</li>
+      <li class="package mandatory">iscsi-initiator-utils</li>
+      <li class="package mandatory">kbd-misc</li>
+      <li class="package mandatory">kbd</li>
+      <li class="package mandatory">kernel-firmware</li>
+      <li class="package mandatory">kernel</li>
+      <li class="package mandatory">keyutils-libs</li>
+      <li class="package mandatory">kpartx</li>
+      <li class="package mandatory">krb5-libs</li>
+      <li class="package mandatory">less</li>
+      <li class="package mandatory">libacl</li>
+      <li class="package mandatory">libaio</li>
+      <li class="package mandatory">libattr</li>
+      <li class="package mandatory">libblkid</li>
+      <li class="package mandatory">libcap-ng</li>
+      <li class="package mandatory">libcap</li>
+      <li class="package mandatory">libcom_err</li>
+      <li class="package mandatory">libcurl</li>
+      <li class="package mandatory">libdrm</li>
+      <li class="package mandatory">libedit</li>
+      <li class="package mandatory">libffi</li>
+      <li class="package mandatory">libgcc</li>
+      <li class="package mandatory">libgcrypt</li>
+      <li class="package mandatory">libgpg-error</li>
+      <li class="package mandatory">libidn</li>
+      <li class="package mandatory">libnih</li>
+      <li class="package mandatory">libpciaccess</li>
+      <li class="package mandatory">libselinux</li>
+      <li class="package mandatory">libselinux-utils</li>
+      <li class="package mandatory">libsemanage</li>
+      <li class="package mandatory">libsepol</li>
+      <li class="package mandatory">libssh2</li>
+      <li class="package mandatory">libss</li>
+      <li class="package mandatory">libstdc++</li>
+      <li class="package mandatory">libudev</li>
+      <li class="package mandatory">libusb</li>
+      <li class="package mandatory">libuser</li>
+      <li class="package mandatory">libutempter</li>
+      <li class="package mandatory">libuuid</li>
+      <li class="package mandatory">libxml2</li>
+      <li class="package mandatory">logrotate</li>
+      <li class="package mandatory">lua</li>
+      <li class="package mandatory">lvm2-libs</li>
+      <li class="package mandatory">lvm2</li>
+      <li class="package mandatory">m4</li>
+      <li class="package mandatory">MAKEDEV</li>
+      <li class="package mandatory">mdadm</li>
+      <li class="package mandatory">mingetty</li>
+      <li class="package mandatory">module-init-tools</li>
+      <li class="package mandatory">mysql-libs</li>
+      <li class="package mandatory">ncurses-base</li>
+      <li class="package mandatory">ncurses-libs</li>
+      <li class="package mandatory">ncurses</li>
+      <li class="package mandatory">net-tools</li>
+      <li class="package mandatory">newt</li>
+      <li class="package mandatory">newt-python</li>
+      <li class="package mandatory">nspr</li>
+      <li class="package mandatory">nss</li>
+      <li class="package mandatory">nss-softokn-freebl</li>
+      <li class="package mandatory">nss-softokn</li>
+      <li class="package mandatory">nss-sysinit</li>
+      <li class="package mandatory">nss-tools</li>
+      <li class="package mandatory">nss-util</li>
+      <li class="package mandatory">openldap</li>
+      <li class="package mandatory">openssh-clients</li>
+      <li class="package mandatory">openssh</li>
+      <li class="package mandatory">openssh-server</li>
+      <li class="package mandatory">openssl</li>
+      <li class="package mandatory">pam</li>
+      <li class="package mandatory">passwd</li>
+      <li class="package mandatory">pciutils-libs</li>
+      <li class="package mandatory">pcre</li>
+      <li class="package mandatory">pinentry</li>
+      <li class="package mandatory">plymouth-core-libs</li>
+      <li class="package mandatory">plymouth</li>
+      <li class="package mandatory">plymouth-scripts</li>
+      <li class="package mandatory">policycoreutils</li>
+      <li class="package mandatory">popt</li>
+      <li class="package mandatory">postfix</li>
+      <li class="package mandatory">procps</li>
+      <li class="package mandatory">psmisc</li>
+      <li class="package mandatory">pth</li>
+      <li class="package mandatory">pygpgme</li>
+      <li class="package mandatory">python-iniparse</li>
+      <li class="package mandatory">python-libs</li>
+      <li class="package mandatory">python</li>
+      <li class="package mandatory">python-pycurl</li>
+      <li class="package mandatory">python-urlgrabber</li>
+      <li class="package mandatory">readline</li>
+      <li class="package mandatory">redhat-logos</li>
+      <li class="package mandatory">rootfiles</li>
+      <li class="package mandatory">rpm-libs</li>
+      <li class="package mandatory">rpm</li>
+      <li class="package mandatory">rpm-python</li>
+      <li class="package mandatory">rsyslog</li>
+      <li class="package mandatory">sed</li>
+      <li class="package mandatory">selinux-policy</li>
+      <li class="package mandatory">selinux-policy-targeted</li>
+      <li class="package mandatory">setup</li>
+      <li class="package mandatory">shadow-utils</li>
+      <li class="package mandatory">slang</li>
+      <li class="package mandatory">sqlite</li>
+      <li class="package mandatory">sudo</li>
+      <li class="package mandatory">system-config-firewall-base</li>
+      <li class="package mandatory">sysvinit-tools</li>
+      <li class="package mandatory">tar</li>
+      <li class="package mandatory">tcp_wrappers-libs</li>
+      <li class="package mandatory">tzdata</li>
+      <li class="package mandatory">udev</li>
+      <li class="package mandatory">upstart</li>
+      <li class="package mandatory">ustr</li>
+      <li class="package mandatory">util-linux-ng</li>
+      <li class="package mandatory">vim-minimal</li>
+      <li class="package mandatory">which</li>
+      <li class="package mandatory">xfsprogs</li>
+      <li class="package mandatory">xz-libs</li>
+      <li class="package mandatory">yum-metadata-parser</li>
+      <li class="package mandatory">yum</li>
+      <li class="package mandatory">yum-plugin-fastestmirror</li>
+      <li class="package mandatory">zlib</li>
+    </ul><h2 id="nethserver-dns-dhcp">DNS and DHCP server</h2><p class="group-description">Daemons and tools for DHCP and DNS server<br/><tt>nethserver-dns-dhcp</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-dnsmasq">nethserver-dnsmasq</a></li>
+    </ul><h2 id="nethserver-mail">Email</h2><p class="group-description">Email server and filter<br/><tt>nethserver-mail</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-mail-filter">nethserver-mail-filter</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-mail-server">nethserver-mail-server</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-samba">nethserver-samba</a></li>
+      <li class="package optional"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-roundcubemail">nethserver-roundcubemail</a></li>
+      <li class="package optional"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-fetchmail">nethserver-fetchmail</a></li>
+      <li class="package optional">mutt</li>
+      <li class="package optional">ripole</li>
+      <li class="package optional">lha</li>
+      <li class="package optional">unrar</li>
+    </ul><h2 id="nethserver-fax-server">Fax server</h2><p class="group-description">Configure HylaFax+ and manage IAX modems<br/><tt>nethserver-fax-server</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-hylafax">nethserver-hylafax</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-iaxmodem">nethserver-iaxmodem</a></li>
+    </ul><h2 id="nethserver-file-server">File server</h2><p class="group-description">Daemons and tools for network file sharing<br/><tt>nethserver-file-server</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-httpd">nethserver-httpd</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-ibays">nethserver-ibays</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-samba">nethserver-samba</a></li>
+    </ul><h2 id="nethserver-groupware">Groupware</h2><p class="group-description">SOGo server and Thundebird extensions<br/><tt>nethserver-groupware</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-sogo">nethserver-sogo</a></li>
+      <li class="package optional"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-sogo-thunderbird">nethserver-sogo-thunderbird</a></li>
+      <li class="package optional">sogo-frontends</li>
+    </ul><h2 id="nethserver-iso">ISO</h2><p class="group-description">Additional ISO packages<br/><tt>nethserver-iso</tt></p><p><em>hidden group</em></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-httpd-admin">nethserver-httpd-admin</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-ntp">nethserver-ntp</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-hosts">nethserver-hosts</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-openssh">nethserver-openssh</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-release">nethserver-release</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-smartd">nethserver-smartd</a></li>
+
+      <li class="package mandatory">lsof</li>
+      <li class="package mandatory">man</li>
+      <li class="package mandatory">patch</li>
+      <li class="package mandatory">pciutils</li>
+      <li class="package mandatory">rsync</li>
+      <li class="package mandatory">strace</li>
+      <li class="package mandatory">tcpdump</li>
+      <li class="package mandatory">usbutils</li>
+      <li class="package mandatory">screen</li>
+      <li class="package mandatory">wget</li>
+      <li class="package mandatory">cpuspeed</li>
+      <li class="package mandatory">wireless-tools</li>
+    </ul><h2 id="nethserver-messaging">Instant messaging</h2><p class="group-description">XMPP/Jabber chat server<br/><tt>nethserver-messaging</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-ejabberd">nethserver-ejabberd</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-samba">nethserver-samba</a></li>
+    </ul><h2 id="nethserver-mysql">MySQL server</h2><p class="group-description">Configuration tools for MySQL<br/><tt>nethserver-mysql</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-mysql">nethserver-mysql</a></li>
+    </ul><h2 id="nethserver-printers">Print server</h2><p class="group-description">Print management server (CUPS)<br/><tt>nethserver-printers</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-cups">nethserver-cups</a></li>
+      <li class="package optional"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-avahi">nethserver-avahi</a></li>
+    </ul><h2 id="nethserver-statistics">Statistics</h2><p class="group-description">Collect and analyse system statistics<br/><tt>nethserver-statistics</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-collectd">nethserver-collectd</a></li>
+      <li class="package optional"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-cgp">nethserver-cgp</a></li>
+      <li class="package optional"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-collectd-web">nethserver-collectd-web</a></li>
+    </ul><h2 id="nethserver-nut">UPS support</h2><p class="group-description">UPS management and monitoring configuration<br/><tt>nethserver-nut</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-nut">nethserver-nut</a></li>
+      <li class="package optional"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-collectd">nethserver-collectd</a></li>
+      <li class="package optional">collectd-nut</li>
+    </ul><h2 id="nethserver-vpn">VPN</h2><p class="group-description">Configure remote-access and site-to-site Virtual Private Networks (VPN)<br/><tt>nethserver-vpn</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-ipsec">nethserver-ipsec</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-openvpn">nethserver-openvpn</a></li>
+      <li class="package optional"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-samba">nethserver-samba</a></li>      
+    </ul><h2 id="nethserver-web-filter">Web filter</h2><p class="group-description">Squid web content and virus filter<br/><tt>nethserver-web-filter</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-squid">nethserver-squid</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-squidguard">nethserver-squidguard</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-squidclamav">nethserver-squidclamav</a></li>
+      <li class="package optional"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-lightsquid">nethserver-lightsquid</a></li>
+    </ul><h2 id="nethserver-web-proxy">Web proxy</h2><p class="group-description">Squid web caching proxy configuration<br/><tt>nethserver-web-proxy</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-squid">nethserver-squid</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-dnsmasq">nethserver-dnsmasq</a></li>
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-httpd">nethserver-httpd</a></li>
+      <li class="package optional"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-lightsquid">nethserver-lightsquid</a></li>
+    </ul><h2 id="nethserver-web">Web server</h2><p class="group-description">Configuration tools for Apache web server<br/><tt>nethserver-web</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-httpd">nethserver-httpd</a></li>
+    </ul><h2 id="nethserver-faxweb2">Web-based fax client</h2><p class="group-description">Manage faxes from a simple web interface<br/><tt>nethserver-faxweb2</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-faxweb2">nethserver-faxweb2</a></li>
+    </ul><h2 id="nethserver-owncloud">ownCloud</h2><p class="group-description">Configure ownCloud, universal access to your files via the web, your computer or your mobile devices - wherever you are<br/><tt>nethserver-owncloud</tt></p><ul class="packagelist">
+      <li class="package mandatory"><a href="https://dev.nethserver.o/projects/nethserver/wiki/nethserver-owncloud">nethserver-owncloud</a></li>
+    </ul><p class="footer"><small>
+            Generated on Thu Mar 27 17:04:11 CET 2014 by
+            <a href="https://dev.nethserver.org/nethserver/comps2html.xsl">comps2html.xsl</a></small></p></div></body></html>

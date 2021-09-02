@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Feature #2332: Firewall-base: add support for multi-wan - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2332.atom" rel="alternate" title="NethServer 6 - Feature #2332: Firewall-base: add support for multi-wan" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #2332</h2>
+
+<div class="issue tracker-2 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Firewall-base: add support for multi-wan</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-firewall-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Add support for multi-wan configuration.<br />A virtually unlimited number of red interface should be allowed.</p>
+
+
+Multi-wan must implement two behavior:
+	<ul>
+	<li>weighted balanced mode: each new connection can use a random configured red interface</li>
+		<li>active backup: all traffic is routed through the master interface, backup connections will be used only in case of master failure</li>
+	</ul>
+
+
+See:
+	<ul>
+	<li><a class="external" href="http://www.shorewall.net/MultiISP.html">http://www.shorewall.net/MultiISP.html</a></li>
+	</ul>
+  </div>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-557">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="2743" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="2743.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2743</a>: Base: split &#x27;local networks&#x27; into &#x27;static routes&#x27; and &#x27;tr...
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+  <tr class="issue hascontextmenu" id="relation-571">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="2771" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="2771.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2771</a>: Merge nethserver-shorewall and nethserver-firewall-base
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+  <tr class="issue hascontextmenu" id="relation-586">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="2827" /></td>
+  <td class="subject">
+    Copied to
+    
+    NethServer 6 - 
+    <a href="2827.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2827</a>: Firewall-base: multi-wan dhcp failover not supported
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2332/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="2332.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>providers and tcrules template: add support for multi-wan. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>shorewall hosts template: add support for multi-wan. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>createlinks, shorewall templates: add support for multi-wan, add oriDst prop for portforwards. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>shorewall.conf template: add support for multi-wan. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>shorewall_script_nethesis: handle only group events. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>shorewall.conf layout: use high bit to mark provider traffic. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>/etc/shorewall/providers template: use high bit for provider mark. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>/etc/shorewall/providers: auto-calculate tproxy rule index. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Web UI: add GUI for Providers. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Multi WAN: move provider configuration to network db. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>tcinterfaces templates: Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Templates: custom findgw for red with DHCP. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Web interface: add header for Configure controller. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Events: add wan-uplink-event. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Events: add new wan-link-update event. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>lsm.conf template: change default timeout values Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>nethserver-shorewall-wan-update: disable interface if event is no 'up'. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>shorewall.conf: change ROVIDER_BITS value. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Web ui: update MultiWAN. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Providers: always sort providers in descending order. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>actions: add support for static routes. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>actions: move static routes to routes db. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>actions: change static route records from 'route' to 'static' type. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>createlinks, actions: add provider static routes to static-routes-save event. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Network configuration: support provider-static routes. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+
+
+	<p>Handle special static routes for providers.</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>createlinks: add static-routes-save event. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>providers: use Firewall library in templates. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Providers: support enable/disable. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>lsm.conf: skip disabled providers. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Firewall.pm: fix provider logic. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Web UI: show provider status on dashboard. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>providers-static-routes: remove blank spaces. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>init scripts: start lsm only if there is at least one provider. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>init scripts: fix start/restart. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Inline help: add Multi WAN rst files. Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>lsm.conf template: change default timeout values Refs <a href="2332.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall-base: add support for multi-wan (CLOSED)">#2332</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-8316" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="2332.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-8318" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="2332.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-8336" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="2332.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-8336-notes"><p>Commited test implementation.</p>
+
+
+	<p>See <a href="http://dev.nethserver.o/projects/nethserver/wiki/Gateway_Design" class="wiki-page new">Gateway Design</a>.</p>
+
+
+	<p>In nethserver-testing:<br />nethserver-shorewall-1.0.2-1.0git28006da2.ns6<br />nethserver-firewall-base-1.0.6-3.0git54f43433.ns6<br />nethserver-ipsec-1.0.0-1.0gite4e99ab5.ns6<br />nethserver-squid-1.0.4-1.0git7f3daf42.ns6<br />nethserver-lsm-0.0.3-1.ns6<br />lsm-0.163-1.ns6</p></div>
+    </div>
+  </div>
+  
+  <div id="change-8361" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="2332.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_DEV</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10242" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="2332.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> set to <i>~FUTURE</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10960" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="2332.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10969" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="2332.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> changed from <i>~FUTURE</i> to <i>v6.5</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11088" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="2332.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+    </ul>
+    <div class="wiki" id="journal-11088-notes"><p>For each configured provider, the system (LSM) will send ping to a configured IP (<code>checkip</code>). <br />When a provider status  changes, the system will signal a <code>wan-uplink-update</code> event.</p>
+
+
+Inside the event, the action <code>nethserver-shorewall-wan-update</code>  invokes:
+	<ul>
+	<li><code>shorewall enable &lt;interface&gt;</code> when a red interface is usable</li>
+		<li><code>shorewall disable &lt;interface&gt;</code> then a red interface is not usable</li>
+	</ul>
+
+
+	<p>When an interface is disabled, all associated routes will be deleted. If <code>checkip</code> belongs to an external network, the system will not be able to check the link status because there will no route to the external host.  With current implementation when an interface is disabled, there is no way to re-enabled it.</p>
+
+
+See:
+	<ul>
+	<li><a class="external" href="http://sourceforge.net/p/shorewall/mailman/message/31386555/">http://sourceforge.net/p/shorewall/mailman/message/31386555/</a></li>
+		<li><a class="external" href="http://sourceforge.net/p/shorewall/mailman/message/32303796/">http://sourceforge.net/p/shorewall/mailman/message/32303796/</a></li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-11096" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="2332.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-11096-notes"><p>The solution is to add static routes for checkip inside the main table.</p>
+
+
+	<p>For example, if checkip is 89.97.3.129:<br /><pre>
+ ip ro add 89.97.3.129/32 via 89.97.245.225
+</pre></p>
+
+
+Some considerations:
+	<ul>
+	<li>static rules must be added in <code>firewall-adjust</code> event and after boot (maybe we can use <a class="external" href="http://shorewall.net/shorewall_extension_scripts.htm">http://shorewall.net/shorewall_extension_scripts.htm</a>)</li>
+		<li>a checkip can't be reused between providers</li>
+		<li>when a red interface goes down, the host specified as checkip is no more reachable, so do not use system DNS as checkip</li>
+		<li>probably the best checkip is the hop just next the gateway</li>
+	</ul>
+
+
+	<p>To find the next hop use:<br /><pre>
+ping -c 1 -I eth2 -t 2 8.8.8.8 | grep 'Time to live'  | cut -d' ' -f2
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-11097" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="2332.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-11097-notes"><p>Added static routes support. Routes will be generate in <code>interface-update</code> and <code>network-*</code> events.</p>
+
+
+	<p>A static route is a record of type <code>static</code> inside the <code>routes</code> database.<br />Each record has following properties:</p>
+
+
+	<ul>
+	<li>key: network address</li>
+		<li>Mask: network mask</li>
+		<li>Router: gateway for the network</li>
+		<li>Description: a custom description (optional)</li>
+	</ul>
+
+
+	<p>Example:<br /><pre>
+8.8.4.4=static
+    Description=My route
+    Mask=255.255.255.255
+    Router=89.97.245.225
+</pre></p>
+
+
+	<p>Added also special static routes providers. These routes are auto-calculated by the system and <br />can't be edited by the user.<br />Static routes for providers are records of type <code>provider-static</code> inside the <code>routes</code> database.<br />Valid properties are the same of <code>static</code> records.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11098" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="2332.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11118" class="journal has-details">
+    <div id="note-12">
+    <h4><a href="2332.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11298" class="journal has-details">
+    <div id="note-13">
+    <h4><a href="2332.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="2771.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2771</a>: Merge nethserver-shorewall and nethserver-firewall-base</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11320" class="journal has-notes">
+    <div id="note-14">
+    <h4><a href="2332.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-11320-notes"><p>Merged on master.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11326" class="journal has-notes has-details">
+    <div id="note-15">
+    <h4><a href="2332.html#note-15" class="journal-link">#15</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-11326-notes">Packages in nethserver-testing:
+	<ul>
+	<li>nethserver-firewall-base-1.1.0-66.0git67ac1559.ns6.noarch.rpm</li>
+		<li>nethserver-lsm-0.0.3-7.0gitd4a46e58.ns6.noarch.rpm</li>
+		<li>nethserver-squid-1.1.1-3.0git37fbdd7c.ns6.noarch.rpm (già su testing)</li>
+		<li>nethserver-snort-0.0.1-5.0git32850266.ns6.noarch.rpm</li>
+		<li>nethserver-base-2.2.1-57.0git27156ae2.ns6.noarch.rpm</li>
+		<li>nethserver-nethgui-1.5.0-22.0git051080ae.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-11759" class="journal has-details">
+    <div id="note-16">
+    <h4><a href="2332.html#note-16" class="journal-link">#16</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11764" class="journal has-details">
+    <div id="note-17">
+    <h4><a href="2332.html#note-17" class="journal-link">#17</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> changed from <i>Davide Principi</i> to <i>Filippo Carletti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11766" class="journal has-notes has-details">
+    <div id="note-18">
+    <h4><a href="2332.html#note-18" class="journal-link">#18</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-11766-notes"><p>I have verified both configuration modes: balance and  backup.<br />Tests:<br />routing is ok, traffic goes to both providers in balance and to highest weight link in active-backup<br />link failure disables failed link, traffic  switches to working link<br />connection is re-enabled after link recovery<br />manually disabling a link (shorewall disable ethX) works as expected<br />check ip auto discovery gets the right ip in all tested cases<br />online help is correct</p>
+
+
+	<p>Not tested: 3 or more wan</p>
+
+
+	<p>Remaining issue:<br /><a class="external" href="https://groups.google.com/forum/#!topic/nethserver/NGmP9D0BqqY">https://groups.google.com/forum/#!topic/nethserver/NGmP9D0BqqY</a></p>
+
+
+	<p>I'd file a new issue about dhcp wan and failed link detection.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11768" class="journal has-details">
+    <div id="note-19">
+    <h4><a href="2332.html#note-19" class="journal-link">#19</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Copied to</strong> <i><a href="2827.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2827</a>: Firewall-base: multi-wan dhcp failover not supported</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11797" class="journal has-details">
+    <div id="note-20">
+    <h4><a href="2332.html#note-20" class="journal-link">#20</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Filippo Carletti</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11935" class="journal has-notes has-details">
+    <div id="note-21">
+    <h4><a href="2332.html#note-21" class="journal-link">#21</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-11935-notes"><p>In nethserver-updates:<br />nethserver-firewall-base-2.0.0-1.ns6.noarch.rpm<br />nethserver-lsm-1.0.0-1.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

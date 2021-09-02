@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Enhancement #1796: Mail-filter: migrate email addresses white/black lists - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/1796.atom" rel="alternate" title="NethServer 6 - Enhancement #1796: Mail-filter: migrate email addresses white/black lists" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Enhancement #1796</h2>
+
+<div class="issue tracker-6 status-5 priority-4 priority-default closed child details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><p><a href="1660.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent">Feature #1660</a>: Migrate NethService to NethServer</p><div><h3>Mail-filter: migrate email addresses white/black lists</h3></div></div>
+</div>
+        <p class="author">
+        Added by <a href="../users/9.html" class="user active">Davide Principi</a> <a href="http://dev.nethserver.o/projects/nethserver/activity?from=2013-03-26" title="03/26/2013 02:32 PM">over 8 years</a> ago.
+        Updated <a href="http://dev.nethserver.o/projects/nethserver/activity?from=2013-05-08" title="05/08/2013 12:00 PM">about 8 years</a> ago.
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">03/27/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">03/27/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-mail-filter</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/153.html">v6.4-beta1</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14"></td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Read WBL from <code>spamassassin</code> DB.</p>
+
+
+	<p>See also <a href="http://www.sonoracomm.com/index.php?option=com_content&#38;task=view&#38;id=49&#38;Itemid=32" class="external">White and blacklists</a>.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+        <span class="author">Added by <a href="../users/9.html" class="user active">Davide Principi</a> <a href="http://dev.nethserver.o/projects/nethserver/activity?from=2013-03-27" title="03/27/2013 02:52 PM">over 8 years</a> ago</span></p>
+    <div class="wiki">
+        <p>migration-import event: call nethserver-mail-migrate-wbl action. Refs <a href="1796.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Mail-filter: migrate email addresses white/black lists (CLOSED)">#1796</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-5451" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="1796.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="../users/9.html" class="user active">Davide Principi</a> <a href="http://dev.nethserver.o/projects/nethserver/activity?from=2013-03-27" title="03/27/2013 12:00 PM">over 8 years</a> ago</h4>
+
+    </h4><ul class="details">
+       <li><strong>Due date</strong> set to <i>03/27/2013</i></li>
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>ON_DEV</i></li>
+       <li><strong>Start date</strong> set to <i>03/27/2013</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-5452" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="1796.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="../users/9.html" class="user active">Davide Principi</a> <a href="http://dev.nethserver.o/projects/nethserver/activity?from=2013-03-27" title="03/27/2013 12:02 PM">over 8 years</a> ago</h4>
+
+    <div class="wiki" id="journal-5452-notes"><p><a class="external" href="https://docs.nethesis.it/Spam_white_black_list">https://docs.nethesis.it/Spam_white_black_list</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-5453" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="1796.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="../users/9.html" class="user active">Davide Principi</a> <a href="http://dev.nethserver.o/projects/nethserver/activity?from=2013-03-27" title="03/27/2013 02:24 PM">over 8 years</a> ago</h4>
+
+    <div class="wiki" id="journal-5453-notes"><a name="Differences-with-NethServiceSME-Server"></a>
+<h3 >Differences with NethService/SME Server<a href="1796.html#Differences-with-NethServiceSME-Server" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>No wildcards expansions are supported by <code>nethserver-mail-filter</code> UI interface; only full mail addresses or domain names.</p>
+
+
+	<p>The migration action must map email addresses in the form <code>*@domain.tld</code> to domain names, and log a warning whenever another form of wildcard expansion is used.</p>
+
+
+	<p>Recipient blacklists are not implemented.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-5454" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="1796.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="../users/9.html" class="user active">Davide Principi</a> <a href="http://dev.nethserver.o/projects/nethserver/activity?from=2013-03-27" title="03/27/2013 02:53 PM">over 8 years</a> ago</h4>
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/5454%3Fdetail_id=7106.html" title="View differences">diff</a>)</li>
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>80</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-5455" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="1796.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="../users/9.html" class="user active">Davide Principi</a> <a href="http://dev.nethserver.o/projects/nethserver/activity?from=2013-03-27" title="03/27/2013 03:28 PM">over 8 years</a> ago</h4>
+
+    <div class="wiki" id="journal-5455-notes"><p>Dev package <code>nethserver-mail-filter-1.0.1-1.0gitde8a4a0b.ns6</code> in <code>nethserver-dev</code></p></div>
+    </div>
+  </div>
+  
+  <div id="change-5456" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="1796.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="../users/9.html" class="user active">Davide Principi</a> <a href="http://dev.nethserver.o/projects/nethserver/activity?from=2013-03-27" title="03/27/2013 03:28 PM">over 8 years</a> ago</h4>
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>80</i> to <i>100</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-5786" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="1796.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="../users/9.html" class="user active">Davide Principi</a> <a href="http://dev.nethserver.o/projects/nethserver/activity?from=2013-05-08" title="05/08/2013 12:00 PM">about 8 years</a> ago</h4>
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>CLOSED</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

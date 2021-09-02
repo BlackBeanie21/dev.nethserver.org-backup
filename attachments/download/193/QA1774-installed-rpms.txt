@@ -1,0 +1,39 @@
+Loaded plugins: downloadonly, fastestmirror, nethserver
+Transaction ID : 6
+Begin time     : Fri Jul 19 10:14:07 2013
+Begin rpmdb    : 298:4a36d91fc620bd580e1ceb301234598083568789
+End time       :            10:15:32 2013 (85 seconds)
+End rpmdb      : 320:48ddea413d4c26c89932260afb0be67eda098b52
+User           : root <root>
+Return-Code    : Success
+Command Line   : --enablerepo=nethserver-testing install @nethserver-web-filter
+Transaction performed with:
+    Installed     rpm-4.8.0-32.el6.x86_64                       @anaconda-CentOS-201303020151.x86_64
+    Installed     yum-3.2.29-40.el6.centos.noarch               @anaconda-CentOS-201303020151.x86_64
+    Installed     yum-plugin-fastestmirror-1.1.30-14.el6.noarch @anaconda-CentOS-201303020151.x86_64
+Packages Altered:
+    Dep-Install bc-1.06.95-1.el6.x86_64                     @centos-base1
+    Dep-Install c-icap-0.2.5-1.ns6.x86_64                   @nethserver-testing
+    Dep-Install c-icap-libs-0.2.5-1.ns6.x86_64              @nethserver-testing
+    Dep-Install clamav-0.97.6-1.el6.rf.x86_64               @nethserver-base
+    Dep-Install clamav-db-0.97.6-1.el6.rf.x86_64            @nethserver-base
+    Dep-Install clamd-0.97.6-1.el6.rf.x86_64                @nethserver-base
+    Dep-Install ksh-20100621-19.el6.x86_64                  @centos-base1
+    Dep-Install libtool-ltdl-2.2.6-15.5.el6.x86_64          @centos-base1
+    Dep-Install nethserver-antivirus-1.0.3-1.ns6.noarch     @nethserver-testing
+    Dep-Install nethserver-c-icap-1.0.0-1.ns6.noarch        @nethserver-testing
+    Dep-Install nethserver-firewall-base-1.0.3-1.ns6.noarch @nethserver-testing
+    Dep-Install nethserver-shorewall-1.0.0-1.ns6.noarch     @nethserver-base
+    Install     nethserver-squid-1.0.2-1.ns6.noarch         @nethserver-testing
+    Install     nethserver-squidclamav-1.0.0-1.ns6.noarch   @nethserver-testing
+    Install     nethserver-squidguard-1.0.1-1.ns6.noarch    @nethserver-testing
+    Dep-Install perl-CGI-3.51-129.el6.x86_64                @centos-base1
+    Dep-Install perl-Digest-SHA-1:5.47-129.el6.x86_64       @centos-base1
+    Dep-Install shorewall-4.5.18.0-1.el6.noarch             @nethserver-testing
+    Dep-Install shorewall-core-4.5.18.0-1.el6.noarch        @nethserver-testing
+    Dep-Install squid-7:3.3.5-1.el6.x86_64                  @nethserver-testing
+    Dep-Install squidGuard-1.4-9.el6.x86_64                 @nethserver-testing
+    Dep-Install squidclamav-6.10-1.ns6.x86_64               @nethserver-testing
+Scriptlet output:
+   1 /etc/squid/squidGuard.conf created as /etc/squid/squidGuard.conf.rpmnew
+history info

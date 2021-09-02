@@ -1,0 +1,32 @@
+=======================================
+PID 2304 DATE Fri Jul 19 14:08:26 GMT 2013
+
+SUBSYSTEM=net
+DEVPATH=/devices/pci0000:00/0000:00:08.0/net/eth1
+ACTION=remove
+PWD=/
+UDEV_LOG=3
+SHLVL=1
+IFINDEX=3
+INTERFACE=eth1
+SEQNUM=1391
+_=/bin/env
+=======================================
+PID 2400 DATE Fri Jul 19 14:10:20 GMT 2013
+
+NET_MATCHID=0000:00:08.0
+ID_BUS=pci
+SUBSYSTEM=net
+ID_MODEL_FROM_DATABASE=82540EM Gigabit Ethernet Controller
+DEVPATH=/devices/pci0000:00/0000:00:08.0/net/eth1
+ID_MODEL_ID=0x100e
+ACTION=add
+PWD=/
+UDEV_LOG=3
+ID_VENDOR_ID=0x8086
+SHLVL=1
+IFINDEX=3
+INTERFACE=eth1
+ID_VENDOR_FROM_DATABASE=Intel Corporation
+SEQNUM=1394
+_=/bin/env

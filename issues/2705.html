@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Feature #2705: Firewall: support custom objects - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2705.atom" rel="alternate" title="NethServer 6 - Feature #2705: Firewall: support custom objects" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #2705</h2>
+
+<div class="issue tracker-2 status-5 priority-4 priority-default closed details">
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Firewall: support custom objects</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-firewall-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Firewall should implement a simple way to describe reusable objects.</p>
+
+
+Firewall module uses these system objects:
+	<ul>
+	<li>Host</li>
+		<li>Group of host</li>
+		<li>Zone</li>
+		<li>Service</li>
+	</ul>
+
+
+	<p>A host is an already defined entry inside the <code>hosts</code> db, or a new key of type <code>host</code>:<br /><pre>
+   name=host
+       IpAddress=IP
+       Description=
+</pre></p>
+
+
+	<p>A <code>host-group</code> is a group of hosts inside the <code>hosts</code> db. A <code>host-group</code> db entry can be something like:<br /><pre>
+    name=host-group
+        Members=host1,host2
+</pre></p>
+
+
+	<p>A zone represents a network zone which can be associated to an interface or a set of IP address. A <code>zone</code> entry in <code>networks</code> database can be something like:<br /><pre>
+    name=zone
+       Network=CIDR
+       Interface=ethX
+</pre></p>
+
+
+	<p>A configured network interface is automatically a zone.</p>
+
+
+	<p>A service can have a protocol and one or more ports. A <code>service</code> entry in <code>fwservices</code> database can be something like:<br /><pre>
+    name=fwservice
+       Protocol=TCP/UDP/TCPUDP/ICMP
+       Ports=port/port range
+</pre></p>
+  </div>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-547">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="2716" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="2716.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2716</a>: Custom firewall rules
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+  <tr class="issue hascontextmenu" id="relation-567">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="2764" /></td>
+  <td class="subject">
+    Related to
+    
+    Nethgui - 
+    <a href="2764.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2764</a>: CIDR block validator
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+  <tr class="issue hascontextmenu" id="relation-570">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="2771" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="2771.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2771</a>: Merge nethserver-shorewall and nethserver-firewall-base
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+  <tr class="issue hascontextmenu" id="relation-590">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="2835" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="2835.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2835</a>: Firewall rules: preserve references to other DB records
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2705/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="2705.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Web interface: first implementation of firewall objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Events: add firewall-objects-modify event. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Web interface: ad controller for firewall objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Web UI: zones can contain only CIDR network. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>.spec.in: fixed dependency name. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Firewall library: add tests. Refs <a href="2716.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Custom firewall rules (CLOSED)">#2716</a> <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Firewall library: use fwservices. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Firewall library: support interface objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Firewall library: fix zone detection. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Web UI: add firewall objects validators. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>FirewallRules UI implementation. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+
+
+	<p>- Based on CollectionController.</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Firewall objects: remove support for MAC address. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Web UI: change validator for host objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Web UI: add interface to zones. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a> <a href="2716.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Custom firewall rules (CLOSED)">#2716</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Templates: expand custom zones. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Web UI: add Zone module. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Web UI: fix inline creation of host-group. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>Web UI: add CSS for disabled rules. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Inline help: add firewall objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>FirewallObjects/Services: Removed ESP protocol support. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Removed ESP, ICMP, GRE protocols support. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+
+
+	<p>completes commit:6f85adb</p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>FirewallObjects/Zones: use Modify class for "delete" case. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>FirewallObjects: show Description column in tabular view. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>FirewallObjects, FirewallRules: strict name checks for Hosts and Host Groups objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>FirewallObjects, FirewallRules: fixed translation labels. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>FirewallRules/CreateHostGroup: enforce strict members key check. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>FirewallObjects/Services: mark Ports field as NON-EMPTY. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>FirewallObjects/Services: use Modify class for "delete" case. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>FirewallObjects: run event as a detached task. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>FirewallObjects: check if object exists on validate(). Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>Firewall.pm (getZone): sanitize IP list syntax. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+    <div class="changeset even">
+    <div class="wiki">
+        <p>FirewallObjects/Hosts: validate host-group Members prop consitency. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-10937" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="2705.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> set to <i>~FUTURE</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10941" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="2705.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/10941%3Fdetail_id=17330.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10944" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="2705.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/10944%3Fdetail_id=17336.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10964" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="2705.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10965" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="2705.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Target version</strong> changed from <i>~FUTURE</i> to <i>v6.5</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10966" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="2705.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10976" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="2705.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Subject</strong> changed from <i>Firewall: support new objects</i> to <i>Firewall: support custom objects</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10979" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="2705.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/10979%3Fdetail_id=17391.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-10981" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="2705.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/10981%3Fdetail_id=17394.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11090" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="2705.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+    </ul>
+    <div class="wiki" id="journal-11090-notes"><p>Web interface lacks for validators.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11122" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="2705.html#note-11" class="journal-link">#11</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11123" class="journal has-details">
+    <div id="note-12">
+    <h4><a href="2705.html#note-12" class="journal-link">#12</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/11123%3Fdetail_id=17660.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11128" class="journal has-details">
+    <div id="note-13">
+    <h4><a href="2705.html#note-13" class="journal-link">#13</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/11128%3Fdetail_id=17666.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11138" class="journal has-details">
+    <div id="note-14">
+    <h4><a href="2705.html#note-14" class="journal-link">#14</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11258" class="journal has-details">
+    <div id="note-15">
+    <h4><a href="2705.html#note-15" class="journal-link">#15</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="2764.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2764</a>: CIDR block validator</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11296" class="journal has-details">
+    <div id="note-16">
+    <h4><a href="2705.html#note-16" class="journal-link">#16</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="2771.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2771</a>: Merge nethserver-shorewall and nethserver-firewall-base</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11330" class="journal has-details">
+    <div id="note-17">
+    <h4><a href="2705.html#note-17" class="journal-link">#17</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11332" class="journal has-notes has-details">
+    <div id="note-18">
+    <h4><a href="2705.html#note-18" class="journal-link">#18</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-11332-notes">Packages in nethserver-testing:
+	<ul>
+	<li>nethserver-firewall-base-1.1.0-66.0git67ac1559.ns6.noarch.rpm</li>
+		<li>nethserver-lsm-0.0.3-7.0gitd4a46e58.ns6.noarch.rpm</li>
+		<li>nethserver-squid-1.1.1-3.0git37fbdd7c.ns6.noarch.rpm (già su testing)</li>
+		<li>nethserver-snort-0.0.1-5.0git32850266.ns6.noarch.rpm</li>
+		<li>nethserver-base-2.2.1-57.0git27156ae2.ns6.noarch.rpm</li>
+		<li>nethserver-nethgui-1.5.0-22.0git051080ae.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-11578" class="journal has-notes has-details">
+    <div id="note-19">
+    <h4><a href="2705.html#note-19" class="journal-link">#19</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-11578-notes">Zones have following problems:
+	<ul>
+	<li>no interface associated: the interface is necessary to compile <code>/etc/shorewall/hosts</code> file</li>
+		<li>custom zones are not expanded in <code>/etc/shorewall/zones</code> file</li>
+	</ul>
+
+
+	<p>Make sure to add the network interface selection even in object picker from firewall rules.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11584" class="journal has-details">
+    <div id="note-20">
+    <h4><a href="2705.html#note-20" class="journal-link">#20</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11586" class="journal has-notes">
+    <div id="note-21">
+    <h4><a href="2705.html#note-21" class="journal-link">#21</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-11586-notes"><p>Other notes from QA of <a href="2783.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Firewall: beautify rules page (CLOSED)">#2783</a></p>
+
+
+Bugs discovered:
+	<ul>
+	<li>when creating a zone as origin or destination of a rule, the zone is not written on shorewall configuration files after that apply changes button was pressed,</li>
+		<li>the green net is reported as "loc" in the shorewall configuration files but "loc" is not defined.</li>
+	</ul>
+
+
+Some notes:
+	<ul>
+	<li>it is not clear whether a rule is enabled or not in the rule list view,</li>
+		<li>it is not possible to dynamically add members of a hosts group when setting the options about origin and destination of a rule.</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-11587" class="journal has-details">
+    <div id="note-22">
+    <h4><a href="2705.html#note-22" class="journal-link">#22</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11588" class="journal has-details">
+    <div id="note-23">
+    <h4><a href="2705.html#note-23" class="journal-link">#23</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Description</strong> updated (<a href="../journals/diff/11588%3Fdetail_id=18512.html" title="View differences">diff</a>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11591" class="journal has-notes has-details">
+    <div id="note-24">
+    <h4><a href="2705.html#note-24" class="journal-link">#24</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-11591-notes">Package in nethserver-testing:
+	<ul>
+	<li>nethserver-firewall-base-1.1.0-78.0gitc7fa3c22.ns6.noarch.rpm</li>
+	</ul>
+
+
+Make sure to update following packages from testing:
+	<ul>
+	<li>nethserver-lsm</li>
+		<li>nethserver-lib</li>
+		<li>nethserver-base</li>
+		<li>nethserver-nethgui</li>
+	</ul>
+
+
+	<p><strong>Test case</strong></p>
+
+
+Test the following workflows:
+	<ul>
+	<li>Creation</li>
+		<li>Sorting</li>
+		<li>Deletion</li>
+		<li>Edit</li>
+		<li>Apply changes</li>
+		<li>On the fly creation of firewall objects</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-11788" class="journal has-details">
+    <div id="note-25">
+    <h4><a href="2705.html#note-25" class="journal-link">#25</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11807" class="journal has-notes">
+    <div id="note-26">
+    <h4><a href="2705.html#note-26" class="journal-link">#26</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-11807-notes"><a name="Tested-Firewall-Rules"></a>
+<h3 >Tested Firewall Rules<a href="2705.html#Tested-Firewall-Rules" class="wiki-anchor">&para;</a></h3>
+
+
+	<p><strong>Case 1</strong></p>
+
+
+	<p>Firewall Rules > Create rule at bottom</p>
+
+
+	<ul>
+	<li>Set Source, created new host OTF</li>
+		<li>Set description and LOG</li>
+		<li>Saved, Edit again</li>
+		<li>Set Destination, created new host-group and zone OTF</li>
+		<li>Set Service, created new service OTF<br />  <strong>Missing label <code>Services_CreateService_label</code></strong></li>
+		<li>Save, APPLY CHANGES:<br />  Event firewall-adjust SUCCESS</li>
+	</ul>
+
+
+	<p>OK, missing label</p>
+
+
+	<p><strong>Case 2</strong></p>
+
+
+	<p>Firewall Rules > Edit existing rules</p>
+
+
+	<ul>
+	<li>Changed Source/Destination</li>
+		<li>Changed description</li>
+		<li>Changed LOG</li>
+	</ul>
+
+
+	<p>OK</p>
+
+
+	<p><strong>Case 3</strong></p>
+
+
+	<p>Firewall Rules > Delete rule</p>
+
+
+	<p>OK, rule dropped</p>
+
+
+	<p><strong>Notes</strong></p>
+
+
+	<ul>
+	<li>capital letters are not allowed on fwobjects keys (?)</li>
+		<li>Module header is "Firewall rules [beta]": time to remove <code>[beta]</code>??</li>
+		<li>Missing labels  <code>Host_key_exists_message</code>, @Services_CreateService_label</li>
+		<li>The rules index view shows the label "all" instead of "Any"</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-11808" class="journal has-notes">
+    <div id="note-27">
+    <h4><a href="2705.html#note-27" class="journal-link">#27</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-11808-notes"><a name="Tested-Firewall-objects"></a>
+<h3 >Tested Firewall objects<a href="2705.html#Tested-Firewall-objects" class="wiki-anchor">&para;</a></h3>
+
+
+	<p><strong>Case 1 FAILED</strong><br />Edit host-group members</p>
+
+
+	<p>Inconsistent validation of Members field in host-groups tab<br />Upper case letters are not allowed in member key.</p>
+
+
+	<p><strong>Case 2 FAILED</strong><br />Edit host, to change IP address</p>
+
+
+	<p>Inconsistent validation of host key in hosts tab:<br />If host was created OTF with upper-case letter, validation fails.</p>
+
+
+	<p><strong>Case 3</strong> OK<br />Edit service record, to change service port</p>
+
+
+	<p><strong>Case 4</strong> OK<br />Edit zone record, to change network address or interface</p>
+
+
+	<p><strong>Case 5 FAILED</strong><br />Delete host object, referenced by an existing rule.</p>
+
+
+	<p>Shorewall restart silently fails; in messages:<pre>
+Restarting shorewall:    ERROR: Unknown destination zone (tcp) /etc/shorewall/rules (line 77)
+</pre></p>
+
+
+	<p>In /etc/shorewall/rules (with line numbers):<pre>
+    73    #
+    74    # RULE role;green -&gt; host;Birro 
+    75    #
+    76    ?COMMENT SMTP to g1
+    77    DROP:none    loc        tcp    12135
+--------------------------------^ missing destination field
+</pre></p>
+
+
+	<p><strong>Case 6 FAILED</strong><br />Delete zone object, referenced by an existing rule</p>
+
+
+	<p>Shorewall restart silently fails; in messges:<pre>
+Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules (line 83)
+</pre></p>
+
+
+	<p><strong>Case 7</strong> OK but..<br />Delete service object, referenced by existing rule.</p>
+
+
+	<p>Shorewall restart is OK, but the rule is not outputted at all in /etc/shorewall/rules:<br />Is it the expected behaviour?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11812" class="journal has-details">
+    <div id="note-28">
+    <h4><a href="2705.html#note-28" class="journal-link">#28</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11814" class="journal has-details">
+    <div id="note-29">
+    <h4><a href="2705.html#note-29" class="journal-link">#29</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11829" class="journal has-details">
+    <div id="note-30">
+    <h4><a href="2705.html#note-30" class="journal-link">#30</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="2835.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2835</a>: Firewall rules: preserve references to other DB records</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11834" class="journal has-notes has-details">
+    <div id="note-31">
+    <h4><a href="2705.html#note-31" class="journal-link">#31</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-11834-notes"><p>Test again, paying particular attention to previously FAILED test cases.</p>
+
+
+	<p>A separate enhancement <a href="2835.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Firewall rules: preserve references to other DB records (CLOSED)">#2835</a> was opened, to address issues with DB references.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11835" class="journal has-notes has-details">
+    <div id="note-32">
+    <h4><a href="2705.html#note-32" class="journal-link">#32</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-11835-notes"><p>In nethserver-testing:<br />nethserver-firewall-base-1.1.0-127.0git49766190.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11837" class="journal has-notes has-details">
+    <div id="note-33">
+    <h4><a href="2705.html#note-33" class="journal-link">#33</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-11837-notes"><p>Updated:<br />  nethserver-firewall-base.noarch 0:1.1.0-127.0git49766190.ns6</p>
+
+
+	<p>One remaining issue:<br />deleting an host from a two hosts group leaves an invalid rules syntax like ",ip_of_remaining_host".</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11840" class="journal has-details">
+    <div id="note-34">
+    <h4><a href="2705.html#note-34" class="journal-link">#34</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-11843" class="journal has-notes has-details">
+    <div id="note-35">
+    <h4><a href="2705.html#note-35" class="journal-link">#35</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    <div class="wiki" id="journal-11843-notes"><p>Deleting an host object which is a member of an host-group is now forbidden.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11844" class="journal has-notes has-details">
+    <div id="note-36">
+    <h4><a href="2705.html#note-36" class="journal-link">#36</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-11844-notes"><p>In nethserver-testing:<br />nethserver-firewall-base-1.1.0-129.0git324e5493.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11902" class="journal has-notes has-details">
+    <div id="note-37">
+    <h4><a href="2705.html#note-37" class="journal-link">#37</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-11902-notes"><p>Deleted an host which is a member of a group resulted in a shorewall error.<br />Updated to nethserver-firewall-base-1.1.0-130.0git21b4db71.ns6.noarch.rpm, did the same operation and the resulting shorewall/rules synatx was correct.<br />No errors reported.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-11936" class="journal has-notes has-details">
+    <div id="note-38">
+    <h4><a href="2705.html#note-38" class="journal-link">#38</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-11936-notes"><p>In nethserver-updates:<br />nethserver-firewall-base-2.0.0-1.ns6.noarch.rpm<br />nethserver-base-2.3.0-1.ns6.noarch.rpm</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

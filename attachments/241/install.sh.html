@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>install.sh - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="../../stylesheets/scm.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-attachments action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>install.sh</h2>
+
+<div class="attachments">
+<p>
+   <span class="author"><a href="../../users/5.html" class="user active">Giacomo Sanchietti</a>, 01/27/2014 03:42 PM</span></p>
+<p><a href="../download/241/install.sh">Download</a>   <span class="size">(2.75 KB)</span></p>
+
+</div>
+&nbsp;
+<div class="autoscroll">
+<table class="filecontent syntaxhl">
+<tbody>
+  <tr id="L1">
+    <th class="line-num">
+      <a href="install.sh.html#L1">1</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L2">
+    <th class="line-num">
+      <a href="install.sh.html#L2">2</a>
+    </th>
+    <td class="line-code">
+      <pre># Copyright &copy; 2014 Nethesis S.r.l.
+</pre>
+    </td>
+  </tr>
+  <tr id="L3">
+    <th class="line-num">
+      <a href="install.sh.html#L3">3</a>
+    </th>
+    <td class="line-code">
+      <pre># http://www.nethesis.it - support@nethesis.it
+</pre>
+    </td>
+  </tr>
+  <tr id="L4">
+    <th class="line-num">
+      <a href="install.sh.html#L4">4</a>
+    </th>
+    <td class="line-code">
+      <pre># 
+</pre>
+    </td>
+  </tr>
+  <tr id="L5">
+    <th class="line-num">
+      <a href="install.sh.html#L5">5</a>
+    </th>
+    <td class="line-code">
+      <pre># This script is part of NethServer.
+</pre>
+    </td>
+  </tr>
+  <tr id="L6">
+    <th class="line-num">
+      <a href="install.sh.html#L6">6</a>
+    </th>
+    <td class="line-code">
+      <pre># 
+</pre>
+    </td>
+  </tr>
+  <tr id="L7">
+    <th class="line-num">
+      <a href="install.sh.html#L7">7</a>
+    </th>
+    <td class="line-code">
+      <pre># NethServer is free software: you can redistribute it and/or modify
+</pre>
+    </td>
+  </tr>
+  <tr id="L8">
+    <th class="line-num">
+      <a href="install.sh.html#L8">8</a>
+    </th>
+    <td class="line-code">
+      <pre># it under the terms of the GNU General Public License as published by
+</pre>
+    </td>
+  </tr>
+  <tr id="L9">
+    <th class="line-num">
+      <a href="install.sh.html#L9">9</a>
+    </th>
+    <td class="line-code">
+      <pre># the Free Software Foundation, either version 3 of the License,
+</pre>
+    </td>
+  </tr>
+  <tr id="L10">
+    <th class="line-num">
+      <a href="install.sh.html#L10">10</a>
+    </th>
+    <td class="line-code">
+      <pre># or any later version.
+</pre>
+    </td>
+  </tr>
+  <tr id="L11">
+    <th class="line-num">
+      <a href="install.sh.html#L11">11</a>
+    </th>
+    <td class="line-code">
+      <pre># 
+</pre>
+    </td>
+  </tr>
+  <tr id="L12">
+    <th class="line-num">
+      <a href="install.sh.html#L12">12</a>
+    </th>
+    <td class="line-code">
+      <pre># NethServer is distributed in the hope that it will be useful,
+</pre>
+    </td>
+  </tr>
+  <tr id="L13">
+    <th class="line-num">
+      <a href="install.sh.html#L13">13</a>
+    </th>
+    <td class="line-code">
+      <pre># but WITHOUT ANY WARRANTY; without even the implied warranty of
+</pre>
+    </td>
+  </tr>
+  <tr id="L14">
+    <th class="line-num">
+      <a href="install.sh.html#L14">14</a>
+    </th>
+    <td class="line-code">
+      <pre># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+</pre>
+    </td>
+  </tr>
+  <tr id="L15">
+    <th class="line-num">
+      <a href="install.sh.html#L15">15</a>
+    </th>
+    <td class="line-code">
+      <pre># GNU General Public License for more details.
+</pre>
+    </td>
+  </tr>
+  <tr id="L16">
+    <th class="line-num">
+      <a href="install.sh.html#L16">16</a>
+    </th>
+    <td class="line-code">
+      <pre># 
+</pre>
+    </td>
+  </tr>
+  <tr id="L17">
+    <th class="line-num">
+      <a href="install.sh.html#L17">17</a>
+    </th>
+    <td class="line-code">
+      <pre># You should have received a copy of the GNU General Public License
+</pre>
+    </td>
+  </tr>
+  <tr id="L18">
+    <th class="line-num">
+      <a href="install.sh.html#L18">18</a>
+    </th>
+    <td class="line-code">
+      <pre># along with NethServer.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</pre>
+    </td>
+  </tr>
+  <tr id="L19">
+    <th class="line-num">
+      <a href="install.sh.html#L19">19</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L20">
+    <th class="line-num">
+      <a href="install.sh.html#L20">20</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L21">
+    <th class="line-num">
+      <a href="install.sh.html#L21">21</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L22">
+    <th class="line-num">
+      <a href="install.sh.html#L22">22</a>
+    </th>
+    <td class="line-code">
+      <pre># This script will install NethServer.
+</pre>
+    </td>
+  </tr>
+  <tr id="L23">
+    <th class="line-num">
+      <a href="install.sh.html#L23">23</a>
+    </th>
+    <td class="line-code">
+      <pre># Default installation will include only base system.
+</pre>
+    </td>
+  </tr>
+  <tr id="L24">
+    <th class="line-num">
+      <a href="install.sh.html#L24">24</a>
+    </th>
+    <td class="line-code">
+      <pre># If you need to install more modules, you can specifies them on the command line.
+</pre>
+    </td>
+  </tr>
+  <tr id="L25">
+    <th class="line-num">
+      <a href="install.sh.html#L25">25</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L26">
+    <th class="line-num">
+      <a href="install.sh.html#L26">26</a>
+    </th>
+    <td class="line-code">
+      <pre># Default installtion:
+</pre>
+    </td>
+  </tr>
+  <tr id="L27">
+    <th class="line-num">
+      <a href="install.sh.html#L27">27</a>
+    </th>
+    <td class="line-code">
+      <pre># 
+</pre>
+    </td>
+  </tr>
+  <tr id="L28">
+    <th class="line-num">
+      <a href="install.sh.html#L28">28</a>
+    </th>
+    <td class="line-code">
+      <pre>#     nethserver-install
+</pre>
+    </td>
+  </tr>
+  <tr id="L29">
+    <th class="line-num">
+      <a href="install.sh.html#L29">29</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L30">
+    <th class="line-num">
+      <a href="install.sh.html#L30">30</a>
+    </th>
+    <td class="line-code">
+      <pre># Install mail server
+</pre>
+    </td>
+  </tr>
+  <tr id="L31">
+    <th class="line-num">
+      <a href="install.sh.html#L31">31</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L32">
+    <th class="line-num">
+      <a href="install.sh.html#L32">32</a>
+    </th>
+    <td class="line-code">
+      <pre>#     nethserver-install mail-server
+</pre>
+    </td>
+  </tr>
+  <tr id="L33">
+    <th class="line-num">
+      <a href="install.sh.html#L33">33</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L34">
+    <th class="line-num">
+      <a href="install.sh.html#L34">34</a>
+    </th>
+    <td class="line-code">
+      <pre>#
+</pre>
+    </td>
+  </tr>
+  <tr id="L35">
+    <th class="line-num">
+      <a href="install.sh.html#L35">35</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L36">
+    <th class="line-num">
+      <a href="install.sh.html#L36">36</a>
+    </th>
+    <td class="line-code">
+      <pre>function log {
+</pre>
+    </td>
+  </tr>
+  <tr id="L37">
+    <th class="line-num">
+      <a href="install.sh.html#L37">37</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo `date` &quot;$1&quot; &gt;&gt; /var/log/nethserver-install.log
+</pre>
+    </td>
+  </tr>
+  <tr id="L38">
+    <th class="line-num">
+      <a href="install.sh.html#L38">38</a>
+    </th>
+    <td class="line-code">
+      <pre>}
+</pre>
+    </td>
+  </tr>
+  <tr id="L39">
+    <th class="line-num">
+      <a href="install.sh.html#L39">39</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L40">
+    <th class="line-num">
+      <a href="install.sh.html#L40">40</a>
+    </th>
+    <td class="line-code">
+      <pre>function logexec {
+</pre>
+    </td>
+  </tr>
+  <tr id="L41">
+    <th class="line-num">
+      <a href="install.sh.html#L41">41</a>
+    </th>
+    <td class="line-code">
+      <pre>    cmd=$1
+</pre>
+    </td>
+  </tr>
+  <tr id="L42">
+    <th class="line-num">
+      <a href="install.sh.html#L42">42</a>
+    </th>
+    <td class="line-code">
+      <pre>    log &quot;$cmd&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L43">
+    <th class="line-num">
+      <a href="install.sh.html#L43">43</a>
+    </th>
+    <td class="line-code">
+      <pre>    $cmd | tee -a /var/log/nethserver-install.log
+</pre>
+    </td>
+  </tr>
+  <tr id="L44">
+    <th class="line-num">
+      <a href="install.sh.html#L44">44</a>
+    </th>
+    <td class="line-code">
+      <pre>}
+</pre>
+    </td>
+  </tr>
+  <tr id="L45">
+    <th class="line-num">
+      <a href="install.sh.html#L45">45</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L46">
+    <th class="line-num">
+      <a href="install.sh.html#L46">46</a>
+    </th>
+    <td class="line-code">
+      <pre>function end {
+</pre>
+    </td>
+  </tr>
+  <tr id="L47">
+    <th class="line-num">
+      <a href="install.sh.html#L47">47</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo
+</pre>
+    </td>
+  </tr>
+  <tr id="L48">
+    <th class="line-num">
+      <a href="install.sh.html#L48">48</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo &quot;You can access the Web interface at:&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L49">
+    <th class="line-num">
+      <a href="install.sh.html#L49">49</a>
+    </th>
+    <td class="line-code">
+      <pre>    hostname=`/sbin/e-smith/db configuration get SystemName`
+</pre>
+    </td>
+  </tr>
+  <tr id="L50">
+    <th class="line-num">
+      <a href="install.sh.html#L50">50</a>
+    </th>
+    <td class="line-code">
+      <pre>    domainname=`/sbin/e-smith/db configuration get DomainName`
+</pre>
+    </td>
+  </tr>
+  <tr id="L51">
+    <th class="line-num">
+      <a href="install.sh.html#L51">51</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo
+</pre>
+    </td>
+  </tr>
+  <tr id="L52">
+    <th class="line-num">
+      <a href="install.sh.html#L52">52</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo -n &quot;    https://$hostname.$domainname:980&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L53">
+    <th class="line-num">
+      <a href="install.sh.html#L53">53</a>
+    </th>
+    <td class="line-code">
+      <pre>    for k in `/sbin/e-smith/db networks keys`
+</pre>
+    </td>
+  </tr>
+  <tr id="L54">
+    <th class="line-num">
+      <a href="install.sh.html#L54">54</a>
+    </th>
+    <td class="line-code">
+      <pre>    do
+</pre>
+    </td>
+  </tr>
+  <tr id="L55">
+    <th class="line-num">
+      <a href="install.sh.html#L55">55</a>
+    </th>
+    <td class="line-code">
+      <pre>       role=`/sbin/e-smith/db networks getprop $k role`
+</pre>
+    </td>
+  </tr>
+  <tr id="L56">
+    <th class="line-num">
+      <a href="install.sh.html#L56">56</a>
+    </th>
+    <td class="line-code">
+      <pre>       if [ &quot;$role&quot; == &quot;green&quot; ]; then
+</pre>
+    </td>
+  </tr>
+  <tr id="L57">
+    <th class="line-num">
+      <a href="install.sh.html#L57">57</a>
+    </th>
+    <td class="line-code">
+      <pre>           ip=$(/sbin/e-smith/db networks getprop eth0 ipaddr)
+</pre>
+    </td>
+  </tr>
+  <tr id="L58">
+    <th class="line-num">
+      <a href="install.sh.html#L58">58</a>
+    </th>
+    <td class="line-code">
+      <pre>           echo &quot; (or https://$ip:980)&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L59">
+    <th class="line-num">
+      <a href="install.sh.html#L59">59</a>
+    </th>
+    <td class="line-code">
+      <pre>       fi
+</pre>
+    </td>
+  </tr>
+  <tr id="L60">
+    <th class="line-num">
+      <a href="install.sh.html#L60">60</a>
+    </th>
+    <td class="line-code">
+      <pre>    done
+</pre>
+    </td>
+  </tr>
+  <tr id="L61">
+    <th class="line-num">
+      <a href="install.sh.html#L61">61</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo 
+</pre>
+    </td>
+  </tr>
+  <tr id="L62">
+    <th class="line-num">
+      <a href="install.sh.html#L62">62</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo &quot;    Login: root&quot; 
+</pre>
+    </td>
+  </tr>
+  <tr id="L63">
+    <th class="line-num">
+      <a href="install.sh.html#L63">63</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo &quot;    Password: &lt;your_root_password&gt;&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L64">
+    <th class="line-num">
+      <a href="install.sh.html#L64">64</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo
+</pre>
+    </td>
+  </tr>
+  <tr id="L65">
+    <th class="line-num">
+      <a href="install.sh.html#L65">65</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo
+</pre>
+    </td>
+  </tr>
+  <tr id="L66">
+    <th class="line-num">
+      <a href="install.sh.html#L66">66</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo &quot;Installation log can be found here: /var/log/nethserver-install.log&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L67">
+    <th class="line-num">
+      <a href="install.sh.html#L67">67</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo
+</pre>
+    </td>
+  </tr>
+  <tr id="L68">
+    <th class="line-num">
+      <a href="install.sh.html#L68">68</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo
+</pre>
+    </td>
+  </tr>
+  <tr id="L69">
+    <th class="line-num">
+      <a href="install.sh.html#L69">69</a>
+    </th>
+    <td class="line-code">
+      <pre>    log &quot;End&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L70">
+    <th class="line-num">
+      <a href="install.sh.html#L70">70</a>
+    </th>
+    <td class="line-code">
+      <pre>    exit 0
+</pre>
+    </td>
+  </tr>
+  <tr id="L71">
+    <th class="line-num">
+      <a href="install.sh.html#L71">71</a>
+    </th>
+    <td class="line-code">
+      <pre>}
+</pre>
+    </td>
+  </tr>
+  <tr id="L72">
+    <th class="line-num">
+      <a href="install.sh.html#L72">72</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L73">
+    <th class="line-num">
+      <a href="install.sh.html#L73">73</a>
+    </th>
+    <td class="line-code">
+      <pre>rpm -q nethserver-base &gt;/dev/null
+</pre>
+    </td>
+  </tr>
+  <tr id="L74">
+    <th class="line-num">
+      <a href="install.sh.html#L74">74</a>
+    </th>
+    <td class="line-code">
+      <pre>if [ $? -eq 0 ]; then
+</pre>
+    </td>
+  </tr>
+  <tr id="L75">
+    <th class="line-num">
+      <a href="install.sh.html#L75">75</a>
+    </th>
+    <td class="line-code">
+      <pre>   echo
+</pre>
+    </td>
+  </tr>
+  <tr id="L76">
+    <th class="line-num">
+      <a href="install.sh.html#L76">76</a>
+    </th>
+    <td class="line-code">
+      <pre>   echo &quot;NethServer is already installed!&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L77">
+    <th class="line-num">
+      <a href="install.sh.html#L77">77</a>
+    </th>
+    <td class="line-code">
+      <pre>   log &quot;Already installed&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L78">
+    <th class="line-num">
+      <a href="install.sh.html#L78">78</a>
+    </th>
+    <td class="line-code">
+      <pre>   end
+</pre>
+    </td>
+  </tr>
+  <tr id="L79">
+    <th class="line-num">
+      <a href="install.sh.html#L79">79</a>
+    </th>
+    <td class="line-code">
+      <pre>fi
+</pre>
+    </td>
+  </tr>
+  <tr id="L80">
+    <th class="line-num">
+      <a href="install.sh.html#L80">80</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L81">
+    <th class="line-num">
+      <a href="install.sh.html#L81">81</a>
+    </th>
+    <td class="line-code">
+      <pre>modules=&quot;&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L82">
+    <th class="line-num">
+      <a href="install.sh.html#L82">82</a>
+    </th>
+    <td class="line-code">
+      <pre>if [ $# -gt 0 ]; then
+</pre>
+    </td>
+  </tr>
+  <tr id="L83">
+    <th class="line-num">
+      <a href="install.sh.html#L83">83</a>
+    </th>
+    <td class="line-code">
+      <pre>   echo &quot;The following extra modules will also be installed: $@&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L84">
+    <th class="line-num">
+      <a href="install.sh.html#L84">84</a>
+    </th>
+    <td class="line-code">
+      <pre>   log &quot;Extra modules: $@&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L85">
+    <th class="line-num">
+      <a href="install.sh.html#L85">85</a>
+    </th>
+    <td class="line-code">
+      <pre>   for m in $@
+</pre>
+    </td>
+  </tr>
+  <tr id="L86">
+    <th class="line-num">
+      <a href="install.sh.html#L86">86</a>
+    </th>
+    <td class="line-code">
+      <pre>   do
+</pre>
+    </td>
+  </tr>
+  <tr id="L87">
+    <th class="line-num">
+      <a href="install.sh.html#L87">87</a>
+    </th>
+    <td class="line-code">
+      <pre>       modules=&quot;$modules @$m&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L88">
+    <th class="line-num">
+      <a href="install.sh.html#L88">88</a>
+    </th>
+    <td class="line-code">
+      <pre>   done
+</pre>
+    </td>
+  </tr>
+  <tr id="L89">
+    <th class="line-num">
+      <a href="install.sh.html#L89">89</a>
+    </th>
+    <td class="line-code">
+      <pre>fi
+</pre>
+    </td>
+  </tr>
+  <tr id="L90">
+    <th class="line-num">
+      <a href="install.sh.html#L90">90</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L91">
+    <th class="line-num">
+      <a href="install.sh.html#L91">91</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L92">
+    <th class="line-num">
+      <a href="install.sh.html#L92">92</a>
+    </th>
+    <td class="line-code">
+      <pre>log &quot;Starting installation&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L93">
+    <th class="line-num">
+      <a href="install.sh.html#L93">93</a>
+    </th>
+    <td class="line-code">
+      <pre>echo &quot;Starting installation process. It will take a while...&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L94">
+    <th class="line-num">
+      <a href="install.sh.html#L94">94</a>
+    </th>
+    <td class="line-code">
+      <pre>echo
+</pre>
+    </td>
+  </tr>
+  <tr id="L95">
+    <th class="line-num">
+      <a href="install.sh.html#L95">95</a>
+    </th>
+    <td class="line-code">
+      <pre>echo &quot;Installing base system...&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L96">
+    <th class="line-num">
+      <a href="install.sh.html#L96">96</a>
+    </th>
+    <td class="line-code">
+      <pre>echo
+</pre>
+    </td>
+  </tr>
+  <tr id="L97">
+    <th class="line-num">
+      <a href="install.sh.html#L97">97</a>
+    </th>
+    <td class="line-code">
+      <pre>logexec &quot;rpm --import /etc/pki/rpm-gpg/*&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L98">
+    <th class="line-num">
+      <a href="install.sh.html#L98">98</a>
+    </th>
+    <td class="line-code">
+      <pre>logexec &quot;yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,centos-base,centos-updates --releasever=6.4 install @nethserver-iso -y&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L99">
+    <th class="line-num">
+      <a href="install.sh.html#L99">99</a>
+    </th>
+    <td class="line-code">
+      <pre>logexec &quot;/sbin/e-smith/signal-event system-init&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L100">
+    <th class="line-num">
+      <a href="install.sh.html#L100">100</a>
+    </th>
+    <td class="line-code">
+      <pre>if [ &quot;$modules&quot; != &quot;&quot; ]; then
+</pre>
+    </td>
+  </tr>
+  <tr id="L101">
+    <th class="line-num">
+      <a href="install.sh.html#L101">101</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo 
+</pre>
+    </td>
+  </tr>
+  <tr id="L102">
+    <th class="line-num">
+      <a href="install.sh.html#L102">102</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo &quot;Installing extra modules...&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L103">
+    <th class="line-num">
+      <a href="install.sh.html#L103">103</a>
+    </th>
+    <td class="line-code">
+      <pre>    echo
+</pre>
+    </td>
+  </tr>
+  <tr id="L104">
+    <th class="line-num">
+      <a href="install.sh.html#L104">104</a>
+    </th>
+    <td class="line-code">
+      <pre>    logexec &quot;yum install $modules -y&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L105">
+    <th class="line-num">
+      <a href="install.sh.html#L105">105</a>
+    </th>
+    <td class="line-code">
+      <pre>fi
+</pre>
+    </td>
+  </tr>
+  <tr id="L106">
+    <th class="line-num">
+      <a href="install.sh.html#L106">106</a>
+    </th>
+    <td class="line-code">
+      <pre>end
+</pre>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

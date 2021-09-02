@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #2966: multi-wan: wan enable/disable failure - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/2966.atom" rel="alternate" title="NethServer 6 - Bug #2966: multi-wan: wan enable/disable failure" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #2966</h2>
+
+<div class="issue tracker-1 status-5 priority-5 priority-high3 closed details">
+    <div class="next-prev-links contextual">
+      <a href="2669.html" title="#2669">« Previous</a> |
+      <a href="2965.html" title="#2965">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>multi-wan: wan enable/disable failure</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">High</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-firewall-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_15">Security class:</th><td class="cf_15"></td>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+</tr>
+<tr>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/201.html">v6.5</a></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>When a multi wan uplink fails, a script (/etc/e-smith/events/actions/nethserver-shorewall-wan-update) disables the interface.<br />The script fails with an error:<br /><pre>
+/etc/e-smith/events/wan-uplink-update/S50nethserver-shorewall-wan-update: line 61: /sbin/shorewall: No such file or directory
+</pre><br />The latest shorewall update changed the path for the command.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>shorewall-wan-update: use correct shorewall path. Refs: <a href="2966.html" class="issue tracker-1 status-5 priority-5 priority-high3 closed" title="multi-wan: wan enable/disable failure (CLOSED)">#2966</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-13312" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="2966.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13313" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="2966.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>MODIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13314" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="2966.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Target version</strong> set to <i>v6.5</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13317" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="2966.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-13317-notes">Package in nethserver-testing:
+	<ul>
+	<li>nethserver-firewall-base-2.2.1-1.1git0e72a0b.ns6.noarch.rpm</li>
+	</ul>
+
+
+	<p>Please, add a test case.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-13320" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="2966.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-13320-notes"><p>Before update:<br /><pre>
+grep shorewall /etc/e-smith/events/actions/nethserver-shorewall-wan-update
+</pre><br />shoud show<br /><pre>
+/sbin/shorewall enable...
+</pre><br />After update:<br /><pre>
+/usr/sbin/shorewall...
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13327" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="2966.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-13328" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="2966.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-13328-notes"><p>When switching off a provider:<br /><pre>
+Dec  1 13:08:54 nethsecurityng lsm[19629]: link wimax1 down event
+Dec  1 13:08:54 nethsecurityng lsm[19629]: name = wimax1, replied = 93, waiting = 7, timeout = 6, late reply = 0, cons rcvd = 0, cons wait = 6, cons miss = 6,
+ avg_rtt = 86.611, seq = 2051
+Dec  1 13:08:54 nethsecurityng lsm[19629]: seq                                                           *                                                
+Dec  1 13:08:54 nethsecurityng lsm[19629]: used       1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Dec  1 13:08:54 nethsecurityng lsm[19629]: wait       0000000000000000000000000000000000000000000011111110000000000000000000000000000000000000000000000000
+Dec  1 13:08:54 nethsecurityng lsm[19629]: replied    1111111111111111111111111111111111111111111100000001111111111111111111111111111111111111111111111111
+Dec  1 13:08:54 nethsecurityng lsm[19629]: timeout    0000000000000000000000000000000000000000000011111100000000000000000000000000000000000000000000000000
+Dec  1 13:08:54 nethsecurityng lsm[19629]: error      0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Dec  1 13:08:54 nethsecurityng lsm[19629]: group wimax down event
+</pre></p>
+
+
+	<p>After the provider is up:<br /><pre>
+Dec  1 13:16:51 nethsecurityng esmith::event[17222]: Event: wan-uplink-update SUCCESS
+Dec  1 13:17:04 nethsecurityng lsm[19629]: name = fweb1, replied = 100, waiting = 0, timeout = 0, late reply = 0, cons rcvd = 100, cons wait = 0, cons miss = 
+0, avg_rtt = 16.578, seq = 2148
+Dec  1 13:17:04 nethsecurityng lsm[19629]: seq                                                        *                                                   
+Dec  1 13:17:04 nethsecurityng lsm[19629]: used       1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Dec  1 13:17:04 nethsecurityng lsm[19629]: wait       0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Dec  1 13:17:04 nethsecurityng lsm[19629]: replied    1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Dec  1 13:17:04 nethsecurityng lsm[19629]: timeout    0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Dec  1 13:17:04 nethsecurityng lsm[19629]: error      0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Dec  1 13:17:04 nethsecurityng lsm[19629]: name = wimax1, replied = 94, waiting = 6, timeout = 6, late reply = 0, cons rcvd = 93, cons wait = 0, cons miss = 0
+, avg_rtt = 89.294, seq = 2148
+Dec  1 13:17:04 nethsecurityng lsm[19629]: seq                                                        *                                                   
+Dec  1 13:17:04 nethsecurityng lsm[19629]: used       1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Dec  1 13:17:04 nethsecurityng lsm[19629]: wait       0000000000000000000000000000000000000000000000001111110000000000000000000000000000000000000000000000
+Dec  1 13:17:04 nethsecurityng lsm[19629]: replied    1111111111111111111111111111111111111111111111110000001111111111111111111111111111111111111111111111
+Dec  1 13:17:04 nethsecurityng lsm[19629]: timeout    0000000000000000000000000000000000000000000000001111110000000000000000000000000000000000000000000000
+Dec  1 13:17:04 nethsecurityng lsm[19629]: error      0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+</pre></p>
+
+
+	<p><strong>VERIFIED</strong></p></div>
+    </div>
+  </div>
+  
+  <div id="change-13329" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="2966.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-13329-notes"><p>Link down:</p>
+
+
+	<p>Dec  1 13:08:54 nethsecurityng lsm<sup><a href="2966.html#fn19629">19629</a></sup>: group wimax down event<br />Dec  1 13:08:54 nethsecurityng esmith::event<sup><a href="2966.html#fn16554">16554</a></sup>: Event: wan-uplink-update SUCCESS</p>
+
+
+	<p>Nothing logged to firewall.log.<br />ip rules are updated:<br />10000:    from all fwmark 0x10000/0xf0000 lookup fweb</p>
+
+
+	<p>Link up:<br />Dec  1 13:16:50 nethsecurityng lsm<sup><a href="2966.html#fn19629">19629</a></sup>: group wimax up event<br />Dec  1 13:16:50 nethsecurityng esmith::event<sup><a href="2966.html#fn17222">17222</a></sup>: Event: wan-uplink-update up wimax NA NA root 0 0 0 0 0 0 0 0 NA down 1417436210<br />Dec  1 13:16:50 nethsecurityng esmith::event<sup><a href="2966.html#fn17223">17223</a></sup>: Event: wan-uplink-update up wimax1 5.133.56.1 eth2 root 92 8 8 0 91 0 0 89374 1<br />92.168.254.1 down 1417436210<br />Dec  1 13:16:50 nethsecurityng esmith::event<sup><a href="2966.html#fn17223">17223</a></sup>: Action: /etc/e-smith/events/wan-uplink-update/S50nethserver-shorewall-wan-updat<br />e SUCCESS [0.009677]<br />Dec  1 13:16:50 nethsecurityng esmith::event<sup><a href="2966.html#fn17223">17223</a></sup>: Event: wan-uplink-update SUCCESS</p>
+
+
+	<p>10000:    from all fwmark 0x10000/0xf0000 lookup fweb <br />10001:    from all fwmark 0x20000/0xf0000 lookup wimax</p></div>
+    </div>
+  </div>
+  
+  <div id="change-13335" class="journal has-notes has-details">
+    <div id="note-9">
+    <h4><a href="2966.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-13335-notes">Released in nethserver-updates:
+	<ul>
+	<li>nethserver-firewall-base-2.2.2-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

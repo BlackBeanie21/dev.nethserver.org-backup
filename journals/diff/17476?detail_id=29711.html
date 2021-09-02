@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #3410: nethserver-release installation fails on clean CentOS - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethserver controller-journals action-diff">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues selected">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Bug #3410</h2>
+
+<div class="text-diff">
+* installed CentOS 6.8 minimal install 
+<br /> <span class="diff_in">* I</span> <span class="diff_out">*I</span> have network and update. <span class="diff_in"> 
+<br /> * When</span> <span class="diff_out"> <br /><br /> *When</span> I try &lt;pre&gt; 
+<br /> yum localinstall -y http://mirror.nethserver.org/nethserver/nethserver-release-6.rpm <br /><br /> Loaded plugins: fastestmirror 
+<br /> Setting up Local Package Process 
+<br /> nethserver-release-6.rpm | 24 kB 00:00 
+<br /> Examining /var/tmp/yum-root-3S_OMh/nethserver-release-6.rpm: nethserver-release-6.8-1.ns6.noarch 
+<br /> Marking /var/tmp/yum-root-3S_OMh/nethserver-release-6.rpm to be installed 
+<br /> Loading mirror speeds from cached hostfile 
+<br /> * base: mirror.yandex.ru 
+<br /> * extras: mirror.yandex.ru 
+<br /> * updates: mirror.yandex.ru 
+<br /> Resolving Dependencies 
+<br /> --&gt; Running transaction check 
+<br /> ---&gt; Package nethserver-release.noarch 0:6.8-1.ns6 will be installed 
+<br /> --&gt; Processing Dependency: nethserver-firewall-base for package: nethserver-release-6.8-1.ns6.noarch 
+<br /> --&gt; Finished Dependency Resolution 
+<br /> Error: Package: nethserver-release-6.8-1.ns6.noarch (/nethserver-release-6) 
+<br /> Requires: nethserver-firewall-base 
+<br /> You could try using --skip-broken to work around the problem 
+<br /> You could try running: rpm -Va --nofiles --nodigest 
+<br /> &lt;/pre&gt; <br /><br /> ---- <br /><br /> Thanks to @vores, reported on community: 
+<br /> http://community.nethserver.org/t/problem-installing-nethserver-6-rpm-onto-fresh-centos-6-8/3717
+</div>
+
+<p>
+  <a href="../../issues/3410.html" onclick="if (document.referrer != &quot;&quot;) {history.back(); return false;}">Back</a>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

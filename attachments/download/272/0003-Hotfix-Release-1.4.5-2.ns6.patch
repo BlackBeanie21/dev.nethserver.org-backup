@@ -1,0 +1,35 @@
+From b0d4ed69d0374770763d4125bcee8525cdfdd050 Mon Sep 17 00:00:00 2001
+From: Davide Principi <davide.principi@nethesis.it>
+Date: Thu, 28 Aug 2014 14:41:45 +0200
+Subject: [PATCH 3/3] Hotfix Release 1.4.5-2.ns6
+
+---
+ nethserver-samba.spec | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/nethserver-samba.spec b/nethserver-samba.spec
+index a65833f..7caa143 100644
+--- a/nethserver-samba.spec
++++ b/nethserver-samba.spec
+@@ -1,7 +1,7 @@
+ Summary: Nethserver specific Samba configuration files and templates
+ Name: nethserver-samba
+ Version: 1.4.5
+-Release: 1%{?dist}
++Release: 2%{?dist}
+ License: GPL
+ Source: %{name}-%{version}.tar.gz
+ BuildArch: noarch
+@@ -44,6 +44,9 @@ rm -rf $RPM_BUILD_ROOT
+ %config(noreplace) /var/lib/nethserver/netlogon/netlogon.bat
+ 
+ %changelog
++* Thu Aug 28 2014 Davide Principi <davide.principi@nethesis.it> - 1.4.5-2.ns6
++- Can't access group shared folder (samba WS mode) - Bug #2815 (Hotfix)
++
+ * Thu Jul 03 2014 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.4.5-1.ns6
+ - Fix: Login to Samba fails after migration - Bug #2780
+ 
+-- 
+1.9.3
+

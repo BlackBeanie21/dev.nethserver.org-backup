@@ -1,0 +1,33 @@
+Library				Git Revision
+--------------------------------------------
+sonicle-webtop-services:	#d5740445
+sonicle-webtop-groupware:	#d713cbb0
+sonicle-webtop-webtopadmin:	#0645de22
+sonicle-security:		#c455baad
+
+CHANGES
+=======
+
+sonicle-webtop-services:
+- use new support for SSL and TLS on ldap/AD authentication
+- use new domain flag to use admin user as is, as a full dn for the auth principal
+
+sonicle-webtop-groupware:
+- [calendar] fixes to query for custom fields on events
+- [calendar] fix bug on csv export producing an empty file
+- [mail] fix message list for bugged emails containing strange invalid chars
+- [mail] in manual seen mode, receipt requests now is aksed only when opening message, not while browsing
+- [mail] enter on message now open it
+- [mail] manual seen mode now set seen when message opened in window
+- [contacts] add custom panel implementation in contact form
+
+sonicle-webtop-webtopadmin:
+- admin interface support for SSL and TLS on ldap/AD authentication
+- admin interface support for new domain flag to use admin user as is, as a full dn for the auth principal
+
+sonicle-security:
+- fix bug on TLS socket creation
+- login now correctly logs execptions when problems are encountered instantiating the authentication classes
+- support for SSL and TLS on ldap/AD authentication
+- new domain flag to use admin user as is, as a full dn for the auth principal
+- ldap-ssl allows any certificate

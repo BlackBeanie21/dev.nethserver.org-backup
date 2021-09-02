@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Bug #3317: L2TP not working with multiwan - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../../favicon.ico%3F1457596383' />
+<link href="../../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+</head>
+<body class="theme-Nethserver project-nethserver controller-journals action-diff">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="..//projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../../issues.html" class="issues selected">Issues</a></li>
+<li><a href="..//projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    
+
+    <div id="content">
+        
+        <h2>Bug #3317</h2>
+
+<div class="text-diff">
+<span class="diff_in">+Steps to reproduce+ 
+<br /> * Set up an l2tp vpn with the</span> <span class="diff_out">When</span> multiwan <span class="diff_in">feature</span> <span class="diff_out">is</span> enabled <span class="diff_in">(backup or balance, as you want) 
+<br /> * try to connect with a device (I have tested it with android )   <br /><br /> +Expected behavior+ 
+<br /> * The vpn</span> l2tp <span class="diff_in">works flawlessy establishing a connection beetween client and server. <br /><br /> +Actual behavior+ <br /><br /> * The vpn doesn&#x27;t work, the log shows: (IP_CLIENT and IP_SERVER instead of original IPs) <br /><br /> &lt;pre&gt; 
+<br /> Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring unknown Vendor ID payload [01528bbbc00696121849ab9a1c5b2a5100000001] 
+<br /> Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring Vendor ID payload [MS NT5 ISAKMPOAKLEY 00000009] 
+<br /> Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: received Vendor ID payload [RFC 3947] method set to=109  
+<br /> Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: received Vendor ID payload [draft-ietf-ipsec-nat-t-ike-02_n] meth=106, but already using method 109 
+<br /> Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring Vendor ID payload [FRAGMENTATION] 
+<br /> Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring Vendor ID payload [MS-Negotiation Discovery Capable] 
+<br /> Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring Vendor ID payload [Vid-Initial-Contact] 
+<br /> Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: ignoring Vendor ID payload [IKE CGA version 1] 
+<br /> Nov 11 16:26:39 localhost pluto[28458]: packet from IP_CLIENT:500: initial Main Mode message received on IP_SERVER:500 but no connection has been authorized with policy= 
+<br /> PSK <br /><br /> &lt;/pre&gt; <br /><br /> +Work around/fix+ 
+<br /> Because when we have the MultiWAN active we have no default gateway (no default route for packets) we need</span> <span class="diff_out">over ipsec stops</span> to <span class="diff_in">force the vpn to use a specific interface.</span> <span class="diff_out">work properly.</span> 
+<br /> <span class="diff_in">It&#x27;s sufficient to declare the ip address of the red interface used by the vpn, I tried to change the field left=%defaultroute in /etc/ipsec.conf <br /><br /> &lt;pre&gt; 
+<br /> [root@localhost ~]# diff -u /etc/e-smith/templates/etc/ipsec.conf/20l2tp /etc/e-smith/templates-custom/etc/ipsec.conf/20l2tp 
+<br /> --- /etc/e-smith/templates/etc/ipsec.conf/20l2tp      2015-08-27 17:59:24.000000000 +0200 
+<br /> +++ /etc/e-smith/templates-custom/etc/ipsec.conf/20l2tp      2015-11-13 14:19:51.810157214 +0100 
+<br /> @@ -13,7 +13,7 @@ 
+<br />   &#x27;auto&#x27; =&gt; &#x27;add&#x27;, 
+<br />   &#x27;pfs&#x27; =&gt; &#x27;no&#x27;, <br /><br /> -      &#x27;left&#x27; =&gt; &#x27;%defaultroute&#x27;, 
+<br /> +      &#x27;left&#x27; =&gt; &#x27;IP_ADDRESS&#x27;, 
+<br />          &#x27;leftprotoport&#x27; =&gt; &#x27;17/%any&#x27;, <br /><br /> &lt;/pre&gt; <br /><br /> and now everything works flawlessy (see logs): <br /><br /> &lt;pre&gt; 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[1] IP_CLIENT #1: responding to Main Mode from unknown peer IP_CLIENT 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[1] IP_CLIENT #1: transition from state STATE_MAIN_R0 to state STATE_MAIN_R1 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[1] IP_CLIENT #1: STATE_MAIN_R1: sent MR1, expecting MI2 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[1] IP_CLIENT #1: NAT-Traversal: Result using RFC 3947 (NAT-Traversal): peer is NATed 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[1] IP_CLIENT #1: transition from state STATE_MAIN_R1 to state STATE_MAIN_R2 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[1] IP_CLIENT #1: STATE_MAIN_R2: sent MR2, expecting MI3 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[1] IP_CLIENT #1: Main mode peer ID is ID_IPV4_ADDR: &#x27;192.168.5.18&#x27; 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[1] IP_CLIENT #1: switched from &quot;~L2TP&quot; to &quot;~L2TP&quot; 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #1: deleting connection &quot;~L2TP&quot; instance with peer IP_CLIENT {isakmp=#0/ipsec=#0} 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #1: transition from state STATE_MAIN_R2 to state STATE_MAIN_R3 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #1: new NAT mapping for #1, was IP_CLIENT:500, now IP_CLIENT:4500 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #1: STATE_MAIN_R3: sent MR3, ISAKMP SA established {auth=OAKLEY_PRESHARED_KEY cipher=aes_256 prf=oakley_sha group=m 
+<br /> odp1024} 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #1: Dead Peer Detection (RFC 3706): enabled 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #1: ignoring informational payload, type IPSEC_INITIAL_CONTACT msgid=00000000 
+<br /> Nov 13 11:51:18 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #1: received and ignored informational message 
+<br /> Nov 13 11:51:19 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #1: the peer proposed: IP_SERVER/32:17/0 -&gt; 192.168.5.18/32:17/0 
+<br /> Nov 13 11:51:19 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #2: responding to Quick Mode proposal {msgid:6e9f6ef4} 
+<br /> Nov 13 11:51:19 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #2:       us: IP_SERVER&lt;IP_SERVER&gt;[@localhost.localdomain,+S=C]:17/%any 
+<br /> Nov 13 11:51:19 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #2:     them: IP_CLIENT[192.168.5.18,+S=C]:17/0 
+<br /> Nov 13 11:51:19 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #2: transition from state STATE_QUICK_R0 to state STATE_QUICK_R1 
+<br /> Nov 13 11:51:19 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #2: STATE_QUICK_R1: sent QR1, inbound IPsec SA installed, expecting QI2 
+<br /> Nov 13 11:51:19 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #2: Dead Peer Detection (RFC 3706): enabled 
+<br /> Nov 13 11:51:19 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #2: transition from state STATE_QUICK_R1 to state STATE_QUICK_R2 
+<br /> Nov 13 11:51:19 localhost pluto[30745]: &quot;~L2TP&quot;[2] IP_CLIENT #2: STATE_QUICK_R2: IPsec SA established transport mode {ESP=&gt;0x0bdaf63a &lt;0x695b15d6 xfrm=AES_256-HMAC_SHA1 NATOA=none NATD=IP_CLIENT:4500 DPD=enabled} <br /><br /> &lt;/pre&gt; <br /><br /> I would like to configure this parameter in the web interface.</span>
+</div>
+
+<p>
+  <a href="../../issues/3317.html" onclick="if (document.referrer != &quot;&quot;) {history.back(); return false;}">Back</a>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

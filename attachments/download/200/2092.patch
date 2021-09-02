@@ -1,0 +1,20 @@
+--- /usr/share/perl5/vendor_perl/NethServer/Service.pm.orig	2013-07-31 08:47:22.225008148 +0200
++++ /usr/share/perl5/vendor_perl/NethServer/Service.pm	2013-07-31 08:47:44.937265267 +0200
+@@ -99,7 +99,7 @@
+ 	return $self->_set_running(1);
+     }
+ 
+-    return 0;
++    return 1;
+ }
+ 
+ 
+@@ -124,7 +124,7 @@
+ 	return $self->_set_running(0);
+     }
+ 
+-    return 0;
++    return 1;
+ }
+ 
+ 

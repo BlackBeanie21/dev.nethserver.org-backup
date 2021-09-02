@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Feature #3302: Use DNSBL to fight spam - NethServer 6 - NethServer.org</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
+<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
+<script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+    <link href="http://dev.nethserver.org/issues/3302.atom" rel="alternate" title="NethServer 6 - Feature #3302: Use DNSBL to fight spam" type="application/atom+xml" />
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Nethserver project-nethserver controller-issues action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    
+    <ul><li><a href="/index.html" class="home">Home</a></li>
+<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+<div id="header">
+    
+<h1>NethServer 6</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
+
+<li><a href="../issues.html" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #3302</h2>
+
+<div class="issue tracker-2 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a href="3309.html" title="#3309">« Previous</a> |
+      <a href="3295.html" title="#3295">Next »</a>
+    </div>
+
+  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
+
+<div class="subject">
+<div><h3>Use DNSBL to fight spam</h3></div>
+</div>
+        <p class="author">
+        </p>
+
+<table class="attributes">
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-mail-filter</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/214.html">v6.7</a></td><th></th><td></td></tr>
+<tr>
+	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
+	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
+</tr>
+
+
+</table>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  DNS block list can be used to block spam in two ways:
+	<ol>
+	<li>at connection stage</li>
+		<li>as spamassassin rules</li>
+	</ol>
+
+
+	<p>Method 1 is already implemented blocking SMTP connections from listed spammer servers.<br />Method 2 is the subject of this issue.</p>
+  </div>
+</div>
+
+
+
+
+
+<hr />
+<div id="relations">
+<div class="contextual">
+</div>
+
+<p><strong>Related issues</strong></p>
+
+<form>
+<table class="list issues">
+  <tr class="issue hascontextmenu" id="relation-757">
+  <td class="checkbox"><input name="ids[]" type="checkbox" value="3294" /></td>
+  <td class="subject">
+    Related to
+    
+    NethServer 6 - 
+    <a href="3294.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #3294</a>: Add unbound as DNS resolver for DNSBLs
+  </td>
+  <td class="status">CLOSED</td>
+  <td class="start_date"></td>
+  <td class="due_date"></td>
+  <td class="buttons"></td>
+  </tr>
+</table>
+</form>
+
+<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/3302/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+
+
+<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
+<span id="predecessor_fields" style="display:none;">
+Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
+</span>
+<input name="commit" type="submit" value="Add" />
+<a href="3302.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <div class="wiki">
+        <p>mail-filter: support DNSBL. Refs <a href="3302.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Use DNSBL to fight spam (CLOSED)">#3302</a></p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-16527" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="3302.html#note-1" class="journal-link">#1</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Related to</strong> <i><a href="3294.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #3294</a>: Add unbound as DNS resolver for DNSBLs</i> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16529" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="3302.html#note-2" class="journal-link">#2</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
+       <li><strong>Assignee</strong> set to <i>Filippo Carletti</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
+    </ul>
+    <div class="wiki" id="journal-16529-notes">To use DNSBL in spamassassin we need:
+	<ol>
+	<li>a resolver (see related issue)</li>
+		<li>some custom rules for spamassassin</li>
+		<li>integrating unbound with dnsmasq</li>
+	</ol>
+
+
+	<p>Links:<br /><a class="external" href="http://www.pccc.com/downloads/SpamAssassin/contrib/KAM.cf">http://www.pccc.com/downloads/SpamAssassin/contrib/KAM.cf</a><br /><a class="external" href="http://vdhout.nl/2015/05/additional-spamassassin-dnsbls">http://vdhout.nl/2015/05/additional-spamassassin-dnsbls</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-16530" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="3302.html#note-3" class="journal-link">#3</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
+       <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16531" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="3302.html#note-4" class="journal-link">#4</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
+       <li><strong>Assignee</strong> deleted (<del><i>Filippo Carletti</i></del>)</li>
+       <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16532" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="3302.html#note-5" class="journal-link">#5</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
+       <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
+    </ul>
+    <div class="wiki" id="journal-16532-notes"><p>In nethserver-testing:<br />nethserver-mail-filter-1.3.3-1.3.gcb1395c.ns6.noarch.rpm</p>
+
+
+	<p><strong>Test case 1 - fresh nethserver installation</strong></p>
+
+
+	<p>Prior to update check that DNSBL queries fail (they usually do if you set the DNS to 8.8.8.8 or your ISP DNS)<br /><pre>
+# host -tTXT 2.0.0.127.multi.uribl.com
+2.0.0.127.multi.uribl.com descriptive text "127.0.0.1 -&gt; Query Refused. See http://uribl.com/refused.shtml for more information [Your DNS IP: 74.125.181.194]" 
+</pre></p>
+
+
+	<p>Install nethserver-mail-filter from nethserver-testing and check again:<br /><pre>
+# host -tTXT 2.0.0.127.multi.uribl.com
+2.0.0.127.multi.uribl.com descriptive text "permanent testpoint" 
+</pre></p>
+
+
+	<p>Also, update should install as a dependency nethserver-unbound.<br />/var/log/messages should show:<br /><pre>
+Oct 30 16:25:19 nscom dnsmasq[5115]: using nameserver 127.0.0.1#10053 for domain spamhaus.org
+Oct 30 16:25:19 nscom dnsmasq[5115]: using nameserver 127.0.0.1#10053 for domain dnswl.org
+Oct 30 16:25:19 nscom dnsmasq[5115]: using nameserver 127.0.0.1#10053 for domain uribl.com
+</pre></p>
+
+
+	<p><strong>Test case 2 - update a nethserver already using the mail server filter</strong><br />As above, check uribl before and after upgrade.<br />Then receive some emails and check both email headers and /var/log/maillog.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16540" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="3302.html#note-6" class="journal-link">#6</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> set to <i>Alessio Fattorini</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16555" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="3302.html#note-7" class="journal-link">#7</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    <div class="wiki" id="journal-16555-notes"><p><strong>Test case 2 - fresh install</strong></p>
+
+
+	<p><ins>System and  Package Version installed</ins><br />NethServer 6.7 fresh installation</p>
+
+
+	<p>Package Installed: nothing<br />Other Package installed: nothing</p>
+
+
+	<p><ins>Test Original Problem</ins><br /><pre>
+host -tTXT 2.0.0.127.multi.uribl.com
+2.0.0.127.multi.uribl.com descriptive text "127.0.0.1 -&gt; Query Refused. See http://uribl.com/refused.shtml
+</pre></p>
+
+
+	<p><ins>Install Updated Package</ins><br /><pre>
+ yum --enablerepo=nethserver-testing install nethserver-mail-filter
+</pre></p>
+
+
+	<p><ins>Test Results after update</ins><br /><pre>
+[root@localhost ~]# host -tTXT 2.0.0.127.multi.uribl.com
+2.0.0.127.multi.uribl.com descriptive text "permanent testpoint" 
+</pre></p>
+
+
+	<p>messages:<br /><pre>
+Nov  4 18:14:32 localhost dnsmasq[671]: using nameserver 127.0.0.1#10053 for domain spamhaus.org
+Nov  4 18:14:32 localhost dnsmasq[671]: using nameserver 127.0.0.1#10053 for domain dnswl.org
+Nov  4 18:14:32 localhost dnsmasq[671]: using nameserver 127.0.0.1#10053 for domain uribl.com
+Nov  4 18:14:32 localhost dnsmasq[671]: using nameserver 8.8.8.8#53
+</pre></p>
+
+
+	<p><ins>Verified Or Reopen</ins><br />Verified Test case 2</p></div>
+    </div>
+  </div>
+  
+  <div id="change-16556" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="3302.html#note-8" class="journal-link">#8</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
+       <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
+    </ul>
+    <div class="wiki" id="journal-16556-notes"><p><ins>System and  Package Version installed</ins><br />...<br />Package Installed: nethserver-mail-filter.noarch 0:1.3.3-1.ns6<br />Other Package installed: ...</p>
+
+
+	<p><ins>Test Original Problem</ins><br />host -tTXT 2.0.0.127.multi.uribl.com<br />2.0.0.127.multi.uribl.com descriptive text "127.0.0.1 -> Query Refused. See <a class="external" href="http://uribl.com/refused.shtml">http://uribl.com/refused.shtml</a> for more information [Your DNS IP: 74.125.181.31]"</p>
+
+
+	<p><ins>Install Updated Package</ins><br /><pre>
+ yum --enablerepo=nethserver-testing update nethserver-mail-filter
+</pre></p>
+
+
+	<p><ins>Test Results after update</ins><br /><pre>
+host -tTXT 2.0.0.127.multi.uribl.com
+2.0.0.127.multi.uribl.com descriptive text "permanent testpoint" 
+</pre></p>
+
+
+	<p>messages<br /><pre>
+Nov  5 12:02:16 localhost dnsmasq[3782]: using nameserver 127.0.0.1#10053 for domain spamhaus.org
+Nov  5 12:02:16 localhost dnsmasq[3782]: using nameserver 127.0.0.1#10053 for domain dnswl.org
+Nov  5 12:02:16 localhost dnsmasq[3782]: using nameserver 127.0.0.1#10053 for domain uribl.com
+Nov  5 12:02:16 localhost dnsmasq[3782]: using nameserver 8.8.8.8#53
+</pre></p>
+
+
+	<p><ins>Verified Or Reopen</ins><br /><strong>Verified test Case 2</strong></p></div>
+    </div>
+  </div>
+  
+  <div id="change-16563" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="3302.html#note-9" class="journal-link">#9</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Assignee</strong> deleted (<del><i>Alessio Fattorini</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-16593" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="3302.html#note-10" class="journal-link">#10</a>
+    <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+
+    </h4><ul class="details">
+       <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
+       <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
+    </ul>
+    <div class="wiki" id="journal-16593-notes">Released in nethserver-updates:
+	<ul>
+	<li>nethserver-mail-filter-1.3.4-1.ns6.noarch.rpm</li>
+	</ul></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Copyright &copy; 2012-2021 nethserver.org
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
