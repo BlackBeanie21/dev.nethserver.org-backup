@@ -7,9 +7,9 @@
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
 <meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
-<link rel='shortcut icon' href='/favicon.ico%3F1457596383' />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
 <link href="/stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
-<link href="/themes/nethserver/stylesheets/application.css%3F1403512057.css " media="all" rel="stylesheet" type="text/css" />
+<link href="/themes/nethserver/stylesheets/application.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
 
 <script src="/javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="/javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,7 +18,7 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="/themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
+<script src="/themes/nethserver/javascripts/theme.js%3F1403512057" type="text/javascript"></script>
 <link href="/plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/11.atom" rel="alternate" title="Nethgui - Feature #11: Module test case" type="application/atom+xml" />
@@ -28,14 +28,22 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
-    
-        
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
     <ul><li><a href="/" class="home">Home</a></li>
 <li><a href="/projects" class="projects">Projects</a></li>
-
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
 
 <div id="header">
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethgui/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethgui/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
     </div>
 
     <h1><a href="/projects/nethserver?jump=issues" class="root">NethServer 6</a> » Nethgui</h1>
@@ -52,7 +60,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div id="main" class="">
     <div id="sidebar">
-
+          <h3>Issues</h3>
 
 <ul>
 <li><a href="/projects/nethgui/issues?set_filter=1">View all issues</a></li>
@@ -63,7 +71,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 
 
-
+<h3>Custom queries</h3>
 <ul class="queries"><li><a href="/projects/nethgui/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
 <li><a href="/projects/nethgui/issues?query_id=24" class="query">NEEDINFO</a></li>
 <li><a href="/projects/nethgui/issues?query_id=26" class="query">ON_DEV</a></li>
@@ -334,7 +342,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright © 2012-2021 nethserver.org
+    Powered by <a href="http://www.redmine.org/">Redmine</a> &copy; 2006-2014 Jean-Philippe Lang
   </div></div>
 </div>
 </div>
