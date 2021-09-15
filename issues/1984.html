@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1984.atom" rel="alternate" title="NethServer 6 - Feature #1984: Content filter: add time table support" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -61,8 +108,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div class="issue tracker-2 status-5 priority-4 priority-default closed details">
     <div class="next-prev-links contextual">
-      <a href="2853.html" title="#2853">« Previous</a> |
-      <a href="2977.html" title="#2977">Next »</a>
+      <a href="/issues/2853" title="#2853">« Previous</a> |
+      <a href="/issues/2977" title="#2977">Next »</a>
     </div>
 
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
@@ -71,10 +118,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Content filter: add time table support</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-29" title="05/29/2013 03:46 PM">about 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2015-01-20" title="01/20/2015 03:55 AM">over 6 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-squidguard</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-squidguard</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -108,53 +157,73 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/ae90963abaeb5483a479e0908b0bc39c5daf6e69" title="Revision ae90963a">Revision ae90963a</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-24" title="11/24/2014 12:23 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: time table stub implementation. Refs <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
+        <p>Web UI: time table stub implementation. Refs <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/bc8c63c2a641ce2c5550c2a959f4120613add0fb" title="Revision bc8c63c2">Revision bc8c63c2</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 03:46 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add timepicker. Refs <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
+        <p>Web UI: add timepicker. Refs <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/623c8aaf6ff57a5a756caeafc0e3f6badba07eed" title="Revision 623c8aaf">Revision 623c8aaf</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 04:07 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: correctly handle comma-separated fields. Refs <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: correctly handle comma-separated fields. Refs <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/631d4b7c07d5c1ccc046f0db7a489acc1d440aba" title="Revision 631d4b7c">Revision 631d4b7c</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 04:31 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: cosmetic changes. Refs <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
+        <p>Web UI: cosmetic changes. Refs <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/a37c5eba5a267655c2298740f964d9d550a48f5b" title="Revision a37c5eba">Revision a37c5eba</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 08:16 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squidGuard.conf: add support for times and multi profile. Refs <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squidGuard.conf: add support for times and multi profile. Refs <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/af425d58c70362c5aeddac7f1c6fa4f1fead08b3" title="Revision af425d58">Revision af425d58</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 09:15 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add stronger validator. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
+        <p>Web UI: add stronger validator. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/5b38d5a371c95266f667def034e3188bbf496fd6" title="Revision 5b38d5a3">Revision 5b38d5a3</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-26" title="11/26/2014 02:44 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: clean up code. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
+        <p>Web UI: clean up code. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/91e17f0088ee4d8a2debd85cbd5ca2a279b6c3a6" title="Revision 91e17f00">Revision 91e17f00</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-26" title="11/26/2014 03:12 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>custom categories: script optimization. Refs <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
+        <p>custom categories: script optimization. Refs <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/13c5da5b0c9b1d3cfed881e364348e030b2f8da8" title="Revision 13c5da5b">Revision 13c5da5b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-26" title="11/26/2014 03:13 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: execute events only when saving profiles. Refs <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: execute events only when saving profiles. Refs <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/8fceeac429dbcdcc15dddee70d0653aa66111bcc" title="Revision 8fceeac4">Revision 8fceeac4</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-05" title="12/05/2014 10:04 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: fire event on delete. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
+        <p>Web UI: fire event on delete. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
     </div>
     </div>
 
@@ -164,10 +233,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <h3>History</h3>
   <div id="change-13215" class="journal has-details">
     <div id="note-2">
-    <h4><a href="1984.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1984#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-21" title="11/21/2014 11:40 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>Target version</strong> changed from <i>~FUTURE</i> to <i>v6.5</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
@@ -178,10 +248,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-13216" class="journal has-details">
     <div id="note-3">
-    <h4><a href="1984.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1984#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-21" title="11/21/2014 11:40 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Category</strong> changed from <i>nethserver-squid</i> to <i>nethserver-squidguard</i></li>
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
@@ -193,10 +264,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-13267" class="journal has-details">
     <div id="note-4">
-    <h4><a href="1984.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/1984#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-26" title="11/26/2014 03:32 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -207,10 +279,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-13325" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="1984.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/1984#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-01" title="12/01/2014 08:14 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Subject</strong> changed from <i>Proxy: add time table support</i> to <i>Content filter: add time table support</i></li>
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -249,10 +322,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-13513" class="journal has-notes has-details">
     <div id="note-6">
-    <h4><a href="1984.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/1984#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-12-11" title="12/11/2014 06:15 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
     </ul>
@@ -262,10 +336,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-13746" class="journal has-notes has-details">
     <div id="note-7">
-    <h4><a href="1984.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/1984#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-20" title="01/20/2015 03:55 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -293,7 +368,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1984.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1984.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -314,7 +391,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

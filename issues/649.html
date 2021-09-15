@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,73 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/649.atom" rel="alternate" title="Nethgui - Task #649: Drop Framework singleton" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethgui controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1><a href="../issues.html" class="root">NethServer 6</a> » Nethgui</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethgui/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethgui/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1><a href="/projects/nethserver?jump=issues" class="root">NethServer 6</a> » Nethgui</h1>
 
     <div id="main-menu">
-        <ul><li><a href="/projects/nethgui.html" class="overview">Overview</a></li>
-
-<li><a href="http://dev.nethserver.o/projects/nethgui/issues" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethgui/wiki.html" class="wiki">Wiki</a></li></ul>
+        <ul><li><a href="/projects/nethgui" class="overview">Overview</a></li>
+<li><a href="/projects/nethgui/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethgui/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethgui/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethgui/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethgui/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethgui/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethgui/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethgui/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethgui/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethgui/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethgui/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethgui/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethgui/issues?query_id=54" class="query selected">UPDATES</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +107,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Drop Framework singleton</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-10" title="11/10/2011 12:26 PM">over 9 years</a> ago.
+        Updated <a href="/projects/nethgui/activity?from=2013-02-01" title="02/01/2013 10:24 AM">over 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">11/10/2011</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-nethgui</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/11.html">Sigma</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">11/10/2011</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-nethgui</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/11">Sigma</a></td><th></th><td></td></tr>
 
 
 </table>
@@ -106,7 +148,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     Nethgui - 
-    <a href="225.html" class="issue tracker-2 status-5 priority-3 priority-lowest closed">Feature #225</a>: Framework configuration
+    <a href="/issues/225" class="issue tracker-2 status-5 priority-3 priority-lowest closed">Feature #225</a>: Framework configuration
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">06/10/2011</td>
@@ -116,7 +158,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/649/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/649/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -133,7 +175,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="649.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -156,8 +198,10 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/d714e9766d04dd69a190375e77ad2114771cd0db" title="Revision d714e976">Revision d714e976</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-10" title="11/10/2011 12:18 PM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>WIP. Refactor of Framework class. Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop Framework singleton</p>
+        <p>WIP. Refactor of Framework class. Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop Framework singleton</p>
 
 
 Stripped Framework class:
@@ -184,13 +228,17 @@ Nethgui modules:
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/37ab11aa7d3e9995bcb3220ca129e915858cdb5b" title="Revision 37ab11aa">Revision 37ab11aa</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-14" title="11/14/2011 08:18 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>WIP. Fixed translation and PHP script templates. Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop framework singleton.</p>
+        <p>WIP. Fixed translation and PHP script templates. Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop framework singleton.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/e19ee26baf220c7af2ef0ba7690c540dd4e98753" title="Revision e19ee26b">Revision e19ee26b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-14" title="11/14/2011 10:07 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>WIP. Refactor of Framework URL methods. Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop Framework singleton</p>
+        <p>WIP. Refactor of Framework URL methods. Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop Framework singleton</p>
 
 
 	<ul>
@@ -201,13 +249,17 @@ Nethgui modules:
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/5ec7e00fc660c0da006b54bcc1733337377becca" title="Revision 5ec7e00f">Revision 5ec7e00f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-14" title="11/14/2011 11:48 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>WIP. Added Log package. Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Removed all logMessage() invocations.</p>
+        <p>WIP. Added Log package. Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Removed all logMessage() invocations.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/4d423823c598f0a352a3fa791cbc2fe772c396b9" title="Revision 4d423823">Revision 4d423823</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-14" title="11/14/2011 12:17 PM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>WIP: Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop framework singleton.</p>
+        <p>WIP: Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop framework singleton.</p>
 
 
 Framework:
@@ -218,13 +270,17 @@ Framework:
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/772b3666d3a6297ca2df3288d46d1a9fa62ca336" title="Revision 772b3666">Revision 772b3666</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-15" title="11/15/2011 03:49 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>WIP: moved Nethgui_Core_Validator into System package. Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a>. Drop Framework singleton.</p>
+        <p>WIP: moved Nethgui_Core_Validator into System package. Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a>. Drop Framework singleton.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/e51062bad43cf58278226eba79585c01b24cbe17" title="Revision e51062ba">Revision e51062ba</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-15" title="11/15/2011 04:56 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>WIP. Validator refactor.  Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop Framework singleton</p>
+        <p>WIP. Validator refactor.  Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop Framework singleton</p>
 
 
 	<ul>
@@ -236,8 +292,10 @@ Framework:
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/dd823853a5f18c6610841b2cfa6ad4b40e2afc84" title="Revision dd823853">Revision dd823853</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-15" title="11/15/2011 06:56 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>WIP. Fixed HELP and LINK button URL generation. Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop Framework singleton.</p>
+        <p>WIP. Fixed HELP and LINK button URL generation. Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop Framework singleton.</p>
 
 
 	<ul>
@@ -246,23 +304,31 @@ Framework:
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/a2ccf694ca040d58625492cdf4b9715f8f69f0ed" title="Revision a2ccf694">Revision a2ccf694</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-15" title="11/15/2011 10:41 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>WIP. Dropped the Framework singleton. Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a>.</p>
+        <p>WIP. Dropped the Framework singleton. Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a>.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/368d8d3e139e141f1f059decbfa9aa410506ffe0" title="Revision 368d8d3e">Revision 368d8d3e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-15" title="11/15/2011 12:26 PM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>All Nethgui tests green. Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop framework singleton</p>
+        <p>All Nethgui tests green. Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop framework singleton</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/0e4eddeabdb5c2e830d066dd1e270e854d447af4" title="Revision 0e4eddea">Revision 0e4eddea</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-22" title="11/22/2011 09:12 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>Log: implemented stack trace logging. Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - commit: 20a5b9ec</p>
+        <p>Log: implemented stack trace logging. Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - commit: 20a5b9ec</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/a6ff08bf88f712b690d818b312336868efce0e79" title="Revision a6ff08bf">Revision a6ff08bf</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-12-06" title="12/06/2011 08:42 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>New Session class, implementing SessionInterface. Refs <a href="649.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop Framework singleton.</p>
+        <p>New Session class, implementing SessionInterface. Refs <a href="/issues/649" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Drop Framework singleton (CLOSED)">#649</a> - Drop Framework singleton.</p>
 
 
 	<p>Framework: added Main module in place of World; introduced NotificationManagerInterface, to handle DialogBox notifications.</p>
@@ -291,10 +357,11 @@ Framework:
 <h3>History</h3>
   <div id="change-1271" class="journal has-details">
     <div id="note-1">
-    <h4><a href="649.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/649#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-11-16" title="11/16/2011 12:10 PM">over 9 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>100</i></li>
     </ul>
@@ -319,7 +386,9 @@ Framework:
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/649.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/649.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -340,7 +409,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

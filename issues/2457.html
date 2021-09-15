@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2457.atom" rel="alternate" title="NethServer 6 - Enhancement #2457: Upgrade SOGo to release 2.1.1b" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Upgrade SOGo to release 2.1.1b</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-12-10" title="12/10/2013 10:04 AM">over 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-02-07" title="02/07/2014 06:22 PM">over 7 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">12/20/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">12/20/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-sogo</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/183.html">v6.5-beta3</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">12/20/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">12/20/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-sogo</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/183">v6.5-beta3</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -92,8 +141,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 Follow guidelines from:
 	<ul>
-	<li><a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-sogo" class="wiki-page new">nethserver-sogo</a></li>
-		<li><a href="/projects/nethserver/wiki/Sogo-frontends.html" class="wiki-page">sogo-frontends</a></li>
+	<li><a href="/projects/nethserver/wiki/Nethserver-sogo" class="wiki-page new">nethserver-sogo</a></li>
+		<li><a href="/projects/nethserver/wiki/Sogo-frontends" class="wiki-page">sogo-frontends</a></li>
 	</ul>
   </div>
 </div>
@@ -117,7 +166,7 @@ Follow guidelines from:
     Related to
     
     NethServer 6 - 
-    <a href="2535.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2535</a>: Thunderbird 24 support
+    <a href="/issues/2535" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2535</a>: Thunderbird 24 support
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">12/20/2013</td>
@@ -127,7 +176,7 @@ Follow guidelines from:
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2457/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2457/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -144,7 +193,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2457.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -167,18 +216,24 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-sogo/revisions/b252091c9c17d73d2c4efb0f27ce32ec5a316f28" title="Revision b252091c">Revision b252091c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-12-20" title="12/20/2013 06:15 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: upgrade to SOGo version 2.1.1b. Refs <a href="2457.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade SOGo to release 2.1.1b (CLOSED)">#2457</a></p>
+        <p>*.spec: upgrade to SOGo version 2.1.1b. Refs <a href="/issues/2457" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade SOGo to release 2.1.1b (CLOSED)">#2457</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/sogo-frontends/revisions/14ff04267fb2d8b0ddf196ed430fac83ff09ab1a" title="Revision 14ff0426">Revision 14ff0426</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-03" title="02/03/2014 06:04 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Check if target event exists. Refs <a href="2457.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade SOGo to release 2.1.1b (CLOSED)">#2457</a></p>
+        <p>Check if target event exists. Refs <a href="/issues/2457" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade SOGo to release 2.1.1b (CLOSED)">#2457</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/sogo-frontends/revisions/72f7fc89c01b829fd8b59286e3ab9bb6e22a8854" title="Revision 72f7fc89">Revision 72f7fc89</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-04" title="02/04/2014 04:08 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fixed exit code from sogo-frontends-conf action. Refs <a href="2457.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade SOGo to release 2.1.1b (CLOSED)">#2457</a></p>
+        <p>Fixed exit code from sogo-frontends-conf action. Refs <a href="/issues/2457" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade SOGo to release 2.1.1b (CLOSED)">#2457</a></p>
     </div>
     </div>
 
@@ -188,10 +243,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-9525" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2457.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2457#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-12-20" title="12/20/2013 06:15 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Due date</strong> set to <i>12/20/2013</i></li>
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Start date</strong> set to <i>12/20/2013</i></li>
@@ -204,10 +260,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-9532" class="journal has-details">
     <div id="note-2">
-    <h4><a href="2457.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2457#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-12-23" title="12/23/2013 09:38 AM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
     </ul>
     
@@ -216,10 +273,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-9567" class="journal has-details">
     <div id="note-3">
-    <h4><a href="2457.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2457#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-12-23" title="12/23/2013 12:38 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -230,8 +288,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-9568" class="journal has-notes">
     <div id="note-4">
-    <h4><a href="2457.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2457#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-12-23" title="12/23/2013 12:38 PM">over 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-9568-notes"><p><strong>Test case</strong></p>
 
@@ -242,10 +301,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-9571" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="2457.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2457#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-12-23" title="12/23/2013 01:13 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -255,10 +315,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-9891" class="journal has-details">
     <div id="note-6">
-    <h4><a href="2457.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2457#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 12:34 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Alessio Fattorini</i></li>
     </ul>
     
@@ -267,10 +328,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10150" class="journal has-details">
     <div id="note-7">
-    <h4><a href="2457.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2457#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-01-22" title="01/22/2014 04:20 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -280,10 +342,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10152" class="journal has-notes has-details">
     <div id="note-8">
-    <h4><a href="2457.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2457#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-22" title="01/22/2014 04:33 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>60</i></li>
     </ul>
@@ -293,10 +356,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10153" class="journal has-details">
     <div id="note-9">
-    <h4><a href="2457.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2457#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-22" title="01/22/2014 04:33 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -306,10 +370,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10377" class="journal has-notes has-details">
     <div id="note-10">
-    <h4><a href="2457.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2457#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-02-03" title="02/03/2014 04:52 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Alessio Fattorini</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
@@ -330,10 +395,11 @@ Feb  3 16:38:38 test esmith::event[27123]: Running event handler S20firewall-adj
   
   <div id="change-10379" class="journal has-details">
     <div id="note-11">
-    <h4><a href="2457.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2457#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-03" title="02/03/2014 06:04 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -344,10 +410,11 @@ Feb  3 16:38:38 test esmith::event[27123]: Running event handler S20firewall-adj
   
   <div id="change-10380" class="journal has-details">
     <div id="note-12">
-    <h4><a href="2457.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2457#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-03" title="02/03/2014 06:07 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -358,10 +425,11 @@ Feb  3 16:38:38 test esmith::event[27123]: Running event handler S20firewall-adj
   
   <div id="change-10381" class="journal has-notes has-details">
     <div id="note-13">
-    <h4><a href="2457.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2457#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-03" title="02/03/2014 06:08 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -371,10 +439,11 @@ Feb  3 16:38:38 test esmith::event[27123]: Running event handler S20firewall-adj
   
   <div id="change-10391" class="journal has-details">
     <div id="note-14">
-    <h4><a href="2457.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/2457#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-02-04" title="02/04/2014 03:53 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -383,10 +452,11 @@ Feb  3 16:38:38 test esmith::event[27123]: Running event handler S20firewall-adj
   
   <div id="change-10393" class="journal has-notes has-details">
     <div id="note-15">
-    <h4><a href="2457.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/2457#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-02-04" title="02/04/2014 04:16 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -403,13 +473,15 @@ Feb  3 16:38:38 test esmith::event[27123]: Running event handler S20firewall-adj
   
   <div id="change-10421" class="journal has-notes has-details">
     <div id="note-16">
-    <h4><a href="2457.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/2457#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-07" title="02/07/2014 06:22 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
+    <div class="wiki" id="journal-10421-notes"><p>Released in <code>nethserver/6.5/base</code> repository.</p></div>
     </div>
   </div>
   
@@ -430,7 +502,9 @@ Feb  3 16:38:38 test esmith::event[27123]: Running event handler S20firewall-adj
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2457.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2457.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -451,7 +525,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2582.atom" rel="alternate" title="NethServer 6 - Enhancement #2582: Base: remove bootstrap-console" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Base: remove bootstrap-console</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 03:34 PM">over 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-02-07" title="02/07/2014 06:23 PM">over 7 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/183.html">v6.5-beta3</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/183">v6.5-beta3</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -113,7 +162,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="1757.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1757</a>: ISO: interactive installer
+    <a href="/issues/1757" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1757</a>: ISO: interactive installer
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -126,7 +175,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2492</a>: Move admin user in LDAP DB
+    <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2492</a>: Move admin user in LDAP DB
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">12/17/2013</td>
@@ -139,7 +188,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2626.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2626</a>: Implement hostname-modify event for samba 
+    <a href="/issues/2626" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2626</a>: Implement hostname-modify event for samba 
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -152,7 +201,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Duplicated by
     
     NethServer 6 - 
-    <a href="1742.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #1742</a>: Base: avoid double network restart on first boot event
+    <a href="/issues/1742" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #1742</a>: Base: avoid double network restart on first boot event
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -162,7 +211,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2582/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2582/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -179,7 +228,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2582.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -202,8 +251,10 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/cdec39d1908375d0d152bdea8dbc20b53978258f" title="Revision cdec39d1">Revision cdec39d1</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 05:12 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, system-init event: remove boostrap-console save and avoid double network restart. Refs <a href="1742.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: avoid double network restart on first boot event (CLOSED)">#1742</a> <a href="1757.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="ISO: interactive installer (CLOSED)">#1757</a></p>
+        <p>createlinks, system-init event: remove boostrap-console save and avoid double network restart. Refs <a href="/issues/1742" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: avoid double network restart on first boot event (CLOSED)">#1742</a> <a href="/issues/1757" class="issue tracker-2 status-5 priority-4 priority-default closed" title="ISO: interactive installer (CLOSED)">#1757</a></p>
 
 
 Modifications:
@@ -216,49 +267,65 @@ Modifications:
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/639142cfaaeb930b65dd00e223227c231335541a" title="Revision 639142cf">Revision 639142cf</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-15" title="01/15/2014 06:19 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-base-initialize-db: fix behavior when dhcp is enabled (unattended install). Refs <a href="2582.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
+        <p>nethserver-base-initialize-db: fix behavior when dhcp is enabled (unattended install). Refs <a href="/issues/2582" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/092ea5f91c49808acee8d4cb765aba24f8df16a1" title="Revision 092ea5f9">Revision 092ea5f9</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 05:00 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-base-initialize-db: fix variable scope. Refs <a href="2582.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
+        <p>nethserver-base-initialize-db: fix variable scope. Refs <a href="/issues/2582" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/9ad8ce8735496c8c8ef78cf049cb84efa97925ef" title="Revision 9ad8ce87">Revision 9ad8ce87</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-21" title="01/21/2014 02:47 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-base-initialize-db: correctly handle gateway prop when interface is configured with dhcp. Refs <a href="2582.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
+        <p>nethserver-base-initialize-db: correctly handle gateway prop when interface is configured with dhcp. Refs <a href="/issues/2582" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/dafc1925eaf5135270efd3627184f24560fe109c" title="Revision dafc1925">Revision dafc1925</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-21" title="01/21/2014 05:26 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Signal interface-update event after system-adjust. Refs <a href="2582.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
+        <p>Signal interface-update event after system-adjust. Refs <a href="/issues/2582" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/bae3403c90ae567c9ebd6f01abad900c78461a19" title="Revision bae3403c">Revision bae3403c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-21" title="01/21/2014 06:03 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Use perl strict pragma. Refs <a href="2582.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
+        <p>Use perl strict pragma. Refs <a href="/issues/2582" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/ad8d44e222e3532c0789388dffa350c0c61d9eed" title="Revision ad8d44e2">Revision ad8d44e2</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-21" title="01/21/2014 06:03 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Code optimizations. Refs <a href="2582.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
+        <p>Code optimizations. Refs <a href="/issues/2582" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
 
 
 	<p>- Replaced /sbin/e-smith/db occurences with $DB<br />- Skip commented and blank lines while sourcing bash config files</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/ad21374f9209f798a3af2a5915d4bd7bfbdfcdc6" title="Revision ad21374f">Revision ad21374f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-30" title="01/30/2014 06:45 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Expand /etc/sysconfig/network on hostname-modify event. Refs <a href="2582.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
+        <p>Expand /etc/sysconfig/network on hostname-modify event. Refs <a href="/issues/2582" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
 
 
 	<p>This makes the hostname persistent on reboot.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/a053a68d45acda14950ac2f6837ff57ae810ef44" title="Revision a053a68d">Revision a053a68d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-02-05" title="02/05/2014 10:32 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Network management: avoid resolv.conf overwrite by network stop. Refs <a href="2582.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
+        <p>Network management: avoid resolv.conf overwrite by network stop. Refs <a href="/issues/2582" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: remove bootstrap-console (CLOSED)">#2582</a></p>
     </div>
     </div>
 
@@ -268,10 +335,11 @@ Modifications:
 <h3>History</h3>
   <div id="change-9737" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2582.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2582#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 03:35 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
     </ul>
@@ -281,10 +349,11 @@ Modifications:
   
   <div id="change-9738" class="journal has-details">
     <div id="note-2">
-    <h4><a href="2582.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2582#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 03:35 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -295,10 +364,11 @@ Modifications:
   
   <div id="change-9739" class="journal has-notes has-details">
     <div id="note-3">
-    <h4><a href="2582.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2582#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 03:37 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -328,10 +398,11 @@ The script parses all ifcfg-* scripts and stores information on network database
   
   <div id="change-9762" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="2582.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2582#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 06:08 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -385,7 +456,7 @@ reboot
 	<p><strong>Note 1</strong></p>
 
 
-	<p>After installation, access to web interface is not enabled because the admin user has no password.<br />Check if web interface is working after QA of <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a>.<br />As a workaround for QA just set a password to admin user using <code>passwd</code> command.</p>
+	<p>After installation, access to web interface is not enabled because the admin user has no password.<br />Check if web interface is working after QA of <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a>.<br />As a workaround for QA just set a password to admin user using <code>passwd</code> command.</p>
 
 
 	<p><strong>Note 2</strong></p>
@@ -411,10 +482,11 @@ reboot
   
   <div id="change-10076" class="journal has-details">
     <div id="note-5">
-    <h4><a href="2582.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2582#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-17" title="01/17/2014 05:48 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
     </ul>
     
@@ -423,8 +495,9 @@ reboot
   
   <div id="change-10128" class="journal has-notes">
     <div id="note-6">
-    <h4><a href="2582.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2582#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-21" title="01/21/2014 11:41 AM">over 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-10128-notes"><p><strong>Test case 1</strong> is <strong>VERIFIED</strong> <br />OK</p>
 
@@ -448,10 +521,11 @@ reboot
   
   <div id="change-10138" class="journal has-details">
     <div id="note-7">
-    <h4><a href="2582.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2582#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-21" title="01/21/2014 03:28 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
@@ -462,10 +536,11 @@ reboot
   
   <div id="change-10139" class="journal has-details">
     <div id="note-8">
-    <h4><a href="2582.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2582#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-21" title="01/21/2014 03:34 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -476,10 +551,11 @@ reboot
   
   <div id="change-10140" class="journal has-details">
     <div id="note-9">
-    <h4><a href="2582.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2582#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-21" title="01/21/2014 03:34 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -489,10 +565,11 @@ reboot
   
   <div id="change-10141" class="journal has-notes has-details">
     <div id="note-10">
-    <h4><a href="2582.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2582#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-21" title="01/21/2014 03:37 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -516,10 +593,11 @@ reboot
   
   <div id="change-10142" class="journal has-details">
     <div id="note-11">
-    <h4><a href="2582.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2582#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-21" title="01/21/2014 03:44 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
     </ul>
     
@@ -528,10 +606,11 @@ reboot
   
   <div id="change-10154" class="journal has-notes has-details">
     <div id="note-12">
-    <h4><a href="2582.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2582#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-22" title="01/22/2014 05:21 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -568,13 +647,15 @@ nethserver-nethgui-1.3.0-7.0gitbc43d8cd.ns6.noarch
   
   <div id="change-10437" class="journal has-notes has-details">
     <div id="note-13">
-    <h4><a href="2582.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2582#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-07" title="02/07/2014 06:23 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
+    <div class="wiki" id="journal-10437-notes"><p>Released in <code>nethserver/6.5/base</code> repository.</p></div>
     </div>
   </div>
   
@@ -595,7 +676,9 @@ nethserver-nethgui-1.3.0-7.0gitbc43d8cd.ns6.noarch
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2582.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2582.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -616,7 +699,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

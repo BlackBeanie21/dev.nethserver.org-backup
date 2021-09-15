@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2927.atom" rel="alternate" title="NethServer 6 - Enhancement #2927: Notify user if event fails" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -61,8 +108,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div class="issue tracker-6 status-5 priority-4 priority-default closed details">
     <div class="next-prev-links contextual">
-      <a href="2952.html" title="#2952">« Previous</a> |
-      <a href="2883.html" title="#2883">Next »</a>
+      <a href="/issues/2952" title="#2952">« Previous</a> |
+      <a href="/issues/2883" title="#2883">Next »</a>
     </div>
 
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
@@ -71,10 +118,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Notify user if event fails</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-24" title="10/24/2014 09:45 AM">almost 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-11-19" title="11/19/2014 10:31 AM">over 6 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">&lt;multiple packages&gt;</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">&lt;multiple packages&gt;</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -114,7 +163,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2944.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2944</a>: User-create event fails if user name is &quot;service&quot;
+    <a href="/issues/2944" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2944</a>: User-create event fails if user name is &quot;service&quot;
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -127,7 +176,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Copied to
     
     Nethgui - 
-    <a href="2949.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2949</a>: Notify user if event fails
+    <a href="/issues/2949" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2949</a>: Notify user if event fails
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -137,7 +186,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2927/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2927/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -154,7 +203,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2927.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -177,37 +226,47 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/36ce1e7d61066fca2de65e46823f0b8c2356a190" title="Revision 36ce1e7d">Revision 36ce1e7d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-03" title="11/03/2014 06:49 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>SystemTasks: handle special socket open errors. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>SystemTasks: handle special socket open errors. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
 
 
 	<p>- Removed dump cleaning up code: never called<br />- Unlink socket, if stale</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/13de0bc88e2816c59ba494ca1ad264b5e2bdff5e" title="Revision 13de0bc8">Revision 13de0bc8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 04:38 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Call PHP exec() to invoke db command. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Call PHP exec() to invoke db command. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
 
 
 	<p>The Process class is deprecated.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/1db96240b5277ad542e65319548963405bc761bd" title="Revision 1db96240">Revision 1db96240</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 04:50 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Tweaked Tracker behaviour. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Tweaked Tracker behaviour. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
 
 
 	<p>- Don't flash a notification when a detached task is started<br />- Require user authentication<br />- Throw a 404 error on socket exceptions</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/f98716d215f403904eace0741d6140e2fb0d33a3" title="Revision f98716d2">Revision f98716d2</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 10:47 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Nethgui 1.6.1 provides automatic reload of the url of the last POST requested. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Nethgui 1.6.1 provides automatic reload of the url of the last POST requested. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/225e423f6cf6151b788d8a4e79b3359affcfa7d0" title="Revision 225e423f">Revision 225e423f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 11:43 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Show failure notifications for synchronous events. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Show failure notifications for synchronous events. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
 
 
 	<ul>
@@ -221,29 +280,37 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/8eae1f738a3c5ed2aab740a2b811ab89f79be28f" title="Revision 8eae1f73">Revision 8eae1f73</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 11:51 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Require nethserver-lib > 2.1.1-1 for newer ptrack release. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Require nethserver-lib > 2.1.1-1 for newer ptrack release. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/6f8f563a84e0ff327baee9ae6eab04d8362795c3" title="Revision 6f8f563a">Revision 6f8f563a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-12" title="11/12/2014 11:46 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Start detached hostname-modify event. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Start detached hostname-modify event. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
 
 
 	<p>The event restarts httpd-admin and must run detached, to report errors<br />correctly.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/38f70738b9cfe2c51368e6b95a52d2c9c555788b" title="Revision 38f70738">Revision 38f70738</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-13" title="11/13/2014 09:44 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fixed setDetachedProcessCondition() to work with CompositeController. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Fixed setDetachedProcessCondition() to work with CompositeController. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
 
 
 	<p>Unfortunately, CompositeController does not honor nextPath()..</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/d7e506d586e6a8a30b83ddd5f6031a79ef40c29c" title="Revision d7e506d5">Revision d7e506d5</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-13" title="11/13/2014 10:07 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>FQDN page: updated warning message. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>FQDN page: updated warning message. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
 
 
 	<p>The connection is lost during the event due to new SSL certificates.</p>
@@ -253,34 +320,44 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/f08aa5f8b4f95dc36ca0943e2ec4e67e54ff6a9a" title="Revision f08aa5f8">Revision f08aa5f8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-13" title="11/13/2014 10:36 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove ptrack *.dump files older than one week. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Remove ptrack *.dump files older than one week. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/3aa551bed7585f39bf400c71ce2623257d7c8b22" title="Revision 3aa551be">Revision 3aa551be</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-14" title="11/14/2014 03:07 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Bump nethgui 38f70738b9cfe2c51368e6b95a52d2c9c555788b. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Bump nethgui 38f70738b9cfe2c51368e6b95a52d2c9c555788b. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/552336f4e5dac30950b7fb91f6e0fe3e9906e549" title="Revision 552336f4">Revision 552336f4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-19" title="11/19/2014 03:24 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Require recent nethserver-lib, to show event errors. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Require recent nethserver-lib, to show event errors. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
 
 
 	<p>Requires: nethserver-lib > 2.1.1-1</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/a06dff149d2830ba9341c8ce486a58071a22bdab" title="Revision a06dff14">Revision a06dff14</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-19" title="11/19/2014 03:24 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Start detached hostname-modify event. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>Start detached hostname-modify event. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
 
 
 	<p>The event restarts httpd-admin and must run detached, to report errors<br />correctly.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/660c28004838fcaa441a8fc47fe220ad8bef3688" title="Revision 660c2800">Revision 660c2800</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-19" title="11/19/2014 03:24 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>FQDN page: updated warning message. Refs <a href="2927.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
+        <p>FQDN page: updated warning message. Refs <a href="/issues/2927" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Notify user if event fails (CLOSED)">#2927</a></p>
 
 
 	<p>The connection is lost during the event due to new SSL certificates.</p>
@@ -296,10 +373,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-12844" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2927.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2927#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-28" title="10/28/2014 11:03 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -310,11 +388,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12999" class="journal has-details">
     <div id="note-2">
-    <h4><a href="2927.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2927#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-05" title="11/05/2014 10:32 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2944.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2944</a>: User-create event fails if user name is &quot;service&quot;</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2944" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2944</a>: User-create event fails if user name is &quot;service&quot;</i> added</li>
     </ul>
     
     </div>
@@ -322,10 +401,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13052" class="journal has-details">
     <div id="note-3">
-    <h4><a href="2927.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2927#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 09:55 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Project</strong> changed from <i>NethServer 6</i> to <i>Nethgui</i></li>
        <li><strong>Category</strong> deleted (<del><i>&lt;multiple packages&gt;</i></del>)</li>
        <li><strong>Target version</strong> changed from <i>v6.5</i> to <i>v1.6.1</i></li>
@@ -336,11 +416,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13060" class="journal has-details">
     <div id="note-4">
-    <h4><a href="2927.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2927#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 11:54 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Copied to</strong> <i><a href="2949.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2949</a>: Notify user if event fails</i> added</li>
+    <ul class="details">
+       <li><strong>Copied to</strong> <i><a href="/issues/2949" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2949</a>: Notify user if event fails</i> added</li>
     </ul>
     
     </div>
@@ -348,10 +429,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13062" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="2927.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2927#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 11:58 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Project</strong> changed from <i>Nethgui</i> to <i>NethServer 6</i></li>
        <li><strong>Category</strong> set to <i>&lt;multiple packages&gt;</i></li>
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
@@ -375,10 +457,11 @@ The UI must now show notifications of failed processes. Three types of processes
   
   <div id="change-13063" class="journal has-notes has-details">
     <div id="note-6">
-    <h4><a href="2927.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2927#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 12:03 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -389,10 +472,11 @@ The UI must now show notifications of failed processes. Three types of processes
   
   <div id="change-13070" class="journal has-notes has-details">
     <div id="note-7">
-    <h4><a href="2927.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2927#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-11" title="11/11/2014 03:27 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -402,10 +486,11 @@ The UI must now show notifications of failed processes. Three types of processes
   
   <div id="change-13071" class="journal has-details">
     <div id="note-8">
-    <h4><a href="2927.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2927#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-11" title="11/11/2014 03:27 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -416,10 +501,11 @@ The UI must now show notifications of failed processes. Three types of processes
   
   <div id="change-13135" class="journal has-notes has-details">
     <div id="note-9">
-    <h4><a href="2927.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2927#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-13" title="11/13/2014 11:17 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -443,10 +529,11 @@ The UI must now show notifications of failed processes. Three types of processes
   
   <div id="change-13136" class="journal has-notes has-details">
     <div id="note-10">
-    <h4><a href="2927.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2927#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-13" title="11/13/2014 11:20 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -462,10 +549,11 @@ The UI must now show notifications of failed processes. Three types of processes
   
   <div id="change-13170" class="journal has-details">
     <div id="note-11">
-    <h4><a href="2927.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2927#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 03:00 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -474,10 +562,11 @@ The UI must now show notifications of failed processes. Three types of processes
   
   <div id="change-13171" class="journal has-notes has-details">
     <div id="note-12">
-    <h4><a href="2927.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2927#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 03:35 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -491,10 +580,11 @@ The UI must now show notifications of failed processes. Three types of processes
   
   <div id="change-13196" class="journal has-notes has-details">
     <div id="note-13">
-    <h4><a href="2927.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2927#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-19" title="11/19/2014 10:31 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -525,7 +615,9 @@ The UI must now show notifications of failed processes. Three types of processes
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2927.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2927.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -546,7 +638,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

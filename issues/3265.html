@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/3265.atom" rel="alternate" title="NethServer 6 - Enhancement #3265: Make Italian language pack optional" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -61,8 +108,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div class="issue tracker-6 status-5 priority-4 priority-default closed details">
     <div class="next-prev-links contextual">
-      <a href="3262.html" title="#3262">« Previous</a> |
-      <a href="3264.html" title="#3264">Next »</a>
+      <a href="/issues/3262" title="#3262">« Previous</a> |
+      <a href="/issues/3264" title="#3264">Next »</a>
     </div>
 
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
@@ -71,10 +118,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Make Italian language pack optional</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:30 AM">almost 6 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2015-09-29" title="09/29/2015 08:37 AM">almost 6 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">&lt;multiple packages&gt;</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/213.html">v6.7-rc1</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">&lt;multiple packages&gt;</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/213">v6.7-rc1</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -113,211 +162,293 @@ Tasks:
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-cups/revisions/d6a092657169d1e7cf119e3b99bfa43ce2225764" title="Revision d6a09265">Revision d6a09265</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:32 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/4b8a953b4bd9e000a996487b01c368f6d9ec7d2c" title="Revision 4b8a953b">Revision 4b8a953b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:37 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/eed66fef6c78552279c48afe5cbea9bbd1412f9e" title="Revision eed66fef">Revision eed66fef</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:37 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba-audit/revisions/73e18f710348cb3e3768fbd67034f6bedba8193a" title="Revision 73e18f71">Revision 73e18f71</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:42 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidclamav/revisions/8f6506a998e11a18b202f7ca66b73df963f73d70" title="Revision 8f6506a9">Revision 8f6506a9</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:43 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-vpn/revisions/43d7acdb6914999e0922227e86c301ca80c29224" title="Revision 43d7acdb">Revision 43d7acdb</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:43 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/f29c04414028dfa98e2525fca8251d39131cffe3" title="Revision f29c0441">Revision f29c0441</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:44 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-p3scan/revisions/efd0881ba1d343e2bae34e0f1c18f384556ccbf9" title="Revision efd0881b">Revision efd0881b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:46 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-phonehome/revisions/eed8b655db3aebb6304d6b593963d94129052774" title="Revision eed8b655">Revision eed8b655</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:47 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/2db828cb9c85ad928d3fa4d1cab2b0cc7c627033" title="Revision 2db828cb">Revision 2db828cb</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:48 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ntp/revisions/dd1f4d8a6d3f57e8ca243fc83ce14e137eb4d000" title="Revision dd1f4d8a">Revision dd1f4d8a</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:49 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squid/revisions/40d48e8a35e845cab96b95969aebd6d76e51459f" title="Revision 40d48e8a">Revision 40d48e8a</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:50 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-openssh/revisions/e9d9c6273a88fb13dbcaeb959a2a94ea9a9d24df" title="Revision e9d9c627">Revision e9d9c627</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:51 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-antivirus/revisions/9183ea72479ba001a7e02f456c3f844a681e501e" title="Revision 9183ea72">Revision 9183ea72</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:51 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-iaxmodem/revisions/2921b001271c4d0a95545f27b0fd8052e029e6df" title="Revision 2921b001">Revision 2921b001</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:53 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-fetchmail/revisions/928d066c4763d65640255ae0a73915e8c56a7c95" title="Revision 928d066c">Revision 928d066c</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:53 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/ed9924c0e3b32679ce77519c4139a96755d85bb3" title="Revision ed9924c0">Revision ed9924c0</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:54 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-hylafax/revisions/6c9718522fd17560800acee6d2ce1260ea3ba9e8" title="Revision 6c971852">Revision 6c971852</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:54 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/2f7182bfd773b96fb6093d621e04b3b22a06f8cb" title="Revision 2f7182bf">Revision 2f7182bf</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 05:49 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-hylafax/revisions/230807d54ddc6bc0efcf7529fa3a487beed2cd57" title="Revision 230807d5">Revision 230807d5</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 05:54 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidclamav/revisions/0ff03b43706c04a8f8bff307aaeea2bdf7efadca" title="Revision 0ff03b43">Revision 0ff03b43</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 05:57 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/fdc39f38825fc010a39b478fe29cffc1c0d4e195" title="Revision fdc39f38">Revision fdc39f38</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 05:57 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-vsftpd/revisions/59f8c1466faeee28a0bcd694d2d02cbaa045b01d" title="Revision 59f8c146">Revision 59f8c146</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 05:58 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-p3scan/revisions/a0b8ff9771cabb4eded1ec5c9e46fb28a32d863c" title="Revision a0b8ff97">Revision a0b8ff97</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 05:59 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-hosts/revisions/6279aed9c6d72335613cc96b52e5c50f7988036a" title="Revision 6279aed9">Revision 6279aed9</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:05 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation and inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation and inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/0bbb1791bdb06a7b63eab2afdc4d8975900fe2a5" title="Revision 0bbb1791">Revision 0bbb1791</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:06 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/753b0e3949287bd3bf03c844a733555cbf373932" title="Revision 753b0e39">Revision 753b0e39</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:08 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-backup-data/revisions/dec42466978392a801698214a76548b11d0b789f" title="Revision dec42466">Revision dec42466</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:08 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ntp/revisions/017d4c463da18f6d103bfe569e2a385765d4b690" title="Revision 017d4c46">Revision 017d4c46</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:09 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-snort/revisions/e1a045f2c7803974a115a2637df62065e918718d" title="Revision e1a045f2">Revision e1a045f2</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:10 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-openssh/revisions/90aa521480e0677aa82aefc0ccc48cd196d2738d" title="Revision 90aa5214">Revision 90aa5214</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:11 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squid/revisions/968f20b467ad2a3a8af1ee7e39bfd0db1f3a7e15" title="Revision 968f20b4">Revision 968f20b4</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:11 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-iaxmodem/revisions/47a8b93365c155e344bb436cf3adc2d80934f0ac" title="Revision 47a8b933">Revision 47a8b933</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:11 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-fetchmail/revisions/2f8f9d9465ccadea619dddd8153a794eab9a6cc9" title="Revision 2f8f9d94">Revision 2f8f9d94</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:12 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/1cdc0062b97aea53a7b17fa685f9d4aa999aec9f" title="Revision 1cdc0062">Revision 1cdc0062</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:13 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lang/revisions/46b104f97330b92ce21af363ab021b1272c87312" title="Revision 46b104f9">Revision 46b104f9</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 06:36 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: remove override logic. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>spec: remove override logic. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/b092283e85abe144da68a30a9d1689f3052f6402" title="Revision b092283e">Revision b092283e</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 10:15 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: remove nethserver-lang-it dependency, remove override dirs. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>spec: remove nethserver-lang-it dependency, remove override dirs. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lang/revisions/fce57a8280730fe09e69a2c177826e18568f913d" title="Revision fce57a82">Revision fce57a82</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-28" title="09/28/2015 05:47 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: create dirs for English. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>spec: create dirs for English. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lang/revisions/2de2179af55176c0b243231be966ec0b71e009e8" title="Revision 2de2179a">Revision 2de2179a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-09-29" title="09/29/2015 04:20 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Revert "spec: create dirs for English. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a>"</p>
+        <p>Revert "spec: create dirs for English. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a>"</p>
 
 
 	<p>This reverts commit fce57a8280730fe09e69a2c177826e18568f913d and restores<br />the fake language placeholder for Server Manager.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/f5b4c5aee28b4662fb1828b2aceb97bb19b206d0" title="Revision f5b4c5ae">Revision f5b4c5ae</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-29" title="09/29/2015 10:44 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove translation override implementation. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove translation override implementation. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-hosts/revisions/f893e0785f255ca287ce95418c8591eb2d06eeca" title="Revision f893e078">Revision f893e078</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2016-04-27" title="04/27/2016 12:03 PM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove Italian translation and inline help. Refs <a href="3265.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
+        <p>Remove Italian translation and inline help. Refs <a href="/issues/3265" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Make Italian language pack optional (CLOSED)">#3265</a></p>
     </div>
     </div>
 
@@ -327,10 +458,11 @@ Tasks:
 <h3>History</h3>
   <div id="change-16260" class="journal has-details">
     <div id="note-1">
-    <h4><a href="3265.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/3265#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:31 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>Target version</strong> set to <i>v6.7-rc1</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
@@ -341,10 +473,11 @@ Tasks:
   
   <div id="change-16261" class="journal has-details">
     <div id="note-2">
-    <h4><a href="3265.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/3265#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 04:31 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -355,10 +488,11 @@ Tasks:
   
   <div id="change-16263" class="journal has-details">
     <div id="note-3">
-    <h4><a href="3265.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/3265#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 10:10 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -368,10 +502,11 @@ Tasks:
   
   <div id="change-16264" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="3265.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/3265#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 10:25 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -436,8 +571,9 @@ yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-de
   
   <div id="change-16265" class="journal has-notes">
     <div id="note-5">
-    <h4><a href="3265.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/3265#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-09-25" title="09/25/2015 11:59 AM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16265-notes"><p><strong>VERIFIED</strong></p>
 
@@ -456,8 +592,9 @@ yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-de
   
   <div id="change-16268" class="journal has-notes">
     <div id="note-6">
-    <h4><a href="3265.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/3265#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/a51a6d0dfe89fa5bf19f241d5cdebc5e?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/326" class="user active">dz0 0te</a> <a href="/projects/nethserver/activity?from=2015-09-28" title="09/28/2015 03:47 AM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16268-notes"><p>just a rapid test... <br />clean 6.6 fully updated, tested with:<br />yum update<br />echo '6.7' > /etc/yum/vars/distroversion<br />yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-devbox</p>
 
@@ -477,8 +614,9 @@ yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-de
   
   <div id="change-16269" class="journal has-notes">
     <div id="note-7">
-    <h4><a href="3265.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/3265#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-28" title="09/28/2015 04:23 AM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16269-notes"><blockquote>
 
@@ -497,13 +635,15 @@ yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-de
 
 </blockquote>
 
+	<p>This is ok, since testing repository doesn't have any group and still there isn't a group for the Italian language.</p></div>
     </div>
   </div>
   
   <div id="change-16270" class="journal has-notes">
     <div id="note-8">
-    <h4><a href="3265.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/3265#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-28" title="09/28/2015 05:49 AM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16270-notes">New lang packages:
 	<ul>
@@ -526,8 +666,9 @@ yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-de
   
   <div id="change-16271" class="journal has-notes">
     <div id="note-9">
-    <h4><a href="3265.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/3265#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/a51a6d0dfe89fa5bf19f241d5cdebc5e?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/326" class="user active">dz0 0te</a> <a href="/projects/nethserver/activity?from=2015-09-28" title="09/28/2015 07:45 AM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16271-notes"><p>Giacomo Sanchietti wrote:</p>
 
@@ -550,8 +691,9 @@ yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-de
   
   <div id="change-16278" class="journal has-notes">
     <div id="note-10">
-    <h4><a href="3265.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/3265#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-09-29" title="09/29/2015 05:12 AM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16278-notes"><p>Now English en_US should be displayed again in Server Manager</p>
 
@@ -568,10 +710,11 @@ yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-de
   
   <div id="change-16280" class="journal has-details">
     <div id="note-11">
-    <h4><a href="3265.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/3265#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-29" title="09/29/2015 08:21 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -580,10 +723,11 @@ yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-de
   
   <div id="change-16281" class="journal has-notes has-details">
     <div id="note-12">
-    <h4><a href="3265.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/3265#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-09-29" title="09/29/2015 08:26 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -594,10 +738,11 @@ yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-de
   
   <div id="change-16283" class="journal has-notes has-details">
     <div id="note-13">
-    <h4><a href="3265.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/3265#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-09-29" title="09/29/2015 08:37 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -631,7 +776,9 @@ yum --enablerepo=nethserver-testing install nethserver-* --exclude=nethserver-de
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/3265.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/3265.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -652,7 +799,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

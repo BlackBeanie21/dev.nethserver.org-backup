@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1137.atom" rel="alternate" title="NethServer 6 - Bug #1137: nethserver-samba-conf action exits with error code 768" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,16 +114,18 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>nethserver-samba-conf action exits with error code 768</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 03:09 PM">about 9 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-02-01" title="02/01/2013 09:10 AM">over 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">05/21/2012</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">05/21/2012</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-directory</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/104.html">DEV104</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">05/21/2012</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">05/21/2012</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-directory</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/104">DEV104</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_15">Security class:</th><td class="cf_15"></td>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 </tr>
 <tr>
-	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/103.html">DEV103</a></td>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="/versions/103">DEV103</a></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14"></td>
 </tr>
 
@@ -133,7 +182,7 @@ May 21 14:50:07 davidep3 esmith: :event[1288]: S30nethserver-samba-conf=action|E
     Blocks
     
     NethServer 6 - 
-    <a href="1043.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1043</a>: Handling managedBy prop in callback actions
+    <a href="/issues/1043" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1043</a>: Handling managedBy prop in callback actions
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">05/18/2012</td>
@@ -143,7 +192,7 @@ May 21 14:50:07 davidep3 esmith: :event[1288]: S30nethserver-samba-conf=action|E
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/1137/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/1137/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -160,7 +209,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="1137.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -183,56 +232,76 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/0f09688e4762f1523e21c4959cbd63f7457745f3" title="Revision 0f09688e">Revision 0f09688e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 03:54 PM">about 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-conf action: added error log messages. Refs <a href="1137.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a> - nethserver-samba-conf action exits with error code 768</p>
+        <p>nethserver-samba-conf action: added error log messages. Refs <a href="/issues/1137" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a> - nethserver-samba-conf action exits with error code 768</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/5e6225bb4697605ee0a90441ddbf81a70cfbac8a" title="Revision 5e6225bb">Revision 5e6225bb</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 04:54 PM">about 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-conf: removed error log messages. Refs <a href="1137.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a> - nethserver-samba-conf action exits with error code 768</p>
+        <p>nethserver-samba-conf: removed error log messages. Refs <a href="/issues/1137" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a> - nethserver-samba-conf action exits with error code 768</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/ce53f85eff6b4891d89f3b257b6da315dffbcff1" title="Revision ce53f85e">Revision ce53f85e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 04:57 PM">about 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>LDAP.pm merge(): fixed returned Message object on NOOP. Refs <a href="1137.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a> - nethserver-samba-conf action exits with error code 768</p>
+        <p>LDAP.pm merge(): fixed returned Message object on NOOP. Refs <a href="/issues/1137" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a> - nethserver-samba-conf action exits with error code 768</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/710354571515012af68040b5eadb28ed6f3d772e" title="Revision 71035457">Revision 71035457</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 06:02 PM">about 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-conf: moved acl setup into new action nethserver-samba-aclsetup. Refs <a href="1137.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a></p>
+        <p>nethserver-samba-conf: moved acl setup into new action nethserver-samba-aclsetup. Refs <a href="/issues/1137" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/3b851e046f4c0d2521dfb0caa4c75d9a77e64c6e" title="Revision 3b851e04">Revision 3b851e04</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 06:04 PM">about 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>merge() (LDAP.pm): added $message initialization. Refs <a href="1137.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a></p>
+        <p>merge() (LDAP.pm): added $message initialization. Refs <a href="/issues/1137" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/06d749364fe1a96dbc8d2608b869eecf8ad2478a" title="Revision 06d74936">Revision 06d74936</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 06:41 PM">about 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>adjust-services action: checking service enabled state before adjusting it. Refs <a href="1137.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a> - nethserver-samba-conf action exits with error code 768</p>
+        <p>adjust-services action: checking service enabled state before adjusting it. Refs <a href="/issues/1137" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a> - nethserver-samba-conf action exits with error code 768</p>
 
 
 	<p>- removed e-smith supevised service logics</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/307b37f3bb295c6db49d0e2a8471bb42e3475e37" title="Revision 307b37f3">Revision 307b37f3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 06:43 PM">about 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-directory-update event: reordered action invocations. Refs <a href="1137.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a></p>
+        <p>nethserver-directory-update event: reordered action invocations. Refs <a href="/issues/1137" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/0defb9a322b66d990f47b71d860801d7ba2ebe23" title="Revision 0defb9a3">Revision 0defb9a3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 06:43 PM">about 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-aclsetup action: checked if smb service is enabled, to plug this action safely into nethserver-directory-update event. Refs <a href="1137.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a></p>
+        <p>nethserver-samba-aclsetup action: checked if smb service is enabled, to plug this action safely into nethserver-directory-update event. Refs <a href="/issues/1137" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/c91707fca5a13eb9e22fcd2497ca87e638b24d37" title="Revision c91707fc">Revision c91707fc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-22" title="05/22/2012 09:28 AM">about 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-aclsetup action: fixed exit code. Refs <a href="1137.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a></p>
+        <p>nethserver-samba-aclsetup action: fixed exit code. Refs <a href="/issues/1137" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/e705c7b4be7214d6438ed5d5a8accd3942a56e5e" title="Revision e705c7b4">Revision e705c7b4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-04" title="12/04/2012 10:21 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-directory-update event: refactored nethserver-mail-server-conf, by moving LDAP acl setup into nethserver-mail-server-ldapsetup action. Refs <a href="1137.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a>, <a href="1577.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Detach freshclam in nethserver-antivirus-update event (CLOSED)">#1577</a></p>
+        <p>nethserver-directory-update event: refactored nethserver-mail-server-conf, by moving LDAP acl setup into nethserver-mail-server-ldapsetup action. Refs <a href="/issues/1137" class="issue tracker-1 status-5 priority-4 priority-default closed" title="nethserver-samba-conf action exits with error code 768 (CLOSED)">#1137</a>, <a href="/issues/1577" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Detach freshclam in nethserver-antivirus-update event (CLOSED)">#1577</a></p>
     </div>
     </div>
 
@@ -242,10 +311,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-2663" class="journal has-notes has-details">
     <div id="note-1">
-    <h4><a href="1137.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1137#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 04:05 PM">about 9 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Project</strong> changed from <i>2</i> to <i>47</i></li>
     </ul>
     <div class="wiki" id="journal-2663-notes"><p>The problem is the exit code returned by <code>merge()</code>: it is a non-zero value, even if no error has occurred.</p></div>
@@ -254,10 +324,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-2664" class="journal has-details">
     <div id="note-2">
-    <h4><a href="1137.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1137#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 06:50 PM">about 9 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>% Done</strong> changed from <i>20</i> to <i>80</i></li>
     </ul>
     
@@ -266,10 +337,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-2666" class="journal has-details">
     <div id="note-3">
-    <h4><a href="1137.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1137#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-21" title="05/21/2012 07:12 PM">about 9 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>7</i></li>
        <li><strong>% Done</strong> changed from <i>80</i> to <i>100</i></li>
     </ul>
@@ -279,10 +351,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-4437" class="journal has-details">
     <div id="note-4">
-    <h4><a href="1137.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/1137#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-01" title="01/31/2013 07:06 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Project</strong> changed from <i>47</i> to <i>NethServer 6</i></li>
     </ul>
     
@@ -306,7 +379,9 @@ setPredecessorFieldsVisibility();
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1137.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1137.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -327,7 +402,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

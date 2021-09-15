@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2820.atom" rel="alternate" title="NethServer 6 - Enhancement #2820: Embed Nethgui 1.6.0 into httpd-admin RPM" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Embed Nethgui 1.6.0 into httpd-admin RPM</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-21" title="07/21/2014 12:12 PM">about 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-08-20" title="08/20/2014 05:56 AM">almost 7 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-httpd-admin</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-httpd-admin</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -110,7 +159,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2812.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2812</a>: Build from plain .spec file enhanced
+    <a href="/issues/2812" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2812</a>: Build from plain .spec file enhanced
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -123,7 +172,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2794.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2794</a>: Packagemanager: be more verbose in case of error
+    <a href="/issues/2794" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2794</a>: Packagemanager: be more verbose in case of error
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -136,7 +185,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2798.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2798</a>: Remote access: no valid netmask for single IP
+    <a href="/issues/2798" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2798</a>: Remote access: no valid netmask for single IP
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -149,7 +198,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     Nethgui - 
-    <a href="2764.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2764</a>: CIDR block validator
+    <a href="/issues/2764" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2764</a>: CIDR block validator
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -162,7 +211,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     Nethgui - 
-    <a href="2817.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2817</a>: Process Tracker module
+    <a href="/issues/2817" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2817</a>: Process Tracker module
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -175,7 +224,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     Nethgui - 
-    <a href="2818.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2818</a>: Customizable Notification templates
+    <a href="/issues/2818" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2818</a>: Customizable Notification templates
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -188,7 +237,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     Nethgui - 
-    <a href="2819.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2819</a>: View::getCommandList() API deprecation
+    <a href="/issues/2819" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2819</a>: View::getCommandList() API deprecation
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -198,7 +247,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2820/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2820/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -215,7 +264,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2820.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -238,109 +287,143 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/7768d8a56a735a82214858cb3e4e7e97ce34bdfc" title="Revision 7768d8a5">Revision 7768d8a5</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-21" title="07/21/2014 12:06 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Use Composer to manage dependencies. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>Use Composer to manage dependencies. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
 
 
 	<p>Nethgui is no longer an RPM package: it must be embedded into another<br />RPM requiring it. See nethserver-httpd-admin package, for instance.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/dbae3af59acaa5895c82bc4c0a090fd2649b378f" title="Revision dbae3af5">Revision dbae3af5</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-22" title="07/22/2014 05:38 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Updated dependencies for Nethgui 1.6.0. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>Updated dependencies for Nethgui 1.6.0. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-yum/revisions/8e98febf0796ee12c232b0bf2814bb5dd5efae82" title="Revision 8e98febf">Revision 8e98febf</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-22" title="07/22/2014 09:26 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>pkgaction: print error messages to stderr. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>pkgaction: print error messages to stderr. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/6dbebac7d21327e90565c11359577aec169c7d43" title="Revision 6dbebac7">Revision 6dbebac7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-22" title="07/22/2014 09:56 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>ptrack: exit with non-zero exit code if command does not exist. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>ptrack: exit with non-zero exit code if command does not exist. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/2e2b4b3782aa0faf07701ca4a82ff6b82fe9737d" title="Revision 2e2b4b37">Revision 2e2b4b37</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-22" title="07/22/2014 12:21 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>ptrack: changed progress and dump format. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>ptrack: changed progress and dump format. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-yum/revisions/7ebafd0d499ed57542fb3fe8431f74b3c599695b" title="Revision 7ebafd0d">Revision 7ebafd0d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-23" title="07/23/2014 05:54 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>pkgaction: exit with non-zero value if events fail. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>pkgaction: exit with non-zero value if events fail. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
 
 
 	<p>The new Tracker module from Nethgui requires non-zero process exit<br />code to detect an error condition.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/f456974a61321bd3891e4913bdcbb488c6111b24" title="Revision f456974a">Revision f456974a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-23" title="07/23/2014 06:49 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>event actions: Report error reason, when possible. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>event actions: Report error reason, when possible. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
 
 
 	<p>When a task has non-zero exit code the message can specify the error<br />reason.  If the message is empty, the reason should be provided by a<br />more specific sub-task.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/258e34b8df2321122c2249845448717dced7f7a8" title="Revision 258e34b8">Revision 258e34b8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-25" title="07/25/2014 11:12 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>ptrack: daemonize() and use syslog. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>ptrack: daemonize() and use syslog. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
 
 
 	<p>UI configuration is read from stdin in JSON format before fork()ing.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/997fa41220c6dd4542b2dfbddeac89f48eb8e64b" title="Revision 997fa412">Revision 997fa412</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-25" title="07/25/2014 11:18 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>PackageManager: use Tracker module from Nethgui 1.6. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>PackageManager: use Tracker module from Nethgui 1.6. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/e5e661f48d26a95525364ee2aea4ff31962053db" title="Revision e5e661f4">Revision e5e661f4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-28" title="07/28/2014 04:26 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Merge branch 'b2820' Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>Merge branch 'b2820' Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
 
 
 	<p>Embed Nethgui 1.6.0 into httpd-admin RPM</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/e8f3e75b1327164928ebf2c0e31131ea55108c85" title="Revision e8f3e75b">Revision e8f3e75b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-28" title="07/28/2014 05:05 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>LocalNetwork, Organization, RemoteAccess UI modules: background task event. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>LocalNetwork, Organization, RemoteAccess UI modules: background task event. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
 
 
 	<p>When httpd-admin is reloaded/restarted, prevent errors caused by<br />smwingsd/httpd-admin shutting down their sockets.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/069a2528e0b7af992679444dd158a66956a7bfe3" title="Revision 069a2528">Revision 069a2528</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-29" title="07/29/2014 12:14 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Nethesis template: use Nethgui 1.6 Notification and Tracker output slots. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>Nethesis template: use Nethgui 1.6 Notification and Tracker output slots. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
 
 
 	<p>Also, include CSS Font Awesome.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/55f598fc93271d6ceb26e24426d2000f2f1db49e" title="Revision 55f598fc">Revision 55f598fc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-29" title="07/29/2014 12:15 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallRules/Index page: Font Awesome included by nethserver-base. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>FirewallRules/Index page: Font Awesome included by nethserver-base. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/b0898286cda11327a4b32bc46212d14ffb79eb48" title="Revision b0898286">Revision b0898286</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-29" title="07/29/2014 12:16 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Use default Notification CSS styles from Nethgui. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>Use default Notification CSS styles from Nethgui. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/758c16802dab709cd1982a8a9e7d2e773229752f" title="Revision 758c1680">Revision 758c1680</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-29" title="07/29/2014 12:18 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Include styled Notifications from Nethgui. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>Include styled Notifications from Nethgui. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/50e6402e085665f72b136013f8a4c59ff6eec856" title="Revision 50e6402e">Revision 50e6402e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-30" title="07/30/2014 09:06 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Silently stop httpd-admin during RPM transaction. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>Silently stop httpd-admin during RPM transaction. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/f56f0734ea5da91fff7e0804b0561d8699c61bc9" title="Revision f56f0734">Revision f56f0734</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-31" title="07/31/2014 12:48 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fake Tracker module for backward compatibility. Refs <a href="2820.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
+        <p>Fake Tracker module for backward compatibility. Refs <a href="/issues/2820" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Embed Nethgui 1.6.0 into httpd-admin RPM (CLOSED)">#2820</a></p>
 
 
 	<p>fixes commit:997fa41</p>
@@ -353,11 +436,12 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-11716" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2820.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2820#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-21" title="07/21/2014 12:13 PM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2812.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2812</a>: Build from plain .spec file enhanced</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2812" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2812</a>: Build from plain .spec file enhanced</i> added</li>
     </ul>
     
     </div>
@@ -365,10 +449,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11719" class="journal has-details">
     <div id="note-2">
-    <h4><a href="2820.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2820#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-22" title="07/22/2014 03:48 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -379,11 +464,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11725" class="journal has-details">
     <div id="note-3">
-    <h4><a href="2820.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2820#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-23" title="07/23/2014 04:54 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2794.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2794</a>: Packagemanager: be more verbose in case of error</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2794" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2794</a>: Packagemanager: be more verbose in case of error</i> added</li>
     </ul>
     
     </div>
@@ -391,8 +477,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11726" class="journal has-notes">
     <div id="note-4">
-    <h4><a href="2820.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2820#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-23" title="07/23/2014 06:52 AM">about 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-11726-notes"><p>New guideline for <code>ptrack</code> clients:</p>
 
@@ -408,10 +495,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11735" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="2820.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2820#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-28" title="07/28/2014 09:50 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -423,7 +511,7 @@ setPredecessorFieldsVisibility();
 	<li>Removed Module/Tracker and Tool/Tracker from PackageManager, use new Tracker from Nethgui</li>
 		<li>LocalNetwork, Organization, RemoteAccess pages use new Tracker, too</li>
 		<li>Changed messages to <code>ptrack</code> from <code>runlevel-adjust</code> <code>adjust-services</code> <code>generic_template_expand</code></li>
-		<li>Updated <code>pkgaction</code> to new <code>ptrack</code> guidelines (see above <a href="2820.html#note-4">note-4</a>)</li>
+		<li>Updated <code>pkgaction</code> to new <code>ptrack</code> guidelines (see above <a href="/issues/2820#note-4">note-4</a>)</li>
 	</ul>
 
 
@@ -436,10 +524,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11736" class="journal has-notes has-details">
     <div id="note-6">
-    <h4><a href="2820.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2820#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-28" title="07/28/2014 09:51 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -452,11 +541,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11740" class="journal has-details">
     <div id="note-7">
-    <h4><a href="2820.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2820#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-28" title="07/28/2014 10:34 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2798.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2798</a>: Remote access: no valid netmask for single IP</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2798" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2798</a>: Remote access: no valid netmask for single IP</i> added</li>
     </ul>
     
     </div>
@@ -464,10 +554,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11760" class="journal has-details">
     <div id="note-8">
-    <h4><a href="2820.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2820#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-29" title="07/29/2014 06:07 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -476,11 +567,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11847" class="journal has-details">
     <div id="note-9">
-    <h4><a href="2820.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2820#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-08" title="08/08/2014 05:22 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2764.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2764</a>: CIDR block validator</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2764" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2764</a>: CIDR block validator</i> added</li>
     </ul>
     
     </div>
@@ -488,11 +580,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11849" class="journal has-details">
     <div id="note-10">
-    <h4><a href="2820.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2820#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-08" title="08/08/2014 05:22 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2817.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2817</a>: Process Tracker module</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2817" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2817</a>: Process Tracker module</i> added</li>
     </ul>
     
     </div>
@@ -500,11 +593,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11851" class="journal has-details">
     <div id="note-11">
-    <h4><a href="2820.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2820#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-08" title="08/08/2014 05:22 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2818.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2818</a>: Customizable Notification templates</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2818" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2818</a>: Customizable Notification templates</i> added</li>
     </ul>
     
     </div>
@@ -512,11 +606,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11853" class="journal has-details">
     <div id="note-12">
-    <h4><a href="2820.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2820#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-08" title="08/08/2014 05:23 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2819.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2819</a>: View::getCommandList() API deprecation</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2819" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2819</a>: View::getCommandList() API deprecation</i> added</li>
     </ul>
     
     </div>
@@ -524,10 +619,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11905" class="journal has-details">
     <div id="note-13">
-    <h4><a href="2820.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2820#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-08-19" title="08/19/2014 11:33 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
     </ul>
@@ -537,10 +633,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11927" class="journal has-notes has-details">
     <div id="note-14">
-    <h4><a href="2820.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/2820#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-20" title="08/20/2014 05:56 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
@@ -566,7 +663,9 @@ setPredecessorFieldsVisibility();
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2820.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2820.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -587,7 +686,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

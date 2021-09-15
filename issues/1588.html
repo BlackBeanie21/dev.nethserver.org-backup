@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1588.atom" rel="alternate" title="NethServer 6 - Task #1588: Test PDC mode" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Test PDC mode</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-07" title="12/07/2012 11:41 AM">over 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-02-07" title="02/07/2013 06:46 PM">over 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">12/07/2012</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">12/07/2012</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-samba</td><th class="estimated-hours">Estimated time:</th><td class="estimated-hours">6.00 hours</td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/105.html">NSA1</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">12/07/2012</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">12/07/2012</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-samba</td><th class="estimated-hours">Estimated time:</th><td class="estimated-hours">6.00 hours</td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/105">NSA1</a></td><th></th><td></td></tr>
 
 
 </table>
@@ -85,58 +134,80 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/a4b4e866b94a2ec67f13eca26ac738f90b08d6dc" title="Revision a4b4e866">Revision a4b4e866</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-07" title="12/07/2012 03:57 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>group-create validator:check the groupname isnot reserved. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a> -- Test PDC mode</p>
+        <p>group-create validator:check the groupname isnot reserved. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a> -- Test PDC mode</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/c6d5293818c7c3e039421623e080f974c1e6b2ce" title="Revision c6d52938">Revision c6d52938</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-07" title="12/07/2012 04:18 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-update-event: initialize unremovable `domadmins` group. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a> -- Test PDC mode</p>
+        <p>nethserver-samba-update-event: initialize unremovable `domadmins` group. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a> -- Test PDC mode</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/1ae5c6a09a245f748f422746f870c6aa9b42c4b8" title="Revision 1ae5c6a0">Revision 1ae5c6a0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-07" title="12/07/2012 04:21 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-ibays-conf action: create user and group `shared`, as samba expects both. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a> -- Test PDC mode</p>
+        <p>nethserver-ibays-conf action: create user and group `shared`, as samba expects both. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a> -- Test PDC mode</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/ffbb36504523d9cb203d6039ebb23ff5e7e67200" title="Revision ffbb3650">Revision ffbb3650</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-07" title="12/07/2012 04:34 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>ibay-delete platform validator: use generic `record-removable` action. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
+        <p>ibay-delete platform validator: use generic `record-removable` action. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/26d5978cc7858efe162273916a2641fce41a614c" title="Revision 26d5978c">Revision 26d5978c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-07" title="12/07/2012 04:37 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>record-removable validator action: renamed to account-removable in project:nethserver-directory. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
+        <p>record-removable validator action: renamed to account-removable in project:nethserver-directory. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/a79d25fc4321534df663064d8d8427160aae2ff4" title="Revision a79d25fc">Revision a79d25fc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-07" title="12/07/2012 04:54 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>User and Group Modify UI modules: honour Removable=no prop, using {user,group}-delete and {user,group}-create validators. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
+        <p>User and Group Modify UI modules: honour Removable=no prop, using {user,group}-delete and {user,group}-create validators. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/935647ddb7f77e92d5626cf193ed0011396c982f" title="Revision 935647dd">Revision 935647dd</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-07" title="12/07/2012 05:29 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-sam-conf action: add SeMachineAccountPrivilege to domadmins group. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a> -- Test PDC mode</p>
+        <p>nethserver-samba-sam-conf action: add SeMachineAccountPrivilege to domadmins group. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a> -- Test PDC mode</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/25e0e0da65423b8f0173f074910a9c5cc43e85ba" title="Revision 25e0e0da">Revision 25e0e0da</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-10" title="12/10/2012 03:00 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Moved netlogon.bat placeholed in netlogon share. Moved ms-windows registry patches into /var/lib/nethserver/winregistry-patches/. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
+        <p>Moved netlogon.bat placeholed in netlogon share. Moved ms-windows registry patches into /var/lib/nethserver/winregistry-patches/. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/df73524c40ee82b601624be4a7ce2dffd0526164" title="Revision df73524c">Revision df73524c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-10" title="12/10/2012 04:21 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-{ibays,samba}-update events: map unix group "shared" in SAM db. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
+        <p>nethserver-{ibays,samba}-update events: map unix group "shared" in SAM db. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/5c1d0659426d790baa5f821c8ea2ebab28c795d5" title="Revision 5c1d0659">Revision 5c1d0659</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-10" title="12/10/2012 04:33 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>dnsmasq.conf template: fixed interface list and gateway configuration. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
+        <p>dnsmasq.conf template: fixed interface list and gateway configuration. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/2154b69d350e4f454eda8bd18172e3a2b54996a0" title="Revision 2154b69d">Revision 2154b69d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-11" title="12/11/2012 11:07 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-group-create action: don't map `shared` group. `shared` group mapping is performed by nethserver-samba-map-shared action. Refs <a href="1588.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
+        <p>nethserver-samba-group-create action: don't map `shared` group. `shared` group mapping is performed by nethserver-samba-map-shared action. Refs <a href="/issues/1588" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Test PDC mode (CLOSED)">#1588</a></p>
     </div>
     </div>
 
@@ -146,10 +217,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <h3>History</h3>
   <div id="change-4113" class="journal has-details">
     <div id="note-1">
-    <h4><a href="1588.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1588#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-12-11" title="12/10/2012 07:08 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>100</i></li>
     </ul>
@@ -159,10 +231,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-4930" class="journal has-details">
     <div id="note-3">
-    <h4><a href="1588.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1588#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-07" title="02/07/2013 06:46 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Project</strong> changed from <i>2</i> to <i>NethServer 6</i></li>
     </ul>
     
@@ -186,7 +259,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1588.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1588.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -207,7 +282,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

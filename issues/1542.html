@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1542.atom" rel="alternate" title="NethServer 6 - Task #1542: Ibay httpd configuration" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -64,13 +111,15 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
 
 <div class="subject">
-<div><p><a href="1111.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent">Task #1111</a>: VirtualHosts configuration</p><div><h3>Ibay httpd configuration</h3></div></div>
+<div><p><a href="/issues/1111" class="issue tracker-4 status-5 priority-4 priority-default closed parent">Task #1111</a>: VirtualHosts configuration</p><div><h3>Ibay httpd configuration</h3></div></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 11:32 AM">over 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-02-01" title="02/01/2013 09:11 AM">over 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">11/07/2012</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">11/08/2012</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-httpd</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/133.html">DEV133</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">11/07/2012</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">11/08/2012</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-httpd</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/133">DEV133</a></td><th></th><td></td></tr>
 
 
 </table>
@@ -97,83 +146,115 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/f563c654c497054805fd6e31f11e0aa06643e21c" title="Revision f563c654">Revision f563c654</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 03:45 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>httpd.conf template: added fragments for ibays configuration (vhost <i>ANY</i>). Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>httpd.conf template: added fragments for ibays configuration (vhost <i>ANY</i>). Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/d7b4a5402d20dde214aabab98038a154d01c9c4a" title="Revision d7b4a540">Revision d7b4a540</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 04:01 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Imported nethserver-ibays-set-password from project:nethserver-httpd. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a> -- Ibay httpd configuration</p>
+        <p>Imported nethserver-ibays-set-password from project:nethserver-httpd. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a> -- Ibay httpd configuration</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/61031d2947ae386a8273ea71411da6a997380ade" title="Revision 61031d29">Revision 61031d29</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 04:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Moved nethserver-httpd-ibaypassword action into    project:nethserver-ibays. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a> -- Ibay httpd configuration</p>
+        <p>Moved nethserver-httpd-ibaypassword action into    project:nethserver-ibays. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a> -- Ibay httpd configuration</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/6073aa107148a7fdf4e1b4403248a22ba1c99c6d" title="Revision 6073aa10">Revision 6073aa10</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 04:35 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-ibays-set-password action: fixed htpasswd call parameters. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>nethserver-ibays-set-password action: fixed htpasswd call parameters. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/b5271770bf627624be5a7788dc65d8bf887f4785" title="Revision b5271770">Revision b5271770</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 04:36 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-ibays-set-password action: missing ibay argument set password for all ibays. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>nethserver-ibays-set-password action: missing ibay argument set password for all ibays. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/5c898dfa3a46c8b7e76dec88d075990af7dc6b64" title="Revision 5c898dfa">Revision 5c898dfa</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 04:53 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>httpd.conf template: missing authz_user Apache module. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>httpd.conf template: missing authz_user Apache module. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/d02c38f02fb2bbaedcedd56b96c5346d55e0f5a4" title="Revision d02c38f0">Revision d02c38f0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 05:05 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>httpd.conf template: removed trailing slash from Alias directive to make DirectorySlash work as expected. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>httpd.conf template: removed trailing slash from Alias directive to make DirectorySlash work as expected. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/6ef512d3c845d7c467c11edd3da50b8215681697" title="Revision 6ef512d3">Revision 6ef512d3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 05:50 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>httpd.conf template: keep global Alias directive in httpd.conf. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>httpd.conf template: keep global Alias directive in httpd.conf. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/7bb655bed151ee37b5c11cea7ba91afde6604920" title="Revision 7bb655be">Revision 7bb655be</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 05:56 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Moved all ibays stuff in project:nethserver-httpd to fix dependency relation. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>Moved all ibays stuff in project:nethserver-httpd to fix dependency relation. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/a60bb4546c92626799145259126f7d115467547e" title="Revision a60bb454">Revision a60bb454</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 06:28 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>httpd.conf template: undo previous export. All ibays template fragments are here to keep dependencies consistent. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a> -- Ibay httpd configuration</p>
+        <p>httpd.conf template: undo previous export. All ibays template fragments are here to keep dependencies consistent. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a> -- Ibay httpd configuration</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/9a7ed2aea890b467795fa4096de4f4b72c27fe23" title="Revision 9a7ed2ae">Revision 9a7ed2ae</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-08" title="11/08/2012 06:01 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Selector JS Widget (select): fixed selection propagation. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>Selector JS Widget (select): fixed selection propagation. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/b5bfdfd627dda143635bea2e7148e8533e184877" title="Revision b5bfdfd6">Revision b5bfdfd6</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-08" title="11/08/2012 09:08 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>httpd.conf: expand virtual host template to nethserver.d/domain.tld:&lt;port&gt;.vhost file. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>httpd.conf: expand virtual host template to nethserver.d/domain.tld:&lt;port&gt;.vhost file. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/c3014a2cd3e13625b9ce61e0d316d39cb9fdf14e" title="Revision c3014a2c">Revision c3014a2c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-08" title="11/08/2012 09:15 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>httpd.conf template: fixed Alias path. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>httpd.conf template: fixed Alias path. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/1521ecd77c9794b9c68c57c56352106bdae184b0" title="Revision 1521ecd7">Revision 1521ecd7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-08" title="11/08/2012 12:02 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>httpd.conf template: Ibay Alias configuration for virtual hosts. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>httpd.conf template: Ibay Alias configuration for virtual hosts. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/a55b1006dd0014927c1d0098ec652b6038ca1c99" title="Revision a55b1006">Revision a55b1006</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-08" title="11/08/2012 12:43 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>SharedFolder Httpd UI plugin: commented out CgiBin checkbox. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
+        <p>SharedFolder Httpd UI plugin: commented out CgiBin checkbox. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/00fd6ec3d0292d6ec8c52f853a61d9844d3926de" title="Revision 00fd6ec3">Revision 00fd6ec3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-29" title="11/29/2012 12:45 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>ibay httpd configuration: password requirement is always mandatory, when enabled. Refs <a href="1542.html" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a> -- Ibay httpd configuration</p>
+        <p>ibay httpd configuration: password requirement is always mandatory, when enabled. Refs <a href="/issues/1542" class="issue tracker-4 status-5 priority-4 priority-default closed child" title="Ibay httpd configuration (CLOSED)">#1542</a> -- Ibay httpd configuration</p>
     </div>
     </div>
 
@@ -183,10 +264,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <h3>History</h3>
   <div id="change-3965" class="journal has-notes has-details">
     <div id="note-1">
-    <h4><a href="1542.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1542#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-07" title="11/07/2012 06:32 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Project</strong> changed from <i>50</i> to <i>52</i></li>
     </ul>
     <div class="wiki" id="journal-3965-notes"><p>Moved to project:nethserver-httpd to keep dependencies consistent.</p>
@@ -198,10 +280,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-3966" class="journal has-details">
     <div id="note-2">
-    <h4><a href="1542.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1542#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-08" title="11/08/2012 08:48 AM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Parent task</strong> set to <i>#1111</i></li>
     </ul>
     
@@ -210,10 +293,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-3967" class="journal has-details">
     <div id="note-3">
-    <h4><a href="1542.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1542#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-11-08" title="11/08/2012 12:04 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Due date</strong> set to <i>11/08/2012</i></li>
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>100</i></li>
@@ -239,7 +323,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1542.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1542.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -260,7 +346,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

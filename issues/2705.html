@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2705.atom" rel="alternate" title="NethServer 6 - Feature #2705: Firewall: support custom objects" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Firewall: support custom objects</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-03-28" title="03/28/2014 09:23 AM">over 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-08-20" title="08/20/2014 06:03 AM">almost 7 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-firewall-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-firewall-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -149,7 +198,7 @@ Firewall module uses these system objects:
     Related to
     
     NethServer 6 - 
-    <a href="2716.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2716</a>: Custom firewall rules
+    <a href="/issues/2716" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2716</a>: Custom firewall rules
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -162,7 +211,7 @@ Firewall module uses these system objects:
     Related to
     
     Nethgui - 
-    <a href="2764.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2764</a>: CIDR block validator
+    <a href="/issues/2764" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2764</a>: CIDR block validator
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -175,7 +224,7 @@ Firewall module uses these system objects:
     Related to
     
     NethServer 6 - 
-    <a href="2771.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2771</a>: Merge nethserver-shorewall and nethserver-firewall-base
+    <a href="/issues/2771" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2771</a>: Merge nethserver-shorewall and nethserver-firewall-base
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -188,7 +237,7 @@ Firewall module uses these system objects:
     Related to
     
     NethServer 6 - 
-    <a href="2835.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2835</a>: Firewall rules: preserve references to other DB records
+    <a href="/issues/2835" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2835</a>: Firewall rules: preserve references to other DB records
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -198,7 +247,7 @@ Firewall module uses these system objects:
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2705/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2705/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -215,7 +264,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2705.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -238,169 +287,233 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/d723409a46a12c33d647336356becc4faf66b38c" title="Revision d723409a">Revision d723409a</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-03-31" title="03/31/2014 05:41 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web interface: first implementation of firewall objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Web interface: first implementation of firewall objects. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/5c0a32355da44b100b6369a44206eb6b0be6c868" title="Revision 5c0a3235">Revision 5c0a3235</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-04-08" title="04/08/2014 02:12 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Events: add firewall-objects-modify event. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Events: add firewall-objects-modify event. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/eeec08b826fb22caa4142ff379991a4894648313" title="Revision eeec08b8">Revision eeec08b8</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-04-10" title="04/10/2014 09:34 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web interface: ad controller for firewall objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Web interface: ad controller for firewall objects. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/5f65f49830d017e98a69b25fb73eab7a01abe064" title="Revision 5f65f498">Revision 5f65f498</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-04-14" title="04/14/2014 12:26 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: zones can contain only CIDR network. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Web UI: zones can contain only CIDR network. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/7d2c912c29a8571157fa34a71c918290af9ac6c3" title="Revision 7d2c912c">Revision 7d2c912c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-04-15" title="04/15/2014 02:53 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>.spec.in: fixed dependency name. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>.spec.in: fixed dependency name. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/1e6e32e0012669fc2d9e735088ae7200dbde7ba6" title="Revision 1e6e32e0">Revision 1e6e32e0</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-05-15" title="05/15/2014 07:02 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Firewall library: add tests. Refs <a href="2716.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Custom firewall rules (CLOSED)">#2716</a> <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Firewall library: add tests. Refs <a href="/issues/2716" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Custom firewall rules (CLOSED)">#2716</a> <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/dbaa0019430e9ef33776208b42a47cf8a1625416" title="Revision dbaa0019">Revision dbaa0019</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-05-16" title="05/16/2014 06:08 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Firewall library: use fwservices. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Firewall library: use fwservices. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/67f76a58c76b2cb4ca366c89067261a6e1c2fc62" title="Revision 67f76a58">Revision 67f76a58</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-05-26" title="05/26/2014 09:59 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Firewall library: support interface objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Firewall library: support interface objects. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/d218d59d8eed5194e2e47a38822d48f59efb620e" title="Revision d218d59d">Revision d218d59d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-05-26" title="05/26/2014 03:20 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Firewall library: fix zone detection. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Firewall library: fix zone detection. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/08bb326d23e93e5090692eb4f21e3d8da782d34f" title="Revision 08bb326d">Revision 08bb326d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-05-28" title="05/28/2014 10:52 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add firewall objects validators. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Web UI: add firewall objects validators. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/6a5b6e5b583a933a0aaa6b22815742526f62f84e" title="Revision 6a5b6e5b">Revision 6a5b6e5b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-05-29" title="05/29/2014 10:55 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallRules UI implementation. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallRules UI implementation. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
 
 
 	<p>- Based on CollectionController.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/67ac1559008d0b549bfd8ee92a07419fb9f26e9a" title="Revision 67ac1559">Revision 67ac1559</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-06-11" title="06/11/2014 05:42 PM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Firewall objects: remove support for MAC address. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Firewall objects: remove support for MAC address. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/8e4bab0848738397b380af1aa84a2086ff71bb41" title="Revision 8e4bab08">Revision 8e4bab08</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-06-26" title="06/26/2014 06:19 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: change validator for host objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Web UI: change validator for host objects. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/878599ec282e1578250c18d1737aa005c1b10185" title="Revision 878599ec">Revision 878599ec</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-04" title="07/04/2014 10:04 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add interface to zones. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a> <a href="2716.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Custom firewall rules (CLOSED)">#2716</a></p>
+        <p>Web UI: add interface to zones. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a> <a href="/issues/2716" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Custom firewall rules (CLOSED)">#2716</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/2b69c5616e48d4e389e205bb26b0605fc5839d59" title="Revision 2b69c561">Revision 2b69c561</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-04" title="07/04/2014 10:04 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Templates: expand custom zones. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Templates: expand custom zones. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/009bc40d08a1f087760b2e98a26e304b4d9f7175" title="Revision 009bc40d">Revision 009bc40d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-04" title="07/04/2014 10:17 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add Zone module. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Web UI: add Zone module. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/35a850d38bccfa4a79e795fe22ce8a33d8d5fd59" title="Revision 35a850d3">Revision 35a850d3</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-04" title="07/04/2014 10:35 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: fix inline creation of host-group. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Web UI: fix inline creation of host-group. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/c7fa3c222aca1aa3a674e90952c7d637346c33c5" title="Revision c7fa3c22">Revision c7fa3c22</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-04" title="07/04/2014 11:26 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add CSS for disabled rules. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Web UI: add CSS for disabled rules. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/94bf30385cb52dd94bb63f8fd469a3c8ca4bffba" title="Revision 94bf3038">Revision 94bf3038</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-09" title="07/09/2014 03:24 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Inline help: add firewall objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Inline help: add firewall objects. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/6f85adb50d05ed826747daa472eb07287873c1a6" title="Revision 6f85adb5">Revision 6f85adb5</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-09" title="07/09/2014 04:50 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallObjects/Services: Removed ESP protocol support. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallObjects/Services: Removed ESP protocol support. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/60f1df3392cd7048008b2446fbf52946619d428c" title="Revision 60f1df33">Revision 60f1df33</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-09" title="07/09/2014 05:09 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Removed ESP, ICMP, GRE protocols support. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Removed ESP, ICMP, GRE protocols support. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
 
 
 	<p>completes commit:6f85adb</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/65c631bdd318d21d14611d59aa363d780016e249" title="Revision 65c631bd">Revision 65c631bd</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-04" title="08/04/2014 11:34 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallObjects/Zones: use Modify class for "delete" case. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallObjects/Zones: use Modify class for "delete" case. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/19b698eeeefd5e6ee2d74c686530531378f3de3b" title="Revision 19b698ee">Revision 19b698ee</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-04" title="08/04/2014 11:39 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallObjects: show Description column in tabular view. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallObjects: show Description column in tabular view. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/c0f19e47af1e9f2c297b1690d6a0393a47798666" title="Revision c0f19e47">Revision c0f19e47</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-04" title="08/04/2014 11:39 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallObjects, FirewallRules: strict name checks for Hosts and Host Groups objects. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallObjects, FirewallRules: strict name checks for Hosts and Host Groups objects. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/c28bc6712079a3cc8e5a27aac54f9c73188fdf24" title="Revision c28bc671">Revision c28bc671</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 08:48 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallObjects, FirewallRules: fixed translation labels. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallObjects, FirewallRules: fixed translation labels. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/8c8b95fc36ff5bfe8f80bf84afb9eae6c4f30c55" title="Revision 8c8b95fc">Revision 8c8b95fc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 08:48 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallRules/CreateHostGroup: enforce strict members key check. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallRules/CreateHostGroup: enforce strict members key check. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/58de44c5accdf02958d7c25789bbfbc87b7992b7" title="Revision 58de44c5">Revision 58de44c5</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 08:48 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallObjects/Services: mark Ports field as NON-EMPTY. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallObjects/Services: mark Ports field as NON-EMPTY. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/989ba7630513805804a3de4739c2c01b2d78c60b" title="Revision 989ba763">Revision 989ba763</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 08:48 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallObjects/Services: use Modify class for "delete" case. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallObjects/Services: use Modify class for "delete" case. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/11f4a4bccf80357f744c9a5bd7bae5b3cd4b5573" title="Revision 11f4a4bc">Revision 11f4a4bc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 08:48 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallObjects: run event as a detached task. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallObjects: run event as a detached task. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/4a0c68a0e40ad348bd113a79e5a3f9845a125a47" title="Revision 4a0c68a0">Revision 4a0c68a0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 08:48 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallObjects: check if object exists on validate(). Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallObjects: check if object exists on validate(). Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/74f4db665d5bb545575dc87ca97fc87c90ab5ac2" title="Revision 74f4db66">Revision 74f4db66</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 11:16 AM">about 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Firewall.pm (getZone): sanitize IP list syntax. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>Firewall.pm (getZone): sanitize IP list syntax. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/324e54934b6c65d2ad16ee8754cb530c1370e447" title="Revision 324e5493">Revision 324e5493</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-07" title="08/07/2014 11:35 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>FirewallObjects/Hosts: validate host-group Members prop consitency. Refs <a href="2705.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
+        <p>FirewallObjects/Hosts: validate host-group Members prop consitency. Refs <a href="/issues/2705" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Firewall: support custom objects (CLOSED)">#2705</a></p>
     </div>
     </div>
 
@@ -410,10 +523,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-10937" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2705.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2705#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-03-28" title="03/28/2014 09:24 AM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Target version</strong> set to <i>~FUTURE</i></li>
     </ul>
     
@@ -422,11 +536,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10941" class="journal has-details">
     <div id="note-2">
-    <h4><a href="2705.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2705#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-03-28" title="03/28/2014 12:30 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/10941%3Fdetail_id=17330.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/10941?detail_id=17330" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -434,11 +549,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10944" class="journal has-details">
     <div id="note-3">
-    <h4><a href="2705.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2705#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-03-28" title="03/28/2014 06:32 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/10944%3Fdetail_id=17336.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/10944?detail_id=17336" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -446,10 +562,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10964" class="journal has-details">
     <div id="note-4">
-    <h4><a href="2705.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2705#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-04-09" title="04/09/2014 10:17 AM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
     </ul>
@@ -459,10 +576,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10965" class="journal has-details">
     <div id="note-5">
-    <h4><a href="2705.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2705#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-04-09" title="04/09/2014 10:17 AM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Target version</strong> changed from <i>~FUTURE</i> to <i>v6.5</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -473,10 +591,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10966" class="journal has-details">
     <div id="note-6">
-    <h4><a href="2705.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2705#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-04-09" title="04/09/2014 10:17 AM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -485,10 +604,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10976" class="journal has-details">
     <div id="note-7">
-    <h4><a href="2705.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2705#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-04-10" title="04/10/2014 09:23 AM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Subject</strong> changed from <i>Firewall: support new objects</i> to <i>Firewall: support custom objects</i></li>
     </ul>
     
@@ -497,11 +617,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10979" class="journal has-details">
     <div id="note-8">
-    <h4><a href="2705.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2705#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-04-11" title="04/11/2014 09:44 AM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/10979%3Fdetail_id=17391.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/10979?detail_id=17391" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -509,11 +630,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10981" class="journal has-details">
     <div id="note-9">
-    <h4><a href="2705.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2705#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-04-14" title="04/14/2014 12:07 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/10981%3Fdetail_id=17394.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/10981?detail_id=17394" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -521,10 +643,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11090" class="journal has-notes has-details">
     <div id="note-10">
-    <h4><a href="2705.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2705#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-05-05" title="05/05/2014 04:06 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
     </ul>
     <div class="wiki" id="journal-11090-notes"><p>Web interface lacks for validators.</p></div>
@@ -533,10 +656,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11122" class="journal has-details">
     <div id="note-11">
-    <h4><a href="2705.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2705#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-05-15" title="05/15/2014 02:12 PM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -545,11 +669,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11123" class="journal has-details">
     <div id="note-12">
-    <h4><a href="2705.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2705#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-05-15" title="05/15/2014 02:22 PM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/11123%3Fdetail_id=17660.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/11123?detail_id=17660" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -557,11 +682,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11128" class="journal has-details">
     <div id="note-13">
-    <h4><a href="2705.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2705#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-05-16" title="05/16/2014 05:30 PM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/11128%3Fdetail_id=17666.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/11128?detail_id=17666" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -569,10 +695,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11138" class="journal has-details">
     <div id="note-14">
-    <h4><a href="2705.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/2705#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-05-26" title="05/26/2014 09:26 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
     </ul>
     
@@ -581,11 +708,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11258" class="journal has-details">
     <div id="note-15">
-    <h4><a href="2705.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/2705#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-06-06" title="06/06/2014 11:49 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2764.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2764</a>: CIDR block validator</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2764" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2764</a>: CIDR block validator</i> added</li>
     </ul>
     
     </div>
@@ -593,11 +721,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11296" class="journal has-details">
     <div id="note-16">
-    <h4><a href="2705.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/2705#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-06-11" title="06/11/2014 03:25 PM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2771.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2771</a>: Merge nethserver-shorewall and nethserver-firewall-base</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2771" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2771</a>: Merge nethserver-shorewall and nethserver-firewall-base</i> added</li>
     </ul>
     
     </div>
@@ -605,10 +734,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11330" class="journal has-details">
     <div id="note-17">
-    <h4><a href="2705.html#note-17" class="journal-link">#17</a>
+    <h4><a href="/issues/2705#note-17" class="journal-link">#17</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-06-12" title="06/12/2014 03:37 PM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -618,10 +748,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11332" class="journal has-notes has-details">
     <div id="note-18">
-    <h4><a href="2705.html#note-18" class="journal-link">#18</a>
+    <h4><a href="/issues/2705#note-18" class="journal-link">#18</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-06-12" title="06/12/2014 03:38 PM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -639,10 +770,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11578" class="journal has-notes has-details">
     <div id="note-19">
-    <h4><a href="2705.html#note-19" class="journal-link">#19</a>
+    <h4><a href="/issues/2705#note-19" class="journal-link">#19</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-04" title="07/04/2014 06:59 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -659,10 +791,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11584" class="journal has-details">
     <div id="note-20">
-    <h4><a href="2705.html#note-20" class="journal-link">#20</a>
+    <h4><a href="/issues/2705#note-20" class="journal-link">#20</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-04" title="07/04/2014 10:03 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>60</i></li>
     </ul>
@@ -672,10 +805,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11586" class="journal has-notes">
     <div id="note-21">
-    <h4><a href="2705.html#note-21" class="journal-link">#21</a>
+    <h4><a href="/issues/2705#note-21" class="journal-link">#21</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-04" title="07/04/2014 10:34 AM">about 7 years</a> ago</h4>
 
-    <div class="wiki" id="journal-11586-notes"><p>Other notes from QA of <a href="2783.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Firewall: beautify rules page (CLOSED)">#2783</a></p>
+    <div class="wiki" id="journal-11586-notes"><p>Other notes from QA of <a href="/issues/2783" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Firewall: beautify rules page (CLOSED)">#2783</a></p>
 
 
 Bugs discovered:
@@ -695,10 +829,11 @@ Some notes:
   
   <div id="change-11587" class="journal has-details">
     <div id="note-22">
-    <h4><a href="2705.html#note-22" class="journal-link">#22</a>
+    <h4><a href="/issues/2705#note-22" class="journal-link">#22</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-04" title="07/04/2014 10:35 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -707,11 +842,12 @@ Some notes:
   
   <div id="change-11588" class="journal has-details">
     <div id="note-23">
-    <h4><a href="2705.html#note-23" class="journal-link">#23</a>
+    <h4><a href="/issues/2705#note-23" class="journal-link">#23</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-07" title="07/07/2014 02:46 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/11588%3Fdetail_id=18512.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/11588?detail_id=18512" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -719,10 +855,11 @@ Some notes:
   
   <div id="change-11591" class="journal has-notes has-details">
     <div id="note-24">
-    <h4><a href="2705.html#note-24" class="journal-link">#24</a>
+    <h4><a href="/issues/2705#note-24" class="journal-link">#24</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-07" title="07/07/2014 03:01 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -759,10 +896,11 @@ Test the following workflows:
   
   <div id="change-11788" class="journal has-details">
     <div id="note-25">
-    <h4><a href="2705.html#note-25" class="journal-link">#25</a>
+    <h4><a href="/issues/2705#note-25" class="journal-link">#25</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-31" title="07/31/2014 12:09 PM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
     </ul>
     
@@ -771,11 +909,12 @@ Test the following workflows:
   
   <div id="change-11807" class="journal has-notes">
     <div id="note-26">
-    <h4><a href="2705.html#note-26" class="journal-link">#26</a>
+    <h4><a href="/issues/2705#note-26" class="journal-link">#26</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-04" title="08/04/2014 05:16 AM">about 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-11807-notes"><a name="Tested-Firewall-Rules"></a>
-<h3 >Tested Firewall Rules<a href="2705.html#Tested-Firewall-Rules" class="wiki-anchor">&para;</a></h3>
+<h3 >Tested Firewall Rules<a href="#Tested-Firewall-Rules" class="wiki-anchor">&para;</a></h3>
 
 
 	<p><strong>Case 1</strong></p>
@@ -836,11 +975,12 @@ Test the following workflows:
   
   <div id="change-11808" class="journal has-notes">
     <div id="note-27">
-    <h4><a href="2705.html#note-27" class="journal-link">#27</a>
+    <h4><a href="/issues/2705#note-27" class="journal-link">#27</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-04" title="08/04/2014 06:38 AM">about 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-11808-notes"><a name="Tested-Firewall-objects"></a>
-<h3 >Tested Firewall objects<a href="2705.html#Tested-Firewall-objects" class="wiki-anchor">&para;</a></h3>
+<h3 >Tested Firewall objects<a href="#Tested-Firewall-objects" class="wiki-anchor">&para;</a></h3>
 
 
 	<p><strong>Case 1 FAILED</strong><br />Edit host-group members</p>
@@ -896,10 +1036,11 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
   
   <div id="change-11812" class="journal has-details">
     <div id="note-28">
-    <h4><a href="2705.html#note-28" class="journal-link">#28</a>
+    <h4><a href="/issues/2705#note-28" class="journal-link">#28</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-04" title="08/04/2014 08:53 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
@@ -910,10 +1051,11 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
   
   <div id="change-11814" class="journal has-details">
     <div id="note-29">
-    <h4><a href="2705.html#note-29" class="journal-link">#29</a>
+    <h4><a href="/issues/2705#note-29" class="journal-link">#29</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-04" title="08/04/2014 09:06 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -924,11 +1066,12 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
   
   <div id="change-11829" class="journal has-details">
     <div id="note-30">
-    <h4><a href="2705.html#note-30" class="journal-link">#30</a>
+    <h4><a href="/issues/2705#note-30" class="journal-link">#30</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-05" title="08/05/2014 09:51 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2835.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2835</a>: Firewall rules: preserve references to other DB records</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2835" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2835</a>: Firewall rules: preserve references to other DB records</i> added</li>
     </ul>
     
     </div>
@@ -936,10 +1079,11 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
   
   <div id="change-11834" class="journal has-notes has-details">
     <div id="note-31">
-    <h4><a href="2705.html#note-31" class="journal-link">#31</a>
+    <h4><a href="/issues/2705#note-31" class="journal-link">#31</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 09:14 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -947,16 +1091,17 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
     <div class="wiki" id="journal-11834-notes"><p>Test again, paying particular attention to previously FAILED test cases.</p>
 
 
-	<p>A separate enhancement <a href="2835.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Firewall rules: preserve references to other DB records (CLOSED)">#2835</a> was opened, to address issues with DB references.</p></div>
+	<p>A separate enhancement <a href="/issues/2835" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Firewall rules: preserve references to other DB records (CLOSED)">#2835</a> was opened, to address issues with DB references.</p></div>
     </div>
   </div>
   
   <div id="change-11835" class="journal has-notes has-details">
     <div id="note-32">
-    <h4><a href="2705.html#note-32" class="journal-link">#32</a>
+    <h4><a href="/issues/2705#note-32" class="journal-link">#32</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 09:14 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -966,10 +1111,11 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
   
   <div id="change-11837" class="journal has-notes has-details">
     <div id="note-33">
-    <h4><a href="2705.html#note-33" class="journal-link">#33</a>
+    <h4><a href="/issues/2705#note-33" class="journal-link">#33</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 11:11 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -982,10 +1128,11 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
   
   <div id="change-11840" class="journal has-details">
     <div id="note-34">
-    <h4><a href="2705.html#note-34" class="journal-link">#34</a>
+    <h4><a href="/issues/2705#note-34" class="journal-link">#34</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-06" title="08/06/2014 11:15 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -996,10 +1143,11 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
   
   <div id="change-11843" class="journal has-notes has-details">
     <div id="note-35">
-    <h4><a href="2705.html#note-35" class="journal-link">#35</a>
+    <h4><a href="/issues/2705#note-35" class="journal-link">#35</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-07" title="08/07/2014 11:39 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -1010,10 +1158,11 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
   
   <div id="change-11844" class="journal has-notes has-details">
     <div id="note-36">
-    <h4><a href="2705.html#note-36" class="journal-link">#36</a>
+    <h4><a href="/issues/2705#note-36" class="journal-link">#36</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-07" title="08/07/2014 11:40 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -1023,10 +1172,11 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
   
   <div id="change-11902" class="journal has-notes has-details">
     <div id="note-37">
-    <h4><a href="2705.html#note-37" class="journal-link">#37</a>
+    <h4><a href="/issues/2705#note-37" class="journal-link">#37</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-08-19" title="08/19/2014 10:58 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
     </ul>
@@ -1036,10 +1186,11 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
   
   <div id="change-11936" class="journal has-notes has-details">
     <div id="note-38">
-    <h4><a href="2705.html#note-38" class="journal-link">#38</a>
+    <h4><a href="/issues/2705#note-38" class="journal-link">#38</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-20" title="08/20/2014 06:03 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -1064,7 +1215,9 @@ Restarting shorewall:    ERROR: Unknown source zone (neth) /etc/shorewall/rules 
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2705.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2705.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -1085,7 +1238,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

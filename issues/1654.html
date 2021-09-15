@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1654.atom" rel="alternate" title="NethServer 6 - Task #1654: Update URL tag in spec files" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Update URL tag in spec files</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 02:42 PM">over 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:30 PM">over 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">02/13/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">02/13/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-devbox</td><th class="estimated-hours">Estimated time:</th><td class="estimated-hours">1.00 hour</td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/144.html">v6.4-alpha2</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">02/13/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">02/13/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-devbox</td><th class="estimated-hours">Estimated time:</th><td class="estimated-hours">1.00 hour</td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/144">v6.4-alpha2</a></td><th></th><td></td></tr>
 
 
 </table>
@@ -99,128 +148,178 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/4e7242c0ffbf4b7bfcd5c11444df953e36025ee4" title="Revision 4e7242c0">Revision 4e7242c0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 02:44 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>rpm.mk: make "git"-patched version numbers greater than tagged versions. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>rpm.mk: make "git"-patched version numbers greater than tagged versions. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-antivirus/revisions/49a1e6a9e565b09646f27cbee84af711defadeb4" title="Revision 49a1e6a9">Revision 49a1e6a9</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:02 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/22484a95b11eeedecc0c7efb3a8a28e5f217f89c" title="Revision 22484a95">Revision 22484a95</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:02 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/9ec7e3ca3389a051a71cb166c275d0e85de7beec" title="Revision 9ec7e3ca">Revision 9ec7e3ca</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:02 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/24ed472bcaed49b212ab6270f163f984803f138a" title="Revision 24ed472b">Revision 24ed472b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:02 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/d5a8f785c48144e4723e63ed57c6fbfb236db99e" title="Revision d5a8f785">Revision d5a8f785</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:02 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-hosts/revisions/5ddf65e6f662fb049ed4d755eeb49207c674abd1" title="Revision 5ddf65e6">Revision 5ddf65e6</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:02 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/d8515741fd5687a10e2dcdb8b62b47de03dae761" title="Revision d8515741">Revision d8515741</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:02 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/3a5b07209c0e726ceb3098c7dd1b5a21c033f33c" title="Revision 3a5b0720">Revision 3a5b0720</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:02 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/95aa10bdf76aa72771650dff94590c6b36ec8bff" title="Revision 95aa10bd">Revision 95aa10bd</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-dev/revisions/6a2b4477dcc079f8fba473d71e135d03be6ff929" title="Revision 6a2b4477">Revision 6a2b4477</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-filter/revisions/56b6e3766c881cea1cad463a9e00f1db7840796f" title="Revision 56b6e376">Revision 56b6e376</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/d3415ac3d135fe9d287288ab8f5e501580db9a04" title="Revision d3415ac3">Revision d3415ac3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-memcached/revisions/0a83344cfcb6329b19d5595ac7a0f49c65112c3d" title="Revision 0a83344c">Revision 0a83344c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ntp/revisions/bbefdfe56be5c34c1f9ebb03a82b7813ef4923b5" title="Revision bbefdfe5">Revision bbefdfe5</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-php/revisions/df2ca2eec4946e666e5d66be8bfe38eb98ecf3aa" title="Revision df2ca2ee">Revision df2ca2ee</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/4f8b0da3e1e2c4ec3fce7176f81d9b5730415f64" title="Revision 4f8b0da3">Revision 4f8b0da3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-sogo/revisions/8e1987369ed8f5d8906a4d91f1dacd20bd9de8e4" title="Revision 8e198736">Revision 8e198736</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-sogo-thunderbird/revisions/23d4ff02d99d08cb56e6266f793916bf39bb021e" title="Revision 23d4ff02">Revision 23d4ff02</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-yum/revisions/1759d0f143b86a180e0782795aeb39e449407df1" title="Revision 1759d0f1">Revision 1759d0f1</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/ee5117d3d5ed583557ebb7c4b44e92f9566898c6" title="Revision ee5117d3">Revision ee5117d3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:04 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>*.spec: use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/687c4549f068a38e1b6fb2c91dca910865fcda80" title="Revision 687c4549">Revision 687c4549</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:19 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>rpm.mk: fixed default URL_PREFIX value. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>rpm.mk: fixed default URL_PREFIX value. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-collectd/revisions/a885c097381256e4898ec20275cca19ac6da9e72" title="Revision a885c097">Revision a885c097</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-11-25" title="11/25/2013 06:18 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>Use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/sogo-frontends/revisions/209b96c49116c8e7cf72e8a216ea7284225738c7" title="Revision 209b96c4">Revision 209b96c4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-11-25" title="11/25/2013 12:17 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>Use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/1ed4c501b16929b21ec7f9a7f32fdfc9f84d0983" title="Revision 1ed4c501">Revision 1ed4c501</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-11-25" title="11/25/2013 12:18 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Use %{url_prefix} macro in URL tag. Refs <a href="1654.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
+        <p>Use %{url_prefix} macro in URL tag. Refs <a href="/issues/1654" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Update URL tag in spec files (CLOSED)">#1654</a></p>
     </div>
     </div>
 
@@ -230,11 +329,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <h3>History</h3>
   <div id="change-4955" class="journal has-details">
     <div id="note-1">
-    <h4><a href="1654.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1654#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:24 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/4955%3Fdetail_id=6507.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/4955?detail_id=6507" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -242,10 +342,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-4956" class="journal has-details">
     <div id="note-2">
-    <h4><a href="1654.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1654#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-02-13" title="02/13/2013 03:30 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>CLOSED</i></li>
        <li><strong>Target version</strong> set to <i>v6.4-alpha2</i></li>
        <li><strong>% Done</strong> changed from <i>10</i> to <i>100</i></li>
@@ -271,7 +372,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1654.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1654.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -292,7 +395,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,73 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/21.atom" rel="alternate" title="Nethgui - Feature #21: PAM based user authentication" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethgui controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1><a href="../issues.html" class="root">NethServer 6</a> » Nethgui</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethgui/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethgui/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1><a href="/projects/nethserver?jump=issues" class="root">NethServer 6</a> » Nethgui</h1>
 
     <div id="main-menu">
-        <ul><li><a href="/projects/nethgui.html" class="overview">Overview</a></li>
-
-<li><a href="http://dev.nethserver.o/projects/nethgui/issues" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethgui/wiki.html" class="wiki">Wiki</a></li></ul>
+        <ul><li><a href="/projects/nethgui" class="overview">Overview</a></li>
+<li><a href="/projects/nethgui/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethgui/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethgui/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethgui/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethgui/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethgui/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethgui/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethgui/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethgui/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethgui/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethgui/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethgui/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethgui/issues?query_id=54" class="query selected">UPDATES</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +107,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>PAM based user authentication</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-03-28" title="03/28/2011 02:36 PM">over 10 years</a> ago.
+        Updated <a href="/projects/nethgui/activity?from=2013-02-01" title="02/01/2013 10:23 AM">over 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Low</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-nethgui</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/11.html">Sigma</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Low</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-nethgui</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/11">Sigma</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14"></td>
@@ -110,7 +152,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     Nethgui - 
-    <a href="524.html" class="issue tracker-4 status-5 priority-6 priority-high2 closed">Task #524</a>: User module: complete change-password action
+    <a href="/issues/524" class="issue tracker-4 status-5 priority-6 priority-high2 closed">Task #524</a>: User module: complete change-password action
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">09/27/2011</td>
@@ -120,7 +162,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/21/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/21/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -137,7 +179,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="21.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -160,46 +202,60 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/01f0e0227becc57fa05473e58234f378f67a20da" title="Revision 01f0e022">Revision 01f0e022</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2012-01-19" title="01/19/2012 10:06 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>Nethgui/Module: Added PAM Authentication Module. Refs <a href="21.html" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> - PAM based user authentication</p>
+        <p>Nethgui/Module: Added PAM Authentication Module. Refs <a href="/issues/21" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> - PAM based user authentication</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/d8a99613122865caa5b02e7cd70442c8f48a458f" title="Revision d8a99613">Revision d8a99613</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2012-01-19" title="01/19/2012 10:09 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>Module/Authorization: added translations and Login template -  Refs <a href="21.html" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> PAM based user authentication</p>
+        <p>Module/Authorization: added translations and Login template -  Refs <a href="/issues/21" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> PAM based user authentication</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/6cab22aa5e295b82903630ddcb26758ce43562de" title="Revision 6cab22aa">Revision 6cab22aa</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2012-01-19" title="01/19/2012 12:30 PM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>Nethgui Module: Removed authentication composite, added standalon Login &#38; Logout modules - Refs <a href="21.html" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a></p>
+        <p>Nethgui Module: Removed authentication composite, added standalon Login &#38; Logout modules - Refs <a href="/issues/21" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/243a76547b74d2f6b8914b627348801de551a616" title="Revision 243a7654">Revision 243a7654</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2012-01-25" title="01/25/2012 12:33 PM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>Nethgui: completed login/logout procedure. Refs <a href="21.html" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> - PAM based user authentication</p>
+        <p>Nethgui: completed login/logout procedure. Refs <a href="/issues/21" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> - PAM based user authentication</p>
 
 
 	<ul>
-	<li>added GroupBasedPolicyDecisionPoint stub Refs <a href="22.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Authorization control (CLOSED)">#22</a> - Authorization control</li>
+	<li>added GroupBasedPolicyDecisionPoint stub Refs <a href="/issues/22" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Authorization control (CLOSED)">#22</a> - Authorization control</li>
 	</ul>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/7a38a6a59247f258cbeedfd738ab75658270e59e" title="Revision 7a38a6a5">Revision 7a38a6a5</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2012-01-30" title="01/30/2012 03:46 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>Utility: in SessionInterface, start/end methods renamed login/logout - Refs <a href="21.html" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> PAM based user authentication.</p>
+        <p>Utility: in SessionInterface, start/end methods renamed login/logout - Refs <a href="/issues/21" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> PAM based user authentication.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/4f10b8032437680145c2249a40e48dbb6f05a0af" title="Revision 4f10b803">Revision 4f10b803</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2012-01-30" title="01/30/2012 11:00 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>Authorization: added `groups` credential initialization in PAM authentication - Refs <a href="21.html" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> PAM based user authentication</p>
+        <p>Authorization: added `groups` credential initialization in PAM authentication - Refs <a href="/issues/21" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> PAM based user authentication</p>
 
 
 	<p>Updated unit tests</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/7cbf3cf29a0019748dc59a0740e0bc23a17dd9ef" title="Revision 7cbf3cf2">Revision 7cbf3cf2</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2012-01-31" title="01/31/2012 10:57 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>Nethgui\Framework: user redirected to Login module if not authenticated - Refs <a href="21.html" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> - PAM based user authentication</p>
+        <p>Nethgui\Framework: user redirected to Login module if not authenticated - Refs <a href="/issues/21" class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="PAM based user authentication (CLOSED)">#21</a> - PAM based user authentication</p>
     </div>
     </div>
 
@@ -209,10 +265,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-139" class="journal has-details">
     <div id="note-1">
-    <h4><a href="21.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/21#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-04-15" title="04/15/2011 10:53 AM">over 10 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Category</strong> set to <i>2</i></li>
     </ul>
     
@@ -221,10 +278,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-143" class="journal has-details">
     <div id="note-2">
-    <h4><a href="21.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/21#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-04-15" title="04/15/2011 11:44 AM">over 10 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Start date</strong> deleted (<del><i>03/28/2011</i></del>)</li>
     </ul>
     
@@ -233,10 +291,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-261" class="journal has-details">
     <div id="note-3">
-    <h4><a href="21.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/21#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-05-18" title="05/18/2011 10:05 AM">about 10 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Target version</strong> changed from <i>Phi</i> to <i>Sigma</i></li>
     </ul>
     
@@ -245,10 +304,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-945" class="journal has-details">
     <div id="note-4">
-    <h4><a href="21.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/21#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2011-09-15" title="09/15/2011 10:37 AM">almost 10 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Priority</strong> changed from <i>Normal</i> to <i>Low</i></li>
     </ul>
     
@@ -257,10 +317,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-1540" class="journal has-details">
     <div id="note-5">
-    <h4><a href="21.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/21#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2012-01-12" title="01/12/2012 12:07 PM">over 9 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
     </ul>
@@ -270,8 +331,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-1541" class="journal has-notes">
     <div id="note-6">
-    <h4><a href="21.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/21#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2012-01-12" title="01/12/2012 12:42 PM">over 9 years</a> ago</h4>
 
     <div class="wiki" id="journal-1541-notes"><p>Install PAM PECL module:</p>
 
@@ -317,10 +379,11 @@ account  sufficient  pam_ldap.so
   
   <div id="change-1626" class="journal has-details">
     <div id="note-7">
-    <h4><a href="21.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/21#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethgui/activity?from=2012-01-31" title="01/31/2012 04:58 PM">over 9 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>100</i></li>
     </ul>
@@ -345,7 +408,9 @@ account  sufficient  pam_ldap.so
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/21.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/21.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -366,7 +431,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

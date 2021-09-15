@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/3145.atom" rel="alternate" title="NethServer 6 - Enhancement #3145: Fix RPM dependencies on el7" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Fix RPM dependencies on el7</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-05" title="05/05/2015 11:43 AM">over 6 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 12:07 PM">over 5 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">&lt;multiple packages&gt;</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/210.html">v7-alpha1</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">&lt;multiple packages&gt;</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/210">v7-alpha1</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13">DUPLICATE</td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -110,7 +159,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2962.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2962</a>: .ns6 RPMs claim directory ownership
+    <a href="/issues/2962" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2962</a>: .ns6 RPMs claim directory ownership
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -120,7 +169,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/3145/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/3145/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -137,7 +186,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="3145.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -160,95 +209,132 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/baa0ce7866e4cb6fcb46d51a8c89147a61a186ed" title="Revision baa0ce78">Revision baa0ce78</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-05" title="05/05/2015 11:44 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Removed old Requires. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Removed old Requires. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/39eb063aead7d533ebf1553550c259c52e86a959" title="Revision 39eb063a">Revision 39eb063a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-05" title="05/05/2015 12:27 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>.spec Removed upstart dependency. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>.spec Removed upstart dependency. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/4e7f8ae44d0b47d8cd245c0be0e5bd85c7e8e73a" title="Revision 4e7f8ae4">Revision 4e7f8ae4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-06" title="05/06/2015 11:33 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Added lokkit requirement. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Added lokkit requirement. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ntp/revisions/61b2db5c53fd35644dc8293da08b0fc8efa6cc49" title="Revision 61b2db5c">Revision 61b2db5c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-08" title="05/08/2015 04:04 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-ntp.spec: claim update event directory ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-ntp.spec: claim update event directory ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-hosts/revisions/006e4e7b717a4b1cfe51bf9db2b13173572dad3d" title="Revision 006e4e7b">Revision 006e4e7b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-08" title="05/08/2015 04:40 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-hosts.spec: claim update event directory ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-hosts.spec: claim update event directory ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-openssh/revisions/13c8c8dd46004b7c4e5302fdd883e80ff40354c5" title="Revision 13c8c8dd">Revision 13c8c8dd</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-08" title="05/08/2015 04:42 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-openssh.spec: claim update event directory ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-openssh.spec: claim update event directory ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-phonehome/revisions/5124a4f08756d4aa1f93d96e687e658cf7fd50ad" title="Revision 5124a4f0">Revision 5124a4f0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-08" title="05/08/2015 04:50 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-phonehome.spec: claim update event directory ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-phonehome.spec: claim update event directory ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-duc/revisions/c2de99ebc084ae6927b88460c8880019b510e220" title="Revision c2de99eb">Revision c2de99eb</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-08" title="05/08/2015 05:23 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-duc.spec: claim update event dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-duc.spec: claim update event dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
 
 
 	<p>Removed python byte compiled filter.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-duc/revisions/32627cb90e57e05ceee4eabd79636d8db9616226" title="Revision 32627cb9">Revision 32627cb9</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-08" title="05/08/2015 10:03 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>.spec: own duc directories under /var/cache and /usr/share. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>.spec: own duc directories under /var/cache and /usr/share. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mock/revisions/95a579b41b95856c7770907a57033511dddd5702" title="Revision 95a579b4">Revision 95a579b4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-11" title="05/11/2015 10:19 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mock configuration for NethServer 7. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-mock configuration for NethServer 7. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-createiso/revisions/194b1dcd4afc5c0583324ca8cbd0accec9db559c" title="Revision 194b1dcd">Revision 194b1dcd</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-11" title="05/11/2015 10:28 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethsever-createiso: mock configuration for NethServer 7. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethsever-createiso: mock configuration for NethServer 7. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-createiso/revisions/db77aae4921ac9f21411f51563351df372b099bb" title="Revision db77aae4">Revision db77aae4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-12" title="05/12/2015 04:42 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
+        <p>Enable EPEL repository. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-createiso/revisions/8cb11b706748268ca0f7f693a9aaef932d60d2f8" title="Revision 8cb11b70">Revision 8cb11b70</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-12" title="05/12/2015 04:42 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix createiso and ks-unattended.ks. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Fix createiso and ks-unattended.ks. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/comps/revisions/34e7eb57048c2961f428b895a9d8f3a1d9d789af" title="Revision 34e7eb57">Revision 34e7eb57</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-12" title="05/12/2015 05:46 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>New centos-minimal package group. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>New centos-minimal package group. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/comps/revisions/9e689a7f978f582d8a3898713938e7ae6ce85733" title="Revision 9e689a7f">Revision 9e689a7f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-12" title="05/12/2015 11:36 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Added epel-release to nethserver-iso group. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Added epel-release to nethserver-iso group. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-smartd/revisions/cfeb21258324ebf999e9831d975311c415717db3" title="Revision cfeb2125">Revision cfeb2125</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-13" title="05/13/2015 09:11 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-smartd.spec: claim update event directory ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-smartd.spec: claim update event directory ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-php/revisions/192f3f97e0169dbd80560f1d6f9fa192097ea0e6" title="Revision 192f3f97">Revision 192f3f97</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-13" title="05/13/2015 11:43 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-php.spec: claim ownership of update event. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-php.spec: claim ownership of update event. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/8058d5b073e9ac9092e1b29aaa0ec16f179cedbc" title="Revision 8058d5b0">Revision 8058d5b0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 03:32 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-lib.spec: fixed dependencies and dirs. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-lib.spec: fixed dependencies and dirs. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
 
 
 	<ul>
@@ -262,16 +348,24 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/88ec2972c06ded1d21d84f8417ab562b5340d7e5" title="Revision 88ec2972">Revision 88ec2972</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 04:44 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
+        <p>init-repo: Enable epel-updates repository. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/84c9a10d2cb3a4f100b6d109bf93a7552b7b267c" title="Revision 84c9a10d">Revision 84c9a10d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 04:44 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-base-initialize-db: probe network configuration from `ip` command output. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-base-initialize-db: probe network configuration from `ip` command output. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/revisions/e9ba35e24a4ad42d58be47c5182deb0cfd850429" title="Revision e9ba35e2">Revision e9ba35e2</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 05:39 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
+        <p>nethserver-install: enable epel-updates repository. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
 
 
 	<ul>
@@ -280,205 +374,290 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mock/revisions/0af8a33ab37b7d5500b92992a35646d95be458dd" title="Revision 0af8a33a">Revision 0af8a33a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 06:24 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mock: use nethserver mirror for EPEL. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-mock: use nethserver mirror for EPEL. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-createiso/revisions/646e0e53bdd8132dbf0fe0fbe3e289e07d5dfe66" title="Revision 646e0e53">Revision 646e0e53</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 06:25 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Use nethserver-iso-7-x86_64 mock configuration. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Use nethserver-iso-7-x86_64 mock configuration. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-backup-data/revisions/1413251fd70ca54bef7c361ba4c82b6ed51a0394" title="Revision 1413251f">Revision 1413251f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 09:42 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-backup-data.spec: fix update event dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-backup-data.spec: fix update event dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-backup-config/revisions/0b8f1a7e64f462d71bee26b117948f344e2eb3de" title="Revision 0b8f1a7e">Revision 0b8f1a7e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 09:48 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-backup-config.spec: fix update event dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-backup-config.spec: fix update event dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-pulledpork/revisions/0e0d06311a869ff6bfdb73d11de4c6708848a6d5" title="Revision 0e0d0631">Revision 0e0d0631</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 09:51 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-pulledpork.spec: fix update event dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-pulledpork.spec: fix update event dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-net-snmp/revisions/6f738f249823424d63fb07b2b7f0a0015fe87059" title="Revision 6f738f24">Revision 6f738f24</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 09:53 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-net-snmp.spec: fix update event dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-net-snmp.spec: fix update event dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-unixodbc/revisions/de395b111d219fe61c9f9fe37804e477484fb16c" title="Revision de395b11">Revision de395b11</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 10:07 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-unixODBC.spec: fix update event dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-unixODBC.spec: fix update event dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lsm/revisions/f8915d1fb1d76b7e61a64eee6ecfc58d3ea9c205" title="Revision f8915d1f">Revision f8915d1f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 10:15 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-lsm.spec: fix update event dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-lsm.spec: fix update event dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/revisions/bbef4b83231b68aa723b5602fb04ea766f6427e0" title="Revision bbef4b83">Revision bbef4b83</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 10:24 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-release: Added GPG key for 7 (symlink to old key). Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-release: Added GPG key for 7 (symlink to old key). Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/a90636cdca5ee020cef69b5f9b965031807af7c5" title="Revision a90636cd">Revision a90636cd</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 10:42 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-directory.spec: fix update event dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-directory.spec: fix update event dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/e43c031303815dc78746516d40dc56ac0568469c" title="Revision e43c0313">Revision e43c0313</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 10:53 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba.spec: fix update event dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-samba.spec: fix update event dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-antivirus/revisions/ad3bf5904572e2c1fd29e6b3fe53527db467034f" title="Revision ad3bf590">Revision ad3bf590</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-14" title="05/14/2015 12:19 PM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-antivirus.spec: fix update event dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-antivirus.spec: fix update event dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/538d874fb0f3206faa3af3d55ca2acc0436da00f" title="Revision 538d874f">Revision 538d874f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-20" title="05/20/2015 09:45 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
+        <p>init-repo: Enable centos-extras repository. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/revisions/5ed74744784dada8e1bc3e3e0934688c30f2710d" title="Revision 5ed74744">Revision 5ed74744</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-20" title="05/20/2015 09:56 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Added centos-extras and centos-centosplus repositories. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Added centos-extras and centos-centosplus repositories. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mysql/revisions/c655043d487d9af61b36d536cb49e725a1e81512" title="Revision c655043d">Revision c655043d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-20" title="05/20/2015 10:29 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mysql.spec: claim ownership of update event. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-mysql.spec: claim ownership of update event. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-memcached/revisions/a5b1359f1aa65d7f2fdc4f3b842431fb14b8218e" title="Revision a5b1359f">Revision a5b1359f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-20" title="05/20/2015 10:31 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-memcached.spec: claim ownership of update event. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-memcached.spec: claim ownership of update event. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mysql/revisions/eceea1f7111483f5a4a0fb19029c49643862ba75" title="Revision eceea1f7">Revision eceea1f7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-20" title="05/20/2015 10:50 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mysql.spec: require mariadb-server. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-mysql.spec: require mariadb-server. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/revisions/3dbb84924169d2f1e89fe73938e40c4a24969678" title="Revision 3dbb8492">Revision 3dbb8492</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-20" title="05/20/2015 11:12 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>epel-updates repo: exclude gnustep-* packages (for SOGo). Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>epel-updates repo: exclude gnustep-* packages (for SOGo). Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-roundcubemail/revisions/0d474d49dd2817a7aafec0c41816fa0b3d1a8241" title="Revision 0d474d49">Revision 0d474d49</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 04:45 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-roundcube.spec: claim ownership of update event. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-roundcube.spec: claim ownership of update event. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/347c9bc684ae152226419598d37cc45159ad377e" title="Revision 347c9bc6">Revision 347c9bc6</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 04:52 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-roundcube.spec: claim ownership of update event. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-roundcube.spec: claim ownership of update event. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-cgp/revisions/8db33e8c72a3d87bfd19e36fc990919dd12fa08d" title="Revision 8db33e8c">Revision 8db33e8c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 05:07 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-php.spec: claim ownership of update event. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-php.spec: claim ownership of update event. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-c-icap/revisions/3ce00c46535ff2efdad685c38605b8575451d1b2" title="Revision 3ce00c46">Revision 3ce00c46</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 05:24 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-c-icap.spec: claim ownership of update event. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-c-icap.spec: claim ownership of update event. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-collectd/revisions/c2c8b4c40992ff3db2eae933dddf27b143399a58" title="Revision c2c8b4c4">Revision c2c8b4c4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 05:33 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-collectd.spec: claim ownership of update event. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-collectd.spec: claim ownership of update event. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-cups/revisions/1d0d042b708c41114f6f5ca7010a899bcc0dc999" title="Revision 1d0d042b">Revision 1d0d042b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 06:30 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-cups.spec: claim nethserver-cups-update event ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-cups.spec: claim nethserver-cups-update event ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-vpn/revisions/0dab9bb0e0a699bc99bf2663d1591d5c7e4f2852" title="Revision 0dab9bb0">Revision 0dab9bb0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 06:30 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-vpn.spec: claim nethserver-vpn-update event ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-vpn.spec: claim nethserver-vpn-update event ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-dev/revisions/5625c8c87d7ec20eef2cb4dd69d5518515b5efe1" title="Revision 5625c8c8">Revision 5625c8c8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 06:30 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-dev.spec: claim nethserver-mail-dev-update event ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-mail-dev.spec: claim nethserver-mail-dev-update event ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-sogo-thunderbird/revisions/9abd3283a72ff1491eb6cb922d7ceb7a330a22c4" title="Revision 9abd3283">Revision 9abd3283</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 06:30 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-sogo-thunderbird.spec: claim nethserver-sogo-thunderbird-update event ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-sogo-thunderbird.spec: claim nethserver-sogo-thunderbird-update event ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/4dcd69b4359a1c5d68d79aa4fe5e6c3a9c135b12" title="Revision 4dcd69b4">Revision 4dcd69b4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 11:40 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-server.spec: claim nethserver-mail-server-update dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-mail-server.spec: claim nethserver-mail-server-update dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-filter/revisions/bec7b1c1f8cd696da7a6a489b3d8e1126c649998" title="Revision bec7b1c1">Revision bec7b1c1</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 11:40 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-filter.spec: claim nethserver-mail-filter-update dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-mail-filter.spec: claim nethserver-mail-filter-update dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/b044bb2732cce955a8734a28b0ab0cd69e01f346" title="Revision b044bb27">Revision b044bb27</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-21" title="05/21/2015 11:53 AM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-common.spec: claim nethserver-mail-common-update dir ownership. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-mail-common.spec: claim nethserver-mail-common-update dir ownership. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/revisions/9e677cd8449cdd6cbf7c32fe20cebefae0a160c9" title="Revision 9e677cd8">Revision 9e677cd8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-27" title="05/27/2015 12:00 PM">about 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-release: removed yum.conf template. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-release: removed yum.conf template. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mock/revisions/d3bea06bef2f458e40608eb9888711abfaa98f76" title="Revision d3bea06b">Revision d3bea06b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 08:37 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>Updated mock configuration for NethServer 7. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Updated mock configuration for NethServer 7. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/revisions/dc3baf57af7bef1ba77ac73f6b9dc9155235a39c" title="Revision dc3baf57">Revision dc3baf57</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 08:52 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>Use YUM repositories from upstream. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Use YUM repositories from upstream. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/d3d585f48e5bfd08e389c60a67de49b2e057ac32" title="Revision d3d585f4">Revision d3d585f4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 09:01 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>Use YUM repositories from upstream. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Use YUM repositories from upstream. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/eb16c7932d78b2edb49a9f5a22be36dbe8e214c5" title="Revision eb16c793">Revision eb16c793</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 09:11 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>Merge branch 6.x into v7. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Merge branch 6.x into v7. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/revisions/f5e793b3c68157c41af76bbf7eed43facf27ba4d" title="Revision f5e793b3">Revision f5e793b3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 09:32 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-release: merge branch 6.x into v7. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-release: merge branch 6.x into v7. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/revisions/66e68357cb85e2ef7e431e2a0c2dea727e4aecff" title="Revision 66e68357">Revision 66e68357</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 09:58 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
+        <p>Fix EPEL repository name in nethserver-install. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/mirrorlist/revisions/25013714f4ead166bf915649ea17e5be60a461c0" title="Revision 25013714">Revision 25013714</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 10:03 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>Point to packages.nethserver.org for 7.2.1511 initial development. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Point to packages.nethserver.org for 7.2.1511 initial development. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mock/revisions/27f4e3434671c196e3a8745dbebd6bfceccaca55" title="Revision 27f4e343">Revision 27f4e343</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 10:39 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>Missing infra value, in mock configuration for 7. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>Missing infra value, in mock configuration for 7. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/53d77d28c26b5d0e5cb321031d6a7b62e4940647" title="Revision 53d77d28">Revision 53d77d28</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 11:27 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
+        <p>Fix the EPEL repository name to enable it. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-collectd/revisions/4d7b251d33a56980db12c7ea6940c2778c02480d" title="Revision 4d7b251d">Revision 4d7b251d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2016-07-08" title="07/08/2016 05:31 AM">about 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-collectd.spec: claim ownership of update event. Refs <a href="3145.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
+        <p>nethserver-collectd.spec: claim ownership of update event. Refs <a href="/issues/3145" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fix RPM dependencies on el7 (CLOSED)">#3145</a></p>
     </div>
     </div>
 
@@ -488,10 +667,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-15090" class="journal has-details">
     <div id="note-1">
-    <h4><a href="3145.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/3145#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-05" title="05/05/2015 11:44 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -502,11 +682,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-15282" class="journal has-details">
     <div id="note-2">
-    <h4><a href="3145.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/3145#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-05-18" title="05/18/2015 04:08 AM">about 6 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2962.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2962</a>: .ns6 RPMs claim directory ownership</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2962" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2962</a>: .ns6 RPMs claim directory ownership</i> added</li>
     </ul>
     
     </div>
@@ -514,10 +695,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-16851" class="journal has-notes has-details">
     <div id="note-3">
-    <h4><a href="3145.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/3145#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-03" title="12/03/2015 06:49 AM">over 5 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>20</i></li>
@@ -528,10 +710,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-16873" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="3145.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/3145#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-12-16" title="12/16/2015 12:07 PM">over 5 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>100</i></li>
        <li><strong>Resolution</strong> set to <i>DUPLICATE</i></li>
@@ -557,7 +740,9 @@ setPredecessorFieldsVisibility();
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/3145.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/3145.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -578,7 +763,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

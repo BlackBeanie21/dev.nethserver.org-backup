@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2958.atom" rel="alternate" title="NethServer 6 - Enhancement #2958: squidGuard: support multiple profiles" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -61,8 +108,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div class="issue tracker-6 status-5 priority-4 priority-default closed details">
     <div class="next-prev-links contextual">
-      <a href="2866.html" title="#2866">« Previous</a> |
-      <a href="2959.html" title="#2959">Next »</a>
+      <a href="/issues/2866" title="#2866">« Previous</a> |
+      <a href="/issues/2959" title="#2959">Next »</a>
     </div>
 
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
@@ -71,10 +118,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>squidGuard: support multiple profiles</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-21" title="11/21/2014 12:04 PM">over 6 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2015-01-20" title="01/20/2015 03:55 AM">over 6 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-squidguard</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-squidguard</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">Yes</td>
@@ -129,7 +178,7 @@ Following features should be implemented:
     Related to
     
     NethServer 6 - 
-    <a href="2967.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2967</a>: Transparent proxy: switch iplementation from TPROXY to RE...
+    <a href="/issues/2967" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2967</a>: Transparent proxy: switch iplementation from TPROXY to RE...
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -139,7 +188,7 @@ Following features should be implemented:
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2958/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2958/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -156,7 +205,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2958.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -179,305 +228,421 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/908e289dff377efb94839f7cec2988ce674ba361" title="Revision 908e289d">Revision 908e289d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-21" title="11/21/2014 12:04 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>BlockIpAccess: default to enabled. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>BlockIpAccess: default to enabled. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/b63e159793ba69debbd9e04bf7a78d01ad074e99" title="Revision b63e1597">Revision b63e1597</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-24" title="11/24/2014 05:17 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web interface: refactor for profile support. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web interface: refactor for profile support. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/c1b4783b4f56b9edb4856ce2a294430a884eab20" title="Revision c1b4783b">Revision c1b4783b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-24" title="11/24/2014 08:33 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: multiple-profile stub implemention. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: multiple-profile stub implemention. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidclamav/revisions/197bed321ebcef9dd9f2c58d016d2ca44b425aa9" title="Revision 197bed32">Revision 197bed32</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-24" title="11/24/2014 09:40 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web interface: refactor for profile support. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web interface: refactor for profile support. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/4292ed27b034e1ebbbfaf0eb76804c0a2310b4f3" title="Revision 4292ed27">Revision 4292ed27</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-24" title="11/24/2014 10:44 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add roles. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: add roles. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/386895c38b96b45fede465f0dbe0382bec7af2ef" title="Revision 386895c3">Revision 386895c3</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 02:48 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: rename classes. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: rename classes. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/4ae3584f2935cfb244869d8eeb412d7b330e5495" title="Revision 4ae3584f">Revision 4ae3584f</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 03:04 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: move BlockIpAccess inside filters. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: move BlockIpAccess inside filters. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/623c8aaf6ff57a5a756caeafc0e3f6badba07eed" title="Revision 623c8aaf">Revision 623c8aaf</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 04:07 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: correctly handle comma-separated fields. Refs <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: correctly handle comma-separated fields. Refs <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/ca9767950ad6cc0ffebda87df54417ea92e6bd0d" title="Revision ca976795">Revision ca976795</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 04:07 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: cosmetic changes. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: cosmetic changes. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/a37c5eba5a267655c2298740f964d9d550a48f5b" title="Revision a37c5eba">Revision a37c5eba</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 08:16 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squidGuard.conf: add support for times and multi profile. Refs <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squidGuard.conf: add support for times and multi profile. Refs <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/1bcaa119a6c600aa49d754d544c409043581105c" title="Revision 1bcaa119">Revision 1bcaa119</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 08:23 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: refactor black and white lists. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: refactor black and white lists. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/af425d58c70362c5aeddac7f1c6fa4f1fead08b3" title="Revision af425d58">Revision af425d58</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 09:15 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add stronger validator. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
+        <p>Web UI: add stronger validator. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/7ea81df597f9f060cdf955be3f837a2b78e09567" title="Revision 7ea81df5">Revision 7ea81df5</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-25" title="11/25/2014 09:34 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>DB defaults: remove old properties. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>DB defaults: remove old properties. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/5b38d5a371c95266f667def034e3188bbf496fd6" title="Revision 5b38d5a3">Revision 5b38d5a3</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-26" title="11/26/2014 02:44 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: clean up code. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
+        <p>Web UI: clean up code. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/052afe0b84cc3619922883c19f23453914ebf1fd" title="Revision 052afe0b">Revision 052afe0b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-26" title="11/26/2014 02:53 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add custom categories. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a>"</p>
+        <p>Web UI: add custom categories. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a>"</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/6cb8f117ba81aa7a61be5c12bc052839211c7e4f" title="Revision 6cb8f117">Revision 6cb8f117</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-26" title="11/26/2014 02:54 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>scripts and templates: implement custom categories. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>scripts and templates: implement custom categories. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/13c5da5b0c9b1d3cfed881e364348e030b2f8da8" title="Revision 13c5da5b">Revision 13c5da5b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-26" title="11/26/2014 03:13 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: execute events only when saving profiles. Refs <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: execute events only when saving profiles. Refs <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a> <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/88db61e09f233fe516f9107e88fb69a7a1b4ccc1" title="Revision 88db61e0">Revision 88db61e0</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-26" title="11/26/2014 12:11 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: handle categories with empty translation. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: handle categories with empty translation. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/11767a332a4dbf33cc0981212825d10762d4adb3" title="Revision 11767a33">Revision 11767a33</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-27" title="11/27/2014 06:06 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix log permission. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Fix log permission. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/98734363ea10b6ab3ed27e443d0f9b597ae56182" title="Revision 98734363">Revision 98734363</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-27" title="11/27/2014 06:07 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>custom-list: fix permission. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>custom-list: fix permission. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/d34a25c12a19c8df1c350f6eed49604826ed35b3" title="Revision d34a25c1">Revision d34a25c1</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-27" title="11/27/2014 11:11 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squidGuard.conf template: use getent for group. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squidGuard.conf template: use getent for group. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/64994e7dd9565a8ff5409625911af59b9af2d888" title="Revision 64994e7d">Revision 64994e7d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-27" title="11/27/2014 11:11 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>custom list: fix permission. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>custom list: fix permission. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/76460525cba2e55bb132f8504e436504d205795d" title="Revision 76460525">Revision 76460525</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-27" title="11/27/2014 11:12 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squidGuard.conf: remove 302 redirect. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squidGuard.conf: remove 302 redirect. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/f03dc0180fdfff42f8e57fcdb8ded7d9a38a74f8" title="Revision f03dc018">Revision f03dc018</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-27" title="11/27/2014 11:16 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: fix genfile syntax. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>spec: fix genfile syntax. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/094540df7faaa2263cde184d4fd2d5241f76ad47" title="Revision 094540df">Revision 094540df</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-27" title="11/27/2014 11:20 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squidGuard.conf template: fix syntax. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squidGuard.conf template: fix syntax. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squid/revisions/7615041c06050486600e6d55507764306a576089" title="Revision 7615041c">Revision 7615041c</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-27" title="11/27/2014 11:24 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>migratation fragment: correctly handle multiple runs. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>migratation fragment: correctly handle multiple runs. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/28c3b3d0039dd3662d06723485792513ef1127cd" title="Revision 28c3b3d0">Revision 28c3b3d0</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-27" title="11/27/2014 11:50 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>templates: block and log blacklist per-profile. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>templates: block and log blacklist per-profile. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squid/revisions/3a1d7aef8b17f4f0ec02b23cf419bbc755a1214c" title="Revision 3a1d7aef">Revision 3a1d7aef</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-28" title="11/28/2014 11:22 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squid.conf: skip url rewriter for localhost. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squid.conf: skip url rewriter for localhost. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/82d159f67678c22b6b6a15f3fb700887d5ad757d" title="Revision 82d159f6">Revision 82d159f6</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-01" title="12/01/2014 03:05 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI, db defaults: add default filter and profile. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI, db defaults: add default filter and profile. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/9541fa5dce0a5893458d40aaebe577194c83c35a" title="Revision 9541fa5d">Revision 9541fa5d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-01" title="12/01/2014 03:32 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add italian translation. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> 1984</p>
+        <p>Web UI: add italian translation. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> 1984</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/d098e5e1c532ec8e3e07953e3ab82110b5350162" title="Revision d098e5e1">Revision d098e5e1</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-01" title="12/01/2014 03:37 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: always show black and white lists. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: always show black and white lists. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/ef146c2d3bdf58bf5b27a449d673da1c861ef17e" title="Revision ef146c2d">Revision ef146c2d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-01" title="12/01/2014 06:30 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>db: migrate old configuration. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>db: migrate old configuration. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/3daaa68cc769bfd51cf21b9688965034cabffbfc" title="Revision 3daaa68c">Revision 3daaa68c</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-04" title="12/04/2014 09:48 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>default profile: add missing logic. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>default profile: add missing logic. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/096bb642ecba3427e8509fa6bdaae26909a875bc" title="Revision 096bb642">Revision 096bb642</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-04" title="12/04/2014 09:52 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: default profile can't be edited. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: default profile can't be edited. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/520ed72124fb5d6ef2f29fa2c6203d77c837e02e" title="Revision 520ed721">Revision 520ed721</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-04" title="12/04/2014 09:53 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: enable BlockIpAccess by default for new filters. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: enable BlockIpAccess by default for new filters. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/80ce1e29bfd07e166f21484c3f64d26784ad2cf1" title="Revision 80ce1e29">Revision 80ce1e29</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-04" title="12/04/2014 10:38 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: apply squidGuard config group-modify Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>createlinks: apply squidGuard config group-modify Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
 
 
 	<p>If proxy is in authenticated mode,<br />squidGuard needs to be notified if a group composition<br />has been changed.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/28a19ff6366a9d8bb3cef2285109144915cd72cb" title="Revision 28a19ff6">Revision 28a19ff6</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-05" title="12/05/2014 06:23 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: handle recursive caegories. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: handle recursive caegories. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/5cbea3530d65048618a40ad2818ac27e478cb8cd" title="Revision 5cbea353">Revision 5cbea353</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-05" title="12/05/2014 06:23 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>update custom list: avoid unnecessary expand-template. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>update custom list: avoid unnecessary expand-template. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/c2e2a03fd2d08dc6afa0fd4f7237a70b53cf9f66" title="Revision c2e2a03f">Revision c2e2a03f</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-05" title="12/05/2014 06:29 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: configure custom lists before invoking squidGuard. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>createlinks: configure custom lists before invoking squidGuard. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/e1092fe058c7df9f7d3199c3af785c568223dd16" title="Revision e1092fe0">Revision e1092fe0</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-05" title="12/05/2014 06:32 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squidGuard.conf: handle recursive categories. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squidGuard.conf: handle recursive categories. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/ff42b5ccc135e2a148bad798be7062aa24dbe634" title="Revision ff42b5cc">Revision ff42b5cc</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-05" title="12/05/2014 06:33 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squidGuard.conf: fix default profile. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squidGuard.conf: fix default profile. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/8fceeac429dbcdcc15dddee70d0653aa66111bcc" title="Revision 8fceeac4">Revision 8fceeac4</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-05" title="12/05/2014 10:04 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: fire event on delete. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="1984.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
+        <p>Web UI: fire event on delete. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a> <a href="/issues/1984" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Content filter: add time table support (CLOSED)">#1984</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/e8f0a29b8b0aed65ca55c9f76244a1c3ce6f921e" title="Revision e8f0a29b">Revision e8f0a29b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-11" title="12/11/2014 09:57 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: fix whitelist handling. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: fix whitelist handling. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/6ce3d4f6acfaa09ef6682dcd4f3173382750c193" title="Revision 6ce3d4f6">Revision 6ce3d4f6</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-12" title="12/12/2014 11:33 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Logorate: rotate urlfilter.log. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Logorate: rotate urlfilter.log. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidclamav/revisions/d57bd9f0d1ee5355528d98a89810ef03e04a0f3c" title="Revision d57bd9f0">Revision d57bd9f0</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-15" title="12/15/2014 04:07 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Inline help: add English and Italian. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Inline help: add English and Italian. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/f285a787e71d56773c78afe9f3f234332026c1ec" title="Revision f285a787">Revision f285a787</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-15" title="12/15/2014 05:17 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Inline help: add English and Italian. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Inline help: add English and Italian. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/06af159ff922ea4972eefd2478d5b7e22a890388" title="Revision 06af159f">Revision 06af159f</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-15" title="12/15/2014 05:50 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: always show hosts and users in profile tab. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: always show hosts and users in profile tab. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/54b31a7178694026bffd8cca4235ce7bdd3c988e" title="Revision 54b31a71">Revision 54b31a71</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-15" title="12/15/2014 05:52 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: format profile table. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: format profile table. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/d0481192426abce5c4e2c700a81512be13da66b8" title="Revision d0481192">Revision d0481192</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-15" title="12/15/2014 08:40 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add support for AD users. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Web UI: add support for AD users. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/9dadedb147d645ddd6e46c67d4d1d90e395b2b46" title="Revision 9dadedb1">Revision 9dadedb1</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-15" title="12/15/2014 08:59 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>config template: avoid warnings. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>config template: avoid warnings. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/53e5aa9dac191ce51726216ebd74bd8ad1408c56" title="Revision 53e5aa9d">Revision 53e5aa9d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-15" title="12/15/2014 08:59 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>config template: allow Active Directory users.  Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>config template: allow Active Directory users.  Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/8d925b0cb9e68e772faa574e6dd9b4daac5cdbd7" title="Revision 8d925b0c">Revision 8d925b0c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-19" title="12/19/2014 10:00 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Enhance Back button behaviour on Tabs widget. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Enhance Back button behaviour on Tabs widget. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/7c9017ec2655ed341468f7150ccd7247cab4d161" title="Revision 7c9017ec">Revision 7c9017ec</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-19" title="12/19/2014 10:38 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Push initial URL fragment into browser history. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Push initial URL fragment into browser history. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/14f5ec1913ffcbeceda8f8d21837b59560bf75ce" title="Revision 14f5ec19">Revision 14f5ec19</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-19" title="12/19/2014 10:43 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Imported NethServer template from nethserver-base package. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>Imported NethServer template from nethserver-base package. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
 
 
 	<p>The new template is compatible with the Back button fix from Nethgui.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/abe4c0f7a037ec685daa8683089929ebada7e75f" title="Revision abe4c0f7">Revision abe4c0f7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-08" title="01/08/2015 04:37 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
         <p>Merge branch 'master' into v6.6</p>
 
 
-	<p>Import Back button fixes <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+	<p>Import Back button fixes <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
 
 
 	<p>Conflicts:<br />    SHA1SUM<br />    nethserver-httpd-admin.spec</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/338d5945adee2f1b82d0b232296211af50bd253e" title="Revision 338d5945">Revision 338d5945</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-12" title="01/12/2015 06:29 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squidGuard.conf: whitelist always wins. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squidGuard.conf: whitelist always wins. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/25bdd6cd99a492383bf0f34e17ffa68275afd653" title="Revision 25bdd6cd">Revision 25bdd6cd</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-13" title="01/13/2015 11:09 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squidGuard.conf: whitelist always wins in profiles. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squidGuard.conf: whitelist always wins in profiles. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-squidguard/revisions/7224113f615c73782ded7e72d5d8746248567462" title="Revision 7224113f">Revision 7224113f</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-14" title="01/14/2015 05:02 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>squidGuard.conf: whitelist always wins in profiles. Refs <a href="2958.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
+        <p>squidGuard.conf: whitelist always wins in profiles. Refs <a href="/issues/2958" class="issue tracker-6 status-5 priority-4 priority-default closed" title="squidGuard: support multiple profiles (CLOSED)">#2958</a></p>
     </div>
     </div>
 
@@ -487,10 +652,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-13223" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2958.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2958#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-21" title="11/21/2014 12:04 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>Target version</strong> set to <i>v6.5</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
@@ -501,10 +667,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13224" class="journal has-details">
     <div id="note-2">
-    <h4><a href="2958.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2958#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-21" title="11/21/2014 12:04 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -515,10 +682,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13268" class="journal has-details">
     <div id="note-3">
-    <h4><a href="2958.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2958#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-26" title="11/26/2014 03:32 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -529,10 +697,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13300" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="2958.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2958#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-28" title="11/28/2014 03:35 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_DEV</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>30</i></li>
     </ul>
@@ -555,10 +724,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13306" class="journal has-details">
     <div id="note-5">
-    <h4><a href="2958.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2958#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-28" title="11/28/2014 03:53 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -567,11 +737,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13307" class="journal has-details">
     <div id="note-6">
-    <h4><a href="2958.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2958#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-28" title="11/28/2014 03:53 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2967.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2967</a>: Transparent proxy: switch iplementation from TPROXY to REDIRECT</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2967" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2967</a>: Transparent proxy: switch iplementation from TPROXY to REDIRECT</i> added</li>
     </ul>
     
     </div>
@@ -579,10 +750,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13321" class="journal has-details">
     <div id="note-7">
-    <h4><a href="2958.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2958#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-01" title="12/01/2014 06:30 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -592,10 +764,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13330" class="journal has-notes has-details">
     <div id="note-8">
-    <h4><a href="2958.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2958#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-01" title="12/01/2014 10:27 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -661,10 +834,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13400" class="journal has-notes has-details">
     <div id="note-9">
-    <h4><a href="2958.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2958#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-04" title="12/04/2014 08:39 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -674,10 +848,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13402" class="journal has-details">
     <div id="note-10">
-    <h4><a href="2958.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2958#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-04" title="12/04/2014 08:39 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -688,10 +863,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13415" class="journal has-details">
     <div id="note-11">
-    <h4><a href="2958.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2958#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-09" title="12/09/2014 02:46 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -702,8 +878,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13416" class="journal has-notes">
     <div id="note-12">
-    <h4><a href="2958.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2958#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-09" title="12/09/2014 02:46 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13416-notes">Package in nethserver-testing:
 	<ul>
@@ -714,10 +891,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13417" class="journal has-details">
     <div id="note-13">
-    <h4><a href="2958.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2958#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-09" title="12/09/2014 02:46 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -727,8 +905,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13460" class="journal has-notes">
     <div id="note-14">
-    <h4><a href="2958.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/2958#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-12-09" title="12/09/2014 05:57 PM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13460-notes"><p>In squid.conf https port is 3130, but shorewall redirects to 3129.<br /><pre>
 --- 90squid    2014-12-05 15:49:52.000000000 +0100
@@ -757,8 +936,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13461" class="journal has-notes">
     <div id="note-15">
-    <h4><a href="2958.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/2958#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-12-09" title="12/09/2014 05:57 PM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13461-notes"><p>The block page always says: unknown category</p></div>
     </div>
@@ -766,8 +946,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13462" class="journal has-notes">
     <div id="note-16">
-    <h4><a href="2958.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/2958#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-10" title="12/10/2014 03:17 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13462-notes"><blockquote>
 
@@ -776,14 +957,15 @@ setPredecessorFieldsVisibility();
 
 </blockquote>
 
-	<p>This is not related to this package.<br />I just added the same note to <a href="2967.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Transparent proxy: switch iplementation from TPROXY to REDIRECT (CLOSED)">#2967</a></p></div>
+	<p>This is not related to this package.<br />I just added the same note to <a href="/issues/2967" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Transparent proxy: switch iplementation from TPROXY to REDIRECT (CLOSED)">#2967</a></p></div>
     </div>
   </div>
   
   <div id="change-13465" class="journal has-notes">
     <div id="note-17">
-    <h4><a href="2958.html#note-17" class="journal-link">#17</a>
+    <h4><a href="/issues/2958#note-17" class="journal-link">#17</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-10" title="12/10/2014 03:21 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13465-notes"><p>Filippo Carletti wrote:</p>
 
@@ -810,8 +992,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13466" class="journal has-notes">
     <div id="note-18">
-    <h4><a href="2958.html#note-18" class="journal-link">#18</a>
+    <h4><a href="/issues/2958#note-18" class="journal-link">#18</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-12-10" title="12/10/2014 04:24 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13466-notes"><blockquote>
 
@@ -826,8 +1009,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13538" class="journal has-notes">
     <div id="note-19">
-    <h4><a href="2958.html#note-19" class="journal-link">#19</a>
+    <h4><a href="/issues/2958#note-19" class="journal-link">#19</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-15" title="12/15/2014 09:02 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13538-notes">New package in nethserver-testing:
 	<ul>
@@ -849,8 +1033,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13602" class="journal has-notes">
     <div id="note-20">
-    <h4><a href="2958.html#note-20" class="journal-link">#20</a>
+    <h4><a href="/issues/2958#note-20" class="journal-link">#20</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-19" title="12/19/2014 10:53 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13602-notes"><p>Fixed Back button issues in Tab widget.</p>
 
@@ -861,10 +1046,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13631" class="journal has-notes has-details">
     <div id="note-21">
-    <h4><a href="2958.html#note-21" class="journal-link">#21</a>
+    <h4><a href="/issues/2958#note-21" class="journal-link">#21</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/c96c358beddd941e6188349f3c98ccd3?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/11" class="user active">Davide Marini</a> <a href="/projects/nethserver/activity?from=2015-01-05" title="01/05/2015 06:03 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -874,10 +1060,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-13639" class="journal has-notes has-details">
     <div id="note-22">
-    <h4><a href="2958.html#note-22" class="journal-link">#22</a>
+    <h4><a href="/issues/2958#note-22" class="journal-link">#22</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-12" title="01/12/2015 03:33 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>NEEDINFO</strong> changed from <i>No</i> to <i>Yes</i></li>
     </ul>
     <div class="wiki" id="journal-13639-notes"><blockquote>
@@ -943,20 +1130,23 @@ default_profile=profile
   
   <div id="change-13640" class="journal has-notes has-details">
     <div id="note-23">
-    <h4><a href="2958.html#note-23" class="journal-link">#23</a>
+    <h4><a href="/issues/2958#note-23" class="journal-link">#23</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-12" title="01/12/2015 04:17 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>60</i></li>
     </ul>
+    <div class="wiki" id="journal-13640-notes"><p>Applied in changeset <a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/abe4c0f7a037ec685daa8683089929ebada7e75f" class="changeset" title="Merge branch &#x27;master&#x27; into v6.6 Import Back button fixes #2958 Conflicts: 	SHA1SUM 	nethserver-...">nethserver-httpd-admin|abe4c0f7a037ec685daa8683089929ebada7e75f</a>.</p></div>
     </div>
   </div>
   
   <div id="change-13644" class="journal has-notes">
     <div id="note-24">
-    <h4><a href="2958.html#note-24" class="journal-link">#24</a>
+    <h4><a href="/issues/2958#note-24" class="journal-link">#24</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/c96c358beddd941e6188349f3c98ccd3?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/11" class="user active">Davide Marini</a> <a href="/projects/nethserver/activity?from=2015-01-12" title="01/12/2015 06:44 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13644-notes"><blockquote>
 
@@ -1019,10 +1209,11 @@ test_category=category
   
   <div id="change-13645" class="journal has-notes has-details">
     <div id="note-25">
-    <h4><a href="2958.html#note-25" class="journal-link">#25</a>
+    <h4><a href="/issues/2958#note-25" class="journal-link">#25</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-12" title="01/12/2015 08:01 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -1041,10 +1232,11 @@ Package in nethserver-testing:
   
   <div id="change-13680" class="journal has-details">
     <div id="note-26">
-    <h4><a href="2958.html#note-26" class="journal-link">#26</a>
+    <h4><a href="/issues/2958#note-26" class="journal-link">#26</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/a201dd3970a9d5c2e86c7724ccdcdca0?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/4" class="user active">Giovanni Bezicheri</a> <a href="/projects/nethserver/activity?from=2015-01-13" title="01/13/2015 06:20 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giovanni Bezicheri</i></li>
     </ul>
     
@@ -1053,10 +1245,11 @@ Package in nethserver-testing:
   
   <div id="change-13684" class="journal has-details">
     <div id="note-27">
-    <h4><a href="2958.html#note-27" class="journal-link">#27</a>
+    <h4><a href="/issues/2958#note-27" class="journal-link">#27</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/a201dd3970a9d5c2e86c7724ccdcdca0?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/4" class="user active">Giovanni Bezicheri</a> <a href="/projects/nethserver/activity?from=2015-01-14" title="01/14/2015 02:44 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giovanni Bezicheri</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
@@ -1067,8 +1260,9 @@ Package in nethserver-testing:
   
   <div id="change-13685" class="journal has-notes">
     <div id="note-28">
-    <h4><a href="2958.html#note-28" class="journal-link">#28</a>
+    <h4><a href="/issues/2958#note-28" class="journal-link">#28</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/a201dd3970a9d5c2e86c7724ccdcdca0?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/4" class="user active">Giovanni Bezicheri</a> <a href="/projects/nethserver/activity?from=2015-01-14" title="01/14/2015 02:47 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13685-notes"><p>The web content filter does not block domains specified in custom categories for custom filters (not default).</p></div>
     </div>
@@ -1076,10 +1270,11 @@ Package in nethserver-testing:
   
   <div id="change-13686" class="journal has-details">
     <div id="note-29">
-    <h4><a href="2958.html#note-29" class="journal-link">#29</a>
+    <h4><a href="/issues/2958#note-29" class="journal-link">#29</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-14" title="01/14/2015 04:30 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -1090,10 +1285,11 @@ Package in nethserver-testing:
   
   <div id="change-13687" class="journal has-notes has-details">
     <div id="note-30">
-    <h4><a href="2958.html#note-30" class="journal-link">#30</a>
+    <h4><a href="/issues/2958#note-30" class="journal-link">#30</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-14" title="01/14/2015 05:03 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -1103,10 +1299,11 @@ Package in nethserver-testing:
   
   <div id="change-13688" class="journal has-notes has-details">
     <div id="note-31">
-    <h4><a href="2958.html#note-31" class="journal-link">#31</a>
+    <h4><a href="/issues/2958#note-31" class="journal-link">#31</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-14" title="01/14/2015 05:04 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -1123,10 +1320,11 @@ Package in nethserver-testing:
   
   <div id="change-13706" class="journal has-details">
     <div id="note-32">
-    <h4><a href="2958.html#note-32" class="journal-link">#32</a>
+    <h4><a href="/issues/2958#note-32" class="journal-link">#32</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/a201dd3970a9d5c2e86c7724ccdcdca0?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/4" class="user active">Giovanni Bezicheri</a> <a href="/projects/nethserver/activity?from=2015-01-16" title="01/16/2015 03:51 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giovanni Bezicheri</i></li>
     </ul>
     
@@ -1135,10 +1333,11 @@ Package in nethserver-testing:
   
   <div id="change-13707" class="journal has-details">
     <div id="note-33">
-    <h4><a href="2958.html#note-33" class="journal-link">#33</a>
+    <h4><a href="/issues/2958#note-33" class="journal-link">#33</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/a201dd3970a9d5c2e86c7724ccdcdca0?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/4" class="user active">Giovanni Bezicheri</a> <a href="/projects/nethserver/activity?from=2015-01-16" title="01/16/2015 03:52 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giovanni Bezicheri</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -1149,10 +1348,11 @@ Package in nethserver-testing:
   
   <div id="change-13748" class="journal has-notes has-details">
     <div id="note-34">
-    <h4><a href="2958.html#note-34" class="journal-link">#34</a>
+    <h4><a href="/issues/2958#note-34" class="journal-link">#34</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-20" title="01/20/2015 03:55 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -1180,7 +1380,9 @@ Package in nethserver-testing:
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2958.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2958.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -1201,7 +1403,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

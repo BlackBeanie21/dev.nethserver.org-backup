@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1760.atom" rel="alternate" title="NethServer 6 - Feature #1760: NUT UPS configuration" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>NUT UPS configuration</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-03-21" title="03/21/2013 09:41 AM">over 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-07-30" title="07/30/2013 06:47 PM">about 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-nut</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/157.html">v6.4-beta2</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-nut</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/157">v6.4-beta2</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -94,7 +143,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   </div>
 </div>
 <div class="attachments">
-<p><a href="../attachments/download/189/smart-ups.dev" class="icon icon-attachment">smart-ups.dev</a>   - Dummy UPS driver configuration
+<p><a href="/attachments/download/189/smart-ups.dev" class="icon icon-attachment">smart-ups.dev</a>   - Dummy UPS driver configuration
   <span class="size">(1.14 KB)</span>
     <span class="author">Davide Principi, 07/17/2013 03:25 PM</span>
   </p>
@@ -119,7 +168,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2067.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2067</a>: Lib: synchronize service status prop and chkconfig
+    <a href="/issues/2067" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2067</a>: Lib: synchronize service status prop and chkconfig
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">07/17/2013</td>
@@ -132,7 +181,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2842.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2842</a>: NutUPS - Dashboard error when configured as slave
+    <a href="/issues/2842" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2842</a>: NutUPS - Dashboard error when configured as slave
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -142,7 +191,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/1760/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/1760/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -159,7 +208,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="1760.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -182,68 +231,94 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/5ca310b1a4c46862253312b5a111d38c4d36e42c" title="Revision 5ca310b1">Revision 5ca310b1</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-13" title="05/13/2013 12:05 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>First import. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>First import. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/19a910f4a48ad68ad655ec5cd44132f07c010694" title="Revision 19a910f4">Revision 19a910f4</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-17" title="05/17/2013 05:42 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>web ui: add new paramaters. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>web ui: add new paramaters. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/604a43b8ab632bb64b7376d1a894d6120ba8483f" title="Revision 604a43b8">Revision 604a43b8</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-17" title="05/17/2013 05:43 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>web ui: add dashboardm plugin. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>web ui: add dashboardm plugin. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/feff45ed22ef6e4e546d0371c81dd00c04070e54" title="Revision feff45ed">Revision feff45ed</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-17" title="05/17/2013 06:16 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>web ui: fix dashboard translations. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>web ui: fix dashboard translations. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/04b7df088805189d234c08611469ab7e538603a7" title="Revision 04b7df08">Revision 04b7df08</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-17" title="05/17/2013 06:17 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>web ui: cleanup dashboard. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>web ui: cleanup dashboard. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/a6e8b423e1e14983164f854d381ed2338365aa51" title="Revision a6e8b423">Revision a6e8b423</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-06-07" title="06/07/2013 11:30 AM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: add changelog for release 1.0.0. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>spec: add changelog for release 1.0.0. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/comps/revisions/13176a1d2749ded8267af1c741f2c7dada314567" title="Revision 13176a1d">Revision 13176a1d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-06-07" title="06/07/2013 11:35 AM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>comps-ns64.xml.in: add nethserver-nut group. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>comps-ns64.xml.in: add nethserver-nut group. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/19b5d01c38620413c028b4104957d886d2f68bf3" title="Revision 19b5d01c">Revision 19b5d01c</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-16" title="07/16/2013 09:30 AM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>web ui: fix dashboard warnings when UPS is not connected. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>web ui: fix dashboard warnings when UPS is not connected. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/8ebb0572b43d62b848957cc2578c352c439926a8" title="Revision 8ebb0572">Revision 8ebb0572</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-16" title="07/16/2013 09:30 AM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>upsd.conf template: remove invalid fragment. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>upsd.conf template: remove invalid fragment. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/dc92cbdc08dc63db5b1bbb1fd001970215a24f27" title="Revision dc92cbdc">Revision dc92cbdc</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-16" title="07/16/2013 09:35 AM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>upsd.conf template: remove invalid fragment. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>upsd.conf template: remove invalid fragment. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/b507042c08c9657395784e160f51cabf976e9964" title="Revision b507042c">Revision b507042c</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-16" title="07/16/2013 09:42 AM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>web ui: remove php warning on temperature parameter. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>web ui: remove php warning on temperature parameter. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/78cb16e7ab0ffc4da372eac78f8202f87db92a80" title="Revision 78cb16e7">Revision 78cb16e7</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-22" title="07/22/2013 05:58 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Generate a random password when needed. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>Generate a random password when needed. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/2583bfb8715e497bcfd6b4adfe1d8e91326d724f" title="Revision 2583bfb8">Revision 2583bfb8</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-23" title="07/23/2013 04:04 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>web ui: remove Description field, add suggestion form for Model prop. Refs <a href="1760.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
+        <p>web ui: remove Description field, add suggestion form for Model prop. Refs <a href="/issues/1760" class="issue tracker-2 status-5 priority-4 priority-default closed" title="NUT UPS configuration (CLOSED)">#1760</a></p>
     </div>
     </div>
 
@@ -253,18 +328,21 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-5503" class="journal has-notes">
     <div id="note-1">
-    <h4><a href="1760.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1760#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-02" title="04/02/2013 05:04 PM">over 8 years</a> ago</h4>
 
+    <div class="wiki" id="journal-5503-notes"><p>Added rpm from epel to nethserver-base repository.</p></div>
     </div>
   </div>
   
   <div id="change-5751" class="journal has-details">
     <div id="note-2">
-    <h4><a href="1760.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1760#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 06:07 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Target version</strong> changed from <i>~FUTURE</i> to <i>v6.4-beta2</i></li>
     </ul>
     
@@ -273,10 +351,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-5886" class="journal has-details">
     <div id="note-3">
-    <h4><a href="1760.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1760#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-09" title="05/09/2013 02:12 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>30</i></li>
@@ -287,10 +366,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6011" class="journal has-details">
     <div id="note-4">
-    <h4><a href="1760.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/1760#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-17" title="05/17/2013 06:18 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>80</i></li>
     </ul>
@@ -300,10 +380,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6109" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="1760.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/1760#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-31" title="05/31/2013 12:46 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>ON_DEV</i></li>
        <li><strong>% Done</strong> changed from <i>80</i> to <i>30</i></li>
     </ul>
@@ -313,10 +394,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6175" class="journal has-notes has-details">
     <div id="note-6">
-    <h4><a href="1760.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/1760#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-06-07" title="06/07/2013 11:58 AM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
     </ul>
@@ -326,10 +408,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6176" class="journal has-notes has-details">
     <div id="note-7">
-    <h4><a href="1760.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/1760#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-06-07" title="06/07/2013 04:51 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>80</i></li>
     </ul>
@@ -345,10 +428,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6312" class="journal has-notes has-details">
     <div id="note-8">
-    <h4><a href="1760.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/1760#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2013-06-29" title="06/29/2013 12:01 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> changed from <i>Giacomo Sanchietti</i> to <i>Alessio Fattorini</i></li>
        <li><strong>NEEDINFO</strong> changed from <i>No</i> to <i>Yes</i></li>
     </ul>
@@ -397,10 +481,11 @@ Notice: Undefined variable: upsstatus_label in /usr/share/nethesis/NethServer/Te
   
   <div id="change-6402" class="journal has-notes has-details">
     <div id="note-9">
-    <h4><a href="1760.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/1760#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-15" title="07/15/2013 12:04 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> changed from <i>Alessio Fattorini</i> to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>80</i> to <i>30</i></li>
@@ -479,10 +564,11 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
   
   <div id="change-6413" class="journal has-details">
     <div id="note-10">
-    <h4><a href="1760.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/1760#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-16" title="07/16/2013 09:43 AM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
     </ul>
@@ -492,10 +578,11 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
   
   <div id="change-6415" class="journal has-notes has-details">
     <div id="note-11">
-    <h4><a href="1760.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/1760#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-16" title="07/16/2013 10:08 AM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_DEV</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>30</i></li>
     </ul>
@@ -505,10 +592,11 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
   
   <div id="change-6416" class="journal has-details">
     <div id="note-12">
-    <h4><a href="1760.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/1760#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-16" title="07/16/2013 10:09 AM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
     </ul>
@@ -518,10 +606,11 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
   
   <div id="change-6417" class="journal has-details">
     <div id="note-13">
-    <h4><a href="1760.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/1760#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-16" title="07/16/2013 10:09 AM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>80</i></li>
     </ul>
@@ -531,10 +620,11 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
   
   <div id="change-6442" class="journal has-notes has-details">
     <div id="note-14">
-    <h4><a href="1760.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/1760#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-17" title="07/17/2013 10:17 AM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
     </ul>
     <div class="wiki" id="journal-6442-notes"><p>In nethserver-testing: <br />nethserver-nut-1.0.3-1.ns6.noarch.rpm</p></div>
@@ -543,8 +633,9 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
   
   <div id="change-6449" class="journal has-notes">
     <div id="note-15">
-    <h4><a href="1760.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/1760#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-17" title="07/17/2013 02:11 PM">about 8 years</a> ago</h4>
 
     <div class="wiki" id="journal-6449-notes"><p>Alessio Fattorini wrote:</p>
 
@@ -556,6 +647,7 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
 
 </blockquote>
 
+	<p>Create a bug only for released packages: nethserver-testing repository is for QA, thus it contains only non-released packages!</p>
 
 
 	<p>If QA verification fails, put the issue into ON_DEV state.</p></div>
@@ -564,10 +656,11 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
   
   <div id="change-6450" class="journal has-details">
     <div id="note-16">
-    <h4><a href="1760.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/1760#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-17" title="07/17/2013 02:13 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>NEEDINFO</strong> changed from <i>Yes</i> to <i>No</i></li>
     </ul>
@@ -577,11 +670,12 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
   
   <div id="change-6455" class="journal has-notes has-details">
     <div id="note-17">
-    <h4><a href="1760.html#note-17" class="journal-link">#17</a>
+    <h4><a href="/issues/1760#note-17" class="journal-link">#17</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-17" title="07/17/2013 03:25 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>File</strong> <a href="../attachments/download/189/smart-ups.dev">smart-ups.dev</a> added</li>
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/189/smart-ups.dev">smart-ups.dev</a> added</li>
     </ul>
     <div class="wiki" id="journal-6455-notes"><p>For testing, configure the <code>dummy-ups</code> driver:</p>
 
@@ -596,7 +690,7 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
     desc = "dummy-ups APC - Smart-UPS USB" 
 EOF
 </pre></li>
-		<li>Copy <a href="../attachments/download/189/smart-ups.dev" class="attachment">smart-ups.dev</a> into <code>/etc/ups/</code></li>
+		<li>Copy <a href="/attachments/download/189/smart-ups.dev" class="attachment">smart-ups.dev</a> into <code>/etc/ups/</code></li>
 		<li>Enable NUT UPS from server-manager</li>
 		<li>Save</li>
 	</ol></div>
@@ -605,10 +699,11 @@ EOF
   
   <div id="change-6456" class="journal has-details">
     <div id="note-18">
-    <h4><a href="1760.html#note-18" class="journal-link">#18</a>
+    <h4><a href="/issues/1760#note-18" class="journal-link">#18</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-17" title="07/17/2013 03:29 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>ON_DEV</i></li>
        <li><strong>% Done</strong> changed from <i>80</i> to <i>30</i></li>
     </ul>
@@ -618,16 +713,18 @@ EOF
   
   <div id="change-6459" class="journal has-notes has-details">
     <div id="note-19">
-    <h4><a href="1760.html#note-19" class="journal-link">#19</a>
+    <h4><a href="/issues/1760#note-19" class="journal-link">#19</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-17" title="07/17/2013 03:59 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
     </ul>
+    <div class="wiki" id="journal-6459-notes"><p>Enabling/disabling ups service does not change <code>chkconfig</code> settings.  This must be fixed in <a href="/projects/nethserver/repository/nethserver-lib/revisions/996a74a0/entry/root/etc/e-smith/events/actions/adjust-services" class="source">source:nethserver-lib|root/etc/e-smith/events/actions/adjust-services@996a74a0</a></p>
 
 
-	<p>See <a href="2067.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Lib: synchronize service status prop and chkconfig (CLOSED)">#2067</a></p>
+	<p>See <a href="/issues/2067" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Lib: synchronize service status prop and chkconfig (CLOSED)">#2067</a></p>
 
 
 	<p>Not really MODIFIED, no code patch is present.</p></div>
@@ -636,10 +733,11 @@ EOF
   
   <div id="change-6465" class="journal has-notes has-details">
     <div id="note-20">
-    <h4><a href="1760.html#note-20" class="journal-link">#20</a>
+    <h4><a href="/issues/1760#note-20" class="journal-link">#20</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-17" title="07/17/2013 06:38 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_DEV</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>30</i></li>
     </ul>
@@ -658,10 +756,11 @@ Jul 17 16:31:15 davidep2 esmith::event[16958]: Starting UPS monitor (master): [F
   
   <div id="change-6466" class="journal has-details">
     <div id="note-21">
-    <h4><a href="1760.html#note-21" class="journal-link">#21</a>
+    <h4><a href="/issues/1760#note-21" class="journal-link">#21</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-17" title="07/17/2013 06:39 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
     </ul>
     
@@ -670,10 +769,11 @@ Jul 17 16:31:15 davidep2 esmith::event[16958]: Starting UPS monitor (master): [F
   
   <div id="change-6582" class="journal has-notes has-details">
     <div id="note-22">
-    <h4><a href="1760.html#note-22" class="journal-link">#22</a>
+    <h4><a href="/issues/1760#note-22" class="journal-link">#22</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-23" title="07/23/2013 04:15 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
@@ -688,10 +788,11 @@ Jul 17 16:31:15 davidep2 esmith::event[16958]: Starting UPS monitor (master): [F
   
   <div id="change-6583" class="journal has-notes has-details">
     <div id="note-23">
-    <h4><a href="1760.html#note-23" class="journal-link">#23</a>
+    <h4><a href="/issues/1760#note-23" class="journal-link">#23</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-23" title="07/23/2013 04:19 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>80</i></li>
@@ -705,10 +806,11 @@ Jul 17 16:31:15 davidep2 esmith::event[16958]: Starting UPS monitor (master): [F
   
   <div id="change-6598" class="journal has-details">
     <div id="note-24">
-    <h4><a href="1760.html#note-24" class="journal-link">#24</a>
+    <h4><a href="/issues/1760#note-24" class="journal-link">#24</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2013-07-23" title="07/23/2013 06:11 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Alessio Fattorini</i></li>
     </ul>
     
@@ -717,10 +819,11 @@ Jul 17 16:31:15 davidep2 esmith::event[16958]: Starting UPS monitor (master): [F
   
   <div id="change-6601" class="journal has-notes has-details">
     <div id="note-25">
-    <h4><a href="1760.html#note-25" class="journal-link">#25</a>
+    <h4><a href="/issues/1760#note-25" class="journal-link">#25</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2013-07-23" title="07/23/2013 06:40 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>80</i> to <i>100</i></li>
     </ul>
@@ -740,24 +843,27 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
   
   <div id="change-6799" class="journal has-notes has-details">
     <div id="note-26">
-    <h4><a href="1760.html#note-26" class="journal-link">#26</a>
+    <h4><a href="/issues/1760#note-26" class="journal-link">#26</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-30" title="07/30/2013 06:47 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Alessio Fattorini</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
+    <div class="wiki" id="journal-6799-notes"><p>Moved to nethserver-updates repository</p></div>
     </div>
   </div>
   
   <div id="change-12631" class="journal has-details">
     <div id="note-27">
-    <h4><a href="1760.html#note-27" class="journal-link">#27</a>
+    <h4><a href="/issues/1760#note-27" class="journal-link">#27</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-15" title="10/15/2014 08:27 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2842.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2842</a>: NutUPS - Dashboard error when configured as slave</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2842" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2842</a>: NutUPS - Dashboard error when configured as slave</i> added</li>
     </ul>
     
     </div>
@@ -780,7 +886,9 @@ yum --enablerepo=nethserver-testing install @nethserver-nut
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1760.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1760.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -801,7 +909,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

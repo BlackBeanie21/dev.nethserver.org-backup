@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2669.atom" rel="alternate" title="NethServer 6 - Enhancement #2669: Upgrade to ownCloud 7" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -61,8 +108,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div class="issue tracker-6 status-5 priority-4 priority-default closed parent details">
     <div class="next-prev-links contextual">
-      <a href="2938.html" title="#2938">« Previous</a> |
-      <a href="2966.html" title="#2966">Next »</a>
+      <a href="/issues/2938" title="#2938">« Previous</a> |
+      <a href="/issues/2966" title="#2966">Next »</a>
     </div>
 
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
@@ -71,10 +118,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Upgrade to ownCloud 7</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-02-25" title="02/25/2014 02:35 PM">over 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-12-02" title="12/02/2014 10:38 AM">over 6 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-owncloud</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-owncloud</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -112,7 +161,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
 </div>
 <p><strong>Subtasks</strong></p>
-<form><table class="list issues"><tr class="issue issue-2341 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="2341" /></td><td class="subject"><a href="2341.html" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #2341</a>: Automatic ownCloud LDAP configuration</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr></table></form>
+<form><table class="list issues"><tr class="issue issue-2341 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="2341" /></td><td class="subject"><a href="/issues/2341" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #2341</a>: Automatic ownCloud LDAP configuration</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr></table></form>
 </div>
 
 <hr />
@@ -130,7 +179,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2670.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2670</a>: Can&#x27;t find ownCloud LDAP secret password
+    <a href="/issues/2670" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2670</a>: Can&#x27;t find ownCloud LDAP secret password
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -143,7 +192,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2910.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2910</a>: ownCloud 7 rpm package has missing dependency.
+    <a href="/issues/2910" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2910</a>: ownCloud 7 rpm package has missing dependency.
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -156,7 +205,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2942.html" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #2942</a>: Documentation: use only ldap admin user.
+    <a href="/issues/2942" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #2942</a>: Documentation: use only ldap admin user.
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -166,7 +215,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2669/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2669/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -183,7 +232,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2669.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -206,224 +255,310 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/e75414538fbe4fb9003e86a7e5f74691dc75dc29" title="Revision e7541453">Revision e7541453</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-01" title="10/01/2014 09:53 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>New ownCloud dashboard widget application. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>New ownCloud dashboard widget application. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/44a0e1389f0d92a3649de4ee317a9a52c3088fce" title="Revision 44a0e138">Revision 44a0e138</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-02" title="10/02/2014 09:58 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>New ownCloud dashboard widget application. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>New ownCloud dashboard widget application. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/99da9770f84d2fb66d0fce926617e79c3183e7ac" title="Revision 99da9770">Revision 99da9770</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-03" title="10/03/2014 07:37 PM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>New ownCloud dashboard widget application. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>New ownCloud dashboard widget application. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/2eafe69a269ab3765cc9c3c6b19f18e4c871b9fb" title="Revision 2eafe69a">Revision 2eafe69a</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-05" title="10/05/2014 12:14 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Patch ownCloud "occ" command line tool. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Patch ownCloud "occ" command line tool. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/593a33ca5a225397b9ae633b3adbfa0d03382724" title="Revision 593a33ca">Revision 593a33ca</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-05" title="10/05/2014 12:24 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>ownCloud ldap config initialization. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>ownCloud ldap config initialization. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/a3d91ec8caef0c9028d8b9541f8599bd7afa6a2b" title="Revision a3d91ec8">Revision a3d91ec8</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-05" title="10/05/2014 12:57 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix /usr/libexec/nethserver/owncloud-ldap-init. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix /usr/libexec/nethserver/owncloud-ldap-init. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/33bc00543f86eaf284fc58ccbd52fa00eeb11d45" title="Revision 33bc0054">Revision 33bc0054</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-05" title="10/05/2014 01:00 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Second fix /usr/libexec/nethserver/owncloud-ldap-init. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Second fix /usr/libexec/nethserver/owncloud-ldap-init. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/b1d658b5cb6aab9024f38f232719890aa0598e42" title="Revision b1d658b5">Revision b1d658b5</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-05" title="10/05/2014 01:43 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Change init ldap script to an action. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Change init ldap script to an action. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/bf10d5634dcea75dda47dc6d3c26b495cb29856a" title="Revision bf10d563">Revision bf10d563</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-05" title="10/05/2014 01:52 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Set "en" as ownCloud default language. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Set "en" as ownCloud default language. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/750c4d9545f1c1bcc457ed709ca7dd1a72bccb0c" title="Revision 750c4d95">Revision 750c4d95</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-05" title="10/05/2014 02:16 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Spec: fix ownCloud dir permissions. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Spec: fix ownCloud dir permissions. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/fb74d3d941ff9e563a78e47a9817b58b00050a67" title="Revision fb74d3d9">Revision fb74d3d9</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-05" title="10/05/2014 02:27 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove ldap password from widget. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Remove ldap password from widget. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/e7a35c9d366b859616b010445a1430b59491e202" title="Revision e7a35c9d">Revision e7a35c9d</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-05" title="10/05/2014 02:48 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Add owncloud template-begin for register_command.php. refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Add owncloud template-begin for register_command.php. refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/4c18daeb869770d92dba1044da3ad414e62688d1" title="Revision 4c18daeb">Revision 4c18daeb</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-05" title="10/05/2014 03:52 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix owncloud file permissions. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix owncloud file permissions. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/9a1a89a701eb28364336a92d505cfda7011dd0ff" title="Revision 9a1a89a7">Revision 9a1a89a7</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 03:55 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Change first url request with curl. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Change first url request with curl. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/0c204d7d03f2f95e73ffb93a9219feefeff2ebc7" title="Revision 0c204d7d">Revision 0c204d7d</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 05:52 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Add "trusted_domains" to nethserver-owncloud-conf. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Add "trusted_domains" to nethserver-owncloud-conf. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/226fa2671aedafcd835f6024a5fc75fd0d5e8ebf" title="Revision 226fa267">Revision 226fa267</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-07" title="10/06/2014 10:47 PM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix string in php array in nethserver-owncloud-conf. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix string in php array in nethserver-owncloud-conf. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/671b488461db3084619b29974ac00e111caf8eda" title="Revision 671b4884">Revision 671b4884</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-07" title="10/07/2014 01:29 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Change order of action "nethserver-owncloud-conf-ldap". Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Change order of action "nethserver-owncloud-conf-ldap". Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/0a2a13113c8886ec1ef5d47f14cfd8a990ecfb04" title="Revision 0a2a1311">Revision 0a2a1311</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-07" title="10/07/2014 04:17 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix to support ownCloud 7.0.2. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix to support ownCloud 7.0.2. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/38115e6fb076f968a2bae0b63691724a7469e099" title="Revision 38115e6f">Revision 38115e6f</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-07" title="10/07/2014 04:19 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Add ownCloud dashboard widget. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Add ownCloud dashboard widget. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/853327d48fca42bf49e71dff2c8d8ca5deb4faf0" title="Revision 853327d4">Revision 853327d4</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-07" title="10/07/2014 06:20 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Manage automatic db upgrade from 5 to 7 version. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Manage automatic db upgrade from 5 to 7 version. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/87b24a5e0dc3091881d801a5c2286a5311656870" title="Revision 87b24a5e">Revision 87b24a5e</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-07" title="10/07/2014 10:55 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix "email" ldap attribute. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix "email" ldap attribute. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/de82c2503570fd8b68a9f8c2075875b6137243c5" title="Revision de82c250">Revision de82c250</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-07" title="10/07/2014 02:14 PM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix action "nethserver-owncloud-conf-ldap". Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix action "nethserver-owncloud-conf-ldap". Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/5650cefedbd19a042ffd74606a78b44c1bb390cb" title="Revision 5650cefe">Revision 5650cefe</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-14" title="10/14/2014 11:48 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove ntp template expansion. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Remove ntp template expansion. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/cacf52a2cf6c526be8e0b586e0d3c72557e7fda5" title="Revision cacf52a2">Revision cacf52a2</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-16" title="10/16/2014 09:27 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Add ownCloud section. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Add ownCloud section. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/7476e6eeb0748c3106745a8eac898fa8fd5e9604" title="Revision 7476e6ee">Revision 7476e6ee</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-17" title="10/17/2014 04:30 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix owncloud.rst. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix owncloud.rst. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/fab79cc51b1cec695c741041b9365dc6d3d4a11c" title="Revision fab79cc5">Revision fab79cc5</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-17" title="10/17/2014 06:17 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>it admin manual: new owncloud section. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>it admin manual: new owncloud section. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/709e0854ac5e35a8c5d6f3ddb2229eceeddb325b" title="Revision 709e0854">Revision 709e0854</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-17" title="10/17/2014 06:17 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>en admin manual: fix owncloud note. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>en admin manual: fix owncloud note. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/4184ba9b85302c1af38409bd9e17a4f0e995a8fd" title="Revision 4184ba9b">Revision 4184ba9b</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-17" title="10/17/2014 06:24 PM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix ownCloud 7 backup. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix ownCloud 7 backup. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/4792a6bbe9b081f98552ced7735ee16a9000730e" title="Revision 4792a6bb">Revision 4792a6bb</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-20" title="10/20/2014 05:47 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Add "ownCloud" substitution keyword. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Add "ownCloud" substitution keyword. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/8d0beae19cd732bbb516300d0b85605141e157fb" title="Revision 8d0beae1">Revision 8d0beae1</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-20" title="10/20/2014 06:00 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>LDAP Note in owncloud.rst. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>LDAP Note in owncloud.rst. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/d2dc0757753c8b5632233701f4918ff6f7f92b6d" title="Revision d2dc0757">Revision d2dc0757</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-21" title="10/21/2014 04:00 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>ownCloud: refresh ldap user list. refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>ownCloud: refresh ldap user list. refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/6927495fb941c7cfd4eb1c1e69989aaa3235d247" title="Revision 6927495f">Revision 6927495f</a><br />
+        <span class="author">Added by Alessandro  <a href="/projects/nethserver/activity?from=2014-10-21" title="10/21/2014 10:30 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
         <p>Merge pull request #41 from alepolidori/master</p>
 
 
-	<p>New ownCloud note section. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+	<p>New ownCloud note section. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/005769cb4501ea945f45f83805aa5dfb0ef55a00" title="Revision 005769cb">Revision 005769cb</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-22" title="10/22/2014 10:39 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix ownclud backup tool name. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix ownclud backup tool name. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/95822e5a6c36314d6ee4ead0785b92adc7b458ab" title="Revision 95822e5a">Revision 95822e5a</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-22" title="10/22/2014 10:42 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>New ownCloud developer doc. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>New ownCloud developer doc. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/0d59541b8cc827a696288a616f248b9cf1a995a0" title="Revision 0d59541b">Revision 0d59541b</a><br />
+        <span class="author">Added by Alessandro  <a href="/projects/nethserver/activity?from=2014-10-22" title="10/22/2014 10:43 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
         <p>Merge pull request #42 from alepolidori/master</p>
 
 
-	<p>New ownCloud developer doc. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+	<p>New ownCloud developer doc. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/96ed363939f3fdf7907978a979ac37c71554b0b4" title="Revision 96ed3639">Revision 96ed3639</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-24" title="10/24/2014 05:51 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>"default_language" key in autoconfig is not accepted. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>"default_language" key in autoconfig is not accepted. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/30645abe71689df3cd3ca1b8d1d4e75b0228274c" title="Revision 30645abe">Revision 30645abe</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-24" title="10/24/2014 11:22 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix config.php when upgrade from version 5. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix config.php when upgrade from version 5. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/d42c710d64460e15338c60c7c187069e2ebce62d" title="Revision d42c710d">Revision d42c710d</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-25" title="10/25/2014 08:48 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix nethserver-owncloud-conf-ldap. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix nethserver-owncloud-conf-ldap. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/e8057e23aa32c52bf6e19cb5d1068dfa8127a5ab" title="Revision e8057e23">Revision e8057e23</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-25" title="10/25/2014 02:12 PM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Do not use TLS and do not check for webdav. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Do not use TLS and do not check for webdav. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/3ff996fa3a7b4f2731992db70f452c5772539b87" title="Revision 3ff996fa">Revision 3ff996fa</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-25" title="10/25/2014 02:35 PM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Disable ldap cache. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Disable ldap cache. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/46c9dbb64c956eb9d8dc20c70f379dc568b5c94f" title="Revision 46c9dbb6">Revision 46c9dbb6</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-10-25" title="10/25/2014 03:42 PM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Disable tls and ldap cache also when update. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Disable tls and ldap cache also when update. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/29c9d2bf114b212e3b5914859ddea5aab24342c0" title="Revision 29c9d2bf">Revision 29c9d2bf</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-11-05" title="11/05/2014 04:35 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix owncloud.rst. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Fix owncloud.rst. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-owncloud/revisions/f3a5a9234271b9ee0809b2e1d7ba8f5a7754d9d7" title="Revision f3a5a923">Revision f3a5a923</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-12" title="11/12/2014 09:30 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Conf action: fix sql schema upgrade. Refs <a href="2669.html" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
+        <p>Conf action: fix sql schema upgrade. Refs <a href="/issues/2669" class="issue tracker-6 status-5 priority-4 priority-default closed parent" title="Upgrade to ownCloud 7 (CLOSED)">#2669</a></p>
 
 
 	<p>See: <a class="external" href="https://github.com/owncloud/core/issues/6152#issuecomment-30236917">https://github.com/owncloud/core/issues/6152#issuecomment-30236917</a></p>
@@ -436,10 +571,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-10786" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2669.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2669#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-28" title="02/28/2014 10:30 AM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Target version</strong> set to <i>~FUTURE</i></li>
     </ul>
     
@@ -448,10 +584,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-10838" class="journal has-details">
     <div id="note-2">
-    <h4><a href="2669.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2669#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-05" title="03/05/2014 03:36 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Subject</strong> changed from <i>Support for Owncloud6</i> to <i>Upgrade to ownCloud 6</i></li>
        <li><strong>Priority</strong> changed from <i>Low</i> to <i>Normal</i></li>
     </ul>
@@ -461,10 +598,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11452" class="journal has-details">
     <div id="note-3">
-    <h4><a href="2669.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2669#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-06-26" title="06/26/2014 11:18 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Subject</strong> changed from <i>Upgrade to ownCloud 6</i> to <i>Upgrade to ownCloud 7</i></li>
     </ul>
     
@@ -473,11 +611,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11453" class="journal has-details">
     <div id="note-4">
-    <h4><a href="2669.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2669#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-06-26" title="06/26/2014 11:20 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/11453%3Fdetail_id=18261.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/11453?detail_id=18261" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -485,11 +624,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11468" class="journal has-details">
     <div id="note-5">
-    <h4><a href="2669.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2669#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-06-28" title="06/28/2014 03:19 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/11468%3Fdetail_id=18291.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/11468?detail_id=18291" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -497,11 +637,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12089" class="journal has-details">
     <div id="note-6">
-    <h4><a href="2669.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2669#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-09-04" title="09/04/2014 05:32 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/12089%3Fdetail_id=19421.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/12089?detail_id=19421" title="View differences">diff</a>)</li>
     </ul>
     
     </div>
@@ -509,10 +650,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12222" class="journal has-notes has-details">
     <div id="note-7">
-    <h4><a href="2669.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2669#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-16" title="09/16/2014 05:46 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>Target version</strong> changed from <i>~FUTURE</i> to <i>v6.5</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
@@ -522,6 +664,7 @@ setPredecessorFieldsVisibility();
 
 The new package must:
 	<ul>
+	<li>correctly install Owncloud 7: remember to download the rpms using yum-download-only and upload them to testing repository</li>
 		<li>handle the upgrade from release 5</li>
 		<li>implement a simple Dashboard widget (maybe inside the Apps tabs). The widget must display the app URL and auto-generate user and password for LDAP configuration</li>
 	</ul>
@@ -542,10 +685,11 @@ Also update the documentation:
   
   <div id="change-12307" class="journal has-details">
     <div id="note-8">
-    <h4><a href="2669.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2669#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-09-23" title="09/23/2014 03:49 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Alessandro Polidori</i></li>
     </ul>
     
@@ -554,10 +698,11 @@ Also update the documentation:
   
   <div id="change-12314" class="journal has-details">
     <div id="note-9">
-    <h4><a href="2669.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2669#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-09-23" title="09/23/2014 05:23 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Alessandro Polidori</i></del>)</li>
     </ul>
     
@@ -566,8 +711,9 @@ Also update the documentation:
   
   <div id="change-12321" class="journal has-notes">
     <div id="note-10">
-    <h4><a href="2669.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2669#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-09-23" title="09/23/2014 11:35 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12321-notes"><p>How to use yum-downloadonly: <a class="external" href="https://access.redhat.com/solutions/10154">https://access.redhat.com/solutions/10154</a></p></div>
     </div>
@@ -575,10 +721,11 @@ Also update the documentation:
   
   <div id="change-12322" class="journal has-details">
     <div id="note-11">
-    <h4><a href="2669.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2669#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-09-23" title="09/23/2014 11:36 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Alessandro Polidori</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -589,19 +736,22 @@ Also update the documentation:
   
   <div id="change-12421" class="journal has-notes">
     <div id="note-12">
-    <h4><a href="2669.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2669#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-01" title="10/01/2014 09:52 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12421-notes"><p>I have downloaded new version of ownCloud for <a href="http://goo.gl/jHXBh" class="external">CentOS-6</a>:<br /><pre>
 owncloud-3rdparty-7.0.2-12.1.noarch
 owncloud-7.0.2-12.1.noarch
+</pre><br />and I have uploaded them into "testing" repository.</p></div>
     </div>
   </div>
   
   <div id="change-12610" class="journal has-notes">
     <div id="note-13">
-    <h4><a href="2669.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2669#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-14" title="10/14/2014 06:12 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12610-notes"><p>Upgrade from release 5 is automatically done by the <code>occ</code> tool.</p></div>
     </div>
@@ -609,8 +759,9 @@ owncloud-7.0.2-12.1.noarch
   
   <div id="change-12665" class="journal has-notes">
     <div id="note-14">
-    <h4><a href="2669.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/2669#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-16" title="10/16/2014 09:34 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12665-notes"><p>Upstream official rpm package doesn't have policycoreutils-python among dependencies.<br />Errors on install:<br /><pre>
 /var/tmp/rpm-tmp.WSF2AS: line 5: semanage: command not found
@@ -625,11 +776,12 @@ owncloud-7.0.2-12.1.noarch
   
   <div id="change-12668" class="journal has-details">
     <div id="note-15">
-    <h4><a href="2669.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/2669#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-16" title="10/16/2014 10:07 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2910.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2910</a>: ownCloud 7 rpm package has missing dependency.</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2910" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2910</a>: ownCloud 7 rpm package has missing dependency.</i> added</li>
     </ul>
     
     </div>
@@ -637,8 +789,9 @@ owncloud-7.0.2-12.1.noarch
   
   <div id="change-12670" class="journal has-notes">
     <div id="note-16">
-    <h4><a href="2669.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/2669#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-16" title="10/16/2014 10:08 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12670-notes"><p>The <code>occ</code> command line tool has been patched to support ldap empty configuration creation:<br /><pre>occ ldap:create-empty-config</pre><br />as explained <a href="https://github.com/owncloud/core/pull/11347" class="external">here</a>.<br />This feature should be present in a next version of ownCloud.</p>
 
@@ -652,8 +805,9 @@ owncloud-7.0.2-12.1.noarch
   
   <div id="change-12671" class="journal has-notes">
     <div id="note-17">
-    <h4><a href="2669.html#note-17" class="journal-link">#17</a>
+    <h4><a href="/issues/2669#note-17" class="journal-link">#17</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-16" title="10/16/2014 10:10 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12671-notes"><p>With clear installation, LDAP authentication is activated by default.</p>
 
@@ -664,17 +818,19 @@ owncloud-7.0.2-12.1.noarch
   
   <div id="change-12673" class="journal has-notes">
     <div id="note-18">
-    <h4><a href="2669.html#note-18" class="journal-link">#18</a>
+    <h4><a href="/issues/2669#note-18" class="journal-link">#18</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-16" title="10/16/2014 10:18 AM">almost 7 years</a> ago</h4>
 
-    <div class="wiki" id="journal-12673-notes"><p><a href="http://docs.nethserver.org/en/latest/owncloud.html" class="external">Admin manual</a><br /><a href="http://docs.nethserver.o/projects/nethserver-devel/en/latest/owncloud.html" class="external">Developer manual</a></p></div>
+    <div class="wiki" id="journal-12673-notes"><p><a href="http://docs.nethserver.org/en/latest/owncloud.html" class="external">Admin manual</a><br /><a href="http://docs.nethserver.org/projects/nethserver-devel/en/latest/owncloud.html" class="external">Developer manual</a></p></div>
     </div>
   </div>
   
   <div id="change-12674" class="journal has-notes">
     <div id="note-19">
-    <h4><a href="2669.html#note-19" class="journal-link">#19</a>
+    <h4><a href="/issues/2669#note-19" class="journal-link">#19</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-16" title="10/16/2014 10:22 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12674-notes"><p>Giacomo Sanchietti wrote:</p>
 
@@ -698,10 +854,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12680" class="journal has-details">
     <div id="note-20">
-    <h4><a href="2669.html#note-20" class="journal-link">#20</a>
+    <h4><a href="/issues/2669#note-20" class="journal-link">#20</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-16" title="10/16/2014 11:16 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Alessandro Polidori</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -712,8 +869,9 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12681" class="journal has-notes">
     <div id="note-21">
-    <h4><a href="2669.html#note-21" class="journal-link">#21</a>
+    <h4><a href="/issues/2669#note-21" class="journal-link">#21</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-16" title="10/16/2014 11:36 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12681-notes">Repo: <code>nethserver-testing</code><br />Packages: 
 	<ul>
@@ -767,10 +925,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12682" class="journal has-details">
     <div id="note-22">
-    <h4><a href="2669.html#note-22" class="journal-link">#22</a>
+    <h4><a href="/issues/2669#note-22" class="journal-link">#22</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-16" title="10/16/2014 11:36 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -780,10 +939,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12714" class="journal has-notes has-details">
     <div id="note-23">
-    <h4><a href="2669.html#note-23" class="journal-link">#23</a>
+    <h4><a href="/issues/2669#note-23" class="journal-link">#23</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-20" title="10/20/2014 07:59 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -793,10 +953,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12715" class="journal has-details">
     <div id="note-24">
-    <h4><a href="2669.html#note-24" class="journal-link">#24</a>
+    <h4><a href="/issues/2669#note-24" class="journal-link">#24</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-20" title="10/20/2014 07:59 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Alessandro Polidori</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -807,8 +968,9 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12730" class="journal has-notes">
     <div id="note-25">
-    <h4><a href="2669.html#note-25" class="journal-link">#25</a>
+    <h4><a href="/issues/2669#note-25" class="journal-link">#25</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-21" title="10/21/2014 10:15 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12730-notes"><p>Giacomo Sanchietti wrote:</p>
 
@@ -838,8 +1000,9 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12731" class="journal has-notes">
     <div id="note-26">
-    <h4><a href="2669.html#note-26" class="journal-link">#26</a>
+    <h4><a href="/issues/2669#note-26" class="journal-link">#26</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-21" title="10/21/2014 10:17 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12731-notes"><p>The backup save the configuration file<br /><code>/var/www/html/owncloud/config/config.php</code><br />and all data of the users<br /><code>/var/www/html/owncloud/data</code></p>
 
@@ -850,10 +1013,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12732" class="journal has-details">
     <div id="note-27">
-    <h4><a href="2669.html#note-27" class="journal-link">#27</a>
+    <h4><a href="/issues/2669#note-27" class="journal-link">#27</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-21" title="10/21/2014 10:17 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Alessandro Polidori</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -864,10 +1028,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12733" class="journal has-notes has-details">
     <div id="note-28">
-    <h4><a href="2669.html#note-28" class="journal-link">#28</a>
+    <h4><a href="/issues/2669#note-28" class="journal-link">#28</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-21" title="10/21/2014 10:20 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -935,10 +1100,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12779" class="journal has-details">
     <div id="note-29">
-    <h4><a href="2669.html#note-29" class="journal-link">#29</a>
+    <h4><a href="/issues/2669#note-29" class="journal-link">#29</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-10-23" title="10/23/2014 06:35 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Alessio Fattorini</i></li>
     </ul>
     
@@ -947,8 +1113,9 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12780" class="journal has-notes">
     <div id="note-30">
-    <h4><a href="2669.html#note-30" class="journal-link">#30</a>
+    <h4><a href="/issues/2669#note-30" class="journal-link">#30</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-10-23" title="10/23/2014 06:59 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12780-notes"><blockquote>
 
@@ -964,13 +1131,13 @@ owncloud-7.0.2-17.1.noarch.rpm
 
 </blockquote>
 
-	<p>I can't login because this error at login page<br />[1045] SQLSTATE<sup><a href="2669.html#fn28000">28000</a></sup> [1045] Access denied for user 'ownuser'@'localhost' (using password: YES)</p>
+	<p>I can't login because this error at login page<br />[1045] SQLSTATE<sup><a href="#fn28000">28000</a></sup> [1045] Access denied for user 'ownuser'@'localhost' (using password: YES)</p>
 
 
 	<p>Same error on owncloud.log</p>
 
 
-	<p>{"app":"index","message":"PDOException: SQLSTATE<sup><a href="2669.html#fn28000">28000</a></sup> [1045] Access denied for user 'ownuser'@'localhost' (using password: YES) [1045]","level":4,"time":"2014-07-05T09:35:13+00:00"}</p>
+	<p>{"app":"index","message":"PDOException: SQLSTATE<sup><a href="#fn28000">28000</a></sup> [1045] Access denied for user 'ownuser'@'localhost' (using password: YES) [1045]","level":4,"time":"2014-07-05T09:35:13+00:00"}</p>
 
 
 	<p><strong>Test Failed</strong></p></div>
@@ -979,10 +1146,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12785" class="journal has-details">
     <div id="note-31">
-    <h4><a href="2669.html#note-31" class="journal-link">#31</a>
+    <h4><a href="/issues/2669#note-31" class="journal-link">#31</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-10-23" title="10/23/2014 09:57 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Alessio Fattorini</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
@@ -993,10 +1161,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12786" class="journal has-details">
     <div id="note-32">
-    <h4><a href="2669.html#note-32" class="journal-link">#32</a>
+    <h4><a href="/issues/2669#note-32" class="journal-link">#32</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-23" title="10/23/2014 10:01 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Alessandro Polidori</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -1007,8 +1176,9 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12795" class="journal has-notes">
     <div id="note-33">
-    <h4><a href="2669.html#note-33" class="journal-link">#33</a>
+    <h4><a href="/issues/2669#note-33" class="journal-link">#33</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-24" title="10/24/2014 05:06 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12795-notes"><p>The problem<br />After upgrade from 5 to 7 the config.php remains the old and it uses the old password.<br />Now the nethserver-owncloud new package generate a different password for each installation, so the software crash to login owncloud database.</p>
 
@@ -1022,8 +1192,9 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12805" class="journal has-notes">
     <div id="note-34">
-    <h4><a href="2669.html#note-34" class="journal-link">#34</a>
+    <h4><a href="/issues/2669#note-34" class="journal-link">#34</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-24" title="10/24/2014 11:56 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12805-notes"><p>I have enabled also HTTPS by default inserting <code>"forcessl": true</code> in the config.php file.</p></div>
     </div>
@@ -1031,10 +1202,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12806" class="journal has-details">
     <div id="note-35">
-    <h4><a href="2669.html#note-35" class="journal-link">#35</a>
+    <h4><a href="/issues/2669#note-35" class="journal-link">#35</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-24" title="10/24/2014 11:56 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Alessandro Polidori</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -1045,8 +1217,9 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12807" class="journal has-notes">
     <div id="note-36">
-    <h4><a href="2669.html#note-36" class="journal-link">#36</a>
+    <h4><a href="/issues/2669#note-36" class="journal-link">#36</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-24" title="10/24/2014 12:01 PM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12807-notes">Repo: <code>nethserver-testing</code><br />Packages: 
 	<ul>
@@ -1117,10 +1290,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12808" class="journal has-details">
     <div id="note-37">
-    <h4><a href="2669.html#note-37" class="journal-link">#37</a>
+    <h4><a href="/issues/2669#note-37" class="journal-link">#37</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-24" title="10/24/2014 12:01 PM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -1130,10 +1304,11 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12887" class="journal has-details">
     <div id="note-38">
-    <h4><a href="2669.html#note-38" class="journal-link">#38</a>
+    <h4><a href="/issues/2669#note-38" class="journal-link">#38</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-10-30" title="10/30/2014 04:24 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Alessio Fattorini</i></li>
     </ul>
     
@@ -1142,8 +1317,9 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12891" class="journal has-notes">
     <div id="note-39">
-    <h4><a href="2669.html#note-39" class="journal-link">#39</a>
+    <h4><a href="/issues/2669#note-39" class="journal-link">#39</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-10-30" title="10/30/2014 07:02 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12891-notes"><p><strong>> # *Test the update from ownCloud 5 (with ldap authentication configured)</strong>*</p>
 
@@ -1243,8 +1419,9 @@ owncloud-7.0.2-17.1.noarch.rpm
   
   <div id="change-12894" class="journal has-notes">
     <div id="note-40">
-    <h4><a href="2669.html#note-40" class="journal-link">#40</a>
+    <h4><a href="/issues/2669#note-40" class="journal-link">#40</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-10-30" title="10/30/2014 09:46 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12894-notes"><blockquote>
 
@@ -1302,8 +1479,9 @@ it works, we should document
   
   <div id="change-12916" class="journal has-notes">
     <div id="note-41">
-    <h4><a href="2669.html#note-41" class="journal-link">#41</a>
+    <h4><a href="/issues/2669#note-41" class="journal-link">#41</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-10-30" title="10/30/2014 01:52 PM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12916-notes"><blockquote>
 
@@ -1397,8 +1575,9 @@ Tested also "External storage support" app
   
   <div id="change-12939" class="journal has-notes">
     <div id="note-42">
-    <h4><a href="2669.html#note-42" class="journal-link">#42</a>
+    <h4><a href="/issues/2669#note-42" class="journal-link">#42</a>
     
+    Updated by Anonymous <a href="/projects/nethserver/activity?from=2014-10-31" title="10/31/2014 12:29 PM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12939-notes"><p><strong>Test clean installation</strong></p>
 
@@ -1406,7 +1585,7 @@ Tested also "External storage support" app
 	<p>1. <strong>install nethserver-owncloud 7 in NethServer 6.5 without ownCloud 5 installed</strong>  Done Ok .</p>
 
 
-	<p>2. <strong>verify that installation ends with success (no error generation in the command line and in the log file /var/log/messages)</strong> Done and all seems to be ok .<br />In messages i've found only: "Oct 31 16:18:05 kthulu nslcd<sup><a href="2669.html#fn1359">1359</a></sup>: [8b4567] ldap_result() failed: No such object" , but i don't know if it's related to owncloud.</p>
+	<p>2. <strong>verify that installation ends with success (no error generation in the command line and in the log file /var/log/messages)</strong> Done and all seems to be ok .<br />In messages i've found only: "Oct 31 16:18:05 kthulu nslcd<sup><a href="#fn1359">1359</a></sup>: [8b4567] ldap_result() failed: No such object" , but i don't know if it's related to owncloud.</p>
 
 
 	<p>3. <strong>verify default login authentication with default credentials of admin user.</strong> Fail : Blank page, no login prompted .<br />  In  /var/www/html/owncloud/data/owncloud.log i've
@@ -1418,11 +1597,12 @@ Tested also "External storage support" app
   
   <div id="change-12940" class="journal has-details">
     <div id="note-43">
-    <h4><a href="2669.html#note-43" class="journal-link">#43</a>
+    <h4><a href="/issues/2669#note-43" class="journal-link">#43</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-31" title="10/31/2014 12:36 PM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2942.html" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #2942</a>: Documentation: use only ldap admin user.</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2942" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #2942</a>: Documentation: use only ldap admin user.</i> added</li>
     </ul>
     
     </div>
@@ -1430,8 +1610,9 @@ Tested also "External storage support" app
   
   <div id="change-12942" class="journal has-notes">
     <div id="note-44">
-    <h4><a href="2669.html#note-44" class="journal-link">#44</a>
+    <h4><a href="/issues/2669#note-44" class="journal-link">#44</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-10-31" title="10/31/2014 12:38 PM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12942-notes"><p>Alessio Fattorini wrote:</p>
 
@@ -1459,16 +1640,17 @@ it works, we should document
 
 </blockquote>
 
-	<p>I opened the <a href="2942.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Documentation: use only ldap admin user. (CLOSED)">#2942</a> task.</p></div>
+	<p>I opened the <a href="/issues/2942" class="issue tracker-4 status-5 priority-4 priority-default closed" title="Documentation: use only ldap admin user. (CLOSED)">#2942</a> task.</p></div>
     </div>
   </div>
   
   <div id="change-12959" class="journal has-details">
     <div id="note-45">
-    <h4><a href="2669.html#note-45" class="journal-link">#45</a>
+    <h4><a href="/issues/2669#note-45" class="journal-link">#45</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-11-03" title="11/03/2014 04:17 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Alessio Fattorini</i></del>)</li>
     </ul>
     
@@ -1477,8 +1659,9 @@ it works, we should document
   
   <div id="change-12960" class="journal has-notes">
     <div id="note-46">
-    <h4><a href="2669.html#note-46" class="journal-link">#46</a>
+    <h4><a href="/issues/2669#note-46" class="journal-link">#46</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-11-03" title="11/03/2014 04:18 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12960-notes"><p>@alepolidori: can you put this issue on DEV status and verify why step 1 fails?</p></div>
     </div>
@@ -1486,10 +1669,11 @@ it works, we should document
   
   <div id="change-12964" class="journal has-notes has-details">
     <div id="note-47">
-    <h4><a href="2669.html#note-47" class="journal-link">#47</a>
+    <h4><a href="/issues/2669#note-47" class="journal-link">#47</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-03" title="11/03/2014 04:57 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Alessio Fattorini</i></li>
     </ul>
     <div class="wiki" id="journal-12964-notes"><p>Alessio Fattorini wrote:</p>
@@ -1508,10 +1692,11 @@ it works, we should document
   
   <div id="change-12976" class="journal has-details">
     <div id="note-48">
-    <h4><a href="2669.html#note-48" class="journal-link">#48</a>
+    <h4><a href="/issues/2669#note-48" class="journal-link">#48</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-04" title="11/04/2014 03:22 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -1521,10 +1706,11 @@ it works, we should document
   
   <div id="change-12977" class="journal has-details">
     <div id="note-49">
-    <h4><a href="2669.html#note-49" class="journal-link">#49</a>
+    <h4><a href="/issues/2669#note-49" class="journal-link">#49</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-04" title="11/04/2014 03:23 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Alessio Fattorini</i></del>)</li>
     </ul>
     
@@ -1533,10 +1719,11 @@ it works, we should document
   
   <div id="change-12980" class="journal has-details">
     <div id="note-50">
-    <h4><a href="2669.html#note-50" class="journal-link">#50</a>
+    <h4><a href="/issues/2669#note-50" class="journal-link">#50</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-04" title="11/04/2014 06:07 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Alessandro Polidori</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -1547,10 +1734,11 @@ it works, we should document
   
   <div id="change-12984" class="journal has-details">
     <div id="note-51">
-    <h4><a href="2669.html#note-51" class="journal-link">#51</a>
+    <h4><a href="/issues/2669#note-51" class="journal-link">#51</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-04" title="11/04/2014 08:50 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Alessandro Polidori</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -1561,10 +1749,11 @@ it works, we should document
   
   <div id="change-12985" class="journal has-details">
     <div id="note-52">
-    <h4><a href="2669.html#note-52" class="journal-link">#52</a>
+    <h4><a href="/issues/2669#note-52" class="journal-link">#52</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-04" title="11/04/2014 08:50 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Alessandro Polidori</i></li>
     </ul>
     
@@ -1573,8 +1762,9 @@ it works, we should document
   
   <div id="change-12986" class="journal has-notes">
     <div id="note-53">
-    <h4><a href="2669.html#note-53" class="journal-link">#53</a>
+    <h4><a href="/issues/2669#note-53" class="journal-link">#53</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-04" title="11/04/2014 09:27 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12986-notes"><p>I have uploaded the following new packages:<br /><pre>
 owncloud-7.0.2-28.1.noarch
@@ -1585,8 +1775,9 @@ owncloud-3rdparty-7.0.2-28.1.noarch
   
   <div id="change-12987" class="journal has-notes">
     <div id="note-54">
-    <h4><a href="2669.html#note-54" class="journal-link">#54</a>
+    <h4><a href="/issues/2669#note-54" class="journal-link">#54</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-04" title="11/04/2014 10:46 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12987-notes"><p>LDAP does not work, so ldap TLS has been disabled, because of the following error in the log:<br /><pre>
 {"app":"PHP","message":"ldap_start_tls() [&lt;a href='function.ldap-start-tls'&gt;function.ldap-start-tls&lt;\/a&gt;]: Unable to start TLS: Connect error at \/var\/www\/html\/owncloud\/apps\/user_ldap\/lib\/ldap.php#252","level":3,"time":"2014-11-04T14:58:57+00:00"}
@@ -1607,8 +1798,9 @@ owncloud-3rdparty-7.0.2-28.1.noarch
   
   <div id="change-12988" class="journal has-notes">
     <div id="note-55">
-    <h4><a href="2669.html#note-55" class="journal-link">#55</a>
+    <h4><a href="/issues/2669#note-55" class="journal-link">#55</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-04" title="11/04/2014 11:44 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12988-notes"><p>The ldap cache is now set to "0".<br />So the user list does not be manually updated and so I have updated also the admin documentation.</p></div>
     </div>
@@ -1616,10 +1808,11 @@ owncloud-3rdparty-7.0.2-28.1.noarch
   
   <div id="change-12992" class="journal has-notes has-details">
     <div id="note-56">
-    <h4><a href="2669.html#note-56" class="journal-link">#56</a>
+    <h4><a href="/issues/2669#note-56" class="journal-link">#56</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-05" title="11/05/2014 05:18 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Alessandro Polidori</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -1652,8 +1845,9 @@ Test to be done:
   
   <div id="change-13039" class="journal has-notes">
     <div id="note-57">
-    <h4><a href="2669.html#note-57" class="journal-link">#57</a>
+    <h4><a href="/issues/2669#note-57" class="journal-link">#57</a>
     
+    Updated by Anonymous <a href="/projects/nethserver/activity?from=2014-11-09" title="11/09/2014 04:42 PM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13039-notes"><p><strong>test 1</strong></p>
 
@@ -1667,8 +1861,9 @@ Test to be done:
   
   <div id="change-13045" class="journal has-notes">
     <div id="note-58">
-    <h4><a href="2669.html#note-58" class="journal-link">#58</a>
+    <h4><a href="/issues/2669#note-58" class="journal-link">#58</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 05:49 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13045-notes"><p>I confirm the behaviour described by Michele<br />It seems we need to have these dendencies php-pdo php-gd<br />If I install them this problem disappears but another come out, owncloud asks me to configure admin credentials and database (wrong behaviour)</p>
 
@@ -1735,8 +1930,9 @@ Test to be done:
   
   <div id="change-13047" class="journal has-notes">
     <div id="note-59">
-    <h4><a href="2669.html#note-59" class="journal-link">#59</a>
+    <h4><a href="/issues/2669#note-59" class="journal-link">#59</a>
     
+    Updated by Anonymous <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 06:17 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13047-notes"><p>now we have this message <br />"You are accessing the server from an untrusted domain.</p>
 
@@ -1747,10 +1943,11 @@ Test to be done:
   
   <div id="change-13048" class="journal has-notes has-details">
     <div id="note-60">
-    <h4><a href="2669.html#note-60" class="journal-link">#60</a>
+    <h4><a href="/issues/2669#note-60" class="journal-link">#60</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 09:15 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -1772,10 +1969,11 @@ owncloud-3rdparty-7.0.2-17.1.noarch.rpm
   
   <div id="change-13049" class="journal has-details">
     <div id="note-61">
-    <h4><a href="2669.html#note-61" class="journal-link">#61</a>
+    <h4><a href="/issues/2669#note-61" class="journal-link">#61</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 09:15 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>60</i></li>
     </ul>
@@ -1785,10 +1983,11 @@ owncloud-3rdparty-7.0.2-17.1.noarch.rpm
   
   <div id="change-13050" class="journal has-details">
     <div id="note-62">
-    <h4><a href="2669.html#note-62" class="journal-link">#62</a>
+    <h4><a href="/issues/2669#note-62" class="journal-link">#62</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 09:15 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -1798,8 +1997,9 @@ owncloud-3rdparty-7.0.2-17.1.noarch.rpm
   
   <div id="change-13051" class="journal has-notes">
     <div id="note-63">
-    <h4><a href="2669.html#note-63" class="journal-link">#63</a>
+    <h4><a href="/issues/2669#note-63" class="journal-link">#63</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 09:17 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13051-notes"><p>Repo: nethserver-testing</p>
 
@@ -1823,8 +2023,9 @@ owncloud-3rdparty-7.0.2-17.1.noarch.rpm
   
   <div id="change-13056" class="journal has-notes">
     <div id="note-64">
-    <h4><a href="2669.html#note-64" class="journal-link">#64</a>
+    <h4><a href="/issues/2669#note-64" class="journal-link">#64</a>
     
+    Updated by Anonymous <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 09:59 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13056-notes"><p><strong>Test clean installation</strong> WORKS!</p>
 
@@ -1835,8 +2036,9 @@ owncloud-3rdparty-7.0.2-17.1.noarch.rpm
   
   <div id="change-13057" class="journal has-notes">
     <div id="note-65">
-    <h4><a href="2669.html#note-65" class="journal-link">#65</a>
+    <h4><a href="/issues/2669#note-65" class="journal-link">#65</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/aedc12fdc56a99bdf3a6094a4b450a23?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/10" class="user active">Alessio Fattorini</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 10:14 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13057-notes"><p>Alessandro Polidori wrote:</p>
 
@@ -1854,10 +2056,11 @@ owncloud-3rdparty-7.0.2-17.1.noarch.rpm
   
   <div id="change-13059" class="journal has-details">
     <div id="note-66">
-    <h4><a href="2669.html#note-66" class="journal-link">#66</a>
+    <h4><a href="/issues/2669#note-66" class="journal-link">#66</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 11:23 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
     </ul>
@@ -1867,8 +2070,9 @@ owncloud-3rdparty-7.0.2-17.1.noarch.rpm
   
   <div id="change-13114" class="journal has-notes">
     <div id="note-67">
-    <h4><a href="2669.html#note-67" class="journal-link">#67</a>
+    <h4><a href="/issues/2669#note-67" class="journal-link">#67</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-12" title="11/12/2014 09:33 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13114-notes"><p>Fixed and error on upgrade from 5 to 7, see <a class="external" href="https://github.com/owncloud/core/issues/6152#issuecomment-30236917">https://github.com/owncloud/core/issues/6152#issuecomment-30236917</a></p>
 
@@ -1888,10 +2092,11 @@ New package in nethserver-testing:
   
   <div id="change-13361" class="journal has-notes has-details">
     <div id="note-68">
-    <h4><a href="2669.html#note-68" class="journal-link">#68</a>
+    <h4><a href="/issues/2669#note-68" class="journal-link">#68</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-02" title="12/02/2014 10:38 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -1921,7 +2126,9 @@ New package in nethserver-testing:
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2669.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2669.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -1942,7 +2149,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

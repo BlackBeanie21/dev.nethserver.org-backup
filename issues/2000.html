@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2000.atom" rel="alternate" title="NethServer 6 - Feature #2000: SOGo: Active Directory integration" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>SOGo: Active Directory integration</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-06" title="06/06/2013 10:55 AM">about 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-07-30" title="07/30/2013 06:47 PM">about 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">06/10/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">06/11/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-sogo</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/157.html">v6.4-beta2</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">06/10/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">06/11/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-sogo</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/157">v6.4-beta2</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -110,7 +159,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1746</a>: Samba: joining Active Directory domain
+    <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1746</a>: Samba: joining Active Directory domain
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">03/29/2013</td>
@@ -123,7 +172,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="1747.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1747</a>: Mail-server: IMAP access for AD users
+    <a href="/issues/1747" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1747</a>: Mail-server: IMAP access for AD users
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">03/25/2013</td>
@@ -133,7 +182,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2000/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2000/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -150,7 +199,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2000.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -173,23 +222,31 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-sogo/revisions/e5e5bf059ea4d0560b11a06f6f2b6d0d794daa49" title="Revision e5e5bf05">Revision e5e5bf05</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-11" title="06/11/2013 12:46 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>sogo-config template (10user_source_active_directory): use Active Directory as user source when smb/ServerRole is ADS. Refs <a href="2000.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="SOGo: Active Directory integration (CLOSED)">#2000</a></p>
+        <p>sogo-config template (10user_source_active_directory): use Active Directory as user source when smb/ServerRole is ADS. Refs <a href="/issues/2000" class="issue tracker-2 status-5 priority-4 priority-default closed" title="SOGo: Active Directory integration (CLOSED)">#2000</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-sogo/revisions/478d57444aa54eb162195b92a16504cc982ef552" title="Revision 478d5744">Revision 478d5744</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-11" title="06/11/2013 02:11 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>sogo-config template (10user_source_active_directory) disable AD integration if AdsCredentials prop is not set. Refs <a href="2000.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="SOGo: Active Directory integration (CLOSED)">#2000</a></p>
+        <p>sogo-config template (10user_source_active_directory) disable AD integration if AdsCredentials prop is not set. Refs <a href="/issues/2000" class="issue tracker-2 status-5 priority-4 priority-default closed" title="SOGo: Active Directory integration (CLOSED)">#2000</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-sogo/revisions/3088a48b427f14e15703441c732b034b533bb6ca" title="Revision 3088a48b">Revision 3088a48b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-11" title="06/11/2013 02:30 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>sogo-config template (10user_source_active_directory) use AdsLdapServer prop to override Active Directory LDAP connection parameters. Refs <a href="2000.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="SOGo: Active Directory integration (CLOSED)">#2000</a></p>
+        <p>sogo-config template (10user_source_active_directory) use AdsLdapServer prop to override Active Directory LDAP connection parameters. Refs <a href="/issues/2000" class="issue tracker-2 status-5 priority-4 priority-default closed" title="SOGo: Active Directory integration (CLOSED)">#2000</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-sogo/revisions/20e119cd175401a673e5c73a4414237fa038e00c" title="Revision 20e119cd">Revision 20e119cd</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-11" title="06/11/2013 04:02 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-* events: update gnustep DB and restart SOGo. Refs <a href="2000.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="SOGo: Active Directory integration (CLOSED)">#2000</a></p>
+        <p>nethserver-samba-* events: update gnustep DB and restart SOGo. Refs <a href="/issues/2000" class="issue tracker-2 status-5 priority-4 priority-default closed" title="SOGo: Active Directory integration (CLOSED)">#2000</a></p>
     </div>
     </div>
 
@@ -199,10 +256,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-6189" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2000.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2000#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-10" title="06/10/2013 02:41 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Due date</strong> set to <i>06/11/2013</i></li>
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
@@ -215,10 +273,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6193" class="journal has-notes has-details">
     <div id="note-2">
-    <h4><a href="2000.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2000#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-11" title="06/11/2013 02:31 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
     </ul>
@@ -226,7 +285,7 @@ setPredecessorFieldsVisibility();
 
 
 	<ol>
-	<li><a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-samba" class="wiki-page new">Join</a> an Active Directory domain</li>
+	<li><a href="/projects/nethserver/wiki/Nethserver-samba" class="wiki-page new">Join</a> an Active Directory domain</li>
 		<li>In AD, create a user (ie <code>sogoad</code>) with a non-expiring password (ie <code>PASSWORD</code>). This is needed by SOGo to browse AD LDAP. Choose a password that does not contain the percent <code>%</code> symbol.</li>
 		<li>Save <code>sogoad</code> credentials in configuration DB: <pre>
    # config setprop sogod AdsCredentials 'sogoad%PASSWORD'
@@ -256,10 +315,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6194" class="journal has-notes has-details">
     <div id="note-3">
-    <h4><a href="2000.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2000#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-11" title="06/11/2013 02:40 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>80</i></li>
@@ -270,10 +330,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6647" class="journal has-details">
     <div id="note-4">
-    <h4><a href="2000.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2000#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-25" title="07/25/2013 11:30 AM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -282,10 +343,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6649" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="2000.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2000#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-25" title="07/25/2013 11:40 AM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>80</i> to <i>100</i></li>
     </ul>
@@ -308,14 +370,16 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6819" class="journal has-notes has-details">
     <div id="note-6">
-    <h4><a href="2000.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2000#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-30" title="07/30/2013 06:47 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
+    <div class="wiki" id="journal-6819-notes"><p>Moved to nethserver-updates repository</p></div>
     </div>
   </div>
   
@@ -336,7 +400,9 @@ setPredecessorFieldsVisibility();
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2000.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2000.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -357,7 +423,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

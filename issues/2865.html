@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2865.atom" rel="alternate" title="NethServer 6 - Feature #2865: POP3 transparent proxy" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>POP3 transparent proxy</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-09-08" title="09/08/2014 10:20 AM">almost 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-10-03" title="10/03/2014 11:18 AM">almost 7 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-p3scan</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-p3scan</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">Yes</td>
@@ -101,46 +150,62 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-p3scan/revisions/e165dcd8b7353f9e4fffa51cd14ea62da9a4d4cb" title="Revision e165dcd8">Revision e165dcd8</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-17" title="09/17/2014 06:10 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>First import. Refs <a href="2865.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
+        <p>First import. Refs <a href="/issues/2865" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-p3scan/revisions/232399568d884408b1ce7167ed035e7a9afe71bb" title="Revision 23239956">Revision 23239956</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-17" title="09/17/2014 06:46 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add simple web interface. Refs <a href="2865.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
+        <p>Web UI: add simple web interface. Refs <a href="/issues/2865" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-p3scan/revisions/51a6d5d2bdaba5cef4404149458c08ed04ffb92d" title="Revision 51a6d5d2">Revision 51a6d5d2</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-17" title="09/17/2014 08:50 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: fix service name. Refs <a href="2865.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
+        <p>createlinks: fix service name. Refs <a href="/issues/2865" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/p3scan/revisions/45c195e65f42b1450fa9569cbcd324db2cca5343" title="Revision 45c195e6">Revision 45c195e6</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-18" title="09/18/2014 03:51 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>First source code import. Refs <a href="2865.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
+        <p>First source code import. Refs <a href="/issues/2865" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-p3scan/revisions/87056fbafed8f68ed36f55cb4c235a49f527f17d" title="Revision 87056fba">Revision 87056fba</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-09-30" title="09/30/2014 12:55 PM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec.in: reduce RPM dependencies. Refs <a href="2865.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
+        <p>*.spec.in: reduce RPM dependencies. Refs <a href="/issues/2865" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
 
 
 	<p>nethserver-mail-filter reduced to nethserver-antivirus and spamassasin.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-p3scan/revisions/60ab7e7b62ef2cd012e4e78e7cc805dacd5b5db1" title="Revision 60ab7e7b">Revision 60ab7e7b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-03" title="10/03/2014 10:38 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Init scripts: handle service with upstart. Refs <a href="2865.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
+        <p>Init scripts: handle service with upstart. Refs <a href="/issues/2865" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-p3scan/revisions/cf860dcac416b62aa61c1f4ae19804122646c5c0" title="Revision cf860dca">Revision cf860dca</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-03" title="10/03/2014 10:38 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Help: add inline help. Refs <a href="2865.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
+        <p>Help: add inline help. Refs <a href="/issues/2865" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/comps/revisions/2553a4b020fd46a6c6fb6c87b70a998c5af0bd5b" title="Revision 2553a4b0">Revision 2553a4b0</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-03" title="10/03/2014 11:10 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>firewall category: add p3scan. Refs <a href="2865.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
+        <p>firewall category: add p3scan. Refs <a href="/issues/2865" class="issue tracker-2 status-5 priority-4 priority-default closed" title="POP3 transparent proxy (CLOSED)">#2865</a></p>
     </div>
     </div>
 
@@ -150,10 +215,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <h3>History</h3>
   <div id="change-12130" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2865.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2865#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-09-08" title="09/08/2014 11:34 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Target version</strong> set to <i>~FUTURE</i></li>
     </ul>
     
@@ -162,10 +228,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-12247" class="journal has-notes has-details">
     <div id="note-2">
-    <h4><a href="2865.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2865#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-16" title="09/16/2014 11:56 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>Target version</strong> changed from <i>~FUTURE</i> to <i>v6.5</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
@@ -184,10 +251,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-12248" class="journal has-details">
     <div id="note-3">
-    <h4><a href="2865.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2865#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-16" title="09/16/2014 11:57 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Category</strong> set to <i>nethserver-p3scan</i></li>
     </ul>
     
@@ -196,10 +264,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-12250" class="journal has-details">
     <div id="note-4">
-    <h4><a href="2865.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2865#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-17" title="09/17/2014 04:07 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -210,16 +279,17 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-12251" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="2865.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2865#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-17" title="09/17/2014 08:59 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
     </ul>
     <div class="wiki" id="journal-12251-notes">The package has two main problems:
 	<ul>
 	<li>can't compile p3scan binary using nethserver-devbox</li>
-		<li>when p3scan service is started from <code>runlevel-adjust</code> or <code>adjust-services</code> actions, calling event is stuck. Maybe is something related to <a href="2696.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bad file descriptor handling in _silent_system function (CLOSED)">#2696</a>? I can't figure it out.</li>
+		<li>when p3scan service is started from <code>runlevel-adjust</code> or <code>adjust-services</code> actions, calling event is stuck. Maybe is something related to <a href="/issues/2696" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bad file descriptor handling in _silent_system function (CLOSED)">#2696</a>? I can't figure it out.</li>
 	</ul>
 
 
@@ -227,15 +297,16 @@ What else is missing:
 	<ul>
 	<li>inline help</li>
 		<li>documentation on admin manual</li>
-		<li>documentation on developer manual (see: <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-p3scan" class="wiki-page new">Nethserver-p3scan</a>)</li>
+		<li>documentation on developer manual (see: <a href="/projects/nethserver/wiki/Nethserver-p3scan" class="wiki-page new">Nethserver-p3scan</a>)</li>
 	</ul></div>
     </div>
   </div>
   
   <div id="change-12258" class="journal has-notes">
     <div id="note-6">
-    <h4><a href="2865.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2865#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-18" title="09/18/2014 03:36 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12258-notes"><p>The problem on init.d script can be fixed using upstart.</p>
 
@@ -250,18 +321,21 @@ MORE_DATA={ name =&gt; 'p3scan', description =&gt; 'POP3 proxy', author =&gt; 'G
   
   <div id="change-12259" class="journal has-notes">
     <div id="note-7">
-    <h4><a href="2865.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2865#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-18" title="09/18/2014 04:02 AM">almost 7 years</a> ago</h4>
 
+    <div class="wiki" id="journal-12259-notes"><p>Since p3scan code is almost not maintained, I just create a new <code>p3scan</code> repository with spec and sources.<br />The build system can now correctly create p3scan rpm.</p></div>
     </div>
   </div>
   
   <div id="change-12290" class="journal has-details">
     <div id="note-8">
-    <h4><a href="2865.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2865#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-19" title="09/19/2014 04:51 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -270,10 +344,11 @@ MORE_DATA={ name =&gt; 'p3scan', description =&gt; 'POP3 proxy', author =&gt; 'G
   
   <div id="change-12291" class="journal has-notes has-details">
     <div id="note-9">
-    <h4><a href="2865.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2865#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-19" title="09/19/2014 05:54 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -283,10 +358,11 @@ MORE_DATA={ name =&gt; 'p3scan', description =&gt; 'POP3 proxy', author =&gt; 'G
   
   <div id="change-12292" class="journal has-notes has-details">
     <div id="note-10">
-    <h4><a href="2865.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2865#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-19" title="09/19/2014 06:04 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -337,10 +413,11 @@ Before release:
   
   <div id="change-12366" class="journal has-details">
     <div id="note-11">
-    <h4><a href="2865.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2865#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-09-29" title="09/29/2014 07:04 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
     </ul>
     
@@ -349,10 +426,11 @@ Before release:
   
   <div id="change-12399" class="journal has-notes has-details">
     <div id="note-12">
-    <h4><a href="2865.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2865#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-09-30" title="09/30/2014 01:18 PM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -379,10 +457,11 @@ Before release:
   
   <div id="change-12500" class="journal has-notes has-details">
     <div id="note-13">
-    <h4><a href="2865.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2865#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-03" title="10/03/2014 11:18 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -394,7 +473,7 @@ Before release:
 
 Documentation:
 	<ul>
-	<li><a class="external" href="http://docs.nethserver.o/projects/nethserver-devel/en/latest/pop3_proxy.html">http://docs.nethserver.o/projects/nethserver-devel/en/latest/pop3_proxy.html</a></li>
+	<li><a class="external" href="http://docs.nethserver.org/projects/nethserver-devel/en/latest/pop3_proxy.html">http://docs.nethserver.org/projects/nethserver-devel/en/latest/pop3_proxy.html</a></li>
 		<li><a class="external" href="http://docs.nethserver.org/en/latest/pop3_proxy.html">http://docs.nethserver.org/en/latest/pop3_proxy.html</a></li>
 	</ul></div>
     </div>
@@ -417,7 +496,9 @@ Documentation:
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2865.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2865.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -438,7 +519,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

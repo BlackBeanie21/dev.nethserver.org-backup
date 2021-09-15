@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2902.atom" rel="alternate" title="NethServer 6 - Enhancement #2902: Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6 " type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -61,8 +108,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div class="issue tracker-6 status-5 priority-4 priority-default closed details">
     <div class="next-prev-links contextual">
-      <a href="2886.html" title="#2886">« Previous</a> |
-      <a href="2950.html" title="#2950">Next »</a>
+      <a href="/issues/2886" title="#2886">« Previous</a> |
+      <a href="/issues/2950" title="#2950">Next »</a>
     </div>
 
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/1be3cefe3c0e087f283fd7702b8f7c76?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
@@ -71,10 +118,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6 </h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/179" class="user active">stephane de Labrusse</a> <a href="/projects/nethserver/activity?from=2014-10-11" title="10/11/2014 07:20 PM">almost 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-11-12" title="11/12/2014 04:26 AM">over 6 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-roundcubemail</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-roundcubemail</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -106,6 +155,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 	<p>moreover I saw that roundcube is strictly limited to the local network in its apache configuration, a db setting could allow it, or a panel box could do the trick also.</p>
 
 
+	<p>The main feature really interesting with the epel version is the plugin repository</p>
   </div>
 </div>
 
@@ -128,7 +178,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2886.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2886</a>: Roundcube webmail access from the Internet
+    <a href="/issues/2886" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2886</a>: Roundcube webmail access from the Internet
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -138,7 +188,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2902/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2902/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -155,7 +205,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2902.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -178,28 +228,38 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-roundcubemail/revisions/4cbc60f920ff1312709ed4fd799bafeb36c1d1eb" title="Revision 4cbc60f9">Revision 4cbc60f9</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-23" title="10/23/2014 08:26 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Merge branch 'stephdl-b2902'. Refs <a href="2902.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a></p>
+        <p>Merge branch 'stephdl-b2902'. Refs <a href="/issues/2902" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-roundcubemail/revisions/727db99ceb2d2c1f80689977f52cba4c83574047" title="Revision 727db99c">Revision 727db99c</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-23" title="10/23/2014 11:47 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>config template: add support for LDAP addressbook. Refs <a href="2902.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a></p>
+        <p>config template: add support for LDAP addressbook. Refs <a href="/issues/2902" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-roundcubemail/revisions/9b4084ff16bd21f1b0ab7cbd552802c0a86c3c0a" title="Revision 9b4084ff">Revision 9b4084ff</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-29" title="10/29/2014 05:17 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Merge branch 'stephdl-b2902'. Refs <a href="2902.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a></p>
+        <p>Merge branch 'stephdl-b2902'. Refs <a href="/issues/2902" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-roundcubemail/revisions/a53095129f95dbb252d3c3c61b89ef1526088edc" title="Revision a5309512">Revision a5309512</a><br />
+        <span class="author">Added by Alessandro Polidori  <a href="/projects/nethserver/activity?from=2014-11-11" title="11/11/2014 11:15 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix private access. Refs <a href="2902.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a></p>
+        <p>Fix private access. Refs <a href="/issues/2902" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-roundcubemail/revisions/28009b8e71f8f679f7bad1f8e95fd1955de0a6fa" title="Revision 28009b8e">Revision 28009b8e</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-11" title="11/11/2014 11:39 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>httpd template: remove useless vars. Refs <a href="2902.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a></p>
+        <p>httpd template: remove useless vars. Refs <a href="/issues/2902" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a></p>
     </div>
     </div>
 
@@ -209,8 +269,9 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-12579" class="journal has-notes">
     <div id="note-1">
-    <h4><a href="2902.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2902#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-10-13" title="10/13/2014 04:09 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12579-notes"><blockquote>
 
@@ -219,14 +280,15 @@ setPredecessorFieldsVisibility();
 
 </blockquote>
 
-	<p>I think that it's the same issue:<br /><a class="external" href="2886.html">http://dev.nethserver.org/issues/2886</a></p></div>
+	<p>I think that it's the same issue:<br /><a class="external" href="http://dev.nethserver.org/issues/2886">http://dev.nethserver.org/issues/2886</a></p></div>
     </div>
   </div>
   
   <div id="change-12580" class="journal has-notes">
     <div id="note-2">
-    <h4><a href="2902.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2902#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/1be3cefe3c0e087f283fd7702b8f7c76?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/179" class="user active">stephane de Labrusse</a> <a href="/projects/nethserver/activity?from=2014-10-13" title="10/13/2014 06:13 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12580-notes"><p>Hi filipo</p>
 
@@ -237,11 +299,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12584" class="journal has-details">
     <div id="note-3">
-    <h4><a href="2902.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2902#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-13" title="10/13/2014 09:59 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2886.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2886</a>: Roundcube webmail access from the Internet</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2886" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2886</a>: Roundcube webmail access from the Internet</i> added</li>
     </ul>
     
     </div>
@@ -249,10 +312,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12587" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="2902.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2902#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-13" title="10/13/2014 10:32 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Category</strong> set to <i>nethserver-roundcubemail</i></li>
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
@@ -263,8 +327,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12591" class="journal has-notes">
     <div id="note-5">
-    <h4><a href="2902.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2902#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/1be3cefe3c0e087f283fd7702b8f7c76?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/179" class="user active">stephane de Labrusse</a> <a href="/projects/nethserver/activity?from=2014-10-13" title="10/13/2014 12:04 PM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12591-notes"><p>Could I try to have a go on this upgrade ?</p></div>
     </div>
@@ -272,8 +337,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12620" class="journal has-notes">
     <div id="note-6">
-    <h4><a href="2902.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2902#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/1be3cefe3c0e087f283fd7702b8f7c76?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/179" class="user active">stephane de Labrusse</a> <a href="/projects/nethserver/activity?from=2014-10-14" title="10/14/2014 07:50 PM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12620-notes"><p>I have started to work on it</p>
 
@@ -290,8 +356,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12709" class="journal has-notes">
     <div id="note-7">
-    <h4><a href="2902.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2902#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/1be3cefe3c0e087f283fd7702b8f7c76?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/179" class="user active">stephane de Labrusse</a> <a href="/projects/nethserver/activity?from=2014-10-19" title="10/19/2014 07:13 PM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12709-notes"><p><a class="external" href="http://mirror.de-labrusse.fr/nethserver/nethserver-roundcubemail/">http://mirror.de-labrusse.fr/nethserver/nethserver-roundcubemail/</a></p>
 
@@ -302,10 +369,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12723" class="journal has-notes has-details">
     <div id="note-8">
-    <h4><a href="2902.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2902#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-21" title="10/21/2014 05:32 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>stephane de Labrusse</i></li>
        <li><strong>Target version</strong> set to <i>v6.5</i></li>
@@ -384,8 +452,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12763" class="journal has-notes">
     <div id="note-9">
-    <h4><a href="2902.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2902#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/1be3cefe3c0e087f283fd7702b8f7c76?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/179" class="user active">stephane de Labrusse</a> <a href="/projects/nethserver/activity?from=2014-10-22" title="10/22/2014 04:08 PM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12763-notes"><p>Hi All</p>
 
@@ -396,7 +465,7 @@ setPredecessorFieldsVisibility();
 	<p>I have done a new version with :</p>
 
 
-	<p>-Upgrade to roundcubemail 1.0.2-1 - Bug <a href="2902.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a> [NethServer]<br />-A dependency to nethserver-mail-server<br />-Managesieve as a default plugin<br />-Now you can add a plugin with a db command : config setprop roundecubemail PluginList plugin1,plugin2,plugin3 ; signal-event nethserver-roundcubemail-update<br />-You can restrict access to the local network (default : public) - Bug <a href="2886.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Roundcube webmail access from the Internet (CLOSED)">#2886</a> [NethServer] : <br /><pre>
+	<p>-Upgrade to roundcubemail 1.0.2-1 - Bug <a href="/issues/2902" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Upgrade Roundcubemail to the current version of epel : 1.0.2-1.el6  (CLOSED)">#2902</a> [NethServer]<br />-A dependency to nethserver-mail-server<br />-Managesieve as a default plugin<br />-Now you can add a plugin with a db command : config setprop roundecubemail PluginList plugin1,plugin2,plugin3 ; signal-event nethserver-roundcubemail-update<br />-You can restrict access to the local network (default : public) - Bug <a href="/issues/2886" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Roundcube webmail access from the Internet (CLOSED)">#2886</a> [NethServer] : <br /><pre>
  config setprop roundcubemail access private ; signal-event nethserver-roundcubemail-update
 </pre><br />-Config.inc.php is now templated with several files<br />-New templates.metadata for protecting Config.inc.php (0640 root/apache)</p>
 
@@ -416,10 +485,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12788" class="journal has-notes has-details">
     <div id="note-10">
-    <h4><a href="2902.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2902#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-23" title="10/23/2014 10:58 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -429,17 +499,19 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12789" class="journal has-notes">
     <div id="note-11">
-    <h4><a href="2902.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2902#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/1be3cefe3c0e087f283fd7702b8f7c76?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/179" class="user active">stephane de Labrusse</a> <a href="/projects/nethserver/activity?from=2014-10-23" title="10/23/2014 11:38 AM">almost 7 years</a> ago</h4>
 
-    <div class="wiki" id="journal-12789-notes"><p>I would record this bug <a class="external" href="2511.html#note-13">http://dev.nethserver.org/issues/2511#note-13</a> for saving a ldap addressbook</p></div>
+    <div class="wiki" id="journal-12789-notes"><p>I would record this bug <a class="external" href="http://dev.nethserver.org/issues/2511#note-13">http://dev.nethserver.org/issues/2511#note-13</a> for saving a ldap addressbook</p></div>
     </div>
   </div>
   
   <div id="change-12815" class="journal has-notes">
     <div id="note-12">
-    <h4><a href="2902.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2902#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/1be3cefe3c0e087f283fd7702b8f7c76?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/179" class="user active">stephane de Labrusse</a> <a href="/projects/nethserver/activity?from=2014-10-25" title="10/25/2014 04:12 PM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12815-notes"><p>I have corrected some issue with the ldap address book and some adjustments. Changes are available on Github with a pull request.</p></div>
     </div>
@@ -447,8 +519,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12871" class="journal has-notes">
     <div id="note-13">
-    <h4><a href="2902.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2902#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-29" title="10/29/2014 09:44 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12871-notes"><p>Merged from Github to master.</p></div>
     </div>
@@ -456,10 +529,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12910" class="journal has-details">
     <div id="note-14">
-    <h4><a href="2902.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/2902#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-30" title="10/30/2014 12:09 PM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> changed from <i>stephane de Labrusse</i> to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -468,10 +542,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12917" class="journal has-notes has-details">
     <div id="note-15">
-    <h4><a href="2902.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/2902#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-30" title="10/30/2014 01:53 PM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -534,10 +609,11 @@ signal-event nethserver-roundcubemail-update
   
   <div id="change-13023" class="journal has-details">
     <div id="note-16">
-    <h4><a href="2902.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/2902#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-07" title="11/07/2014 06:25 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Alessandro Polidori</i></li>
     </ul>
     
@@ -546,8 +622,9 @@ signal-event nethserver-roundcubemail-update
   
   <div id="change-13036" class="journal has-notes">
     <div id="note-17">
-    <h4><a href="2902.html#note-17" class="journal-link">#17</a>
+    <h4><a href="/issues/2902#note-17" class="journal-link">#17</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-07" title="11/07/2014 12:03 PM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13036-notes"><p><strong>Test case 1</strong></p>
 
@@ -561,10 +638,11 @@ https://_server/roundcubemail
   
   <div id="change-13037" class="journal has-details">
     <div id="note-18">
-    <h4><a href="2902.html#note-18" class="journal-link">#18</a>
+    <h4><a href="/issues/2902#note-18" class="journal-link">#18</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-07" title="11/07/2014 12:04 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Alessandro Polidori</i></del>)</li>
     </ul>
     
@@ -573,10 +651,11 @@ https://_server/roundcubemail
   
   <div id="change-13040" class="journal has-details">
     <div id="note-19">
-    <h4><a href="2902.html#note-19" class="journal-link">#19</a>
+    <h4><a href="/issues/2902#note-19" class="journal-link">#19</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 03:27 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Alessandro Polidori</i></li>
     </ul>
     
@@ -585,8 +664,9 @@ https://_server/roundcubemail
   
   <div id="change-13041" class="journal has-notes">
     <div id="note-20">
-    <h4><a href="2902.html#note-20" class="journal-link">#20</a>
+    <h4><a href="/issues/2902#note-20" class="journal-link">#20</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 04:13 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13041-notes"><p><strong>Test case 2</strong></p>
 
@@ -625,10 +705,11 @@ Ok it works.
   
   <div id="change-13044" class="journal has-notes has-details">
     <div id="note-21">
-    <h4><a href="2902.html#note-21" class="journal-link">#21</a>
+    <h4><a href="/issues/2902#note-21" class="journal-link">#21</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-10" title="11/10/2014 05:36 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Alessandro Polidori</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
@@ -645,10 +726,11 @@ Ok it works.
   
   <div id="change-13087" class="journal has-details">
     <div id="note-22">
-    <h4><a href="2902.html#note-22" class="journal-link">#22</a>
+    <h4><a href="/issues/2902#note-22" class="journal-link">#22</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-11" title="11/11/2014 09:59 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Alessandro Polidori</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -659,10 +741,11 @@ Ok it works.
   
   <div id="change-13092" class="journal has-details">
     <div id="note-23">
-    <h4><a href="2902.html#note-23" class="journal-link">#23</a>
+    <h4><a href="/issues/2902#note-23" class="journal-link">#23</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-11" title="11/11/2014 11:29 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Alessandro Polidori</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -673,10 +756,11 @@ Ok it works.
   
   <div id="change-13093" class="journal has-notes has-details">
     <div id="note-24">
-    <h4><a href="2902.html#note-24" class="journal-link">#24</a>
+    <h4><a href="/issues/2902#note-24" class="journal-link">#24</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/121525e7aade0b89bb075d344e416550?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/12" class="user active">Alessandro Polidori</a> <a href="/projects/nethserver/activity?from=2014-11-11" title="11/11/2014 11:30 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -690,10 +774,11 @@ Ok it works.
   
   <div id="change-13094" class="journal has-details">
     <div id="note-25">
-    <h4><a href="2902.html#note-25" class="journal-link">#25</a>
+    <h4><a href="/issues/2902#note-25" class="journal-link">#25</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-11" title="11/11/2014 11:33 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -702,10 +787,11 @@ Ok it works.
   
   <div id="change-13095" class="journal has-notes has-details">
     <div id="note-26">
-    <h4><a href="2902.html#note-26" class="journal-link">#26</a>
+    <h4><a href="/issues/2902#note-26" class="journal-link">#26</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-11" title="11/11/2014 11:52 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -729,10 +815,11 @@ Ok it works.
   
   <div id="change-13106" class="journal has-notes has-details">
     <div id="note-27">
-    <h4><a href="2902.html#note-27" class="journal-link">#27</a>
+    <h4><a href="/issues/2902#note-27" class="journal-link">#27</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-11-12" title="11/12/2014 04:26 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -769,7 +856,9 @@ Ok it works.
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2902.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2902.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -790,7 +879,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

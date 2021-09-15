@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2849.atom" rel="alternate" title="NethServer 6 - Feature #2849: Support DHCP on multiple interfaces" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Support DHCP on multiple interfaces</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-09-04" title="09/04/2014 10:25 AM">almost 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-10-15" title="10/15/2014 10:10 AM">almost 7 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-dnsmasq</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-dnsmasq</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -104,11 +153,11 @@ service dnsmasq restart
   </div>
 </div>
 <div class="attachments">
-<p><a href="../attachments/download/276/nsec65_blue_dhcp.tar.gz" class="icon icon-attachment">nsec65_blue_dhcp.tar.gz</a>  
+<p><a href="/attachments/download/276/nsec65_blue_dhcp.tar.gz" class="icon icon-attachment">nsec65_blue_dhcp.tar.gz</a>  
   <span class="size">(1.14 KB)</span>
     <span class="author">Filippo Carletti, 09/04/2014 10:23 AM</span>
   </p>
-<p><a href="../attachments/download/277/nsec65_blue_dhcp2.tar.gz" class="icon icon-attachment">nsec65_blue_dhcp2.tar.gz</a>  
+<p><a href="/attachments/download/277/nsec65_blue_dhcp2.tar.gz" class="icon icon-attachment">nsec65_blue_dhcp2.tar.gz</a>  
   <span class="size">(1.33 KB)</span>
     <span class="author">Filippo Carletti, 09/08/2014 05:22 AM</span>
   </p>
@@ -133,7 +182,7 @@ service dnsmasq restart
     Related to
     
     NethServer 6 - 
-    <a href="2833.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2833</a>: DHCP - multiple static assignement with the same mac
+    <a href="/issues/2833" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2833</a>: DHCP - multiple static assignement with the same mac
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -146,7 +195,7 @@ service dnsmasq restart
     Related to
     
     Nethgui - 
-    <a href="2898.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2898</a>: ObjectsCollection widget: validation tooltips are not dis...
+    <a href="/issues/2898" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2898</a>: ObjectsCollection widget: validation tooltips are not dis...
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -156,7 +205,7 @@ service dnsmasq restart
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2849/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2849/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -173,7 +222,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2849.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -196,106 +245,146 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/1009f93bf3a30fcfc821c3366491ff8c6faea597" title="Revision 1009f93b">Revision 1009f93b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-01" title="10/01/2014 11:01 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>DB and templates: add support for multiple DHCP. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>DB and templates: add support for multiple DHCP. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/c64a7aabd3f22ed09e021e6ed754718287ea7ce7" title="Revision c64a7aab">Revision c64a7aab</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-01" title="10/01/2014 11:25 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Templates: add support for multiple DHCP. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Templates: add support for multiple DHCP. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/5535bd1280287811ac1606deaf507690244116de" title="Revision 5535bd12">Revision 5535bd12</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-01" title="10/01/2014 11:27 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Network services: add CIDR support in UI. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Network services: add CIDR support in UI. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-hosts/revisions/bf047f025cf4c96d07ec0755af8c0325f0976567" title="Revision bf047f02">Revision bf047f02</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-01" title="10/01/2014 11:31 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: remove DHCP labels. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Web UI: remove DHCP labels. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/76f619d635726cd6779e97ecfec4c8aadda856b9" title="Revision 76f619d6">Revision 76f619d6</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-01" title="10/01/2014 11:44 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: new interface stub. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Web UI: new interface stub. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/7a158dbe5d75ab6724e7edb26d99e0c69637b80e" title="Revision 7a158dbe">Revision 7a158dbe</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-02" title="10/02/2014 02:50 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: update dashboard widget. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Web UI: update dashboard widget. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-hosts/revisions/0097ecd9685f9023ac9aabae55d0a24e01d3966e" title="Revision 0097ecd9">Revision 0097ecd9</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-02" title="10/02/2014 04:01 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: refactor tabs. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Web UI: refactor tabs. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/209de4339deb638cc46f90f8acd700fa47662119" title="Revision 209de433">Revision 209de433</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-02" title="10/02/2014 04:09 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Network services: add CIDR support in UI. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Network services: add CIDR support in UI. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-hosts/revisions/aee41eea96c0d4a816f4b88b2f269dffb2242a0c" title="Revision aee41eea">Revision aee41eea</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-02" title="10/02/2014 05:28 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Inline help: remove DHCP sections. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Inline help: remove DHCP sections. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/1c96f51a55c357f8035fa6f25c9c282a8e68887e" title="Revision 1c96f51a">Revision 1c96f51a</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-02" title="10/02/2014 05:41 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Inline help: refactor chapters. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Inline help: refactor chapters. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/7dcbe49dde961d7972655678a8901568154604e3" title="Revision 7dcbe49d">Revision 7dcbe49d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-02" title="10/02/2014 05:59 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Inline help: add CIDR option. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Inline help: add CIDR option. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/dc37829baa9e1b7b67d3d0cfdce655818176857f" title="Revision dc37829b">Revision dc37829b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-03" title="10/03/2014 05:47 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Save event: clean up dangling reanges. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Save event: clean up dangling reanges. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/90673953d6ee71ad4b95a0fb49bba97dea946492" title="Revision 90673953">Revision 90673953</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 06:08 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Bump Nethgui version 25e17108c813b38b44d975d2dd052e289ff3469f. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Bump Nethgui version 25e17108c813b38b44d975d2dd052e289ff3469f. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/1559584af1a134b38107f7047cce461c66a09e8c" title="Revision 1559584a">Revision 1559584a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 06:23 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Dhcp/Configure page: use objectsCollection widget for single page controller. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Dhcp/Configure page: use objectsCollection widget for single page controller. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/7ece170abacf6d0b5acd3214f1125be4fb41ef36" title="Revision 7ece170a">Revision 7ece170a</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 08:08 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Templates: add support for multiple DHCP. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Templates: add support for multiple DHCP. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/7bda97c50c98271976b0916124ad8b9939302774" title="Revision 7bda97c5">Revision 7bda97c5</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 08:14 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Save event: clean up dangling dhcp ranges. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Save event: clean up dangling dhcp ranges. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/2e57e347f7737ad8607e81df96ecb4be19f7cfb1" title="Revision 2e57e347">Revision 2e57e347</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 08:14 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Dhcp/Configure page: use objectsCollection widget for single page controller. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Dhcp/Configure page: use objectsCollection widget for single page controller. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/81ac15a1e00a725084e6d6de35e6a9679a4b32ab" title="Revision 81ac15a1">Revision 81ac15a1</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-14" title="10/14/2014 06:35 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>dnsmasq.conf template: fix router option Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>dnsmasq.conf template: fix router option Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
 
 
 	<p>When at least one red interface is configured,<br />force the ip address of dhcp interface as router option.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/0d96cbffb403abced34aeb01acd26860adeaada0" title="Revision 0d96cbff">Revision 0d96cbff</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-14" title="10/14/2014 06:53 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Dhcp UI module: fix first network ip address. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>Dhcp UI module: fix first network ip address. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/979544a56e57b3b99ab1b70e71646cf813cbc4ec" title="Revision 979544a5">Revision 979544a5</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-15" title="10/15/2014 04:54 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>rules's template: change DNS rule for blue. Refs <a href="2849.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
+        <p>rules's template: change DNS rule for blue. Refs <a href="/issues/2849" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Support DHCP on multiple interfaces (CLOSED)">#2849</a></p>
 
 
 	<p>Do not enable DNS rules for blue zone,<br />if no blue zone is configured.</p>
@@ -308,8 +397,9 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-12097" class="journal has-notes">
     <div id="note-1">
-    <h4><a href="2849.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2849#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-09-04" title="09/04/2014 10:27 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12097-notes"><p>Please, note that the custom templates add a dhcp option to interfaces.</p></div>
     </div>
@@ -317,8 +407,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12098" class="journal has-notes">
     <div id="note-2">
-    <h4><a href="2849.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2849#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-09-04" title="09/04/2014 10:29 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12098-notes"><p>We should probably open services running on the firewall from blue.<br />And review all inter-zone traffic policies.</p></div>
     </div>
@@ -326,8 +417,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-12099" class="journal has-notes">
     <div id="note-3">
-    <h4><a href="2849.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2849#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-09-05" title="09/05/2014 11:58 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12099-notes"><p>Meanwhile, to open dns from blue:<br /><pre>
 cat &lt;&lt;EOF &gt;/etc/e-smith/templates-custom/etc/shorewall/rules/99dnsmasq_blue
@@ -342,11 +434,12 @@ EOF
   
   <div id="change-12111" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="2849.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2849#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-09-08" title="09/08/2014 05:22 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>File</strong> <a href="../attachments/download/277/nsec65_blue_dhcp2.tar.gz">nsec65_blue_dhcp2.tar.gz</a> added</li>
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/277/nsec65_blue_dhcp2.tar.gz">nsec65_blue_dhcp2.tar.gz</a> added</li>
     </ul>
     <div class="wiki" id="journal-12111-notes"><p>Attached a new revision of templates using the key instead of the device prop.</p></div>
     </div>
@@ -354,10 +447,11 @@ EOF
   
   <div id="change-12115" class="journal has-details">
     <div id="note-5">
-    <h4><a href="2849.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2849#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-09-08" title="09/08/2014 11:34 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Target version</strong> set to <i>v6.5</i></li>
     </ul>
     
@@ -366,10 +460,11 @@ EOF
   
   <div id="change-12256" class="journal has-details">
     <div id="note-6">
-    <h4><a href="2849.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2849#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-17" title="09/17/2014 10:50 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Category</strong> set to <i>nethserver-dnsmasq</i></li>
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
@@ -380,8 +475,9 @@ EOF
   
   <div id="change-12272" class="journal has-notes">
     <div id="note-7">
-    <h4><a href="2849.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2849#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-18" title="09/18/2014 06:07 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12272-notes"><blockquote>
 
@@ -423,8 +519,9 @@ I also would like to change the issue's title to something like "Support DHCP on
   
   <div id="change-12298" class="journal has-notes">
     <div id="note-8">
-    <h4><a href="2849.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2849#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-19" title="09/19/2014 09:18 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12298-notes">Other proposed solution:
 	<ul>
@@ -436,8 +533,9 @@ I also would like to change the issue's title to something like "Support DHCP on
   
   <div id="change-12306" class="journal has-notes">
     <div id="note-9">
-    <h4><a href="2849.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2849#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2014-09-19" title="09/19/2014 11:02 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12306-notes"><blockquote>
 
@@ -457,8 +555,9 @@ I also would like to change the issue's title to something like "Support DHCP on
   
   <div id="change-12339" class="journal has-notes">
     <div id="note-10">
-    <h4><a href="2849.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2849#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-29" title="09/29/2014 05:50 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-12339-notes"><p>DNSMasq it's probably the only special case where ports should be automatically open on blue zone if the DHCP is enabled.</p>
 
@@ -469,10 +568,11 @@ I also would like to change the issue's title to something like "Support DHCP on
   
   <div id="change-12412" class="journal has-details">
     <div id="note-11">
-    <h4><a href="2849.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2849#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-01" title="10/01/2014 06:18 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Subject</strong> changed from <i>DHCP support on blue</i> to <i>Support DHCP on multiple interfaces</i></li>
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
@@ -484,10 +584,11 @@ I also would like to change the issue's title to something like "Support DHCP on
   
   <div id="change-12435" class="journal has-notes has-details">
     <div id="note-12">
-    <h4><a href="2849.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2849#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-02" title="10/02/2014 02:54 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
     </ul>
     <div class="wiki" id="journal-12435-notes"><p>Implemented on branch b2849.</p>
@@ -512,11 +613,12 @@ What is missing:
   
   <div id="change-12459" class="journal has-details">
     <div id="note-13">
-    <h4><a href="2849.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2849#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-02" title="10/02/2014 11:49 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2833.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2833</a>: DHCP - multiple static assignement with the same mac</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2833" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2833</a>: DHCP - multiple static assignement with the same mac</i> added</li>
     </ul>
     
     </div>
@@ -524,10 +626,11 @@ What is missing:
   
   <div id="change-12511" class="journal has-details">
     <div id="note-14">
-    <h4><a href="2849.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/2849#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 05:54 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
     </ul>
     
@@ -536,11 +639,12 @@ What is missing:
   
   <div id="change-12513" class="journal has-details">
     <div id="note-15">
-    <h4><a href="2849.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/2849#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 05:58 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2898.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2898</a>: ObjectsCollection widget: validation tooltips are not displayed</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2898" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2898</a>: ObjectsCollection widget: validation tooltips are not displayed</i> added</li>
     </ul>
     
     </div>
@@ -548,26 +652,28 @@ What is missing:
   
   <div id="change-12516" class="journal has-notes has-details">
     <div id="note-16">
-    <h4><a href="2849.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/2849#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 06:15 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
     </ul>
     <div class="wiki" id="journal-12516-notes"><strong>Modified</strong>
 	<ul>
 	<li>nethserver-dnsmasq (b2849)</li>
-		<li>nethserver-httpd-admin (master, see <a href="2898.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="ObjectsCollection widget: validation tooltips are not displayed (CLOSED)">#2898</a>)</li>
+		<li>nethserver-httpd-admin (master, see <a href="/issues/2898" class="issue tracker-1 status-5 priority-4 priority-default closed" title="ObjectsCollection widget: validation tooltips are not displayed (CLOSED)">#2898</a>)</li>
 	</ul></div>
     </div>
   </div>
   
   <div id="change-12521" class="journal has-notes has-details">
     <div id="note-17">
-    <h4><a href="2849.html#note-17" class="journal-link">#17</a>
+    <h4><a href="/issues/2849#note-17" class="journal-link">#17</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 08:17 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     <div class="wiki" id="journal-12521-notes"><p>Merge branch b2849 to master:</p>
@@ -584,10 +690,11 @@ What is missing:
   
   <div id="change-12522" class="journal has-details">
     <div id="note-18">
-    <h4><a href="2849.html#note-18" class="journal-link">#18</a>
+    <h4><a href="/issues/2849#note-18" class="journal-link">#18</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 08:22 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -597,10 +704,11 @@ What is missing:
   
   <div id="change-12523" class="journal has-notes has-details">
     <div id="note-19">
-    <h4><a href="2849.html#note-19" class="journal-link">#19</a>
+    <h4><a href="/issues/2849#note-19" class="journal-link">#19</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-06" title="10/06/2014 08:26 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -627,10 +735,11 @@ What is missing:
   
   <div id="change-12596" class="journal has-details">
     <div id="note-20">
-    <h4><a href="2849.html#note-20" class="journal-link">#20</a>
+    <h4><a href="/issues/2849#note-20" class="journal-link">#20</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-14" title="10/14/2014 03:18 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
     </ul>
     
@@ -639,10 +748,11 @@ What is missing:
   
   <div id="change-12609" class="journal has-notes has-details">
     <div id="note-21">
-    <h4><a href="2849.html#note-21" class="journal-link">#21</a>
+    <h4><a href="/issues/2849#note-21" class="journal-link">#21</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-14" title="10/14/2014 06:09 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>NEEDINFO</strong> changed from <i>No</i> to <i>Yes</i></li>
     </ul>
     <div class="wiki" id="journal-12609-notes"><p><strong>NEEDINFO</strong></p>
@@ -657,10 +767,11 @@ What is missing:
   
   <div id="change-12611" class="journal has-notes has-details">
     <div id="note-22">
-    <h4><a href="2849.html#note-22" class="journal-link">#22</a>
+    <h4><a href="/issues/2849#note-22" class="journal-link">#22</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-14" title="10/14/2014 06:37 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>NEEDINFO</strong> changed from <i>Yes</i> to <i>No</i></li>
     </ul>
     <div class="wiki" id="journal-12611-notes"><blockquote>
@@ -679,10 +790,11 @@ Right, here is the fix:
   
   <div id="change-12612" class="journal has-notes has-details">
     <div id="note-23">
-    <h4><a href="2849.html#note-23" class="journal-link">#23</a>
+    <h4><a href="/issues/2849#note-23" class="journal-link">#23</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-10-14" title="10/14/2014 06:55 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -693,10 +805,11 @@ Right, here is the fix:
   
   <div id="change-12636" class="journal has-notes has-details">
     <div id="note-24">
-    <h4><a href="2849.html#note-24" class="journal-link">#24</a>
+    <h4><a href="/issues/2849#note-24" class="journal-link">#24</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-10-15" title="10/15/2014 10:10 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -728,7 +841,9 @@ Right, here is the fix:
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2849.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2849.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -749,7 +864,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

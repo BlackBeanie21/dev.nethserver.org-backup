@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1746.atom" rel="alternate" title="NethServer 6 - Feature #1746: Samba: joining Active Directory domain" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Samba: joining Active Directory domain</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-20" title="03/20/2013 04:01 PM">over 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-07-30" title="07/30/2013 06:47 PM">about 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">03/29/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">04/03/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-samba</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/157.html">v6.4-beta2</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">03/29/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">04/03/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-samba</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/157">v6.4-beta2</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -91,7 +140,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 	<ul>
 	<li>becomes a unix user (through <code>winbindd</code>) and filesystem permissions can be assigned to him.</li>
 		<li>can access ibays</li>
-		<li>can access his IMAP mailbox (this must be implemented by <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-mail-server" class="wiki-page new">nethserver-mail-server</a> or similar), see related issues.</li>
+		<li>can access his IMAP mailbox (this must be implemented by <a href="/projects/nethserver/wiki/Nethserver-mail-server" class="wiki-page new">nethserver-mail-server</a> or similar), see related issues.</li>
 	</ul>
   </div>
 </div>
@@ -115,7 +164,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="1747.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1747</a>: Mail-server: IMAP access for AD users
+    <a href="/issues/1747" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1747</a>: Mail-server: IMAP access for AD users
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">03/25/2013</td>
@@ -128,7 +177,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2000.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2000</a>: SOGo: Active Directory integration
+    <a href="/issues/2000" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2000</a>: SOGo: Active Directory integration
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">06/10/2013</td>
@@ -138,7 +187,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/1746/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/1746/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -155,7 +204,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="1746.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -178,143 +227,199 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/b1d9271cea63884c6b541b4d250a2d608ff0f4f2" title="Revision b1d9271c">Revision b1d9271c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 02:24 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/krb5.conf: extensible output generator. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>/etc/krb5.conf: extensible output generator. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/c48f213231d3907d48cac93fba3a8b2ceb47a251" title="Revision c48f2132">Revision c48f2132</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 02:26 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/krb5.conf: Set default realm to uppercase DomainName. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>/etc/krb5.conf: Set default realm to uppercase DomainName. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/f52e23f3fa4eb8ff5ea29d920d15307a3745a72e" title="Revision f52e23f3">Revision f52e23f3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 03:33 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>smb.conf: removed deprecated idmap parmeters. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>smb.conf: removed deprecated idmap parmeters. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/ddc7b33b7d450c8db05217cca4342fe434fbddb5" title="Revision ddc7b33b">Revision ddc7b33b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 05:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>migration of ldap key is no longer needed. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>migration of ldap key is no longer needed. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/25988eeea1d24c29363a0f26517bb951181e70e4" title="Revision 25988eee">Revision 25988eee</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 05:08 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>libuser.conf: DB libuser key no longer used. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>libuser.conf: DB libuser key no longer used. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/d027d374885f13ffe2b88f497c77d37638d60881" title="Revision d027d374">Revision d027d374</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 05:34 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nsswitch.conf template: dropped DB nsswitch key, using template fragments only. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>nsswitch.conf template: dropped DB nsswitch key, using template fragments only. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/d17132ef6af1fdea7ca469d0575db6303cf54ad7" title="Revision d17132ef">Revision d17132ef</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 05:43 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nsswitch.conf template: add ldap modules by template fragment instead of DB nsswitch key. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>nsswitch.conf template: add ldap modules by template fragment instead of DB nsswitch key. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/40a7ede63c04f26b9be4d0a5f2c64d03c579e983" title="Revision 40a7ede6">Revision 40a7ede6</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 06:53 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>krb5.conf: implemented new template interface. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>krb5.conf: implemented new template interface. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/e2eb7b19e68f5ddcca97d832507c6ec4885324af" title="Revision e2eb7b19">Revision e2eb7b19</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 06:54 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nsswitch.conf: add winbind as NSS module, when role is ADS. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>nsswitch.conf: add winbind as NSS module, when role is ADS. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/a2779e3ea2038258d44eef5c835e77065b1228ae" title="Revision a2779e3e">Revision a2779e3e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-03" title="04/03/2013 05:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/pam.d/system-auth-nh template: refactored template with output formatter 90config_expand. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>/etc/pam.d/system-auth-nh template: refactored template with output formatter 90config_expand. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/711ed662025f5c2dcc9d97b392032e69b2e2442f" title="Revision 711ed662">Revision 711ed662</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-03" title="04/03/2013 05:05 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/pam.d/system-auth-nh: use new template format. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>/etc/pam.d/system-auth-nh: use new template format. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/150dc5175cb9a167c721696ebd787a0acffd8c92" title="Revision 150dc517">Revision 150dc517</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-03" title="04/03/2013 05:05 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/pam.d/system-auth-nh: use new template format for ADS setup. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>/etc/pam.d/system-auth-nh: use new template format for ADS setup. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/d6a0b3559676b31ed30a8363ce4751dc293ebfab" title="Revision d6a0b355">Revision d6a0b355</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-09" title="04/09/2013 11:23 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-conf action: store idmap ldap backend password. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>nethserver-samba-conf action: store idmap ldap backend password. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/c0f436290b162ed68d616d17c4d20ecd54ccf2d4" title="Revision c0f43629">Revision c0f43629</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-09" title="04/09/2013 11:23 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/samba/smb.conf template (20active_directory): use kerberos system keytab /etc/krb5.keytab for service credentials. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>/etc/samba/smb.conf template (20active_directory): use kerberos system keytab /etc/krb5.keytab for service credentials. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/654c6b72ba41d79fc526d5ad88bc2ea454e6e0a4" title="Revision 654c6b72">Revision 654c6b72</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-27" title="05/27/2013 04:57 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>NethServer\Tool\PasswordStash: added setAutoUnlink() method. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>NethServer\Tool\PasswordStash: added setAutoUnlink() method. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/8c99d6773928b2e0b73bb4fd9c010cef8ee836eb" title="Revision 8c99d677">Revision 8c99d677</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-28" title="05/28/2013 02:49 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Configuration DB defaults: kerberos setup for dovecot and postfix. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>Configuration DB defaults: kerberos setup for dovecot and postfix. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/29b9a0055720a556e03e6709c20d017da39e8a96" title="Revision 29b9a005">Revision 29b9a005</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-28" title="05/28/2013 04:50 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-{update,save} events: expand krb5.conf, nsswitch.conf and pam.d/{password,system}-auth-nh templates. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>nethserver-samba-{update,save} events: expand krb5.conf, nsswitch.conf and pam.d/{password,system}-auth-nh templates. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/c87fd03759b316d8c449a15cdca01ae6cc4422a4" title="Revision c87fd037">Revision c87fd037</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-28" title="05/28/2013 04:50 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec: Require cyrus-sasl-gssapi, krb5-workstation. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>*.spec: Require cyrus-sasl-gssapi, krb5-workstation. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/b6ac0e4430ea0bccbfb85353318f3fe5c055a8fb" title="Revision b6ac0e44">Revision b6ac0e44</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-28" title="05/28/2013 04:50 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Workgroup/Configure UI module: restored AD panel. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>Workgroup/Configure UI module: restored AD panel. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/cf49b8bb7f81dc3d08cfca9b418bfa8b3e69980f" title="Revision cf49b8bb">Revision cf49b8bb</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-28" title="05/28/2013 04:50 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-adsjoin event: create machine account on directory controller and initialize system keytabs and cronjobs. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>nethserver-samba-adsjoin event: create machine account on directory controller and initialize system keytabs and cronjobs. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/ce71c61fbfd70b62bd6691a98bd220cfbd19be7d" title="Revision ce71c61f">Revision ce71c61f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-28" title="05/28/2013 04:50 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Workgroup/Configure UI module: signal nethserver-samba-adsjoin event when authentication is not required to re-expand templates and reload services. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>Workgroup/Configure UI module: signal nethserver-samba-adsjoin event when authentication is not required to re-expand templates and reload services. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/d6b35bf08a3823e96b88fa11274c93b8aee1556a" title="Revision d6b35bf0">Revision d6b35bf0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-28" title="05/28/2013 04:50 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Workgroup\Configure UI: removed Controller field. The value is probed by "net ads" command and pushed into /etc/hosts. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>Workgroup\Configure UI: removed Controller field. The value is probed by "net ads" command and pushed into /etc/hosts. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/5476aa3f36d089a732b6dc6a5526dcff1fcf3ed0" title="Revision 5476aa3f">Revision 5476aa3f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-29" title="05/29/2013 10:43 AM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>smbads: fixed command line parameters list. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>smbads: fixed command line parameters list. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/b4eebb87899eccef6e615833f08619df7c4eb9e5" title="Revision b4eebb87">Revision b4eebb87</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-29" title="05/29/2013 11:00 AM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>smbads_changepassword monthly cronjob: change the machine password every month. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>smbads_changepassword monthly cronjob: change the machine password every month. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/5521df218cf9003f411d76aae0a797efd1ba8f21" title="Revision 5521df21">Revision 5521df21</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-29" title="05/29/2013 12:40 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>configuration DB: set default smb/Workgroup prop value. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>configuration DB: set default smb/Workgroup prop value. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/comps/revisions/0514afd7d6f4277295996a3a75428a5b75dc49a4" title="Revision 0514afd7">Revision 0514afd7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-29" title="05/29/2013 04:19 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Moved nethserver-hosts RPM from nethserver-dns-dhcp group to nethserver-core. Changing DNS is required by Samba ADS role. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>Moved nethserver-hosts RPM from nethserver-dns-dhcp group to nethserver-core. Changing DNS is required by Samba ADS role. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-hosts/revisions/a118900bd55672d43d896be84deea6001588e11e" title="Revision a118900b">Revision a118900b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-29" title="05/29/2013 05:27 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/hosts template (30hosts_remote): add short hostname alias if FQDN is in DomainName. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>/etc/hosts template (30hosts_remote): add short hostname alias if FQDN is in DomainName. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/01519ec891a15918da15707566c302c23b91f342" title="Revision 01519ec8">Revision 01519ec8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-17" title="06/17/2013 10:31 AM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>smbads (tgt_status): added a 5% of tolerance to deadline time, to avoid ticket expiration during renewal. Refs <a href="1746.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
+        <p>smbads (tgt_status): added a 5% of tolerance to deadline time, to avoid ticket expiration during renewal. Refs <a href="/issues/1746" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Samba: joining Active Directory domain (CLOSED)">#1746</a></p>
     </div>
     </div>
 
@@ -324,10 +429,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-5484" class="journal has-details">
     <div id="note-1">
-    <h4><a href="1746.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1746#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 11:52 AM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Due date</strong> set to <i>04/03/2013</i></li>
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
@@ -340,8 +446,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-5487" class="journal has-notes">
     <div id="note-2">
-    <h4><a href="1746.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1746#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-03-29" title="03/29/2013 03:35 PM">over 8 years</a> ago</h4>
 
     <div class="wiki" id="journal-5487-notes"><p>See <a class="external" href="http://wiki.samba.org/index.php/Samba_3.6_Features_added/changed#ID_Mapping_Changes">http://wiki.samba.org/index.php/Samba_3.6_Features_added/changed#ID_Mapping_Changes</a> on how to remove <code>idmap</code> warnings:</p>
 
@@ -356,10 +463,11 @@ WARNING: The "idmap gid" option is deprecated
   
   <div id="change-5678" class="journal has-details">
     <div id="note-3">
-    <h4><a href="1746.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1746#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2013-04-17" title="04/17/2013 02:56 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Target version</strong> changed from <i>v6.4-beta1</i> to <i>~FUTURE</i></li>
        <li><strong>% Done</strong> changed from <i>10</i> to <i>30</i></li>
     </ul>
@@ -369,10 +477,11 @@ WARNING: The "idmap gid" option is deprecated
   
   <div id="change-5762" class="journal has-details">
     <div id="note-4">
-    <h4><a href="1746.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/1746#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-03" title="05/03/2013 04:48 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Target version</strong> changed from <i>~FUTURE</i> to <i>v6.4-beta2</i></li>
     </ul>
     
@@ -381,10 +490,11 @@ WARNING: The "idmap gid" option is deprecated
   
   <div id="change-6095" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="1746.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/1746#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-29" title="05/29/2013 05:38 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>80</i></li>
     </ul>
@@ -394,19 +504,20 @@ WARNING: The "idmap gid" option is deprecated
   
   <div id="change-6140" class="journal has-notes has-details">
     <div id="note-6">
-    <h4><a href="1746.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/1746#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-04" title="06/04/2013 12:31 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
     </ul>
     <div class="wiki" id="journal-6140-notes"><p><strong>Test case</strong></p>
 
 
 	<ul>
-	<li>Follow instructions to join Active Directory on <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-samba" class="wiki-page new">nethserver-samba</a> wiki page</li>
-		<li>Install ibays and mail-server (see also <a href="1747.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Mail-server: IMAP access for AD users (CLOSED)">#1747</a> for a test case)</li>
-		<li>Test email delivery <a href="1747.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Mail-server: IMAP access for AD users (CLOSED)">#1747</a></li>
+	<li>Follow instructions to join Active Directory on <a href="/projects/nethserver/wiki/Nethserver-samba" class="wiki-page new">nethserver-samba</a> wiki page</li>
+		<li>Install ibays and mail-server (see also <a href="/issues/1747" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Mail-server: IMAP access for AD users (CLOSED)">#1747</a> for a test case)</li>
+		<li>Test email delivery <a href="/issues/1747" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Mail-server: IMAP access for AD users (CLOSED)">#1747</a></li>
 		<li>Test ibay access</li>
 	</ul></div>
     </div>
@@ -414,10 +525,11 @@ WARNING: The "idmap gid" option is deprecated
   
   <div id="change-6213" class="journal has-notes has-details">
     <div id="note-7">
-    <h4><a href="1746.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/1746#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-12" title="06/12/2013 03:17 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>80</i> to <i>30</i></li>
@@ -425,6 +537,7 @@ WARNING: The "idmap gid" option is deprecated
     <div class="wiki" id="journal-6213-notes"><p>Back ON_DEV.  A not-so-rare issue: a ticket expired while the cronjob was renewing it, probably because the validity check is exactly on hour in the future (as the cronjob period).</p>
 
 
+	<p><a href="/projects/nethserver/repository/nethserver-samba/revisions/62880c9527/entry/root/usr/libexec/nethserver/smbads#L345" class="source">source:nethserver-samba|/root/usr/libexec/nethserver/smbads@62880c9527#L345</a></p>
 
 
 	<p>Consider the minute-second values in the timestamps below.</p>
@@ -470,10 +583,11 @@ Valid starting     Expires            Service principal
   
   <div id="change-6228" class="journal has-notes has-details">
     <div id="note-8">
-    <h4><a href="1746.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/1746#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-17" title="06/17/2013 10:37 AM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>70</i></li>
@@ -484,10 +598,11 @@ Valid starting     Expires            Service principal
   
   <div id="change-6236" class="journal has-notes has-details">
     <div id="note-9">
-    <h4><a href="1746.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/1746#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-06-17" title="06/17/2013 03:47 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>80</i></li>
     </ul>
@@ -497,10 +612,11 @@ Valid starting     Expires            Service principal
   
   <div id="change-6629" class="journal has-details">
     <div id="note-10">
-    <h4><a href="1746.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/1746#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-24" title="07/24/2013 03:36 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -509,10 +625,11 @@ Valid starting     Expires            Service principal
   
   <div id="change-6630" class="journal has-notes has-details">
     <div id="note-11">
-    <h4><a href="1746.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/1746#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-07-24" title="07/24/2013 03:37 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>80</i> to <i>100</i></li>
     </ul>
@@ -546,14 +663,16 @@ Valid starting     Expires            Service principal
   
   <div id="change-6797" class="journal has-notes has-details">
     <div id="note-12">
-    <h4><a href="1746.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/1746#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-30" title="07/30/2013 06:47 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
+    <div class="wiki" id="journal-6797-notes"><p>Moved to nethserver-updates repository</p></div>
     </div>
   </div>
   
@@ -574,7 +693,9 @@ Valid starting     Expires            Service principal
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1746.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1746.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -595,7 +716,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2998.atom" rel="alternate" title="NethServer 6 - Enhancement #2998: Show default password on server-manager login" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -61,8 +108,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div class="issue tracker-6 status-5 priority-4 priority-default closed details">
     <div class="next-prev-links contextual">
-      <a href="2957.html" title="#2957">« Previous</a> |
-      <a href="2969.html" title="#2969">Next »</a>
+      <a href="/issues/2957" title="#2957">« Previous</a> |
+      <a href="/issues/2969" title="#2969">Next »</a>
     </div>
 
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
@@ -71,10 +118,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Show default password on server-manager login</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-12" title="01/12/2015 10:11 AM">over 6 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2015-01-27" title="01/27/2015 02:16 PM">over 6 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/205.html">v6.6-beta1</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/205">v6.6-beta1</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -105,16 +154,20 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/c1fefa0451d30346c226ef2e68f8dfe4ea340142" title="Revision c1fefa04">Revision c1fefa04</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-13" title="01/13/2015 04:51 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Framework: new setAuthenticationProcedure() method. Refs <a href="2998.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
+        <p>Framework: new setAuthenticationProcedure() method. Refs <a href="/issues/2998" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
 
 
 	<p>The PamAuthenticator class has been moved to nethserver-base<br />package. The Framework must now be initialized with a proper<br />authentication procedure.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/9737831a470867cc9fc30324eab19d24aa2cc987" title="Revision 9737831a">Revision 9737831a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-13" title="01/13/2015 12:02 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Framework: new setAuthenticationValidator() method. Refs <a href="2998.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
+        <p>Framework: new setAuthenticationValidator() method. Refs <a href="/issues/2998" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
 
 
 	<p>Use dependency injection to set up user authentication method.</p>
@@ -127,31 +180,41 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/c18a4fd07a8c9b5626f1490d4eb5df94790e4ff2" title="Revision c18a4fd0">Revision c18a4fd0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-13" title="01/13/2015 12:28 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Configure Nethgui\Framework with new PamValidator class. Refs <a href="2998.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
+        <p>Configure Nethgui\Framework with new PamValidator class. Refs <a href="/issues/2998" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/1d172dc76f8fa71a2f00161d04fb639461bf3a6c" title="Revision 1d172dc7">Revision 1d172dc7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-13" title="01/13/2015 12:34 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Imported PamAuthenticator class from Nethgui project. Refs <a href="2998.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
+        <p>Imported PamAuthenticator class from Nethgui project. Refs <a href="/issues/2998" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/0d6d5f4f171bcd169d23f7b822e1772884523a38" title="Revision 0d6d5f4f">Revision 0d6d5f4f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-13" title="01/13/2015 12:34 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Set Log and PhpWrapper objects to PamValidator instances. Refs <a href="2998.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
+        <p>Set Log and PhpWrapper objects to PamValidator instances. Refs <a href="/issues/2998" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/ab5328285a97d00dfb7d77f365b3389cc9038939" title="Revision ab532828">Revision ab532828</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-13" title="01/13/2015 12:34 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>PamValidator: merged with PamAuthenticator. Refs <a href="2998.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
+        <p>PamValidator: merged with PamAuthenticator. Refs <a href="/issues/2998" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
 
 
 	<p>Compatible with Nethgui\Framework::setAuthenticationValidator() method.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/397370001a50a897b982dbc78eeb7c03d610b4a2" title="Revision 39737000">Revision 39737000</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-16" title="01/16/2015 10:40 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>PamValidator: fix $log variable. Refs <a href="2957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Base: first configuration wizard (CLOSED)">#2957</a> <a href="2998.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
+        <p>PamValidator: fix $log variable. Refs <a href="/issues/2957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Base: first configuration wizard (CLOSED)">#2957</a> <a href="/issues/2998" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Show default password on server-manager login (CLOSED)">#2998</a></p>
 
 
 	<p>The IF branch is entered when username is `admin`, but admin does not<br />exist on a clean ISO installation...</p>
@@ -164,10 +227,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <h3>History</h3>
   <div id="change-13655" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2998.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2998#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-12" title="01/12/2015 10:12 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -178,10 +242,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-13682" class="journal has-notes has-details">
     <div id="note-2">
-    <h4><a href="2998.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2998#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-13" title="01/13/2015 12:39 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -203,10 +268,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-13683" class="journal has-notes has-details">
     <div id="note-3">
-    <h4><a href="2998.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2998#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-13" title="01/13/2015 12:40 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -216,10 +282,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-13727" class="journal has-details">
     <div id="note-4">
-    <h4><a href="2998.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2998#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-16" title="01/16/2015 10:34 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -228,10 +295,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-13729" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="2998.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2998#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-01-16" title="01/16/2015 10:46 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -245,10 +313,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-13844" class="journal has-notes has-details">
     <div id="note-6">
-    <h4><a href="2998.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2998#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-01-27" title="01/27/2015 02:16 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -273,7 +342,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2998.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2998.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -294,7 +365,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1957.atom" rel="alternate" title="NethServer 6 - Feature #1957: VPN: support IPsec/L2TP" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>VPN: support IPsec/L2TP</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-20" title="05/20/2013 10:03 AM">about 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-10-22" title="10/22/2013 04:10 PM">almost 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">09/17/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">09/20/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-ipsec</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/157.html">v6.4-beta2</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">09/17/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">09/20/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-ipsec</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/157">v6.4-beta2</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -104,7 +153,7 @@ See:
   </div>
 </div>
 <div class="attachments">
-<p><a href="../attachments/download/201/shorewall-ipsec.patch" class="icon icon-attachment">shorewall-ipsec.patch</a>    <a href="../attachments/201/shorewall-ipsec.patch.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a>
+<p><a href="/attachments/download/201/shorewall-ipsec.patch" class="icon icon-attachment">shorewall-ipsec.patch</a>    <a href="/attachments/201/shorewall-ipsec.patch"><img alt="Magnifier" src="/images/magnifier.png?1403512056" /></a>
   
   <span class="size">(2.21 KB)</span>
     <span class="author">Giacomo Sanchietti, 08/09/2013 02:48 PM</span>
@@ -130,7 +179,7 @@ See:
     Related to
     
     NethServer 6 - 
-    <a href="1763.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1763</a>: VPN
+    <a href="/issues/1763" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #1763</a>: VPN
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">08/28/2013</td>
@@ -143,7 +192,7 @@ See:
     Related to
     
     NethServer 6 - 
-    <a href="2248.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2248</a>: Store root server certificate in NSS database
+    <a href="/issues/2248" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2248</a>: Store root server certificate in NSS database
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">09/25/2013</td>
@@ -156,7 +205,7 @@ See:
     Related to
     
     NethServer 6 - 
-    <a href="2281.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2281</a>: Reuse firewall rules on custom zones
+    <a href="/issues/2281" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2281</a>: Reuse firewall rules on custom zones
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -169,7 +218,7 @@ See:
     Related to
     
     NethServer 6 - 
-    <a href="2294.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2294</a>: IPSec: honor VPNClientAccess property
+    <a href="/issues/2294" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2294</a>: IPSec: honor VPNClientAccess property
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -179,7 +228,7 @@ See:
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/1957/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/1957/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -196,7 +245,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="1957.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -219,128 +268,172 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/7df481f776a799abc3b54dc86ad96ad0e377e70c" title="Revision 7df481f7">Revision 7df481f7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-09-19" title="09/19/2013 02:20 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>First commit. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>First commit. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/2f4e079585d8a5b1f5fe40ddb06a6207ee22d5e2" title="Revision 2f4e0795">Revision 2f4e0795</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-09-20" title="09/20/2013 09:23 AM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>templates-default: added template-begin-semicolon for config files with comments starting with ";", like smb.conf or xl2tpd.conf. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>templates-default: added template-begin-semicolon for config files with comments starting with ";", like smb.conf or xl2tpd.conf. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-vpn/revisions/85f4399ef60b16c6e27aa2daee823e712782c5d7" title="Revision 85f4399e">Revision 85f4399e</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-09-30" title="09/30/2013 11:57 AM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>pki-vpn-gencert: create pkcs12 file. Refs <a href="1763.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN (CLOSED)">#1763</a> <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>pki-vpn-gencert: create pkcs12 file. Refs <a href="/issues/1763" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN (CLOSED)">#1763</a> <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/25d473acd04c7cab2790166cb5af3d116d9a862d" title="Revision 25d473ac">Revision 25d473ac</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-09-30" title="09/30/2013 02:09 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/shorewall/tunnels template: expanded on *-save and *-update events. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>/etc/shorewall/tunnels template: expanded on *-save and *-update events. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/9c61b4d945fe91581b80273871636d55fe98f14c" title="Revision 9c61b4d9">Revision 9c61b4d9</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-09-30" title="09/30/2013 02:09 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/shorewall/policy (20levelHigh): always apply "high" policy. Restore the condition when other policies will be defined. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>/etc/shorewall/policy (20levelHigh): always apply "high" policy. Restore the condition when other policies will be defined. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/6414bc72b70842a48a443fd5922408d48c5ba367" title="Revision 6414bc72">Revision 6414bc72</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-09-30" title="09/30/2013 02:09 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/shorewall/hosts template: expanded on *-save and *-update event. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>/etc/shorewall/hosts template: expanded on *-save and *-update event. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-vpn/revisions/180c2589a64cd83876599fa51b42ff3f7d035e66" title="Revision 180c2589">Revision 180c2589</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-03" title="10/03/2013 01:01 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Create empty default vpn DB. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>Create empty default vpn DB. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-shorewall/revisions/29edddbdb23959663200a0cddafabbce73cf945f" title="Revision 29edddbd">Revision 29edddbd</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-03" title="10/03/2013 02:37 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec.in: added ipset requirement to manage VPN dynamic zones. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>*.spec.in: added ipset requirement to manage VPN dynamic zones. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/f46d0c9c8375ab71ea5f65e8a577d4077cc6c4db" title="Revision f46d0c9c">Revision f46d0c9c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-03" title="10/03/2013 04:04 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>shorewall/interfaces template (20ppp): generic PPP interface declaration. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>shorewall/interfaces template (20ppp): generic PPP interface declaration. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/9a08773ca0fbce41bad089854e481ed2f73df170" title="Revision 9a08773c">Revision 9a08773c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-07" title="10/07/2013 10:20 AM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>ip-up.local, ip-down.local scripts: set "ipparam" option for pppd to invoke a custom pppd script. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>ip-up.local, ip-down.local scripts: set "ipparam" option for pppd to invoke a custom pppd script. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/0a7173b76fab5c3e1b01ec0bdcbeff8770a0a8d4" title="Revision 0a7173b7">Revision 0a7173b7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-08" title="10/08/2013 06:32 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Initial IPsec configuration and UI stub. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>Initial IPsec configuration and UI stub. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/9b8206238c2523b16dd819f39cfb3dd2c2cd86b2" title="Revision 9b820623">Revision 9b820623</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-09" title="10/09/2013 03:52 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/ppp/options.xl2tpd template: use green IP as DNS address. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>/etc/ppp/options.xl2tpd template: use green IP as DNS address. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/1c0ef001f56f197e612f2abd27c73f59ce984e6e" title="Revision 1c0ef001">Revision 1c0ef001</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-09" title="10/09/2013 04:36 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Accept DHCP from all interfaces. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>Accept DHCP from all interfaces. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
 
 
 	<p>Removed interfaces parameter in /etc/dnsmasq.conf template (10base).<br />bootps UDP port 67 must now be closed by firewall rules on interfaces<br />that must not allow it.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/916e74bdff8b00d93ae12d5609f1f76d4ed13afa" title="Revision 916e74bd">Revision 916e74bd</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-10" title="10/10/2013 10:42 AM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Set secret files permissions for root only. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>Set secret files permissions for root only. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
 
 
 	<p>/etc/ipsec.secrets RPM default permissions are 0600, to keep secret<br />passwords secure. Also NSS DB private RSA key password must be kept<br />secure in /etc/ipsec.d/nsspassword.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/10e6a240034660ebe42f666f36309aa489fca99f" title="Revision 10e6a240">Revision 10e6a240</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-10" title="10/10/2013 02:56 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>VPN IPsec UI module. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>VPN IPsec UI module. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
 
 
 	<p>This first version of the web UI module controls ipsec and xl2tpd<br />daemons execution, changes RoadWarriors subnet assignment and IPsec<br />authentication method (PSK or RSA). The nethserver-ipsec-save event<br />has been defined for these purposes.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-vpn/revisions/7a115920559d3ccde87c72817d67cad1fd454fd2" title="Revision 7a115920">Revision 7a115920</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-11" title="10/11/2013 04:47 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Removed IPsec client configuration. Refs <a href="1763.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN (CLOSED)">#1763</a> <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>Removed IPsec client configuration. Refs <a href="/issues/1763" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN (CLOSED)">#1763</a> <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
 
 
 	<p>IPsec "client" configuration is still not supported: we accept L2TP<br />roadwarriors only.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/c86a757d990308b77625ae23fa22edcd6dfa60d7" title="Revision c86a757d">Revision c86a757d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-11" title="10/11/2013 04:54 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Changed IPsec UI module labels. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>Changed IPsec UI module labels. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/99cf0c751ce4836e6d98dd6a7c3b4baf65d559c1" title="Revision 99cf0c75">Revision 99cf0c75</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-16" title="10/16/2013 10:04 AM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>use Nethgui\System\PlatformInterface as Validate, instead of "NethPlatform" class. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>use Nethgui\System\PlatformInterface as Validate, instead of "NethPlatform" class. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/0e496e2f3e467bdbaf2c2503c6daad3aa9357c70" title="Revision 0e496e2f">Revision 0e496e2f</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-10-16" title="10/16/2013 12:20 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: excute firewall-adjust on nethserver-ipsec-save and nethserver-ipsec-update events. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>createlinks: excute firewall-adjust on nethserver-ipsec-save and nethserver-ipsec-update events. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/68b1c8da557e029569f853010ca51ee40ff040af" title="Revision 68b1c8da">Revision 68b1c8da</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-10-16" title="10/16/2013 12:21 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>ipsec.conf template: change 'leftid' option when rsa authentication is enabled. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>ipsec.conf template: change 'leftid' option when rsa authentication is enabled. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/f21eda9e3e3336f88d219c7a769d33705083db37" title="Revision f21eda9e">Revision f21eda9e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-21" title="10/21/2013 06:10 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Removed firewall-adjust action from update event. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>Removed firewall-adjust action from update event. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
 
 
 	<p>Update events are designed to be invoked by nethserver yum plugin<br />after the RPM transaction.  The firewall-adjust action is invoked<br />once, after all update events have been executed.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/4b989f551ac1e54e0330a8d953fdb0c8cac6f574" title="Revision 4b989f55">Revision 4b989f55</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-22" title="10/22/2013 12:52 PM">almost 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Expand /etc/ppp/options.xl2tpd on nethserver-samba-* events. Refs <a href="1957.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
+        <p>Expand /etc/ppp/options.xl2tpd on nethserver-samba-* events. Refs <a href="/issues/1957" class="issue tracker-2 status-5 priority-4 priority-default closed" title="VPN: support IPsec/L2TP (CLOSED)">#1957</a></p>
 
 
 	<p>/etc/ppp/options.xl2tpd must be re-expanded if ntlm_auth binary<br />becomes available.  Also removed pppd settings from xl2tpd.conf.</p>
@@ -353,8 +446,9 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-6307" class="journal has-notes">
     <div id="note-1">
-    <h4><a href="1957.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1957#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-06-26" title="06/26/2013 09:55 AM">about 8 years</a> ago</h4>
 
     <div class="wiki" id="journal-6307-notes"><p>See also:<br /><a class="external" href="http://wiki.nikoforge.org/L2TP/IPSec_VPN_Setup_on_Centos_6_(64-bit)_for_use_with_Android_ICS_and_iOS_5_Clients">http://wiki.nikoforge.org/L2TP/IPSec_VPN_Setup_on_Centos_6_(64-bit)_for_use_with_Android_ICS_and_iOS_5_Clients</a></p></div>
     </div>
@@ -362,11 +456,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-6947" class="journal has-notes has-details">
     <div id="note-2">
-    <h4><a href="1957.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1957#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-08-09" title="08/09/2013 02:48 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>File</strong> <a href="../attachments/download/201/shorewall-ipsec.patch">shorewall-ipsec.patch</a><a href="../attachments/201/shorewall-ipsec.patch.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a> added</li>
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/201/shorewall-ipsec.patch">shorewall-ipsec.patch</a><a href="/attachments/201/shorewall-ipsec.patch"><img alt="Magnifier" src="/images/magnifier.png?1403512056" /></a> added</li>
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
     </ul>
@@ -387,7 +482,7 @@ setPredecessorFieldsVisibility();
 
 
 	<a name="IPSEC-configuration"></a>
-<h3 >IPSEC configuration<a href="1957.html#IPSEC-configuration" class="wiki-anchor">&para;</a></h3>
+<h3 >IPSEC configuration<a href="#IPSEC-configuration" class="wiki-anchor">&para;</a></h3>
 
 
 	<p>Package installation:<br /><pre>
@@ -533,10 +628,11 @@ ip -s xfrm policy
   
   <div id="change-7146" class="journal has-details">
     <div id="note-3">
-    <h4><a href="1957.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1957#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-08-29" title="08/29/2013 12:29 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Parent task</strong> deleted (<del><i>#1763</i></del>)</li>
     </ul>
     
@@ -545,10 +641,11 @@ ip -s xfrm policy
   
   <div id="change-7485" class="journal has-details">
     <div id="note-4">
-    <h4><a href="1957.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/1957#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-09-17" title="09/17/2013 11:04 AM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Due date</strong> set to <i>09/20/2013</i></li>
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
@@ -562,22 +659,24 @@ ip -s xfrm policy
   
   <div id="change-7592" class="journal has-notes">
     <div id="note-6">
-    <h4><a href="1957.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/1957#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-09-24" title="09/24/2013 06:54 PM">almost 8 years</a> ago</h4>
 
     <div class="wiki" id="journal-7592-notes"><p>Radius service is not required if we use the <code>pppd</code> <code>winbind</code> plugin for L2TP authentications and RSA certificates for simple net2net tunnels.</p>
 
 
-	<p>See <a href="1769.html#note-3" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Radius server (CLOSED)">#1769#note-3</a></p></div>
+	<p>See <a href="/issues/1769#note-3" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Radius server (CLOSED)">#1769#note-3</a></p></div>
     </div>
   </div>
   
   <div id="change-7593" class="journal has-details">
     <div id="note-7">
-    <h4><a href="1957.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/1957#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-09-25" title="09/25/2013 09:10 AM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Subject</strong> changed from <i>VPN: support L2TP</i> to <i>VPN: support IPsec/L2TP</i></li>
     </ul>
     
@@ -586,19 +685,20 @@ ip -s xfrm policy
   
   <div id="change-7843" class="journal has-notes has-details">
     <div id="note-8">
-    <h4><a href="1957.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/1957#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-10" title="10/10/2013 10:53 AM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
     <div class="wiki" id="journal-7843-notes"><strong>Release notes</strong><br />This L2TP prototype works but some issues are not completely solved:
 	<ol>
-	<li><code>MS-CHAP(v2)</code> authentication is available <strong>only if</strong> <code>ntlm_auth</code> binary is detected when <code>/etc/ppp/options.xl2tpd</code> is expanded.  This means that <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-samba" class="wiki-page new">nethserver-samba</a> must be installed to authenticate system users.<br />  If this is not acceptable, don't install <code>ntlm_auth</code> and define CHAP users in <code>/etc/ppp/chap-secrets</code>.</li>
-		<li><del><strong>All system users can connect</strong>. We can configure <code>ntlm_auth</code> to check for a specific group membership before grant access.</del> Fixed in <a href="2294.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="IPSec: honor VPNClientAccess property (CLOSED)">#2294</a></li>
-		<li><strong>Firewall policy</strong> for connections between <code>lvpn</code> and <code>fw</code> zone is <strong>ACCEPT</strong> without any other rules. Everything is open. This issue must be solved after <a href="2281.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Reuse firewall rules on custom zones (CLOSED)">#2281</a>.</li>
+	<li><code>MS-CHAP(v2)</code> authentication is available <strong>only if</strong> <code>ntlm_auth</code> binary is detected when <code>/etc/ppp/options.xl2tpd</code> is expanded.  This means that <a href="/projects/nethserver/wiki/Nethserver-samba" class="wiki-page new">nethserver-samba</a> must be installed to authenticate system users.<br />  If this is not acceptable, don't install <code>ntlm_auth</code> and define CHAP users in <code>/etc/ppp/chap-secrets</code>.</li>
+		<li><del><strong>All system users can connect</strong>. We can configure <code>ntlm_auth</code> to check for a specific group membership before grant access.</del> Fixed in <a href="/issues/2294" class="issue tracker-6 status-5 priority-4 priority-default closed" title="IPSec: honor VPNClientAccess property (CLOSED)">#2294</a></li>
+		<li><strong>Firewall policy</strong> for connections between <code>lvpn</code> and <code>fw</code> zone is <strong>ACCEPT</strong> without any other rules. Everything is open. This issue must be solved after <a href="/issues/2281" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Reuse firewall rules on custom zones (CLOSED)">#2281</a>.</li>
 	</ol>
 
 
@@ -621,7 +721,7 @@ ip -s xfrm policy
 
 <strong>Test case 1</strong><br />Check L2TP with PSK.
 	<ol>
-	<li>Install <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-samba" class="wiki-page new">nethserver-samba</a> and <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-ipsec" class="wiki-page new">nethserver-ipsec</a></li>
+	<li>Install <a href="/projects/nethserver/wiki/Nethserver-samba" class="wiki-page new">nethserver-samba</a> and <a href="/projects/nethserver/wiki/Nethserver-ipsec" class="wiki-page new">nethserver-ipsec</a></li>
 		<li>Set PSK authentication: <pre>
    # config setprop ipsec status enabled KeyType psk KeyPskSecret s3cret
    # signal-event nethserver-ipsec-save
@@ -649,10 +749,11 @@ ip -s xfrm policy
   
   <div id="change-7845" class="journal has-notes has-details">
     <div id="note-9">
-    <h4><a href="1957.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/1957#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-10" title="10/10/2013 03:45 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -665,8 +766,9 @@ ip -s xfrm policy
   
   <div id="change-7894" class="journal has-notes">
     <div id="note-10">
-    <h4><a href="1957.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/1957#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-11" title="10/11/2013 05:00 PM">almost 8 years</a> ago</h4>
 
     <div class="wiki" id="journal-7894-notes"><p>In nethserver-testing:<br />nethserver-vpn-1.0.0-25.0git7a115920.ns6.noarch<br />nethserver-ipsec-0.0.5-1.ns6.noarch<br />nethserver-firewall-base-1.0.5-7.0git9a08773c.ns6.noarch.rpm</p></div>
     </div>
@@ -674,10 +776,11 @@ ip -s xfrm policy
   
   <div id="change-7930" class="journal has-details">
     <div id="note-11">
-    <h4><a href="1957.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/1957#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-10-15" title="10/15/2013 10:09 AM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -686,10 +789,11 @@ ip -s xfrm policy
   
   <div id="change-7961" class="journal has-notes has-details">
     <div id="note-12">
-    <h4><a href="1957.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/1957#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-10-16" title="10/16/2013 11:51 AM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -731,16 +835,17 @@ ip -s xfrm policy
 	<p>Tested with Android client, release: 4.2.2 (CyanogenMod)</p>
 
 
-	<p>See also <a href="2294.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="IPSec: honor VPNClientAccess property (CLOSED)">#2294</a></p></div>
+	<p>See also <a href="/issues/2294" class="issue tracker-6 status-5 priority-4 priority-default closed" title="IPSec: honor VPNClientAccess property (CLOSED)">#2294</a></p></div>
     </div>
   </div>
   
   <div id="change-7962" class="journal has-details">
     <div id="note-13">
-    <h4><a href="1957.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/1957#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-10-16" title="10/16/2013 12:10 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
     </ul>
@@ -750,10 +855,11 @@ ip -s xfrm policy
   
   <div id="change-7963" class="journal has-notes has-details">
     <div id="note-14">
-    <h4><a href="1957.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/1957#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-10-16" title="10/16/2013 12:31 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -763,10 +869,11 @@ ip -s xfrm policy
   
   <div id="change-7964" class="journal has-notes has-details">
     <div id="note-15">
-    <h4><a href="1957.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/1957#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-10-16" title="10/16/2013 12:31 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -789,10 +896,11 @@ Package in nethserver-updates:
   
   <div id="change-8022" class="journal has-details">
     <div id="note-16">
-    <h4><a href="1957.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/1957#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-17" title="10/17/2013 10:09 AM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
     </ul>
     
@@ -801,10 +909,11 @@ Package in nethserver-updates:
   
   <div id="change-8076" class="journal has-details">
     <div id="note-17">
-    <h4><a href="1957.html#note-17" class="journal-link">#17</a>
+    <h4><a href="/issues/1957#note-17" class="journal-link">#17</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-22" title="10/22/2013 12:59 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
@@ -815,10 +924,11 @@ Package in nethserver-updates:
   
   <div id="change-8077" class="journal has-details">
     <div id="note-18">
-    <h4><a href="1957.html#note-18" class="journal-link">#18</a>
+    <h4><a href="/issues/1957#note-18" class="journal-link">#18</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-22" title="10/22/2013 12:59 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>60</i></li>
     </ul>
@@ -828,10 +938,11 @@ Package in nethserver-updates:
   
   <div id="change-8078" class="journal has-notes has-details">
     <div id="note-19">
-    <h4><a href="1957.html#note-19" class="journal-link">#19</a>
+    <h4><a href="/issues/1957#note-19" class="journal-link">#19</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-22" title="10/22/2013 01:00 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -841,10 +952,11 @@ Package in nethserver-updates:
   
   <div id="change-8079" class="journal has-details">
     <div id="note-20">
-    <h4><a href="1957.html#note-20" class="journal-link">#20</a>
+    <h4><a href="/issues/1957#note-20" class="journal-link">#20</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-22" title="10/22/2013 01:04 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
     </ul>
     
@@ -853,10 +965,11 @@ Package in nethserver-updates:
   
   <div id="change-8094" class="journal has-notes has-details">
     <div id="note-21">
-    <h4><a href="1957.html#note-21" class="journal-link">#21</a>
+    <h4><a href="/issues/1957#note-21" class="journal-link">#21</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-22" title="10/22/2013 04:06 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -867,10 +980,11 @@ Package in nethserver-updates:
   
   <div id="change-8095" class="journal has-notes has-details">
     <div id="note-22">
-    <h4><a href="1957.html#note-22" class="journal-link">#22</a>
+    <h4><a href="/issues/1957#note-22" class="journal-link">#22</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-10-22" title="10/22/2013 04:10 PM">almost 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -898,7 +1012,9 @@ Package in nethserver-updates:
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1957.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1957.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -919,7 +1035,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

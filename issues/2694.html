@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2694.atom" rel="alternate" title="NethServer 6 - Feature #2694: YUM categories in PackageManager" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>YUM categories in PackageManager</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-13" title="03/13/2014 02:45 PM">over 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-03-24" title="03/24/2014 10:33 AM">over 7 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/200.html">v6.5-final</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/200">v6.5-final</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -101,16 +150,20 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-yum/revisions/dc2463f7d6b30c2f14d707dc16647140dd62e045" title="Revision dc2463f7">Revision dc2463f7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-13" title="03/13/2014 02:46 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>pkginfo: read locale from environment relying on gettext library. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>pkginfo: read locale from environment relying on gettext library. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
 
 
 	<p>- Rely on CompsObj base class for groups sorting</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-yum/revisions/fc1abafb380363272a9d07e08e51c109fec71bc5" title="Revision fc1abafb">Revision fc1abafb</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-13" title="03/13/2014 02:46 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>pkginfo: new compsdump command. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>pkginfo: new compsdump command. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
 
 
 	<p>- The "compsdump" command shows both yum groups and categories.</p>
@@ -123,75 +176,99 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/66704a85e6b1cf60d380b4f38db9034d5de89d67" title="Revision 66704a85">Revision 66704a85</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-18" title="03/18/2014 03:33 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Small CSS changes. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>Small CSS changes. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
 
 
 	<p>- Fixed button active state background color<br />- FieldsetSwitchPanel bottom margin</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-yum/revisions/84082190ce6dfaf7b38b5270bb87c36bc25c5c7d" title="Revision 84082190">Revision 84082190</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-18" title="03/18/2014 06:14 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>pkgaction: avoid dereferencing None object. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>pkgaction: avoid dereferencing None object. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethgui/repository/revisions/2ee102e40ffb3539e3810f4d9044c2f26911458b" title="Revision 2ee102e4">Revision 2ee102e4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 07:30 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>NethPlatform (signalEvent): fixed detached event startup. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>NethPlatform (signalEvent): fixed detached event startup. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
 
 
 	<p>An empty queue name was set when "event-name &#38;" form was specified.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/5ec9db17b73c622ed2d40213bdac7ceec078be4a" title="Revision 5ec9db17">Revision 5ec9db17</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 05:49 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>PackageManager: set LANG env for pkginfo helper. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>PackageManager: set LANG env for pkginfo helper. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
 
 
 	<p>- Rely on YUM Python library for comps localization.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/5fe2289f60d210b8e239561a03329adb0b00e80c" title="Revision 5fe2289f">Revision 5fe2289f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 05:49 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>PackageManager: use vanilla CompositeController. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>PackageManager: use vanilla CompositeController. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/5dd352f1930614069ea9e1363a91dfce47e81bea" title="Revision 5dd352f1">Revision 5dd352f1</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 05:49 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>PackageManger: show categories as radio buttons. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>PackageManger: show categories as radio buttons. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/979c9a9c1af648753653d29d452e3fed851bb827" title="Revision 979c9a9c">Revision 979c9a9c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 05:49 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>PackageManager: keep groups selection on Back button click. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>PackageManager: keep groups selection on Back button click. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
 
 
 	<p>- Highlight installed/removed groups by CSS class</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/0e717096b8d444be43fbfe7fa442068d894c960e" title="Revision 0e717096">Revision 0e717096</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 05:49 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>PackageManager: added "Everything" default category. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>PackageManager: added "Everything" default category. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/06835f7372e642a54d95a7498a679e7124b406ab" title="Revision 06835f73">Revision 06835f73</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 05:49 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>PackageManager: improved limit case handling. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>PackageManager: improved limit case handling. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/511cc23e4e22fdc8f25e628f480136fd78a5a0df" title="Revision 511cc23e">Revision 511cc23e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 05:49 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Updated online manual. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>Updated online manual. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/a06dd67bc2ca101b83da5adef7f1a14a2b11bb48" title="Revision a06dd67b">Revision a06dd67b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 05:49 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>PackageManager/Tracker: added setNextPath() for class reusability. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>PackageManager/Tracker: added setNextPath() for class reusability. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/4bcf9adffcd60e2df951986bdcba2f43248573e0" title="Revision 4bcf9adf">Revision 4bcf9adf</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-21" title="03/21/2014 06:07 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>PackageManager: fixed Back button label. Refs <a href="2694.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
+        <p>PackageManager: fixed Back button label. Refs <a href="/issues/2694" class="issue tracker-2 status-5 priority-4 priority-default closed" title="YUM categories in PackageManager (CLOSED)">#2694</a></p>
     </div>
     </div>
 
@@ -201,10 +278,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <h3>History</h3>
   <div id="change-10900" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2694.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2694#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-14" title="03/14/2014 12:41 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -215,10 +293,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-10905" class="journal has-notes has-details">
     <div id="note-2">
-    <h4><a href="2694.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2694#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 05:51 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -244,10 +323,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-10906" class="journal has-notes has-details">
     <div id="note-3">
-    <h4><a href="2694.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2694#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-19" title="03/19/2014 05:55 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -257,10 +337,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-10910" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="2694.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2694#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-21" title="03/21/2014 06:44 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
     </ul>
@@ -270,10 +351,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-10918" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="2694.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2694#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-03-24" title="03/24/2014 10:33 AM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -298,7 +380,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2694.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2694.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -319,7 +403,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

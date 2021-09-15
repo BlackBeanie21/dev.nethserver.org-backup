@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/3041.atom" rel="alternate" title="NethServer 6 - Feature #3041: Restore from backup, disaster recovery and network interfaces" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -61,8 +108,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div class="issue tracker-2 status-5 priority-4 priority-default closed details">
     <div class="next-prev-links contextual">
-      <a href="3029.html" title="#3029">« Previous</a> |
-      <a href="3012.html" title="#3012">Next »</a>
+      <a href="/issues/3029" title="#3029">« Previous</a> |
+      <a href="/issues/3012" title="#3012">Next »</a>
     </div>
 
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
@@ -71,10 +118,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Restore from backup, disaster recovery and network interfaces</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-13" title="02/13/2015 11:55 AM">over 6 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2015-03-03" title="03/03/2015 10:41 AM">over 6 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/207.html">v6.6-rc1</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/207">v6.6-rc1</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -128,23 +177,23 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   </div>
 </div>
 <div class="attachments">
-<p><a href="http://dev.nethserver.org/attachments/download/310/Schermata%20da%202015-03-02%2017_06_58.png" class="icon icon-attachment">Schermata da 2015-03-02 17_06_58.png</a>   - test case 1/c
+<p><a href="/attachments/download/310/Schermata%20da%202015-03-02%2017_06_58.png" class="icon icon-attachment">Schermata da 2015-03-02 17_06_58.png</a>   - test case 1/c
   <span class="size">(10 KB)</span>
     <span class="author">Davide Marini, 03/02/2015 11:10 AM</span>
   </p>
-<p><a href="../attachments/download/311/2c_1.png" class="icon icon-attachment">2c_1.png</a>   - 2/c 1
+<p><a href="/attachments/download/311/2c_1.png" class="icon icon-attachment">2c_1.png</a>   - 2/c 1
   <span class="size">(41.9 KB)</span>
     <span class="author">Davide Marini, 03/02/2015 11:41 AM</span>
   </p>
-<p><a href="../attachments/download/312/2c_2.png" class="icon icon-attachment">2c_2.png</a>   - 2/c 2
+<p><a href="/attachments/download/312/2c_2.png" class="icon icon-attachment">2c_2.png</a>   - 2/c 2
   <span class="size">(52.1 KB)</span>
     <span class="author">Davide Marini, 03/02/2015 11:41 AM</span>
   </p>
-<p><a href="../attachments/download/313/2b_1.png" class="icon icon-attachment">2b_1.png</a>   - 2/b 1
+<p><a href="/attachments/download/313/2b_1.png" class="icon icon-attachment">2b_1.png</a>   - 2/b 1
   <span class="size">(36.8 KB)</span>
     <span class="author">Davide Marini, 03/02/2015 12:04 PM</span>
   </p>
-<p><a href="../attachments/download/314/2b_2.png" class="icon icon-attachment">2b_2.png</a>   - 2/b 2
+<p><a href="/attachments/download/314/2b_2.png" class="icon icon-attachment">2b_2.png</a>   - 2/b 2
   <span class="size">(35.5 KB)</span>
     <span class="author">Davide Marini, 03/02/2015 12:05 PM</span>
   </p>
@@ -160,39 +209,51 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/8f82c03574a0472576839b5fde68b9fe623e2e63" title="Revision 8f82c035">Revision 8f82c035</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-24" title="02/24/2015 10:45 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>interface-update: reset udev rules. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>interface-update: reset udev rules. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
 
 
 	<p>The new action clears /etc/udev/rules.d/70-persistent-net.rules and<br />triggers the udev net event to regenerate it.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/91bac0a8dc37d0499705da82bb2b0c0901092756" title="Revision 91bac0a8">Revision 91bac0a8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-24" title="02/24/2015 10:46 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nic-info helper: loop on every card if invoked w/o arguments. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>nic-info helper: loop on every card if invoked w/o arguments. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/0c85578c7cf7b050bf5db5f27ab806f7e562e995" title="Revision 0c85578c">Revision 0c85578c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-24" title="02/24/2015 11:06 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nic-info: fixed link status check. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>nic-info: fixed link status check. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
 
 
 	<p>The check requires sudo.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethgui/repository/revisions/065125b1c9b31228efb137ff246a395be8f9b6af" title="Revision 065125b1">Revision 065125b1</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-25" title="02/25/2015 12:06 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fixed Tracker notifications. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>Fixed Tracker notifications. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/6be15f79073f6d6ff9c629858ffff539d0a4016b" title="Revision 6be15f79">Revision 6be15f79</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-26" title="02/26/2015 05:51 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Bump Nethgui 065125b1c9b31228efb137ff246a395be8f9b6af. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>Bump Nethgui 065125b1c9b31228efb137ff246a395be8f9b6af. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/5a4bec10f42a21d15c80fb775f0049fb9e6446ab" title="Revision 5a4bec10">Revision 5a4bec10</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-26" title="02/26/2015 06:43 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>NetworkAdapter: new RenameInterface UI module. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>NetworkAdapter: new RenameInterface UI module. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
 
 
 	<p>This new module helps assigning physical ethernet cards to interfaces<br />in networks DB.</p>
@@ -205,8 +266,10 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/40653e526d67d55df916b28f938dbc5983177047" title="Revision 40653e52">Revision 40653e52</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-26" title="02/26/2015 06:43 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>New nethserver-config-network command. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>New nethserver-config-network command. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
 
 
 	<ul>
@@ -225,54 +288,72 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/eb49f46dc76b9eb8e49aa1d8f77777c506f63408" title="Revision eb49f46d">Revision eb49f46d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-26" title="02/26/2015 06:43 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Added l10n for AdminTodos. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>Added l10n for AdminTodos. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/c1dd7f0a6ee56f444b5af4221add94e896d43e07" title="Revision c1dd7f0a">Revision c1dd7f0a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-26" title="02/26/2015 06:45 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Merge branch 'b3041' into v6.6. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>Merge branch 'b3041' into v6.6. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
 
 
 	<p>Restore from backup, disaster recovery and network interfaces</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-backup-config/revisions/872b07e5850f767595bd73bced9f5e967ec4de5d" title="Revision 872b07e5">Revision 872b07e5</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-26" title="02/26/2015 09:35 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Removed restore "on same hardware" option. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>Removed restore "on same hardware" option. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
 
 
 	<p>The NetworkAdapter UI module implements interface renaming now.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-backup-config/revisions/1b43681b45cfc5c3a17d43f91b0e550c57216f57" title="Revision 1b43681b">Revision 1b43681b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-26" title="02/26/2015 09:35 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Restore UI module: show AdminTodo notifications after restore. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>Restore UI module: show AdminTodo notifications after restore. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/8e27d8defe5b1f76d82e5aa5d43000b14a6295f0" title="Revision 8e27d8de">Revision 8e27d8de</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-02-27" title="02/27/2015 04:17 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-config-network: fix logic. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>nethserver-config-network: fix logic. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/694199340f6fa8b809df4d648786e4a15baa113f" title="Revision 69419934">Revision 69419934</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-02-27" title="02/27/2015 04:41 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web interface: fix list of old interfaces. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>Web interface: fix list of old interfaces. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/d8713250e01662d5544eecd7122f35cfb68993e0" title="Revision d8713250">Revision d8713250</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-27" title="02/27/2015 04:45 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Bump Nethgui 065125b1c9b31228efb137ff246a395be8f9b6af. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>Bump Nethgui 065125b1c9b31228efb137ff246a395be8f9b6af. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/cf3742b521ee9c39877053ddc1084315afa67921" title="Revision cf3742b5">Revision cf3742b5</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-27" title="02/27/2015 10:34 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Disaster recovery section. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>Disaster recovery section. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/6254cf84ccfe1b1c4cd1c951511c10273a90c254" title="Revision 6254cf84">Revision 6254cf84</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-27" title="02/27/2015 10:45 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>NetworkAdapter: fixed translations for RenameInterface. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+        <p>NetworkAdapter: fixed translations for RenameInterface. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
 
 
 	<ul>
@@ -282,11 +363,13 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/13113bc3c7f9e7aad401aeb4dbd66dbd2f8ffcee" title="Revision 13113bc3">Revision 13113bc3</a><br />
+        <span class="author">Added by Davide Principi  <a href="/projects/nethserver/activity?from=2015-03-03" title="03/03/2015 11:23 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
         <p>Merge pull request #60 from DavidePrincipi/b3041</p>
 
 
-	<p>Disaster recovery section. Refs <a href="3041.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
+	<p>Disaster recovery section. Refs <a href="/issues/3041" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Restore from backup, disaster recovery and network interfaces (CLOSED)">#3041</a></p>
     </div>
     </div>
 
@@ -296,10 +379,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <h3>History</h3>
   <div id="change-14056" class="journal has-details">
     <div id="note-1">
-    <h4><a href="3041.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/3041#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-13" title="02/13/2015 11:56 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Category</strong> set to <i>nethserver-base</i></li>
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>Target version</strong> set to <i>v6.6-rc1</i></li>
@@ -311,10 +395,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-14057" class="journal has-details">
     <div id="note-2">
-    <h4><a href="3041.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/3041#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-13" title="02/13/2015 11:56 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -325,10 +410,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-14208" class="journal has-notes has-details">
     <div id="note-3">
-    <h4><a href="3041.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/3041#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-26" title="02/26/2015 09:50 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Subject</strong> changed from <i>Assign new network adapter to old interface name</i> to <i>Restore from backup, disaster recovery and network interfaces</i></li>
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
@@ -409,10 +495,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-14209" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="3041.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/3041#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-26" title="02/26/2015 09:54 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -422,8 +509,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-14215" class="journal has-notes">
     <div id="note-5">
-    <h4><a href="3041.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/3041#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-26" title="02/26/2015 01:12 PM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-14215-notes"><p><strong>Packager note</strong></p>
 
@@ -434,15 +522,16 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-14266" class="journal has-notes has-details">
     <div id="note-6">
-    <h4><a href="3041.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/3041#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/c96c358beddd941e6188349f3c98ccd3?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/11" class="user active">Davide Marini</a> <a href="/projects/nethserver/activity?from=2015-03-02" title="03/02/2015 12:05 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>File</strong> <a href="http://dev.nethserver.org/attachments/download/310/Schermata%20da%202015-03-02%2017_06_58.png">Schermata da 2015-03-02 17_06_58.png</a> added</li>
-       <li><strong>File</strong> <a href="../attachments/download/311/2c_1.png">2c_1.png</a> added</li>
-       <li><strong>File</strong> <a href="../attachments/download/312/2c_2.png">2c_2.png</a> added</li>
-       <li><strong>File</strong> <a href="../attachments/download/313/2b_1.png">2b_1.png</a> added</li>
-       <li><strong>File</strong> <a href="../attachments/download/314/2b_2.png">2b_2.png</a> added</li>
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/310/Schermata%20da%202015-03-02%2017_06_58.png">Schermata da 2015-03-02 17_06_58.png</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/311/2c_1.png">2c_1.png</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/312/2c_2.png">2c_2.png</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/313/2b_1.png">2b_1.png</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/314/2b_2.png">2b_2.png</a> added</li>
     </ul>
     <div class="wiki" id="journal-14266-notes"><p>Case 1/a: verified<br />the system show the message <br />"Reconfiguring network", after few seconds the interface is up and working</p>
 
@@ -465,10 +554,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-14267" class="journal has-details">
     <div id="note-7">
-    <h4><a href="3041.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/3041#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/c96c358beddd941e6188349f3c98ccd3?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/11" class="user active">Davide Marini</a> <a href="/projects/nethserver/activity?from=2015-03-02" title="03/02/2015 12:05 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
     </ul>
@@ -478,10 +568,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-14312" class="journal has-notes has-details">
     <div id="note-8">
-    <h4><a href="3041.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/3041#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-03-03" title="03/03/2015 10:41 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -506,7 +597,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/3041.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/3041.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -527,7 +620,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

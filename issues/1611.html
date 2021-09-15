@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1611.atom" rel="alternate" title="NethServer 6 - Task #1611: nethserver-devbox: development automation scripts" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>nethserver-devbox: development automation scripts</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-08" title="01/08/2013 06:05 PM">over 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-03-21" title="03/21/2013 10:06 AM">over 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">01/07/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">01/16/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-devbox</td><th class="estimated-hours">Estimated time:</th><td class="estimated-hours">24.00 hours</td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/144.html">v6.4-alpha2</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">01/07/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">01/16/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-devbox</td><th class="estimated-hours">Estimated time:</th><td class="estimated-hours">24.00 hours</td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/144">v6.4-alpha2</a></td><th></th><td></td></tr>
 
 
 </table>
@@ -86,9 +135,10 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   <p>Merge all automation scripts together into the same project:</p>
 
 
+	<p>- RPM bulding<br />- ISO creation<br />- YUM repository management</p>
 
 
-	<p>See <a href="http://dev.nethserver.o/projects/nethserver/wiki/Building_ISO" class="wiki-page new">Building ISO</a>, <a href="http://dev.nethserver.o/projects/nethserver/wiki/Building_RPMs" class="wiki-page new">Building RPMs</a></p>
+	<p>See <a href="/projects/nethserver/wiki/Building_ISO" class="wiki-page new">Building ISO</a>, <a href="/projects/nethserver/wiki/Building_RPMs" class="wiki-page new">Building RPMs</a></p>
   </div>
 </div>
 
@@ -102,144 +152,206 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/f1c616ae21fe394d6192c157ba8a64ae90f99edf" title="Revision f1c616ae">Revision f1c616ae</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-08" title="01/08/2013 06:41 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>WIP: honour Make prerequisites dependencies. Separated yum from mock configuration. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>WIP: honour Make prerequisites dependencies. Separated yum from mock configuration. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/72f2526f58a4152177cf755011baf84f76760970" title="Revision 72f2526f">Revision 72f2526f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-09" title="01/09/2013 09:18 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>rpm.mk: added scmupdate target, to force git pull on git repo directory. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>rpm.mk: added scmupdate target, to force git pull on git repo directory. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/ee66cf178f94cbf2b1a36d106f02e88d1b9088e0" title="Revision ee66cf17">Revision ee66cf17</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-09" title="01/09/2013 04:49 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: added RPM GPG signature. Invoke with `-s` option. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: added RPM GPG signature. Invoke with `-s` option. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/64068684b738fb34511c12a0c1caa3bb7059535c" title="Revision 64068684">Revision 64068684</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-09" title="01/09/2013 05:19 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: "expect" must not send password if rpm command fails. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: "expect" must not send password if rpm command fails. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/c4391ed55fbe0dc94f338816e4d77ffc33dd9ac5" title="Revision c4391ed5">Revision c4391ed5</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-09" title="01/09/2013 06:13 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: dispatch RPMs to REPODIR. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: dispatch RPMs to REPODIR. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/b584f01fecba6053c5b85b1f4e10798da629de01" title="Revision b584f01f">Revision b584f01f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-11" title="01/11/2013 12:37 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
+        <p>build-rpm: implementation of `-p` PUBLISH flag, to copy RPMs to a remote repository. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/3e7393850ef209146359861c784b44aeef0af8f0" title="Revision 3e739385">Revision 3e739385</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-11" title="01/11/2013 12:44 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-iso: moved unde bin/ directory. Read common configuration files. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-iso: moved unde bin/ directory. Read common configuration files. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/68e2ad6b098b3a588a17bf4c969e4f13fc9d1a87" title="Revision 68e2ad6b">Revision 68e2ad6b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-11" title="01/11/2013 03:29 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-iso: moved iso/ under DEVBOX_LIB path. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-iso: moved iso/ under DEVBOX_LIB path. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/7b9fedc67a8311574d6ba623134cda71c2983907" title="Revision 7b9fedc6">Revision 7b9fedc6</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-11" title="01/11/2013 04:43 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Unified mock yum.conf file for both ISO and RPM scripts. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>Unified mock yum.conf file for both ISO and RPM scripts. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/bc9fa9e16c412437a639e55705e0363a6ffa4880" title="Revision bc9fa9e1">Revision bc9fa9e1</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-11" title="01/11/2013 04:57 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: define default RELNB if last tag is on HEAD. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: define default RELNB if last tag is on HEAD. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/57bcef53e41344676c547045a0422efb0fb60904" title="Revision 57bcef53">Revision 57bcef53</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-11" title="01/11/2013 05:59 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>common.sh: added missing file. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>common.sh: added missing file. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/362367e45209df665e0ef3ba25e186429fa376c0" title="Revision 362367e4">Revision 362367e4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-11" title="01/11/2013 06:00 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Moved yum repo configuration to nethesis.repo. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>Moved yum repo configuration to nethesis.repo. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/25a4a14f70be2f47707ce84d014816d94e2695c3" title="Revision 25a4a14f">Revision 25a4a14f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-11" title="01/11/2013 06:19 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>specfile: fixed some dependencies. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>specfile: fixed some dependencies. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/9c8c4fa09dc17343b530890bc2459385843c9317" title="Revision 9c8c4fa0">Revision 9c8c4fa0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-11" title="01/11/2013 06:40 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
+        <p>build-rpm: fixed repository.mk. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/b299e54531babe4391f51df3d3999403ff69939a" title="Revision b299e545">Revision b299e545</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-11" title="01/11/2013 06:46 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>.spec file: added git requirement. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>.spec file: added git requirement. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/25c6e90e274e02df4a4dd12f6c6a5d394d9e5909" title="Revision 25c6e90e">Revision 25c6e90e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 12:33 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>rpm.mk: fixed "scmupdate" target to execute git pull BEFORE checking if specfile is expired. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>rpm.mk: fixed "scmupdate" target to execute git pull BEFORE checking if specfile is expired. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/f04200ad2411de1ccf5b36844ce7df2369661337" title="Revision f04200ad">Revision f04200ad</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 12:57 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: make scmupdate target in a separate process. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: make scmupdate target in a separate process. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/e99a4c7df5650516b14d77978adfcad97e75fc40" title="Revision e99a4c7d">Revision e99a4c7d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 01:08 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: clean target log when '-c' flag is enabled. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: clean target log when '-c' flag is enabled. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/7d17eb2770f150cef45988b999d2039af9f63892" title="Revision 7d17eb27">Revision 7d17eb27</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 02:37 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: moved again "scmupdate" logic in rpm.mk. Target SCM_DIR is touched with latest git log timestamp. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: moved again "scmupdate" logic in rpm.mk. Target SCM_DIR is touched with latest git log timestamp. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/f375288ab296b38782865bc1bed29eb3710f6adb" title="Revision f375288a">Revision f375288a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 03:06 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-devbox-update event: added conf action. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>nethserver-devbox-update event: added conf action. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/14d7bb9aeec89b7e706dcff9104ca7dfac5f3496" title="Revision 14d7bb9a">Revision 14d7bb9a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 04:26 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Added missing createlinks script.. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>Added missing createlinks script.. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/c3b16c5f011126ac9ee9cdf75a2d71abdfc880e8" title="Revision c3b16c5f">Revision c3b16c5f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 04:27 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: added scm_update function. Removed from rpm.mk. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: added scm_update function. Removed from rpm.mk. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/44cf8eac08df3b2da91938e7faee43c39538d337" title="Revision 44cf8eac">Revision 44cf8eac</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 04:30 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: fixed SCM_DIR variable bash syntax. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: fixed SCM_DIR variable bash syntax. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/ae821a38652889111a5cd0b9e2cd89339dbc6c03" title="Revision ae821a38">Revision ae821a38</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 04:52 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: show last change timestamp. Refs  <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: show last change timestamp. Refs  <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/946319cb30f7b19fe156e04476df24a67fad8672" title="Revision 946319cb">Revision 946319cb</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 05:01 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-devbox-update event: added initialize-default-database and *-conf actions. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>nethserver-devbox-update event: added initialize-default-database and *-conf actions. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/2be437b2f9f7b94920021da367a715babda06237" title="Revision 2be437b2">Revision 2be437b2</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-14" title="01/14/2013 05:40 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-devbox.spec.in (%changelog): Initial version. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>nethserver-devbox.spec.in (%changelog): Initial version. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/f6bc3d1cbe8aa645313f231eafdccc4328a5053c" title="Revision f6bc3d1c">Revision f6bc3d1c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-15" title="01/14/2013 07:04 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>build-rpm: added space separator to fix multi-package runs. Refs <a href="1611.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
+        <p>build-rpm: added space separator to fix multi-package runs. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/863ce85b643b05520165882a016dfc9593fb0899" title="Revision 863ce85b">Revision 863ce85b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-16" title="01/16/2013 12:15 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
+        <p>repository.mk: removed chgrp and chmod invokations. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/d32c89f43d130fceed64c6e1892545bf20eda4df" title="Revision d32c89f4">Revision d32c89f4</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-01-16" title="01/16/2013 12:24 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
+        <p>config.sample,repository.mk: remove unused REPOGROUP variable. Refs <a href="/issues/1611" class="issue tracker-4 status-5 priority-4 priority-default closed" title="nethserver-devbox: development automation scripts (CLOSED)">#1611</a></p>
     </div>
     </div>
 
@@ -249,11 +361,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <h3>History</h3>
   <div id="change-4152" class="journal has-details">
     <div id="note-1">
-    <h4><a href="1611.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1611#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-16" title="01/16/2013 11:50 AM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Description</strong> updated (<a href="../journals/diff/4152%3Fdetail_id=5473.html" title="View differences">diff</a>)</li>
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a href="/journals/diff/4152?detail_id=5473" title="View differences">diff</a>)</li>
        <li><strong>Due date</strong> set to <i>01/16/2013</i></li>
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>100</i></li>
@@ -264,10 +377,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-4268" class="journal has-details">
     <div id="note-2">
-    <h4><a href="1611.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1611#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-25" title="01/25/2013 06:56 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Project</strong> changed from <i>NethServer 6</i> to <i>92</i></li>
     </ul>
     
@@ -276,13 +390,14 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
   <div id="change-4291" class="journal has-notes has-details">
     <div id="note-3">
-    <h4><a href="1611.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1611#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-28" title="01/28/2013 09:25 AM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Project</strong> changed from <i>92</i> to <i>NethServer 6</i></li>
     </ul>
-    <div class="wiki" id="journal-4291-notes"><p>Task <a href="1076.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="DBF05 (CLOSED)">#1076</a>: DBF05<br />Task <a href="1078.html" class="issue tracker-4 status-5 priority-5 priority-high3 closed" title="Prepare release media for NSA1 (CLOSED)">#1078</a>: Prepare release media for NSA1<br />Task <a href="1079.html" class="issue tracker-4 status-5 priority-5 priority-high3 closed" title="Prepare installation documentation for NSA1 (CLOSED)">#1079</a>: Prepare installation documentation for NSA1</p></div>
+    <div class="wiki" id="journal-4291-notes"><p>Task <a href="/issues/1076" class="issue tracker-4 status-5 priority-4 priority-default closed" title="DBF05 (CLOSED)">#1076</a>: DBF05<br />Task <a href="/issues/1078" class="issue tracker-4 status-5 priority-5 priority-high3 closed" title="Prepare release media for NSA1 (CLOSED)">#1078</a>: Prepare release media for NSA1<br />Task <a href="/issues/1079" class="issue tracker-4 status-5 priority-5 priority-high3 closed" title="Prepare installation documentation for NSA1 (CLOSED)">#1079</a>: Prepare installation documentation for NSA1</p></div>
     </div>
   </div>
   
@@ -303,7 +418,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1611.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1611.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -324,7 +441,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

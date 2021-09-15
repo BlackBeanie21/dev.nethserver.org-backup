@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1870.atom" rel="alternate" title="NethServer 6 - Feature #1870: Full automatic package install/upgrade/uninstall support" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Full automatic package install/upgrade/uninstall support</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-12" title="04/12/2013 05:04 PM">over 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-05-08" title="05/08/2013 12:00 PM">about 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">04/15/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">04/16/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">-</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/153.html">v6.4-beta1</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">04/15/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">04/16/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">-</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/153">v6.4-beta1</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14"></td>
@@ -87,7 +136,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
   <p><strong>Description</strong></p>
   <div class="wiki">
-  <p>As it came out of <a href="http://dev.nethserver.o/projects/nethserver/wiki/DBF07" class="wiki-page new">DBF07</a>, we need an automatized way to cope with packages installation, upgrading, uninstallation.</p>
+  <p>As it came out of <a href="/projects/nethserver/wiki/DBF07" class="wiki-page new">DBF07</a>, we need an automatized way to cope with packages installation, upgrading, uninstallation.</p>
 
 
 The goals are
@@ -102,7 +151,7 @@ The goals are
   </div>
 </div>
 <div class="attachments">
-<p><a href="../attachments/download/183/updated.txt" class="icon icon-attachment">updated.txt</a>    <a href="../attachments/183/updated.txt.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a>
+<p><a href="/attachments/download/183/updated.txt" class="icon icon-attachment">updated.txt</a>    <a href="/attachments/183/updated.txt"><img alt="Magnifier" src="/images/magnifier.png?1403512056" /></a>
    - packages update versions
   <span class="size">(4.09 KB)</span>
     <span class="author">Davide Principi, 04/17/2013 12:09 PM</span>
@@ -118,7 +167,7 @@ The goals are
   
 </div>
 <p><strong>Subtasks</strong></p>
-<form><table class="list issues"><tr class="issue issue-1871 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1871" /></td><td class="subject"><a href="1871.html" class="issue tracker-2 status-5 priority-4 priority-default closed child">Feature #1871</a>: Signal update events from yum posttrans hook </td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr><tr class="issue issue-1872 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1872" /></td><td class="subject"><a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #1872</a>: Remove signal-event calls in .spec.in files</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr><tr class="issue issue-1873 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1873" /></td><td class="subject"><a href="1873.html" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #1873</a>: Base: implement runlevel-adjust event</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr><tr class="issue issue-1874 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1874" /></td><td class="subject"><a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #1874</a>: Remove manage_add and manage_remove calls</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr><tr class="issue issue-1875 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1875" /></td><td class="subject"><a href="1875.html" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #1875</a>: Base: implement firewall-adjust event</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr></table></form>
+<form><table class="list issues"><tr class="issue issue-1871 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1871" /></td><td class="subject"><a href="/issues/1871" class="issue tracker-2 status-5 priority-4 priority-default closed child">Feature #1871</a>: Signal update events from yum posttrans hook </td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr><tr class="issue issue-1872 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1872" /></td><td class="subject"><a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #1872</a>: Remove signal-event calls in .spec.in files</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr><tr class="issue issue-1873 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1873" /></td><td class="subject"><a href="/issues/1873" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #1873</a>: Base: implement runlevel-adjust event</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr><tr class="issue issue-1874 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1874" /></td><td class="subject"><a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #1874</a>: Remove manage_add and manage_remove calls</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr><tr class="issue issue-1875 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1875" /></td><td class="subject"><a href="/issues/1875" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #1875</a>: Base: implement firewall-adjust event</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr></table></form>
 </div>
 
 
@@ -127,228 +176,318 @@ The goals are
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-openssh/revisions/508d3e6c9065366289b3db926a56b0e45486651e" title="Revision 508d3e6c">Revision 508d3e6c</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-12" title="04/12/2013 06:27 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: remove firewall-adjust and runlevel-adjust actions. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>createlinks: remove firewall-adjust and runlevel-adjust actions. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-smartd/revisions/e17604a8e85c33c2b357594ee2deae6801a772cc" title="Revision e17604a8">Revision e17604a8</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-12" title="04/12/2013 06:30 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: remove firewall-adjust and runlevel-adjust actions. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>createlinks: remove firewall-adjust and runlevel-adjust actions. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ntp/revisions/206a9e7955f27dc4e96c656a6693c4adbda35bcc" title="Revision 206a9e79">Revision 206a9e79</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-12" title="04/12/2013 06:31 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: remove runlevel-adjust action. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>createlinks: remove runlevel-adjust action. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-collectd/revisions/fc846efd3ce9ff4c3dd9f80ac3f5a9bbe71098bf" title="Revision fc846efd">Revision fc846efd</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 10:16 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/a4628d7d6c83f2e86f92a68d0324c70f9dc4f995" title="Revision a4628d7d">Revision a4628d7d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 10:31 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Service.pm: remove managedBy implementation. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>Service.pm: remove managedBy implementation. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-hylafax/revisions/72816104e6c113640fa0bbab86ebcd1c2ed906c0" title="Revision 72816104">Revision 72816104</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 10:38 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-iaxmodem/revisions/c5e0b3d5678bd33d6095fe128a105d7a0d4c1ca0" title="Revision c5e0b3d5">Revision c5e0b3d5</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 10:40 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-php/revisions/55202cce2859a2df01f925b060da1d67d40c4f05" title="Revision 55202cce">Revision 55202cce</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 11:22 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: remove queue calls. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>spec: remove queue calls. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/0d4dfe4da5ff1e0a07869dac2f5f7463ba93a6f0" title="Revision 0d4dfe4d">Revision 0d4dfe4d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 11:23 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: remove queue calls. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>spec: remove queue calls. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/6d53e01f608f2eb38087adb0b21a87b523082785" title="Revision 6d53e01f">Revision 6d53e01f</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 11:45 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: remove firewall-adjust and runlevel-adjust calls. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>createlinks: remove firewall-adjust and runlevel-adjust calls. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/8cbd92c71c9a5bf5588d3139c839f5faa16864f9" title="Revision 8cbd92c7">Revision 8cbd92c7</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 03:47 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, events: create runlevel-adjust and firewall-adjust event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1871.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Signal update events from yum posttrans hook  (CLOSED)">#1871</a></p>
+        <p>createlinks, events: create runlevel-adjust and firewall-adjust event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1871" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Signal update events from yum posttrans hook  (CLOSED)">#1871</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-antivirus/revisions/1ce52192c49d669fe7244deb514572d3dec208c0" title="Revision 1ce52192">Revision 1ce52192</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 04:10 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, spec: remove manage_add/remove calls. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, spec: remove manage_add/remove calls. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-cups/revisions/c593238eff9310eb4aa871503139544fdd3cefbe" title="Revision c593238e">Revision c593238e</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 04:19 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/db386be35340b68030fe5765a9eb70489a2217d5" title="Revision db386be3">Revision db386be3</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 04:23 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/dc9eb06fdaab983943c5d61ef2468ef893196cb4" title="Revision dc9eb06f">Revision dc9eb06f</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 04:31 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-dnsmasq-uninstall: remove uninstall action. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>nethserver-dnsmasq-uninstall: remove uninstall action. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd/revisions/0cc06eaf5a799de798e5e17faf0fbe964abd5fac" title="Revision 0cc06eaf">Revision 0cc06eaf</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 04:36 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-memcached/revisions/d4a1c686e92c343fd77acf632dd1f990e53fa15d" title="Revision d4a1c686">Revision d4a1c686</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 04:42 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mysql/revisions/e59c965244fbf4c421845a92f1d2455d8a0ef27c" title="Revision e59c9652">Revision e59c9652</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 04:44 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-shorewall/revisions/6aa2e535f8645b4ba84b942b4bff5a11b37464e4" title="Revision 6aa2e535">Revision 6aa2e535</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 04:47 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-sogo/revisions/9a0bf3c246141c790580d40566c996435db53662" title="Revision 9a0bf3c2">Revision 9a0bf3c2</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 04:49 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-sogo-thunderbird/revisions/99e4930401961589fcccdddce43699d41bfdf13a" title="Revision 99e49304">Revision 99e49304</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 04:51 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/f91ed5d1b3ce3d91d45bf1d0744754cc7472c71c" title="Revision f91ed5d1">Revision f91ed5d1</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 05:01 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-dev/revisions/dd82836752dae832a5682b6185e72a3f9f350dec" title="Revision dd828367">Revision dd828367</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 05:32 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/013b33502b048533aca1aceb8d3b0489c8e47a38" title="Revision 013b3350">Revision 013b3350</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 05:41 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: removed runlevel-adjust and firewall-adjust calls. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>createlinks: removed runlevel-adjust and firewall-adjust calls. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/a880edd1f86d3ecde8e05a13c26071674c38737a" title="Revision a880edd1">Revision a880edd1</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 05:48 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/cded43203ce0cf4de19a6aa15e5c3c42af6dbf62" title="Revision cded4320">Revision cded4320</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 06:40 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-postmap-update action: expand postfix/postmap template to obtain the list of databases to expand. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>nethserver-mail-postmap-update action: expand postfix/postmap template to obtain the list of databases to expand. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/0672903c77346fb8739754c4ceb63bda1d02bd8e" title="Revision 0672903c">Revision 0672903c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 06:46 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: removed runlevel-adjust and firewall-adjust calls. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>createlinks: removed runlevel-adjust and firewall-adjust calls. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/621e898fb8fe0fe54ca92ca05c2b76460c4b3d6c" title="Revision 621e898f">Revision 621e898f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 06:48 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>postfix/postmap template: add required databases for nethserver-mail-postmap-update action. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>postfix/postmap template: add required databases for nethserver-mail-postmap-update action. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-filter/revisions/8a586e2be86cd4aa3796c2e2b833b86ba2b6dc3a" title="Revision 8a586e2b">Revision 8a586e2b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 06:50 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: removed runlevel-adjust and firewall-adjust calls. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>createlinks: removed runlevel-adjust and firewall-adjust calls. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/04b998984a6a9d7a6de1062cfccbba2cc722d245" title="Revision 04b99898">Revision 04b99898</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-16" title="04/16/2013 10:36 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions, spec: remove manage_add/remove calls, remove uninstall event. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/f84aeaf0f136f3dc507fb3d4a4ebef80c176b53f" title="Revision f84aeaf0">Revision f84aeaf0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-16" title="04/16/2013 10:54 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>amavisd default props moved to nethserver-mail-filter. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>amavisd default props moved to nethserver-mail-filter. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/010b8cf7a12331a6b00104c85c2920bfd62889b4" title="Revision 010b8cf7">Revision 010b8cf7</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-16" title="04/16/2013 11:03 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks, actions: remove manage_add/remove calls. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="1872.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="1874.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
+        <p>createlinks, actions: remove manage_add/remove calls. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a> <a href="/issues/1872" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove signal-event calls in .spec.in files (CLOSED)">#1872</a> <a href="/issues/1874" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Remove manage_add and manage_remove calls (CLOSED)">#1874</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/861a6fd82301b4c457124b25bad1cfb0d59654d1" title="Revision 861a6fd8">Revision 861a6fd8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-16" title="04/16/2013 11:35 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/amavisd.conf template: default content inspection type is "amavisd-after-queue" with all checks disabled. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>/etc/amavisd.conf template: default content inspection type is "amavisd-after-queue" with all checks disabled. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/320f865a6d7e382cb7be2b8bb449f3833f30d361" title="Revision 320f865a">Revision 320f865a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-16" title="04/16/2013 11:36 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/postfix/master.cf template: default content inspection type is "amavisd-after-queue", connection limits are set only for type "amavisd-before-queue". Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>/etc/postfix/master.cf template: default content inspection type is "amavisd-after-queue", connection limits are set only for type "amavisd-before-queue". Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-filter/revisions/d5833ae31caaf4921859a9aff515cc9f9b0dfb66" title="Revision d5833ae3">Revision d5833ae3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-16" title="04/16/2013 11:39 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/postfix/master.cf template: enable amavisd on queued messages. Refs  <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>/etc/postfix/master.cf template: enable amavisd on queued messages. Refs  <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/f6fb31d0b06347818a5886cb76898bc796c1e451" title="Revision f6fb31d0">Revision f6fb31d0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-16" title="04/16/2013 12:22 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/postfix/master.cf template: moved 30amavisd-before-queue fragment to nethserver-mail-filter. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>/postfix/master.cf template: moved 30amavisd-before-queue fragment to nethserver-mail-filter. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-filter/revisions/4777a54e41711adb67b026926673f6c663ffd1a4" title="Revision 4777a54e">Revision 4777a54e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-16" title="04/16/2013 12:23 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/postfix/master.cf template:  Override the default content inspection type. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>/etc/postfix/master.cf template:  Override the default content inspection type. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-smartd/revisions/1b504e77148090c4972c8e1989eb728e02f8999c" title="Revision 1b504e77">Revision 1b504e77</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-16" title="04/16/2013 12:34 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-smartd-conf: remove nethserver-smartd-conf action. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>nethserver-smartd-conf: remove nethserver-smartd-conf action. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/cfc270c29b92c0a3a9ce104e82b21edb814d7fbc" title="Revision cfc270c2">Revision cfc270c2</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-17" title="04/17/2013 11:04 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-postmap-update action: filter out db file if source does not exist. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>nethserver-mail-postmap-update action: filter out db file if source does not exist. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/7b9d6c7288e5f68e1b8978701c1bd539a778bf5a" title="Revision 7b9d6c72">Revision 7b9d6c72</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-17" title="04/17/2013 11:08 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-postmap-update action: warn if source db file does not exist. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>nethserver-mail-postmap-update action: warn if source db file does not exist. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/89033b9346d5116d91d0006007a7614a65cc24c8" title="Revision 89033b93">Revision 89033b93</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-06" title="05/06/2013 11:56 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba-group-sync action: check if samba idmap backend is functional before going on, and don't fail if a unix group does not exist. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>nethserver-samba-group-sync action: check if samba idmap backend is functional before going on, and don't fail if a unix group does not exist. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/990ab1dc488c7942b9552be09b5efb86c11c79ce" title="Revision 990ab1dc">Revision 990ab1dc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-06" title="05/06/2013 03:37 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>*.spec.in: require nethserver-directory explicitly. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>*.spec.in: require nethserver-directory explicitly. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/4b4736c0f1a69c3bdeaaf2ea5f94380f1ebe93fa" title="Revision 4b4736c0">Revision 4b4736c0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-06" title="05/06/2013 07:44 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>system-adjust action: import symbols from nethserver yum plugin. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>system-adjust action: import symbols from nethserver yum plugin. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-yum/revisions/35a1bda4e651f1d2753a87d47b33572aff79334e" title="Revision 35a1bda4">Revision 35a1bda4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-07" title="05/06/2013 08:01 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver.py (posttrans_hook): ensure package list is sorted respecting RPM dependencies. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>nethserver.py (posttrans_hook): ensure package list is sorted respecting RPM dependencies. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-smartd/revisions/ddaac614be25bfa78f389ce461f05d47ce9f656e" title="Revision ddaac614">Revision ddaac614</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-07-23" title="07/23/2013 12:58 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-smartd-uninstall action: removed - unused. Refs <a href="1870.html" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
+        <p>nethserver-smartd-uninstall action: removed - unused. Refs <a href="/issues/1870" class="issue tracker-2 status-5 priority-4 priority-default closed parent" title="Full automatic package install/upgrade/uninstall support (CLOSED)">#1870</a></p>
     </div>
     </div>
 
@@ -358,10 +497,11 @@ The goals are
 <h3>History</h3>
   <div id="change-5645" class="journal has-details">
     <div id="note-1">
-    <h4><a href="1870.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1870#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-15" title="04/15/2013 03:53 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>ON_DEV</i></li>
     </ul>
     
@@ -370,10 +510,11 @@ The goals are
   
   <div id="change-5667" class="journal has-details">
     <div id="note-2">
-    <h4><a href="1870.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1870#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-16" title="04/16/2013 06:15 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>80</i></li>
@@ -384,24 +525,26 @@ The goals are
   
   <div id="change-5669" class="journal has-notes has-details">
     <div id="note-3">
-    <h4><a href="1870.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1870#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-17" title="04/17/2013 12:09 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>File</strong> <a href="../attachments/download/183/updated.txt">updated.txt</a><a href="../attachments/183/updated.txt.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a> added</li>
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/183/updated.txt">updated.txt</a><a href="/attachments/183/updated.txt"><img alt="Magnifier" src="/images/magnifier.png?1403512056" /></a> added</li>
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>80</i> to <i>100</i></li>
     </ul>
-    <div class="wiki" id="journal-5669-notes"><p>The <a href="http://dev.nethserver.o/projects/nethserver/wiki/Upgrade-script-64b1#v64a2" class="wiki-page new">upgrade script</a> ran successfully! See attached file for RPMs transaction details.</p></div>
+    <div class="wiki" id="journal-5669-notes"><p>The <a href="/projects/nethserver/wiki/Upgrade-script-64b1#v64a2" class="wiki-page new">upgrade script</a> ran successfully! See attached file for RPMs transaction details.</p></div>
     </div>
   </div>
   
   <div id="change-5759" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="1870.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/1870#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-03" title="05/03/2013 09:32 AM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_DEV</i></li>
        <li><strong>% Done</strong> changed from <i>100</i> to <i>30</i></li>
     </ul>
@@ -420,8 +563,9 @@ The goals are
   
   <div id="change-5760" class="journal has-notes">
     <div id="note-5">
-    <h4><a href="1870.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/1870#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2013-05-03" title="05/03/2013 04:24 PM">over 8 years</a> ago</h4>
 
     <div class="wiki" id="journal-5760-notes"><blockquote>
 
@@ -436,10 +580,11 @@ The goals are
   
   <div id="change-5773" class="journal has-notes has-details">
     <div id="note-6">
-    <h4><a href="1870.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/1870#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-07" title="05/06/2013 08:23 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>80</i></li>
     </ul>
@@ -456,10 +601,11 @@ The goals are
   
   <div id="change-5774" class="journal has-details">
     <div id="note-7">
-    <h4><a href="1870.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/1870#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-07" title="05/07/2013 06:08 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>80</i> to <i>100</i></li>
     </ul>
@@ -469,10 +615,11 @@ The goals are
   
   <div id="change-5855" class="journal has-details">
     <div id="note-8">
-    <h4><a href="1870.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/1870#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-08" title="05/08/2013 12:00 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>CLOSED</i></li>
     </ul>
     
@@ -496,7 +643,9 @@ The goals are
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1870.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1870.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -517,7 +666,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

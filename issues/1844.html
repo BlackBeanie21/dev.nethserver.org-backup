@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1844.atom" rel="alternate" title="NethServer 6 - Bug #1844: Address extension +spam propagated during message forwarding" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,16 +114,18 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Address extension +spam propagated during message forwarding</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-04" title="04/04/2013 11:46 AM">over 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-05-08" title="05/08/2013 12:00 PM">about 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">04/04/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">04/05/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-mail-server</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/153.html">v6.4-beta1</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">04/04/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">04/05/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-mail-server</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/153">v6.4-beta1</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_15">Security class:</th><td class="cf_15"></td>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 </tr>
 <tr>
-	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="../versions/144.html">v6.4-alpha2</a></td>
+	<th class="cf_1">Affected version:</th><td class="cf_1"><a href="/versions/144">v6.4-alpha2</a></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14"></td>
 </tr>
 
@@ -117,7 +166,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
 </div>
 <p><strong>Subtasks</strong></p>
-<form><table class="list issues"><tr class="issue issue-1846 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1846" /></td><td class="subject"><a href="1846.html" class="issue tracker-2 status-5 priority-4 priority-default closed child">Feature #1846</a>: Mail-server: Support .forward files in user&#x27;s home directory</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr></table></form>
+<form><table class="list issues"><tr class="issue issue-1846 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1846" /></td><td class="subject"><a href="/issues/1846" class="issue tracker-2 status-5 priority-4 priority-default closed child">Feature #1846</a>: Mail-server: Support .forward files in user&#x27;s home directory</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr></table></form>
 </div>
 
 <hr />
@@ -135,7 +184,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="1840.html" class="issue tracker-1 status-5 priority-5 priority-high3 closed">Bug #1840</a>: User mail forwarding not honoured in group delivery
+    <a href="/issues/1840" class="issue tracker-1 status-5 priority-5 priority-high3 closed">Bug #1840</a>: User mail forwarding not honoured in group delivery
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">04/03/2013</td>
@@ -148,7 +197,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="1857.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #1857</a>: Ignored delivery type &quot;copy&quot; when recipient is group@host...
+    <a href="/issues/1857" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #1857</a>: Ignored delivery type &quot;copy&quot; when recipient is group@host...
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">04/10/2013</td>
@@ -158,7 +207,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/1844/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/1844/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -175,7 +224,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="1844.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -198,43 +247,59 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/ce59a6d093a55fe98870676ef03d4359bd2248b9" title="Revision ce59a6d0">Revision ce59a6d0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-04" title="04/04/2013 04:29 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>NethServer::MailServer (getVirtualMailboxDomain): removed vmail.nh internal domain suffix. Refs <a href="1844.html" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
+        <p>NethServer::MailServer (getVirtualMailboxDomain): removed vmail.nh internal domain suffix. Refs <a href="/issues/1844" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/99b34bd331cf8dacb0867412ef4ef5b4fe14ccac" title="Revision 99b34bd3">Revision 99b34bd3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-04" title="04/04/2013 04:30 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>Removed NethServer::MailServer::getVirtualMailboxDomain() method calls. Refs <a href="1844.html" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
+        <p>Removed NethServer::MailServer::getVirtualMailboxDomain() method calls. Refs <a href="/issues/1844" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/fa933154fb2f789652a88df3eee13e88913f196a" title="Revision fa933154">Revision fa933154</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-04" title="04/04/2013 06:03 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>NethServer::MailServer (getMailboxes): removed obsolete function. Refs <a href="1844.html" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
+        <p>NethServer::MailServer (getMailboxes): removed obsolete function. Refs <a href="/issues/1844" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/f004b7b43fbe4f27f4b61c2ae99d14cfe4e00257" title="Revision f004b7b4">Revision f004b7b4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-05" title="04/05/2013 10:58 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>NethServer::MailServer (getMailboxAliases): Expand virtual addresses to a local account name  Mail forwards must be implemented through local(8) daemon. Refs <a href="1844.html" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
+        <p>NethServer::MailServer (getMailboxAliases): Expand virtual addresses to a local account name  Mail forwards must be implemented through local(8) daemon. Refs <a href="/issues/1844" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/6415a68fc0acae497ba07edacefd5af6b04a30da" title="Revision 6415a68f">Revision 6415a68f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-05" title="04/05/2013 11:37 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/postfix/aliases template: 30forwards fragment delivers messages to aliases defined by user's MailForward* props. Refs <a href="1844.html" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
+        <p>/etc/postfix/aliases template: 30forwards fragment delivers messages to aliases defined by user's MailForward* props. Refs <a href="/issues/1844" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-filter/revisions/6462ceb92f5609b9e3eb4c73f3f306e9aa7a9a47" title="Revision 6462ceb9">Revision 6462ceb9</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-05" title="04/05/2013 11:40 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/postfix/virtual template (15amavis_accounts): refactored code using global $mailServer variable. Refs <a href="1844.html" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
+        <p>/etc/postfix/virtual template (15amavis_accounts): refactored code using global $mailServer variable. Refs <a href="/issues/1844" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/81fe3d4d8ac03ecbe0a8d245afdb99bd4080ec87" title="Revision 81fe3d4d">Revision 81fe3d4d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-05" title="04/05/2013 12:15 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>NethServer::MailServer (getMailboxForwards): fixed MailForwardKeepMessageCopy check logic. Refs <a href="1844.html" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
+        <p>NethServer::MailServer (getMailboxForwards): fixed MailForwardKeepMessageCopy check logic. Refs <a href="/issues/1844" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/4229929e7baec57db785cd7870b34fe81e0c73ec" title="Revision 4229929e">Revision 4229929e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-08" title="04/08/2013 12:28 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>password-expired/recipients template (20vmail_delivery): use getAccountMailAddresses() method to obtain a full email address. Refs <a href="1073.html" class="issue tracker-4 status-5 priority-4 priority-default closed" title="warnpassexpire script: conform to user state machine (CLOSED)">#1073</a>, <a href="1844.html" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
+        <p>password-expired/recipients template (20vmail_delivery): use getAccountMailAddresses() method to obtain a full email address. Refs <a href="/issues/1073" class="issue tracker-4 status-5 priority-4 priority-default closed" title="warnpassexpire script: conform to user state machine (CLOSED)">#1073</a>, <a href="/issues/1844" class="issue tracker-1 status-5 priority-4 priority-default closed parent" title="Address extension +spam propagated during message forwarding (CLOSED)">#1844</a></p>
     </div>
     </div>
 
@@ -244,8 +309,9 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-5534" class="journal has-notes">
     <div id="note-1">
-    <h4><a href="1844.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1844#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-04" title="04/04/2013 11:48 AM">over 8 years</a> ago</h4>
 
     <div class="wiki" id="journal-5534-notes"><p>When a message is classified as SPAM the <code>+spam</code> extension is appended to the recipient's local address part.</p>
 
@@ -259,10 +325,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-5535" class="journal has-details">
     <div id="note-2">
-    <h4><a href="1844.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1844#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-04" title="04/04/2013 12:10 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Due date</strong> set to <i>04/04/2013</i></li>
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>ON_DEV</i></li>
        <li><strong>Start date</strong> set to <i>04/04/2013</i></li>
@@ -274,10 +341,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-5542" class="journal has-details">
     <div id="note-3">
-    <h4><a href="1844.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1844#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-05" title="04/05/2013 12:06 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>% Done</strong> changed from <i>20</i> to <i>80</i></li>
        <li><strong>Parent task</strong> set to <i>#1846</i></li>
     </ul>
@@ -287,10 +355,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-5545" class="journal has-details">
     <div id="note-4">
-    <h4><a href="1844.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/1844#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-05" title="04/05/2013 12:09 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Parent task</strong> deleted (<del><i>#1846</i></del>)</li>
     </ul>
     
@@ -299,23 +368,25 @@ setPredecessorFieldsVisibility();
   
   <div id="change-5546" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="1844.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/1844#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-05" title="04/05/2013 12:11 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>% Done</strong> changed from <i>80</i> to <i>0</i></li>
        <li><strong>Estimated time</strong> deleted (<del><i>2.00</i></del>)</li>
     </ul>
-    <div class="wiki" id="journal-5546-notes"><p>Fixing this bug by implementing delivery through <code>local(8)</code> daemon leaded to <code>.forward</code> files support. See subtask <a href="1846.html" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Mail-server: Support .forward files in user&#x27;s home directory (CLOSED)">#1846</a>.</p></div>
+    <div class="wiki" id="journal-5546-notes"><p>Fixing this bug by implementing delivery through <code>local(8)</code> daemon leaded to <code>.forward</code> files support. See subtask <a href="/issues/1846" class="issue tracker-2 status-5 priority-4 priority-default closed child" title="Mail-server: Support .forward files in user&#x27;s home directory (CLOSED)">#1846</a>.</p></div>
     </div>
   </div>
   
   <div id="change-5549" class="journal has-details">
     <div id="note-6">
-    <h4><a href="1844.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/1844#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-05" title="04/05/2013 12:22 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
     </ul>
     
@@ -324,10 +395,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-5841" class="journal has-details">
     <div id="note-7">
-    <h4><a href="1844.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/1844#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-08" title="05/08/2013 12:00 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>CLOSED</i></li>
     </ul>
     
@@ -351,7 +423,9 @@ setPredecessorFieldsVisibility();
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1844.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1844.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -372,7 +446,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1087.atom" rel="alternate" title="NethServer 6 - Feature #1087: /etc/localnetworks Local networks file" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>/etc/localnetworks Local networks file</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-02" title="05/02/2012 09:14 AM">over 9 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-02-01" title="02/01/2013 09:09 AM">over 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">05/02/2012</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/103.html">DEV103</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">05/02/2012</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-base</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/103">DEV103</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14"></td>
@@ -115,7 +164,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="868.html" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #868</a>: hosts.{allow,deny} cleanup
+    <a href="/issues/868" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #868</a>: hosts.{allow,deny} cleanup
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">03/13/2012</td>
@@ -128,7 +177,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2785.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2785</a>: Drop TCP wrappers hosts.allow hosts.deny templates
+    <a href="/issues/2785" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2785</a>: Drop TCP wrappers hosts.allow hosts.deny templates
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -141,7 +190,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Blocks
     
     NethServer 6 - 
-    <a href="971.html" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #971</a>: Ntp Private/Public access
+    <a href="/issues/971" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #971</a>: Ntp Private/Public access
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">04/02/2012</td>
@@ -151,7 +200,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/1087/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/1087/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -168,7 +217,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="1087.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -191,33 +240,45 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/4d37c4446d44e8d4e7a220c5d3c8cd1bb42c9866" title="Revision 4d37c444">Revision 4d37c444</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-02" title="05/02/2012 10:06 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>e-smith templates (/etc/localnetworks): expanded NetworksDB->local_access_spec() list. Refs <a href="1087.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a> - local_access_spec</p>
+        <p>e-smith templates (/etc/localnetworks): expanded NetworksDB->local_access_spec() list. Refs <a href="/issues/1087" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a> - local_access_spec</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/6e029d53c84552d46e1c798cbd06effc35a1aa7b" title="Revision 6e029d53">Revision 6e029d53</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-02" title="05/02/2012 10:10 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>network-{create,delete} events: expanded /etc/localnetworks template. Closes <a href="1087.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a></p>
+        <p>network-{create,delete} events: expanded /etc/localnetworks template. Closes <a href="/issues/1087" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-openssh/revisions/49b59f9ab9c9ad625a48b03c91797811fdbd1eac" title="Revision 49b59f9a">Revision 49b59f9a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-02" title="05/02/2012 10:36 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>Moved into project:nethserver-base. Refs <a href="1087.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a> - /etc/localnetworks Local networks file</p>
+        <p>Moved into project:nethserver-base. Refs <a href="/issues/1087" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a> - /etc/localnetworks Local networks file</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/955b80ca76c46615914c5bfef88a03c24b8e1b3c" title="Revision 955b80ca">Revision 955b80ca</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-02" title="05/02/2012 10:38 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>hosts.{allow,deny} templates: expanded sshd configuration. Refs <a href="1087.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a> - /etc/localnetworks Local networks file</p>
+        <p>hosts.{allow,deny} templates: expanded sshd configuration. Refs <a href="/issues/1087" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a> - /etc/localnetworks Local networks file</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/fd8a74c8b043858f40d244c45069b74921ff94e6" title="Revision fd8a74c8">Revision fd8a74c8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-02" title="05/02/2012 10:43 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>hosts.{allow,deny} templates: refactored to <a href="1087.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a>, expanded on package -update event. Refs <a href="1087.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a> - /etc/localnetworks Local networks file</p>
+        <p>hosts.{allow,deny} templates: refactored to <a href="/issues/1087" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a>, expanded on package -update event. Refs <a href="/issues/1087" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a> - /etc/localnetworks Local networks file</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/9699f9a724bf14ef6a7030fedaa4ee6c42366470" title="Revision 9699f9a7">Revision 9699f9a7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-02" title="05/02/2012 11:11 AM">over 9 years</a> ago</span></p>
     <div class="wiki">
-        <p>Added /etc/localnetworks placeholder. Refs <a href="1087.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a> - /etc/localnetworks Local networks file</p>
+        <p>Added /etc/localnetworks placeholder. Refs <a href="/issues/1087" class="issue tracker-2 status-5 priority-4 priority-default closed" title="/etc/localnetworks Local networks file (CLOSED)">#1087</a> - /etc/localnetworks Local networks file</p>
     </div>
     </div>
 
@@ -227,10 +288,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-2520" class="journal has-details">
     <div id="note-1">
-    <h4><a href="1087.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1087#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-02" title="05/02/2012 09:33 AM">over 9 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Subject</strong> changed from <i>Local networks file</i> to <i>/etc/localnetworks Local networks file</i></li>
     </ul>
     
@@ -239,10 +301,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-2521" class="journal has-notes has-details">
     <div id="note-2">
-    <h4><a href="1087.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/1087#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2012-05-02" title="05/02/2012 10:11 AM">over 9 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>100</i></li>
     </ul>
@@ -252,10 +315,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-4396" class="journal has-details">
     <div id="note-3">
-    <h4><a href="1087.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/1087#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-01-31" title="01/31/2013 06:34 PM">over 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Project</strong> changed from <i>1</i> to <i>NethServer 6</i></li>
     </ul>
     
@@ -264,11 +328,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11497" class="journal has-details">
     <div id="note-5">
-    <h4><a href="1087.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/1087#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-01" title="07/01/2014 09:59 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2785.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2785</a>: Drop TCP wrappers hosts.allow hosts.deny templates</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2785" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2785</a>: Drop TCP wrappers hosts.allow hosts.deny templates</i> added</li>
     </ul>
     
     </div>
@@ -291,7 +356,9 @@ setPredecessorFieldsVisibility();
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1087.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1087.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -312,7 +379,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

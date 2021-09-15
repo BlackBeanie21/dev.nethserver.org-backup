@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2492.atom" rel="alternate" title="NethServer 6 - Feature #2492: Move admin user in LDAP DB" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Move admin user in LDAP DB</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-12-16" title="12/16/2013 12:58 PM">over 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-02-07" title="02/07/2014 06:22 PM">over 7 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">12/17/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">12/19/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-directory</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/183.html">v6.5-beta3</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">12/17/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">12/19/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-directory</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/183">v6.5-beta3</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -99,14 +148,14 @@ Pros:
 
 Cons:
 	<ul>
-	<li><code>admin</code> is not effectively present after installation. It comes with  <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-directory" class="wiki-page new">nethserver-directory</a>. </li>
+	<li><code>admin</code> is not effectively present after installation. It comes with  <a href="/projects/nethserver/wiki/Nethserver-directory" class="wiki-page new">nethserver-directory</a>. </li>
 		<li><code>server-manager</code> must be running with different credentials, some filesystem permissions issues must be solved</li>
 		<li>To access the server-manager an alias mechanism is needed.</li>
 	</ul>
   </div>
 </div>
 <div class="attachments">
-<p><a href="../attachments/download/246/upgrade-65b3.sh" class="icon icon-attachment">upgrade-65b3.sh</a>    <a href="../attachments/246/upgrade-65b3.sh.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a>
+<p><a href="/attachments/download/246/upgrade-65b3.sh" class="icon icon-attachment">upgrade-65b3.sh</a>    <a href="/attachments/246/upgrade-65b3.sh"><img alt="Magnifier" src="/images/magnifier.png?1403512056" /></a>
    - Final 6.5 beta3 upgrade script
   <span class="size">(1.13 KB)</span>
     <span class="author">Davide Principi, 02/05/2014 04:56 PM</span>
@@ -132,7 +181,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="2551.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2551</a>: Move httpd-admin web server logs
+    <a href="/issues/2551" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #2551</a>: Move httpd-admin web server logs
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">01/02/2014</td>
@@ -145,7 +194,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="2536.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2536</a>: Restore httpd-admin symlink
+    <a href="/issues/2536" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2536</a>: Restore httpd-admin symlink
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">01/02/2014</td>
@@ -158,7 +207,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="2499.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2499</a>: Override mail system /etc/aliases
+    <a href="/issues/2499" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2499</a>: Override mail system /etc/aliases
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">01/03/2014</td>
@@ -171,7 +220,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="2573.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2573</a>: Ibay contents inherit default owner
+    <a href="/issues/2573" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2573</a>: Ibay contents inherit default owner
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date">01/10/2014</td>
@@ -184,7 +233,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="2582.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2582</a>: Base: remove bootstrap-console
+    <a href="/issues/2582" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2582</a>: Base: remove bootstrap-console
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -197,7 +246,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="2291.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2291</a>: NUT: add option to enable mail notification
+    <a href="/issues/2291" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2291</a>: NUT: add option to enable mail notification
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -210,7 +259,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="2294.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2294</a>: IPSec: honor VPNClientAccess property
+    <a href="/issues/2294" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2294</a>: IPSec: honor VPNClientAccess property
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -223,7 +272,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="2647.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2647</a>: Send backup notification to root
+    <a href="/issues/2647" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2647</a>: Send backup notification to root
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -236,7 +285,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="2675.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2675</a>: Backup Notification to System administrator fails by default
+    <a href="/issues/2675" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2675</a>: Backup Notification to System administrator fails by default
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -249,7 +298,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="2733.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2733</a>: Domain Administrators rights not enforced by workstations
+    <a href="/issues/2733" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2733</a>: Domain Administrators rights not enforced by workstations
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -262,7 +311,7 @@ Cons:
     Related to
     
     NethServer 6 - 
-    <a href="3026.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #3026</a>: Differentiate root and admin users
+    <a href="/issues/3026" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #3026</a>: Differentiate root and admin users
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -275,7 +324,7 @@ Cons:
     Duplicated by
     
     NethServer 6 - 
-    <a href="1911.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #1911</a>: Ejabberd: create jabberadmins user on nethserver-ejabberd...
+    <a href="/issues/1911" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #1911</a>: Ejabberd: create jabberadmins user on nethserver-ejabberd...
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -285,7 +334,7 @@ Cons:
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2492/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2492/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -302,7 +351,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2492.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -325,8 +374,10 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/61174a878f86137839499d4048fa5b9a593ce622" title="Revision 61174a87">Revision 61174a87</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-02" title="01/02/2014 06:07 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Run httpd-admin and smwingsd in "adm" group. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Run httpd-admin and smwingsd in "adm" group. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>httpd-admin is run as srvmgr system user, which is member of the "adm" <br />group.</p>
@@ -336,21 +387,27 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/e09325fc2d8e046e4d27e587fd6ed5f18df940ac" title="Revision e09325fc">Revision e09325fc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-03" title="01/03/2014 10:51 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Moved /etc/sudoers template fragment to nethserver-base. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Moved /etc/sudoers template fragment to nethserver-base. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/9b2daa637eba7332d08eaa14aef18797b698ef1c" title="Revision 9b2daa63">Revision 9b2daa63</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-03" title="01/03/2014 10:51 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix permissions on *-update event. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Fix permissions on *-update event. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>Cleanup and fix permissions on files under<br />/var/cache/nethserver-httpd-admin/ directory.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/aa1b0f1ca9aa1a6ca98dd0eac71f540c10a7ff8c" title="Revision aa1b0f1c">Revision aa1b0f1c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-03" title="01/03/2014 12:09 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Group ownership controlled by setgid bit. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Group ownership controlled by setgid bit. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>Removed chown() calls from esmith DB libraries. Don't touch file<br />permissions, use defaults from filesystem: write access to root only,<br />read access to "adm" group members.</p>
@@ -360,8 +417,10 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/91744fee12df8f15e7b26a2e3fdab2dbc973f75b" title="Revision 91744fee">Revision 91744fee</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-03" title="01/03/2014 12:09 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fallback to root login if "admin" account is not available. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Fallback to root login if "admin" account is not available. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>If admin passwd entry is missing, check "root" login password.</p>
@@ -371,47 +430,61 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/9397cfa04d159f7d3510f33b2d545ae1152023dd" title="Revision 9397cfa0">Revision 9397cfa0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-03" title="01/03/2014 02:42 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fix admin's mailbox migration. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Fix admin's mailbox migration. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>The admin user is now in accounts DB.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/d80152519ea390ffee6e15ee8431e083d932ad91" title="Revision d8015251">Revision d8015251</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-03" title="01/03/2014 03:44 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Imported libuser setup from nethserver-base. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Imported libuser setup from nethserver-base. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/ce8e11f1dd6835ce4e51c31cb329a13f6f631774" title="Revision ce8e11f1">Revision ce8e11f1</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-07" title="01/07/2014 10:18 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>esmith::util (setUnixSystemPassword): check if admin account exists. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>esmith::util (setUnixSystemPassword): check if admin account exists. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
-	<p>Also, honour AdminIsNotRoot key value (Refs <a href="2277.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: add AdminIsNotRoot to keep admin and root password in sync (CLOSED)">#2277</a>).</p>
+	<p>Also, honour AdminIsNotRoot key value (Refs <a href="/issues/2277" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Base: add AdminIsNotRoot to keep admin and root password in sync (CLOSED)">#2277</a>).</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/d93da756b98229680974eee2a7248765c23578ba" title="Revision d93da756">Revision d93da756</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-07" title="01/07/2014 05:39 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>admin account is now in LDAP. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>admin account is now in LDAP. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>It does not need special treatment anymore.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/1afd63bc7bbab54a350a08a3aea9f653ee64d522" title="Revision 1afd63bc">Revision 1afd63bc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-07" title="01/07/2014 06:01 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Import mail from root mailbox to admin. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Import mail from root mailbox to admin. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/b669b034d926e62aef9b0a98b9e9bd3bb30c8365" title="Revision b669b034">Revision b669b034</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-08" title="01/08/2014 12:44 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Deliver root's mail to admin. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a> <a href="2499.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Override mail system /etc/aliases (CLOSED)">#2499</a></p>
+        <p>Deliver root's mail to admin. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a> <a href="/issues/2499" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Override mail system /etc/aliases (CLOSED)">#2499</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/39d110da146cca7c4fa7bbc04e1fc369bb2dd788" title="Revision 39d110da">Revision 39d110da</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-08" title="01/08/2014 02:32 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Initialize admin account in LDAP. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Initialize admin account in LDAP. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>If admin account already exists, preserve its password and uid number,<br />otherwise root password is imported.</p>
@@ -421,149 +494,193 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/6a7e9a4dbe0c2074a13d1bc239b6e9f6e7e4aac5" title="Revision 6a7e9a4d">Revision 6a7e9a4d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-08" title="01/08/2014 02:32 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-directory-user-modify: skip lusermod command if cn is empty. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>nethserver-directory-user-modify: skip lusermod command if cn is empty. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/858394569209b2d68ec24ee05df148841303106b" title="Revision 85839456">Revision 85839456</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-08" title="01/08/2014 02:32 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Group/User UI modules: honour Removable prop. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Group/User UI modules: honour Removable prop. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>The platform validator was not invoked in delete case, because the key<br />parameter is not submitted, but derived from the request URL path.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/e4974ad4885b7c4ebbfa8dfe4a457b4be96e134c" title="Revision e4974ad4">Revision e4974ad4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-08" title="01/08/2014 02:32 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Additional sudo commands for adm group. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Additional sudo commands for adm group. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/094ca92e143140dde86707d6f7399219181c532b" title="Revision 094ca92e">Revision 094ca92e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-08" title="01/08/2014 02:32 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Migrate admin home directory. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a> <a href="1655.html" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Users and groups migration script (CLOSED)">#1655</a></p>
+        <p>Migrate admin home directory. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a> <a href="/issues/1655" class="issue tracker-6 status-5 priority-4 priority-default closed child" title="Users and groups migration script (CLOSED)">#1655</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/6b0e3707e5635bd68a06636fafd3b06489ea0463" title="Revision 6b0e3707">Revision 6b0e3707</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-08" title="01/08/2014 02:32 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Removed special case for admin. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Removed special case for admin. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>Admin is record is of type user.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/561a129cb0613eaa9882e65526f07078e64d6f7c" title="Revision 561a129c">Revision 561a129c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-08" title="01/08/2014 02:32 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Change group memberUid attribute in LDAP directly. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Change group memberUid attribute in LDAP directly. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>Don't use libuser lgroupmod binary to manipulate group members. It<br />fails silently for empty members list.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/1e51453cc5c2db66be29ed3b447df03dad1a016a" title="Revision 1e51453c">Revision 1e51453c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-10" title="01/10/2014 06:01 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Removed "shared" group. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Removed "shared" group. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>Use builtin "locals" group, managed by nethserver-directory.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/9b2bc0bcab31049dcf7a71ff572d4cd5bb49288b" title="Revision 9b2bc0bc">Revision 9b2bc0bc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-10" title="01/10/2014 06:16 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>admin is default member of domadmins group. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>admin is default member of domadmins group. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-hylafax/revisions/1b8d9075032ede9b47dcd41d93fe0aa0c94e1646" title="Revision 1b8d9075">Revision 1b8d9075</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 09:07 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Create the default faxmaster group through create-default-accounts action. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Create the default faxmaster group through create-default-accounts action. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/1f35bab279e70542f4c3425f51a6c8413f5664eb" title="Revision 1f35bab2">Revision 1f35bab2</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 10:02 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>"shared" group replaced by "locals". Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>"shared" group replaced by "locals". Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/ab9a44d3e040e6fb02a999006100cb54e97580a8" title="Revision ab9a44d3">Revision ab9a44d3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 10:54 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Create the predefined "locals" group. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Create the predefined "locals" group. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>The "locals" group always contains users defined into the local accounts database.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/d69829d68ce96f1015d9fdb8b05c07cb077f4b19" title="Revision d69829d6">Revision d69829d6</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 11:22 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Check if group exists before signalling group-modify event. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Check if group exists before signalling group-modify event. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/0be47b0b2603e85240c0e3c3a7679906a9229555" title="Revision 0be47b0b">Revision 0be47b0b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 03:06 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Initialize ibays from default DB records at the end of yum transaction. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Initialize ibays from default DB records at the end of yum transaction. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>We temporarily rely on "runlevel-adjust" event, but a more specifc<br />event should be defined.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/4fc314957124271d1eb31c64bf033d9a6e4bb8dc" title="Revision 4fc31495">Revision 4fc31495</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 03:14 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Initialize admin and other default accounts after all *-update events. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Initialize admin and other default accounts after all *-update events. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-directory/revisions/01b2300a59c307557050c76c8e500af8ee9e87f3" title="Revision 01b2300a">Revision 01b2300a</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 03:39 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Initialize admin and create default accounts at the end of yum transaction. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Initialize admin and create default accounts at the end of yum transaction. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>We temporarily rely on "runlevel-adjust" event, but a more specifc<br />event should be defined.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/ae301b783eda32df37b8cc97b73589f62ca8e622" title="Revision ae301b78">Revision ae301b78</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 06:45 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-update-admin action: signal user-modify admin event. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>nethserver-mail-update-admin action: signal user-modify admin event. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>This action comes into play when mail-server is installed after<br />nethserver-directory: the admin account exists and needs to be<br />updated. It checks the LDAP accountStatus attribute.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/7757599e9460ff966bb47b817922503748fe4e81" title="Revision 7757599e">Revision 7757599e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-13" title="01/13/2014 06:49 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Set local mail address if none is defined. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Set local mail address if none is defined. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>The "mail" LDAP attribute is used by SOGo to set up user account: the<br />blank value was not accepted.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/5fd48cfb938573ef313c8bfd3b5b2534e3c0460b" title="Revision 5fd48cfb">Revision 5fd48cfb</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-14" title="01/14/2014 04:31 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>admin system user no longer created by RPM %pre script. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>admin system user no longer created by RPM %pre script. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/2bae89350a15404ea1f9d75d723ed19f8753aab3" title="Revision 2bae8935">Revision 2bae8935</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-14" title="01/14/2014 04:31 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Imported /etc/sudoers template fragments from nethserver-httpd-admin. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Imported /etc/sudoers template fragments from nethserver-httpd-admin. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>The NETHSERVER_ADM command alias defines the list of administrative<br />commands that can be run by the "adm" group members.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/68a2cc132fd327b7fe6d15327fe10e322dff8adf" title="Revision 68a2cc13">Revision 68a2cc13</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-14" title="01/14/2014 04:31 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Grant unlimited access to root and admin on server-manager modules. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Grant unlimited access to root and admin on server-manager modules. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>Members of the adm group have also unlimited access.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/7fdc4cd04fe56c97ca43816685c16951d71ed0a7" title="Revision 7fdc4cd0">Revision 7fdc4cd0</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-14" title="01/14/2014 04:31 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>UserProfile UI module: access to root key in configuration DB. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>UserProfile UI module: access to root key in configuration DB. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>If the admin user is not defined in accounts DB, fall back to root<br />profile record in configuration DB.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/61e0b9f85883f501bc1b43f3c27891217950d89e" title="Revision 61e0b9f8">Revision 61e0b9f8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-14" title="01/14/2014 04:31 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-base-mail-aliases action. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>nethserver-base-mail-aliases action. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>The admin alias has been removed. Now mail is stored to local root<br />mailbox.</p>
@@ -573,50 +690,64 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/d920ce3c0ba0736f15ddaeb9d6cd7df7f6ccb351" title="Revision d920ce3c">Revision d920ce3c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-14" title="01/14/2014 04:31 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Moved libuser setup to nethserver-directory. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Moved libuser setup to nethserver-directory. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>libuser commands are not used by nethserver-base.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/2b27c66299e624a1764ebac812536b86bcc5b0a8" title="Revision 2b27c662">Revision 2b27c662</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-14" title="01/14/2014 04:31 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Added bash aliases for adm group commands executed by sudo. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Added bash aliases for adm group commands executed by sudo. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/bc7bb28ca01a735a419bdfc0885143cfa041f807" title="Revision bc7bb28c">Revision bc7bb28c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-15" title="01/15/2014 12:47 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Change ownership of session files from numerical uid. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Change ownership of session files from numerical uid. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>This covers the scenario where the admin user passwd entry has been<br />removed manually.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/7a2ea1cd55694fccb5febd56d1df3ead81591da1" title="Revision 7a2ea1cd">Revision 7a2ea1cd</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-15" title="01/15/2014 05:55 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Fixed default local mail address setting. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Fixed default local mail address setting. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>Removed nethserver-mail-ldap-sync: to update all "mail" attributes in<br />LDAP when a domain record changes, use the<br />nethserver-mail-account-update action.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/022cd39f6970d52ba5bb93462b300c7ef3abfe84" title="Revision 022cd39f">Revision 022cd39f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 10:51 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Map "shared" group to "locals" during ibay migration. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Map "shared" group to "locals" during ibay migration. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/6a7d654410af3fce665a27f4e67a0bb44fdb8ee3" title="Revision 6a7d6544">Revision 6a7d6544</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 10:58 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>SharedFolder UI module: "Authenticated users" label renamed "Local users". Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>SharedFolder UI module: "Authenticated users" label renamed "Local users". Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>The "authenticated" term can be misleading with Samba ADS role, for instance.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/92de0359c26f2f710252ba15da2b96a35122a7a2" title="Revision 92de0359">Revision 92de0359</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 11:53 AM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Update admin user, adding samba attributes. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Update admin user, adding samba attributes. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>The samba SAM attributes are initialized by<br />nethserver-samba-user-create action.</p>
@@ -626,21 +757,27 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ibays/revisions/1d01b49f930852a4edac7148a6af9dfb82d8206d" title="Revision 1d01b49f">Revision 1d01b49f</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 12:39 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Migration: replace "shared" group with "locals" when restoring Posix ACLs. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Migration: replace "shared" group with "locals" when restoring Posix ACLs. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/bb33a9cca43cdbb67d6172a0e4de4cb4f9f28400" title="Revision bb33a9cc">Revision bb33a9cc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 02:40 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Initialize admin's mailbox after account has been set up. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Initialize admin's mailbox after account has been set up. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>Fixed default MailForwardKeepMessageCopy prop name.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/d29d5315184495fe64d4908a5e25258a6f2a76d3" title="Revision d29d5315">Revision d29d5315</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 03:16 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Synchronize admin/root passwords. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Synchronize admin/root passwords. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
 
 
 	<p>If AdminIsNotRoot is disabled, admin and root passwords are the same.</p>
@@ -650,23 +787,31 @@ setPredecessorFieldsVisibility();
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-openvpn/revisions/9c9232bb41a381394f95b87389479b14df655196" title="Revision 9c9232bb">Revision 9c9232bb</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-22" title="01/22/2014 06:15 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>templates, nethserver-openvpn-genclient: use srvmgr user and adm group. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>templates, nethserver-openvpn-genclient: use srvmgr user and adm group. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-vpn/revisions/93cf9f1123fad037d27972bcb04653b5132433cc" title="Revision 93cf9f11">Revision 93cf9f11</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-22" title="01/22/2014 06:23 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec, pki-vpn-gencert, pki-vpn-renew: use srvmgr user and adm group. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>spec, pki-vpn-gencert, pki-vpn-renew: use srvmgr user and adm group. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-nut/revisions/d23c2a1b8e566b0f82a991b707875fd7374b09bf" title="Revision d23c2a1b">Revision d23c2a1b</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-22" title="01/22/2014 06:58 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Send UPS/nut messages to root account. Refs <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Send UPS/nut messages to root account. Refs <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-ipsec/revisions/a0d46a1ea5e380b896d8fb309500a91b87cbe1ab" title="Revision a0d46a1e">Revision a0d46a1e</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-05" title="02/05/2014 03:50 PM">over 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Create l2tpusers after admin account initialization. Refs <a href="2294.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="IPSec: honor VPNClientAccess property (CLOSED)">#2294</a> <a href="2492.html" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
+        <p>Create l2tpusers after admin account initialization. Refs <a href="/issues/2294" class="issue tracker-6 status-5 priority-4 priority-default closed" title="IPSec: honor VPNClientAccess property (CLOSED)">#2294</a> <a href="/issues/2492" class="issue tracker-2 status-5 priority-4 priority-default closed" title="Move admin user in LDAP DB (CLOSED)">#2492</a></p>
     </div>
     </div>
 
@@ -676,10 +821,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-9328" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2492.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2492#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-12-17" title="12/17/2013 10:45 AM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Due date</strong> set to <i>12/19/2013</i></li>
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
@@ -693,8 +839,9 @@ setPredecessorFieldsVisibility();
   
   <div id="change-9629" class="journal has-notes">
     <div id="note-2">
-    <h4><a href="2492.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2492#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-03" title="01/03/2014 10:48 AM">over 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-9629-notes"><p><strong>Test case notes</strong></p>
 
@@ -702,10 +849,10 @@ setPredecessorFieldsVisibility();
 	<ol>
 	<li>Migration of admin's home directory both in empty and non-empty cases.</li>
 		<li>Group membership workflow: create/modify/delete with a member list of any length</li>
-		<li>Email delivery to root. root mailbox moved to <code>admin</code> when installed <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-mail-server" class="wiki-page new">nethserver-mail-server</a>. Email delivery to <code>admin</code>.</li>
-		<li>Check domain join when PDC (<a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-samba" class="wiki-page new">nethserver-samba</a>). <code>admin</code> samba user should have granted <code>SeMachineAccountPrivilege</code>, that allow managing domain computer accounts.</li>
-		<li><code>admin</code> user is default member of <code>jabberadmins</code> group <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-ejabberd" class="wiki-page new">nethserver-ejabberd</a> </li>
-		<li><code>admin</code> user is default member of <code>faxmaster</code> group <a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-hylafax" class="wiki-page new">nethserver-hylafax</a> </li>
+		<li>Email delivery to root. root mailbox moved to <code>admin</code> when installed <a href="/projects/nethserver/wiki/Nethserver-mail-server" class="wiki-page new">nethserver-mail-server</a>. Email delivery to <code>admin</code>.</li>
+		<li>Check domain join when PDC (<a href="/projects/nethserver/wiki/Nethserver-samba" class="wiki-page new">nethserver-samba</a>). <code>admin</code> samba user should have granted <code>SeMachineAccountPrivilege</code>, that allow managing domain computer accounts.</li>
+		<li><code>admin</code> user is default member of <code>jabberadmins</code> group <a href="/projects/nethserver/wiki/Nethserver-ejabberd" class="wiki-page new">nethserver-ejabberd</a> </li>
+		<li><code>admin</code> user is default member of <code>faxmaster</code> group <a href="/projects/nethserver/wiki/Nethserver-hylafax" class="wiki-page new">nethserver-hylafax</a> </li>
 		<li>IMAP <code>admin</code> login, SOGo <code>admin</code> login</li>
 		<li>server manager allows logging in as admin, even if <code>nethserver-directory</code> is not installed, providing the root's password. <code>AdminIsNotRoot</code> key must be honoured.</li>
 	</ol>
@@ -718,7 +865,7 @@ setPredecessorFieldsVisibility();
 
 
 	<a name="nethserver-base"></a>
-<h3 ><a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-base" class="wiki-page new">nethserver-base</a><a href="2492.html#nethserver-base" class="wiki-anchor">&para;</a></h3>
+<h3 ><a href="/projects/nethserver/wiki/Nethserver-base" class="wiki-page new">nethserver-base</a><a href="#nethserver-base" class="wiki-anchor">&para;</a></h3>
 
 
 	<p>Before upgrade:</p>
@@ -742,7 +889,7 @@ setPredecessorFieldsVisibility();
 
 
 	<a name="nethserver-directory"></a>
-<h3 ><a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-directory" class="wiki-page new">nethserver-directory</a><a href="2492.html#nethserver-directory" class="wiki-anchor">&para;</a></h3>
+<h3 ><a href="/projects/nethserver/wiki/Nethserver-directory" class="wiki-page new">nethserver-directory</a><a href="#nethserver-directory" class="wiki-anchor">&para;</a></h3>
 
 
 	<p>After upgrade:</p>
@@ -759,7 +906,7 @@ setPredecessorFieldsVisibility();
 
 
 	<a name="nethserver-ibays"></a>
-<h3 ><a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-ibays" class="wiki-page new">nethserver-ibays</a><a href="2492.html#nethserver-ibays" class="wiki-anchor">&para;</a></h3>
+<h3 ><a href="/projects/nethserver/wiki/Nethserver-ibays" class="wiki-page new">nethserver-ibays</a><a href="#nethserver-ibays" class="wiki-anchor">&para;</a></h3>
 
 
 	<ul>
@@ -773,7 +920,7 @@ setPredecessorFieldsVisibility();
 
 
 	<a name="nethserver-openvpn"></a>
-<h3 ><a href="http://dev.nethserver.o/projects/nethserver/wiki/Nethserver-openvpn" class="wiki-page new">nethserver-openvpn</a><a href="2492.html#nethserver-openvpn" class="wiki-anchor">&para;</a></h3>
+<h3 ><a href="/projects/nethserver/wiki/Nethserver-openvpn" class="wiki-page new">nethserver-openvpn</a><a href="#nethserver-openvpn" class="wiki-anchor">&para;</a></h3>
 
 
 	<ul>
@@ -789,10 +936,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-9810" class="journal has-details">
     <div id="note-3">
-    <h4><a href="2492.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2492#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-14" title="01/14/2014 06:02 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -803,10 +951,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-9812" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="2492.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2492#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-14" title="01/14/2014 06:07 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -816,10 +965,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-9837" class="journal has-details">
     <div id="note-5">
-    <h4><a href="2492.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2492#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-15" title="01/15/2014 03:04 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -828,11 +978,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-9856" class="journal has-notes">
     <div id="note-6">
-    <h4><a href="2492.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2492#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-15" title="01/15/2014 05:05 PM">over 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-9856-notes"><a name="Testing-upgraded-machine"></a>
-<h3 >Testing upgraded machine<a href="2492.html#Testing-upgraded-machine" class="wiki-anchor">&para;</a></h3>
+<h3 >Testing upgraded machine<a href="#Testing-upgraded-machine" class="wiki-anchor">&para;</a></h3>
 
 
 	<p><strong>Test case 1</strong><br />Home directory correctly created: /var/lib/nethserver/home/admin <br /><strong>Note:</strong>  migration from NethService/SME not testd</p>
@@ -986,8 +1137,9 @@ locals:*:502:admin
   
   <div id="change-9868" class="journal has-notes">
     <div id="note-7">
-    <h4><a href="2492.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2492#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-15" title="01/15/2014 06:08 PM">over 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-9868-notes"><p>Giacomo Sanchietti wrote:</p>
 
@@ -1011,11 +1163,12 @@ locals:*:502:admin
   
   <div id="change-9878" class="journal has-notes">
     <div id="note-8">
-    <h4><a href="2492.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2492#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 10:15 AM">over 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-9878-notes"><a name="Testing-freshly-installed-machine"></a>
-<h3 >Testing freshly installed machine<a href="2492.html#Testing-freshly-installed-machine" class="wiki-anchor">&para;</a></h3>
+<h3 >Testing freshly installed machine<a href="#Testing-freshly-installed-machine" class="wiki-anchor">&para;</a></h3>
 
 
 	<p><strong>Test case 1</strong><br />Home directory correctly created: /var/lib/nethserver/home/admin <br />Also tested migration from NethService/SME.</p>
@@ -1125,10 +1278,11 @@ result: 0 Success
   
   <div id="change-9888" class="journal has-notes has-details">
     <div id="note-9">
-    <h4><a href="2492.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2492#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 12:15 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
@@ -1147,10 +1301,11 @@ result: 0 Success
   
   <div id="change-9892" class="journal has-details">
     <div id="note-10">
-    <h4><a href="2492.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2492#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 12:46 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -1161,10 +1316,11 @@ result: 0 Success
   
   <div id="change-9909" class="journal has-details">
     <div id="note-11">
-    <h4><a href="2492.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2492#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 03:19 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -1175,10 +1331,11 @@ result: 0 Success
   
   <div id="change-9910" class="journal has-notes has-details">
     <div id="note-12">
-    <h4><a href="2492.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2492#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 03:23 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -1188,13 +1345,14 @@ result: 0 Success
   
   <div id="change-9912" class="journal has-notes has-details">
     <div id="note-13">
-    <h4><a href="2492.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2492#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 03:39 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>File</strong> <i>run2492.sh</i> added</li>
     </ul>
-    <div class="wiki" id="journal-9912-notes"><p>The <del>attachment:run2492.sh</del> <a href="../attachments/download/246/upgrade-65b3.sh" class="attachment">upgrade-65b3.sh</a> shellscript executes the upgrade checking user and package existence.</p>
+    <div class="wiki" id="journal-9912-notes"><p>The <del>attachment:run2492.sh</del> <a href="/attachments/download/246/upgrade-65b3.sh" class="attachment">upgrade-65b3.sh</a> shellscript executes the upgrade checking user and package existence.</p>
 
 
 	<p>You can run it on a remote machine:<pre>
@@ -1208,10 +1366,11 @@ result: 0 Success
   
   <div id="change-9933" class="journal has-notes has-details">
     <div id="note-14">
-    <h4><a href="2492.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/2492#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 05:35 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -1283,10 +1442,11 @@ Other notes:
   
   <div id="change-9934" class="journal has-details">
     <div id="note-15">
-    <h4><a href="2492.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/2492#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-01-16" title="01/16/2014 05:36 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
     </ul>
     
@@ -1295,10 +1455,11 @@ Other notes:
   
   <div id="change-10404" class="journal has-details">
     <div id="note-16">
-    <h4><a href="2492.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/2492#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-05" title="02/05/2014 04:55 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>File</strong> deleted (<del><i>run2492.sh</i></del>)</li>
     </ul>
     
@@ -1307,11 +1468,12 @@ Other notes:
   
   <div id="change-10405" class="journal has-details">
     <div id="note-17">
-    <h4><a href="2492.html#note-17" class="journal-link">#17</a>
+    <h4><a href="/issues/2492#note-17" class="journal-link">#17</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-05" title="02/05/2014 04:56 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>File</strong> <a href="../attachments/download/246/upgrade-65b3.sh">upgrade-65b3.sh</a><a href="../attachments/246/upgrade-65b3.sh.html"><img alt="Magnifier" src="../images/magnifier.png%3F1403512056" /></a> added</li>
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/246/upgrade-65b3.sh">upgrade-65b3.sh</a><a href="/attachments/246/upgrade-65b3.sh"><img alt="Magnifier" src="/images/magnifier.png?1403512056" /></a> added</li>
     </ul>
     
     </div>
@@ -1319,23 +1481,26 @@ Other notes:
   
   <div id="change-10425" class="journal has-notes has-details">
     <div id="note-18">
-    <h4><a href="2492.html#note-18" class="journal-link">#18</a>
+    <h4><a href="/issues/2492#note-18" class="journal-link">#18</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-02-07" title="02/07/2014 06:22 PM">over 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
+    <div class="wiki" id="journal-10425-notes"><p>Released in <code>nethserver/6.5/base</code> repository.</p></div>
     </div>
   </div>
   
   <div id="change-13964" class="journal has-details">
     <div id="note-19">
-    <h4><a href="2492.html#note-19" class="journal-link">#19</a>
+    <h4><a href="/issues/2492#note-19" class="journal-link">#19</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2015-02-09" title="02/09/2015 05:38 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="3026.html" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #3026</a>: Differentiate root and admin users</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/3026" class="issue tracker-2 status-5 priority-4 priority-default closed">Feature #3026</a>: Differentiate root and admin users</i> added</li>
     </ul>
     
     </div>
@@ -1358,7 +1523,9 @@ Other notes:
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2492.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2492.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -1379,7 +1546,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

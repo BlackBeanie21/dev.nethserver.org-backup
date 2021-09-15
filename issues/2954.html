@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2954.atom" rel="alternate" title="NethServer 6 - Enhancement #2954: Avoid fetchmail bounces" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -61,8 +108,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div class="issue tracker-6 status-5 priority-4 priority-default closed details">
     <div class="next-prev-links contextual">
-      <a href="2976.html" title="#2976">« Previous</a> |
-      <a href="2915.html" title="#2915">Next »</a>
+      <a href="/issues/2976" title="#2976">« Previous</a> |
+      <a href="/issues/2915" title="#2915">Next »</a>
     </div>
 
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
@@ -71,10 +118,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Avoid fetchmail bounces</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 03:44 AM">over 6 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-12-12" title="12/12/2014 11:00 AM">over 6 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-fetchmail</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-fetchmail</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -94,6 +143,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   <p>Messages from fetchmail are already delivered to a remote mailbox so their envelope sender is lost. Bouncing such messages is a problem if the sender address does not exist or is forged.</p>
 
 
+	<p>Also a bounce is generated if the destination mailbox does not exist, i.e. if a user has been deleted or similar. To avoid such bounces we must bypass the Postfix <em>queue</em> and talk directly to Dovecot LMTP socket, by means of Amavis. This architecture does not have a queue so Fetchmail knows immediately if a message has been delivered or not and log its activity appropriately.<pre>
 [RemoteSystem]
      v
      v  
@@ -127,7 +177,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2924.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2924</a>: Fetchmail support for AD users
+    <a href="/issues/2924" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2924</a>: Fetchmail support for AD users
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -140,7 +190,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2766.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2766</a>: Fetchmail delivers to non-existing email addresses
+    <a href="/issues/2766" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2766</a>: Fetchmail delivers to non-existing email addresses
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -153,7 +203,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2978.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2978</a>: POP3 connector does not list all groups
+    <a href="/issues/2978" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2978</a>: POP3 connector does not list all groups
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -163,7 +213,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2954/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2954/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -180,7 +230,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2954.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -203,47 +253,61 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/09556a692b356b621c9f33ee8425a2e1decb2018" title="Revision 09556a69">Revision 09556a69</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 09:07 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>/etc/sysconfig/amavisd is now a template. Refs <a href="2954.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
+        <p>/etc/sysconfig/amavisd is now a template. Refs <a href="/issues/2954" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/dd2412c472b137c122a97cfc732dd4e40fb09f45" title="Revision dd2412c4">Revision dd2412c4</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 09:21 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Start amavisd with vmail additional group. Refs <a href="2954.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
+        <p>Start amavisd with vmail additional group. Refs <a href="/issues/2954" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
 
 
 	<p>The vmail group is required to allow amavis talk directly with Dovecot<br />LMTP server.  This happens with fetchmail.</p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-fetchmail/revisions/664a2e1d0df4a1af2bdd3e1063ec2b6d34b1e881" title="Revision 664a2e1d">Revision 664a2e1d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 09:42 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Submit messages to local amavisd at 127.0.0.100:10024. Refs <a href="2924.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fetchmail support for AD users (CLOSED)">#2924</a></p>
+        <p>Submit messages to local amavisd at 127.0.0.100:10024. Refs <a href="/issues/2924" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Fetchmail support for AD users (CLOSED)">#2924</a></p>
 
 
 	<p>- Require nethserver-mail-common > 1.4.0-4</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/c9fc33268f6a04af82d7baac235da22259a9844b" title="Revision c9fc3326">Revision c9fc3326</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 12:07 PM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Applied word wrap to pop3_connector module documentation. Refs <a href="2954.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
+        <p>Applied word wrap to pop3_connector module documentation. Refs <a href="/issues/2954" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/f0c3400c669a6bc635839af37d24550d96f360fc" title="Revision f0c3400c">Revision f0c3400c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-03" title="12/03/2014 06:00 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Added default Postfix mydestination entries to inbound domain list. Refs <a href="2954.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
+        <p>Added default Postfix mydestination entries to inbound domain list. Refs <a href="/issues/2954" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
 
 
 	<p>Fixes missing spam headers problem, for messages from Fetchmail.<br />See note 11.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-fetchmail/revisions/42d6ea873b60d6be1e5d87e83dba5ada04d798e1" title="Revision 42d6ea87">Revision 42d6ea87</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-10" title="12/10/2014 06:24 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Validate accounts on fetchmailrc template expansion. Refs <a href="2954.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
+        <p>Validate accounts on fetchmailrc template expansion. Refs <a href="/issues/2954" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-fetchmail/revisions/ecfd13cc23a34b33ec1fb756907868bd4475f873" title="Revision ecfd13cc">Revision ecfd13cc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-10" title="12/10/2014 07:06 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Restart fetchmail conditionally when account changes. Refs <a href="2954.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
+        <p>Restart fetchmail conditionally when account changes. Refs <a href="/issues/2954" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
 
 
 Monitored events are:
@@ -259,17 +323,21 @@ Monitored events are:
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/27d7aebcea7758e3b24eaeb598a0558e293eec76" title="Revision 27d7aebc">Revision 27d7aebc</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-10" title="12/10/2014 08:44 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Warning for Active Directory users. Refs <a href="2954.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
+        <p>Warning for Active Directory users. Refs <a href="/issues/2954" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-fetchmail/revisions/15ee515d9c0a1b9318b31a4c4d3be7097c3d9de3" title="Revision 15ee515d">Revision 15ee515d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-12" title="12/12/2014 10:29 AM">over 6 years</a> ago</span></p>
     <div class="wiki">
         Release 1.1.1-2
 	<ul>
-	<li>Route message to postfix, for alias expansion. Refs <a href="2978.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="POP3 connector does not list all groups (CLOSED)">#2978</a></li>
+	<li>Route message to postfix, for alias expansion. Refs <a href="/issues/2978" class="issue tracker-1 status-5 priority-4 priority-default closed" title="POP3 connector does not list all groups (CLOSED)">#2978</a></li>
 		<li>Fix shown groups in POP3 connector page</li>
-		<li>Partially reverts <a href="2954.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></li>
+		<li>Partially reverts <a href="/issues/2954" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Avoid fetchmail bounces (CLOSED)">#2954</a></li>
 	</ul>
     </div>
     </div>
@@ -280,10 +348,11 @@ Monitored events are:
 <h3>History</h3>
   <div id="change-13172" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2954.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2954#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 03:44 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -294,11 +363,12 @@ Monitored events are:
   
   <div id="change-13173" class="journal has-details">
     <div id="note-2">
-    <h4><a href="2954.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2954#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 03:44 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2924.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2924</a>: Fetchmail support for AD users</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2924" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2924</a>: Fetchmail support for AD users</i> added</li>
     </ul>
     
     </div>
@@ -306,10 +376,11 @@ Monitored events are:
   
   <div id="change-13178" class="journal has-notes has-details">
     <div id="note-3">
-    <h4><a href="2954.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2954#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 10:29 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -389,10 +460,11 @@ Nov 18 16:23:23 [info]   not flushed
   
   <div id="change-13179" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="2954.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2954#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-18" title="11/18/2014 10:30 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -408,11 +480,12 @@ Nov 18 16:23:23 [info]   not flushed
   
   <div id="change-13235" class="journal has-details">
     <div id="note-5">
-    <h4><a href="2954.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2954#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-11-24" title="11/24/2014 05:17 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2766.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2766</a>: Fetchmail delivers to non-existing email addresses</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2766" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2766</a>: Fetchmail delivers to non-existing email addresses</i> added</li>
     </ul>
     
     </div>
@@ -420,10 +493,11 @@ Nov 18 16:23:23 [info]   not flushed
   
   <div id="change-13362" class="journal has-details">
     <div id="note-6">
-    <h4><a href="2954.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2954#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-02" title="12/02/2014 10:40 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Stefano Fancello</i></li>
     </ul>
     
@@ -432,8 +506,9 @@ Nov 18 16:23:23 [info]   not flushed
   
   <div id="change-13371" class="journal has-notes">
     <div id="note-7">
-    <h4><a href="2954.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2954#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/14" class="user active">Stefano Fancello</a> <a href="/projects/nethserver/activity?from=2014-12-02" title="12/02/2014 12:37 PM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13371-notes"><p>I'm not able to have a spam hit > 6.x using fetchmail nor with spamtest and messages are delivered anyway <br /><pre>
 # smtptest --ehlo whitehouse.org --to test1@nethesis.it --from obama@whitehouse.org --addr 213.92.16.101 --port 25 --subject "Enlarge your penis and buy viagra" --input amavis-test/sample-spam.txt
@@ -496,10 +571,11 @@ nethserver-antivirus-1.1.0-1.0gitf33b848b.ns6.noarch
   
   <div id="change-13372" class="journal has-details">
     <div id="note-8">
-    <h4><a href="2954.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2954#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/14" class="user active">Stefano Fancello</a> <a href="/projects/nethserver/activity?from=2014-12-02" title="12/02/2014 12:49 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
     </ul>
@@ -509,10 +585,11 @@ nethserver-antivirus-1.1.0-1.0gitf33b848b.ns6.noarch
   
   <div id="change-13373" class="journal has-details">
     <div id="note-9">
-    <h4><a href="2954.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2954#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-02" title="12/02/2014 12:57 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> deleted (<del><i>Stefano Fancello</i></del>)</li>
     </ul>
     
@@ -521,10 +598,11 @@ nethserver-antivirus-1.1.0-1.0gitf33b848b.ns6.noarch
   
   <div id="change-13384" class="journal has-notes has-details">
     <div id="note-10">
-    <h4><a href="2954.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2954#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-03" title="12/03/2014 03:31 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -595,8 +673,9 @@ Your <code>smtptest</code> is fine, and works as expected:
   
   <div id="change-13391" class="journal has-notes">
     <div id="note-11">
-    <h4><a href="2954.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2954#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-03" title="12/03/2014 05:45 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13391-notes"><p>Stefano Fancello wrote:</p>
 
@@ -617,10 +696,11 @@ Dec  2 18:12:30 makako amavis[15667]: (15667-02) Passed SPAMMY {RelayedOpenRelay
   
   <div id="change-13392" class="journal has-notes has-details">
     <div id="note-12">
-    <h4><a href="2954.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2954#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-03" title="12/03/2014 06:06 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -641,10 +721,11 @@ Dec  3 11:39:18 davidep2 amavis[17306]: (17306-01) Passed SPAMMY {RelayedTaggedI
   
   <div id="change-13393" class="journal has-notes has-details">
     <div id="note-13">
-    <h4><a href="2954.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2954#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-03" title="12/03/2014 06:07 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -654,10 +735,11 @@ Dec  3 11:39:18 davidep2 amavis[17306]: (17306-01) Passed SPAMMY {RelayedTaggedI
   
   <div id="change-13406" class="journal has-details">
     <div id="note-14">
-    <h4><a href="2954.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/2954#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/8bfd5e35595c8281b27ad67a513ef559?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/14" class="user active">Stefano Fancello</a> <a href="/projects/nethserver/activity?from=2014-12-04" title="12/04/2014 12:04 PM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
     </ul>
@@ -667,10 +749,11 @@ Dec  3 11:39:18 davidep2 amavis[17306]: (17306-01) Passed SPAMMY {RelayedTaggedI
   
   <div id="change-13435" class="journal has-notes has-details">
     <div id="note-15">
-    <h4><a href="2954.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/2954#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-09" title="12/09/2014 04:27 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -684,10 +767,11 @@ Dec  3 11:39:18 davidep2 amavis[17306]: (17306-01) Passed SPAMMY {RelayedTaggedI
   
   <div id="change-13467" class="journal has-notes has-details">
     <div id="note-16">
-    <h4><a href="2954.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/2954#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-10" title="12/10/2014 05:56 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>CLOSED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>100</i> to <i>30</i></li>
@@ -706,10 +790,11 @@ Still TODOs
   
   <div id="change-13468" class="journal has-notes has-details">
     <div id="note-17">
-    <h4><a href="2954.html#note-17" class="journal-link">#17</a>
+    <h4><a href="/issues/2954#note-17" class="journal-link">#17</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-10" title="12/10/2014 07:18 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -738,10 +823,11 @@ WARNING in /etc/e-smith/templates/fetchmailrc/10base: [WARNING] non available ac
   
   <div id="change-13485" class="journal has-notes has-details">
     <div id="note-18">
-    <h4><a href="2954.html#note-18" class="journal-link">#18</a>
+    <h4><a href="/issues/2954#note-18" class="journal-link">#18</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-10" title="12/10/2014 11:10 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -751,10 +837,11 @@ WARNING in /etc/e-smith/templates/fetchmailrc/10base: [WARNING] non available ac
   
   <div id="change-13493" class="journal has-details">
     <div id="note-19">
-    <h4><a href="2954.html#note-19" class="journal-link">#19</a>
+    <h4><a href="/issues/2954#note-19" class="journal-link">#19</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-11" title="12/11/2014 06:09 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -763,10 +850,11 @@ WARNING in /etc/e-smith/templates/fetchmailrc/10base: [WARNING] non available ac
   
   <div id="change-13498" class="journal has-notes has-details">
     <div id="note-20">
-    <h4><a href="2954.html#note-20" class="journal-link">#20</a>
+    <h4><a href="/issues/2954#note-20" class="journal-link">#20</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-11" title="12/11/2014 10:32 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -804,10 +892,11 @@ No active fetchmail accounts. Exiting gracefully.
   
   <div id="change-13499" class="journal has-notes has-details">
     <div id="note-21">
-    <h4><a href="2954.html#note-21" class="journal-link">#21</a>
+    <h4><a href="/issues/2954#note-21" class="journal-link">#21</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-12-11" title="12/11/2014 10:37 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -823,11 +912,12 @@ No active fetchmail accounts. Exiting gracefully.
   
   <div id="change-13527" class="journal has-details">
     <div id="note-22">
-    <h4><a href="2954.html#note-22" class="journal-link">#22</a>
+    <h4><a href="/issues/2954#note-22" class="journal-link">#22</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-12" title="12/12/2014 09:09 AM">over 6 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2978.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2978</a>: POP3 connector does not list all groups</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2978" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2978</a>: POP3 connector does not list all groups</i> added</li>
     </ul>
     
     </div>
@@ -835,8 +925,9 @@ No active fetchmail accounts. Exiting gracefully.
   
   <div id="change-13532" class="journal has-notes">
     <div id="note-23">
-    <h4><a href="2954.html#note-23" class="journal-link">#23</a>
+    <h4><a href="/issues/2954#note-23" class="journal-link">#23</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-12-12" title="12/12/2014 11:00 AM">over 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-13532-notes"><p>Released an hotfix to fix group alias expansion. In nethserver-updates (6.5):<br /><strong>nethserver-fetchmail-1.1.1-2.ns6.noarch.rpm</strong></p>
 
@@ -846,7 +937,7 @@ sendmail GROUPNAME &lt; FILE
 </pre><br />Where <code>FILE</code> is the mail file delivered to <code>/var/lib/nethserver/vmail/GROUPNAME/...</code></p>
 
 
-	<p>Follow <a href="2978.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="POP3 connector does not list all groups (CLOSED)">#2978</a></p></div>
+	<p>Follow <a href="/issues/2978" class="issue tracker-1 status-5 priority-4 priority-default closed" title="POP3 connector does not list all groups (CLOSED)">#2978</a></p></div>
     </div>
   </div>
   
@@ -867,7 +958,9 @@ sendmail GROUPNAME &lt; FILE
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2954.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2954.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -888,7 +981,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

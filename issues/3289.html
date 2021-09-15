@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/3289.atom" rel="alternate" title="NethServer 6 - Enhancement #3289: MultiWAN: remove static routes for checkip" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -61,8 +108,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div class="issue tracker-6 status-5 priority-4 priority-default closed details">
     <div class="next-prev-links contextual">
-      <a href="3287.html" title="#3287">« Previous</a> |
-      <a href="3307.html" title="#3307">Next »</a>
+      <a href="/issues/3287" title="#3287">« Previous</a> |
+      <a href="/issues/3307" title="#3307">Next »</a>
     </div>
 
   <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
@@ -71,10 +118,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>MultiWAN: remove static routes for checkip</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 04:23 AM">almost 6 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2015-11-11" title="11/11/2015 10:52 AM">over 5 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">&lt;multiple packages&gt;</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/214.html">v6.7</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">&lt;multiple packages&gt;</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/214">v6.7</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -122,46 +171,62 @@ We need to:
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lsm/revisions/4b6411115712c6ebd5caabd68db1299e2d81c9f6" title="Revision 4b641111">Revision 4b641111</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 04:26 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>conf: use checkip prop from firewall key. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>conf: use checkip prop from firewall key. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/f6d0790b81e0cd1e6f2e0f35fc81da7d5f1fd98e" title="Revision f6d0790b">Revision f6d0790b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 04:29 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Interface configuration: remove provider static routes. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>Interface configuration: remove provider static routes. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/1431c5e61ce43393cb241ab01c72a8ab5ad9c976" title="Revision 1431c5e6">Revision 1431c5e6</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 04:33 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Remove provider static routes. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>Remove provider static routes. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/669f35a87fea6ed5c3016b8c0018e4e23e956be1" title="Revision 669f35a8">Revision 669f35a8</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 04:33 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>wan-update event: re-add ip rule for provider. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>wan-update event: re-add ip rule for provider. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/3b7d0cd813920cb52fde71993a67ed695f5d02b4" title="Revision 3b7d0cd8">Revision 3b7d0cd8</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 04:49 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>WebUI: move check ip inside common options. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>WebUI: move check ip inside common options. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/44582c2ae10006bcce2199b636c625b840aa295f" title="Revision 44582c2a">Revision 44582c2a</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 11:58 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>DB: remove old checkip, add new CheckIP prop. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>DB: remove old checkip, add new CheckIP prop. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/e5ddfd52b39a56971214756c37fb497e73a37542" title="Revision e5ddfd52">Revision e5ddfd52</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 11:58 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Revert "lsm: avoid useless restarts" Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>Revert "lsm: avoid useless restarts" Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
 
 
 	<p>This reverts commit b74e6cdc57f251b037f6e0506dc7d2fe623b8042.</p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lsm/revisions/1f4c9569ac280f48ee7d8a58ea2124759e2ca4c8" title="Revision 1f4c9569">Revision 1f4c9569</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-27" title="10/27/2015 12:23 PM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>conf: use new props, move event script to groups. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>conf: use new props, move event script to groups. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
 
 
 New properties:
@@ -174,73 +239,101 @@ New properties:
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lsm/revisions/a2f97315c6421c04c542eb009b2431cac8b9c7fa" title="Revision a2f97315">Revision a2f97315</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-27" title="10/27/2015 12:23 PM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: requires lsm >= 0.190 for groups. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>spec: requires lsm >= 0.190 for groups. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lsm/revisions/4429a61645a91bc0c54d111410877c71b92a2241" title="Revision 4429a616">Revision 4429a616</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-27" title="10/27/2015 12:24 PM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>lsm.conf: lower debug level. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>lsm.conf: lower debug level. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/c1ac5d7cea0f3709c366d753d263f7721164afab" title="Revision c1ac5d7c">Revision c1ac5d7c</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-27" title="10/27/2015 12:27 PM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>DB: add props for link status monitor. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>DB: add props for link status monitor. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/5e7c6bc3e80b93022648ab2caabfab899601b155" title="Revision 5e7c6bc3">Revision 5e7c6bc3</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-27" title="10/27/2015 12:27 PM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>WAN update action: change logic for groups. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>WAN update action: change logic for groups. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/9999cd5d6a1fab0a1257659bdb9cf93cc962efdd" title="Revision 9999cd5d">Revision 9999cd5d</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-27" title="10/27/2015 12:27 PM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: add LSM options. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>Web UI: add LSM options. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lsm/revisions/01036b034b3943dd0e1ee04d80f4422187621bdd" title="Revision 01036b03">Revision 01036b03</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-28" title="10/28/2015 03:56 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>lsm.conf: force group status. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>lsm.conf: force group status. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lsm/revisions/3388355318ef65a3b06343d7ee0ea465c8d8bdb0" title="Revision 33883553">Revision 33883553</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-28" title="10/28/2015 04:07 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>WAN notify: update mail text. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>WAN notify: update mail text. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/9f1aa9e323416ae3d87f8d5efec6d05b86687b76" title="Revision 9f1aa9e3">Revision 9f1aa9e3</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-28" title="10/28/2015 04:17 AM">almost 6 years</a> ago</span></p>
     <div class="wiki">
-        <p>Web UI: improve inline help and labels. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>Web UI: improve inline help and labels. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/bbf52d5db53fff71a3f8c6b89b5070b690e4e8ce" title="Revision bbf52d5d">Revision bbf52d5d</a><br />
+        <span class="author">Added by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2015-11-09" title="11/09/2015 11:47 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>Minor corrections to inline help. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>Minor corrections to inline help. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/fc25d0e0446de1d3d03efc9b8fa731f59a71c6a8" title="Revision fc25d0e0">Revision fc25d0e0</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-11-10" title="11/10/2015 08:30 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>createlinks: add static-routes-save to nethserver-firewall-base-update. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>createlinks: add static-routes-save to nethserver-firewall-base-update. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-lsm/revisions/a61835716c9727745a0259323e2c6b11fcbdbd34" title="Revision a6183571">Revision a6183571</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-11-10" title="11/10/2015 10:09 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>lsm.conf: fix missing new line. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>lsm.conf: fix missing new line. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lsm/revisions/ce6751e0bd2ffb72d317f91ccb6983f7c17e634c" title="Revision ce6751e0">Revision ce6751e0</a><br />
+        <span class="author">Added by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2016-02-04" title="02/04/2016 12:07 PM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>multiwan: latency measure with lsm. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>multiwan: latency measure with lsm. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-collectd/revisions/e079cbe3b51a973f0251973b998a8d8d25e5f25f" title="Revision e079cbe3">Revision e079cbe3</a><br />
+        <span class="author">Added by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2016-02-04" title="02/04/2016 12:23 PM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>multiwan: remove latency measure with ping. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>multiwan: remove latency measure with ping. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-collectd/revisions/fbe1acb86c638852032ea98b7561e17e3e16ba6c" title="Revision fbe1acb8">Revision fbe1acb8</a><br />
+        <span class="author">Added by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2016-02-18" title="02/18/2016 03:47 AM">over 5 years</a> ago</span></p>
     <div class="wiki">
-        <p>multiwan: remove latency measure with ping. Refs <a href="3289.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
+        <p>multiwan: remove latency measure with ping. Refs <a href="/issues/3289" class="issue tracker-6 status-5 priority-4 priority-default closed" title="MultiWAN: remove static routes for checkip (CLOSED)">#3289</a></p>
     </div>
     </div>
 
@@ -250,10 +343,11 @@ New properties:
 <h3>History</h3>
   <div id="change-16425" class="journal has-details">
     <div id="note-1">
-    <h4><a href="3289.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/3289#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 04:23 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>Target version</strong> set to <i>v6.7</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
@@ -264,10 +358,11 @@ New properties:
   
   <div id="change-16426" class="journal has-details">
     <div id="note-2">
-    <h4><a href="3289.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/3289#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 04:23 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -278,10 +373,11 @@ New properties:
   
   <div id="change-16434" class="journal has-details">
     <div id="note-3">
-    <h4><a href="3289.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/3289#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-23" title="10/23/2015 10:08 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Subject</strong> changed from <i>MultiWAN: remove routes for checkip</i> to <i>MultiWAN: remove static routes for checkip</i></li>
     </ul>
     
@@ -290,10 +386,11 @@ New properties:
   
   <div id="change-16473" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="3289.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/3289#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-28" title="10/28/2015 04:36 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -308,10 +405,11 @@ New properties:
   
   <div id="change-16474" class="journal has-notes has-details">
     <div id="note-5">
-    <h4><a href="3289.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/3289#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-10-28" title="10/28/2015 04:47 AM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -369,10 +467,11 @@ New properties:
   
   <div id="change-16482" class="journal has-details">
     <div id="note-6">
-    <h4><a href="3289.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/3289#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/384" class="user active">Adam P</a> <a href="/projects/nethserver/activity?from=2015-10-28" title="10/28/2015 12:08 PM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Adam P</i></li>
     </ul>
     
@@ -381,10 +480,11 @@ New properties:
   
   <div id="change-16488" class="journal has-notes has-details">
     <div id="note-7">
-    <h4><a href="3289.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/3289#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/384" class="user active">Adam P</a> <a href="/projects/nethserver/activity?from=2015-10-28" title="10/28/2015 05:13 PM">almost 6 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>TRIAGED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Adam P</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>20</i></li>
@@ -419,8 +519,9 @@ New properties:
   
   <div id="change-16520" class="journal has-notes">
     <div id="note-8">
-    <h4><a href="3289.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/3289#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2015-10-30" title="10/30/2015 10:30 AM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16520-notes"><p>Adam P wrote:</p>
 
@@ -465,8 +566,9 @@ A test could be:
   
   <div id="change-16525" class="journal has-notes">
     <div id="note-9">
-    <h4><a href="3289.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/3289#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/384" class="user active">Adam P</a> <a href="/projects/nethserver/activity?from=2015-10-30" title="10/30/2015 11:06 AM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16525-notes"><p>I currently only have one check ip specified: 4.2.2.3</p>
 
@@ -489,8 +591,9 @@ A test could be:
   
   <div id="change-16533" class="journal has-notes">
     <div id="note-10">
-    <h4><a href="3289.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/3289#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2015-10-30" title="10/30/2015 12:48 PM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16533-notes"><p>Adam P wrote:</p>
 
@@ -538,8 +641,9 @@ A test could be:
   
   <div id="change-16534" class="journal has-notes">
     <div id="note-11">
-    <h4><a href="3289.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/3289#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/384" class="user active">Adam P</a> <a href="/projects/nethserver/activity?from=2015-10-30" title="10/30/2015 12:58 PM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16534-notes"><p>Filippo Carletti wrote:</p>
 
@@ -570,8 +674,9 @@ A test could be:
   
   <div id="change-16535" class="journal has-notes">
     <div id="note-12">
-    <h4><a href="3289.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/3289#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/d1393faf88bfcbb0b41ce36307b6a143?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/8" class="user active">Filippo Carletti</a> <a href="/projects/nethserver/activity?from=2015-10-31" title="10/31/2015 06:40 AM">almost 6 years</a> ago</h4>
 
     <div class="wiki" id="journal-16535-notes"><p>Adam P wrote:</p>
 
@@ -599,10 +704,11 @@ A test could be:
   
   <div id="change-16586" class="journal has-details">
     <div id="note-13">
-    <h4><a href="3289.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/3289#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-11-10" title="11/10/2015 06:10 AM">over 5 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
@@ -613,8 +719,9 @@ A test could be:
   
   <div id="change-16587" class="journal has-notes">
     <div id="note-14">
-    <h4><a href="3289.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/3289#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-11-10" title="11/10/2015 06:12 AM">over 5 years</a> ago</h4>
 
     <div class="wiki" id="journal-16587-notes"><p>Filippo Carletti wrote:</p>
 
@@ -632,10 +739,11 @@ A test could be:
   
   <div id="change-16599" class="journal has-details">
     <div id="note-15">
-    <h4><a href="3289.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/3289#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-11-10" title="11/10/2015 08:32 AM">over 5 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
     </ul>
@@ -645,10 +753,11 @@ A test could be:
   
   <div id="change-16600" class="journal has-notes has-details">
     <div id="note-16">
-    <h4><a href="3289.html#note-16" class="journal-link">#16</a>
+    <h4><a href="/issues/3289#note-16" class="journal-link">#16</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-11-10" title="11/10/2015 08:35 AM">over 5 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
@@ -672,10 +781,11 @@ yum --enablerepo=nethserver-testing update nethserver-base nethserver-firewall-b
   
   <div id="change-16601" class="journal has-details">
     <div id="note-17">
-    <h4><a href="3289.html#note-17" class="journal-link">#17</a>
+    <h4><a href="/issues/3289#note-17" class="journal-link">#17</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/384" class="user active">Adam P</a> <a href="/projects/nethserver/activity?from=2015-11-10" title="11/10/2015 08:55 AM">over 5 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Adam P</i></li>
     </ul>
     
@@ -684,10 +794,11 @@ yum --enablerepo=nethserver-testing update nethserver-base nethserver-firewall-b
   
   <div id="change-16602" class="journal has-notes has-details">
     <div id="note-18">
-    <h4><a href="3289.html#note-18" class="journal-link">#18</a>
+    <h4><a href="/issues/3289#note-18" class="journal-link">#18</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/031572c3993bc91a60aa715450394332?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/384" class="user active">Adam P</a> <a href="/projects/nethserver/activity?from=2015-11-10" title="11/10/2015 09:42 AM">over 5 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Adam P</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -698,10 +809,11 @@ yum --enablerepo=nethserver-testing update nethserver-base nethserver-firewall-b
   
   <div id="change-16622" class="journal has-notes has-details">
     <div id="note-19">
-    <h4><a href="3289.html#note-19" class="journal-link">#19</a>
+    <h4><a href="/issues/3289#note-19" class="journal-link">#19</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2015-11-11" title="11/11/2015 10:52 AM">over 5 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -733,7 +845,9 @@ yum --enablerepo=nethserver-testing update nethserver-base nethserver-firewall-b
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/3289.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/3289.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -754,7 +868,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/2803.atom" rel="alternate" title="NethServer 6 - Enhancement #2803: Edit workgroup name when role is Workstation" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Edit workgroup name when role is Workstation</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/192" class="user active">Stefano Zamboni</a> <a href="/projects/nethserver/activity?from=2014-07-04" title="07/04/2014 07:06 AM">about 7 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2014-09-16" title="09/16/2014 04:12 AM">almost 7 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-samba</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/201.html">v6.5</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-samba</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/201">v6.5</a></td><th></th><td></td></tr>
 <tr>
 	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
 	<th class="cf_14">NEEDINFO:</th><td class="cf_14">No</td>
@@ -113,7 +162,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2815.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2815</a>: Can&#x27;t access group shared folder (samba WS mode)
+    <a href="/issues/2815" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2815</a>: Can&#x27;t access group shared folder (samba WS mode)
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -126,7 +175,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2840.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2840</a>: Samba domain SID deep checking
+    <a href="/issues/2840" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2840</a>: Samba domain SID deep checking
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -139,7 +188,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2806.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2806</a>: Samba SAM db migration fails on group_mapping.ldb
+    <a href="/issues/2806" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2806</a>: Samba SAM db migration fails on group_mapping.ldb
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -152,7 +201,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2811.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2811</a>: Smb logon drive ignored during migration
+    <a href="/issues/2811" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2811</a>: Smb logon drive ignored during migration
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -165,7 +214,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2792.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2792</a>: Samba: map local users to Domain Users
+    <a href="/issues/2792" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2792</a>: Samba: map local users to Domain Users
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -178,7 +227,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     Related to
     
     NethServer 6 - 
-    <a href="2832.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2832</a>: Samba machine accounts not migrated
+    <a href="/issues/2832" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2832</a>: Samba machine accounts not migrated
   </td>
   <td class="status">CLOSED</td>
   <td class="start_date"></td>
@@ -188,7 +237,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 </table>
 </form>
 
-<form accept-charset="UTF-8" action="http://dev.nethserver.org/issues/2803/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" /></div>
+<form accept-charset="UTF-8" action="/issues/2803/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
 
 
 <p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
@@ -205,7 +254,7 @@ Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" t
 Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
 </span>
 <input name="commit" type="submit" value="Add" />
-<a href="2803.html#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
+<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
 </p>
 
 <script type="text/javascript">
@@ -228,51 +277,69 @@ setPredecessorFieldsVisibility();
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/8c5bf20d0abdf8ee2527c2a491c83e71fbdd022a" title="Revision 8c5bf20d">Revision 8c5bf20d</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-21" title="08/21/2014 06:44 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-samba.spec: converted to plain .spec file. Refs <a href="2803.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
+        <p>nethserver-samba.spec: converted to plain .spec file. Refs <a href="/issues/2803" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-docs/revisions/4a43f9a7186f34775430601e5eb12942e0bc057f" title="Revision 4a43f9a7">Revision 4a43f9a7</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-21" title="08/21/2014 09:58 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>samba.rst: updated Workgroup section. Refs <a href="2803.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
+        <p>samba.rst: updated Workgroup section. Refs <a href="/issues/2803" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/18e39866f5659719a00a4632589176ae598ee0ac" title="Revision 18e39866">Revision 18e39866</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-21" title="08/21/2014 10:03 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Workgroup UI module: Edit workgroup name when role is Workstation. Refs <a href="2803.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
+        <p>Workgroup UI module: Edit workgroup name when role is Workstation. Refs <a href="/issues/2803" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/5c2b63f36da15fa40327619778730a22550fafa2" title="Revision 5c2b63f3">Revision 5c2b63f3</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-22" title="08/22/2014 08:31 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>Workgroup/Configure UI module: collapse Workstation fieldset, when unselected. Refs <a href="2803.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
+        <p>Workgroup/Configure UI module: collapse Workstation fieldset, when unselected. Refs <a href="/issues/2803" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-samba/revisions/636488903786f11ab1384351c22f37238714d486" title="Revision 63648890">Revision 63648890</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-22" title="08/22/2014 09:31 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
         <p>Merge branch 'b2803'</p>
 
 
-	<p>Refs <a href="2840.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Samba domain SID deep checking (CLOSED)">#2840</a> <a href="2832.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Samba machine accounts not migrated (CLOSED)">#2832</a> <a href="2815.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Can&#x27;t access group shared folder (samba WS mode) (CLOSED)">#2815</a> <a href="2811.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Smb logon drive ignored during migration (CLOSED)">#2811</a> <a href="2806.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Samba SAM db migration fails on group_mapping.ldb (CLOSED)">#2806</a> <a href="2803.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a> <a href="2792.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Samba: map local users to Domain Users (CLOSED)">#2792</a></p>
+	<p>Refs <a href="/issues/2840" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Samba domain SID deep checking (CLOSED)">#2840</a> <a href="/issues/2832" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Samba machine accounts not migrated (CLOSED)">#2832</a> <a href="/issues/2815" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Can&#x27;t access group shared folder (samba WS mode) (CLOSED)">#2815</a> <a href="/issues/2811" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Smb logon drive ignored during migration (CLOSED)">#2811</a> <a href="/issues/2806" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Samba SAM db migration fails on group_mapping.ldb (CLOSED)">#2806</a> <a href="/issues/2803" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a> <a href="/issues/2792" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Samba: map local users to Domain Users (CLOSED)">#2792</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-common/revisions/c7b42ee81dcef47267571531f1cb9ff2080c45e8" title="Revision c7b42ee8">Revision c7b42ee8</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-25" title="08/25/2014 06:27 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-common.spec: converted to plain .spec file. Refs <a href="2803.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
+        <p>nethserver-mail-common.spec: converted to plain .spec file. Refs <a href="/issues/2803" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/5655b5fa842b6a1bb731391872e4d66bd771bfc1" title="Revision 5655b5fa">Revision 5655b5fa</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-25" title="08/25/2014 10:32 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-server.spec: converted to plain .spec file. Refs <a href="2803.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
+        <p>nethserver-mail-server.spec: converted to plain .spec file. Refs <a href="/issues/2803" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/5588560caf89c6696a1cbf64a1e46297cc2faf35" title="Revision 5588560c">Revision 5588560c</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-26" title="08/26/2014 11:42 AM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-server.spec: converted to plain .spec file. Refs <a href="2803.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
+        <p>nethserver-mail-server.spec: converted to plain .spec file. Refs <a href="/issues/2803" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-server/revisions/d8b73e456ceffa79d1e623442526332ec6bc1273" title="Revision d8b73e45">Revision d8b73e45</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-26" title="08/26/2014 12:30 PM">almost 7 years</a> ago</span></p>
     <div class="wiki">
-        <p>nethserver-mail-server.spec: converted to plain .spec file. Refs <a href="2803.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
+        <p>nethserver-mail-server.spec: converted to plain .spec file. Refs <a href="/issues/2803" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p>
     </div>
     </div>
 
@@ -282,10 +349,11 @@ setPredecessorFieldsVisibility();
 <h3>History</h3>
   <div id="change-11660" class="journal has-details">
     <div id="note-1">
-    <h4><a href="2803.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/2803#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-07-11" title="07/11/2014 02:21 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>TRIAGED</i></li>
        <li><strong>Target version</strong> set to <i>v6.5</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>20</i></li>
@@ -296,11 +364,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11713" class="journal has-details">
     <div id="note-2">
-    <h4><a href="2803.html#note-2" class="journal-link">#2</a>
+    <h4><a href="/issues/2803#note-2" class="journal-link">#2</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-16" title="07/16/2014 05:53 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2815.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2815</a>: Can&#x27;t access group shared folder (samba WS mode)</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2815" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2815</a>: Can&#x27;t access group shared folder (samba WS mode)</i> added</li>
     </ul>
     
     </div>
@@ -308,36 +377,39 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11714" class="journal has-notes has-details">
     <div id="note-3">
-    <h4><a href="2803.html#note-3" class="journal-link">#3</a>
+    <h4><a href="/issues/2803#note-3" class="journal-link">#3</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-07-16" title="07/16/2014 05:59 AM">about 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Subject</strong> changed from <i>Server role in windoes network page: let user edit workgroup name in workstation server role</i> to <i>Edit workgroup name when role is Workstation</i></li>
-       <li><strong>Description</strong> updated (<a href="../journals/diff/11714%3Fdetail_id=18737.html" title="View differences">diff</a>)</li>
+       <li><strong>Description</strong> updated (<a href="/journals/diff/11714?detail_id=18737" title="View differences">diff</a>)</li>
        <li><strong>Priority</strong> changed from <i>Low</i> to <i>Normal</i></li>
     </ul>
-    <div class="wiki" id="journal-11714-notes"><p>Could be worked out with <a href="2815.html" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Can&#x27;t access group shared folder (samba WS mode) (CLOSED)">#2815</a></p></div>
+    <div class="wiki" id="journal-11714-notes"><p>Could be worked out with <a href="/issues/2815" class="issue tracker-1 status-5 priority-4 priority-default closed" title="Can&#x27;t access group shared folder (samba WS mode) (CLOSED)">#2815</a></p></div>
     </div>
   </div>
   
   <div id="change-11895" class="journal has-notes has-details">
     <div id="note-4">
-    <h4><a href="2803.html#note-4" class="journal-link">#4</a>
+    <h4><a href="/issues/2803#note-4" class="journal-link">#4</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-19" title="08/19/2014 05:00 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>TRIAGED</i> to <i>ON_DEV</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>20</i> to <i>30</i></li>
     </ul>
-    <div class="wiki" id="journal-11895-notes"><p>On branch b2803 Refs <a href="2803.html" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p></div>
+    <div class="wiki" id="journal-11895-notes"><p>On branch b2803 Refs <a href="/issues/2803" class="issue tracker-6 status-5 priority-4 priority-default closed" title="Edit workgroup name when role is Workstation (CLOSED)">#2803</a></p></div>
     </div>
   </div>
   
   <div id="change-11952" class="journal has-notes">
     <div id="note-5">
-    <h4><a href="2803.html#note-5" class="journal-link">#5</a>
+    <h4><a href="/issues/2803#note-5" class="journal-link">#5</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-21" title="08/21/2014 10:01 AM">almost 7 years</a> ago</h4>
 
     <div class="wiki" id="journal-11952-notes"><p><strong>Packager note</strong><br />Added documentation pull request:<br /><a class="external" href="https://github.com/nethesis/nethserver-docs/pull/31">https://github.com/nethesis/nethserver-docs/pull/31</a></p></div>
     </div>
@@ -345,11 +417,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11953" class="journal has-details">
     <div id="note-6">
-    <h4><a href="2803.html#note-6" class="journal-link">#6</a>
+    <h4><a href="/issues/2803#note-6" class="journal-link">#6</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-21" title="08/21/2014 10:04 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2840.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2840</a>: Samba domain SID deep checking</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2840" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2840</a>: Samba domain SID deep checking</i> added</li>
     </ul>
     
     </div>
@@ -357,11 +430,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11955" class="journal has-details">
     <div id="note-7">
-    <h4><a href="2803.html#note-7" class="journal-link">#7</a>
+    <h4><a href="/issues/2803#note-7" class="journal-link">#7</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-21" title="08/21/2014 10:04 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2806.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2806</a>: Samba SAM db migration fails on group_mapping.ldb</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2806" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2806</a>: Samba SAM db migration fails on group_mapping.ldb</i> added</li>
     </ul>
     
     </div>
@@ -369,11 +443,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11957" class="journal has-details">
     <div id="note-8">
-    <h4><a href="2803.html#note-8" class="journal-link">#8</a>
+    <h4><a href="/issues/2803#note-8" class="journal-link">#8</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-21" title="08/21/2014 10:05 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2811.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2811</a>: Smb logon drive ignored during migration</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2811" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2811</a>: Smb logon drive ignored during migration</i> added</li>
     </ul>
     
     </div>
@@ -381,11 +456,12 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11959" class="journal has-details">
     <div id="note-9">
-    <h4><a href="2803.html#note-9" class="journal-link">#9</a>
+    <h4><a href="/issues/2803#note-9" class="journal-link">#9</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-21" title="08/21/2014 10:06 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2792.html" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2792</a>: Samba: map local users to Domain Users</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2792" class="issue tracker-6 status-5 priority-4 priority-default closed">Enhancement #2792</a>: Samba: map local users to Domain Users</i> added</li>
     </ul>
     
     </div>
@@ -393,10 +469,11 @@ setPredecessorFieldsVisibility();
   
   <div id="change-11968" class="journal has-notes has-details">
     <div id="note-10">
-    <h4><a href="2803.html#note-10" class="journal-link">#10</a>
+    <h4><a href="/issues/2803#note-10" class="journal-link">#10</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-22" title="08/22/2014 08:27 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_DEV</i> to <i>MODIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Davide Principi</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>30</i> to <i>60</i></li>
@@ -431,10 +508,11 @@ Domain=[MINE] OS=[Unix] Server=[Samba 3.6.9-169.el6_5]
   
   <div id="change-11975" class="journal has-notes has-details">
     <div id="note-11">
-    <h4><a href="2803.html#note-11" class="journal-link">#11</a>
+    <h4><a href="/issues/2803#note-11" class="journal-link">#11</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-22" title="08/22/2014 09:03 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>MODIFIED</i> to <i>ON_QA</i></li>
        <li><strong>% Done</strong> changed from <i>60</i> to <i>70</i></li>
     </ul>
@@ -444,11 +522,12 @@ Domain=[MINE] OS=[Unix] Server=[Samba 3.6.9-169.el6_5]
   
   <div id="change-11981" class="journal has-details">
     <div id="note-12">
-    <h4><a href="2803.html#note-12" class="journal-link">#12</a>
+    <h4><a href="/issues/2803#note-12" class="journal-link">#12</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2014-08-22" title="08/22/2014 09:40 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
-       <li><strong>Related to</strong> <i><a href="2832.html" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2832</a>: Samba machine accounts not migrated</i> added</li>
+    <ul class="details">
+       <li><strong>Related to</strong> <i><a href="/issues/2832" class="issue tracker-1 status-5 priority-4 priority-default closed">Bug #2832</a>: Samba machine accounts not migrated</i> added</li>
     </ul>
     
     </div>
@@ -456,10 +535,11 @@ Domain=[MINE] OS=[Unix] Server=[Samba 3.6.9-169.el6_5]
   
   <div id="change-12045" class="journal has-details">
     <div id="note-13">
-    <h4><a href="2803.html#note-13" class="journal-link">#13</a>
+    <h4><a href="/issues/2803#note-13" class="journal-link">#13</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-02" title="09/02/2014 05:23 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Assignee</strong> set to <i>Giacomo Sanchietti</i></li>
     </ul>
     
@@ -468,10 +548,11 @@ Domain=[MINE] OS=[Unix] Server=[Samba 3.6.9-169.el6_5]
   
   <div id="change-12047" class="journal has-notes has-details">
     <div id="note-14">
-    <h4><a href="2803.html#note-14" class="journal-link">#14</a>
+    <h4><a href="/issues/2803#note-14" class="journal-link">#14</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-02" title="09/02/2014 08:04 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>ON_QA</i> to <i>VERIFIED</i></li>
        <li><strong>Assignee</strong> deleted (<del><i>Giacomo Sanchietti</i></del>)</li>
        <li><strong>% Done</strong> changed from <i>70</i> to <i>90</i></li>
@@ -528,10 +609,11 @@ Domain=[MYNEWWG] OS=[Unix] Server=[Samba 3.6.9-169.el6_5]
   
   <div id="change-12213" class="journal has-notes has-details">
     <div id="note-15">
-    <h4><a href="2803.html#note-15" class="journal-link">#15</a>
+    <h4><a href="/issues/2803#note-15" class="journal-link">#15</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2014-09-16" title="09/16/2014 04:12 AM">almost 7 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>VERIFIED</i> to <i>CLOSED</i></li>
        <li><strong>% Done</strong> changed from <i>90</i> to <i>100</i></li>
     </ul>
@@ -559,7 +641,9 @@ Domain=[MYNEWWG] OS=[Unix] Server=[Samba 3.6.9-169.el6_5]
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/2803.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/2803.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -580,7 +664,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>

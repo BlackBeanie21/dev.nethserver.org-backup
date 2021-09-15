@@ -6,10 +6,10 @@
 <meta name="description" content="Redmine" />
 <meta name="keywords" content="issue,bug,tracker" />
 <meta content="authenticity_token" name="csrf-param" />
-<meta content="xe6SsSoVbaoZlAUezNss16xDC6ajg3P6jzWUrXbVg4A=" name="csrf-token" />
-<link rel='shortcut icon' href='../favicon.ico%3F1457596383' />
-<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
-<link href="../themes/nethserver/stylesheets/application.css%3F1403512057.css" media="all" rel="stylesheet" type="text/css" />
+<meta content="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1457596383' />
+<link href="../stylesheets/jquery/jquery-ui-1.9.2.css%3F1403512057" media="all" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
 
 <script src="../javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js%3F1403512056" type="text/javascript"></script>
 <script src="../javascripts/application.js%3F1403512056" type="text/javascript"></script>
@@ -18,33 +18,80 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="../themes/nethserver/javascripts/theme.js%3F1403512057.js" type="text/javascript"></script>
-<link href="../plugin_assets/openid_fix/stylesheets/openid.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../themes/nethserver../javascripts/theme.js%3F1403512057" type="text/javascript"></script>
+<link href="/plugin_assets/openid_fix../stylesheets/openid.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" />
 <!-- page specific tags -->
     <link href="http://dev.nethserver.org/issues/1906.atom" rel="alternate" title="NethServer 6 - Task #1906: Release NethServer 6.4 beta1" type="application/atom+xml" />
-<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057.css" media="screen" rel="stylesheet" type="text/css" /></head>
+<script src="../javascripts/context_menu.js%3F1403512056" type="text/javascript"></script><link href="../stylesheets/context_menu.css%3F1403512057" media="screen" rel="stylesheet" type="text/css" /></head>
 <body class="theme-Nethserver project-nethserver controller-issues action-show">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
     
-    <ul><li><a href="/index.html" class="home">Home</a></li>
-<li><a href="/projects.html" class="projects">Projects</a></li></ul></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 <div id="header">
-    
-<h1>NethServer 6</h1>
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>NethServer 6</h1>
 
     <div id="main-menu">
         <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-
-<li><a href="../issues.html" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki.html" class="wiki">Wiki</a></li></ul>
+<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
+<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
+<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
     </div>
 </div>
 
 <div id="main" class="">
-    
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/nethserver/issues/report">Summary</a></li>
+
+</ul>
+
+
+
+
+<h3>Custom queries</h3>
+<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
+<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
+<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
+<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
+<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
+<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
+<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
+<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
+<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
+<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
+
+
+
+
+
+        
+    </div>
 
     <div id="content">
         
@@ -67,10 +114,12 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div><h3>Release NethServer 6.4 beta1</h3></div>
 </div>
         <p class="author">
+        Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 09:12 AM">over 8 years</a> ago.
+        Updated <a href="/projects/nethserver/activity?from=2013-05-08" title="05/08/2013 12:02 PM">about 8 years</a> ago.
         </p>
 
 <table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">-</td><th class="estimated-hours">Estimated time:</th><td class="estimated-hours">1.00 hour</td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="../versions/153.html">v6.4-beta1</a></td><th></th><td></td></tr>
+<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date"></td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date"></td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">-</td><th class="estimated-hours">Estimated time:</th><td class="estimated-hours">1.00 hour</td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/153">v6.4-beta1</a></td><th></th><td></td></tr>
 
 
 </table>
@@ -102,7 +151,7 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
   
 </div>
 <p><strong>Subtasks</strong></p>
-<form><table class="list issues"><tr class="issue issue-1905 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1905" /></td><td class="subject"><a href="1905.html" class="issue tracker-4 status-5 priority-4 priority-default closed child">Task #1905</a>: NethServer 6.4 beta1 ISO</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr></table></form>
+<form><table class="list issues"><tr class="issue issue-1905 hascontextmenu"><td class="checkbox"><input name="ids[]" type="checkbox" value="1905" /></td><td class="subject"><a href="/issues/1905" class="issue tracker-4 status-5 priority-4 priority-default closed child">Task #1905</a>: NethServer 6.4 beta1 ISO</td><td>CLOSED</td><td></td><td><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent"></p></td></tr></table></form>
 </div>
 
 
@@ -111,152 +160,213 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="issue-changesets">
 <h3>Associated revisions</h3>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-collectd/revisions/2e64c92067581abdf696755b448d70a8a175a03b" title="Revision 2e64c920">Revision 2e64c920</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 03:38 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.1. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.1. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-hylafax/revisions/60fdf867852bce8f9914adda6b7469cdd8bd6e77" title="Revision 60fdf867">Revision 60fdf867</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 04:34 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-iaxmodem/revisions/e9dd3ee52f194f458e54ee69b1cd6aeb1dc27a87" title="Revision e9dd3ee5">Revision e9dd3ee5</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 05:48 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.1. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.1. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-antivirus/revisions/53333d797b4879fad7d534a5d1e5dddd1e1c085d" title="Revision 53333d79">Revision 53333d79</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 09:15 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-backup-config/revisions/9ed5fb90c4f568f1984a72c06dc07c18b983776c" title="Revision 9ed5fb90">Revision 9ed5fb90</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 09:31 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.1. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.1. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-backup-data/revisions/821e1fb315fdaa9bdd97b8faffe195a8ca96a729" title="Revision 821e1fb3">Revision 821e1fb3</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 09:36 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.1. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.1. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-dnsmasq/revisions/09edd12b0cba9981b5ac503ac08e5ddb7581eec1" title="Revision 09edd12b">Revision 09edd12b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 09:49 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-hosts/revisions/d01475a90c8a862e26844257a2ea45f3fa49ff1d" title="Revision d01475a9">Revision d01475a9</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 10:01 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-httpd-admin/revisions/a10d4aaa465ba22972953ac94f0005b746b03277" title="Revision a10d4aaa">Revision a10d4aaa</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 10:08 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.3. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.3. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-yum/revisions/dd0e39cafd2a328dc201376a0b00a328f7ed459f" title="Revision dd0e39ca">Revision dd0e39ca</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 10:37 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-smartd/revisions/1aafd24ca8a72fa794fe2f6c0f509b52812d82b2" title="Revision 1aafd24c">Revision 1aafd24c</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 10:39 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.0. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.0. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-shorewall/revisions/bc1128936416386701719295332ff91fc65f4d17" title="Revision bc112893">Revision bc112893</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 10:48 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.0. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.0. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-register/revisions/9831700be2c872395c27571ee95c83c04ac99a03" title="Revision 9831700b">Revision 9831700b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 10:56 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.0. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.0. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-openssh/revisions/da019f4b7e8f5a671e88c5919ea19e59b8ee6547" title="Revision da019f4b">Revision da019f4b</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 11:28 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-ntp/revisions/7d0ee3df0d5875375fe47d49a246ed81dc58a490" title="Revision 7d0ee3df">Revision 7d0ee3df</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 11:32 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-memcached/revisions/8cb6e1f6aa9fa53d02e9be46aafea293c843d1cd" title="Revision 8cb6e1f6">Revision 8cb6e1f6</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 11:41 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.1. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.1. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-mysql/revisions/f53e1b4009f2b0e5cd0a5343fd63df604013159b" title="Revision f53e1b40">Revision f53e1b40</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 11:45 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-fetchmail/revisions/339e4b3ed589e00e34c846791a3f9b7a188a5af9" title="Revision 339e4b3e">Revision 339e4b3e</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 11:53 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.0. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.0. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/8b7958687869b40430f74adf93114090ad0de9a8" title="Revision 8b795868">Revision 8b795868</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 12:01 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.0. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.0. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-lib/revisions/c1ba5d126b6eca76ef3458125d2a0d85dc65847e" title="Revision c1ba5d12">Revision c1ba5d12</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 12:10 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.1.1. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.1.1. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-base/revisions/5900cf451a8f2cee031fbc77a1f4eb5bd53c58dd" title="Revision 5900cf45">Revision 5900cf45</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 12:19 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.2.0. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.2.0. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-mail-dev/revisions/dff19ff77708e6b669f1929c8d871aa0e2fe9a82" title="Revision dff19ff7">Revision dff19ff7</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 12:22 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/49ddcff67d618ff79ee10e1c6b020bf1c8314771" title="Revision 49ddcff6">Revision 49ddcff6</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 04:40 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.1. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.1. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/comps/revisions/384e5f81f1ff3e821d3928c847b551358ddeb1aa" title="Revision 384e5f81">Revision 384e5f81</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 05:15 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
+        <p>comps repository: comps-ns6.xml built from comps-ns64.xml.in. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/115ab7ca11e8ed1e43927e97c82485ae41da1cdf" title="Revision 115ab7ca">Revision 115ab7ca</a><br />
+        <span class="author">Added by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-04-30" title="04/30/2013 05:21 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>iso/config: removed unused file. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>iso/config: removed unused file. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/revisions/1a0c6c238ce075373e9bfbb64a07a73830f44184" title="Revision 1a0c6c23">Revision 1a0c6c23</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-02" title="05/02/2013 09:27 AM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 6.4-beta1. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 6.4-beta1. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-yum/revisions/0a1fdb65adf68d31ed5178893f8844041f4142dd" title="Revision 0a1fdb65">Revision 0a1fdb65</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-02" title="05/02/2013 06:25 PM">over 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.3. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.3. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-cups/revisions/8e28be73a52cbd2bd9b3ca3061a3925f91168550" title="Revision 8e28be73">Revision 8e28be73</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-07" title="05/07/2013 06:21 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset odd">
+    <p><a href="/projects/nethserver/repository/nethserver-devbox/revisions/0dbc3df25be8640c62bf0775843fa8933bd80af5" title="Revision 0dbc3df2">Revision 0dbc3df2</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-07" title="05/07/2013 06:31 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.2.1. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.2.1. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
     <div class="changeset even">
+    <p><a href="/projects/nethserver/repository/nethserver-firewall-base/revisions/e60d99658e3f54dc6a23934bee18ec2bcf995f89" title="Revision e60d9965">Revision e60d9965</a><br />
+        <span class="author">Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2013-05-07" title="05/07/2013 06:38 PM">about 8 years</a> ago</span></p>
     <div class="wiki">
-        <p>spec: Release 1.0.2. Refs <a href="1906.html" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
+        <p>spec: Release 1.0.2. Refs <a href="/issues/1906" class="issue tracker-4 status-5 priority-4 priority-default closed parent" title="Release NethServer 6.4 beta1 (CLOSED)">#1906</a></p>
     </div>
     </div>
 
@@ -266,10 +376,11 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <h3>History</h3>
   <div id="change-5874" class="journal has-details">
     <div id="note-1">
-    <h4><a href="1906.html#note-1" class="journal-link">#1</a>
+    <h4><a href="/issues/1906#note-1" class="journal-link">#1</a>
     <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/ecb4e27446848579607dfdf7e161f7ef?rating=PG&amp;size=24&amp;default=wavatar" ssl="false" title="" />
+    Updated by <a href="/users/9" class="user active">Davide Principi</a> <a href="/projects/nethserver/activity?from=2013-05-08" title="05/08/2013 12:02 PM">about 8 years</a> ago</h4>
 
-    </h4><ul class="details">
+    <ul class="details">
        <li><strong>Status</strong> changed from <i>NEW</i> to <i>CLOSED</i></li>
        <li><strong>Assignee</strong> set to <i>Davide Principi</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>100</i></li>
@@ -295,7 +406,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div style="clear: both;"></div>
 
-
+<p class="other-formats">Also available in:  <span><a href="/issues/1906.atom" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/issues/1906.pdf" class="pdf" rel="nofollow">PDF</a></span>
+</p>
 
 
 
@@ -316,7 +429,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Copyright &copy; 2012-2021 nethserver.org
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>
