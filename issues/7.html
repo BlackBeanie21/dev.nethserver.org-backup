@@ -28,197 +28,15 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <div id="wrapper2">
 <div id="wrapper3">
 <div id="top-menu">
-    <div id="account">
-        <ul><li><a href="/login" class="login">Sign in</a></li></ul>    </div>
+    
+        
     
     <ul><li><a href="/" class="home">Home</a></li>
 <li><a href="/projects" class="projects">Projects</a></li>
-<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
 
 <div id="header">
-    <div id="quick-search">
-        <form accept-charset="UTF-8" action="/projects/nethserver/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-        <input name="issues" type="hidden" value="1" />
-        <label for='q'>
-          <a href="/projects/nethserver/search" accesskey="4">Search</a>:
-        </label>
-        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
-</form>        
-    </div>
-
-    <h1>NethServer 6</h1>
-
-    <div id="main-menu">
-        <ul><li><a href="/projects/nethserver" class="overview">Overview</a></li>
-<li><a href="/projects/nethserver/activity" class="activity">Activity</a></li>
-<li><a href="/projects/nethserver/roadmap" class="roadmap">Roadmap</a></li>
-<li><a href="/projects/nethserver/issues" class="issues selected">Issues</a></li>
-<li><a href="/projects/nethserver/wiki" class="wiki">Wiki</a></li>
-<li><a href="/projects/nethserver/repository" class="repository">Repository</a></li></ul>
-    </div>
-</div>
-
-<div id="main" class="">
-    <div id="sidebar">
-          <h3>Issues</h3>
-
-<ul>
-<li><a href="/projects/nethserver/issues?set_filter=1">View all issues</a></li>
-<li><a href="/projects/nethserver/issues/report">Summary</a></li>
-
-</ul>
-
-
-
-
-<h3>Custom queries</h3>
-<ul class="queries"><li><a href="/projects/nethserver/issues?query_id=60" class="query">6.6 (changelog)</a></li>
-<li><a href="/projects/nethserver/issues?query_id=64" class="query">6.7 (changelog)</a></li>
-<li><a href="/projects/nethserver/issues?query_id=65" class="query">6.8 (changelog)</a></li>
-<li><a href="/projects/nethserver/issues?query_id=66" class="query">6.9 (changelog)</a></li>
-<li><a href="/projects/nethserver/issues?query_id=12" class="query">@future/closed</a></li>
-<li><a href="/projects/nethserver/issues?query_id=55" class="query">KNOWN_BUGS</a></li>
-<li><a href="/projects/nethserver/issues?query_id=15" class="query">Lost+Found</a></li>
-<li><a href="/projects/nethserver/issues?query_id=24" class="query">NEEDINFO</a></li>
-<li><a href="/projects/nethserver/issues?query_id=26" class="query">ON_DEV</a></li>
-<li><a href="/projects/nethserver/issues?query_id=27" class="query">ON_QA</a></li>
-<li><a href="/projects/nethserver/issues?query_id=44" class="query">TODO Tasks</a></li>
-<li><a href="/projects/nethserver/issues?query_id=54" class="query selected">UPDATES</a></li>
-<li><a href="/projects/nethserver/issues?query_id=67" class="query">v6.10 (current)</a></li></ul>
-
-
-
-
-
-        
-    </div>
-
-    <div id="content">
-        
-        <div class="contextual">
-
-
-
-
-
-</div>
-
-
-<h2>Enhancement #7</h2>
-
-<div class="issue tracker-6 status-5 priority-4 priority-default closed details">
-
-  <img alt="" class="gravatar" default="wavatar" rating="PG" src="http://www.gravatar.com/avatar/557f8126150c57751ffc7d17a9f01e11?rating=PG&amp;size=50&amp;default=wavatar" ssl="false" title="" />
-
-<div class="subject">
-<div><h3>Refactor smb.conf template</h3></div>
-</div>
-        <p class="author">
-        Added by <a href="/users/5" class="user active">Giacomo Sanchietti</a> <a href="/projects/nethserver/activity?from=2011-03-22" title="03/22/2011 09:33 AM">over 10 years</a> ago.
-        Updated <a href="/projects/nethserver/activity?from=2013-02-21" title="02/21/2013 06:52 PM">over 8 years</a> ago.
-        </p>
-
-<table class="attributes">
-<tr><th class="status">Status:</th><td class="status">CLOSED</td><th class="start-date">Start date:</th><td class="start-date">02/21/2013</td></tr><tr><th class="priority">Priority:</th><td class="priority">Normal</td><th class="due-date">Due date:</th><td class="due-date">02/21/2013</td></tr><tr><th class="assigned-to">Assignee:</th><td class="assigned-to">-</td><th class="progress">% Done:</th><td class="progress"><table class="progress progress-100" style="width: 80px;"><tr><td class="closed" style="width: 100%;"></td></tr></table><p class="percent">100%</p></td></tr><tr><th class="category">Category:</th><td class="category">nethserver-samba</td><th></th><td></td></tr><tr><th class="fixed-version">Target version:</th><td class="fixed-version"><a href="/versions/144">v6.4-alpha2</a></td><th></th><td></td></tr>
-<tr>
-	<th class="cf_13">Resolution:</th><td class="cf_13"></td>
-	<th class="cf_14">NEEDINFO:</th><td class="cf_14"></td>
-</tr>
-
-
-</table>
-
-<hr />
-<div class="description">
-  <div class="contextual">
-  
-  </div>
-
-  <p><strong>Description</strong></p>
-  <div class="wiki">
-  Refactor smb.conf template:
-	<ul>
-	<li>reorder fragments</li>
-		<li>remove <strong>oplocks</strong> and <strong>os level</strong> options if the default value is set</li>
-	</ul>
-  </div>
-</div>
-
-
-
-
-
-<hr />
-<div id="relations">
-<div class="contextual">
-</div>
-
-<p><strong>Related issues</strong></p>
-
-<form>
-<table class="list issues">
-  <tr class="issue hascontextmenu" id="relation-170">
-  <td class="checkbox"><input name="ids[]" type="checkbox" value="1554" /></td>
-  <td class="subject">
-    Related to
-    
-    NethServer 6 - 
-    <a href="/issues/1554" class="issue tracker-4 status-5 priority-4 priority-default closed">Task #1554</a>: Ibay samba configuration
-  </td>
-  <td class="status">CLOSED</td>
-  <td class="start_date">11/14/2012</td>
-  <td class="due_date">11/15/2012</td>
-  <td class="buttons"></td>
-  </tr>
-  <tr class="issue hascontextmenu" id="relation-192">
-  <td class="checkbox"><input name="ids[]" type="checkbox" value="1657" /></td>
-  <td class="subject">
-    Related to
-    
-    NethServer 6 - 
-    <a href="/issues/1657" class="issue tracker-6 status-5 priority-4 priority-default closed child">Enhancement #1657</a>: Migrate samba SAM DB in LDAP
-  </td>
-  <td class="status">CLOSED</td>
-  <td class="start_date">02/15/2013</td>
-  <td class="due_date">02/25/2013</td>
-  <td class="buttons"></td>
-  </tr>
-</table>
-</form>
-
-<form accept-charset="UTF-8" action="/issues/7/relations" class="new_relation" data-remote="true" id="new-relation-form" method="post" style="display: none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O9v8tr7jDWYApOdi0G+30QrigCY6Zlvwpp0a1SfpBeU=" /></div>
-
-
-<p><select id="relation_relation_type" name="relation[relation_type]" onchange="setPredecessorFieldsVisibility();"><option value="relates" selected="selected">Related to</option>
-<option value="duplicates">Duplicates</option>
-<option value="duplicated">Duplicated by</option>
-<option value="blocks">Blocks</option>
-<option value="blocked">Blocked by</option>
-<option value="precedes">Precedes</option>
-<option value="follows">Follows</option>
-<option value="copied_to">Copied to</option>
-<option value="copied_from">Copied from</option></select>
-Issue #<input id="relation_issue_to_id" name="relation[issue_to_id]" size="10" type="text" />
-<span id="predecessor_fields" style="display:none;">
-Delay: <input id="relation_delay" name="relation[delay]" size="3" type="text" /> days
-</span>
-<input name="commit" type="submit" value="Add" />
-<a href="#" onclick="$(&quot;#new-relation-form&quot;).hide();; return false;">Cancel</a>
-</p>
-
-<script type="text/javascript">
-//<![CDATA[
-observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=nethserver&scope=all')
-//]]>
-</script>
-
-<script type="text/javascript">
-//<![CDATA[
-setPredecessorFieldsVisibility();
-//]]>
-</script>
-
-</form>
+    <h1>
 </div>
 
 </div>
@@ -636,7 +454,7 @@ contextMenuInit('/issues/context_menu')
 
 <div id="footer">
   <div class="bgl"><div class="bgr">
-    Powered by <a href="http://www.redmine.org/">Redmine</a> &copy; 2006-2014 Jean-Philippe Lang
+    Copyright © 2012-2021 nethserver.org
   </div></div>
 </div>
 </div>
